@@ -5,8 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.1 (2023-07-23)
 
-**Note:** Version bump only for package @shakil-design/asset
-
-## 1.1.67 (2023-07-23)
-
-**Note:** Version bump only for package @shakil-design/asset
+**Note:** Version bump only for package shakil-design
