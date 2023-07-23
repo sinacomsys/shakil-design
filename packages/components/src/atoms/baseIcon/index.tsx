@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import icomoonJson from "@sina-base/asset/src/icomoon/selection.json";
+import icomoonJson from "@shakil-design/asset/src/icomoon/selection.json";
 import {
   createIcomoonIconSet,
   CreateIcomoonIconSetProps,

@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { Text } from "../../../atoms/text";
 import { useTheme } from "../../../theme/context";
-import { pxToVh } from "@sina-base/utils";
+import { pxToVh } from "@shakil-design/utils";
 import { RadioContext, ValueType } from "../context";
 import { CustomCircle } from "./customCircle";
 import { useStyles } from "./style";

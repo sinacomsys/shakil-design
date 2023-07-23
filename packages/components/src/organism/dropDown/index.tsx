@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { PopperProps, usePopper } from "react-popper";
 import { Text } from "../../atoms/text";
 import { useTheme } from "../../theme/context";
-import { useOnClickOutSide } from "@sina-base/utils";
+import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyles } from "./style";
 
 type Value = string | number | null | undefined;

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import { useTheme } from "../../theme/context";
-import { useOnClickOutSide } from "@sina-base/utils";
+import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyle } from "./style";
 
 export interface DrawerProps {

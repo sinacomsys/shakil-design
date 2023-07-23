@@ -2936,21 +2936,6 @@
     "@sigstore/protobuf-specs" "^0.2.0"
     tuf-js "^1.1.7"
 
-"@sina-base/asset@^1.1.45":
-  version "1.1.65"
-  resolved "https://registry.yarnpkg.com/@sina-base/asset/-/asset-1.1.65.tgz#5ac6740c0fd8072578ff7ae1772258565918759b"
-  integrity sha512-84Rqe8uraU+rH29q2E7g7qcMNSHEXCWhglPGsJkSR6VVEYESIGbCOmYO/tdK0JymnIYhGUfvSSu639nepxTYOg==
-
-"@sina-base/component@^1.1.56":
-  version "1.1.65"
-  resolved "https://registry.yarnpkg.com/@sina-base/component/-/component-1.1.65.tgz#bbfb9f9ec21cbc90f03a2f0d1b17fcede5e05737"
-  integrity sha512-CjavMVnyJVNz4l1KVRtmIDG1Vk4KJzVh8rMYNJiBIRmTam4fUSbp+Sz2cx2xZc+rwlm2659WhR7TyG6lSkCIrA==
-
-"@sina-base/utils@^1.1.57":
-  version "1.1.57"
-  resolved "https://registry.yarnpkg.com/@sina-base/utils/-/utils-1.1.57.tgz#6cbae12629c47a437f7daf67a6d222a5dcc809b6"
-  integrity sha512-F/5NY6PG8ujoTJc55UvO+Vl9ibpOQiUYOaYtj8/YqOOhHjnQRSM/SucDtxkHoHdcc1NLP+MmqQ9jJ5mvfG+HfA==
-
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.51.tgz#645f33fe4e02defe26f2f5c0410e1c094eac7f5f"

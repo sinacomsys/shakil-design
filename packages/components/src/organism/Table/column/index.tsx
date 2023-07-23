@@ -2,7 +2,7 @@ import { ReactNode, useContext } from "react";
 import { DEFAULT_ALIGN } from "..";
 import { BaseIcon, Text } from "../../../atoms";
 import { useTheme } from "../../../theme/context";
-import { pxToVh } from "@sina-base/utils";
+import { pxToVh } from "@shakil-design/utils";
 import { TableContext } from "../context";
 
 export interface ColumnType<T, TIndex extends keyof T = keyof T> {

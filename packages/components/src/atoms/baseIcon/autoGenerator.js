@@ -10,7 +10,7 @@ const path = require("path");
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const config = require("@sina-base/asset/src/icomoon/selection.json");
+const config = require("@shakil-design/asset/src/icomoon/selection.json");
 
 const icons = {};
 const types = [];

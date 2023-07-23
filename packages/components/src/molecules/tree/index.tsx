@@ -1,4 +1,4 @@
-import { findGrandParents, flatData } from "@sina-base/utils";
+import { findGrandParents, flatData } from "@shakil-design/utils";
 import { useContext } from "react";
 import { useTheme } from "../../theme/context";
 import { Collapse } from "./collapse";

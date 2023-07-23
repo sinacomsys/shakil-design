@@ -3,7 +3,7 @@ import { DEFAULT_ALIGN, SEARCH_ICON } from "..";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules";
 import { useTheme } from "../../../theme/context";
-import { pxToVh } from "@sina-base/utils";
+import { pxToVh } from "@shakil-design/utils";
 import { ColumnType } from "../column";
 import { TableContext } from "../context";
 
