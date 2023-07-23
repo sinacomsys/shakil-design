@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/component",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "types": "types/index.d.ts",
   "main": "src/index.ts",
@@ -39,5 +39,10 @@
         }
       }
     ]
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "552e1d4a891b3d22161638ecf21b5a36273b7a3e"
 }
