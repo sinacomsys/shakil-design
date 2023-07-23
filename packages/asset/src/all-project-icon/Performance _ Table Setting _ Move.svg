@@ -1,0 +1,15 @@
+<svg id="Component_68_2" data-name="Component 68 – 2" xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #abb6d6;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_556" data-name="Ellipse 556" class="cls-1" cx="1.5" cy="1.5" r="1.5" transform="translate(5)"/>
+  <circle id="Ellipse_558" data-name="Ellipse 558" class="cls-1" cx="1.5" cy="1.5" r="1.5" transform="translate(5 5)"/>
+  <circle id="Ellipse_560" data-name="Ellipse 560" class="cls-1" cx="1.5" cy="1.5" r="1.5" transform="translate(5 10)"/>
+  <circle id="Ellipse_557" data-name="Ellipse 557" class="cls-1" cx="1.5" cy="1.5" r="1.5"/>
+  <circle id="Ellipse_559" data-name="Ellipse 559" class="cls-1" cx="1.5" cy="1.5" r="1.5" transform="translate(0 5)"/>
+  <circle id="Ellipse_561" data-name="Ellipse 561" class="cls-1" cx="1.5" cy="1.5" r="1.5" transform="translate(0 10)"/>
+</svg>

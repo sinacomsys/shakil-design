@@ -1,0 +1,24 @@
+<svg id="Component_71_8" data-name="Component 71 – 8" xmlns="http://www.w3.org/2000/svg" width="36.595" height="45.363" viewBox="0 0 36.595 45.363">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #684a80;
+      }
+
+      .cls-2 {
+        fill: #e3e6f1;
+      }
+
+      .cls-3 {
+        fill: #49d1e1;
+      }
+    </style>
+  </defs>
+  <g id="Group_2254" data-name="Group 2254">
+    <path id="Path_1162" data-name="Path 1162" class="cls-1" d="M684.243,345.3a18.3,18.3,0,1,0-25.431,16.854l5.57,9.35a1.849,1.849,0,0,0,3.126,0l5.57-9.35A18.3,18.3,0,0,0,684.243,345.3Z" transform="translate(-647.648 -327)"/>
+    <circle id="Ellipse_508" data-name="Ellipse 508" class="cls-2" cx="14.683" cy="14.683" r="14.683" transform="translate(3.614 3.614)"/>
+  </g>
+  <g id="Group_2255" data-name="Group 2255" transform="translate(5.551 5.551)">
+    <path id="Path_1163" data-name="Path 1163" class="cls-3" d="M680.72,372.818a12.747,12.747,0,1,1,12.747-12.747A12.761,12.761,0,0,1,680.72,372.818Zm0-22.49a9.743,9.743,0,1,0,9.743,9.743A9.754,9.754,0,0,0,680.72,350.328Z" transform="translate(-667.973 -347.324)"/>
+  </g>
+</svg>

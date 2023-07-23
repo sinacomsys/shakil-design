@@ -1,0 +1,45 @@
+.wrapper {
+  height: 32px;
+  border-radius: 7px;
+  display: flex;
+  margin-block-end: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.dotLine {
+  &::before {
+    content: '';
+    position: absolute;
+    left: -18px;
+    border: none;
+    border-top: 2px dotted $color-primary-2;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.statusLine {
+  position: relative;
+  width: 16px;
+  border-inline-end: 3px solid red;
+  height: 100%;
+}
+.content {
+  margin-inline-start: 24px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-inline-end: 13px;
+}
+
+.arrowDown {
+  transition: all 0.2s;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}

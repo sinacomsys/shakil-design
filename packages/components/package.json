@@ -1,0 +1,43 @@
+{
+  "name": "@shakil-design/component",
+  "version": "0.0.0",
+  "private": false,
+  "types": "types/index.d.ts",
+  "main": "src/index.ts",
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "compile": "tsc -b"
+  },
+  "description": "sina base component",
+  "keywords": [],
+  "author": "sinaComs",
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declarationDir": "types",
+    "outDir": "dist",
+    "rootDir": "./src"
+  },
+  "include": ["./src", "./src/custom.d.ts"],
+  "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]
+}

@@ -1,0 +1,12 @@
+<svg id="Table___Info" data-name="Table _ Info" xmlns="http://www.w3.org/2000/svg" width="14.446" height="14.446" viewBox="0 0 14.446 14.446">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #58cc87;
+      }
+    </style>
+  </defs>
+  <path id="Path_6247" data-name="Path 6247" class="cls-1" d="M7.223,0A7.13,7.13,0,0,0,0,7.223,7.223,7.223,0,1,0,7.223,0Zm0,13.091a5.87,5.87,0,1,1,5.718-5.869A5.571,5.571,0,0,1,7.223,13.091Z"/>
+  <path id="Path_6248" data-name="Path 6248" class="cls-1" d="M5,3.2a.647.647,0,0,0-.6.6V9.67c0,.451.15.752.6.752a.551.551,0,0,0,.6-.6V3.8h0A.647.647,0,0,0,5,3.2Z" transform="translate(2.221 1.615)"/>
+  <circle id="Ellipse_1206" data-name="Ellipse 1206" class="cls-1" cx="0.752" cy="0.752" r="0.752" transform="translate(6.47 2.257)"/>
+</svg>

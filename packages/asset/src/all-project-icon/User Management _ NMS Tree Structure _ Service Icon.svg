@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.903" height="17.6" viewBox="0 0 15.903 17.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #58cc87;
+      }
+    </style>
+  </defs>
+  <g id="User_Management___NMS_Tree_Structure___Service_Icon" data-name="User Management _ NMS Tree Structure _ Service Icon" transform="translate(0.014)">
+    <path id="Path_6265" class="cls-1" d="M15.3,7.4a3.127,3.127,0,0,0-2.5-1.3,2.845,2.845,0,0,0-2.3,1.1l-4.6-3a5.16,5.16,0,0,0,.2-1.1A3.1,3.1,0,0,0,3.1,0H3A3.009,3.009,0,0,0,0,3v.1a2.946,2.946,0,0,0,3,3H3A2.982,2.982,0,0,0,5.4,4.9L10,8a2.153,2.153,0,0,0-.2,1.1,2.92,2.92,0,0,0,.2.9L5.4,12.6a3.126,3.126,0,0,0-4.3-.4,3.033,3.033,0,0,0-.4,4.3A2.99,2.99,0,0,0,3,17.6a2.946,2.946,0,0,0,3-3v-.1a5.019,5.019,0,0,0-.2-1.2l4.5-2.6a3.056,3.056,0,0,0,4.3.7A2.674,2.674,0,0,0,15.3,7.4ZM3,5.2A2.1,2.1,0,1,1,5.1,3.1,2.049,2.049,0,0,1,3,5.2ZM3,16.8A2.112,2.112,0,0,1,.9,14.7,2.182,2.182,0,0,1,3,12.6a2.182,2.182,0,0,1,2.1,2.1A2.112,2.112,0,0,1,3,16.8Zm11.3-6.2a2.035,2.035,0,0,1-1.5.6,2.1,2.1,0,1,1,2.1-2.1A1.887,1.887,0,0,1,14.3,10.6Z"/>
+    <circle id="Ellipse_1210" data-name="Ellipse 1210" class="cls-1" cx="0.5" cy="0.5" r="0.5" transform="translate(2.5 2.6)"/>
+    <circle id="Ellipse_1211" data-name="Ellipse 1211" class="cls-1" cx="0.5" cy="0.5" r="0.5" transform="translate(12.3 8.6)"/>
+    <circle id="Ellipse_1212" data-name="Ellipse 1212" class="cls-1" cx="0.5" cy="0.5" r="0.5" transform="translate(2.5 14.1)"/>
+  </g>
+</svg>

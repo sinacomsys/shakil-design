@@ -1,0 +1,15 @@
+{
+  "name": "@shakil-design/asset",
+  "version": "0.0.0",
+  "files": [
+    "src"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

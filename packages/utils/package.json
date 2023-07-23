@@ -1,0 +1,22 @@
+{
+  "name": "@shakil-design/utils",
+  "version": "0.0.0",
+  "types": "types/index.d.ts",
+  "main": "dist/index.js",
+  "files": [
+    "src",
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "private": false,
+  "sideEffects": false,
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
