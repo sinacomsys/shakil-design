@@ -1,57 +1,37 @@
-import moment, { Moment } from "moment-jalaali";
-import { useEffect, useState } from "react";
-import { getDaysOfMonth } from "./createCalendarMatrix";
-import _ from "lodash";
+import moment from "moment-jalaali";
+import { useState } from "react";
+import { DatePickerContext } from "./context";
+import { DatePicker } from "./componnets/datePicker";
+moment.loadPersian({ dialect: "persian-modern" });
 
-const DatePicker = () => {
-  const [month, setMonth] = useState<Moment[][]>();
-  useEffect(() => {
-    const sag = getDaysOfMonth(moment(), false);
-    const test = _.chunk(sag, 7).map((item) => {
-      return item.map((item2) => {
-        return item2;
-      });
-    });
-    setMonth(test);
-  }, []);
+const DatePickerWrapper = () => {
+  const [currentDate, setCurrentDate] = useState(moment());
+  const onAddMonth = () => {
+    setCurrentDate((prev) => prev.clone().add(1, "jMonth"));
+  };
+  const onSubtractMonth = () => {
+    setCurrentDate((prev) => prev.clone().subtract(1, "jMonth"));
+  };
+
+  const onAddYear = () => {
+    setCurrentDate((prev) => prev.clone().add(1, "jYear"));
+  };
+  const onSubtractYear = () => {
+    setCurrentDate((prev) => prev.clone().subtract(1, "jYear"));
+  };
   return (
-    <div
-      style={{
-        // width: 300,
-
-        height: 300,
-        backgroundColor: "gray",
-        display: "flex",
-        width: "fit-content",
-        flexDirection: "column",
+    <DatePickerContext.Provider
+      value={{
+        currentDate,
+        onAddMonth,
+        onSubtractMonth,
+        onAddYear,
+        onSubtractYear,
       }}
     >
-      {month?.map((week, index2) => {
-        return (
-          <div
-            style={{ display: "flex", flexDirection: "row-reverse" }}
-            key={index2}
-          >
-            {week.map((day, index) => {
-              return (
-                <div
-                  style={{
-                    flex: 1,
-                    height: 40,
-                    border: "1px solid red",
-                    margin: 5,
-                  }}
-                  key={index}
-                >
-                  {day.format("jYYYY/jMM/jDD")}
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
+      <DatePicker />
+    </DatePickerContext.Provider>
   );
 };
 
-export { DatePicker };
+export { DatePickerWrapper as DatePicker };

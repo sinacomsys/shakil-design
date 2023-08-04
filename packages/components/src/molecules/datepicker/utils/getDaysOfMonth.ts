@@ -1,9 +1,8 @@
 import { Moment } from "moment-jalaali";
 export function getDaysOfMonth(month: Moment, isGregorian: boolean) {
   const days = [];
-  month.clone().startOf("jMonth");
-
-  const monthFormat = isGregorian ? "month" : "jMonth";
+  // month.clone().startOf("jMonth");
+  // const monthFormat = isGregorian ? "month" : "jMonth";
   const dayOffset = isGregorian ? 0 : 1;
 
   const current = month.clone().startOf("jMonth");
