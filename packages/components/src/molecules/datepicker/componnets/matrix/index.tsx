@@ -2,58 +2,64 @@ import { useContext } from "react";
 import { Text } from "../../../../atoms";
 import moment, { Moment } from "moment-jalaali";
 import { DatePickerContext } from "../../context";
+import { useStyles } from "./style";
 
 interface MatrixProps {
   monthMatrix: Moment[][] | undefined;
 }
 
 export const Matrix = ({ monthMatrix }: MatrixProps) => {
+  const classes = useStyles();
   const today = moment();
-  const { currentDate } = useContext(DatePickerContext);
+  const { currentDate, onSelectDate, selectedDate } =
+    useContext(DatePickerContext);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className={classes["matrix"]}>
       {monthMatrix?.map((week, index2) => {
         return (
-          <div
-            style={{ display: "flex", flexDirection: "row-reverse" }}
-            key={index2}
-          >
+          <div className={classes["week"]} key={index2}>
             {week.map((day) => {
               const key = day.format("YYYYMMDD");
               const isToday =
                 day.local().format("jYYYY/jMM/jDD") ===
                 today.local().format("jYYYY/jMM/jDD");
 
+              const isSelected =
+                day.local().format("jYYYY/jMM/jDD") ===
+                selectedDate?.local().format("jYYYY/jMM/jDD");
+
               const isCurrentMonth =
                 day.local().format("jMM") === currentDate.local().format("jMM");
               return (
-                <div
-                  style={{
-                    flex: 1,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  key={key}
-                >
+                <div className={classes["dayContainer"]} key={key}>
                   <div
+                    onClick={() => {
+                      onSelectDate(day);
+                    }}
+                    className={classes["day"]}
                     style={{
-                      width: 30,
-                      height: 30,
-                      textAlign: "center",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
                       ...(isToday && {
                         border: "1px solid white",
                         borderRadius: 7,
                       }),
+                      ...(isSelected && {
+                        backgroundColor: "#eeeeee",
+                        borderRadius: 7,
+                      }),
+                      cursor: "pointer",
                     }}
                   >
                     <Text
                       theme="Regular"
                       size={14}
-                      color={isCurrentMonth ? "white" : "#828282"}
+                      color={
+                        isSelected
+                          ? "#575757"
+                          : !isCurrentMonth
+                          ? "#828282"
+                          : "white"
+                      }
                     >
                       {day.format("jD")}
                     </Text>

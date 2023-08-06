@@ -18,26 +18,27 @@ export const Header = () => {
         position: "relative",
         display: "flex",
         justifyContent: "center",
-        marginBottom: 16,
+        marginBottom: 15,
+        marginInline: 22,
       }}
     >
       <BaseIcon
-        onClick={onAddMonth}
-        wrapperClassName={classes["nextMonth"]}
-        name="Table-_-Sort-Icon_A-to-Z"
+        onClick={onSubtractMonth}
+        wrapperClassName={classes["prevMonth"]}
+        name="Calendar-_-Month-_-Previous-Month"
         size={{
-          width: 9,
-          height: 16,
+          width: 16,
+          height: 9,
         }}
         color={["white"]}
       />
       <BaseIcon
-        onClick={onSubtractMonth}
-        wrapperClassName={classes["prevMonth"]}
-        name="Table-_-Sort-Icon_A-to-Z"
+        onClick={onAddMonth}
+        wrapperClassName={classes["nextMonth"]}
+        name="Calendar-_-Month-_-Next-Month"
         size={{
-          width: 9,
-          height: 16,
+          width: 16,
+          height: 9,
         }}
         color={["white"]}
       />

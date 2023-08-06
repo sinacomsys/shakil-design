@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import * as React from 'react';
-import { BaseText, BaseTextProps, Variant } from './baseText/baseText';
-import { fonts, fontWeights, useThemes } from './style';
+import classNames from "classnames";
+import * as React from "react";
+import { BaseText, BaseTextProps, Variant } from "./baseText/baseText";
+import { fonts, fontWeights, useThemes } from "./style";
 
 interface TextProps extends BaseTextProps {
   theme?: keyof typeof fonts;
@@ -14,26 +14,27 @@ const Text = React.memo(
   React.forwardRef<HTMLDivElement, TextProps>(
     (
       {
-        theme = 'Regular',
+        theme = "Regular",
         className,
         color,
         style,
         size,
         weight,
         variant,
+        lineHeight,
         ...rest
       },
-      ref
+      ref,
     ) => {
       const themes = useThemes();
 
       const fontWeight =
-        typeof weight === 'string' ? fontWeights[weight] : weight;
+        typeof weight === "string" ? fontWeights[weight] : weight;
       const setVariant = (): Variant => {
-        if (typeof size !== 'number' && size?.match(/h(1|2|3|4|5|6)/g)) {
+        if (typeof size !== "number" && size?.match(/h(1|2|3|4|5|6)/g)) {
           return size as Variant;
         }
-        return 'p';
+        return "p";
       };
 
       return (
@@ -46,12 +47,13 @@ const Text = React.memo(
             color,
             fontSize: size,
             fontWeight,
+            lineHeight,
           }}
           {...rest}
         />
       );
-    }
-  )
+    },
+  ),
 );
 
 export { Text, fonts };

@@ -7,6 +7,10 @@ interface DatePickerContext {
   onSubtractMonth: () => void;
   onAddYear: () => void;
   onSubtractYear: () => void;
+  goToday: () => void;
+  onSetCurrentDate: (value: Moment) => void;
+  onSelectDate: (value: Moment) => void;
+  selectedDate: Moment | null;
 }
 
 export const DatePickerContext = createContext<DatePickerContext>({
@@ -15,4 +19,8 @@ export const DatePickerContext = createContext<DatePickerContext>({
   onSubtractMonth() {},
   onAddYear() {},
   onSubtractYear() {},
+  goToday() {},
+  onSetCurrentDate: () => {},
+  onSelectDate() {},
+  selectedDate: null,
 });

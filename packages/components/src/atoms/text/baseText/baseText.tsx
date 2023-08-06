@@ -18,7 +18,6 @@ export type Variant =
 
 export interface BaseTextProps
   extends Omit<React.HTMLAttributes<HTMLElement>, "children" | "className"> {
-  testID?: string;
   href?: string;
   variant?: Variant;
   children?: ReactNode | ReactNode[] | null;
@@ -28,6 +27,7 @@ export interface BaseTextProps
   selectable?: boolean;
   className?: Parameters<typeof classNames>[0];
   ellipsis?: boolean;
+  lineHeight?: number;
 }
 
 /** Inspired of React-native Text */

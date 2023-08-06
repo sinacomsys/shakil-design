@@ -13,7 +13,7 @@ const useStyles = createUseStyles(
         paddingBlock: 10,
         borderRadius: 7,
         outline: "none",
-        height: 40,
+        height: 32,
       },
       disabled: {
         backgroundColor: theme.color_background,
