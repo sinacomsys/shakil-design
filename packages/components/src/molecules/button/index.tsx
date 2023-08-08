@@ -1,10 +1,12 @@
 import classNames from "classnames";
 import _ from "lodash";
 import React, { useMemo, useState } from "react";
-import { Loading } from "../../atoms/loading";
+import { Spinner } from "../../atoms";
 import { Text } from "../../atoms/text";
 import { useTheme } from "../../theme/context";
 import { useStyles } from "./style";
+import { Unit } from "../../types";
+import { pxToVh } from "@shakil-design/utils";
 
 type Ripple = {
   top: string;
@@ -22,6 +24,8 @@ export interface ButtonProps
   isLoading?: boolean;
   disabled?: boolean;
   form?: string;
+  size?: "small" | "middle";
+  unit?: Unit;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -35,6 +39,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading,
       disabled,
       onClick,
+      size,
+      unit = "pixel",
       ...rest
     },
     ref,
@@ -87,9 +93,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       [],
     );
 
+    const height = size === "small" ? 32 : 40;
+    const fontSize = unit === "viewport" ? `${pxToVh(16)}vh` : 16;
+
     return (
       <button
         {...rest}
+        style={{
+          ...rest.style,
+          height: unit === "viewport" ? `${pxToVh(height)}vh` : height,
+          cursor: disabled || isLoading ? "not-allowed" : "pointer",
+        }}
         ref={ref}
         form={form}
         type={htmlType}
@@ -105,14 +119,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       >
         <div
+          className={classes["textContainer"]}
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            visibility: isLoading ? "hidden" : "visible",
           }}
         >
           {typeof children !== "object" ? (
-            <Text size={16} color={color_white}>
+            <Text size={fontSize} color={color_white}>
               {children}
             </Text>
           ) : (
@@ -120,15 +133,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           )}
         </div>
         {isLoading ? (
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "53%",
-              transform: "translate(-20px,-50%)",
-            }}
-          >
-            <Loading isLoading spinnerColor={color_white} size={"medium"} />
+          <div className={classes["loadingContainer"]}>
+            <Spinner spinerColor="white" size={"medium"} />
           </div>
         ) : null}
         {(isLoading || disabled) && <div className={classes["cover"]} />}

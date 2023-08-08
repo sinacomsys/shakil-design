@@ -1,17 +1,18 @@
+import React from "react";
 import { createUseStyles } from "react-jss";
 import { theming } from "../../theme";
 
-const button = {
+const button: React.CSSProperties = {
   overflow: "hidden",
-  cursor: "pointer",
-  padding: "0px 25px",
-  width: 140,
   boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.16)",
   borderRadius: 7,
-  height: 40,
   border: "none",
   outline: "none",
   position: "relative",
+  paddingInline: 11,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const useStyles = createUseStyles(
@@ -52,9 +53,20 @@ const useStyles = createUseStyles(
         backgroundColor: theme.color_white,
         animation: "$ripple 750ms",
       },
+      textContainer: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      loadingContainer: {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)",
+      },
     };
   },
-  { theming },
+  { theming, name: "button" },
 );
 
 export { useStyles };
