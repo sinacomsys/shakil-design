@@ -1,6 +1,6 @@
 export * from "./baseIcon";
 export * from "./drawer";
-export * from "./loading";
+export * from "./spinner";
 export * from "./modal";
 export * from "./scrollView";
 export * from "./search-box";

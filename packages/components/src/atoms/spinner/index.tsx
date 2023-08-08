@@ -1,4 +1,4 @@
-import { useTheme } from "../../../theme/context";
+import { useTheme, Colors } from "../../theme/context";
 import { useStyle } from "./style";
 
 const SMALL_BORDER = 1;
@@ -9,7 +9,7 @@ const MEDIUM = 20;
 const LARGE = 30;
 
 const Spinner = ({
-  spinerColor,
+  spinerColor = Colors.color_primary_1,
   size,
 }: {
   size?: "small" | "medium" | "large";
