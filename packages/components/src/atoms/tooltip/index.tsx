@@ -9,7 +9,7 @@ export interface TooltipProps {
   trigger?: "click" | "hover";
   children: React.ReactNode;
   content: React.ReactNode;
-  arrowColor: string;
+  arrowColor?: string;
   placement?: PopperProps<unknown>["placement"];
   hasMask?: boolean;
   maskStyle?: React.CSSProperties;
@@ -131,7 +131,7 @@ const Tooltip = ({
       ref={setArrowElement}
       style={{
         ...styles.arrow,
-        transform: `${styles.arrow.transform} rotate(45deg)`,
+        transform: `${styles?.arrow?.transform} rotate(45deg)`,
         backgroundColor: arrowColor,
         ...(currentPlacement === "top" && { bottom: -4 }),
         ...(currentPlacement === "bottom" && { top: -4 }),
@@ -167,7 +167,7 @@ const Tooltip = ({
                 {...attributes.popper}
               >
                 {content}
-                {arrow}
+                {arrowColor ? arrow : null}
               </div>
             </>,
             body.current,

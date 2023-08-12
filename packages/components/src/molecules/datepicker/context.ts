@@ -11,6 +11,8 @@ interface DatePickerContext {
   onSetCurrentDate: (value: Moment) => void;
   onSelectDate: (value: Moment) => void;
   selectedDate: Moment | null;
+  handleExtendCalendar?: () => void;
+  isCalendarExtended?: boolean;
 }
 
 export const DatePickerContext = createContext<DatePickerContext>({
@@ -23,4 +25,6 @@ export const DatePickerContext = createContext<DatePickerContext>({
   onSetCurrentDate: () => {},
   onSelectDate() {},
   selectedDate: null,
+  handleExtendCalendar() {},
+  isCalendarExtended: false,
 });

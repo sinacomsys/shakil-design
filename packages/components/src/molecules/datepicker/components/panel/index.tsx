@@ -2,19 +2,21 @@ import { DatePickerContext } from "../../context";
 import { Moment } from "moment-jalaali";
 import { useState, useContext, useEffect } from "react";
 import { getDaysOfMonth } from "../../utils/getDaysOfMonth";
-import { Header } from "../hearder";
+import { Header } from "../header";
 import { DaysOfWeekTitle } from "../daysOfWeek";
 import { Matrix } from "../matrix";
 import _ from "lodash";
 import { ManualImportDate } from "../manualImportDate";
 import { BaseIcon } from "../../../../atoms";
 
-export const DatePicker = () => {
+export const Panel = () => {
   const [monthMatrix, setMonthMatrix] = useState<Moment[][]>();
   const [isMatrixOpen, setMatrixOpen] = useState(false);
 
-  const { currentDate } = useContext(DatePickerContext);
-  const handleGetDaysOfMonth = (currentMonth: Moment) => {
+  const { currentDate, isCalendarExtended, handleExtendCalendar } =
+    useContext(DatePickerContext);
+  const handleGetDaysOfMonth = (currentMonth: Moment | null) => {
+    if (!currentMonth) return;
     const dayOfMonth = getDaysOfMonth(currentMonth, false);
     return _.chunk(dayOfMonth, 7).map((item) => {
       return item.map((item2) => {
@@ -28,18 +30,22 @@ export const DatePicker = () => {
 
   const onCollapseMatrix = () => {
     setMatrixOpen((prev) => !prev);
+    handleExtendCalendar?.();
   };
+  const isCalendarExtended2 = isCalendarExtended || isMatrixOpen;
 
   return (
     <div
       style={{
         width: 320,
+        borderRadius: 10,
         backgroundColor: "#575757",
+        paddingBottom: 20,
       }}
     >
       <div
         style={{
-          height: isMatrixOpen ? "auto" : 0,
+          height: isCalendarExtended2 ? "auto" : 0,
           transition: "0.3s",
           overflow: "hidden",
         }}
@@ -55,7 +61,13 @@ export const DatePicker = () => {
         </div>
       </div>
 
-      <div style={{ display: "flex", marginLeft: 75, marginTop: 20 }}>
+      <div
+        style={{
+          display: "flex",
+          marginLeft: 75,
+          marginTop: 20,
+        }}
+      >
         <ManualImportDate />
         <div
           style={{

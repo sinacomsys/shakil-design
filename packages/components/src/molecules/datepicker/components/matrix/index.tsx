@@ -30,7 +30,8 @@ export const Matrix = ({ monthMatrix }: MatrixProps) => {
                 selectedDate?.local().format("jYYYY/jMM/jDD");
 
               const isCurrentMonth =
-                day.local().format("jMM") === currentDate.local().format("jMM");
+                day.local().format("jMM") ===
+                currentDate?.local().format("jMM");
               return (
                 <div className={classes["dayContainer"]} key={key}>
                   <div

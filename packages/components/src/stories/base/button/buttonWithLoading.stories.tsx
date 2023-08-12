@@ -20,7 +20,12 @@ const Template: Story<ButtonProps> = (args) => {
 
   return (
     <StoryContainer>
-      <Button {...args} onClick={enterLoading} isLoading={isLoading} />
+      <Button
+        {...args}
+        onClick={enterLoading}
+        isLoading={isLoading}
+        unit="viewport"
+      />
     </StoryContainer>
   );
 };
@@ -28,6 +33,6 @@ const Template: Story<ButtonProps> = (args) => {
 export const Primary = Template.bind({});
 
 Primary.args = {
-  children: "add",
+  children: "Button Test Text",
   mode: "primary",
 };

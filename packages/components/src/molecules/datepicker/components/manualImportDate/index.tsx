@@ -1,9 +1,10 @@
 import { useContext, useReducer } from "react";
-import { TextInput } from "../../../../molecules";
+import { TextInput } from "../../..";
 import { Text } from "../../../../atoms";
-import { Button } from "../../../../molecules";
-import { DatePickerContext } from "../../../datepicker/context";
+import { Button } from "../../..";
+import { DatePickerContext } from "../../context";
 import moment from "moment-jalaali";
+import { checkIsDateValid } from "molecules/datepicker/utils/checkDateIsValid";
 
 type CountActionKind = "YEAR" | "MONTH" | "DAY";
 interface CountAction {
@@ -36,16 +37,9 @@ export const ManualImportDate = () => {
     day: "",
   });
 
-  const validationDate = () => {
-    try {
-      return moment(`${year}/${month}/${day}`, "jYYYY/jMM/jDD").isValid();
-    } catch {
-      return false;
-    }
-  };
-
   const onConfirm = () => {
-    const isDateValid = validationDate();
+    const date = `${year}/${month}/${day}`;
+    const isDateValid = checkIsDateValid(date);
     if (isDateValid) {
       const date = moment(`${year}/${month}/${day}`, "jYYYY/jMM/jDD");
       onSetCurrentDate(date);
@@ -54,7 +48,7 @@ export const ManualImportDate = () => {
   };
 
   return (
-    <div style={{}}>
+    <div>
       <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
         <Text color={"#ABABAB"} style={{ marginRight: 13 }}>
           Date
@@ -92,7 +86,7 @@ export const ManualImportDate = () => {
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
         <Text style={{ marginRight: 12 }} color={"#ABABAB"}>
           Time
         </Text>
@@ -103,12 +97,15 @@ export const ManualImportDate = () => {
           <div style={{ width: 44, marginInline: 6 }}>
             <TextInput style={{ textAlign: "center" }} />
           </div>
+          <Button size="small" style={{ width: 44 }} onClick={onConfirm}>
+            ok
+          </Button>
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", rowGap: "20px" }}>
-        <Button onClick={onConfirm}>ok</Button>
-        <Button onClick={goToday}>Go Today!</Button>
-      </div>
+
+      <Button style={{ marginLeft: 42 }} size="small" onClick={goToday}>
+        Go Today!
+      </Button>
     </div>
   );
 };
