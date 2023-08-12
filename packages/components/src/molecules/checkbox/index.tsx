@@ -3,6 +3,7 @@ import { Text } from "../../atoms/text";
 import { Indeterminate } from "./customRectangle/indeterminate";
 import { CustomRectangle } from "./customRectangle/inex";
 import { useStyles } from "./style";
+// import {  } from "@shakil-design/utils";
 
 export interface CheckBoxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {

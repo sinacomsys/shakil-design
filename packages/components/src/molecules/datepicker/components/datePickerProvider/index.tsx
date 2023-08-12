@@ -1,4 +1,4 @@
-import { checkIsDateValid } from "molecules/datepicker/utils/checkDateIsValid";
+import { checkIsDateValid } from "../../utils/checkDateIsValid";
 import moment, { Moment } from "moment-jalaali";
 import { useState } from "react";
 import { DatePickerContext } from "../../context";
