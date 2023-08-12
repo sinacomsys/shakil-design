@@ -1,43 +1,26 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { useState } from "react";
-import { Loading, LoadingProps } from "../../../atoms";
+import { Spinner, SpinnerProps } from "../../../atoms";
 import { StoryContainer } from "../../container";
+import React from "react";
 export default {
   title: "loading",
-  component: Loading,
-} as Meta<LoadingProps>;
+  component: Spinner,
+} as Meta<SpinnerProps>;
 
-const Template: Story<LoadingProps> = () => {
-  const [isLoading, setLoading] = useState(false);
+const Template: Story<SpinnerProps> = () => {
   return (
     <StoryContainer>
-      <div>
-        <div style={{ width: 300 }}>
-          <Loading isLoading={isLoading} size="small">
-            <div style={{ height: 200, border: "1px solid red" }}>
-              <button>sdfsdf</button>
-              test text
-            </div>
-          </Loading>
-        </div>
-
-        <button
-          style={{ marginTop: 30 }}
-          onClick={() => {
-            setLoading((prev) => !prev);
-          }}
-        >
-          click me!
-        </button>
+      <div style={{ marginTop: 30 }}>
+        <Spinner size={"large"} />
       </div>
       <div style={{ marginTop: 30 }}>
-        <Loading isLoading={true} size={"large"} />
+        <Spinner size={"large"} unit="pixel" />
       </div>
       <div style={{ marginTop: 30 }}>
-        <Loading isLoading={true} size={"medium"} />
+        <Spinner size={"medium"} />
       </div>
       <div style={{ marginTop: 30 }}>
-        <Loading isLoading={true} size={"small"} />
+        <Spinner size={"small"} />
       </div>
     </StoryContainer>
   );

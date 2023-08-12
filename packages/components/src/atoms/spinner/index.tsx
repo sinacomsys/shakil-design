@@ -1,4 +1,5 @@
 import { pxToVh } from "@shakil-design/utils";
+import { Unit } from "../../../types";
 import { useTheme, Colors } from "../../theme/context";
 import { useStyle } from "./style";
 
@@ -9,13 +10,17 @@ const SMALL = 15;
 const MEDIUM = 20;
 const LARGE = 30;
 
+export interface SpinnerProps {
+  size?: "small" | "medium" | "large";
+  spinerColor?: string;
+  unit?: Unit;
+}
+
 const Spinner = ({
   spinerColor = Colors.color_primary_1,
   size,
-}: {
-  size?: "small" | "medium" | "large";
-  spinerColor?: string;
-}) => {
+  unit = "viewPort",
+}: SpinnerProps) => {
   const { color_primary_1 } = useTheme();
   const classes = useStyle();
   const borderStyle = spinerColor
@@ -40,7 +45,7 @@ const Spinner = ({
       ? LARGE
       : MEDIUM;
 
-  const _width = `${pxToVh(width)}vh`;
+  const _width = unit === "viewPort" ? `${pxToVh(width)}vh` : width;
 
   return (
     <div style={{ width: _width, height: _width }} className={classes.ldsRing}>
