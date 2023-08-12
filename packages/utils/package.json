@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/utils",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "types": "types/index.d.ts",
   "main": "dist/index.js",
   "files": [
@@ -9,7 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "publish": "npm publish"
   },
   "private": false,
   "sideEffects": false,

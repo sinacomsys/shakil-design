@@ -4,7 +4,7 @@ import { Text } from "../../../../atoms";
 import { Button } from "../../..";
 import { DatePickerContext } from "../../context";
 import moment from "moment-jalaali";
-import { checkIsDateValid } from "molecules/datepicker/utils/checkDateIsValid";
+import { checkIsDateValid } from "../../utils/checkDateIsValid";
 
 type CountActionKind = "YEAR" | "MONTH" | "DAY";
 interface CountAction {

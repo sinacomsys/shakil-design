@@ -17,6 +17,7 @@
     "build-storybook": "yarn compile && build-storybook",
     "zeplin": "zeplin connect",
     "release": "yarn lint-commit  && yarn compile  && npx lerna publish",
+    "release-utils": "yarn workspace @shakil-design/utils publish",
     "publish-npm": "yarn lint-commit && yarn compile && npm publish",
     "lerna-watch": "lerna run watch --stream",
     "lerna-build": "lerna run compile --stream",
@@ -90,8 +91,8 @@
   },
   "dependencies": {
     "@sentry/browser": "^7.1.1",
-    "@shakil-design/component": "^0.0.2",
-    "@shakil-design/utils": "^0.0.2",
+    "@shakil-design/component": "^0.0.3",
+    "@shakil-design/utils": "^0.0.3",
     "moment-jalaali": "^0.10.0",
     "react-measure": "^2.5.2",
     "react-poper": "^1.1.5",
