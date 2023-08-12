@@ -9,8 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "compile": "tsc -b",
-    "publish": "npm publish"
+    "compile": "tsc -b"
   },
   "private": false,
   "sideEffects": false,
@@ -20,5 +19,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "408e31dfffcc3cf8f73496b9fbf8cdbf68c73526"
+  "gitHead": "a3878908a7a9455f743a32f2e99b083db2c57cf3"
 }
