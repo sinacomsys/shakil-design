@@ -4,7 +4,7 @@ export interface TooltipProps {
     trigger?: "click" | "hover";
     children: React.ReactNode;
     content: React.ReactNode;
-    arrowColor: string;
+    arrowColor?: string;
     placement?: PopperProps<unknown>["placement"];
     hasMask?: boolean;
     maskStyle?: React.CSSProperties;

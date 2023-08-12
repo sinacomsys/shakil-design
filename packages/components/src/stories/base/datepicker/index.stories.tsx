@@ -12,26 +12,7 @@ export default {
 const Template: Story<any> = () => (
   <StoryContainer>
     <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-      <Tooltip
-        placement="bottom"
-        arrowColor="#575757"
-        content={
-          <DatePicker
-            onChange={(value) => {
-              console.log(value);
-            }}
-            onDayChange={(value) => {
-              console.log(value);
-            }}
-            onMonthChange={(value) => {
-              console.log(value);
-            }}
-            onYearChange={(value) => {
-              console.log(value);
-            }}
-          />
-        }
-      >
+      <Tooltip placement="bottom" arrowColor="#575757" content={<DatePicker />}>
         <Button>Date Picker</Button>
       </Tooltip>
     </div>
