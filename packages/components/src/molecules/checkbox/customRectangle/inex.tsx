@@ -1,7 +1,7 @@
 import { useWindowSize } from "usehooks-ts";
 import { useTheme } from "../../../theme/context";
 import { pxToVh } from "@shakil-design/utils";
-import { Unit } from "../../../../types";
+import { Unit } from "../../../types";
 
 export const WIDTH = 16;
 const indeterminate = 10;

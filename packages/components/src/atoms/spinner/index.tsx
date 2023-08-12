@@ -1,5 +1,5 @@
 import { pxToVh } from "@shakil-design/utils";
-import { Unit } from "../../../types";
+import { Unit } from "../../types";
 import { useTheme, Colors } from "../../theme/context";
 import { useStyle } from "./style";
 
@@ -19,7 +19,7 @@ export interface SpinnerProps {
 const Spinner = ({
   spinerColor = Colors.color_primary_1,
   size,
-  unit = "viewPort",
+  unit = "viewport",
 }: SpinnerProps) => {
   const { color_primary_1 } = useTheme();
   const classes = useStyle();
@@ -45,7 +45,7 @@ const Spinner = ({
       ? LARGE
       : MEDIUM;
 
-  const _width = unit === "viewPort" ? `${pxToVh(width)}vh` : width;
+  const _width = unit === "viewport" ? `${pxToVh(width)}vh` : width;
 
   return (
     <div style={{ width: _width, height: _width }} className={classes.ldsRing}>

@@ -4,7 +4,7 @@ import { Indeterminate } from "./customRectangle/indeterminate";
 import { CustomRectangle } from "./customRectangle/inex";
 import { useStyles } from "./style";
 import { pxToVhString } from "@shakil-design/utils";
-import { Unit } from "../../../types";
+import { Unit } from "../../types";
 
 export interface CheckBoxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -56,7 +56,7 @@ const CheckBox = ({
       </div>
 
       {typeof children === "string" ? (
-        <Text size={unit === "viewPort" ? pxToVhString(16) : 16}>
+        <Text size={unit === "viewport" ? pxToVhString(16) : 16}>
           {children}
         </Text>
       ) : (
