@@ -2921,11 +2921,6 @@
   resolved "https://registry.yarnpkg.com/@shakil-design/asset/-/asset-0.0.2.tgz#5c63e23317b00cf6099d525ff61031ef0ed6e253"
   integrity sha512-JdEHWTiQFD8QqRvagXOGmoXH7qfOVbYjTbExBnlCKBU7o2PZ5rdf6zpqJUjUrcyJK6DsKW+Wxq7BiNgqgMUv4w==
 
-"@shakil-design/utils@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@shakil-design/utils/-/utils-0.0.3.tgz#e14fbfa1eeee0747a95d41d0de33e7ee3792d49a"
-  integrity sha512-gidP4LXIk3ySJTFjJ6BnP6ALfccbdCtU4adJU6lD1vWeZPcIEEsVvK6BKMcqjSvdlhVcCV8Dhaoy1NMcZoTsYQ==
-
 "@sigstore/bundle@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@sigstore/bundle/-/bundle-1.0.0.tgz#2f2f4867f434760f4bc6f4b4bbccbaecd4143bc3"
