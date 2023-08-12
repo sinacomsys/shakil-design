@@ -9,11 +9,7 @@ const useStyles = createUseStyles(
         backgroundColor: theme.color_primary_7,
         color: theme.color_primary_1,
         border: "none",
-        paddingInline: 10,
-        paddingBlock: 10,
-        borderRadius: 7,
         outline: "none",
-        height: 32,
       },
       disabled: {
         backgroundColor: theme.color_background,

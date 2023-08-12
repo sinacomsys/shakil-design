@@ -8,8 +8,7 @@
  */
 
 import React from "react";
-import { TextProps } from "../../atoms";
-// import { TextProps } from "../../atoms";
+import { TextProps, Unit } from "../../atoms";
 
 interface InputElement
   extends Omit<
@@ -21,6 +20,7 @@ interface InputElement
 }
 
 export interface TextInputProps extends Omit<InputElement, "autoCorrect"> {
+  unit?: Unit;
   className?: string;
   autoCapitalize?: "characters" | "none" | "sentences" | "words";
   theme?: TextProps["theme"];

@@ -5,6 +5,7 @@ import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useThemes } from "../../atoms/text/style";
+import { pxToVhString } from "@shakil-design/utils";
 
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -68,6 +69,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       testID,
       disabled,
       theme,
+      unit = "viewPort",
       ...rest
     },
     forwardedRef,
@@ -321,6 +323,10 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
     const themes = useThemes();
+    const _height = unit === "viewPort" ? pxToVhString(32) : 32;
+    const _borderRadius = unit === "viewPort" ? pxToVhString(7) : 7;
+    const _paddingBlock = unit === "viewPort" ? pxToVhString(8) : 8;
+    const _paddingInline = unit === "viewPort" ? pxToVhString(10) : 10;
 
     return multiline ? (
       <textarea
@@ -339,6 +345,12 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
         ref={setRef}
         type={rest.type}
         disabled={disabled}
+        style={{
+          height: _height,
+          borderRadius: _borderRadius,
+          paddingInline: _paddingInline,
+          paddingBlock: _paddingBlock,
+        }}
       />
     );
   },
