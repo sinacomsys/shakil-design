@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Loading, Text } from "../../../atoms";
+import { Spinner, Text } from "../../../atoms";
 import { BaseIcon } from "../../../atoms/baseIcon";
 import React from "react";
 import { useTheme } from "../../../theme/context";
@@ -53,7 +53,7 @@ const Item = React.forwardRef<HTMLDivElement, ItemProps>(
           </Text>
           {isLoading ? (
             <div style={{ marginInlineStart: "auto" }}>
-              <Loading size="small" spinnerColor={color_warning_1} />
+              <Spinner size="small" spinerColor={color_warning_1} />
             </div>
           ) : null}
           {arrowDirection !== undefined ? (

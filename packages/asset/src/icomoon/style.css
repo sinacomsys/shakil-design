@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?wwlam8');
-  src:  url('fonts/icomoon.eot?wwlam8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?wwlam8') format('truetype'),
-    url('fonts/icomoon.woff?wwlam8') format('woff'),
-    url('fonts/icomoon.svg?wwlam8#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?wwlam8");
+  src: url("fonts/icomoon.eot?wwlam8#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?wwlam8") format("truetype"),
+    url("fonts/icomoon.woff?wwlam8") format("woff"),
+    url("fonts/icomoon.svg?wwlam8#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -49,11 +50,11 @@
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path2:before {
   content: "\e905";
   margin-left: -1.888671875em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Abstract-Service-Graph_Narrow-Rectangle-Icon:before {
   content: "\e906";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Plus-Icon-for-next-level:before {
   content: "\e907";
@@ -61,15 +62,15 @@
 }
 .icon-Abstract-Service-Graph_Trapezius-Icon:before {
   content: "\e908";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Triangle-Icon:before {
   content: "\e909";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
   content: "\e90a";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Add-Box_Add-Icon:before {
   content: "\e90b";
@@ -77,11 +78,11 @@
 }
 .icon-Amount-Boxes_Decrease:before {
   content: "\e90c";
-  color: #fff;
+  color: red;
 }
 .icon-Amount-Boxes_Increase:before {
   content: "\e90d";
-  color: #fff;
+  color: red;
 }
 .icon-BPM_Alert-Icon:before {
   content: "\e90e";
@@ -113,7 +114,7 @@
 }
 .icon-Calendar-_-Close:before {
   content: "\e915";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Combo-Calendar:before {
   content: "\e916";
@@ -121,19 +122,19 @@
 }
 .icon-Calendar-_-Month-_-Next-Month:before {
   content: "\e917";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Month-_-Previous-Month:before {
   content: "\e918";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Next-Year:before {
   content: "\e919";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Previous-Year:before {
   content: "\e91a";
-  color: #fff;
+  color: red;
 }
 .icon-Create-Project_Alert-Icon:before {
   content: "\e91b";
@@ -1330,50 +1331,50 @@
 }
 .icon-Menu-Icon-_-Create:before {
   content: "\ea15";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Cross:before {
   content: "\ea16";
 }
 .icon-Menu-Icon-_-Dashboard:before {
   content: "\ea17";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Discovery:before {
   content: "\ea18";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Export:before {
   content: "\ea19";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Faults:before {
   content: "\ea1a";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Import:before {
   content: "\ea1b";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Inventory:before {
   content: "\ea1c";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Load:before {
   content: "\ea1d";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Performance:before {
   content: "\ea1e";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Save:before {
   content: "\ea1f";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Services:before {
   content: "\ea20";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Sina-Logo .path1:before {
   content: "\ea21";
@@ -1421,11 +1422,11 @@
 }
 .icon-Menu-Icon-_-Topology:before {
   content: "\ea2a";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-User-Management:before {
   content: "\ea2b";
-  color: #fff;
+  color: red;
 }
 .icon-Modem .path1:before {
   content: "\ea2c";
@@ -1829,7 +1830,7 @@
 }
 .icon-Performance-_-Edit-Setting-of-Chart:before {
   content: "\ea7b";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-No-Chart-Yet .path1:before {
   content: "\ea7c";
@@ -1867,7 +1868,7 @@
 }
 .icon-Performance-_-Print-of-Chart:before {
   content: "\ea83";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Bullet:before {
   content: "\ea84";
@@ -2404,11 +2405,11 @@
 }
 .icon-Shelf-View-_-Loopback:before {
   content: "\eaf5";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-PRBS:before {
   content: "\eaf6";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-Refresh:before {
   content: "\eaf7";
@@ -2576,7 +2577,7 @@
 }
 .icon-Table-_-Info:before {
   content: "\eb1b";
-  color: #fff;
+  color: red;
 }
 .icon-Table-_-Search-Icon:before {
   content: "\eb1c";
@@ -2735,11 +2736,11 @@
 }
 .icon-Tree-View_Flesh-Icon-for-next-level:before {
   content: "\eb40";
-  color: #fff;
+  color: red;
 }
 .icon-Tree-View_Flesh-Icon-for-previous-level:before {
   content: "\eb41";
-  color: #fff;
+  color: red;
 }
 .icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
   content: "\eb42";

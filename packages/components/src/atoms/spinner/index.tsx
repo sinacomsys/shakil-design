@@ -1,15 +1,16 @@
-import { useTheme } from "../../../theme/context";
+import { pxToVh } from "@shakil-design/utils";
+import { useTheme, Colors } from "../../theme/context";
 import { useStyle } from "./style";
 
 const SMALL_BORDER = 1;
 const MEDIUM_BORDER = 2;
-const LARGE_BORDER = 3;
+const LARGE_BORDER = 2;
 const SMALL = 15;
 const MEDIUM = 20;
 const LARGE = 30;
 
 const Spinner = ({
-  spinerColor,
+  spinerColor = Colors.color_primary_1,
   size,
 }: {
   size?: "small" | "medium" | "large";
@@ -39,38 +40,40 @@ const Spinner = ({
       ? LARGE
       : MEDIUM;
 
+  const _width = `${pxToVh(width)}vh`;
+
   return (
-    <div style={{ width: width, height: width }} className={classes.ldsRing}>
+    <div style={{ width: _width, height: _width }} className={classes.ldsRing}>
       <div
         style={{
           borderColor: borderStyle,
           borderWidth: borderWidth,
-          width: width,
-          height: width,
+          width: _width,
+          height: _width,
         }}
       />
       <div
         style={{
           borderColor: borderStyle,
           borderWidth: borderWidth,
-          width: width,
-          height: width,
+          width: _width,
+          height: _width,
         }}
       />
       <div
         style={{
           borderColor: borderStyle,
           borderWidth: borderWidth,
-          width: width,
-          height: width,
+          width: _width,
+          height: _width,
         }}
       />
       <div
         style={{
           borderColor: borderStyle,
           borderWidth: borderWidth,
-          width: width,
-          height: width,
+          width: _width,
+          height: _width,
         }}
       />
     </div>
