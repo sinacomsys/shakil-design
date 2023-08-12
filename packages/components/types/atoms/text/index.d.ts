@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { BaseTextProps } from './baseText/baseText';
-import { fonts, fontWeights } from './style';
+import * as React from "react";
+import { BaseTextProps } from "./baseText/baseText";
+import { fonts, fontWeights } from "./style";
 interface TextProps extends BaseTextProps {
     theme?: keyof typeof fonts;
     weight?: keyof typeof fontWeights | number;

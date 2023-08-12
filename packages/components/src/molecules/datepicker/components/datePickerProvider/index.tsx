@@ -72,7 +72,6 @@ const DatePickerProvider = ({
   const onChangeDateInputText = (value: string) => {
     setInputValue(value);
     const isValid = checkIsDateValid(value);
-    console.log({ isValid });
     if (isValid) {
       setCurrentDate(moment(value, "jYYYY/jMM/jDD"));
       setSelectedDate(moment(value, "jYYYY/jMM/jDD"));
