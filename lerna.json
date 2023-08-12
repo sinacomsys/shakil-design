@@ -9,7 +9,7 @@
       "yes": true
     }
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "packages": ["packages/*"],
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
