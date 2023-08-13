@@ -3,17 +3,19 @@ import React, { useContext, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { Text } from "../../../atoms/text";
 import { useTheme } from "../../../theme/context";
-import { pxToVh } from "@shakil-design/utils";
+import { pxToVh, pxToVhString } from "@shakil-design/utils";
 import { RadioContext, ValueType } from "../context";
 import { CustomCircle } from "./customCircle";
 import { useStyles } from "./style";
+import { Unit } from "../../../types";
 export interface RadioProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "name"> {
   children?: React.ReactNode;
   value: ValueType;
+  unit?: Unit;
 }
 const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
-  ({ children, value, onFocus, onBlur, ...rest }, ref) => {
+  ({ children, value, onFocus, onBlur, unit = "viewport", ...rest }, ref) => {
     const classes = useStyles();
     const {
       color_gray_4,
@@ -84,6 +86,10 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       ? color_primary_6
       : color_primary_6;
 
+    const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
+    const rippleSize =
+      unit === "viewport" ? 2 * Math.round((pxToVh(20) * vh) / 2) : 20;
+
     return (
       <label className={classes["label"]}>
         <div ref={ref} className={classes["container"]}>
@@ -102,8 +108,8 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
           <motion.div
             className={classes["ripple"]}
             animate={{
-              width: isFocused ? 2 * Math.round((pxToVh(25) * vh) / 2) : 0,
-              height: isFocused ? 2 * Math.round((pxToVh(25) * vh) / 2) : 0,
+              width: isFocused ? rippleSize : 0,
+              height: isFocused ? rippleSize : 0,
             }}
           />
         </div>
@@ -112,7 +118,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
           <span>
             <Text
               color={isDisabled ? color_gray_4 : color_primary_1}
-              size={`${pxToVh(16)}vh`}
+              size={fontSize}
             >
               {children}
             </Text>

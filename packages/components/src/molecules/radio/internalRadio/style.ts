@@ -54,5 +54,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "internal-radio" },
 );
