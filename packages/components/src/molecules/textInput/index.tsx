@@ -85,6 +85,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       case "number-pad":
       case "numeric":
         inputMode = "numeric";
+        type = "number";
         break;
       case "decimal-pad":
         inputMode = "decimal";
@@ -350,6 +351,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           borderRadius: _borderRadius,
           paddingInline: _paddingInline,
           paddingBlock: _paddingBlock,
+          ...supportedProps.style,
         }}
       />
     );
