@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { useWindowSize } from "usehooks-ts";
-import { Unit } from ".";
+import { Unit } from "../../types";
 
 export interface CreateIcomoonIconSetProps {
   icons: {
@@ -83,7 +83,7 @@ export function createIcomoonIconSet(glyphMap: CreateIcomoonIconSetProps) {
     if (props.unit === "pixel") {
       realWidth = width;
       realHeight = height;
-    } else if (props.unit === "viewPort") {
+    } else if (props.unit === "viewport") {
       realWidth = width * vh;
       realHeight = height * vh;
     }

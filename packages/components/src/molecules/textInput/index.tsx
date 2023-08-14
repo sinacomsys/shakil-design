@@ -39,6 +39,14 @@ function isEventComposing(nativeEvent: any) {
   return nativeEvent.isComposing || nativeEvent.keyCode === 229;
 }
 
+type TextInputSupportedProps =
+  | React.TextareaHTMLAttributes<HTMLTextAreaElement>
+  | React.InputHTMLAttributes<HTMLInputElement>;
+
+type SupportedProps = Omit<TextInputSupportedProps, "value"> & {
+  value?: string | number | null;
+};
+
 const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
   (
     {
@@ -70,6 +78,13 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       disabled,
       theme,
       unit = "viewPort",
+      addonAfter,
+      addonBefore,
+      addonAfterClassName,
+      addonBeforeClassName,
+      addonAfterStyle,
+      addonBeforeStyle,
+      value,
       ...rest
     },
     forwardedRef,
@@ -295,9 +310,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       }
     }, [hostRef, selection]);
 
-    const supportedProps:
-      | React.TextareaHTMLAttributes<HTMLTextAreaElement>
-      | React.InputHTMLAttributes<HTMLInputElement> = rest;
+    const supportedProps: SupportedProps = rest;
+
+    supportedProps.value;
 
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
@@ -329,31 +344,54 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const _paddingBlock = unit === "viewPort" ? pxToVhString(8) : 8;
     const _paddingInline = unit === "viewPort" ? pxToVhString(10) : 10;
 
+    const _value = value === null || value === undefined ? "" : value;
+
     return multiline ? (
       <textarea
         ref={setRef}
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     ) : (
-      <input
-        {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
-        className={classNames(
-          classes["textInput"],
-          disabled && classes.disabled,
-          themes[theme || "Regular"],
-          className,
-        )}
-        ref={setRef}
-        type={rest.type}
-        disabled={disabled}
-        style={{
-          height: _height,
-          borderRadius: _borderRadius,
-          paddingInline: _paddingInline,
-          paddingBlock: _paddingBlock,
-          ...supportedProps.style,
-        }}
-      />
+      <div className={classes["inputWrapper"]}>
+        <input
+          {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
+          value={_value as any}
+          className={classNames(
+            classes["textInput"],
+            disabled && classes.disabled,
+            themes[theme || "Regular"],
+            className,
+          )}
+          ref={setRef}
+          type={rest.type}
+          disabled={disabled}
+          style={{
+            height: _height,
+            borderRadius: _borderRadius,
+            paddingInline: _paddingInline,
+            paddingBlock: _paddingBlock,
+            ...supportedProps.style,
+          }}
+        />
+        <div
+          className={classNames(
+            classes["addonBefore"],
+            addonBeforeClassName && addonBeforeClassName,
+          )}
+          style={addonBeforeStyle}
+        >
+          {addonBefore}
+        </div>
+        <div
+          className={classNames(
+            classes["addonAfter"],
+            addonAfterClassName && addonAfterClassName,
+          )}
+          style={addonAfterStyle}
+        >
+          {addonAfter}
+        </div>
+      </div>
     );
   },
 );

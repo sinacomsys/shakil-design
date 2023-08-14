@@ -15,14 +15,14 @@ const NumberInput = ({
   wrapperStyle,
   onDecrease,
   onIncrease,
-  unit = "viewPort",
+  unit = "viewport",
   ...rest
 }: NumberInput) => {
   const classes = useStyles();
   const { color_primary_1, color_gray_4 } = useTheme();
-  const iconWidth = unit === "viewPort" ? pxToVh(12) : 12;
-  const iconHeight = unit === "viewPort" ? pxToVh(7) : 7;
-  const fontSize = unit === "viewPort" ? pxToVhString(14) : 14;
+  const iconWidth = unit === "viewport" ? pxToVh(12) : 12;
+  const iconHeight = unit === "viewport" ? pxToVh(7) : 7;
+  const fontSize = unit === "viewport" ? pxToVhString(14) : 14;
   return (
     <div style={{ position: "relative", ...wrapperStyle }}>
       <BaseIcon

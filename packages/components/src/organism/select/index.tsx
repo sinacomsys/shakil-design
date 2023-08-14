@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
-import { ScrollView, Text } from "../../atoms";
+import { BaseIcon, ScrollView } from "../../atoms";
 import { TextInput } from "../../molecules/textInput";
-import { useTheme } from "../../theme/context";
+// import { useTheme } from "../../theme/context";
 import { useOnClickOutSide } from "@shakil-design/utils";
 import { Clear } from "./clear";
 import { Option } from "./option";
@@ -13,14 +13,14 @@ import { Default, OptionValue, SelectProps, Value } from "./types";
 const Select = <T extends Record<string, unknown> = Default>({
   data,
   value: propValue,
-  labelExtractor = (item: T) => item.label as React.ReactNode,
+  labelExtractor = (item: T) => item.label as string,
   valueExtractor = (item: T) => item.value as Value,
   onChange,
   onClear,
   disabled,
+  unit = "viewport",
 }: SelectProps<T>) => {
   const classes = useStyles();
-  const { color_primary_1, color_primary_3 } = useTheme();
   const [internalValue, setInternalValue] = useState<OptionValue | null>(null);
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
@@ -58,15 +58,6 @@ const Select = <T extends Record<string, unknown> = Default>({
 
   const _value = propValue || internalValue?.value;
 
-  const selectedItemFromOutside = data.find(
-    (item) => valueExtractor(item) === propValue,
-  );
-
-  let _label: React.ReactNode | null = null;
-  if (selectedItemFromOutside) {
-    _label = labelExtractor(selectedItemFromOutside);
-  }
-
   const handleOnChange = (selectedItemValue: OptionValue) => {
     setVisible(false);
     if (!propValue) {
@@ -84,11 +75,6 @@ const Select = <T extends Record<string, unknown> = Default>({
     }
   };
 
-  const handleMouseEvent = () => {
-    if (disabled) return;
-    setIsHovered((prev) => !prev);
-  };
-
   const handleOnClear = () => {
     setInternalValue(null);
     setVisible(false);
@@ -104,36 +90,49 @@ const Select = <T extends Record<string, unknown> = Default>({
     },
   });
 
+  const onMouseEnter = () => {
+    if (disabled) return;
+    setIsHovered(true);
+  };
+
+  const onMouseLeave = () => {
+    if (disabled) return;
+    setIsHovered(false);
+  };
+
   return (
     <>
       <div
-        style={{ cursor: disabled ? "not-allowed" : "pointer" }}
-        onClick={handleOnClick}
-        ref={handleRefOfRefrenceElement}
-        className={classes["select"]}
-        onMouseEnter={handleMouseEvent}
-        onMouseLeave={handleMouseEvent}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        className={classes["selectWrapper"]}
       >
-        <div style={{ flex: 1, justifyContent: "center", display: "flex" }}>
-          {_label || internalValue?.label ? (
-            <Text theme="Regular" size={14} color={color_primary_1}>
-              {_label || internalValue?.label}
-            </Text>
-          ) : (
-            <Text theme="Regular" size={14} color={color_primary_3}>
-              {"Select an Item..."}
-            </Text>
-          )}
-        </div>
-        <Clear
-          handleOnClear={handleOnClear}
-          whatVisible={
-            isHoverd && _value ? "cross" : !isHoverd || !_value ? "arrow" : null
-          }
-          isVisible={isVisible}
+        <TextInput
+          ref={handleRefOfRefrenceElement}
+          onClick={handleOnClick}
+          value={internalValue?.label}
+          style={{
+            textAlign: "center",
+            caretColor: "transparent",
+            cursor: "pointer",
+          }}
+          unit={unit}
+          placeholder={"Select item"}
         />
+        <div className={classes.clearIcon}>
+          <Clear
+            handleOnClear={handleOnClear}
+            whatVisible={
+              isHoverd && _value
+                ? "cross"
+                : !isHoverd || !_value
+                ? "arrow"
+                : null
+            }
+            isVisible={isVisible}
+          />
+        </div>
       </div>
-
       {body.current && isVisible
         ? ReactDOM.createPortal(
             <>
@@ -144,7 +143,18 @@ const Select = <T extends Record<string, unknown> = Default>({
               >
                 <div style={{ width }} className={classes["overlay"]}>
                   <div className={classes["inputWrapper"]}>
-                    <TextInput placeholder="Search" />
+                    <TextInput
+                      placeholder="Search"
+                      unit="pixel"
+                      addonAfter={
+                        <BaseIcon
+                          color={"#d1d1d1"}
+                          name="Search-Box_Search-Icon"
+                          unit="pixel"
+                          size={{ height: 15, width: 15 }}
+                        />
+                      }
+                    />
                   </div>
                   <ScrollView style={{ flex: 1 }}>
                     {data.map((item) => {

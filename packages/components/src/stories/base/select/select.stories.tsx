@@ -8,9 +8,16 @@ export default {
   component: Select,
 } as Meta<SelectProps>;
 
+const fakeData = [...new Array(35)].map((_, index) => {
+  return {
+    value: `TestValue${index}`,
+    label: `Test Label${index}`,
+  };
+});
+
 const Template: Story<SelectProps> = () => (
   <StoryContainer>
-    <Select disabled data={[{ label: "sdf", value: "sdfsdfsdf" }]} />
+    <Select data={fakeData} />
   </StoryContainer>
 );
 

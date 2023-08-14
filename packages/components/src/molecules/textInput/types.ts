@@ -8,7 +8,8 @@
  */
 
 import React from "react";
-import { TextProps, Unit } from "../../atoms";
+import { TextProps } from "../../atoms";
+import { Unit } from "../../types";
 
 interface InputElement
   extends Omit<
@@ -19,7 +20,14 @@ interface InputElement
   href?: string;
 }
 
-export interface TextInputProps extends Omit<InputElement, "autoCorrect"> {
+export interface TextInputProps
+  extends Omit<InputElement, "autoCorrect" | "value"> {
+  addonAfterStyle?: React.CSSProperties;
+  addonBeforeStyle?: React.CSSProperties;
+  addonAfterClassName?: string;
+  addonBeforeClassName?: string;
+  addonAfter?: React.ReactNode;
+  addonBefore?: React.ReactNode;
   unit?: Unit;
   className?: string;
   autoCapitalize?: "characters" | "none" | "sentences" | "words";
@@ -92,5 +100,5 @@ export interface TextInputProps extends Omit<InputElement, "autoCorrect"> {
   name?: string;
   spellCheck?: boolean;
   style?: React.CSSProperties;
-  value?: string | number;
+  value?: string | number | null;
 }
