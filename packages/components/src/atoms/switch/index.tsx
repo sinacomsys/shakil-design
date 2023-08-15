@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "../../theme/context";
+import { useStyles } from "./style";
+import { Unit } from "../../types";
+import { pxToVhString } from "@shakil-design/utils";
 
 interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
@@ -10,12 +13,19 @@ interface SwitchProps
     event: React.ChangeEvent<HTMLInputElement>,
   ) => void;
   name?: string;
+  unit?: Unit;
 }
 
-const CIRCLE_WIDTH = 10;
+const CIRCLE_WIDTH = 12;
+const SWITCH_WIDTH = 30;
+const SWITCH_HEIGHT = 16;
 
 const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  ({ onChange, checked, name, onFocus, onBlur, ...rest }, ref) => {
+  (
+    { onChange, checked, name, onFocus, onBlur, unit = "viewport", ...rest },
+    ref,
+  ) => {
+    const classes = useStyles();
     const { color_secondary_1, color_warning_3 } = useTheme();
     const [isCheck, setIsCheck] = useState<boolean>(false);
     const [isFocused, setFocus] = useState(false);
@@ -39,33 +49,27 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
       onBlur?.(e);
     };
 
+    const _width =
+      unit === "viewport" ? pxToVhString(SWITCH_WIDTH) : SWITCH_WIDTH;
+    const _height =
+      unit === "viewport" ? pxToVhString(SWITCH_HEIGHT) : SWITCH_HEIGHT;
+    const _circle =
+      unit === "viewport" ? pxToVhString(CIRCLE_WIDTH) : CIRCLE_WIDTH;
+
     return (
       <label style={{ display: "inline-block", position: "relative" }}>
         <div
           role={"switch"}
+          className={classes["wrapper"]}
           style={{
-            width: 26,
-            height: 14,
             backgroundColor: isCheck ? color_secondary_1 : color_warning_3,
-            borderRadius: 8,
-            border: 0,
-            outline: "none",
-            padding: 2,
-            position: "relative",
-            cursor: "pointer",
-            zIndex: 2,
+            width: _width,
+            height: _height,
           }}
         >
           <input
             {...rest}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-              margin: 0,
-              opacity: 0,
-            }}
+            className={classes["hiddenCheckbox"]}
             ref={ref}
             onChange={handleOnChange}
             onFocus={focusHandler}
@@ -76,27 +80,19 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           />
           <div style={{ position: "relative", height: "100%" }}>
             <motion.div
-              animate={{ left: isCheck ? `calc(100% - ${CIRCLE_WIDTH}px)` : 0 }}
+              animate={{ left: isCheck ? `calc(100% - ${_circle})` : 0 }}
               style={{
-                width: CIRCLE_WIDTH,
-                height: CIRCLE_WIDTH,
-                border: "2px solid white",
-                borderRadius: "50%",
-                position: "absolute",
+                width: _circle,
+                height: _circle,
               }}
+              className={classes["circle"]}
             />
           </div>
         </div>
         <motion.div
+          className={classes["ripple"]}
           style={{
-            opacity: 0.2,
             backgroundColor: isCheck ? color_secondary_1 : color_warning_3,
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%,-50%)",
-            borderRadius: 8,
-            zIndex: 1,
           }}
           animate={{
             width: isFocused ? 30 : 0,
