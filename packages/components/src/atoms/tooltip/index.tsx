@@ -133,10 +133,10 @@ const Tooltip = ({
         ...styles.arrow,
         transform: `${styles?.arrow?.transform} rotate(45deg)`,
         backgroundColor: arrowColor,
-        ...(currentPlacement === "top" && { bottom: -4 }),
-        ...(currentPlacement === "bottom" && { top: -4 }),
-        ...(currentPlacement === "left" && { right: -4 }),
-        ...(currentPlacement === "right" && { left: -4 }),
+        ...(currentPlacement?.includes("top") && { bottom: -4 }),
+        ...(currentPlacement?.includes("bottom") && { top: -4 }),
+        ...(currentPlacement?.includes("left") && { right: -4 }),
+        ...(currentPlacement?.includes("right") && { left: -4 }),
       }}
     />
   );

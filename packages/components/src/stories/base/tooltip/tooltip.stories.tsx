@@ -12,6 +12,7 @@ const Template: Story<TooltipProps> = () => {
     <StoryContainer>
       <Tooltip
         trigger="click"
+        placement="right-end"
         content={
           <div style={{ height: 250, width: 250, backgroundColor: "red" }}>
             Tooltip Content
@@ -19,7 +20,7 @@ const Template: Story<TooltipProps> = () => {
         }
         arrowColor={"red"}
       >
-        <button style={{ marginLeft: 200 }}>hover!</button>
+        <button style={{ marginLeft: 400, marginTop: 400 }}>hover!</button>
       </Tooltip>
     </StoryContainer>
   );
