@@ -5,7 +5,7 @@ import React from "react";
 export default {
   title: "tree",
   component: Tree,
-} as Meta<TreeProps>;
+} as Meta<TreeProps<any>>;
 
 const mockData = [
   { id: "1", title: "test1" },
@@ -22,7 +22,14 @@ const mockData = [
 
         children: [
           { id: "4-1-1", title: "test4-1-1" },
-          { id: "4-1-2", title: "test4-1-2" },
+          {
+            id: "4-1-2",
+            title: "test4-1-2",
+            children: [
+              { id: "4-1-1-1", title: "test4-1-1" },
+              { id: "4-1-2-2", title: "test4-1-2" },
+            ],
+          },
         ],
       },
       { id: "4-2", title: "test4-2" },
@@ -38,7 +45,6 @@ const Template: Story<any> = () => (
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: "#EEEEEE",
         padding: 50,
       }}
     >

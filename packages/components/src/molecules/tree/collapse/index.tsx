@@ -38,17 +38,18 @@ const Collapse = <T extends TreeBasicType<T>>({
   const [isLoading, setLoading] = useState<boolean>(false);
 
   const handleOnClick = () => {
-    setLoading(true);
     onClick?.({ data, level });
+    if (children) {
+      setOpen((prev) => !prev);
+    }
+    if (!onLoadData) return;
+    setLoading(true);
     onLoadData?.({ data, level }).finally(() => {
       setLoading(false);
       if (!children) {
         setOpen(true);
       }
     });
-    if (children) {
-      setOpen((prev) => !prev);
-    }
   };
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   }, [defaultOpen]);
 
   return (
-    <>
+    <div style={{ paddingTop: 20 }}>
       <Item
         ref={ref}
         isActive={id === activeItemId}
@@ -71,37 +72,42 @@ const Collapse = <T extends TreeBasicType<T>>({
         onClick={handleOnClick}
         arrowDirection={children ? (isOpen ? "up" : "down") : undefined}
       />
-
       {children ? (
         <Measure bounds>
           {({ contentRect, measureRef }) => {
             const height = contentRect.bounds?.height ?? 0;
             return (
               <motion.div
-                style={{ position: "relative", marginBlockEnd: 20, height: 0 }}
-                animate={{ height: isOpen ? height : 0 }}
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                  height: 0,
+                }}
+                animate={{
+                  height: isOpen ? "auto" : 0,
+                }}
               >
                 <div ref={measureRef}>
-                  {isOpen && children}
-                  {isOpen ? (
+                  {children}
+                  {
                     <div
                       style={{
                         position: "absolute",
-                        top: -20,
-                        left: 14,
-                        height: height,
+                        top: 0,
+                        left: 11,
+                        height: height - 15,
                         width: 0,
                         borderLeft: `2px dotted ${color_primary_2}`,
                       }}
                     />
-                  ) : null}
+                  }
                 </div>
               </motion.div>
             );
           }}
         </Measure>
       ) : null}
-    </>
+    </div>
   );
 };
 

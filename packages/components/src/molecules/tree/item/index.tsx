@@ -51,23 +51,29 @@ const Item = React.forwardRef<HTMLDivElement, ItemProps>(
           <Text theme="Regular" size={fontSize} color={textColor}>
             {title}
           </Text>
-          {isLoading ? (
-            <div style={{ marginInlineStart: "auto" }}>
+          <div
+            style={{
+              marginInlineStart: "auto",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {isLoading ? (
               <Spinner size="small" spinerColor={color_warning_1} />
-            </div>
-          ) : null}
-          {arrowDirection !== undefined ? (
-            <BaseIcon
-              wrapperClassName={classNames(
-                classes["arrowDown"],
-                arrowDirection === "up" && classes["arrowUp"],
-              )}
-              name={"Amount-Boxes_Decrease"}
-              size={{ height: 6, width: 12 }}
-              wrapperStyle={{ marginInlineStart: "auto" }}
-              color={color_primary_2}
-            />
-          ) : null}
+            ) : null}
+            {!isLoading && arrowDirection !== undefined ? (
+              <BaseIcon
+                wrapperClassName={classNames(
+                  classes["arrowDown"],
+                  arrowDirection === "up" && classes["arrowUp"],
+                )}
+                name={"Amount-Boxes_Decrease"}
+                size={{ height: 6, width: 12 }}
+                wrapperStyle={{ marginInlineStart: "auto" }}
+                color={color_primary_2}
+              />
+            ) : null}
+          </div>
         </div>
       </div>
     );
