@@ -1,5 +1,15 @@
+import React from "react";
 import { createUseStyles } from "react-jss";
 import { theming } from "../../theme";
+
+const addonStyle: React.CSSProperties = {
+  position: "absolute",
+  transform: "translateY(-50%)",
+  justifyContent: "center",
+  alignItems: "center",
+  display: "flex",
+  insetBlockStart: "50%",
+};
 
 const useStyles = createUseStyles(
   (theme) => {
@@ -9,16 +19,23 @@ const useStyles = createUseStyles(
         backgroundColor: theme.color_primary_7,
         color: theme.color_primary_1,
         border: "none",
-        paddingInline: 10,
-        paddingBlock: 10,
-        borderRadius: 7,
         outline: "none",
-        height: 32,
       },
       disabled: {
         backgroundColor: theme.color_background,
         cursor: "not-allowed",
         color: theme.color_gray_4,
+      },
+      inputWrapper: {
+        position: "relative",
+      },
+      addonBefore: {
+        ...addonStyle,
+        insetInlineStart: 10,
+      },
+      addonAfter: {
+        ...addonStyle,
+        insetInlineEnd: 10,
       },
     };
   },

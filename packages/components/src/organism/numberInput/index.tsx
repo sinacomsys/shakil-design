@@ -1,6 +1,8 @@
+import { pxToVh, pxToVhString } from "@shakil-design/utils";
 import { BaseIcon } from "../../atoms";
 import { TextInput, TextInputProps } from "../../molecules";
 import { theming } from "../../theme";
+import { useStyles } from "./style";
 const { useTheme } = theming;
 
 interface NumberInput extends TextInputProps {
@@ -13,22 +15,21 @@ const NumberInput = ({
   wrapperStyle,
   onDecrease,
   onIncrease,
+  unit = "viewport",
   ...rest
 }: NumberInput) => {
+  const classes = useStyles();
   const { color_primary_1, color_gray_4 } = useTheme();
+  const iconWidth = unit === "viewport" ? pxToVh(12) : 12;
+  const iconHeight = unit === "viewport" ? pxToVh(7) : 7;
+  const fontSize = unit === "viewport" ? pxToVhString(14) : 14;
   return (
     <div style={{ position: "relative", ...wrapperStyle }}>
       <BaseIcon
         name={"Amount-Boxes_Decrease"}
-        size={{ height: 7, width: 12 }}
-        unit={"pixel"}
-        wrapperStyle={{
-          position: "absolute",
-          left: 10,
-          top: "50%",
-          transform: "translateY(-50%)",
-          cursor: "pointer",
-        }}
+        size={{ height: iconHeight, width: iconWidth }}
+        unit={unit}
+        wrapperClassName={classes["arrowDown"]}
         color={rest.disabled ? color_gray_4 : color_primary_1}
         onClick={onDecrease}
       />
@@ -36,19 +37,20 @@ const NumberInput = ({
         onClick={onIncrease}
         color={rest.disabled ? color_gray_4 : color_primary_1}
         name={"Amount-Boxes_Increase"}
-        size={{ height: 7, width: 12 }}
-        unit={"pixel"}
-        wrapperStyle={{
-          position: "absolute",
-          right: 10,
-          top: "50%",
-          transform: "translateY(-50%)",
-          cursor: "pointer",
-        }}
+        size={{ height: iconHeight, width: iconWidth }}
+        unit={unit}
+        wrapperClassName={classes["arrowUp"]}
       />
       <TextInput
         {...rest}
-        style={{ paddingInline: 24, textAlign: "center", ...rest.style }}
+        unit={unit}
+        className={classes["input"]}
+        style={{
+          paddingInline: 24,
+          textAlign: "center",
+          fontSize: fontSize,
+          ...rest.style,
+        }}
       />
     </div>
   );

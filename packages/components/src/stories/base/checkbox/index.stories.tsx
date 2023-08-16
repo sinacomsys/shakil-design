@@ -10,8 +10,12 @@ export default {
 
 const Template: Story<CheckBoxProps> = (args) => {
   const [isCheck, SetValue] = useState(false);
+  const [isChecked2, SetValue2] = useState(false);
   const hangleOnChange = () => {
     SetValue((prev) => !prev);
+  };
+  const hangleOnChange2 = () => {
+    SetValue2((prev) => !prev);
   };
   return (
     <StoryContainer>
@@ -20,10 +24,22 @@ const Template: Story<CheckBoxProps> = (args) => {
           backgroundColor: "gray",
           width: 200,
           height: 200,
+          display: "flex",
+          flexDirection: "column",
+          rowGap: 50,
+          padding: 20,
         }}
       >
         <CheckBox {...args} checked={isCheck} onChange={hangleOnChange}>
-          test
+          Pixel Unit
+        </CheckBox>
+        <CheckBox
+          {...args}
+          unit="viewPort"
+          checked={isChecked2}
+          onChange={hangleOnChange2}
+        >
+          ViewPort Unit
         </CheckBox>
       </div>
     </StoryContainer>

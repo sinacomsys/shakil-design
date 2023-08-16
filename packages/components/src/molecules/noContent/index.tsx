@@ -16,7 +16,7 @@ const NoContent = ({ text }: NoContentProps) => {
         wrapperStyle={{ marginBottom: 10 }}
         size={{ height: pxToVh(107), width: pxToVh(91) }}
         name="Shelf-View-_-Traffic-Cone"
-        unit="viewPort"
+        unit="viewport"
       />
       <Text color={color_warning_3} size={16}>
         {text}

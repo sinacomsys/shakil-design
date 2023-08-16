@@ -5,6 +5,7 @@ import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useThemes } from "../../atoms/text/style";
+import { pxToVhString } from "@shakil-design/utils";
 
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -38,6 +39,14 @@ function isEventComposing(nativeEvent: any) {
   return nativeEvent.isComposing || nativeEvent.keyCode === 229;
 }
 
+type TextInputSupportedProps =
+  | React.TextareaHTMLAttributes<HTMLTextAreaElement>
+  | React.InputHTMLAttributes<HTMLInputElement>;
+
+type SupportedProps = Omit<TextInputSupportedProps, "value"> & {
+  value?: string | number | null;
+};
+
 const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
   (
     {
@@ -68,6 +77,14 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       testID,
       disabled,
       theme,
+      unit = "viewPort",
+      addonAfter,
+      addonBefore,
+      addonAfterClassName,
+      addonBeforeClassName,
+      addonAfterStyle,
+      addonBeforeStyle,
+      value,
       ...rest
     },
     forwardedRef,
@@ -83,6 +100,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       case "number-pad":
       case "numeric":
         inputMode = "numeric";
+        type = "number";
         break;
       case "decimal-pad":
         inputMode = "decimal";
@@ -292,9 +310,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       }
     }, [hostRef, selection]);
 
-    const supportedProps:
-      | React.TextareaHTMLAttributes<HTMLTextAreaElement>
-      | React.InputHTMLAttributes<HTMLInputElement> = rest;
+    const supportedProps: SupportedProps = rest;
+
+    supportedProps.value;
 
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
@@ -321,6 +339,12 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
     const themes = useThemes();
+    const _height = unit === "viewPort" ? pxToVhString(32) : 32;
+    const _borderRadius = unit === "viewPort" ? pxToVhString(7) : 7;
+    const _paddingBlock = unit === "viewPort" ? pxToVhString(8) : 8;
+    const _paddingInline = unit === "viewPort" ? pxToVhString(10) : 10;
+
+    const _value = value === null || value === undefined ? "" : value;
 
     return multiline ? (
       <textarea
@@ -328,18 +352,46 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     ) : (
-      <input
-        {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
-        className={classNames(
-          classes["textInput"],
-          disabled && classes.disabled,
-          themes[theme || "Regular"],
-          className,
-        )}
-        ref={setRef}
-        type={rest.type}
-        disabled={disabled}
-      />
+      <div className={classes["inputWrapper"]}>
+        <input
+          {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
+          value={_value as any}
+          className={classNames(
+            classes["textInput"],
+            disabled && classes.disabled,
+            themes[theme || "Regular"],
+            className,
+          )}
+          ref={setRef}
+          type={rest.type}
+          disabled={disabled}
+          style={{
+            height: _height,
+            borderRadius: _borderRadius,
+            paddingInline: _paddingInline,
+            paddingBlock: _paddingBlock,
+            ...supportedProps.style,
+          }}
+        />
+        <div
+          className={classNames(
+            classes["addonBefore"],
+            addonBeforeClassName && addonBeforeClassName,
+          )}
+          style={addonBeforeStyle}
+        >
+          {addonBefore}
+        </div>
+        <div
+          className={classNames(
+            classes["addonAfter"],
+            addonAfterClassName && addonAfterClassName,
+          )}
+          style={addonAfterStyle}
+        >
+          {addonAfter}
+        </div>
+      </div>
     );
   },
 );

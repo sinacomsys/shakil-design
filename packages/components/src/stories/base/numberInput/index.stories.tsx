@@ -9,15 +9,9 @@ export default {
 
 const Template: Story<any> = () => (
   <StoryContainer>
-    <div style={{ width: 100 }}>
-      <input />
-      <NumberInput
-        wrapperStyle={{ marginBottom: 40 }}
-        disabled
-        style={{ fontSize: 20 }}
-        value="122"
-      />
-      <NumberInput />
+    <div style={{ width: 200 }}>
+      <NumberInput unit="viewPort" wrapperStyle={{ marginBottom: 40 }} />
+      <NumberInput keyboardType="numeric" unit="pixel" />
     </div>
   </StoryContainer>
 );

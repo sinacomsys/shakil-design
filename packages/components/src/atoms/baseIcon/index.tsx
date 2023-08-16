@@ -5,13 +5,11 @@ import {
   createIcomoonIconSet,
   CreateIcomoonIconSetProps,
 } from "./createIconSet";
-// import './icon';
+import { Unit } from "../../types";
 import { IconsNames } from "./iconNames";
 const IconMoon = createIcomoonIconSet(
   icomoonJson as unknown as CreateIcomoonIconSetProps,
 );
-
-export type Unit = "viewPort" | "pixel";
 
 interface BaseIconProps
   extends Omit<

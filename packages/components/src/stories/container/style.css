@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  /* direction: rtl; */
 }
 
 /* These styles disable body scrolling if you are using <ScrollView> */

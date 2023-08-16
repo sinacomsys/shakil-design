@@ -30,5 +30,15 @@ export const useStyles = createUseStyles(() => {
       top: 0,
       left: 0,
     },
+    selectWrapper: {
+      position: "relative",
+    },
+    clearIcon: {
+      position: "absolute",
+      top: "50%",
+      insetInlineEnd: 10,
+      transform: "translateY(-50%)",
+      cursor: "pointer",
+    },
   };
 });
