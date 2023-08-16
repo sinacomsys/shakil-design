@@ -1,14 +1,6 @@
 import React from "react";
-interface ItemProps {
-    title?: string;
-    arrowDirection?: "up" | "down";
-    level: number;
-    backgroundColor: string;
-    isActive?: boolean;
-    textColor: string;
-    fontSize?: number;
-    isLoading: boolean;
-    onClick?: () => void;
-}
-declare const Item: React.ForwardRefExoticComponent<ItemProps & React.RefAttributes<HTMLDivElement>>;
-export { Item };
+import { ItemProps, TreeBasicType } from "../types";
+declare const RefWrapper: <T extends TreeBasicType<T>>(p: ItemProps<T> & {
+    ref?: React.Ref<HTMLDivElement> | undefined;
+}) => React.ReactElement;
+export { RefWrapper as Item };

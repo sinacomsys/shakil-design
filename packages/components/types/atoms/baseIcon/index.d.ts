@@ -1,6 +1,6 @@
 import React from "react";
+import { Unit } from "../../types";
 import { IconsNames } from "./iconNames";
-export type Unit = "viewPort" | "pixel";
 interface BaseIconProps extends Omit<React.HTMLAttributes<HTMLElement>, "className" | "style" | "children" | "color"> {
     name?: IconsNames;
     size: {

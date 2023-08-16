@@ -1,6 +1,7 @@
-import { Meta, Story } from "@storybook/react/types-6-0";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Tree, TreeProps } from "../../../molecules";
+import { Meta } from "@storybook/react/types-6-0";
+import { ComponentStory } from "@storybook/react";
+import { Tree } from "../../../molecules";
+import { TreeProps } from "../../../molecules/tree/types";
 import { StoryContainer } from "../../container";
 import React from "react";
 export default {
