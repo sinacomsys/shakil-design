@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { Unit } from "../../types";
 export type Value = string | number | null | undefined;
 export type Default = {
     value?: string | number;
@@ -8,14 +9,15 @@ export interface SelectProps<T extends Record<string, unknown> = Default> {
     data: T[];
     value?: Value;
     valueExtractor?: (item: T) => Value;
-    labelExtractor?: (item: T) => React.ReactNode;
+    labelExtractor?: (item: T) => string;
     onChange?: (item: Value) => void;
     onClear?: () => void;
     disabled?: boolean;
+    unit?: Unit;
 }
 export type OptionValue = {
     value: Value;
-    label: React.ReactNode;
+    label: string;
 };
 export interface OptionProps {
     isSelected: boolean;

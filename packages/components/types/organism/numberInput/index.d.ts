@@ -5,5 +5,5 @@ interface NumberInput extends TextInputProps {
     onIncrease?: () => void;
     wrapperStyle?: React.CSSProperties;
 }
-declare const NumberInput: ({ wrapperStyle, onDecrease, onIncrease, ...rest }: NumberInput) => import("react/jsx-dev-runtime").JSX.Element;
+declare const NumberInput: ({ wrapperStyle, onDecrease, onIncrease, unit, ...rest }: NumberInput) => import("react/jsx-dev-runtime").JSX.Element;
 export { NumberInput };
