@@ -1,23 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Measure from "react-measure";
-import { OnSelectItemProps, TreeBasicType } from "..";
-import { useTheme } from "../../../theme/context";
+import { CollapseProps, TreeBasicType } from "../types";
 import { Item } from "../item";
-
-interface CollapseProps<T> {
-  data: T;
-  title?: string;
-  children: React.ReactNode;
-  level: number;
-  backgroundColor: string;
-  textColor: string;
-  onLoadData?: (value: OnSelectItemProps<T>) => Promise<void>;
-  onClick?: (value: OnSelectItemProps<T>) => void;
-  activeItemId?: string;
-  id: string;
-  defaultOpen?: boolean;
-}
+import { useStyles } from "./style";
 
 const Collapse = <T extends TreeBasicType<T>>({
   title,
@@ -33,7 +19,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   defaultOpen,
 }: CollapseProps<T>) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { color_primary_2 } = useTheme();
+  const classes = useStyles();
   const [isOpen, setOpen] = useState(false);
   const [isLoading, setLoading] = useState<boolean>(false);
 
@@ -42,9 +28,9 @@ const Collapse = <T extends TreeBasicType<T>>({
     if (children) {
       setOpen((prev) => !prev);
     }
-    if (!onLoadData) return;
+    if (typeof onLoadData === "undefined") return;
     setLoading(true);
-    onLoadData?.({ data, level }).finally(() => {
+    onLoadData?.({ data, level })?.finally(() => {
       setLoading(false);
       if (!children) {
         setOpen(true);
@@ -62,7 +48,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   return (
     <div style={{ paddingTop: 20 }}>
       <Item
-        ref={ref}
+        data={data}
         isActive={id === activeItemId}
         isLoading={isLoading}
         textColor={textColor}
@@ -71,6 +57,7 @@ const Collapse = <T extends TreeBasicType<T>>({
         title={title}
         onClick={handleOnClick}
         arrowDirection={children ? (isOpen ? "up" : "down") : undefined}
+        ref={ref}
       />
       {children ? (
         <Measure bounds>
@@ -78,29 +65,19 @@ const Collapse = <T extends TreeBasicType<T>>({
             const height = contentRect.bounds?.height ?? 0;
             return (
               <motion.div
-                style={{
-                  position: "relative",
-                  overflow: "hidden",
-                  height: 0,
-                }}
+                className={classes["animationWrapper"]}
                 animate={{
                   height: isOpen ? "auto" : 0,
                 }}
               >
                 <div ref={measureRef}>
                   {children}
-                  {
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 11,
-                        height: height - 15,
-                        width: 0,
-                        borderLeft: `2px dotted ${color_primary_2}`,
-                      }}
-                    />
-                  }
+                  <div
+                    className={classes["dots"]}
+                    style={{
+                      height: height - 15,
+                    }}
+                  />
                 </div>
               </motion.div>
             );

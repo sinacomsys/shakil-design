@@ -33,17 +33,19 @@ const useStyle = createUseStyles(
         height: "100%",
       },
       content: {
-        marginInlineStart: 24,
-        display: "flex",
-        alignItems: "center",
         flex: 1,
-        marginInlineEnd: 13,
+        height: "100%",
       },
       arrowDown: {
         transition: "all 0.2s",
       },
       arrowUp: {
         transform: "rotate(180deg)",
+      },
+      spinnerWrapper: {
+        display: "flex",
+        alignItems: "center",
+        marginInlineEnd: 10,
       },
     };
   },

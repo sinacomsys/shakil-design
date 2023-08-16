@@ -3,26 +3,7 @@ import { useContext } from "react";
 import { useTheme } from "../../theme/context";
 import { Collapse } from "./collapse";
 import { LevelContext } from "./context/levelProvider";
-export interface TreeBasicType<T> {
-  title: string;
-  id: string;
-  parentId?: string | null;
-  children?: T[];
-}
-
-export type OnSelectItemProps<T> = {
-  data: T;
-  level: number;
-};
-
-export type OnLoadData<T> = (value: OnSelectItemProps<T>) => Promise<void>;
-export interface TreeProps<T> {
-  data: T[];
-  onSelectItem?: (value: OnSelectItemProps<T>) => void;
-  onLoadData?: (value: OnSelectItemProps<T>) => Promise<void>;
-  activeItemId?: string;
-  defaultSeletedItem?: string;
-}
+import { TreeBasicType, TreeProps } from "./types";
 
 const Tree = <T extends TreeBasicType<T>>({
   data,
