@@ -2,7 +2,7 @@ import { useWindowSize } from "usehooks-ts";
 import { useTheme } from "../../../theme/context";
 import { pxToVh } from "@shakil-design/utils";
 import { Unit } from "../../../types";
-import { WIDTH } from "./inex";
+import { WIDTH } from ".";
 
 const indeterminate = 6;
 
@@ -20,7 +20,7 @@ const Indeterminate = ({ unit }: IndeterminateProps) => {
   const width =
     unit === "pixel" ? WIDTH : 2 * Math.round((pxToVh(WIDTH) * vh) / 2);
 
-  const smallRectangleWidth =
+  const smallSquareWidth =
     unit === "pixel"
       ? indeterminate
       : 2 * Math.round((pxToVh(indeterminate) * vh) / 2);
@@ -39,8 +39,8 @@ const Indeterminate = ({ unit }: IndeterminateProps) => {
       <div
         style={{
           position: "absolute",
-          width: smallRectangleWidth,
-          height: smallRectangleWidth,
+          width: smallSquareWidth,
+          height: smallSquareWidth,
           backgroundColor: backgroundColor,
           top: "50%",
           left: "50%",
