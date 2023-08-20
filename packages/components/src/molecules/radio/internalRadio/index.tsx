@@ -19,11 +19,15 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
     const classes = useStyles();
     const {
       color_gray_4,
-      color_secondary_1,
-      color_white,
       color_primary_1,
-      color_primary_3,
-      color_primary_6,
+      radio: {
+        disableInnerCircleSelected,
+        disableInnerCricleUnselected,
+        disableStroke,
+        enableInnerCircleSelected,
+        enableInnerCircleUnselected,
+        enableStroke,
+      } = {},
     } = useTheme();
     const [isFocused, setFocus] = useState(false);
 
@@ -33,7 +37,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
     const {
       onChange,
       value: contextValue,
-      mode,
+      // mode,
       name,
     } = useContext(RadioContext);
 
@@ -56,35 +60,23 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       : undefined;
 
     const isChecked = _value === contextValue;
-
-    const isLightChecked = mode === "light" && isChecked;
-    const isLightUnChecked = mode === "light" && !isChecked;
-    const isDarkChecked = mode === "dark" && isChecked;
-    const isDarkUnChecked = mode === "dark" && !isChecked;
-
     const isDisabled = rest.disabled;
 
-    const borderColor = isDisabled
-      ? color_gray_4
-      : isLightChecked
-      ? color_secondary_1
-      : isLightUnChecked
-      ? color_white
-      : isDarkChecked || isDarkUnChecked
-      ? color_primary_1
-      : color_primary_1;
+    const isCheckedEnable = isChecked && !isDisabled;
+    const isCheckedDisable = isChecked && isDisabled;
+    const isUncheckedEnable = !isChecked && !isDisabled;
+    const isUncheckedDisable = !isChecked && isDisabled;
 
-    const backgroundColor = isDisabled
-      ? color_gray_4
-      : isLightChecked
-      ? color_secondary_1
-      : isLightUnChecked
-      ? color_primary_3
-      : isDarkChecked
-      ? color_secondary_1
-      : isDarkUnChecked
-      ? color_primary_6
-      : color_primary_6;
+    const borderColor = isDisabled ? disableStroke : enableStroke;
+    const circleColor = isCheckedEnable
+      ? enableInnerCircleSelected
+      : isCheckedDisable
+      ? disableInnerCircleSelected
+      : (isUncheckedEnable || isUncheckedDisable) &&
+        (enableInnerCircleUnselected || disableInnerCricleUnselected);
+
+    // const borderColor = isDisabled ? disableStroke : enableStroke;
+    // const innerCircle = isDisabled ? dis
 
     const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
     const rippleSize =
@@ -93,7 +85,9 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
     return (
       <label className={classes["label"]}>
         <div ref={ref} className={classes["container"]}>
-          <CustomCircle {...{ borderColor, backgroundColor }} />
+          <CustomCircle
+            {...{ borderColor, backgroundColor: circleColor as string }}
+          />
           <input
             className={classes["input"]}
             onFocus={focusHandler}
