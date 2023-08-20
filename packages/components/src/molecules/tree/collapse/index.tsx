@@ -9,8 +9,6 @@ const Collapse = <T extends TreeBasicType<T>>({
   title,
   children,
   level,
-  backgroundColor,
-  textColor,
   data,
   onLoadData,
   onClick,
@@ -51,8 +49,6 @@ const Collapse = <T extends TreeBasicType<T>>({
         data={data}
         isActive={id === activeItemId}
         isLoading={isLoading}
-        textColor={textColor}
-        backgroundColor={backgroundColor}
         level={level}
         title={title}
         onClick={handleOnClick}

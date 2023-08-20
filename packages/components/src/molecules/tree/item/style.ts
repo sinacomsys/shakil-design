@@ -29,7 +29,6 @@ const useStyle = createUseStyles(
       statusLine: {
         width: 3,
         marginInlineStart: 10,
-        backgroundColor: "red",
         height: "100%",
       },
       content: {

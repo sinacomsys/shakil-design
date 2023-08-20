@@ -12,9 +12,7 @@ const Item = <T extends TreeBasicType<T>>(
     onClick,
     arrowDirection,
     level,
-    backgroundColor,
     isActive,
-    textColor,
     fontSize = 16,
     isLoading,
     data,
@@ -34,14 +32,19 @@ const Item = <T extends TreeBasicType<T>>(
           ? data.backgroundColor
           : isActive
           ? color_primary_1
-          : backgroundColor,
+          : "#f0f0f0",
       }}
       className={classNames(
         classes["wrapper"],
         level && level > 1 && classes["dotLine"],
       )}
     >
-      <div className={classes["statusLine"]} />
+      <div
+        className={classes["statusLine"]}
+        style={{
+          backgroundColor: data.statusColor ? data.statusColor : "#ababab",
+        }}
+      />
       <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
         <div className={classes["content"]}>
           {typeof data.renderItemContent === "function" ? (
@@ -55,9 +58,13 @@ const Item = <T extends TreeBasicType<T>>(
                 height: "100%",
               }}
             >
-              <Text theme="Regular" size={fontSize} color={textColor}>
-                {title}
-              </Text>
+              {typeof data.renderTitle === "function" ? (
+                data.renderTitle({ data, level })
+              ) : (
+                <Text theme="Regular" size={fontSize} color={"#575757"}>
+                  {title}
+                </Text>
+              )}
             </div>
           )}
         </div>

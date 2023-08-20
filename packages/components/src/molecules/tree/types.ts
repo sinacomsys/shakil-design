@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface TreeBasicType<T> {
   title: string;
   id: string;
@@ -6,6 +8,7 @@ export interface TreeBasicType<T> {
   statusColor?: string;
   renderItemContent?: (args: { data: T; level: number }) => React.ReactNode;
   backgroundColor?: string;
+  renderTitle?: (args: { data: T; level: number }) => React.ReactNode;
 }
 
 export type OnSelectItemProps<T> = {
@@ -14,7 +17,7 @@ export type OnSelectItemProps<T> = {
 };
 
 export type OnLoadData<T> = (value: OnSelectItemProps<T>) => Promise<void>;
-export interface TreeProps<T> {
+export interface TreeProps<T extends TreeBasicType<T>> {
   data: T[];
   onSelectItem?: (value: OnSelectItemProps<T>) => void;
   onLoadData?: (value: OnSelectItemProps<T>) => Promise<void>;
@@ -27,19 +30,14 @@ export interface ItemProps<T extends TreeBasicType<T>> {
   title?: string;
   arrowDirection?: "up" | "down";
   level: number;
-  backgroundColor: string;
   isActive?: boolean;
-  textColor: string;
   fontSize?: number;
   isLoading: boolean;
   onClick?: () => void;
 }
 
 export interface CollapseProps<T extends TreeBasicType<T>>
-  extends Pick<
-    ItemProps<T>,
-    "title" | "level" | "textColor" | "backgroundColor"
-  > {
+  extends Pick<ItemProps<T>, "title" | "level"> {
   data: T;
   children: React.ReactNode;
   onLoadData?: (value: OnSelectItemProps<T>) => Promise<void>;
