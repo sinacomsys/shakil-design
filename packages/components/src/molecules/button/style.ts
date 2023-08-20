@@ -25,15 +25,38 @@ const useStyles = createUseStyles(
         },
       },
       button: button,
-      buttonPrimary: {
+      buttonMain: {
         ...button,
-        backgroundColor: theme.color_primary_1 as string,
-        color: theme.color_white as string,
+        backgroundColor: theme.button?.main as string,
+        color: "white" as string,
       },
-      buttonSecondary: {
+      buttonSuccess: {
         ...button,
-        backgroundColor: theme.color_secondary_1 as string,
-        color: theme.color_white as string,
+        backgroundColor: theme.button?.success as string,
+        color: "white",
+      },
+      buttonDanger: {
+        ...button,
+        backgroundColor: theme.button?.danger as string,
+        color: "white",
+      },
+      ghostMain: {
+        ...button,
+        border: `2px solid ${theme.button?.main}`,
+        color: theme.button?.main,
+        backgroundColor: "white",
+      },
+      ghostSuccess: {
+        ...button,
+        border: `2px solid ${theme.button?.success}`,
+        color: theme.button?.success,
+        backgroundColor: "white",
+      },
+      ghostDanger: {
+        ...button,
+        border: `2px solid ${theme.button?.danger}`,
+        color: theme.button?.danger,
+        backgroundColor: "white",
       },
       cover: {
         position: "absolute",

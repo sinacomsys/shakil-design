@@ -43,11 +43,11 @@ const Text = React.memo(
           variant={variant || setVariant()}
           className={classNames(themes[theme], className)}
           style={{
-            ...style,
             color,
             fontSize: size,
             fontWeight,
             lineHeight,
+            ...style,
           }}
           {...rest}
         />
