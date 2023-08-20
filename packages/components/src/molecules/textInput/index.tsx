@@ -343,7 +343,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const _borderRadius = unit === "viewPort" ? pxToVhString(7) : 7;
     const _paddingBlock = unit === "viewPort" ? pxToVhString(8) : 8;
     const _paddingInline = unit === "viewPort" ? pxToVhString(10) : 10;
-
     const _value = value === null || value === undefined ? "" : value;
 
     return multiline ? (
@@ -355,7 +354,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       <div className={classes["inputWrapper"]}>
         <input
           {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
-          value={_value as any}
+          value={_value}
           className={classNames(
             classes["textInput"],
             disabled && classes.disabled,

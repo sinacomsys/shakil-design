@@ -16,7 +16,7 @@ const useStyles = createUseStyles(
     return {
       textInput: {
         width: "100%",
-        backgroundColor: theme.color_primary_7,
+        backgroundColor: theme.textInput?.fieldColor,
         color: theme.color_primary_1,
         border: "none",
         outline: "none",
