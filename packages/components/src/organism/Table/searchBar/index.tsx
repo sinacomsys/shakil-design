@@ -62,7 +62,6 @@ const SearchBar = <T extends Record<string, unknown>>({
               }}
             >
               <CheckBox
-                mode="light"
                 checked={isAllRowsChecked}
                 onChange={onCheckAllRows}
                 indeterminate={isIndeterminate}

@@ -39,7 +39,6 @@ const Header = <T extends object>({
           {isOnCheckedRowsAvailable ? (
             <div className={classes["selectAll"]}>
               <CheckBox
-                mode="light"
                 checked={isAllRowsChecked}
                 onChange={onCheckAllRows}
                 indeterminate={isIndeterminate}

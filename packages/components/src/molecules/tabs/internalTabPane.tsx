@@ -1,3 +1,4 @@
+import { pxToVh } from "@shakil-design/utils";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { BaseIcon, Text } from "../../atoms";
@@ -54,8 +55,8 @@ function InternalTabPane({
           }}
           color={color_primary_4}
           name="Table-_-Cross-Icon-for-erasing-all-of-filters"
-          size={{ height: 10, width: 10 }}
-          unit={"pixel"}
+          size={{ height: pxToVh(10), width: pxToVh(10) }}
+          unit={"viewport"}
           onClick={(event: React.MouseEvent) => {
             event.stopPropagation();
             onClose?.(id);
