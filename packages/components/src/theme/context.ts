@@ -52,6 +52,7 @@ export const Colors: ColorsType = {
     textColor: "#6C7797",
     unSelectedTab: "#E3E6F1",
   },
+  fileInput: "red",
 };
 
 export interface ColorsType {
@@ -106,6 +107,7 @@ export interface ColorsType {
     unSelectedTab: string;
     textColor: string;
   };
+  fileInput?: string;
 }
 
 const ThemeContext = React.createContext<ColorsType>(Colors);
