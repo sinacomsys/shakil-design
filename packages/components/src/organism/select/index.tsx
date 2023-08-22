@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
 import { BaseIcon, ScrollView } from "../../atoms";
 import { TextInput } from "../../molecules/textInput";
-// import { useTheme } from "../../theme/context";
 import { useOnClickOutSide } from "@shakil-design/utils";
-import { Clear } from "./clear";
 import { Option } from "./option";
 import { useStyles } from "./style";
 import { Default, OptionValue, SelectProps, Value } from "./types";
+import classnames from "classnames";
+import { Clear } from "./clear";
 
 const Select = <T extends Record<string, unknown> = Default>({
   data,
@@ -19,6 +19,22 @@ const Select = <T extends Record<string, unknown> = Default>({
   onClear,
   disabled,
   unit = "viewport",
+  allowClear,
+  AddonAfter,
+  addonAfterClassName,
+  addonAfterStyle,
+  addonBefore,
+  addonBeforeClassName,
+  addonBeforeStyle,
+  className,
+  onBlur,
+  onFocus,
+  placeholder,
+  style,
+  wrapperClassName,
+  wrapperStyle,
+  popupClassName,
+  popupStyles,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<OptionValue | null>(null);
@@ -102,24 +118,36 @@ const Select = <T extends Record<string, unknown> = Default>({
 
   return (
     <>
-      <div
+      <TextInput
+        {...{
+          AddonAfter,
+          addonAfterClassName,
+          addonAfterStyle,
+          addonBefore,
+          addonBeforeClassName,
+          addonBeforeStyle,
+          className,
+          onBlur,
+          onFocus,
+          wrapperClassName,
+          wrapperStyle,
+        }}
+        onClear={handleOnClear}
+        ref={handleRefOfRefrenceElement}
+        onClick={handleOnClick}
+        value={internalValue?.label}
+        style={{
+          textAlign: "center",
+          caretColor: "transparent",
+          cursor: "pointer",
+          ...style,
+        }}
+        unit={unit}
+        placeholder={placeholder}
+        allowClear={allowClear}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className={classes["selectWrapper"]}
-      >
-        <TextInput
-          ref={handleRefOfRefrenceElement}
-          onClick={handleOnClick}
-          value={internalValue?.label}
-          style={{
-            textAlign: "center",
-            caretColor: "transparent",
-            cursor: "pointer",
-          }}
-          unit={unit}
-          placeholder={"Select item"}
-        />
-        <div className={classes.clearIcon}>
+        AddonAfter={
           <Clear
             handleOnClear={handleOnClear}
             whatVisible={
@@ -131,8 +159,9 @@ const Select = <T extends Record<string, unknown> = Default>({
             }
             isVisible={isVisible}
           />
-        </div>
-      </div>
+        }
+      />
+
       {body.current && isVisible
         ? ReactDOM.createPortal(
             <>
@@ -141,12 +170,15 @@ const Select = <T extends Record<string, unknown> = Default>({
                 style={poperStyles.popper}
                 {...attributes.popper}
               >
-                <div style={{ width }} className={classes["overlay"]}>
+                <div
+                  style={{ width, ...popupStyles }}
+                  className={classnames(popupClassName, classes["overlay"])}
+                >
                   <div className={classes["inputWrapper"]}>
                     <TextInput
                       placeholder="Search"
                       unit="pixel"
-                      addonAfter={
+                      AddonAfter={
                         <BaseIcon
                           color={"#d1d1d1"}
                           name="Search-Box_Search-Icon"

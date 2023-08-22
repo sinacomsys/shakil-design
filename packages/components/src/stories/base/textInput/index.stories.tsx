@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { Button, TextInput, TextInputProps } from "../../../molecules";
 import { StoryContainer } from "../../container";
 import React, { useState } from "react";
+import { BaseIcon } from "../../../atoms";
 export default {
   title: "text input",
   component: TextInput,
@@ -9,9 +10,13 @@ export default {
 
 const Template: Story<TextInputProps> = () => {
   const [value, setValue] = useState<string>("");
+  const onClear = () => {
+    setValue("");
+  };
   return (
     <StoryContainer>
       <Button
+        style={{ marginBottom: 30 }}
         onClick={() => {
           setValue("");
         }}
@@ -19,12 +24,21 @@ const Template: Story<TextInputProps> = () => {
         onClear
       </Button>
       <TextInput
+        onClear={onClear}
+        unit="pixel"
         value={value}
         onChangeText={setValue}
-        style={{ marginBottom: 30 }}
-        theme="bold"
+        wrapperStyle={{ marginBottom: 30, width: "300px" }}
+        theme="Regular"
+        allowClear
+        AddonAfter={
+          <BaseIcon
+            name="Search-Box_Search-Icon"
+            unit={"pixel"}
+            size={{ height: 15, width: 15 }}
+          />
+        }
       />
-      <TextInput disabled value={"sdfsdf"} />
     </StoryContainer>
   );
 };

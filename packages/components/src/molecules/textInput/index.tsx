@@ -4,8 +4,10 @@ import { composeRef } from "reactjs-view-core";
 import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
-import { useThemes } from "../../atoms/text/style";
-import { pxToVhString } from "@shakil-design/utils";
+import { useFonts } from "../../atoms/text/style";
+import { pxToVh, pxToVhString } from "@shakil-design/utils";
+import { BaseIcon } from "../../atoms";
+import { useState } from "react";
 
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -77,19 +79,23 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       testID,
       disabled,
       theme,
-      unit = "viewPort",
-      addonAfter,
+      unit = "viewport",
+      AddonAfter,
       addonBefore,
       addonAfterClassName,
       addonBeforeClassName,
       addonAfterStyle,
       addonBeforeStyle,
       value,
+      onClear,
+      wrapperStyle,
+      allowClear,
       ...rest
     },
     forwardedRef,
   ) => {
     const classes = useStyles();
+    const [isHover, setIsHover] = useState<boolean>(false);
     let type: React.InputHTMLAttributes<HTMLInputElement>["type"];
     let inputMode: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 
@@ -300,6 +306,13 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       }
     };
 
+    const onMouseEnter = () => {
+      setIsHover(true);
+    };
+    const onMouseLeave = () => {
+      setIsHover(false);
+    };
+
     React.useEffect(() => {
       const node = hostRef.current;
       if (node && selection) {
@@ -333,17 +346,39 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       multiline ? undefined : type
     ) as string;
     supportedProps.inputMode = inputMode;
-    //@ts-ignore
-    supportedProps["data-testid"] = testID;
 
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
-    const themes = useThemes();
-    const _height = unit === "viewPort" ? pxToVhString(32) : 32;
-    const _borderRadius = unit === "viewPort" ? pxToVhString(7) : 7;
-    const _paddingBlock = unit === "viewPort" ? pxToVhString(8) : 8;
-    const _paddingInline = unit === "viewPort" ? pxToVhString(10) : 10;
+    const themes = useFonts();
+    const _height = unit === "viewport" ? pxToVhString(32) : 32;
+    const _borderRadius = unit === "viewport" ? pxToVhString(7) : 7;
+    const _paddingBlock = unit === "viewport" ? pxToVhString(8) : 8;
+    const _paddingInline = unit === "viewport" ? pxToVhString(10) : 10;
+    const _fontSize = unit === "viewport" ? pxToVhString(14) : 14;
+    const _clearIconSize = unit === "viewport" ? pxToVh(9) : 9;
     const _value = value === null || value === undefined ? "" : value;
+    const _clearIcon =
+      typeof allowClear === "object"
+        ? allowClear
+        : typeof allowClear === "boolean" && (
+            <BaseIcon
+              onClick={onClear}
+              wrapperStyle={{
+                cursor: "pointer",
+                visibility: isHover && _value ? "visible" : "hidden",
+              }}
+              name="Every-Boxes-_-Cross-Icon"
+              unit={unit}
+              size={{ height: _clearIconSize, width: _clearIconSize }}
+            />
+          );
+
+    const addOnAfterIcon =
+      isHover && _value && allowClear
+        ? _clearIcon
+        : AddonAfter
+        ? AddonAfter
+        : null;
 
     return multiline ? (
       <textarea
@@ -351,7 +386,12 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     ) : (
-      <div className={classes["inputWrapper"]}>
+      <div
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        className={classes["inputWrapper"]}
+        style={wrapperStyle}
+      >
         <input
           {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
           value={_value}
@@ -369,6 +409,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             borderRadius: _borderRadius,
             paddingInline: _paddingInline,
             paddingBlock: _paddingBlock,
+            fontSize: _fontSize,
             ...supportedProps.style,
           }}
         />
@@ -386,9 +427,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             classes["addonAfter"],
             addonAfterClassName && addonAfterClassName,
           )}
-          style={addonAfterStyle}
         >
-          {addonAfter}
+          {addOnAfterIcon}
         </div>
       </div>
     );

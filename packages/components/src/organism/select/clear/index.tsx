@@ -18,7 +18,7 @@ const Clear = ({
     handleOnClear();
   };
   return (
-    <div>
+    <>
       <div
         onClick={handleOnClick}
         style={{
@@ -44,7 +44,7 @@ const Clear = ({
           />
         </motion.div>
       </div>
-    </div>
+    </>
   );
 };
 
