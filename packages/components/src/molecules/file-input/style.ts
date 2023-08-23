@@ -16,7 +16,7 @@ export const useStyle = createUseStyles(
         width: "75%",
         cursor: "pointer",
         backgroundColor: "white",
-        color: theme.color_primary_2,
+        color: theme.fileInput,
         border: `dotted ${theme.fileInput} 2px`,
         padding: "0.7rem",
         borderRadius: "0.4375rem",

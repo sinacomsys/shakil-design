@@ -27,7 +27,7 @@ const RowContainer = <T extends Record<string, unknown>>({
   checkedRows,
   handleCheckRow,
 }: RowContainer<T>) => {
-  const { color_secondary_1 } = useTheme();
+  const { table: { selectedRowBookmark } = {} } = useTheme();
   const { selectedRow, onSelectRow } = useContext(TableContext);
   const _selectedRow = selectedRow as T;
 
@@ -55,7 +55,7 @@ const RowContainer = <T extends Record<string, unknown>>({
             style={{
               position: "relative",
               height: "100%",
-              borderInlineStart: `5px solid ${color_secondary_1}`,
+              borderInlineStart: `5px solid ${selectedRowBookmark}`,
             }}
           />
         ) : null}

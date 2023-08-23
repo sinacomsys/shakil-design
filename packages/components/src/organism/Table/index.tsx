@@ -52,7 +52,7 @@ const Table = <T extends Record<string, any>>({
   coloums,
   noContent,
 }: TableProps<T>) => {
-  const { color_primary_1 } = useTheme();
+  const { table: { header } = {} } = useTheme();
   const classes = useStyles();
   const [order, setOrder] = useState<Order>(undefined);
   const [isSearchVisible, setShowSearchBar] = useState(false);
@@ -250,7 +250,7 @@ const Table = <T extends Record<string, any>>({
                   <thead
                     className={headerClassName}
                     style={{
-                      backgroundColor: color_primary_1,
+                      backgroundColor: header,
                       ...headerStyle,
                     }}
                   >

@@ -76,7 +76,7 @@ const Template: Story<any> = () => {
     <StoryContainer>
       <Table
         rowKey="id"
-        onCheckedRows={() => {}}
+        onSelectRow={() => {}}
         height={200}
         coloums={columns}
         data={mockData}

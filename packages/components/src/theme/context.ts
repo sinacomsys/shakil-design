@@ -30,32 +30,19 @@ export const Colors: ColorsType = {
     unSelectedTab: "#E3E6F1",
   },
   fileInput: "red",
+  table: {
+    header: "#374775",
+    divider: "#c2c9db",
+    filterIcon: "#48e580",
+    filtersTab: "#6c7797",
+    rowHover: "#ebedf2",
+    selectedRow: "#e3f6eb",
+    selectedRowBookmark: "#58cc87",
+    sortArrow: "#48e580",
+  },
 };
 
 export interface ColorsType {
-  color_primary_1?: string;
-  color_primary_2?: string;
-  color_primary_3?: string;
-  color_primary_4?: string;
-  color_primary_5?: string;
-  color_primary_6?: string;
-  color_primary_7?: string;
-  color_secondary_1?: string;
-  color_secondary_2?: string;
-  color_secondary_3?: string;
-  color_gray_6?: string;
-  color_gray_5?: string;
-  color_gray_4?: string;
-  color_gray_3?: string;
-  color_gray_2?: string;
-  color_background?: string;
-  color_white?: string;
-  color_danger_1?: string;
-  color_danger_2?: string;
-  color_danger_3?: string;
-  color_warning_1?: string;
-  color_warning_2?: string;
-  color_warning_3?: string;
   checkbox?: {
     borderSelected: string;
     squareSelected: string;
@@ -85,6 +72,16 @@ export interface ColorsType {
     textColor: string;
   };
   fileInput?: string;
+  table?: {
+    header: string;
+    divider: string;
+    filterIcon: string;
+    sortArrow: string;
+    filtersTab: string;
+    rowHover: string;
+    selectedRow: string;
+    selectedRowBookmark: string;
+  };
 }
 
 const ThemeContext = React.createContext<ColorsType>(Colors);

@@ -17,7 +17,7 @@ export const useStyles = createUseStyles(
           position: "absolute",
           width: "100%",
           height: "100%",
-          backgroundColor: theme.color_primary_5,
+          backgroundColor: "(0,0,0,.1)",
           opacity: 0.4,
           display: "block",
           top: 0,
