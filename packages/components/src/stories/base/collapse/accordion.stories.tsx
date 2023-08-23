@@ -1,6 +1,7 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { Collapse, CollapseProps } from "../../../molecules";
 import { StoryContainer } from "../../container";
+import React from "react";
 
 const { Panel } = Collapse;
 

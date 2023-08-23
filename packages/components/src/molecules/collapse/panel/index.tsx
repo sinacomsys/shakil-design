@@ -8,7 +8,7 @@ import { useStyles } from "./style";
 
 export interface PanelProps {
   children: React.ReactNode;
-  title: (args: { isOpen: boolean }) => React.ReactNode | string;
+  title: ((args: { isOpen: boolean }) => React.ReactNode) | string;
   id: string;
 }
 
