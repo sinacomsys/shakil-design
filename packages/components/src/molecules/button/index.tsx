@@ -19,8 +19,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading,
       disabled,
       onClick,
-      size,
       unit = "pixel",
+      size,
       ghost,
       ...rest
     },
