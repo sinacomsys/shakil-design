@@ -17,7 +17,14 @@ const fakeData = [...new Array(35)].map((_, index) => {
 
 const Template: Story<SelectProps> = () => (
   <StoryContainer>
-    <Select data={fakeData} />
+    <div style={{ width: 300 }}>
+      <Select
+        unit="pixel"
+        data={fakeData}
+        allowClear
+        placeholder="Select Item..."
+      />
+    </div>
   </StoryContainer>
 );
 

@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { useState } from "react";
 import { Tabs, TabsProps } from "../../../molecules";
 import { StoryContainer } from "../../container";
+import { Text } from "../../../atoms";
 import React from "react";
 export default {
   title: "tab",
@@ -15,17 +16,33 @@ const Template: Story<TabsProps> = () => {
       closeable: true,
       id: "1",
       renderTitle: () => {
-        return <div>title</div>;
+        return (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Text>Title</Text>
+          </div>
+        );
       },
-      content: <div>sag</div>,
+      content: (
+        <div style={{ backgroundColor: "lightblue", height: "100%" }}>
+          TEST CONTENT
+        </div>
+      ),
     },
     {
       closeable: true,
       id: "2",
       renderTitle: () => {
-        return <div>title2</div>;
+        return (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Text>Title2</Text>
+          </div>
+        );
       },
-      content: <div>sag2</div>,
+      content: (
+        <div style={{ backgroundColor: "lightblue", height: "100%" }}>
+          TEST CONTENT2
+        </div>
+      ),
     },
   ];
   return (

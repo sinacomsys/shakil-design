@@ -37,7 +37,7 @@ const Column = <T extends object>({
   style,
   align = DEFAULT_ALIGN,
 }: ColumnProps<T>) => {
-  const { color_white, color_secondary_1 } = useTheme();
+  const { table: { sortArrow } = {} } = useTheme();
   const { onOrderChange, order, orderBy } = useContext(TableContext);
   const isAscending = orderBy === dataIndex && order === "ascending";
   const isDescending = orderBy === dataIndex && order === "descending";
@@ -66,7 +66,7 @@ const Column = <T extends object>({
         onClick={onSort}
       >
         {typeof title !== "object" ? (
-          <Text size={`${pxToVh(16)}vh`} theme="Regular" color={color_white}>
+          <Text size={`${pxToVh(16)}vh`} theme="Regular" color={"white"}>
             {title}
           </Text>
         ) : (
@@ -76,19 +76,19 @@ const Column = <T extends object>({
           isDescending ? (
             <BaseIcon
               size={{ width: 9, height: 20 }}
-              color={color_secondary_1}
+              color={sortArrow}
               name={"Table-_-Sort-Icon_A-to-Z"}
             />
           ) : isAscending ? (
             <BaseIcon
               size={{ width: 9, height: 20 }}
-              color={color_secondary_1}
+              color={sortArrow}
               name="Table-_-Sort-Icon_Z-to-A"
             />
           ) : (
             <BaseIcon
               size={{ width: 9, height: 20 }}
-              color={color_white}
+              color={"white"}
               name="Table-_-Sort-Icon_OFF"
             />
           )

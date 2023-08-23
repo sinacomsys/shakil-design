@@ -16,18 +16,18 @@ export interface FileInputProps {
 const FileInput: FC<FileInputProps> = ({ register, className, fileType }) => {
   const classes = useStyle();
   const { label, fileChangeHandler } = useFileInput(register);
-  const { color_primary_2 } = useTheme();
+  const { fileInput } = useTheme();
 
   return (
     <div className={classNames(classes["fileInput"], className)}>
       <label htmlFor={register?.name}>
-        <Text size={16} color={color_primary_2}>
+        <Text size={16} color={fileInput}>
           {register?.name}
         </Text>
       </label>
       <label className={classes["fileChooser"]}>
         {label ? (
-          <Text size={16} color={color_primary_2}>
+          <Text size={16} color={fileInput}>
             {label}
           </Text>
         ) : (
@@ -36,7 +36,7 @@ const FileInput: FC<FileInputProps> = ({ register, className, fileType }) => {
               size={{ height: 10, width: 10 }}
               name="Add-Box_Add-Icon"
             />
-            <Text size={16} color={color_primary_2}>
+            <Text size={16} color={fileInput}>
               Add File
             </Text>
           </>

@@ -5,34 +5,14 @@ import { Spinner } from "../../atoms";
 import { Text } from "../../atoms/text";
 import { useTheme } from "../../theme/context";
 import { useStyles } from "./style";
-import { Unit } from "../../types";
 import { pxToVh } from "@shakil-design/utils";
-
-type Ripple = {
-  top: string;
-  left: string;
-  height: string;
-  width: string;
-  id: number;
-};
-export interface ButtonProps
-  extends Omit<React.HTMLAttributes<HTMLButtonElement>, "type" | "children"> {
-  htmlType?: "submit" | "button" | "reset";
-  mode?: "primary" | "secondary";
-  children: React.ReactNode;
-  className?: string;
-  isLoading?: boolean;
-  disabled?: boolean;
-  form?: string;
-  size?: "small" | "middle";
-  unit?: Unit;
-}
+import { ButtonProps, Ripple } from "./types";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      mode = "primary",
+      mode = "main",
       htmlType = "button",
       form,
       className,
@@ -41,11 +21,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       size,
       unit = "pixel",
+      ghost,
       ...rest
     },
     ref,
   ) => {
-    const { color_white } = useTheme();
+    const {
+      button: {
+        danger: dangerColor,
+        main: mainColor,
+        success: successColor,
+      } = {},
+    } = useTheme();
     const classes = useStyles();
     const [ripples, setRipples] = useState<Ripple[]>([]);
 
@@ -96,6 +83,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const height = size === "small" ? 32 : 40;
     const fontSize = unit === "viewport" ? `${pxToVh(16)}vh` : 16;
 
+    const isMainGhost = ghost && mode === "main";
+    const isSuccessGhost = ghost && mode === "success";
+    const isDangerGhost = ghost && mode === "danger";
+
+    const spinnerColor = isMainGhost
+      ? mainColor
+      : isSuccessGhost
+      ? successColor
+      : isDangerGhost
+      ? dangerColor
+      : "black";
+
     return (
       <button
         {...rest}
@@ -113,8 +112,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || isLoading}
         className={classNames(
           classes["button"],
-          mode === "primary" && classes["buttonPrimary"],
-          mode === "secondary" && classes["buttonSecondary"],
+          mode === "main" && classes["buttonMain"],
+          mode === "success" && classes["buttonSuccess"],
+          mode === "danger" && classes["buttonDanger"],
+          isMainGhost && classes["ghostMain"],
+          isSuccessGhost && classes["ghostSuccess"],
+          isDangerGhost && classes["ghostDanger"],
           className,
         )}
       >
@@ -125,7 +128,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           }}
         >
           {typeof children !== "object" ? (
-            <Text size={fontSize} color={color_white}>
+            <Text style={{ color: "inherit" }} size={fontSize}>
               {children}
             </Text>
           ) : (
@@ -134,7 +137,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </div>
         {isLoading ? (
           <div className={classes["loadingContainer"]}>
-            <Spinner spinerColor="white" size={"medium"} />
+            <Spinner spinerColor={spinnerColor} size={"medium"} />
           </div>
         ) : null}
         {(isLoading || disabled) && <div className={classes["cover"]} />}
@@ -145,4 +148,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-export { Button };
+export { Button, ButtonProps };

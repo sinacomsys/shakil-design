@@ -8,7 +8,7 @@ export const useStyles = createUseStyles(
         opacity: 0.2,
         width: 0,
         height: 0,
-        backgroundColor: theme.color_primary_1,
+        backgroundColor: theme.primary,
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
@@ -41,7 +41,7 @@ export const useStyles = createUseStyles(
 
       outterCircle: {
         borderRadius: "50%",
-        backgroundColor: theme.color_white,
+        backgroundColor: "white",
         zIndex: 2,
         position: "relative",
       },

@@ -35,7 +35,7 @@ const Template: Story<CheckBoxProps> = (args) => {
         </CheckBox>
         <CheckBox
           {...args}
-          unit="viewPort"
+          unit="viewport"
           checked={isChecked2}
           onChange={hangleOnChange2}
         >
@@ -46,17 +46,7 @@ const Template: Story<CheckBoxProps> = (args) => {
   );
 };
 
-export const LightMode = Template.bind({});
-export const DarkMode = Template.bind({});
-LightMode.args = {
-  value: "test value",
-  mode: "light",
-};
-
-DarkMode.args = {
-  value: "test value",
-  mode: "dark",
-};
+export const Checkbox = Template.bind({});
 
 export const Indeterminate = Template.bind({});
 

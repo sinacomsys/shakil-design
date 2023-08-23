@@ -26,7 +26,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     ref,
   ) => {
     const classes = useStyles();
-    const { color_secondary_1, color_warning_3 } = useTheme();
+    const { switch: { checked: checkedColor, unchecked } = {} } = useTheme();
     const [isCheck, setIsCheck] = useState<boolean>(false);
     const [isFocused, setFocus] = useState(false);
 
@@ -54,7 +54,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     const _height =
       unit === "viewport" ? pxToVhString(SWITCH_HEIGHT) : SWITCH_HEIGHT;
     const _circle =
-      unit === "viewport" ? pxToVhString(CIRCLE_WIDTH) : CIRCLE_WIDTH;
+      unit === "viewport" ? pxToVhString(CIRCLE_WIDTH) : `${CIRCLE_WIDTH}px`;
 
     return (
       <label style={{ display: "inline-block", position: "relative" }}>
@@ -62,7 +62,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           role={"switch"}
           className={classes["wrapper"]}
           style={{
-            backgroundColor: isCheck ? color_secondary_1 : color_warning_3,
+            backgroundColor: isCheck ? checkedColor : unchecked,
             width: _width,
             height: _height,
           }}
@@ -92,7 +92,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         <motion.div
           className={classes["ripple"]}
           style={{
-            backgroundColor: isCheck ? color_secondary_1 : color_warning_3,
+            backgroundColor: isCheck ? checkedColor : unchecked,
           }}
           animate={{
             width: isFocused ? 30 : 0,

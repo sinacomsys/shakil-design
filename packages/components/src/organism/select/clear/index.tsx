@@ -12,13 +12,13 @@ const Clear = ({
   whatVisible: "cross" | "arrow" | null;
   isVisible: boolean;
 }) => {
-  const { color_primary_1, color_primary_3 } = useTheme();
+  const { select: { fleshIcon, clearIcon } = {} } = useTheme();
   const handleOnClick: DOMAttributes<HTMLDivElement>["onClick"] = (e) => {
     e.stopPropagation();
     handleOnClear();
   };
   return (
-    <div>
+    <>
       <div
         onClick={handleOnClick}
         style={{
@@ -26,7 +26,7 @@ const Clear = ({
         }}
       >
         <BaseIcon
-          color={color_primary_1}
+          color={clearIcon}
           name={"Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item"}
           size={{ height: 10, width: 12 }}
         />
@@ -38,13 +38,13 @@ const Clear = ({
       >
         <motion.div animate={{ rotate: isVisible ? 180 : 0 }}>
           <BaseIcon
-            color={isVisible ? color_primary_1 : color_primary_3}
+            color={fleshIcon}
             name={"Every-Boxes-_-Flesh-Icon-for-more-choices"}
             size={{ height: 6, width: 12 }}
           />
         </motion.div>
       </div>
-    </div>
+    </>
   );
 };
 

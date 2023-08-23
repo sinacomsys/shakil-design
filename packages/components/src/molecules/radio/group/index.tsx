@@ -1,31 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { ModeType, RadioContext, ValueType } from '../context';
+import React, { useEffect, useState } from "react";
+import { RadioContext, ValueType } from "../context";
 
 interface GroupProps {
   children?: React.ReactNode;
   value?: ValueType;
   name?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  mode?: ModeType;
   onBlur?: React.FocusEventHandler<HTMLDivElement>;
   onFocus?: React.FocusEventHandler<HTMLDivElement>;
   wrapperStyle?: React.CSSProperties;
 }
 
 const Group = React.forwardRef<HTMLDivElement, GroupProps>(
-  (
-    {
-      children,
-      value,
-      name,
-      onChange,
-      mode = 'dark',
-      onBlur,
-      onFocus,
-      wrapperStyle,
-    },
-    ref
-  ) => {
+  ({ children, value, name, onChange, onBlur, onFocus, wrapperStyle }, ref) => {
     const [internalValue, setInternalValue] = useState<ValueType>(undefined);
 
     useEffect(() => {
@@ -49,17 +36,16 @@ const Group = React.forwardRef<HTMLDivElement, GroupProps>(
             value: internalValue,
             onChange: hangleOnChange,
             name,
-            mode,
           }}
         >
           {children}
         </RadioContext.Provider>
       </div>
     );
-  }
+  },
 );
 
-Group.displayName = 'Group';
+Group.displayName = "Group";
 
 export { Group };
 export type { GroupProps };

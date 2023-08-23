@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { useRef, useState } from "react";
 import { Switch, SwitchProps } from "../../../atoms";
 import { StoryContainer } from "../../container";
+import React from "react";
 export default {
   title: "switch",
   component: Switch,

@@ -10,7 +10,7 @@ const useStyles = createUseStyles(
         cursor: "pointer",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: theme.color_primary_7,
+        backgroundColor: theme.collapse?.panel,
         borderRadius: 7,
       },
       title: {

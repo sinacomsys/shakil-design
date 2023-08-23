@@ -5,7 +5,7 @@ export const useStyles = createUseStyles(
   (theme) => {
     return {
       search: {
-        borderRight: `1px solid ${theme.color_primary_6}`,
+        borderRight: `1px solid ${theme.table?.divider}`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -14,7 +14,7 @@ export const useStyles = createUseStyles(
       },
 
       selectAll: {
-        borderRight: `1px solid ${theme.color_primary_6}`,
+        borderRight: `1px solid ${theme.table?.divider}`,
         width: 31,
         display: "flex",
         justifyContent: "center",

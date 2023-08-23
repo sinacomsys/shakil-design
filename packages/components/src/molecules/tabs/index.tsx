@@ -33,7 +33,7 @@ const Tabs = ({
   items,
 }: TabsProps) => {
   const classes = useStyles();
-  const { color_white, color_primary_2 } = useTheme();
+  const { tab: { textColor } = {} } = useTheme();
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [openedTabs, setOpenedTabs] = useState<string[]>([]);
   const tabListRef = useHorizontalScroll();
@@ -81,7 +81,7 @@ const Tabs = ({
         {TabsTitle ? (
           <div
             style={{
-              backgroundColor: color_white,
+              backgroundColor: "white",
               borderTopLeftRadius: 20,
             }}
           >
@@ -90,7 +90,7 @@ const Tabs = ({
                 <Text
                   theme="Regular"
                   size={`${pxToVh(20)}vh`}
-                  color={color_primary_2}
+                  color={textColor}
                 >
                   {TabsTitle}
                 </Text>

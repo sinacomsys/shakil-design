@@ -17,12 +17,11 @@ interface HeaderProps<T extends object> {
 const Header = <T extends object>({
   onToggleSearchBar,
   isOnCheckedRowsAvailable,
-  isSearchVisible,
   filterIcon,
   columns,
   isIndeterminate,
 }: HeaderProps<T>) => {
-  const { color_secondary_2, color_primary_6 } = useTheme();
+  const { table: { filterIcon: filterIconColor } = {} } = useTheme();
   const classes = useStyles();
   const { onCheckAllRows, isAllRowsChecked } = useContext(TableContext);
 
@@ -39,7 +38,6 @@ const Header = <T extends object>({
           {isOnCheckedRowsAvailable ? (
             <div className={classes["selectAll"]}>
               <CheckBox
-                mode="light"
                 checked={isAllRowsChecked}
                 onChange={onCheckAllRows}
                 indeterminate={isIndeterminate}
@@ -52,7 +50,7 @@ const Header = <T extends object>({
               filterIcon
             ) : (
               <BaseIcon
-                color={isSearchVisible ? color_secondary_2 : color_primary_6}
+                color={filterIconColor}
                 onClick={onToggleSearchBar}
                 name="Table-_-Filter"
                 size={{ width: 14, height: 14 }}

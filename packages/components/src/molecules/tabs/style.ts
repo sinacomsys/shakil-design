@@ -47,8 +47,8 @@ export const useStyles = createUseStyles(
         flexGrow: 1,
         flexShrink: 0,
         height: "100%",
-        color: theme.color_primary_2,
-        backgroundColor: theme.color_primary_6,
+        color: theme.tab?.textColor,
+        backgroundColor: theme.tab?.unSelectedTab,
         cursor: "pointer",
         borderRadius: 0,
         border: "none",
@@ -66,7 +66,7 @@ export const useStyles = createUseStyles(
         },
       },
       tabActive: {
-        backgroundColor: theme.color_primary_1,
+        backgroundColor: theme.tab?.selectedTab,
       },
       tabsTitleWrapper: {
         width: "calc(100% - 16px)",

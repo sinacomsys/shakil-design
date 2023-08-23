@@ -8,13 +8,13 @@ import { useStyles } from "./style";
 
 export interface PanelProps {
   children: React.ReactNode;
-  title: React.ReactNode;
+  title: (args: { isOpen: boolean }) => React.ReactNode | string;
   id: string;
 }
 
 const Panel = ({ children, title, id }: PanelProps) => {
   const classes = useStyles();
-  const { color_primary_1, color_primary_3 } = useTheme();
+  const { collapse: { closePanel, openPanel } = {} } = useTheme();
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const { openedPanels, onClickPanel, defaultOpen, handleDefaultOpen } =
     useContext(CollapseContext);
@@ -40,13 +40,13 @@ const Panel = ({ children, title, id }: PanelProps) => {
             <Text
               theme="Regular"
               size={16}
-              color={isOpen ? color_primary_1 : color_primary_3}
+              color={isOpen ? openPanel : closePanel}
               ellipsis
             >
               {title}
             </Text>
           ) : (
-            title
+            title({ isOpen })
           )}
         </div>
         <motion.div
@@ -54,7 +54,7 @@ const Panel = ({ children, title, id }: PanelProps) => {
           animate={{ rotate: isOpen ? 180 : 0 }}
         >
           <BaseIcon
-            color={isOpen ? color_primary_1 : color_primary_3}
+            color={isOpen ? openPanel : closePanel}
             name={"Every-Boxes-_-Flesh-Icon-for-more-choices"}
             size={{ height: 6, width: 12 }}
           />

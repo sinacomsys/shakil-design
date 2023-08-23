@@ -22,11 +22,15 @@ interface InputElement
 
 export interface TextInputProps
   extends Omit<InputElement, "autoCorrect" | "value"> {
+  allowClear?: boolean;
+  wrapperClassName?: string;
+  wrapperStyle?: React.CSSProperties;
+  onClear?: () => void;
   addonAfterStyle?: React.CSSProperties;
   addonBeforeStyle?: React.CSSProperties;
   addonAfterClassName?: string;
   addonBeforeClassName?: string;
-  addonAfter?: React.ReactNode;
+  AddonAfter?: React.ReactNode;
   addonBefore?: React.ReactNode;
   unit?: Unit;
   className?: string;

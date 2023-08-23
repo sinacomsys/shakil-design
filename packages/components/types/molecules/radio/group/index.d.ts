@@ -1,11 +1,10 @@
-import React from 'react';
-import { ModeType, ValueType } from '../context';
+import React from "react";
+import { ValueType } from "../context";
 interface GroupProps {
     children?: React.ReactNode;
     value?: ValueType;
     name?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    mode?: ModeType;
     onBlur?: React.FocusEventHandler<HTMLDivElement>;
     onFocus?: React.FocusEventHandler<HTMLDivElement>;
     wrapperStyle?: React.CSSProperties;

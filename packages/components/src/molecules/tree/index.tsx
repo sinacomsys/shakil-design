@@ -1,6 +1,5 @@
 import { findGrandParents, flatData } from "@shakil-design/utils";
 import { useContext } from "react";
-import { useTheme } from "../../theme/context";
 import { Collapse } from "./collapse";
 import { LevelContext } from "./context/levelProvider";
 import { TreeBasicType, TreeProps } from "./types";
@@ -12,33 +11,7 @@ const Tree = <T extends TreeBasicType<T>>({
   activeItemId,
   defaultSeletedItem,
 }: TreeProps<T>) => {
-  const {
-    color_secondary_3,
-    color_primary_6,
-    color_secondary_1,
-    color_primary_1,
-    color_white,
-    color_primary_3,
-  } = useTheme();
   const level = useContext(LevelContext);
-  const backgourndColor =
-    level === 1
-      ? color_secondary_3
-      : level === 2
-      ? color_primary_6
-      : level === 3
-      ? color_primary_3
-      : color_primary_3;
-
-  const textColor =
-    level === 1
-      ? color_secondary_1
-      : level === 2
-      ? color_primary_1
-      : level === 3
-      ? color_white
-      : color_white;
-
   const flat = flatData(data);
   const grandPrents = findGrandParents(defaultSeletedItem, flat);
   return (
@@ -49,8 +22,6 @@ const Tree = <T extends TreeBasicType<T>>({
           <Collapse
             onClick={onSelectItem}
             data={child}
-            textColor={textColor as string}
-            backgroundColor={backgourndColor as string}
             title={child.title}
             level={level}
             key={child.id}

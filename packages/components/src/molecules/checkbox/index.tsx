@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "../../atoms/text";
-import { Indeterminate } from "./customRectangle/indeterminate";
-import { CustomRectangle } from "./customRectangle/inex";
+import { Indeterminate } from "./indeterminate";
+import { CustomSquare } from "./customSquare";
 import { useStyles } from "./style";
 import { pxToVhString } from "@shakil-design/utils";
 import { Unit } from "../../types";
@@ -10,7 +10,6 @@ export interface CheckBoxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   indeterminate?: boolean;
-  mode?: "dark" | "light";
   unit?: Unit;
 }
 
@@ -21,7 +20,6 @@ const CheckBox = ({
   children,
   name,
   indeterminate,
-  mode = "dark",
   unit = "pixel",
   ...rest
 }: CheckBoxProps) => {
@@ -41,7 +39,7 @@ const CheckBox = ({
         {indeterminate ? (
           <Indeterminate unit={unit} />
         ) : (
-          <CustomRectangle checked={checked} mode={mode} unit={unit} />
+          <CustomSquare checked={checked} unit={unit} />
         )}
 
         <input

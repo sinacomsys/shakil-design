@@ -1,55 +1,135 @@
 import React from "react";
 import { createTheming } from "react-jss";
 export const Colors: ColorsType = {
-  color_primary_1: "#374775",
-  color_primary_2: "#6c7797",
-  color_primary_3: "#959db8",
-  color_primary_4: "#abb6d6",
-  color_primary_5: "#c2c9db",
-  color_primary_6: "#e3e6f1",
-  color_primary_7: "#ebedf2",
-  color_secondary_1: "#58cc87",
-  color_secondary_2: "#48e580",
-  color_secondary_3: "#e3f6eb",
-  color_gray_6: "#333333",
-  color_gray_5: "#606060",
-  color_gray_4: "#9f9f9f",
-  color_gray_3: "#c1c0c0",
-  color_gray_2: "#e9e9e9",
-  color_background: "#eeeeee",
-  color_white: "#ffffff",
-  color_danger_1: "#c65161",
-  color_danger_2: "#ebcbcf",
-  color_danger_3: "#ffe0ce",
-  color_warning_1: "#ffc917",
-  color_warning_2: "#fff0be",
-  color_warning_3: "#ff8946",
+  primary: "#374775",
+  checkbox: {
+    borderSelected: "#374775",
+    squareSelected: "#58cc87",
+    unselectedBorder: "#8e8e8e",
+    unselectedSquare: "#e9e9e9",
+    deactive: "#b4b4b4",
+  },
+  radio: {
+    enableInnerCircleSelected: "#58cc87",
+    enableInnerCircleUnselected: "#E9E9E9",
+    enableStroke: "#374775",
+    disableInnerCircleSelected: "#b4b4b4",
+    disableInnerCricleUnselected: "#e9e9e9",
+    disableStroke: "#8e8e8e",
+  },
+  textInput: {
+    fieldColor: "#ebedf2",
+  },
+  button: {
+    main: "#324775",
+    danger: "#c65161",
+    success: "#58cc87",
+  },
+  tab: {
+    selectedTab: "#FFFFFF",
+    textColor: "#6C7797",
+    unSelectedTab: "#E3E6F1",
+  },
+  fileInput: "red",
+  table: {
+    header: "#374775",
+    divider: "#c2c9db",
+    filterIcon: "#48e580",
+    filtersTab: "#6c7797",
+    rowHover: "#ebedf2",
+    selectedRow: "#e3f6eb",
+    selectedRowBookmark: "#58cc87",
+    sortArrow: "#48e580",
+  },
+  select: {
+    hover: "#ebedf2",
+    backgroundColor: "#ebedf2",
+    selected: "#959db8",
+    clearIcon: "#575757",
+    fleshIcon: "#575757",
+  },
+  disableField: "#eeeeee",
+  disableText: "#d1d1d1",
+  tree: {
+    dotLine: "#6c7797",
+    activeItem: "#374775",
+  },
+  collapse: {
+    panel: "red",
+    openPanel: "blue",
+    closePanel: "purple",
+  },
+  switch: {
+    checked: "#58cc87",
+    unchecked: "#ff8946",
+  },
+  noContent: "red",
 };
 
 export interface ColorsType {
-  color_primary_1?: string;
-  color_primary_2?: string;
-  color_primary_3?: string;
-  color_primary_4?: string;
-  color_primary_5?: string;
-  color_primary_6?: string;
-  color_primary_7?: string;
-  color_secondary_1?: string;
-  color_secondary_2?: string;
-  color_secondary_3?: string;
-  color_gray_6?: string;
-  color_gray_5?: string;
-  color_gray_4?: string;
-  color_gray_3?: string;
-  color_gray_2?: string;
-  color_background?: string;
-  color_white?: string;
-  color_danger_1?: string;
-  color_danger_2?: string;
-  color_danger_3?: string;
-  color_warning_1?: string;
-  color_warning_2?: string;
-  color_warning_3?: string;
+  primary: string;
+  checkbox?: {
+    borderSelected: string;
+    squareSelected: string;
+    unselectedBorder: string;
+    unselectedSquare: string;
+    deactive: string;
+  };
+  radio?: {
+    enableStroke: string;
+    enableInnerCircleUnselected: string;
+    enableInnerCircleSelected: string;
+    disableStroke: string;
+    disableInnerCricleUnselected: string;
+    disableInnerCircleSelected: string;
+  };
+  textInput?: {
+    fieldColor: string;
+  };
+  button?: {
+    main: string;
+    danger: string;
+    success: string;
+  };
+  tab?: {
+    selectedTab: string;
+    unSelectedTab: string;
+    textColor: string;
+  };
+  fileInput?: string;
+  table?: {
+    header: string;
+    divider: string;
+    filterIcon: string;
+    sortArrow: string;
+    filtersTab: string;
+    rowHover: string;
+    selectedRow: string;
+    selectedRowBookmark: string;
+  };
+  select?: {
+    hover: string;
+    backgroundColor: string;
+    selected: string;
+    clearIcon: string;
+    fleshIcon: string;
+  };
+  disableText: string;
+  disableField: string;
+  tree?: {
+    dotLine: string;
+    activeItem: string;
+  };
+  collapse?: {
+    panel: string;
+    openPanel: string;
+    closePanel: string;
+  };
+  switch?: {
+    checked: string;
+    unchecked: string;
+  };
+  noContent?: string;
 }
 
 const ThemeContext = React.createContext<ColorsType>(Colors);

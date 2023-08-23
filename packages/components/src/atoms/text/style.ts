@@ -172,11 +172,11 @@ export const fonts = {
   },
 };
 
-let _useThemes: (() => Record<keyof typeof fonts, string>) | undefined;
+let _useFonts: (() => Record<keyof typeof fonts, string>) | undefined;
 
-const useThemes = () => {
-  if (!_useThemes) {
-    _useThemes = createUseStyles<keyof typeof fonts>({
+const useFonts = () => {
+  if (!_useFonts) {
+    _useFonts = createUseStyles<keyof typeof fonts>({
       ...(Object.fromEntries(
         Object.entries(fonts).map(([key, { name }]) => [
           key,
@@ -194,7 +194,7 @@ const useThemes = () => {
     });
   }
 
-  return _useThemes();
+  return _useFonts();
 };
 
-export { useThemes };
+export { useFonts };

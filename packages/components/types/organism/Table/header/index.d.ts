@@ -8,5 +8,5 @@ interface HeaderProps<T extends object> {
     columns: ColumnType<T>[];
     isIndeterminate: boolean;
 }
-declare const Header: <T extends object>({ onToggleSearchBar, isOnCheckedRowsAvailable, isSearchVisible, filterIcon, columns, isIndeterminate, }: HeaderProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Header: <T extends object>({ onToggleSearchBar, isOnCheckedRowsAvailable, filterIcon, columns, isIndeterminate, }: HeaderProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Header };
