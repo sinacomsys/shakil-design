@@ -9,7 +9,7 @@ export interface NoContentProps {
 
 const NoContent = ({ text }: NoContentProps) => {
   const classes = useStyles();
-  const { color_warning_3 } = useTheme();
+  const { noContent } = useTheme();
   return (
     <div className={classes["noContent"]}>
       <BaseIcon
@@ -18,7 +18,7 @@ const NoContent = ({ text }: NoContentProps) => {
         name="Shelf-View-_-Traffic-Cone"
         unit="viewport"
       />
-      <Text color={color_warning_3} size={16}>
+      <Text color={noContent} size={16}>
         {text}
       </Text>
     </div>

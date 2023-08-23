@@ -19,7 +19,7 @@ const Item = <T extends TreeBasicType<T>>(
   }: ItemProps<T>,
   ref: React.Ref<HTMLDivElement>,
 ) => {
-  const { color_primary_1, color_warning_1, color_primary_2 } = useTheme();
+  const { tree: { activeItem } = {} } = useTheme();
   const classes = useStyle();
 
   return (
@@ -31,7 +31,7 @@ const Item = <T extends TreeBasicType<T>>(
         backgroundColor: data.backgroundColor
           ? data.backgroundColor
           : isActive
-          ? color_primary_1
+          ? activeItem
           : "#f0f0f0",
       }}
       className={classNames(
@@ -69,9 +69,7 @@ const Item = <T extends TreeBasicType<T>>(
           )}
         </div>
         <div className={classes["spinnerWrapper"]}>
-          {isLoading ? (
-            <Spinner size="small" spinerColor={color_warning_1} />
-          ) : null}
+          {isLoading ? <Spinner size="small" spinerColor={"white"} /> : null}
           {!isLoading && arrowDirection !== undefined ? (
             <BaseIcon
               wrapperClassName={classNames(
@@ -81,7 +79,7 @@ const Item = <T extends TreeBasicType<T>>(
               name={"Amount-Boxes_Decrease"}
               size={{ height: 6, width: 12 }}
               wrapperStyle={{ marginInlineStart: "auto" }}
-              color={color_primary_2}
+              color={"#575757"}
             />
           ) : null}
         </div>

@@ -62,7 +62,7 @@ const useStyles = createUseStyles(
         position: "absolute",
         width: "100%",
         height: "100%",
-        backgroundColor: theme.color_white as string,
+        backgroundColor: "white",
         top: 0,
         left: 0,
         opacity: 0.3,
@@ -73,7 +73,7 @@ const useStyles = createUseStyles(
         borderRadius: "100%",
         position: "absolute",
         opacity: 0.4,
-        backgroundColor: theme.color_white,
+        backgroundColor: "white",
         animation: "$ripple 750ms",
       },
       textContainer: {

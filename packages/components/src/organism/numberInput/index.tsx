@@ -19,28 +19,12 @@ const NumberInput = ({
   ...rest
 }: NumberInput) => {
   const classes = useStyles();
-  const { color_primary_1, color_gray_4 } = useTheme();
+  const { disableField } = useTheme();
   const iconWidth = unit === "viewport" ? pxToVh(12) : 12;
   const iconHeight = unit === "viewport" ? pxToVh(7) : 7;
   const fontSize = unit === "viewport" ? pxToVhString(14) : 14;
   return (
     <div style={{ position: "relative", ...wrapperStyle }}>
-      <BaseIcon
-        name={"Amount-Boxes_Decrease"}
-        size={{ height: iconHeight, width: iconWidth }}
-        unit={unit}
-        wrapperClassName={classes["arrowDown"]}
-        color={rest.disabled ? color_gray_4 : color_primary_1}
-        onClick={onDecrease}
-      />
-      <BaseIcon
-        onClick={onIncrease}
-        color={rest.disabled ? color_gray_4 : color_primary_1}
-        name={"Amount-Boxes_Increase"}
-        size={{ height: iconHeight, width: iconWidth }}
-        unit={unit}
-        wrapperClassName={classes["arrowUp"]}
-      />
       <TextInput
         {...rest}
         unit={unit}
@@ -51,6 +35,22 @@ const NumberInput = ({
           fontSize: fontSize,
           ...rest.style,
         }}
+      />
+      <BaseIcon
+        name={"Amount-Boxes_Decrease"}
+        size={{ height: iconHeight, width: iconWidth }}
+        unit={unit}
+        wrapperClassName={classes["arrowDown"]}
+        color={rest.disabled ? disableField : "#575757"}
+        onClick={onDecrease}
+      />
+      <BaseIcon
+        onClick={onIncrease}
+        color={rest.disabled ? disableField : "#575757"}
+        name={"Amount-Boxes_Increase"}
+        size={{ height: iconHeight, width: iconWidth }}
+        unit={unit}
+        wrapperClassName={classes["arrowUp"]}
       />
     </div>
   );

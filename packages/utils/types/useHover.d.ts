@@ -1,3 +1,3 @@
-import { RefObject } from 'react';
+import { RefObject } from "react";
 declare function useHover<T extends HTMLElement = HTMLElement>(elementRef: RefObject<T>): boolean;
 export { useHover };

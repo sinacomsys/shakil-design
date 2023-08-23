@@ -7,16 +7,16 @@ export const useStyles = createUseStyles(
       item: {
         height: 27,
         paddingInlineStart: 23,
-        backgroundColor: theme.color_white,
+        backgroundColor: "white",
         display: "flex",
         alignItems: "center",
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: theme.color_primary_7,
+          backgroundColor: theme.select?.hover,
         },
       },
       itemSelected: {
-        backgroundColor: theme.color_primary_6,
+        backgroundColor: theme.select?.selected,
       },
     };
   },

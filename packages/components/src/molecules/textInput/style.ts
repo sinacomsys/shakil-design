@@ -17,14 +17,14 @@ const useStyles = createUseStyles(
       textInput: {
         width: "100%",
         backgroundColor: theme.textInput?.fieldColor,
-        color: theme.color_primary_1,
+        color: theme.primary,
         border: "none",
         outline: "none",
       },
       disabled: {
-        backgroundColor: theme.color_background,
+        backgroundColor: theme.disableField,
         cursor: "not-allowed",
-        color: theme.color_gray_4,
+        color: theme.disableText,
       },
       inputWrapper: {
         position: "relative",

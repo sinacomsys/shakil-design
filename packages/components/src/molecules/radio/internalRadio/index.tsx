@@ -18,8 +18,6 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
   ({ children, value, onFocus, onBlur, unit = "viewport", ...rest }, ref) => {
     const classes = useStyles();
     const {
-      color_gray_4,
-      color_primary_1,
       radio: {
         disableInnerCircleSelected,
         disableInnerCricleUnselected,
@@ -28,6 +26,8 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
         enableInnerCircleUnselected,
         enableStroke,
       } = {},
+      disableText,
+      primary,
     } = useTheme();
     const [isFocused, setFocus] = useState(false);
 
@@ -75,9 +75,6 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       : (isUncheckedEnable || isUncheckedDisable) &&
         (enableInnerCircleUnselected || disableInnerCricleUnselected);
 
-    // const borderColor = isDisabled ? disableStroke : enableStroke;
-    // const innerCircle = isDisabled ? dis
-
     const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
     const rippleSize =
       unit === "viewport" ? 2 * Math.round((pxToVh(20) * vh) / 2) : 20;
@@ -110,10 +107,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
 
         {typeof children === "string" ? (
           <span>
-            <Text
-              color={isDisabled ? color_gray_4 : color_primary_1}
-              size={fontSize}
-            >
+            <Text color={isDisabled ? disableText : primary} size={fontSize}>
               {children}
             </Text>
           </span>

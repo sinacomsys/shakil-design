@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { Unit } from ".";
+import { Unit } from "../../types";
 export interface CreateIcomoonIconSetProps {
     icons: {
         icon: {

@@ -1,6 +1,7 @@
 import React from "react";
 import { createTheming } from "react-jss";
 export const Colors: ColorsType = {
+  primary: "#374775",
   checkbox: {
     borderSelected: "#374775",
     squareSelected: "#58cc87",
@@ -40,9 +41,33 @@ export const Colors: ColorsType = {
     selectedRowBookmark: "#58cc87",
     sortArrow: "#48e580",
   },
+  select: {
+    hover: "#ebedf2",
+    backgroundColor: "#ebedf2",
+    selected: "#959db8",
+    clearIcon: "#575757",
+    fleshIcon: "#575757",
+  },
+  disableField: "#eeeeee",
+  disableText: "#d1d1d1",
+  tree: {
+    dotLine: "#6c7797",
+    activeItem: "#374775",
+  },
+  collapse: {
+    panel: "red",
+    openPanel: "blue",
+    closePanel: "purple",
+  },
+  switch: {
+    checked: "#58cc87",
+    unchecked: "#ff8946",
+  },
+  noContent: "red",
 };
 
 export interface ColorsType {
+  primary: string;
   checkbox?: {
     borderSelected: string;
     squareSelected: string;
@@ -82,6 +107,29 @@ export interface ColorsType {
     selectedRow: string;
     selectedRowBookmark: string;
   };
+  select?: {
+    hover: string;
+    backgroundColor: string;
+    selected: string;
+    clearIcon: string;
+    fleshIcon: string;
+  };
+  disableText: string;
+  disableField: string;
+  tree?: {
+    dotLine: string;
+    activeItem: string;
+  };
+  collapse?: {
+    panel: string;
+    openPanel: string;
+    closePanel: string;
+  };
+  switch?: {
+    checked: string;
+    unchecked: string;
+  };
+  noContent?: string;
 }
 
 const ThemeContext = React.createContext<ColorsType>(Colors);

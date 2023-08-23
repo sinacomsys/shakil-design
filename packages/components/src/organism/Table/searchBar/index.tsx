@@ -30,7 +30,7 @@ const SearchBar = <T extends Record<string, unknown>>({
   clearFilterIcon,
   isIndeterminate,
 }: SearchBarProps<T>) => {
-  const { table: { filtersTab, divider, filterIcon } = {} } = useTheme();
+  const { table: { filtersTab, divider } = {} } = useTheme();
   const { onCheckAllRows, isAllRowsChecked } = useContext(TableContext);
   return (
     <tr

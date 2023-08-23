@@ -14,7 +14,6 @@ export const useStyles = createUseStyles({
     top: "50%",
     transform: "translateY(-50%)",
     cursor: "pointer",
-    "&.test": {},
   },
   input: {
     "&::-webkit-outer-spin-button , &::-webkit-inner-spin-button": {

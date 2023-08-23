@@ -144,5 +144,5 @@ export declare const fonts: {
         format: string;
     };
 };
-declare const useThemes: () => Record<"bold" | "BoldItalic" | "Book" | "BookItalic" | "Eight" | "EightItalic" | "Four" | "FourItalic" | "Hair" | "HairItalic" | "HeavyItalic" | "Italic" | "Light" | "LightItalic" | "Medium" | "MediumItalic" | "Regular" | "SemiBold" | "SemiBoldItalic" | "Thin" | "ThinItalic" | "Two" | "TwoItalic" | "UltraLight", string>;
-export { useThemes };
+declare const useFonts: () => Record<"bold" | "BoldItalic" | "Book" | "BookItalic" | "Eight" | "EightItalic" | "Four" | "FourItalic" | "Hair" | "HairItalic" | "HeavyItalic" | "Italic" | "Light" | "LightItalic" | "Medium" | "MediumItalic" | "Regular" | "SemiBold" | "SemiBoldItalic" | "Thin" | "ThinItalic" | "Two" | "TwoItalic" | "UltraLight", string>;
+export { useFonts };

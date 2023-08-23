@@ -17,15 +17,15 @@ export interface SpinnerProps {
 }
 
 const Spinner = ({
-  spinerColor = Colors.color_primary_1,
+  spinerColor = Colors.primary,
   size,
   unit = "viewport",
 }: SpinnerProps) => {
-  const { color_primary_1 } = useTheme();
+  const { primary } = useTheme();
   const classes = useStyle();
   const borderStyle = spinerColor
     ? `${spinerColor} transparent transparent transparent`
-    : `${color_primary_1} transparent transparent transparent`;
+    : `${primary} transparent transparent transparent`;
 
   const borderWidth =
     size === "small"

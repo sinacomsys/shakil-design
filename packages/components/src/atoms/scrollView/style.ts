@@ -12,17 +12,17 @@ const useStyles = createUseStyles(
         },
         /* Track */
         "&::-webkit-scrollbar-track": {
-          background: theme.color_primary_7,
+          background: "#f8f8f8",
         },
         /* Handle */
         "&::-webkit-scrollbar-thumb": {
-          background: theme.color_primary_5,
+          background: theme.disableText,
           borderRadius: 4,
         },
 
         /* Handle on hover */
         "&::-webkit-scrollbar-thumb:hover": {
-          background: theme.color_primary_4,
+          background: theme.disableText,
           cursor: "pointer",
         },
       },

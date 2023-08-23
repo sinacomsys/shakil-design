@@ -17,7 +17,7 @@ const useStyle = createUseStyles(
           position: "absolute",
           left: -16,
           border: "none",
-          borderTop: `2px dotted ${theme.color_primary_2}`,
+          borderTop: `2px dotted ${theme.tree?.dotLine}`,
           color: "#fff",
           backgroundColor: "#fff",
           height: 1,

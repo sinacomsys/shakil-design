@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "../../atoms/text";
-import { Indeterminate } from "./customSquare/indeterminate";
+import { Indeterminate } from "./indeterminate";
 import { CustomSquare } from "./customSquare";
 import { useStyles } from "./style";
 import { pxToVhString } from "@shakil-design/utils";

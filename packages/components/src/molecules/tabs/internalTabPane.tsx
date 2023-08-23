@@ -25,7 +25,7 @@ function InternalTabPane({
   onClose,
 }: InternalTabPaneProps) {
   const classes = useStyles();
-  const { color_white, color_primary_3, color_primary_4 } = useTheme();
+  const { tab: { textColor } = {} } = useTheme();
   return (
     <div
       onClick={(e) => {
@@ -37,11 +37,7 @@ function InternalTabPane({
     >
       <div className={classes["tabsTitleWrapper"]}>
         {typeof renderTitle === "string" ? (
-          <Text
-            size={14}
-            theme={"Regular"}
-            color={isActive ? color_white : color_primary_3}
-          >
+          <Text size={14} theme={"Regular"} color={textColor}>
             {renderTitle}
           </Text>
         ) : typeof renderTitle === "function" ? (
@@ -53,7 +49,7 @@ function InternalTabPane({
           wrapperStyle={{
             width: 16,
           }}
-          color={color_primary_4}
+          color={"#575757"}
           name="Table-_-Cross-Icon-for-erasing-all-of-filters"
           size={{ height: pxToVh(10), width: pxToVh(10) }}
           unit={"viewport"}

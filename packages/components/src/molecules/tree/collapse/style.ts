@@ -2,14 +2,14 @@ import { createUseStyles } from "react-jss";
 import { theming } from "../../../theme";
 
 export const useStyles = createUseStyles(
-  ({ color_primary_2 }) => {
+  (theme) => {
     return {
       dots: {
         position: "absolute",
         top: 0,
         left: 11,
         width: 0,
-        borderLeft: `2px dotted ${color_primary_2}`,
+        borderLeft: `2px dotted ${theme.tree?.dotLine}`,
       },
       animationWrapper: {
         position: "relative",

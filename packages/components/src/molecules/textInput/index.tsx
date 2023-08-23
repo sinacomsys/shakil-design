@@ -413,23 +413,28 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             ...supportedProps.style,
           }}
         />
-        <div
-          className={classNames(
-            classes["addonBefore"],
-            addonBeforeClassName && addonBeforeClassName,
-          )}
-          style={addonBeforeStyle}
-        >
-          {addonBefore}
-        </div>
-        <div
-          className={classNames(
-            classes["addonAfter"],
-            addonAfterClassName && addonAfterClassName,
-          )}
-        >
-          {addOnAfterIcon}
-        </div>
+        {addonBefore ? (
+          <div
+            className={classNames(
+              classes["addonBefore"],
+              addonBeforeClassName && addonBeforeClassName,
+            )}
+            style={addonBeforeStyle}
+          >
+            {addonBefore}
+          </div>
+        ) : null}
+
+        {addOnAfterIcon ? (
+          <div
+            className={classNames(
+              classes["addonAfter"],
+              addonAfterClassName && addonAfterClassName,
+            )}
+          >
+            {addOnAfterIcon}
+          </div>
+        ) : null}
       </div>
     );
   },

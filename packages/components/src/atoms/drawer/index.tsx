@@ -2,7 +2,6 @@ import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import { useTheme } from "../../theme/context";
 import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyle } from "./style";
 
@@ -45,7 +44,6 @@ const Drawer = ({
   width,
   destroyOnClose,
 }: DrawerProps) => {
-  const { color_white } = useTheme();
   const classes = useStyle();
   const [drawerRef, setDrawerRef] = useState<HTMLDivElement | null>(null);
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
@@ -131,7 +129,7 @@ const Drawer = ({
       exit={{ ...dimentions?.initial, opacity: 0 }}
       style={{
         position: drawerPositionStrategy,
-        backgroundColor: color_white,
+        backgroundColor: "white",
         ...dimentions?.rect,
       }}
     >
