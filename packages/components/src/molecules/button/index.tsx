@@ -6,7 +6,30 @@ import { Text } from "../../atoms/text";
 import { useTheme } from "../../theme/context";
 import { useStyles } from "./style";
 import { pxToVh } from "@shakil-design/utils";
-import { ButtonProps, Ripple } from "./types";
+import { Unit } from "../../types";
+
+type Mode = "main" | "success" | "danger";
+
+export type Ripple = {
+  top: string;
+  left: string;
+  height: string;
+  width: string;
+  id: number;
+};
+export interface ButtonProps
+  extends Omit<React.HTMLAttributes<HTMLButtonElement>, "type" | "children"> {
+  htmlType?: "submit" | "button" | "reset";
+  mode?: Mode;
+  children: React.ReactNode;
+  className?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
+  form?: string;
+  size?: "small" | "middle";
+  unit?: Unit;
+  ghost?: boolean;
+}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -148,4 +171,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-export { Button, ButtonProps };
+export { Button };
