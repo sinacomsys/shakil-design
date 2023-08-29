@@ -6,7 +6,7 @@ body {
 
 /* These styles disable body scrolling if you are using <ScrollView> */
 body {
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 /* These styles make the root element full-height */

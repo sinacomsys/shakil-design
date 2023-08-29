@@ -15,37 +15,100 @@ const mockData: AnyCompProps["data"] = [
   {
     id: "1",
     title: "test1",
-    backgroundColor: "#e3f6ee",
+    renderBackgroundColor: () => {
+      return "#e3f6ee";
+    },
+    renderItemContent() {
+      return <div style={{ backgroundColor: "red", height: "100%" }}>Test</div>;
+    },
   },
-  { id: "2", title: "data2", backgroundColor: "#e3f6ee" },
-  { id: "3", title: "test3", backgroundColor: "#e3f6ee" },
+  {
+    id: "2",
+    title: "data2",
+    renderBackgroundColor: () => {
+      return "#e3f6ee";
+    },
+  },
+  {
+    id: "3",
+    title: "test3",
+    renderBackgroundColor: () => {
+      return "#e3f6ee";
+    },
+  },
   {
     id: "4",
     title: "test4",
-    backgroundColor: "#e3f6ee",
+    renderBackgroundColor: () => {
+      return "#e3f6ee";
+    },
+    renderItemContent() {
+      return <div style={{ backgroundColor: "red", height: "100%" }}>Test</div>;
+    },
     children: [
       {
         id: "4-1",
         title: "test4-1",
-        backgroundColor: "#e3e6f1",
+
+        renderBackgroundColor: () => {
+          return "#e3e6f1";
+        },
         children: [
-          { id: "4-1-1", title: "test4-1-1", backgroundColor: "#959db8" },
+          {
+            id: "4-1-1",
+            title: "test4-1-1",
+            renderBackgroundColor: () => {
+              return "#959db8";
+            },
+          },
           {
             id: "4-1-2",
             title: "test4-1-2",
-            backgroundColor: "#959db8",
+            renderBackgroundColor: () => {
+              return "#959db8";
+            },
             children: [
-              { id: "4-1-1-1", title: "test4-1-1", backgroundColor: "gray" },
-              { id: "4-1-2-2", title: "test4-1-2", backgroundColor: "gray" },
+              {
+                id: "4-1-1-1",
+                title: "test4-1-1",
+                renderBackgroundColor: () => {
+                  return "gray";
+                },
+              },
+              {
+                id: "4-1-2-2",
+                title: "test4-1-2",
+                renderBackgroundColor: () => {
+                  return "gray";
+                },
+              },
             ],
           },
         ],
       },
-      { id: "4-2", title: "test4-2", backgroundColor: "#e3e6f1" },
-      { id: "4-3", title: "test4-3", backgroundColor: "#e3e6f1" },
+      {
+        id: "4-2",
+        title: "test4-2",
+        renderBackgroundColor: () => {
+          return "#e3e6f1";
+        },
+      },
+      {
+        id: "4-3",
+        title: "test4-3",
+        renderBackgroundColor: () => {
+          return "#e3e6f1";
+        },
+      },
     ],
   },
-  { id: "5", title: "test5", backgroundColor: "#e3f6ee" },
+  {
+    id: "5",
+    title: "test5",
+    renderBackgroundColor: () => {
+      return "#e3f6ee";
+    },
+  },
 ];
 
 const Template: ComponentStory<typeof Tree> = () => (

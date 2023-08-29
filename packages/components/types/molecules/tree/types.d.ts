@@ -1,19 +1,17 @@
 import React from "react";
+type Args<T> = {
+    data: T;
+    level: number;
+};
 export interface TreeBasicType<T> {
     title: string;
     id: string;
     parentId?: string | null;
     children?: T[];
-    statusColor?: string;
-    renderItemContent?: (args: {
-        data: T;
-        level: number;
-    }) => React.ReactNode;
-    backgroundColor?: string;
-    renderTitle?: (args: {
-        data: T;
-        level: number;
-    }) => React.ReactNode;
+    renderStatusColor?: (args: Args<T>) => string;
+    renderItemContent?: (args: Args<T>) => React.ReactNode;
+    renderBackgroundColor?: (args: Args<T>) => string;
+    renderTitle?: (args: Args<T>) => React.ReactNode;
 }
 export type OnSelectItemProps<T> = {
     data: T;
@@ -46,3 +44,4 @@ export interface CollapseProps<T extends TreeBasicType<T>> extends Pick<ItemProp
     id: string;
     defaultOpen?: boolean;
 }
+export {};

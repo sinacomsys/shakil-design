@@ -28,8 +28,8 @@ const Item = <T extends TreeBasicType<T>>(
       onClick={() => onClick?.()}
       style={{
         cursor: "pointer",
-        backgroundColor: data.backgroundColor
-          ? data.backgroundColor
+        backgroundColor: data?.renderBackgroundColor
+          ? data.renderBackgroundColor({ data, level })
           : isActive
           ? activeItem
           : "#f0f0f0",
@@ -42,7 +42,9 @@ const Item = <T extends TreeBasicType<T>>(
       <div
         className={classes["statusLine"]}
         style={{
-          backgroundColor: data.statusColor ? data.statusColor : "#ababab",
+          backgroundColor: data.renderStatusColor
+            ? data.renderStatusColor({ data, level })
+            : "#ababab",
         }}
       />
       <div style={{ display: "flex", alignItems: "center", flex: 1 }}>
