@@ -5,7 +5,7 @@ import { useStyles } from "./style";
 const Option = ({ children, value, onClick, isSelected }: OptionProps) => {
   const classes = useStyles();
   const handleOnClick = () => {
-    onClick(value);
+    onClick(value.value);
   };
 
   return (

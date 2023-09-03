@@ -40,5 +40,10 @@ export const useStyles = createUseStyles(() => {
       transform: "translateY(-50%)",
       cursor: "pointer",
     },
+    textInput: {
+      textAlign: "center",
+      caretColor: "transparent",
+      cursor: "pointer",
+    },
   };
 });

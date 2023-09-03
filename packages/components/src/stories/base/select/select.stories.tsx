@@ -23,6 +23,7 @@ const Template: Story<SelectProps> = () => (
         data={fakeData}
         allowClear
         placeholder="Select Item..."
+        multiple
       />
     </div>
   </StoryContainer>

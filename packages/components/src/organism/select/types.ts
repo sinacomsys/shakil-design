@@ -3,7 +3,7 @@ import { TextInputProps } from "../../molecules/textInput";
 import React from "react";
 export type Value = string | number | null | undefined;
 export type Default = {
-  value?: string | number;
+  value?: Value;
   label?: React.ReactNode;
 };
 
@@ -40,13 +40,12 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
   allowClear?: boolean;
   popupClassName?: string;
   popupStyles?: React.CSSProperties;
+  multiple?: boolean;
 }
-
-export type OptionValue = { value: Value; label: string };
 
 export interface OptionProps {
   isSelected: boolean;
   children: React.ReactNode;
-  value: OptionValue;
-  onClick: (value: OptionValue) => void;
+  value: { value: Value; label: string };
+  onClick: (value: Value) => void;
 }

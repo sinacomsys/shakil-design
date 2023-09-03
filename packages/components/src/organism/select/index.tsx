@@ -6,7 +6,7 @@ import { TextInput } from "../../molecules/textInput";
 import { useOnClickOutSide } from "@shakil-design/utils";
 import { Option } from "./option";
 import { useStyles } from "./style";
-import { Default, OptionValue, SelectProps, Value } from "./types";
+import { Default, SelectProps, Value } from "./types";
 import classnames from "classnames";
 import { Clear } from "./clear";
 
@@ -35,13 +35,13 @@ const Select = <T extends Record<string, unknown> = Default>({
   wrapperStyle,
   popupClassName,
   popupStyles,
+  multiple,
 }: SelectProps<T>) => {
   const classes = useStyles();
-  const [internalValue, setInternalValue] = useState<OptionValue | null>(null);
+  const [internalValue, setInternalValue] = useState<Value | null>(null);
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
   const [isHoverd, setIsHovered] = useState(false);
-
   const [isVisible, setVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
@@ -72,23 +72,12 @@ const Select = <T extends Record<string, unknown> = Default>({
     setReferenceElement(node);
   };
 
-  const _value = propValue || internalValue?.value;
+  const _value = propValue || internalValue;
 
-  const handleOnChange = (selectedItemValue: OptionValue) => {
-    setVisible(false);
-    if (!propValue) {
-      setInternalValue(selectedItemValue);
-      onChange?.(selectedItemValue.value);
-    } else if (propValue) {
-      const selectedItem = data.find(
-        (item) => selectedItemValue.value === valueExtractor(item),
-      );
-
-      if (selectedItem) {
-        const _selectedItem = valueExtractor(selectedItem);
-        onChange?.(_selectedItem);
-      }
-    }
+  const handleOnChange = (selectedItemValue: Value) => {
+    if (!multiple) setVisible(false);
+    setInternalValue(selectedItemValue);
+    onChange?.(selectedItemValue);
   };
 
   const handleOnClear = () => {
@@ -135,13 +124,11 @@ const Select = <T extends Record<string, unknown> = Default>({
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}
         onClick={handleOnClick}
-        value={internalValue?.label}
+        value={_value}
         style={{
-          textAlign: "center",
-          caretColor: "transparent",
-          cursor: "pointer",
           ...style,
         }}
+        className={classes["textInput"]}
         unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
