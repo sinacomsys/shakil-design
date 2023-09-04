@@ -28,12 +28,12 @@ interface TextInputCommon
     | "wrapperStyle"
   > {}
 export interface SelectProps<T extends Record<string, unknown> = Default>
-  extends TextInputCommon {
+  extends Omit<TextInputCommon, "value"> {
   data: T[];
-  value?: Value;
+  value?: Value | Value[];
   valueExtractor?: (item: T) => Value;
   labelExtractor?: (item: T) => string;
-  onChange?: (item: Value) => void;
+  onChange?: (item: Value | Value[]) => void;
   onClear?: () => void;
   disabled?: boolean;
   unit?: Unit;
@@ -43,7 +43,7 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
   multiple?: boolean;
 }
 
-export interface OptionProps {
+export interface OptionProps extends Pick<SelectProps, "multiple"> {
   isSelected: boolean;
   children: React.ReactNode;
   value: { value: Value; label: string };

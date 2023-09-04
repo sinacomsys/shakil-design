@@ -6,7 +6,7 @@ export const useStyles = createUseStyles(
     return {
       item: {
         height: 27,
-        paddingInlineStart: 23,
+        paddingInlineStart: 20,
         backgroundColor: "white",
         display: "flex",
         alignItems: "center",
@@ -14,9 +14,6 @@ export const useStyles = createUseStyles(
         "&:hover": {
           backgroundColor: theme.select?.hover,
         },
-      },
-      itemSelected: {
-        backgroundColor: theme.select?.selected,
       },
     };
   },

@@ -38,7 +38,9 @@ const Select = <T extends Record<string, unknown> = Default>({
   multiple,
 }: SelectProps<T>) => {
   const classes = useStyles();
-  const [internalValue, setInternalValue] = useState<Value | null>(null);
+  const [internalValue, setInternalValue] = useState<Value | Value[] | null>(
+    null,
+  );
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
   const [isHoverd, setIsHovered] = useState(false);
@@ -47,7 +49,6 @@ const Select = <T extends Record<string, unknown> = Default>({
     null,
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
-
   const { styles: poperStyles, attributes } = usePopper(
     referenceElement,
     popperElement,
@@ -57,10 +58,17 @@ const Select = <T extends Record<string, unknown> = Default>({
       modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
     },
   );
-
   useEffect(() => {
     body.current = document.body;
   }, []);
+
+  useEffect(() => {
+    setInternalValue(null);
+  }, [multiple]);
+
+  useEffect(() => {
+    setInternalValue(propValue);
+  }, [propValue]);
 
   const handleOnClick = () => {
     if (disabled) return;
@@ -71,13 +79,30 @@ const Select = <T extends Record<string, unknown> = Default>({
     setWidth(node?.getBoundingClientRect().width);
     setReferenceElement(node);
   };
-
-  const _value = propValue || internalValue;
-
   const handleOnChange = (selectedItemValue: Value) => {
-    if (!multiple) setVisible(false);
-    setInternalValue(selectedItemValue);
+    if (multiple) {
+      const alreadyExist = ((internalValue || []) as Value[]).find(
+        (item) => item === selectedItemValue,
+      );
+      if (alreadyExist) {
+        const items = ((internalValue || []) as Value[]).filter((item) => {
+          return item !== selectedItemValue;
+        });
+        onChange?.(items);
+        !propValue && setInternalValue(items);
+      } else {
+        onChange?.([...((internalValue || []) as Value[]), selectedItemValue]);
+        !propValue &&
+          setInternalValue([
+            ...((internalValue || []) as Value[]),
+            selectedItemValue,
+          ]);
+      }
+      return;
+    }
+    !propValue && setInternalValue(selectedItemValue);
     onChange?.(selectedItemValue);
+    setVisible(false);
   };
 
   const handleOnClear = () => {
@@ -104,6 +129,16 @@ const Select = <T extends Record<string, unknown> = Default>({
     if (disabled) return;
     setIsHovered(false);
   };
+
+  let _value: Value = null;
+  if (multiple) {
+    _value =
+      Array.isArray(internalValue) && internalValue.length
+        ? `${internalValue?.length} Items Selected`
+        : undefined;
+  } else {
+    _value = internalValue as Value;
+  }
 
   return (
     <>
@@ -177,9 +212,18 @@ const Select = <T extends Record<string, unknown> = Default>({
                   </div>
                   <ScrollView style={{ flex: 1 }}>
                     {data.map((item) => {
+                      const isSelected =
+                        multiple && Array.isArray(internalValue)
+                          ? Boolean(
+                              internalValue.find(
+                                (_item) => _item === valueExtractor(item),
+                              ),
+                            )
+                          : _value === valueExtractor(item);
                       return (
                         <Option
-                          isSelected={_value === valueExtractor(item)}
+                          multiple={multiple}
+                          isSelected={isSelected}
                           value={{
                             label: labelExtractor(item),
                             value: valueExtractor(item),
