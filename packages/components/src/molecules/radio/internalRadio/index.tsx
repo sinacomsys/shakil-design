@@ -59,7 +59,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       ? value
       : undefined;
 
-    const isChecked = _value === contextValue;
+    const isChecked = _value === contextValue || rest.checked;
     const isDisabled = rest.disabled;
 
     const isCheckedEnable = isChecked && !isDisabled;
@@ -93,7 +93,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
             type={"radio"}
             value={_value}
             name={name}
-            checked={_value === contextValue}
+            checked={isChecked}
             {...rest}
           />
           <motion.div

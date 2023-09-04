@@ -1,7 +1,7 @@
-import { Text } from "../../../atoms/text";
-import { OptionProps } from "../types";
+import { Text } from "../../../../atoms/text";
+import { OptionProps } from "../../types";
 import { useStyles } from "./style";
-import { CheckBox } from "../../../molecules";
+import { CheckBox } from "../../../../molecules";
 
 const Option = ({
   children,

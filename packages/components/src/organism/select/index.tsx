@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
-import { BaseIcon, ScrollView } from "../../atoms";
+import { BaseIcon } from "../../atoms";
 import { TextInput } from "../../molecules/textInput";
 import { useOnClickOutSide } from "@shakil-design/utils";
-import { Option } from "./option";
 import { useStyles } from "./style";
-import { Default, SelectProps, Value } from "./types";
+import { Default, InternalValue, SelectProps, Value } from "./types";
 import classnames from "classnames";
-import { Clear } from "./clear";
+import { Clear } from "./components/clear";
+import { MultiSelectList } from "./components/list/multiSelect";
+import { SingleSelectList } from "./components/list/singleSelect";
 
 const Select = <T extends Record<string, unknown> = Default>({
   data,
@@ -38,9 +39,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   multiple,
 }: SelectProps<T>) => {
   const classes = useStyles();
-  const [internalValue, setInternalValue] = useState<Value | Value[] | null>(
-    null,
-  );
+  const [internalValue, setInternalValue] = useState<InternalValue>(null);
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
   const [isHoverd, setIsHovered] = useState(false);
@@ -130,14 +129,14 @@ const Select = <T extends Record<string, unknown> = Default>({
     setIsHovered(false);
   };
 
-  let _value: Value = null;
+  let displayValue: Value = null;
   if (multiple) {
-    _value =
+    displayValue =
       Array.isArray(internalValue) && internalValue.length
         ? `${internalValue?.length} Items Selected`
         : undefined;
   } else {
-    _value = internalValue as Value;
+    displayValue = internalValue as Value;
   }
 
   return (
@@ -159,7 +158,7 @@ const Select = <T extends Record<string, unknown> = Default>({
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}
         onClick={handleOnClick}
-        value={_value}
+        value={displayValue}
         style={{
           ...style,
         }}
@@ -173,9 +172,9 @@ const Select = <T extends Record<string, unknown> = Default>({
           <Clear
             handleOnClear={handleOnClear}
             whatVisible={
-              isHoverd && _value
+              isHoverd && displayValue
                 ? "cross"
-                : !isHoverd || !_value
+                : !isHoverd || !displayValue
                 ? "arrow"
                 : null
             }
@@ -210,32 +209,23 @@ const Select = <T extends Record<string, unknown> = Default>({
                       }
                     />
                   </div>
-                  <ScrollView style={{ flex: 1 }}>
-                    {data.map((item) => {
-                      const isSelected =
-                        multiple && Array.isArray(internalValue)
-                          ? Boolean(
-                              internalValue.find(
-                                (_item) => _item === valueExtractor(item),
-                              ),
-                            )
-                          : _value === valueExtractor(item);
-                      return (
-                        <Option
-                          multiple={multiple}
-                          isSelected={isSelected}
-                          value={{
-                            label: labelExtractor(item),
-                            value: valueExtractor(item),
-                          }}
-                          onClick={handleOnChange}
-                          key={valueExtractor(item)}
-                        >
-                          {labelExtractor(item)}
-                        </Option>
-                      );
-                    })}
-                  </ScrollView>
+                  {multiple ? (
+                    <MultiSelectList
+                      data={data}
+                      labelExtractor={labelExtractor}
+                      valueExtractor={valueExtractor}
+                      internalValue={internalValue}
+                      onClick={handleOnChange}
+                    />
+                  ) : (
+                    <SingleSelectList
+                      data={data}
+                      labelExtractor={labelExtractor}
+                      valueExtractor={valueExtractor}
+                      internalValue={internalValue}
+                      onClick={handleOnChange}
+                    />
+                  )}
                 </div>
               </div>
             </>,
