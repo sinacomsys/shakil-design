@@ -4,4 +4,5 @@ export * from "./flattenArray";
 export * from "./useHorizontalScroll";
 export * from "./useOnclickOutsiede";
 export * from "./useHover";
+export * from "./createTreeFromFlatArray";
 //# sourceMappingURL=index.js.map
