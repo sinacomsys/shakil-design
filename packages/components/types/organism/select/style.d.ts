@@ -1,3 +1,3 @@
 export declare const useStyles: (data?: {
     theme?: Jss.Theme | undefined;
-} | undefined) => import("jss").Classes<"select" | "mask" | "overlay" | "clearIcon" | "inputWrapper" | "selectWrapper">;
+} | undefined) => import("jss").Classes<"select" | "mask" | "overlay" | "clearIcon" | "textInput" | "inputWrapper" | "selectWrapper">;

@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
-import { BaseIcon, ScrollView } from "../../atoms";
+import { BaseIcon } from "../../atoms";
 import { TextInput } from "../../molecules/textInput";
 import { useOnClickOutSide } from "@shakil-design/utils";
-import { Option } from "./option";
 import { useStyles } from "./style";
-import { Default, OptionValue, SelectProps, Value } from "./types";
+import { Default, InternalValue, SelectProps, Value } from "./types";
 import classnames from "classnames";
-import { Clear } from "./clear";
+import { Clear } from "./components/clear";
+import { MultiSelectList } from "./components/list/multiSelect";
+import { SingleSelectList } from "./components/list/singleSelect";
 
 const Select = <T extends Record<string, unknown> = Default>({
   data,
@@ -35,19 +36,18 @@ const Select = <T extends Record<string, unknown> = Default>({
   wrapperStyle,
   popupClassName,
   popupStyles,
+  multiple,
 }: SelectProps<T>) => {
   const classes = useStyles();
-  const [internalValue, setInternalValue] = useState<OptionValue | null>(null);
+  const [internalValue, setInternalValue] = useState<InternalValue>(null);
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
   const [isHoverd, setIsHovered] = useState(false);
-
   const [isVisible, setVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
-
   const { styles: poperStyles, attributes } = usePopper(
     referenceElement,
     popperElement,
@@ -57,10 +57,17 @@ const Select = <T extends Record<string, unknown> = Default>({
       modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
     },
   );
-
   useEffect(() => {
     body.current = document.body;
   }, []);
+
+  useEffect(() => {
+    setInternalValue(null);
+  }, [multiple]);
+
+  useEffect(() => {
+    setInternalValue(propValue);
+  }, [propValue]);
 
   const handleOnClick = () => {
     if (disabled) return;
@@ -71,24 +78,30 @@ const Select = <T extends Record<string, unknown> = Default>({
     setWidth(node?.getBoundingClientRect().width);
     setReferenceElement(node);
   };
-
-  const _value = propValue || internalValue?.value;
-
-  const handleOnChange = (selectedItemValue: OptionValue) => {
-    setVisible(false);
-    if (!propValue) {
-      setInternalValue(selectedItemValue);
-      onChange?.(selectedItemValue.value);
-    } else if (propValue) {
-      const selectedItem = data.find(
-        (item) => selectedItemValue.value === valueExtractor(item),
+  const handleOnChange = (selectedItemValue: Value) => {
+    if (multiple) {
+      const alreadyExist = ((internalValue || []) as Value[]).find(
+        (item) => item === selectedItemValue,
       );
-
-      if (selectedItem) {
-        const _selectedItem = valueExtractor(selectedItem);
-        onChange?.(_selectedItem);
+      if (alreadyExist) {
+        const items = ((internalValue || []) as Value[]).filter((item) => {
+          return item !== selectedItemValue;
+        });
+        onChange?.(items);
+        !propValue && setInternalValue(items);
+      } else {
+        onChange?.([...((internalValue || []) as Value[]), selectedItemValue]);
+        !propValue &&
+          setInternalValue([
+            ...((internalValue || []) as Value[]),
+            selectedItemValue,
+          ]);
       }
+      return;
     }
+    !propValue && setInternalValue(selectedItemValue);
+    onChange?.(selectedItemValue);
+    setVisible(false);
   };
 
   const handleOnClear = () => {
@@ -116,6 +129,16 @@ const Select = <T extends Record<string, unknown> = Default>({
     setIsHovered(false);
   };
 
+  let displayValue: Value = null;
+  if (multiple) {
+    displayValue =
+      Array.isArray(internalValue) && internalValue.length
+        ? `${internalValue?.length} Items Selected`
+        : undefined;
+  } else {
+    displayValue = internalValue as Value;
+  }
+
   return (
     <>
       <TextInput
@@ -135,13 +158,11 @@ const Select = <T extends Record<string, unknown> = Default>({
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}
         onClick={handleOnClick}
-        value={internalValue?.label}
+        value={displayValue}
         style={{
-          textAlign: "center",
-          caretColor: "transparent",
-          cursor: "pointer",
           ...style,
         }}
+        className={classes["textInput"]}
         unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
@@ -151,9 +172,9 @@ const Select = <T extends Record<string, unknown> = Default>({
           <Clear
             handleOnClear={handleOnClear}
             whatVisible={
-              isHoverd && _value
+              isHoverd && displayValue
                 ? "cross"
-                : !isHoverd || !_value
+                : !isHoverd || !displayValue
                 ? "arrow"
                 : null
             }
@@ -188,23 +209,23 @@ const Select = <T extends Record<string, unknown> = Default>({
                       }
                     />
                   </div>
-                  <ScrollView style={{ flex: 1 }}>
-                    {data.map((item) => {
-                      return (
-                        <Option
-                          isSelected={_value === valueExtractor(item)}
-                          value={{
-                            label: labelExtractor(item),
-                            value: valueExtractor(item),
-                          }}
-                          onClick={handleOnChange}
-                          key={valueExtractor(item)}
-                        >
-                          {labelExtractor(item)}
-                        </Option>
-                      );
-                    })}
-                  </ScrollView>
+                  {multiple ? (
+                    <MultiSelectList
+                      data={data}
+                      labelExtractor={labelExtractor}
+                      valueExtractor={valueExtractor}
+                      internalValue={internalValue}
+                      onClick={handleOnChange}
+                    />
+                  ) : (
+                    <SingleSelectList
+                      data={data}
+                      labelExtractor={labelExtractor}
+                      valueExtractor={valueExtractor}
+                      internalValue={internalValue}
+                      onClick={handleOnChange}
+                    />
+                  )}
                 </div>
               </div>
             </>,

@@ -4,5 +4,5 @@ interface CustomCircle {
     backgroundColor: string | undefined;
     unit?: Unit;
 }
-declare const CustomCircle: ({ borderColor, backgroundColor }: CustomCircle) => import("react/jsx-dev-runtime").JSX.Element;
+declare const CustomCircle: ({ borderColor, backgroundColor, unit }: CustomCircle) => import("react/jsx-dev-runtime").JSX.Element;
 export { CustomCircle };

@@ -10,22 +10,39 @@ export default {
 
 const fakeData = [...new Array(35)].map((_, index) => {
   return {
-    value: `TestValue${index}`,
-    label: `Test Label${index}`,
+    test: `TestValue${index}`,
+    test1: `Test Label${index}`,
   };
 });
 
-const Template: Story<SelectProps> = () => (
-  <StoryContainer>
-    <div style={{ width: 300 }}>
-      <Select
-        unit="pixel"
-        data={fakeData}
-        allowClear
-        placeholder="Select Item..."
-      />
-    </div>
-  </StoryContainer>
-);
+const Template: Story<SelectProps> = (args) => {
+  return (
+    <StoryContainer>
+      <div style={{ width: 300 }}>
+        <Select {...args} />
+      </div>
+    </StoryContainer>
+  );
+};
 
-export const Primary = Template.bind({});
+export const SingleSelect = Template.bind({});
+export const MultipleSelect = Template.bind({});
+
+SingleSelect.args = {
+  unit: "pixel",
+  valueExtractor: ({ test }) => test,
+  labelExtractor: ({ test1 }) => test1,
+  data: fakeData,
+  allowClear: true,
+  placeholder: "Select Item...",
+};
+
+MultipleSelect.args = {
+  unit: "pixel",
+  valueExtractor: ({ test }) => test,
+  labelExtractor: ({ test1 }) => test1,
+  data: fakeData,
+  allowClear: true,
+  placeholder: "Select Item...",
+  multiple: true,
+};

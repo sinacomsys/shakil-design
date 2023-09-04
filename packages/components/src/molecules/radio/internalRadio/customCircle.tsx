@@ -8,25 +8,31 @@ interface CustomCircle {
   unit?: Unit;
 }
 
-const CustomCircle = ({ borderColor, backgroundColor }: CustomCircle) => {
+const CustomCircle = ({ borderColor, backgroundColor, unit }: CustomCircle) => {
   const classes = useStyles();
   const { height: windowHeight } = useWindowSize();
   const vh = windowHeight / 100;
+
+  const outterCircleWidth =
+    unit === "viewport" ? 2 * Math.round((pxToVh(16) * vh) / 2) : 16;
+  const innerCircleWidth =
+    unit === "viewport" ? 2 * Math.round((pxToVh(10) * vh) / 2) : 10;
+
   return (
     <div
       className={classes["outterCircle"]}
       style={{
         border: `1px solid ${borderColor}`,
-        width: 2 * Math.round((pxToVh(16) * vh) / 2),
-        height: 2 * Math.round((pxToVh(16) * vh) / 2),
+        width: outterCircleWidth,
+        height: outterCircleWidth,
       }}
     >
       <div
         className={classes["innerCircle"]}
         style={{
           backgroundColor: backgroundColor,
-          width: 2 * Math.round((pxToVh(10) * vh) / 2),
-          height: 2 * Math.round((pxToVh(10) * vh) / 2),
+          width: innerCircleWidth,
+          height: innerCircleWidth,
         }}
       />
     </div>
