@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { DOMAttributes } from "react";
-import { BaseIcon } from "../../../atoms";
-import { useTheme } from "../../../theme/context";
+import { BaseIcon } from "../../../../atoms";
+import { useTheme } from "../../../../theme/context";
 
 const Clear = ({
   handleOnClear,

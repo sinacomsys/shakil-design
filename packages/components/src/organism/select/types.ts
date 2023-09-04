@@ -49,3 +49,4 @@ export interface OptionProps extends Pick<SelectProps, "multiple"> {
   value: { value: Value; label: string };
   onClick: (value: Value) => void;
 }
+export type InternalValue = Value | Value[] | null;
