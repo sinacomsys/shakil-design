@@ -14,6 +14,8 @@ export interface TooltipProps {
   hasMask?: boolean;
   maskStyle?: React.CSSProperties;
   isVisible?: boolean;
+  onOpen?: () => void;
+  onClose?: () => void;
 }
 
 const Tooltip = ({
@@ -25,6 +27,8 @@ const Tooltip = ({
   hasMask,
   maskStyle,
   isVisible: isVisibleProp,
+  onClose,
+  onOpen,
 }: TooltipProps) => {
   const classes = useStyles();
   const body = useRef<HTMLElement | null>(null);
@@ -51,9 +55,23 @@ const Tooltip = ({
 
   const currentPlacement = state?.placement;
 
+  const triggerOnClose = () => {
+    onClose?.();
+    setVisible(false);
+  };
+
+  const triggerOnOpen = () => {
+    onOpen?.();
+    setVisible(true);
+  };
+
   const handleOnClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     fireEvents("onClick", e);
-    setVisible((prev) => !prev);
+    setVisible((prev) => {
+      if (prev) triggerOnClose();
+      else if (!prev) triggerOnOpen();
+      return !prev;
+    });
   };
 
   useEffect(() => {
@@ -63,13 +81,13 @@ const Tooltip = ({
   const handleOnMouseLeave = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     fireEvents("onMouseLeave", e);
     timerDelay.current = setTimeout(() => {
-      setVisible(false);
+      triggerOnClose();
     }, 100);
   };
 
   const handleOnMouseEnter = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     fireEvents("onMouseEnter", e);
-    setVisible(true);
+    triggerOnOpen();
   };
 
   const newChildProps: HTMLAttributes<HTMLElement> & {
@@ -99,14 +117,14 @@ const Tooltip = ({
     extraElement: referenceElement,
     handler() {
       if (trigger === "click") {
-        setVisible(false);
+        triggerOnClose();
       }
     },
   });
 
   const handlePopupMouseLeave = () => {
     if (trigger === "hover") {
-      setVisible(false);
+      triggerOnClose();
     }
   };
 

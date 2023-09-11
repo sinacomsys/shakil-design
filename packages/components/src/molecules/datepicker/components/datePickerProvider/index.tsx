@@ -1,9 +1,8 @@
 import { checkIsDateValid } from "../../utils/checkDateIsValid";
 import moment, { Moment } from "moment-jalaali";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DatePickerContext } from "../../context";
-// import { Panel } from "../panel";
-import { DatePickerProviderProps } from "../types";
+import { DatePickerProps, DatePickerProviderProps } from "../types";
 moment.loadPersian({ dialect: "persian-modern" });
 
 const DatePickerProvider = ({
@@ -14,10 +13,20 @@ const DatePickerProvider = ({
   children,
   handleExtendCalendar,
   isCalendarExtended,
+  value,
 }: DatePickerProviderProps) => {
-  const [currentDate, setCurrentDate] = useState<Moment>(moment());
-  const [selectedDate, setSelectedDate] = useState<Moment | null>(null);
+  const [currentDate, setCurrentDate] = useState<DatePickerProps["value"]>(
+    moment(),
+  );
+  const [selectedDate, setSelectedDate] =
+    useState<DatePickerProps["value"]>(null);
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setCurrentDate(value ?? moment());
+    setSelectedDate(value);
+    setInputValue(value?.format("jYYYY/jMM/jDD") ?? "");
+  }, [value]);
 
   const handleMonthChange = (value: Moment) => {
     onMonthChange?.({
@@ -38,19 +47,20 @@ const DatePickerProvider = ({
   };
 
   const onSubtractMonth = () => {
-    const newValue = currentDate.clone().subtract(1, "jMonth");
+    const newValue = currentDate?.clone().subtract(1, "jMonth");
     setCurrentDate(newValue);
+    if (!newValue) return;
     handleMonthChange(newValue);
   };
 
   const onAddYear = () => {
-    const newValue = currentDate.clone().add(1, "jYear");
+    const newValue = currentDate?.clone().add(1, "jYear");
     if (!newValue) return;
     setCurrentDate(newValue);
     handleOnChangeYear(newValue.format("jYYYY") as unknown as number);
   };
   const onSubtractYear = () => {
-    const newValue = currentDate.clone().subtract(1, "jYear");
+    const newValue = currentDate?.clone().subtract(1, "jYear");
     if (!newValue) return;
     setCurrentDate(newValue);
     handleOnChangeYear(newValue.format("jYYYY") as unknown as number);
@@ -67,6 +77,7 @@ const DatePickerProvider = ({
     setSelectedDate(value);
     onChange?.(value);
     onDayChange?.(value.format("jDD") as unknown as number);
+    setInputValue(value.format("jYYYY/jMM/jDD"));
   };
 
   const onChangeDateInputText = (value: string) => {

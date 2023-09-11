@@ -44,7 +44,7 @@ export const Header = () => {
       />
       <div className={classes["month"]}>
         <Text size={14} color={"white"} theme="Regular">
-          {currentDate.format("jMMMM")}
+          {currentDate?.format("jMMMM") ?? ""}
         </Text>
         <div style={{ display: "flex", alignItems: "center", marginTop: 5 }}>
           <BaseIcon
@@ -59,7 +59,7 @@ export const Header = () => {
             color={"white"}
             size={14}
           >
-            {currentDate.format("jYYYY")}
+            {currentDate?.format("jYYYY") ?? ""}
           </Text>
           <BaseIcon
             name="Calendar-_-Year-_-Next-Year"

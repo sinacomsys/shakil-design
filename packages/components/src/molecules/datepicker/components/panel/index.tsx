@@ -25,6 +25,7 @@ export const Panel = () => {
     });
   };
   useEffect(() => {
+    if (!currentDate) return;
     setMonthMatrix(handleGetDaysOfMonth(currentDate));
   }, [currentDate]);
 
@@ -32,7 +33,8 @@ export const Panel = () => {
     setMatrixOpen((prev) => !prev);
     handleExtendCalendar?.();
   };
-  const isCalendarExtended2 = isCalendarExtended || isMatrixOpen;
+  const isCalendarExtended2 =
+    isCalendarExtended !== undefined ? isCalendarExtended : isMatrixOpen;
 
   return (
     <div

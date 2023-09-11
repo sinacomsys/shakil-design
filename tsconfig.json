@@ -10,7 +10,7 @@
     "declaration": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "jsx": "react-jsxdev",
     "resolveJsonModule": true,
     "esModuleInterop": true

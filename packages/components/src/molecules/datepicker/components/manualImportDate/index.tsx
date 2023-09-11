@@ -56,6 +56,7 @@ export const ManualImportDate = () => {
         <div style={{ display: "flex" }}>
           <div style={{ width: 44 }}>
             <TextInput
+              unit="pixel"
               value={year}
               style={{ textAlign: "center" }}
               onChangeText={(value) => {
@@ -66,6 +67,7 @@ export const ManualImportDate = () => {
           </div>
           <div style={{ width: 44, marginInline: 6 }}>
             <TextInput
+              unit="pixel"
               value={month}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -76,6 +78,7 @@ export const ManualImportDate = () => {
           </div>
           <div style={{ width: 44 }}>
             <TextInput
+              unit="pixel"
               value={day}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -92,10 +95,10 @@ export const ManualImportDate = () => {
         </Text>
         <div style={{ display: "flex" }}>
           <div style={{ width: 44 }}>
-            <TextInput style={{ textAlign: "center" }} />
+            <TextInput unit="pixel" style={{ textAlign: "center" }} />
           </div>
           <div style={{ width: 44, marginInline: 6 }}>
-            <TextInput style={{ textAlign: "center" }} />
+            <TextInput unit="pixel" style={{ textAlign: "center" }} />
           </div>
           <Button size="small" style={{ width: 44 }} onClick={onConfirm}>
             ok

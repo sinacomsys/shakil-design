@@ -4,7 +4,8 @@
     "baseUrl": "./src",
     "declarationDir": "types",
     "outDir": "dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "emitDeclarationOnly": true
   },
   "include": ["./src", "./src/custom.d.ts"],
   "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]

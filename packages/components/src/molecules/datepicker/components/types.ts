@@ -1,4 +1,5 @@
 import { Moment } from "moment-jalaali";
+import { Unit } from "../../../types";
 
 type MonthValue = {
   name: string;
@@ -11,6 +12,7 @@ export interface DatePickerProps {
   onDayChange?: (value: number) => void;
   onMonthChange?: (value: MonthValue) => void;
   onYearChange?: (value: number) => void;
+  unit?: Unit;
 }
 
 type DateInputProps = {
