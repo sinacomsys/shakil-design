@@ -21,7 +21,7 @@ const Template: Story<ModalProps> = (args) => {
         {...args}
         isVisible={isVisible}
         onClose={onToggleDrawer}
-        destroyOnClose
+        destroyOnClose={true}
       >
         <div
           style={{

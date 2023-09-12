@@ -2,18 +2,19 @@ import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyle } from "./style";
+import React from "react";
 
 export interface DrawerProps {
   isVisible: boolean;
   children: React.ReactNode;
   onClose: () => void;
-  getContainer?: HTMLElement;
+  getContainer?: HTMLElement | null;
   placement?: "top" | "right" | "bottom" | "left";
   width?: number;
   height?: number;
   destroyOnClose?: boolean;
+  maskCloseable?: boolean;
 }
 
 type DrawerRect = {
@@ -43,27 +44,23 @@ const Drawer = ({
   height,
   width,
   destroyOnClose,
+  maskCloseable = true,
 }: DrawerProps) => {
   const classes = useStyle();
-  const [drawerRef, setDrawerRef] = useState<HTMLDivElement | null>(null);
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
-
-  const handleDrawerRef = (node: HTMLDivElement) => {
-    setDrawerRef(node);
-  };
 
   useEffect(() => {
     setBodyRef(document.body);
   }, []);
 
-  useOnClickOutSide({
-    element: drawerRef,
-    handler() {
-      onClose();
-    },
-  });
-
-  const mask = <div className={classNames(classes["mask"])} />;
+  const mask = (
+    <div
+      onClick={() => {
+        isVisible && maskCloseable && onClose();
+      }}
+      className={classNames(classes["mask"])}
+    />
+  );
 
   const portalContainerElement = useMemo(() => {
     if (
@@ -120,7 +117,6 @@ const Drawer = ({
 
   const content = (
     <motion.div
-      ref={handleDrawerRef}
       initial={{ ...dimentions?.initial, opacity: 0 }}
       animate={{
         ...(isVisible && dimentions?.animateTo),

@@ -1,9 +1,8 @@
-import { useContext, useReducer } from "react";
+import { useReducer } from "react";
 import { TextInput } from "../../..";
 import { Text } from "../../../../atoms";
 import { Button } from "../../..";
-import { DatePickerContext } from "../../context";
-import moment from "moment-jalaali";
+import moment, { Moment } from "moment-jalaali";
 import { checkIsDateValid } from "../../utils/checkDateIsValid";
 
 type CountActionKind = "YEAR" | "MONTH" | "DAY";
@@ -17,6 +16,12 @@ interface CountState {
   day: string;
 }
 
+interface ManualImportDateProps {
+  onSelectDate: (args: Moment) => void;
+  onSetCurrentDate: (args: Moment) => void;
+  goToday: () => void;
+}
+
 const reducer = (state: CountState, action: CountAction) => {
   if (action.type === "YEAR") {
     return { ...state, year: action.payload };
@@ -27,10 +32,11 @@ const reducer = (state: CountState, action: CountAction) => {
   } else return state;
 };
 
-export const ManualImportDate = () => {
-  const { goToday, onSetCurrentDate, onSelectDate } =
-    useContext(DatePickerContext);
-
+export const ManualImportDate = ({
+  goToday,
+  onSelectDate,
+  onSetCurrentDate,
+}: ManualImportDateProps) => {
   const [{ day, month, year }, dispatch] = useReducer(reducer, {
     year: "",
     month: "",
@@ -56,6 +62,7 @@ export const ManualImportDate = () => {
         <div style={{ display: "flex" }}>
           <div style={{ width: 44 }}>
             <TextInput
+              unit="pixel"
               value={year}
               style={{ textAlign: "center" }}
               onChangeText={(value) => {
@@ -66,6 +73,7 @@ export const ManualImportDate = () => {
           </div>
           <div style={{ width: 44, marginInline: 6 }}>
             <TextInput
+              unit="pixel"
               value={month}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -76,6 +84,7 @@ export const ManualImportDate = () => {
           </div>
           <div style={{ width: 44 }}>
             <TextInput
+              unit="pixel"
               value={day}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -92,10 +101,10 @@ export const ManualImportDate = () => {
         </Text>
         <div style={{ display: "flex" }}>
           <div style={{ width: 44 }}>
-            <TextInput style={{ textAlign: "center" }} />
+            <TextInput unit="pixel" style={{ textAlign: "center" }} />
           </div>
           <div style={{ width: 44, marginInline: 6 }}>
-            <TextInput style={{ textAlign: "center" }} />
+            <TextInput unit="pixel" style={{ textAlign: "center" }} />
           </div>
           <Button size="small" style={{ width: 44 }} onClick={onConfirm}>
             ok

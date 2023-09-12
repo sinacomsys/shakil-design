@@ -1,8 +1,9 @@
 import moment, { Moment } from "moment-jalaali";
 import { createContext } from "react";
+import { DatePickerProps } from "./components/types";
 
 interface DatePickerContext {
-  currentDate: Moment;
+  currentDate: DatePickerProps["value"];
   onAddMonth: () => void;
   onSubtractMonth: () => void;
   onAddYear: () => void;
@@ -10,7 +11,7 @@ interface DatePickerContext {
   goToday: () => void;
   onSetCurrentDate: (value: Moment) => void;
   onSelectDate: (value: Moment) => void;
-  selectedDate: Moment | null;
+  selectedDate: DatePickerProps["value"];
   handleExtendCalendar?: () => void;
   isCalendarExtended?: boolean;
 }
