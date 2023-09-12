@@ -18,7 +18,7 @@ const fakeData = [...new Array(35)].map((_, index) => {
 const Template: Story<SelectProps> = (args) => {
   return (
     <StoryContainer>
-      <div style={{ width: 300 }}>
+      <div style={{ width: 350 }}>
         <Select {...args} />
       </div>
     </StoryContainer>
