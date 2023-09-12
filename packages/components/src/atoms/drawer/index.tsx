@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyle } from "./style";
@@ -45,19 +45,15 @@ const Drawer = ({
   destroyOnClose,
 }: DrawerProps) => {
   const classes = useStyle();
-  const [drawerRef, setDrawerRef] = useState<HTMLDivElement | null>(null);
+  const drawerRef = useRef<HTMLDivElement | null>(null);
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
-
-  const handleDrawerRef = (node: HTMLDivElement) => {
-    setDrawerRef(node);
-  };
 
   useEffect(() => {
     setBodyRef(document.body);
   }, []);
 
   useOnClickOutSide({
-    element: drawerRef,
+    element: drawerRef.current,
     handler() {
       onClose();
     },
@@ -120,7 +116,7 @@ const Drawer = ({
 
   const content = (
     <motion.div
-      ref={handleDrawerRef}
+      ref={drawerRef}
       initial={{ ...dimentions?.initial, opacity: 0 }}
       animate={{
         ...(isVisible && dimentions?.animateTo),
