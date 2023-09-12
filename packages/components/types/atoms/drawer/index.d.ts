@@ -1,13 +1,24 @@
-/// <reference types="react" />
+import React from "react";
 export interface DrawerProps {
-    isVisible: boolean;
-    children: React.ReactNode;
-    onClose: () => void;
-    getContainer?: HTMLElement;
-    placement?: "top" | "right" | "bottom" | "left";
-    width?: number;
-    height?: number;
-    destroyOnClose?: boolean;
+  isVisible: boolean;
+  children: React.ReactNode;
+  onClose: () => void;
+  getContainer?: HTMLElement | null;
+  placement?: "top" | "right" | "bottom" | "left";
+  width?: number;
+  height?: number;
+  destroyOnClose?: boolean;
+  maskCloseable?: boolean;
 }
-declare const Drawer: ({ isVisible, children, onClose, getContainer, placement, height, width, destroyOnClose, }: DrawerProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Drawer: ({
+  isVisible,
+  children,
+  onClose,
+  getContainer,
+  placement,
+  height,
+  width,
+  destroyOnClose,
+  maskCloseable,
+}: DrawerProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { Drawer };

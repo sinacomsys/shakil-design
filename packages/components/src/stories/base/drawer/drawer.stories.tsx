@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { MutableRefObject, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Drawer, DrawerProps, Text } from "../../../atoms";
 import { Button } from "../../../molecules";
 import { Select } from "../../../organism";

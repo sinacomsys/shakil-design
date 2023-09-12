@@ -5,7 +5,6 @@ import { chunkDaysOfMonth } from "../../utils/chuckDaysOfMonth";
 import { Header } from "../header";
 import { DaysOfWeekTitle } from "../daysOfWeek";
 import { Matrix } from "../matrix";
-import _ from "lodash";
 import { ManualImportDate } from "../manualImportDate";
 import { BaseIcon } from "../../../../atoms";
 import { useStyle } from "./style";
