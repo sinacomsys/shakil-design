@@ -37,6 +37,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   popupClassName,
   popupStyles,
   multiple,
+  onSearch,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
@@ -44,6 +45,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   const [width, setWidth] = useState(0);
   const [isHoverd, setIsHovered] = useState(false);
   const [isVisible, setVisible] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
   );
@@ -197,6 +199,7 @@ const Select = <T extends Record<string, unknown> = Default>({
                 >
                   <div className={classes["inputWrapper"]}>
                     <TextInput
+                      value={searchValue}
                       placeholder="Search"
                       unit="pixel"
                       AddonAfter={
@@ -207,6 +210,10 @@ const Select = <T extends Record<string, unknown> = Default>({
                           size={{ height: 15, width: 15 }}
                         />
                       }
+                      onChangeText={(value) => {
+                        onSearch?.(value);
+                        setSearchValue(value);
+                      }}
                     />
                   </div>
                   {multiple ? (

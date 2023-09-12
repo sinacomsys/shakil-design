@@ -41,6 +41,7 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
   popupClassName?: string;
   popupStyles?: React.CSSProperties;
   multiple?: boolean;
+  onSearch?: (args: string) => void;
 }
 
 export interface OptionProps extends Pick<SelectProps, "multiple"> {
