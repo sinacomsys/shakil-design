@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyles } from "./style";
 
 export interface ModalProps {
-  getContainer?: HTMLElement;
+  getContainer?: HTMLElement | null;
   isVisible: boolean;
   onClose?: () => void;
   children?: React.ReactNode;
@@ -13,6 +12,7 @@ export interface ModalProps {
   className?: string;
   centered?: boolean;
   destroyOnClose?: boolean;
+  maskCloseable?: boolean;
 }
 
 const Modal = ({
@@ -24,10 +24,10 @@ const Modal = ({
   className,
   centered,
   destroyOnClose,
+  maskCloseable = true,
 }: ModalProps) => {
   const classes = useStyles();
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
-  const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setBodyRef(document.body);
@@ -46,10 +46,16 @@ const Modal = ({
   const drawerPositionStrategy: React.CSSProperties["position"] =
     modalContainerElement?.localName === "body" ? "fixed" : "absolute";
 
-  const mask = <div className={classes.mask} />;
+  const mask = (
+    <div
+      onClick={() => {
+        isVisible && maskCloseable && onClose?.();
+      }}
+      className={classes.mask}
+    />
+  );
   const content = (
     <div
-      ref={setModalRef}
       className={classNames(
         classes.modalContainer,
         centered && classes.centerd,
@@ -64,13 +70,6 @@ const Modal = ({
       {children}
     </div>
   );
-
-  useOnClickOutSide({
-    element: modalRef,
-    handler() {
-      onClose?.();
-    },
-  });
 
   return (
     <>
