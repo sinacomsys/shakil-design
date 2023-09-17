@@ -1,6 +1,6 @@
 import React from "react";
 export interface ModalProps {
-    getContainer?: HTMLElement;
+    getContainer?: HTMLElement | null;
     isVisible: boolean;
     onClose?: () => void;
     children?: React.ReactNode;
@@ -8,6 +8,7 @@ export interface ModalProps {
     className?: string;
     centered?: boolean;
     destroyOnClose?: boolean;
+    maskCloseable?: boolean;
 }
-declare const Modal: ({ getContainer, isVisible, onClose, children, style, className, centered, destroyOnClose, }: ModalProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Modal: ({ getContainer, isVisible, onClose, children, style, className, centered, destroyOnClose, maskCloseable, }: ModalProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { Modal };
