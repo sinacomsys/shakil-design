@@ -7,7 +7,7 @@ import { useOnClickOutSide } from "@shakil-design/utils";
 import { useStyles } from "./style";
 import { Default, InternalValue, SelectProps, Value } from "./types";
 import classnames from "classnames";
-import { Clear } from "./components/clear";
+import { FleshIcon } from "./components/fleshIcon";
 import { MultiSelectList } from "./components/list/multiSelect";
 import { SingleSelectList } from "./components/list/singleSelect";
 
@@ -38,12 +38,14 @@ const Select = <T extends Record<string, unknown> = Default>({
   popupStyles,
   multiple,
   onSearch,
+  hasSearch = true,
+  onMouseEnter,
+  onMouseLeave,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
   const body = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(0);
-  const [isHoverd, setIsHovered] = useState(false);
   const [isVisible, setVisible] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -121,16 +123,6 @@ const Select = <T extends Record<string, unknown> = Default>({
     },
   });
 
-  const onMouseEnter = () => {
-    if (disabled) return;
-    setIsHovered(true);
-  };
-
-  const onMouseLeave = () => {
-    if (disabled) return;
-    setIsHovered(false);
-  };
-
   let displayValue: Value = null;
   if (multiple) {
     displayValue =
@@ -156,6 +148,8 @@ const Select = <T extends Record<string, unknown> = Default>({
           onFocus,
           wrapperClassName,
           wrapperStyle,
+          onMouseEnter,
+          onMouseLeave,
         }}
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}
@@ -168,21 +162,7 @@ const Select = <T extends Record<string, unknown> = Default>({
         unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        AddonAfter={
-          <Clear
-            handleOnClear={handleOnClear}
-            whatVisible={
-              isHoverd && displayValue
-                ? "cross"
-                : !isHoverd || !displayValue
-                ? "arrow"
-                : null
-            }
-            isVisible={isVisible}
-          />
-        }
+        AddonAfter={<FleshIcon isVisible={isVisible} />}
       />
 
       {body.current && isVisible
@@ -197,25 +177,28 @@ const Select = <T extends Record<string, unknown> = Default>({
                   style={{ width, ...popupStyles }}
                   className={classnames(popupClassName, classes["overlay"])}
                 >
-                  <div className={classes["inputWrapper"]}>
-                    <TextInput
-                      value={searchValue}
-                      placeholder="Search"
-                      unit="pixel"
-                      AddonAfter={
-                        <BaseIcon
-                          color={"#d1d1d1"}
-                          name="Search-Box_Search-Icon"
-                          unit="pixel"
-                          size={{ height: 15, width: 15 }}
-                        />
-                      }
-                      onChangeText={(value) => {
-                        onSearch?.(value);
-                        setSearchValue(value);
-                      }}
-                    />
-                  </div>
+                  {hasSearch ? (
+                    <div className={classes["inputWrapper"]}>
+                      <TextInput
+                        value={searchValue}
+                        placeholder="Search"
+                        unit="pixel"
+                        AddonAfter={
+                          <BaseIcon
+                            color={"#d1d1d1"}
+                            name="Search-Box_Search-Icon"
+                            unit="pixel"
+                            size={{ height: 15, width: 15 }}
+                          />
+                        }
+                        onChangeText={(value) => {
+                          onSearch?.(value);
+                          setSearchValue(value);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+
                   {multiple ? (
                     <MultiSelectList
                       data={data}
