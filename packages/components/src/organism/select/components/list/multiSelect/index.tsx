@@ -24,6 +24,9 @@ const MultiSelectList = <T extends Default>({
   return (
     <ScrollView style={{ flex: 1 }}>
       {((internalValue as Value[]) || [])?.map((item) => {
+        const selectedItem = data.find(
+          (_item) => valueExtractor?.(_item) === item,
+        );
         return (
           <Option
             multiple={true}
@@ -35,7 +38,7 @@ const MultiSelectList = <T extends Default>({
             onClick={onClick}
             key={item}
           >
-            {item}
+            {selectedItem && labelExtractor?.(selectedItem)}
           </Option>
         );
       })}
