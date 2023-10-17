@@ -15,13 +15,16 @@ export const SingleSelectList = <T extends Default>({
   valueExtractor,
 }: Omit<ListPorps<T>, "multiple">) => {
   const { disableText } = useTheme();
+  const selectedItem = data.find((item) => {
+    return valueExtractor?.(item) === internalValue;
+  });
   return (
     <ScrollView style={{ flex: 1 }}>
       {internalValue ? (
         <div style={{ marginInlineStart: 20 }}>
           <Radio unit="pixel" value="test" checked>
             <Text size={16} theme={"Regular"} color={"#575757"}>
-              {internalValue}
+              {selectedItem && labelExtractor?.(selectedItem)}
             </Text>
           </Radio>
         </div>

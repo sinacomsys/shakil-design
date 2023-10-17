@@ -26,6 +26,8 @@ interface TextInputCommon
     | "onFocus"
     | "wrapperClassName"
     | "wrapperStyle"
+    | "onMouseEnter"
+    | "onMouseLeave"
   > {}
 export interface SelectProps<T extends Record<string, unknown> = Default>
   extends Omit<TextInputCommon, "value"> {
@@ -42,6 +44,7 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
   popupStyles?: React.CSSProperties;
   multiple?: boolean;
   onSearch?: (args: string) => void;
+  hasSearch?: boolean;
 }
 
 export interface OptionProps extends Pick<SelectProps, "multiple"> {
