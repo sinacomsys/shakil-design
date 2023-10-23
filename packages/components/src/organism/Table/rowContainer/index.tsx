@@ -6,38 +6,45 @@ import { ColumnType } from "../column";
 import { TableContext } from "../context";
 import { Row } from "../row";
 
-interface RowContainer<T> {
+interface RowsProps<T> {
   rowData: T;
   data: T[];
   columns: ColumnType<T>[];
   index: number;
   rowKey?: keyof T;
-  isOnCheckedRowsAvailable: boolean;
   checkedRows: T[];
   handleCheckRow: (value: { rowId: T[keyof T] }) => void;
 }
 
-const RowContainer = <T extends Record<string, unknown>>({
+const Rows = <T extends Record<string, unknown>>({
   rowData,
   columns,
   data,
   index: rowIndex,
   rowKey,
-  isOnCheckedRowsAvailable,
   checkedRows,
   handleCheckRow,
-}: RowContainer<T>) => {
+}: RowsProps<T>) => {
   const { table: { selectedRowBookmark } = {} } = useTheme();
-  const { selectedRow, onSelectRow } = useContext(TableContext);
+  const {
+    selectedRow,
+    onSelectRow,
+    isOnCheckedRowsAvailable,
+    isSelectSingleRowAvailable,
+  } = useContext(TableContext);
   const _selectedRow = selectedRow as T;
 
   const isChecked = checkedRows.find(
     (item) => rowKey && item?.[rowKey] === rowData[rowKey],
   );
 
-  const handleOnSelectSingleRow = () => {
-    if (isOnCheckedRowsAvailable) return;
-    onSelectRow?.(rowData);
+  const onClickRow = () => {
+    if (!isOnCheckedRowsAvailable && isSelectSingleRowAvailable) {
+      onSelectRow?.(rowData);
+    }
+    if (isOnCheckedRowsAvailable && rowKey) {
+      handleCheckRow({ rowId: rowData[rowKey] });
+    }
   };
 
   return (
@@ -46,7 +53,7 @@ const RowContainer = <T extends Record<string, unknown>>({
       isSelected={Boolean(
         rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey],
       )}
-      onClick={handleOnSelectSingleRow}
+      onClick={onClickRow}
       isChecked={Boolean(isChecked)}
     >
       <td style={{ height: "inherit" }}>
@@ -91,4 +98,4 @@ const RowContainer = <T extends Record<string, unknown>>({
   );
 };
 
-export { RowContainer };
+export { Rows };

@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-export type Order = undefined | 'ascending' | 'descending';
+export type Order = undefined | "ascending" | "descending";
 export type OrderBy = undefined | string | number | symbol;
 interface TableContextProps {
   order: Order;
@@ -10,6 +10,8 @@ interface TableContextProps {
   onCheckAllRows: () => void;
   onSelectRow: (value: unknown) => void;
   selectedRow: unknown;
+  isOnCheckedRowsAvailable: boolean;
+  isSelectSingleRowAvailable: boolean;
 }
 
 export const TableContext = createContext<TableContextProps>({
@@ -20,4 +22,6 @@ export const TableContext = createContext<TableContextProps>({
   onCheckAllRows: () => ({}),
   onSelectRow: () => ({}),
   selectedRow: undefined,
+  isOnCheckedRowsAvailable: false,
+  isSelectSingleRowAvailable: false,
 });

@@ -12,7 +12,6 @@ interface SearchBarProps<T> {
   columns: ColumnType<T>[];
   data: T[];
   searchBarStyle?: React.CSSProperties;
-  isOnCheckedRowsAvailable: boolean;
   onResetFilters?: () => void;
   searchBarClassName?: string;
   clearFilterIcon?: React.ReactNode;
@@ -24,14 +23,14 @@ const SearchBar = <T extends Record<string, unknown>>({
   columns,
   data,
   searchBarStyle,
-  isOnCheckedRowsAvailable,
   onResetFilters,
   searchBarClassName,
   clearFilterIcon,
   isIndeterminate,
 }: SearchBarProps<T>) => {
   const { table: { filtersTab, divider } = {} } = useTheme();
-  const { onCheckAllRows, isAllRowsChecked } = useContext(TableContext);
+  const { onCheckAllRows, isAllRowsChecked, isOnCheckedRowsAvailable } =
+    useContext(TableContext);
   return (
     <tr
       className={searchBarClassName}

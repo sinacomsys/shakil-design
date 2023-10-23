@@ -7,7 +7,7 @@ import { useTheme } from "../../theme/context";
 import { ColumnType } from "./column";
 import { Order, OrderBy, TableContext } from "./context";
 import { Header } from "./header";
-import { RowContainer } from "./rowContainer";
+import { Rows } from "./rowContainer";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
@@ -200,12 +200,12 @@ const Table = <T extends Record<string, any>>({
           <ScrollView
             ref={measureRef}
             style={{
-              width: "100%",
               height: height,
-              overflowY: "auto",
-              position: "relative",
             }}
-            className={classNames(isLoading && classes["backDrop"])}
+            className={classNames(
+              isLoading && classes["backDrop"],
+              classes["container"],
+            )}
           >
             {isLoading && (
               <div className={classes["spinner"]}>
@@ -221,15 +221,11 @@ const Table = <T extends Record<string, any>>({
                 orderBy,
                 selectedRow: selectedRow,
                 onSelectRow: handleOnSelectRow,
+                isOnCheckedRowsAvailable: Boolean(onCheckedRows),
+                isSelectSingleRowAvailable: Boolean(onSelectRow),
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "100%",
-                }}
-              >
+              <div className={classes["body"]}>
                 <table className={classes["table"]} role={"table"}>
                   <colgroup>
                     <col
@@ -257,7 +253,6 @@ const Table = <T extends Record<string, any>>({
                     <Header
                       filterIcon={filterIcon}
                       isSearchVisible={isSearchVisible}
-                      isOnCheckedRowsAvailable={Boolean(onCheckedRows)}
                       onToggleSearchBar={isSearchAvailable && onToggleSearchBar}
                       columns={coloums}
                       isIndeterminate={isIndeterminate}
@@ -272,7 +267,6 @@ const Table = <T extends Record<string, any>>({
                         columns={coloums}
                         data={data || []}
                         isSearchVisible={isSearchVisible}
-                        isOnCheckedRowsAvailable={Boolean(onCheckedRows)}
                       />
                     ) : null}
                   </thead>
@@ -304,10 +298,8 @@ const Table = <T extends Record<string, any>>({
                         {virtualRows.map((virtualRow, index) => {
                           const row = list[virtualRow.index];
                           return (
-                            <RowContainer
-                              // onSelectRow={handleOnSelectRow}
+                            <Rows
                               key={index}
-                              isOnCheckedRowsAvailable={Boolean(onCheckedRows)}
                               rowKey={rowKey}
                               rowData={row}
                               data={data || []}
