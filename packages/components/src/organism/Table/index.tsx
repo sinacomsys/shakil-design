@@ -33,6 +33,7 @@ export interface TableProps<T> {
   height: number;
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
+  overScan?: number;
 }
 
 const Table = <T extends Record<string, any>>({
@@ -51,6 +52,7 @@ const Table = <T extends Record<string, any>>({
   height,
   coloums,
   noContent,
+  overScan,
 }: TableProps<T>) => {
   const { table: { header } = {} } = useTheme();
   const classes = useStyles();
@@ -177,7 +179,7 @@ const Table = <T extends Record<string, any>>({
   const rowVirtualizer = useVirtual({
     parentRef: tableContainerRef,
     size: list.length,
-    overscan: 20,
+    overscan: overScan || 20,
   });
 
   const { virtualItems: virtualRows, totalSize } = rowVirtualizer;
@@ -195,9 +197,10 @@ const Table = <T extends Record<string, any>>({
   return (
     <Measure bounds>
       {({ contentRect, measureRef }) => {
-        const colWidth = calculateWidth(contentRect.bounds?.width ?? 0);
+        const boundsWidth = contentRect.bounds?.width;
+        const colWidth = calculateWidth(boundsWidth ?? 0);
         return (
-          <ScrollView
+          <div
             ref={measureRef}
             style={{
               height: height,
@@ -225,105 +228,109 @@ const Table = <T extends Record<string, any>>({
                 isSelectSingleRowAvailable: Boolean(onSelectRow),
               }}
             >
-              <div className={classes["body"]}>
-                <table className={classes["table"]} role={"table"}>
-                  <colgroup>
-                    <col
-                      style={{
-                        width: searchIconWidth,
-                      }}
-                    />
-                    {coloums.map(({ width, dataIndex }) => {
-                      return (
-                        <col
-                          key={dataIndex as string}
-                          style={{ width: width ? width : colWidth }}
-                        />
-                      );
-                    })}
-                    <col style={{ width: SCROLL_BAR }} />
-                  </colgroup>
-                  <thead
-                    className={headerClassName}
-                    style={{
-                      backgroundColor: header,
-                      ...headerStyle,
-                    }}
-                  >
-                    <Header
-                      filterIcon={filterIcon}
-                      isSearchVisible={isSearchVisible}
-                      onToggleSearchBar={isSearchAvailable && onToggleSearchBar}
-                      columns={coloums}
-                      isIndeterminate={isIndeterminate}
-                    />
-
-                    {isSearchAvailable ? (
-                      <SearchBar
-                        isIndeterminate={isIndeterminate}
-                        clearFilterIcon={clearFilterIcon}
-                        searchBarStyle={searchBarStyle}
-                        searchBarClassName={searchBarClassName}
-                        columns={coloums}
-                        data={data || []}
-                        isSearchVisible={isSearchVisible}
+              {boundsWidth ? (
+                <div className={classes["body"]}>
+                  <table className={classes["table"]} role={"table"}>
+                    <colgroup>
+                      <col
+                        style={{
+                          width: searchIconWidth,
+                        }}
                       />
-                    ) : null}
-                  </thead>
-                </table>
-                <ScrollView
-                  ref={tableContainerRef}
-                  style={{ flex: 1, overflowY: "auto" }}
-                >
-                  {virtualRows.length > 0 ? (
-                    <table className={classes["table"]} role={"table"}>
-                      <colgroup>
-                        <col style={{ width: searchIconWidth }} />
-                        {coloums.map(({ width, dataIndex }) => {
-                          return (
-                            <col
-                              key={dataIndex as string}
-                              style={{ width: width ? width : colWidth }}
-                            />
-                          );
-                        })}
-                      </colgroup>
+                      {coloums.map(({ width, dataIndex }) => {
+                        return (
+                          <col
+                            key={dataIndex as string}
+                            style={{ width: width ? width : colWidth }}
+                          />
+                        );
+                      })}
+                      <col style={{ width: SCROLL_BAR }} />
+                    </colgroup>
+                    <thead
+                      className={headerClassName}
+                      style={{
+                        backgroundColor: header,
+                        ...headerStyle,
+                      }}
+                    >
+                      <Header
+                        filterIcon={filterIcon}
+                        isSearchVisible={isSearchVisible}
+                        onToggleSearchBar={
+                          isSearchAvailable && onToggleSearchBar
+                        }
+                        columns={coloums}
+                        isIndeterminate={isIndeterminate}
+                      />
 
-                      <tbody>
-                        {paddingTop > 0 && (
-                          <tr>
-                            <td style={{ height: `${paddingTop}px` }} />
-                          </tr>
-                        )}
-                        {virtualRows.map((virtualRow, index) => {
-                          const row = list[virtualRow.index];
-                          return (
-                            <Rows
-                              key={index}
-                              rowKey={rowKey}
-                              rowData={row}
-                              data={data || []}
-                              index={index}
-                              columns={coloums}
-                              checkedRows={checkedRows}
-                              handleCheckRow={handleCheckRow}
-                            />
-                          );
-                        })}
-                        {paddingBottom > 0 && (
-                          <tr>
-                            <td style={{ height: `${paddingBottom}px` }} />
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
-                  ) : (
-                    _noContent
-                  )}
-                </ScrollView>
-              </div>
+                      {isSearchAvailable ? (
+                        <SearchBar
+                          isIndeterminate={isIndeterminate}
+                          clearFilterIcon={clearFilterIcon}
+                          searchBarStyle={searchBarStyle}
+                          searchBarClassName={searchBarClassName}
+                          columns={coloums}
+                          data={data || []}
+                          isSearchVisible={isSearchVisible}
+                        />
+                      ) : null}
+                    </thead>
+                  </table>
+                  <ScrollView
+                    ref={tableContainerRef}
+                    style={{ flex: 1, overflowY: "auto" }}
+                  >
+                    {virtualRows.length > 0 ? (
+                      <table className={classes["table"]} role={"table"}>
+                        <colgroup>
+                          <col style={{ width: searchIconWidth }} />
+                          {coloums.map(({ width, dataIndex }) => {
+                            return (
+                              <col
+                                key={dataIndex as string}
+                                style={{ width: width ? width : colWidth }}
+                              />
+                            );
+                          })}
+                        </colgroup>
+
+                        <tbody>
+                          {paddingTop > 0 && (
+                            <tr>
+                              <td style={{ height: `${paddingTop}px` }} />
+                            </tr>
+                          )}
+                          {virtualRows.map((virtualRow, index) => {
+                            const row = list[virtualRow.index];
+                            return (
+                              <Rows
+                                key={index}
+                                rowKey={rowKey}
+                                rowData={row}
+                                data={data || []}
+                                index={index}
+                                columns={coloums}
+                                checkedRows={checkedRows}
+                                handleCheckRow={handleCheckRow}
+                              />
+                            );
+                          })}
+                          {paddingBottom > 0 && (
+                            <tr>
+                              <td style={{ height: `${paddingBottom}px` }} />
+                            </tr>
+                          )}
+                        </tbody>
+                      </table>
+                    ) : (
+                      _noContent
+                    )}
+                  </ScrollView>
+                </div>
+              ) : null}
             </TableContext.Provider>
-          </ScrollView>
+          </div>
         );
       }}
     </Measure>
