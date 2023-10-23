@@ -29,6 +29,16 @@ export const useStyles = createUseStyles(
       left: "50%",
       transform: "translate(-50%, -50%)",
     },
+    body: {
+      display: "flex",
+      flexDirection: "column",
+      height: "100%",
+    },
+    container: {
+      width: "100%",
+      overflowY: "auto",
+      position: "relative",
+    },
   },
   { theming, name: "table" },
 );

@@ -7,7 +7,6 @@ import { TableContext } from "../context";
 import { useStyles } from "./style";
 interface HeaderProps<T extends object> {
   onToggleSearchBar?: () => void;
-  isOnCheckedRowsAvailable: boolean;
   isSearchVisible: boolean;
   filterIcon?: React.ReactNode;
   columns: ColumnType<T>[];
@@ -16,14 +15,14 @@ interface HeaderProps<T extends object> {
 
 const Header = <T extends object>({
   onToggleSearchBar,
-  isOnCheckedRowsAvailable,
   filterIcon,
   columns,
   isIndeterminate,
 }: HeaderProps<T>) => {
   const { table: { filterIcon: filterIconColor } = {} } = useTheme();
   const classes = useStyles();
-  const { onCheckAllRows, isAllRowsChecked } = useContext(TableContext);
+  const { onCheckAllRows, isAllRowsChecked, isOnCheckedRowsAvailable } =
+    useContext(TableContext);
 
   return (
     <tr>
