@@ -5,11 +5,10 @@ interface SearchBarProps<T> {
     columns: ColumnType<T>[];
     data: T[];
     searchBarStyle?: React.CSSProperties;
-    isOnCheckedRowsAvailable: boolean;
     onResetFilters?: () => void;
     searchBarClassName?: string;
     clearFilterIcon?: React.ReactNode;
     isIndeterminate: boolean;
 }
-declare const SearchBar: <T extends Record<string, unknown>>({ isSearchVisible, columns, data, searchBarStyle, isOnCheckedRowsAvailable, onResetFilters, searchBarClassName, clearFilterIcon, isIndeterminate, }: SearchBarProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+declare const SearchBar: <T extends Record<string, unknown>>({ isSearchVisible, columns, data, searchBarStyle, onResetFilters, searchBarClassName, clearFilterIcon, isIndeterminate, }: SearchBarProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { SearchBar };

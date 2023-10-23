@@ -20,7 +20,8 @@ export interface TableProps<T> {
     height: number;
     coloums: ColumnType<T>[];
     noContent?: React.ReactNode;
+    overScan?: number;
 }
-declare const Table: <T extends Record<string, any>>({ data, onCheckedRows, rowKey, headerStyle, headerClassName, searchBarClassName, searchBarToggle, searchBarStyle, filterIcon, clearFilterIcon, isLoading, onSelectRow, height, coloums, noContent, }: TableProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Table: <T extends Record<string, any>>({ data, onCheckedRows, rowKey, headerStyle, headerClassName, searchBarClassName, searchBarToggle, searchBarStyle, filterIcon, clearFilterIcon, isLoading, onSelectRow, height, coloums, noContent, overScan, }: TableProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export type { ColumnType };
 export { Table };
