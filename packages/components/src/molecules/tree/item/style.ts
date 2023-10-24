@@ -48,7 +48,7 @@ const useStyle = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "tree" },
 );
 
 export { useStyle };

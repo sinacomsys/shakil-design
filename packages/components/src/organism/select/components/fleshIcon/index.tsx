@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BaseIcon } from "../../../../atoms";
-import { useTheme } from "../../../../theme/context";
+import { useTheme } from "../../../../theme";
 import { pxToVh } from "@shakil-design/utils";
 
 const FleshIcon = ({ isVisible }: { isVisible: boolean }) => {

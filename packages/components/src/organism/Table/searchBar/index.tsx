@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { DEFAULT_ALIGN, SEARCH_ICON } from "..";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { pxToVh } from "@shakil-design/utils";
 import { ColumnType } from "../column";
 import { TableContext } from "../context";

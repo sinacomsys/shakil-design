@@ -1,5 +1,5 @@
 import React from "react";
-import { createTheming } from "react-jss";
+import { JssProvider, createTheming } from "react-jss";
 export const Colors: ColorsType = {
   primary: "#374775",
   checkbox: {
@@ -134,10 +134,27 @@ export interface ColorsType {
 
 const ThemeContext = React.createContext<ColorsType>(Colors);
 // Creating a namespaced theming object.
-export const theming = createTheming(ThemeContext);
-export const {
-  ThemeProvider: SinaBaseThemeProvider,
-  useTheme,
-  context,
-  withTheme,
-} = theming;
+const theming = createTheming(ThemeContext);
+const { ThemeProvider, ...rest } = theming;
+
+const ShakilDesignThemeProvider = ({
+  children,
+  colors,
+}: {
+  children: React.ReactNode;
+  colors: ColorsType;
+}) => {
+  return (
+    <JssProvider
+      generateId={(rule, sheet) =>
+        `shakil-${sheet?.options?.classNamePrefix}${rule.key}`
+      }
+    >
+      <ThemeProvider theme={colors}>
+        <div style={{ width: "100%", height: "100%" }}>{children}</div>
+      </ThemeProvider>
+    </JssProvider>
+  );
+};
+
+export { ShakilDesignThemeProvider, rest, ThemeProvider, theming };

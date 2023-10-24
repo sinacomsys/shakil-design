@@ -1,3 +1,7 @@
-export declare const useStyles: (data?: {
-    theme?: Jss.Theme | undefined;
-} | undefined) => import("jss").Classes<"noContent">;
+export declare const useStyles: (
+  data?:
+    | {
+        theme?: import("../../theme").ColorsType | undefined;
+      }
+    | undefined,
+) => import("jss").Classes<"noContent">;

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { useStyles } from "./style";
 import { Unit } from "../../types";
 import { pxToVhString } from "@shakil-design/utils";

@@ -1,7 +1,8 @@
-export declare const useStyles: (
+declare const useStyles: (
   data?:
     | {
         theme?: import("../../../theme").ColorsType | undefined;
       }
     | undefined,
-) => import("jss").Classes<"dots" | "animationWrapper">;
+) => import("jss").Classes<"column">;
+export { useStyles };

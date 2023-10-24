@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CheckBox } from "../../../molecules/checkbox";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { Cell } from "../cell";
 import { ColumnType } from "../column";
 import { TableContext } from "../context";

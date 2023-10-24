@@ -3,7 +3,7 @@ import _ from "lodash";
 import React, { useMemo, useState } from "react";
 import { Spinner } from "../../atoms";
 import { Text } from "../../atoms/text";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { useStyles } from "./style";
 import { pxToVh } from "@shakil-design/utils";
 import { Unit } from "../../types";

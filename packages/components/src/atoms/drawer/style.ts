@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { theming } from "../../theme/context";
+import { theming } from "../../theme";
 
 export const useStyle = createUseStyles(
   () => {
@@ -14,5 +14,5 @@ export const useStyle = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "drawer" },
 );

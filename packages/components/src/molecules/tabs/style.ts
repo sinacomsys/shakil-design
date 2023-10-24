@@ -90,5 +90,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "tabs" },
 );

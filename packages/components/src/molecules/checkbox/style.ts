@@ -21,7 +21,7 @@ const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "checkbox" },
 );
 
 export { useStyles };

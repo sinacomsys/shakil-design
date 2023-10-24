@@ -1,5 +1,5 @@
 import { useWindowSize } from "usehooks-ts";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { pxToVh } from "@shakil-design/utils";
 import { Unit } from "../../../types";
 import { useStyles } from "./style";

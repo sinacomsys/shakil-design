@@ -3,7 +3,7 @@ import Measure from "react-measure";
 import { useVirtual } from "react-virtual";
 import { ScrollView, Spinner } from "../../atoms";
 import { NoContent } from "../../molecules/noContent";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { ColumnType } from "./column";
 import { Order, OrderBy, TableContext } from "./context";
 import { Header } from "./header";

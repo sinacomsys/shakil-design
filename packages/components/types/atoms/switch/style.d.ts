@@ -1,3 +1,7 @@
-export declare const useStyles: (data?: {
-    theme?: import("../../theme/context").ColorsType | undefined;
-} | undefined) => import("jss").Classes<"circle" | "wrapper" | "hiddenCheckbox" | "ripple">;
+export declare const useStyles: (
+  data?:
+    | {
+        theme?: import("../../theme").ColorsType | undefined;
+      }
+    | undefined,
+) => import("jss").Classes<"circle" | "wrapper" | "hiddenCheckbox" | "ripple">;

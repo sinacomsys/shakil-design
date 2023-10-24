@@ -1,2 +1,17 @@
-import { theming } from "./context";
-export { theming };
+import {
+  ColorsType,
+  ShakilDesignThemeProvider,
+  rest,
+  theming,
+  Colors,
+} from "./context";
+const { useTheme, context, withTheme } = rest;
+export {
+  ColorsType,
+  ShakilDesignThemeProvider,
+  context,
+  useTheme,
+  withTheme,
+  theming,
+  Colors,
+};

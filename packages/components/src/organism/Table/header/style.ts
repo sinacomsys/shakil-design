@@ -23,5 +23,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "table-header" },
 );

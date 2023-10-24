@@ -61,40 +61,43 @@ const BaseText = memo(
   ),
 );
 
-const useStyles = createUseStyles({
-  text: {
-    border: "0 solid black",
-    boxSizing: "border-box",
-    color: "black",
-    display: "inline",
-    fontSize: 14,
-    margin: 0,
-    padding: 0,
-    whiteSpace: "pre-wrap",
-    wordWrap: "break-word",
+const useStyles = createUseStyles(
+  {
+    text: {
+      border: "0 solid black",
+      boxSizing: "border-box",
+      color: "black",
+      display: "inline",
+      fontSize: 14,
+      margin: 0,
+      padding: 0,
+      whiteSpace: "pre-wrap",
+      wordWrap: "break-word",
+    },
+    // See #13
+    textMultiLine: {
+      display: "-webkit-box",
+      // maxWidth: '100%',
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      // whiteSpace: 'nowrap',
+      // whiteSpace: "pre",
+      WebkitBoxOrient: "vertical",
+    },
+    ellipsis: {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+    notSelectable: {
+      userSelect: "none",
+    },
+    selectable: {
+      userSelect: "text",
+    },
   },
-  // See #13
-  textMultiLine: {
-    display: "-webkit-box",
-    // maxWidth: '100%',
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    // whiteSpace: 'nowrap',
-    // whiteSpace: "pre",
-    WebkitBoxOrient: "vertical",
-  },
-  ellipsis: {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-  },
-  notSelectable: {
-    userSelect: "none",
-  },
-  selectable: {
-    userSelect: "text",
-  },
-});
+  { name: "base-text" },
+);
 
 BaseText.displayName = "BaseText";
 

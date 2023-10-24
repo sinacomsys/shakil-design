@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { FC } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import { BaseIcon } from "../../atoms/baseIcon";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { useStyle } from "./style";
 import useFileInput from "./useFileInput";
 import { Text } from "../../atoms";

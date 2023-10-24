@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useContext, useLayoutEffect } from "react";
 import { BaseIcon } from "../../../atoms/baseIcon";
 import { Text } from "../../../atoms/text";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { CollapseContext } from "../context";
 import { useStyles } from "./style";
 
