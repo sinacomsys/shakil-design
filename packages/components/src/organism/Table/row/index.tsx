@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   children?: React.ReactNode;
   isExpanded?: boolean;

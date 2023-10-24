@@ -28,5 +28,5 @@ export const useStyle = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "file-input" },
 );

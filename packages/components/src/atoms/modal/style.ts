@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { theming } from "../../theme/context";
+import { theming } from "../../theme";
 
 const useStyles = createUseStyles(
   (theme) => {
@@ -30,7 +30,7 @@ const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "modal" },
 );
 
 export { useStyles };

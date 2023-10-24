@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Spinner, Text } from "../../../atoms";
 import { BaseIcon } from "../../../atoms/baseIcon";
 import React from "react";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { useStyle } from "./style";
 import { ItemProps, TreeBasicType } from "../types";
 

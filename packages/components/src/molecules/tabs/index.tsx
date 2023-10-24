@@ -4,7 +4,7 @@ import { Text } from "../../atoms/text";
 import { pxToVh, useHorizontalScroll } from "@shakil-design/utils";
 import { InternalTabPane } from "./internalTabPane";
 import { useStyles } from "./style";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 interface TabItem {
   id: string;
   content: React.ReactNode;

@@ -1,9 +1,10 @@
 import { ReactNode, useContext } from "react";
 import { DEFAULT_ALIGN } from "..";
 import { BaseIcon, Text } from "../../../atoms";
-import { useTheme } from "../../../theme/context";
+import { useTheme } from "../../../theme";
 import { pxToVh } from "@shakil-design/utils";
 import { TableContext } from "../context";
+import { useStyles } from "./style";
 
 export interface ColumnType<T, TIndex extends keyof T = keyof T> {
   dataIndex: TIndex;
@@ -48,13 +49,13 @@ const Column = <T extends object>({
     }
   };
 
+  const classes = useStyles();
+
   return (
     <th style={{ ...style, height: `${pxToVh(45)}vh`, padding: 0 }}>
       <div
+        className={classes["column"]}
         style={{
-          height: "100%",
-          alignItems: "center",
-          display: "flex",
           cursor: sorter ? "pointer" : "default",
           justifyContent:
             align === "center"

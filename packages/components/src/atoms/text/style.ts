@@ -176,22 +176,25 @@ let _useFonts: (() => Record<keyof typeof fonts, string>) | undefined;
 
 const useFonts = () => {
   if (!_useFonts) {
-    _useFonts = createUseStyles<keyof typeof fonts>({
-      ...(Object.fromEntries(
-        Object.entries(fonts).map(([key, { name }]) => [
-          key,
-          {
+    _useFonts = createUseStyles<keyof typeof fonts>(
+      {
+        ...(Object.fromEntries(
+          Object.entries(fonts).map(([key, { name }]) => [
+            key,
+            {
+              fontFamily: name,
+            },
+          ]),
+        ) as any),
+        ["@font-face" as any]: Object.values(fonts).map(
+          ({ format, name, url }) => ({
             fontFamily: name,
-          },
-        ]),
-      ) as any),
-      ["@font-face" as any]: Object.values(fonts).map(
-        ({ format, name, url }) => ({
-          fontFamily: name,
-          src: `url(${url}) format('${format}')`,
-        }),
-      ),
-    });
+            src: `url(${url}) format('${format}')`,
+          }),
+        ),
+      },
+      { name: "text" },
+    );
   }
 
   return _useFonts();

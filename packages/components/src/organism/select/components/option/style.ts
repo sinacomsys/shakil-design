@@ -17,5 +17,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "select-options" },
 );

@@ -30,5 +30,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "drop-down" },
 );

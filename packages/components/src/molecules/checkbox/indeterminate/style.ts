@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { theming } from "../../../theme/context";
+import { theming } from "../../../theme";
 
 export const useStyles = createUseStyles(
   (theme) => {

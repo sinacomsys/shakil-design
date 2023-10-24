@@ -2,7 +2,7 @@ import { pxToVh } from "@shakil-design/utils";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { BaseIcon, Text } from "../../atoms";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { useStyles } from "./style";
 
 export interface InternalTabPaneProps {

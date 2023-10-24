@@ -39,7 +39,7 @@ const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "text-input" },
 );
 
 export { useStyles };

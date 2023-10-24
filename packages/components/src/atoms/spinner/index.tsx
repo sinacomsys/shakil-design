@@ -1,6 +1,6 @@
 import { pxToVh } from "@shakil-design/utils";
 import { Unit } from "../../types";
-import { useTheme, Colors } from "../../theme/context";
+import { useTheme, Colors } from "../../theme";
 import { useStyle } from "./style";
 
 const SMALL_BORDER = 1;

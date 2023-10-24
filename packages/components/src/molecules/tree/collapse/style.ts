@@ -18,5 +18,5 @@ export const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "tree-collapse" },
 );

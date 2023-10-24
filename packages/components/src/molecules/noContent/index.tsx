@@ -1,5 +1,5 @@
 import { BaseIcon, Text } from "../../atoms";
-import { useTheme } from "../../theme/context";
+import { useTheme } from "../../theme";
 import { pxToVh } from "@shakil-design/utils";
 import { useStyles } from "./style";
 

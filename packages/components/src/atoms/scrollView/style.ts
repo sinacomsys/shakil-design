@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { theming } from "../../theme/context";
+import { theming } from "../../theme";
 import { pxToVh } from "@shakil-design/utils";
 const useStyles = createUseStyles(
   (theme) => {
@@ -28,7 +28,7 @@ const useStyles = createUseStyles(
       },
     };
   },
-  { theming },
+  { theming, name: "scroll-view" },
 );
 
 export { useStyles };
