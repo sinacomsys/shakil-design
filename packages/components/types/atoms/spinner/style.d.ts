@@ -1,7 +1,3 @@
-export declare const useStyle: (
-  data?:
-    | {
-        theme?: import("../../theme").ColorsType | undefined;
-      }
-    | undefined,
-) => import("jss").Classes<"ldsRing" | "@keyframes lds-ring">;
+export declare const useStyle: (data?: {
+    theme?: import("../../theme/context").ColorsType | undefined;
+} | undefined) => import("jss").Classes<"ldsRing" | "@keyframes lds-ring">;

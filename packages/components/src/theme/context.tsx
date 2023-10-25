@@ -66,7 +66,7 @@ export const Colors: ColorsType = {
   noContent: "red",
 };
 
-export interface ColorsType {
+interface ColorsType {
   primary: string;
   checkbox?: {
     borderSelected: string;
@@ -157,4 +157,5 @@ const ShakilDesignThemeProvider = ({
   );
 };
 
+export type { ColorsType };
 export { ShakilDesignThemeProvider, rest, ThemeProvider, theming };
