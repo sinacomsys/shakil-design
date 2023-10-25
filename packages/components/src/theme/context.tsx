@@ -66,7 +66,7 @@ export const Colors: ColorsType = {
   noContent: "red",
 };
 
-interface ColorsType {
+type ColorsType = {
   primary: string;
   checkbox?: {
     borderSelected: string;
@@ -130,7 +130,7 @@ interface ColorsType {
     unchecked: string;
   };
   noContent?: string;
-}
+};
 
 const ThemeContext = React.createContext<ColorsType>(Colors);
 // Creating a namespaced theming object.

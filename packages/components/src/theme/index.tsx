@@ -1,10 +1,5 @@
-import {
-  ColorsType,
-  ShakilDesignThemeProvider,
-  rest,
-  theming,
-  Colors,
-} from "./context";
+import { ShakilDesignThemeProvider, rest, theming, Colors } from "./context";
+import type { ColorsType } from "./context";
 const { useTheme, context, withTheme } = rest;
 export {
   ColorsType,

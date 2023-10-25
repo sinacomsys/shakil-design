@@ -1,5 +1,6 @@
 /// <reference types="react" />
-import { ColorsType, ShakilDesignThemeProvider, theming, Colors } from "./context";
+import { ShakilDesignThemeProvider, theming, Colors } from "./context";
+import type { ColorsType } from "./context";
 declare const useTheme: <CustomTheme = ColorsType>() => CustomTheme, context: import("react").Context<ColorsType>, withTheme: <InnerProps extends {
     theme: ColorsType;
 }, InnerComponent extends import("react").ComponentType<InnerProps>, OuterProps extends InnerProps & {

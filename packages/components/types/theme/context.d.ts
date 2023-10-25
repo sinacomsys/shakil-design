@@ -1,6 +1,6 @@
 import React from "react";
 export declare const Colors: ColorsType;
-interface ColorsType {
+type ColorsType = {
     primary: string;
     checkbox?: {
         borderSelected: string;
@@ -64,7 +64,7 @@ interface ColorsType {
         unchecked: string;
     };
     noContent?: string;
-}
+};
 declare const theming: import("theming").Theming<ColorsType>;
 declare const ThemeProvider: React.ComponentClass<import("theming").ThemeProviderProps<ColorsType>, any> | React.FunctionComponent<import("theming").ThemeProviderProps<ColorsType>>, rest: {
     context: React.Context<ColorsType>;
