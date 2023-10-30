@@ -25,9 +25,11 @@ const Tree = <T extends TreeBasicType<T>>({
     <div
       className={classNames(
         classes["wrapper"],
-        unit === "pixel"
+        level > 1 && unit === "pixel"
           ? `${classes["wrapper"]}${PX_UNIT}`
-          : `${classes["wrapper"]}${VIEW_PORT_UNIT}`,
+          : level > 1 &&
+              unit === "viewport" &&
+              `${classes["wrapper"]}${VIEW_PORT_UNIT}`,
       )}
     >
       {data.map((child) => {
