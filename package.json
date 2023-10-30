@@ -8,7 +8,7 @@
   "secure": true,
   "scripts": {
     "compile": "yarn workspace @shakil-design/component compile && yarn workspace @shakil-design/utils compile",
-    "lerna-sag": "yarn lerna-clean && yarn lerna-build",
+    "compile-utils": "yarn workspace @shakil-design/utils compile",
     "lint": "eslint . --ext tsx,ts  --fix",
     "lint-commit": "cross-env COMMIT=true eslint . --ext tsx,ts  --fix",
     "test": "yarn workspace @shakil-design/component test",
@@ -17,18 +17,15 @@
     "build-storybook": "yarn compile && build-storybook",
     "zeplin": "zeplin connect",
     "release": "yarn lint-commit  && yarn compile  && npx lerna publish",
-    "release-utils": "yarn workspace @shakil-design/utils publish",
-    "publish-npm": "yarn lint-commit && yarn compile && npm publish",
+    "streight-release": "yarn lint-commit  && yarn compile  && npx lerna publish",
     "lerna-watch": "lerna run watch --stream",
     "lerna-build": "lerna run compile --stream",
-    "lerna-clean": "lerna run clean --parallel",
-    "lerna-bootstrap": "lerna bootstrap --use-workspaces"
+    "lerna-clean": "lerna run clean --parallel"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",
     "@faker-js/faker": "^7.6.0",
     "@popperjs/core": "^2.11.7",
-    "@shakil-design/asset": "^0.0.2",
     "@storybook/addon-actions": "^6.5.8",
     "@storybook/addon-essentials": "^6.5.8",
     "@storybook/addon-interactions": "^6.5.8",
@@ -89,12 +86,12 @@
     "sass-loader": "^13.1.0",
     "storybook-addon-sass-postcss": "^0.1.3",
     "storybook-rtl-addon": "^0.3.3",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "@shakil-design/asset": "workspace:^",
+    "@shakil-design/utils": "workspace:^"
   },
   "dependencies": {
     "@sentry/browser": "^7.1.1",
-    "@shakil-design/component": "^0.0.12",
-    "@shakil-design/utils": "^0.0.12",
     "moment-jalaali": "^0.10.0",
     "react-measure": "^2.5.2",
     "react-poper": "^1.1.5",

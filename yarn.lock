@@ -2916,20 +2916,15 @@
     "@sentry/types" "7.60.1"
     tslib "^2.4.1 || ^1.9.3"
 
-"@shakil-design/asset@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@shakil-design/asset/-/asset-0.0.2.tgz#5c63e23317b00cf6099d525ff61031ef0ed6e253"
-  integrity sha512-JdEHWTiQFD8QqRvagXOGmoXH7qfOVbYjTbExBnlCKBU7o2PZ5rdf6zpqJUjUrcyJK6DsKW+Wxq7BiNgqgMUv4w==
+"@shakil-design/asset@workspace:^":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@shakil-design/asset/-/asset-0.0.26.tgz#d1bc4a5161106b33fd97e7284395e9e1091fbf6c"
+  integrity sha512-tqwrb38uymyJ8UxkR13u9GQBoLg7xmSsVeolQOmkF9I8BB5gEsc9U2iaYmpzn0tnQaX+5VLRrrin2ELPqAWbkA==
 
-"@shakil-design/component@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@shakil-design/component/-/component-0.0.12.tgz#fa43d8709c41228c1c9eec7d569d80953de0cdd0"
-  integrity sha512-0WeVLNkx6L4nxp1Tuz6gOLLeB5zza1K9Rv3x9UGTsAOQVBjJO9iuj3o9bsXY5AYB3gaVFmHqfZhQeAyxSmKEKA==
-
-"@shakil-design/utils@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@shakil-design/utils/-/utils-0.0.12.tgz#9ce8119e6c5f7fb6f46d225b84c2db36c359cd1e"
-  integrity sha512-JyHkjsyvKaK6BvLhg2n8DkA+HpbCtsfd7xbqiGTw4wDFI70pWrTY9KWdHN+G073aKIigl03DU7h+hsdwIe5hJg==
+"@shakil-design/utils@workspace:^":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@shakil-design/utils/-/utils-0.0.26.tgz#ec98dc99836316394e4da4a0a4676b9b38406ad1"
+  integrity sha512-fBUDSPUbpucwljm1XdgO+GlBfcv+bTsXGst9DC5xquxckxAot82n85WXKYVPWd4AwN6mOHO2ONrd7Xq3WTkbRQ==
 
 "@sigstore/bundle@^1.0.0":
   version "1.0.0"

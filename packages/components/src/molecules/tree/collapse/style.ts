@@ -11,7 +11,7 @@ export const useStyles = createUseStyles(
         width: 0,
         borderLeft: `2px dotted ${theme.tree?.dotLine}`,
       },
-      animationWrapper: {
+      "animation-wrapper": {
         position: "relative",
         overflow: "hidden",
         height: 0,

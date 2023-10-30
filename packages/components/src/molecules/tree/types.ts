@@ -1,11 +1,12 @@
 import React from "react";
+import { Unit } from "../../types";
 type Args<T> = { data: T; level: number };
 export interface TreeBasicType<T> {
   title: string;
   id: string;
   parentId?: string | null;
   children?: T[];
-  renderStatusColor?: (args: Args<T>) => string;
+  renderStatusColor?: (args: Args<T>) => React.ReactNode;
   renderItemContent?: (args: Args<T>) => React.ReactNode;
   renderBackgroundColor?: (args: Args<T>) => string;
   renderTitle?: (args: Args<T>) => React.ReactNode;
@@ -23,6 +24,7 @@ export interface TreeProps<T extends TreeBasicType<T>> {
   onLoadData?: (value: OnSelectItemProps<T>) => Promise<void>;
   activeItemId?: string;
   defaultSeletedItem?: string;
+  unit?: Unit;
 }
 
 export interface ItemProps<T extends TreeBasicType<T>> {
