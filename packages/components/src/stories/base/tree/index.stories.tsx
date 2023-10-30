@@ -49,9 +49,15 @@ const mockData: AnyCompProps["data"] = [
       {
         id: "4-1",
         title: "test4-1",
-
         renderBackgroundColor: () => {
           return "#e3e6f1";
+        },
+        renderStatusColor: () => {
+          return (
+            <div
+              style={{ width: "100%", height: "100%", backgroundColor: "red" }}
+            />
+          );
         },
         children: [
           {

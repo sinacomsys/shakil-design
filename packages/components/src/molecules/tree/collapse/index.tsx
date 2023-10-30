@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import Measure from "react-measure";
 import { CollapseProps, TreeBasicType } from "../types";
 import { Item } from "../item";
 import { useStyles } from "./style";
+import { TreeContext } from "../context/treeProvider";
+import { pxToVhString } from "@shakil-design/utils";
 
 const Collapse = <T extends TreeBasicType<T>>({
   title,
@@ -17,6 +19,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   defaultOpen,
 }: CollapseProps<T>) => {
   const ref = useRef<HTMLDivElement>(null);
+  const { unit } = useContext(TreeContext);
   const classes = useStyles();
   const [isOpen, setOpen] = useState(false);
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -42,9 +45,10 @@ const Collapse = <T extends TreeBasicType<T>>({
       setOpen(true);
     }
   }, [defaultOpen]);
+  const itemPaddingTop = unit === "viewport" ? pxToVhString(20) : 20;
 
   return (
-    <div style={{ paddingTop: 20 }}>
+    <div style={{ paddingTop: itemPaddingTop }}>
       <Item
         data={data}
         isActive={id === activeItemId}
@@ -61,7 +65,7 @@ const Collapse = <T extends TreeBasicType<T>>({
             const height = contentRect.bounds?.height ?? 0;
             return (
               <motion.div
-                className={classes["animationWrapper"]}
+                className={classes["animation-wrapper"]}
                 animate={{
                   height: isOpen ? "auto" : 0,
                 }}

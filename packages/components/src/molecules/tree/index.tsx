@@ -3,6 +3,10 @@ import { useContext } from "react";
 import { Collapse } from "./collapse";
 import { LevelContext } from "./context/levelProvider";
 import { TreeBasicType, TreeProps } from "./types";
+import { TreeContext } from "./context/treeProvider";
+import { useStyle } from "./style";
+import classNames from "classnames";
+import { PX_UNIT, VIEW_PORT_UNIT } from "../../types";
 
 const Tree = <T extends TreeBasicType<T>>({
   data,
@@ -12,10 +16,20 @@ const Tree = <T extends TreeBasicType<T>>({
   defaultSeletedItem,
 }: TreeProps<T>) => {
   const level = useContext(LevelContext);
+  const { unit } = useContext(TreeContext);
   const flat = flatData(data);
   const grandPrents = findGrandParents(defaultSeletedItem, flat);
+  const classes = useStyle();
+
   return (
-    <div style={{ paddingInlineStart: level > 1 ? 30 : 0 }}>
+    <div
+      className={classNames(
+        classes["wrapper"],
+        unit === "pixel"
+          ? `${classes["wrapper"]}${PX_UNIT}`
+          : `${classes["wrapper"]}${VIEW_PORT_UNIT}`,
+      )}
+    >
       {data.map((child) => {
         const isExist = grandPrents.find((item) => item.id === child.id);
         return (
@@ -48,4 +62,15 @@ const Tree = <T extends TreeBasicType<T>>({
   );
 };
 
-export { Tree };
+const TreeWrapper = <T extends TreeBasicType<T>>({
+  unit = "viewport",
+  ...props
+}: TreeProps<T>) => {
+  return (
+    <TreeContext.Provider value={{ unit }}>
+      <Tree {...props} />
+    </TreeContext.Provider>
+  );
+};
+
+export { TreeWrapper as Tree };
