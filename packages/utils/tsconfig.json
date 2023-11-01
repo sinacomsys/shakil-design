@@ -7,7 +7,9 @@
     "declaration": true,
     "noEmit": false,
     "sourceMap": true,
-    "emitDeclarationOnly": false
+    "emitDeclarationOnly": false,
+    "target": "ES5",
+    "module": "CommonJS"
   },
   "include": ["./src"],
   "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]

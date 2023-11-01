@@ -1,11 +1,14 @@
-import { useRef, useEffect } from 'react';
-export function useHorizontalScroll() {
-    const elRef = useRef(null);
-    useEffect(() => {
-        const el = elRef.current;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useHorizontalScroll = void 0;
+var react_1 = require("react");
+function useHorizontalScroll() {
+    var elRef = (0, react_1.useRef)(null);
+    (0, react_1.useEffect)(function () {
+        var el = elRef.current;
         if (!el)
             return;
-        const onWheel = (e) => {
+        var onWheel = function (e) {
             if (e.deltaY == 0)
                 return;
             e.preventDefault();
@@ -15,8 +18,9 @@ export function useHorizontalScroll() {
             });
         };
         el.addEventListener('wheel', onWheel);
-        return () => el.removeEventListener('wheel', onWheel);
+        return function () { return el.removeEventListener('wheel', onWheel); };
     }, []);
     return elRef;
 }
+exports.useHorizontalScroll = useHorizontalScroll;
 //# sourceMappingURL=useHorizontalScroll.js.map
