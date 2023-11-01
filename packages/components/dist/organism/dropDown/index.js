@@ -1,55 +1,71 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
-var _this = this;
-import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/dropDown/index.tsx";
-import classNames from "classnames";
-import React, { useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import { usePopper } from "react-popper";
-import { Text } from "../../atoms/text";
-import { useOnClickOutSide } from "@shakil-design/utils";
-import { useStyles } from "./style";
-var DropDown = function (_a) {
-    var children = _a.children, _b = _a.trigger, trigger = _b === void 0 ? "hover" : _b, _c = _a.placement, placement = _c === void 0 ? "bottom" : _c, isVisibleProp = _a.isVisible, items = _a.items, onChange = _a.onChange, propValue = _a.value;
-    var classes = useStyles();
-    var _d = useState(null), internalValue = _d[0], setInternalValue = _d[1];
-    var body = useRef(null);
-    var _e = useState(false), isVisible = _e[0], setVisible = _e[1];
-    var _f = useState(null), referenceElement = _f[0], setReferenceElement = _f[1];
-    var _g = useState(null), popperElement = _g[0], setPopperElement = _g[1];
-    var timerDelay = useRef(null);
-    var _h = usePopper(referenceElement, popperElement, {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DropDown = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/dropDown/index.tsx";
+const classnames_1 = __importDefault(require("classnames"));
+const react_1 = __importStar(require("react"));
+const react_dom_1 = __importDefault(require("react-dom"));
+const react_popper_1 = require("react-popper");
+const text_1 = require("../../atoms/text");
+const utils_1 = require("@shakil-design/utils");
+const style_1 = require("./style");
+const DropDown = ({ children, trigger = "hover", placement = "bottom", isVisible: isVisibleProp, items, onChange, value: propValue, }) => {
+    const classes = (0, style_1.useStyles)();
+    const [internalValue, setInternalValue] = (0, react_1.useState)(null);
+    const body = (0, react_1.useRef)(null);
+    const [isVisible, setVisible] = (0, react_1.useState)(false);
+    const [referenceElement, setReferenceElement] = (0, react_1.useState)(null);
+    const [popperElement, setPopperElement] = (0, react_1.useState)(null);
+    const timerDelay = (0, react_1.useRef)(null);
+    const { styles, attributes } = (0, react_popper_1.usePopper)(referenceElement, popperElement, {
         placement: placement,
         strategy: "fixed",
-    }), styles = _h.styles, attributes = _h.attributes;
-    var handleOnClick = function (e) {
+    });
+    const handleOnClick = (e) => {
         fireEvents("onClick", e);
-        setVisible(function (prev) { return !prev; });
+        setVisible((prev) => !prev);
     };
-    useEffect(function () {
+    (0, react_1.useEffect)(() => {
         body.current = document.body;
     }, []);
-    var handleOnMouseLeave = function (e) {
+    const handleOnMouseLeave = (e) => {
         fireEvents("onMouseLeave", e);
-        timerDelay.current = setTimeout(function () {
+        timerDelay.current = setTimeout(() => {
             setVisible(false);
         }, 100);
     };
-    var handleOnMouseEnter = function (e) {
+    const handleOnMouseEnter = (e) => {
         fireEvents("onMouseEnter", e);
         setVisible(true);
     };
-    var newChildProps = {
+    const newChildProps = {
         key: "trigger",
         ref: setReferenceElement,
     };
@@ -60,46 +76,46 @@ var DropDown = function (_a) {
         newChildProps.onMouseLeave = handleOnMouseLeave;
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
-    var anchor = React.isValidElement(children) ? (React.cloneElement(children, newChildProps)) : (_jsxDEV("span", __assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 90, columnNumber: 8 }, _this));
-    useOnClickOutSide({
+    const anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_dev_runtime_1.jsxDEV)("span", Object.assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 90, columnNumber: 8 }, this));
+    (0, utils_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
-        handler: function () {
+        handler() {
             if (trigger === "click") {
                 setVisible(false);
             }
         },
     });
-    var handlePopupMouseLeave = function () {
+    const handlePopupMouseLeave = () => {
         if (trigger === "hover") {
             setVisible(false);
         }
     };
-    var handlePopupMouseEnter = function () {
+    const handlePopupMouseEnter = () => {
         if (timerDelay.current) {
             clearTimeout(timerDelay.current);
         }
     };
-    var fireEvents = function (type, e) {
-        var childCallback = children.props[type];
+    const fireEvents = (type, e) => {
+        const childCallback = children.props[type];
         if (childCallback) {
             childCallback(e);
         }
     };
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    var _isVisible = isVisibleProp !== undefined ? isVisibleProp : isVisible;
-    var onSelectItem = function (value) {
+    const _isVisible = isVisibleProp !== undefined ? isVisibleProp : isVisible;
+    const onSelectItem = (value) => {
         setInternalValue(value.value);
         setVisible(false);
         onChange === null || onChange === void 0 ? void 0 : onChange(value);
     };
-    var _value = propValue || internalValue;
-    var list = (_jsxDEV("div", __assign({ className: classes["overlay"] }, { children: items.map(function (item) {
-            return (_jsxDEV("div", __assign({ onClick: function () { return onSelectItem(item); }, className: classNames(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: _jsxDEV(Text, __assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 149, columnNumber: 13 }, _this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, _this));
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 137, columnNumber: 17 }, _this));
-    return (_jsxDEV(_Fragment, { children: [anchor, body.current && _isVisible
-                ? ReactDOM.createPortal(_jsxDEV(_Fragment, { children: _jsxDEV("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 164, columnNumber: 15 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 162, columnNumber: 33 }, _this), body.current)
-                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 158, columnNumber: 11 }, _this));
+    const _value = propValue || internalValue;
+    const list = ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: classes["overlay"] }, { children: items.map((item) => {
+            return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ onClick: () => onSelectItem(item), className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, Object.assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 149, columnNumber: 13 }, this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, this));
+        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 137, columnNumber: 17 }, this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
+                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 164, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 162, columnNumber: 33 }, this), body.current)
+                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 158, columnNumber: 11 }, this));
 };
-export { DropDown };
+exports.DropDown = DropDown;
 //# sourceMappingURL=index.js.map

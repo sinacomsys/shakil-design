@@ -1,17 +1,9 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-var addonStyle = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+const addonStyle = {
     position: "absolute",
     transform: "translateY(-50%)",
     justifyContent: "center",
@@ -19,7 +11,7 @@ var addonStyle = {
     display: "flex",
     insetBlockStart: "50%",
 };
-var useStyles = createUseStyles(function (theme) {
+const useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     var _a;
     return {
         textInput: {
@@ -37,9 +29,9 @@ var useStyles = createUseStyles(function (theme) {
         inputWrapper: {
             position: "relative",
         },
-        addonBefore: __assign(__assign({}, addonStyle), { insetInlineStart: 10 }),
-        addonAfter: __assign(__assign({}, addonStyle), { insetInlineEnd: 10 }),
+        addonBefore: Object.assign(Object.assign({}, addonStyle), { insetInlineStart: 10 }),
+        addonAfter: Object.assign(Object.assign({}, addonStyle), { insetInlineEnd: 10 }),
     };
-}, { theming: theming, name: "text-input" });
-export { useStyles };
+}, { theming: theme_1.theming, name: "text-input" });
+exports.useStyles = useStyles;
 //# sourceMappingURL=style.js.map

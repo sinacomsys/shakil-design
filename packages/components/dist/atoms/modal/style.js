@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-var useStyles = createUseStyles(function (theme) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+const useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     return {
         mask: {
             width: "100%",
@@ -27,6 +30,6 @@ var useStyles = createUseStyles(function (theme) {
             transform: "translate(-50%, -50%)",
         },
     };
-}, { theming: theming, name: "modal" });
-export { useStyles };
+}, { theming: theme_1.theming, name: "modal" });
+exports.useStyles = useStyles;
 //# sourceMappingURL=style.js.map

@@ -1,7 +1,10 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-import { pxToVh } from "@shakil-design/utils";
-export var useStyles = createUseStyles(function (theme) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+const utils_1 = require("@shakil-design/utils");
+exports.useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     var _a, _b, _c;
     return {
         tabs: {
@@ -18,7 +21,7 @@ export var useStyles = createUseStyles(function (theme) {
         },
         tabsList: {
             display: "flex",
-            height: "".concat(pxToVh(42), "vh"),
+            height: `${(0, utils_1.pxToVh)(42)}vh`,
             justifyContent: "space-between",
             columnGap: 4,
             backgroundColor: "white",
@@ -85,8 +88,8 @@ export var useStyles = createUseStyles(function (theme) {
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
             overflow: "hidden",
-            height: "".concat(pxToVh(42), "vh"),
+            height: `${(0, utils_1.pxToVh)(42)}vh`,
         },
     };
-}, { theming: theming, name: "tabs" });
+}, { theming: theme_1.theming, name: "tabs" });
 //# sourceMappingURL=style.js.map

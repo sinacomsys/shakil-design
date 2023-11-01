@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-export var useStyles = createUseStyles({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)({
     wrapper: {
         borderRadius: 8,
         border: 0,
@@ -32,5 +35,5 @@ export var useStyles = createUseStyles({
         borderRadius: 8,
         zIndex: 1,
     },
-}, { theming: theming, name: "switch" });
+}, { theming: theme_1.theming, name: "switch" });
 //# sourceMappingURL=style.js.map

@@ -1,29 +1,22 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
-import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/file-input/index.tsx";
-import classNames from "classnames";
-import { BaseIcon } from "../../atoms/baseIcon";
-import { useTheme } from "../../theme";
-import { useStyle } from "./style";
-import useFileInput from "./useFileInput";
-import { Text } from "../../atoms";
-var FileInput = function (_a) {
-    var register = _a.register, className = _a.className, fileType = _a.fileType;
-    var classes = useStyle();
-    var _b = useFileInput(register), label = _b.label, fileChangeHandler = _b.fileChangeHandler;
-    var fileInput = useTheme().fileInput;
-    return (_jsxDEV("div", __assign({ className: classNames(classes["fileInput"], className) }, { children: [_jsxDEV("label", __assign({ htmlFor: register === null || register === void 0 ? void 0 : register.name }, { children: _jsxDEV(Text, __assign({ size: 16, color: fileInput }, { children: register === null || register === void 0 ? void 0 : register.name }), void 0, false, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 23, columnNumber: 7 }, _this), _jsxDEV("label", __assign({ className: classes["fileChooser"] }, { children: [label ? (_jsxDEV(Text, __assign({ size: 16, color: fileInput }, { children: label }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 19 }, _this)) : (_jsxDEV(_Fragment, { children: [_jsxDEV(BaseIcon, { size: { height: 10, width: 10 }, name: "Add-Box_Add-Icon" }, void 0, false, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 13 }, _this), _jsxDEV(Text, __assign({ size: 16, color: fileInput }, { children: "Add File" }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 13 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 14 }, _this)), _jsxDEV("input", __assign({}, register, { onChange: fileChangeHandler, accept: fileType, type: "file", id: "formId", hidden: true }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 21, columnNumber: 11 }, _this));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FileInput = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/file-input/index.tsx";
+const classnames_1 = __importDefault(require("classnames"));
+const baseIcon_1 = require("../../atoms/baseIcon");
+const theme_1 = require("../../theme");
+const style_1 = require("./style");
+const useFileInput_1 = __importDefault(require("./useFileInput"));
+const atoms_1 = require("../../atoms");
+const FileInput = ({ register, className, fileType }) => {
+    const classes = (0, style_1.useStyle)();
+    const { label, fileChangeHandler } = (0, useFileInput_1.default)(register);
+    const { fileInput } = (0, theme_1.useTheme)();
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: (0, classnames_1.default)(classes["fileInput"], className) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("label", Object.assign({ htmlFor: register === null || register === void 0 ? void 0 : register.name }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, Object.assign({ size: 16, color: fileInput }, { children: register === null || register === void 0 ? void 0 : register.name }), void 0, false, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 9 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 23, columnNumber: 7 }, this), (0, jsx_dev_runtime_1.jsxDEV)("label", Object.assign({ className: classes["fileChooser"] }, { children: [label ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, Object.assign({ size: 16, color: fileInput }, { children: label }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 19 }, this)) : ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [(0, jsx_dev_runtime_1.jsxDEV)(baseIcon_1.BaseIcon, { size: { height: 10, width: 10 }, name: "Add-Box_Add-Icon" }, void 0, false, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 13 }, this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, Object.assign({ size: 16, color: fileInput }, { children: "Add File" }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 14 }, this)), (0, jsx_dev_runtime_1.jsxDEV)("input", Object.assign({}, register, { onChange: fileChangeHandler, accept: fileType, type: "file", id: "formId", hidden: true }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 9 }, this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 21, columnNumber: 11 }, this));
 };
-export { FileInput };
+exports.FileInput = FileInput;
 //# sourceMappingURL=index.js.map

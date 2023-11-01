@@ -1,46 +1,36 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var _this = this;
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/checkbox/customSquare/index.tsx";
-import { useWindowSize } from "usehooks-ts";
-import { useTheme } from "../../../theme";
-import { pxToVh } from "@shakil-design/utils";
-import { useStyles } from "./style";
-export var WIDTH = 16;
-var INNER_WIDTH = 10;
-var CustomSquare = function (_a) {
-    var checked = _a.checked, unit = _a.unit;
-    var _b = useTheme().checkbox, _c = _b === void 0 ? {} : _b, borderSelected = _c.borderSelected, 
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomSquare = exports.WIDTH = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/checkbox/customSquare/index.tsx";
+const usehooks_ts_1 = require("usehooks-ts");
+const theme_1 = require("../../../theme");
+const utils_1 = require("@shakil-design/utils");
+const style_1 = require("./style");
+exports.WIDTH = 16;
+const INNER_WIDTH = 10;
+const CustomSquare = ({ checked, unit }) => {
+    const { checkbox: { borderSelected, 
     // deactive,
-    squareSelected = _c.squareSelected, unselectedBorder = _c.unselectedBorder, unselectedSquare = _c.unselectedSquare;
-    var classes = useStyles();
-    var windowHeight = useWindowSize().height;
-    var vh = windowHeight / 100;
-    var borderColor = checked ? borderSelected : unselectedBorder;
-    var backgroundColor = checked ? squareSelected : unselectedSquare;
-    var width = unit === "pixel" ? WIDTH : 2 * Math.round((pxToVh(WIDTH) * vh) / 2);
-    var innderWidth = unit === "pixel"
+    squareSelected, unselectedBorder, unselectedSquare, } = {}, } = (0, theme_1.useTheme)();
+    const classes = (0, style_1.useStyles)();
+    const { height: windowHeight } = (0, usehooks_ts_1.useWindowSize)();
+    const vh = windowHeight / 100;
+    const borderColor = checked ? borderSelected : unselectedBorder;
+    const backgroundColor = checked ? squareSelected : unselectedSquare;
+    const width = unit === "pixel" ? exports.WIDTH : 2 * Math.round(((0, utils_1.pxToVh)(exports.WIDTH) * vh) / 2);
+    const innderWidth = unit === "pixel"
         ? INNER_WIDTH
-        : 2 * Math.round((pxToVh(INNER_WIDTH) * vh) / 2);
-    return (_jsxDEV("div", __assign({ className: classes["wrapper"], style: {
+        : 2 * Math.round(((0, utils_1.pxToVh)(INNER_WIDTH) * vh) / 2);
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: classes["wrapper"], style: {
             width: width,
             height: width,
-            border: "1px solid ".concat(borderColor),
-        } }, { children: _jsxDEV("div", { className: classes["square"], style: {
+            border: `1px solid ${borderColor}`,
+        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["square"], style: {
                 width: innderWidth,
                 height: innderWidth,
                 backgroundColor: backgroundColor,
-            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, _this));
+            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, this));
 };
-export { CustomSquare };
+exports.CustomSquare = CustomSquare;
 //# sourceMappingURL=index.js.map

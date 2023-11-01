@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-export var useStyles = createUseStyles(function () {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)(() => {
     return {
         select: {
             background: "#ebedf2",
@@ -46,5 +49,5 @@ export var useStyles = createUseStyles(function () {
             cursor: "pointer",
         },
     };
-}, { theming: theming, name: "select" });
+}, { theming: theme_1.theming, name: "select" });
 //# sourceMappingURL=style.js.map

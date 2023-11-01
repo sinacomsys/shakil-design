@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-export var useStyles = createUseStyles({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)({
     table: {
         width: "100%",
         borderCollapse: "collapse",
@@ -37,5 +40,5 @@ export var useStyles = createUseStyles({
         overflowY: "auto",
         position: "relative",
     },
-}, { theming: theming, name: "table" });
+}, { theming: theme_1.theming, name: "table" });
 //# sourceMappingURL=style.js.map

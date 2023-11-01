@@ -1,14 +1,4 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
+"use strict";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -20,12 +10,16 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/theme/context.tsx";
-import React from "react";
-import { JssProvider, createTheming } from "react-jss";
-export var Colors = {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.theming = exports.ThemeProvider = exports.rest = exports.ShakilDesignThemeProvider = exports.Colors = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/theme/context.tsx";
+const react_1 = __importDefault(require("react"));
+const react_jss_1 = require("react-jss");
+exports.Colors = {
     primary: "#374775",
     checkbox: {
         borderSelected: "#374775",
@@ -90,13 +84,15 @@ export var Colors = {
     },
     noContent: "red",
 };
-var ThemeContext = React.createContext(Colors);
+const ThemeContext = react_1.default.createContext(exports.Colors);
 // Creating a namespaced theming object.
-var theming = createTheming(ThemeContext);
-var ThemeProvider = theming.ThemeProvider, rest = __rest(theming, ["ThemeProvider"]);
-var ShakilDesignThemeProvider = function (_a) {
-    var children = _a.children, colors = _a.colors;
-    return (_jsxDEV(JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: _jsxDEV(ThemeProvider, __assign({ theme: colors }, { children: _jsxDEV("div", __assign({ style: { width: "100%", height: "100%" } }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 154, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 153, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 147, columnNumber: 11 }, _this));
+const theming = (0, react_jss_1.createTheming)(ThemeContext);
+exports.theming = theming;
+const { ThemeProvider } = theming, rest = __rest(theming, ["ThemeProvider"]);
+exports.ThemeProvider = ThemeProvider;
+exports.rest = rest;
+const ShakilDesignThemeProvider = ({ children, colors, }) => {
+    return ((0, jsx_dev_runtime_1.jsxDEV)(react_jss_1.JssProvider, Object.assign({ generateId: (rule, sheet) => { var _a; return `shakil-${(_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix}${rule.key}`; } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(ThemeProvider, Object.assign({ theme: colors }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 153, columnNumber: 7 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 147, columnNumber: 11 }, this));
 };
-export { ShakilDesignThemeProvider, rest, ThemeProvider, theming };
+exports.ShakilDesignThemeProvider = ShakilDesignThemeProvider;
 //# sourceMappingURL=context.js.map

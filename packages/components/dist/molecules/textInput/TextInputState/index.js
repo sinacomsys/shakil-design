@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Copyright (c) Nicolas Gallagher. Copyright (c) Facebook, Inc. and its
  * affiliates.
@@ -7,12 +8,13 @@
  *
  * @flow
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This class is responsible for coordinating the "focused" state for
  * TextInputs. All calls relating to the keyboard should be funneled through
  * here
  */
-var TextInputState = {
+const TextInputState = {
     // eslint-disable-next-line
     _currentlyFocusedNode: null,
     /**
@@ -20,12 +22,12 @@ var TextInputState = {
      * text field is focused it returns null
      */
     // eslint-disable-next-line
-    currentlyFocusedField: function () {
+    currentlyFocusedField() {
         if (document.activeElement !== this._currentlyFocusedNode) {
             this._currentlyFocusedNode = null;
         }
         return this._currentlyFocusedNode;
     },
 };
-export default TextInputState;
+exports.default = TextInputState;
 //# sourceMappingURL=index.js.map

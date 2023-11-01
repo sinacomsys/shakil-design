@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-var useStyles = createUseStyles(function () {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+const useStyles = (0, react_jss_1.createUseStyles)(() => {
     return {
         arrow: {
             width: 8,
@@ -17,6 +20,6 @@ var useStyles = createUseStyles(function () {
             backgroundColor: "rgba(0, 0, 0, 0.4)",
         },
     };
-}, { theming: theming, name: "tooltip" });
-export { useStyles };
+}, { theming: theme_1.theming, name: "tooltip" });
+exports.useStyles = useStyles;
 //# sourceMappingURL=style.js.map

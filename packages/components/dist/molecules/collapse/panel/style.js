@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../../theme";
-var useStyles = createUseStyles(function (theme) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../../theme");
+const useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     var _a;
     return {
         titleWrapper: {
@@ -19,6 +22,6 @@ var useStyles = createUseStyles(function (theme) {
             alignItems: "center",
         },
     };
-}, { theming: theming, name: "panel" });
-export { useStyles };
+}, { theming: theme_1.theming, name: "panel" });
+exports.useStyles = useStyles;
 //# sourceMappingURL=style.js.map

@@ -1,38 +1,31 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/item/defaultNode/index.tsx";
-import classNames from "classnames";
-import { useStyles } from "./style";
-import { TreeContext } from "../../context/treeProvider";
-import { useContext } from "react";
-import { BaseIcon, Spinner, Text } from "../../../../atoms";
-import { PX_UNIT, VIEW_PORT_UNIT } from "../../../../types";
-var DefaultNode = function (_a) {
-    var data = _a.data, isLoading = _a.isLoading, level = _a.level, arrowDirection = _a.arrowDirection, fontSize = _a.fontSize, isActive = _a.isActive, title = _a.title;
-    var classes = useStyles();
-    var unit = useContext(TreeContext).unit;
-    var isPXunit = unit === "pixel";
-    var isViewPortUnit = unit === "viewport";
-    return (_jsxDEV("div", __assign({ style: {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DefaultNode = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/item/defaultNode/index.tsx";
+const classnames_1 = __importDefault(require("classnames"));
+const style_1 = require("./style");
+const treeProvider_1 = require("../../context/treeProvider");
+const react_1 = require("react");
+const atoms_1 = require("../../../../atoms");
+const types_1 = require("../../../../types");
+const DefaultNode = ({ data, isLoading, level, arrowDirection, fontSize, isActive, title, }) => {
+    const classes = (0, style_1.useStyles)();
+    const { unit } = (0, react_1.useContext)(treeProvider_1.TreeContext);
+    const isPXunit = unit === "pixel";
+    const isViewPortUnit = unit === "viewport";
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ style: {
             backgroundColor: (data === null || data === void 0 ? void 0 : data.renderBackgroundColor) &&
-                data.renderBackgroundColor({ data: data, level: level }),
-        }, className: classNames(classes["wrapper"], isPXunit
-            ? "".concat(classes["wrapper"]).concat(PX_UNIT)
-            : "".concat(classes["wrapper"]).concat(VIEW_PORT_UNIT), isActive && "".concat(classes["wrapper"], "--active")) }, { children: [data.renderStatusColor && (_jsxDEV("div", __assign({ className: classNames(classes["status-line"], isPXunit
-                    ? "".concat(classes["status-line"]).concat(PX_UNIT)
-                    : "".concat(classes["status-line"]).concat(VIEW_PORT_UNIT)) }, { children: data.renderStatusColor({ data: data, level: level }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 35 }, _this)), _jsxDEV("div", __assign({ className: classes["item-content"] }, { children: typeof data.renderTitle === "function" ? (data.renderTitle({ data: data, level: level })) : (_jsxDEV("div", __assign({ className: classNames(classes["default-item-content"], isPXunit && "".concat(classes["default-item-content"]).concat(PX_UNIT), isViewPortUnit &&
-                        "".concat(classes["default-item-content"]).concat(VIEW_PORT_UNIT)) }, { children: _jsxDEV(Text, __assign({ theme: "Regular", size: fontSize, color: "#575757" }, { children: title }), void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 14 }, _this)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 7 }, _this), _jsxDEV("div", __assign({ className: classes["spinner-wrapper"] }, { children: [isLoading ? _jsxDEV(Spinner, { size: "small", spinerColor: "white" }, void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 21 }, _this) : null, !isLoading && arrowDirection !== undefined ? (_jsxDEV(BaseIcon, { wrapperClassName: classNames(classes["arrow-down"], arrowDirection === "up" && classes["arrow-up"]), name: "Amount-Boxes_Decrease", size: { height: 6, width: 12 }, wrapperStyle: { marginInlineStart: "auto" }, color: "#575757" }, void 0, false, { fileName: _jsxFileName, lineNumber: 70, columnNumber: 56 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 68, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 23, columnNumber: 11 }, _this));
+                data.renderBackgroundColor({ data, level }),
+        }, className: (0, classnames_1.default)(classes["wrapper"], isPXunit
+            ? `${classes["wrapper"]}${types_1.PX_UNIT}`
+            : `${classes["wrapper"]}${types_1.VIEW_PORT_UNIT}`, isActive && `${classes["wrapper"]}--active`) }, { children: [data.renderStatusColor && ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: (0, classnames_1.default)(classes["status-line"], isPXunit
+                    ? `${classes["status-line"]}${types_1.PX_UNIT}`
+                    : `${classes["status-line"]}${types_1.VIEW_PORT_UNIT}`) }, { children: data.renderStatusColor({ data, level }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 35 }, this)), (0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: classes["item-content"] }, { children: typeof data.renderTitle === "function" ? (data.renderTitle({ data, level })) : ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: (0, classnames_1.default)(classes["default-item-content"], isPXunit && `${classes["default-item-content"]}${types_1.PX_UNIT}`, isViewPortUnit &&
+                        `${classes["default-item-content"]}${types_1.VIEW_PORT_UNIT}`) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, Object.assign({ theme: "Regular", size: fontSize, color: "#575757" }, { children: title }), void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 13 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 14 }, this)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 7 }, this), (0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: classes["spinner-wrapper"] }, { children: [isLoading ? (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { size: "small", spinerColor: "white" }, void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 21 }, this) : null, !isLoading && arrowDirection !== undefined ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: (0, classnames_1.default)(classes["arrow-down"], arrowDirection === "up" && classes["arrow-up"]), name: "Amount-Boxes_Decrease", size: { height: 6, width: 12 }, wrapperStyle: { marginInlineStart: "auto" }, color: "#575757" }, void 0, false, { fileName: _jsxFileName, lineNumber: 70, columnNumber: 56 }, this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 68, columnNumber: 7 }, this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 23, columnNumber: 11 }, this));
 };
-export { DefaultNode };
+exports.DefaultNode = DefaultNode;
 //# sourceMappingURL=index.js.map

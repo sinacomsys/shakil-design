@@ -1,11 +1,14 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../../theme";
-export var useStyles = createUseStyles(function (theme) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     var _a, _b;
     return {
         wrapper: {
             borderRadius: 3,
-            border: "1px solid ".concat((_a = theme.checkbox) === null || _a === void 0 ? void 0 : _a.borderSelected),
+            border: `1px solid ${(_a = theme.checkbox) === null || _a === void 0 ? void 0 : _a.borderSelected}`,
             position: "relative",
             backgroundColor: "transparent",
         },
@@ -18,7 +21,7 @@ export var useStyles = createUseStyles(function (theme) {
         },
     };
 }, {
-    theming: theming,
+    theming: theme_1.theming,
     name: "indeterminate-checkbox",
 });
 //# sourceMappingURL=style.js.map

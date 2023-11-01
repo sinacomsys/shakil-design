@@ -1,13 +1,26 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
@@ -20,34 +33,38 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/textInput/index.tsx";
-import classNames from "classnames";
-import * as React from "react";
-import { composeRef } from "reactjs-view-core";
-import { useStyles } from "./style";
-import TextInputState from "./TextInputState";
-import { useFonts } from "../../atoms/text/style";
-import { pxToVh, pxToVhString } from "@shakil-design/utils";
-import { BaseIcon } from "../../atoms";
-import { useState } from "react";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TextInput = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/textInput/index.tsx";
+const classnames_1 = __importDefault(require("classnames"));
+const React = __importStar(require("react"));
+const reactjs_view_core_1 = require("reactjs-view-core");
+const style_1 = require("./style");
+const TextInputState_1 = __importDefault(require("./TextInputState"));
+const style_2 = require("../../atoms/text/style");
+const utils_1 = require("@shakil-design/utils");
+const atoms_1 = require("../../atoms");
+const react_1 = require("react");
 /**
  * Determines whether a 'selection' prop differs from a node's existing
  * selection state.
  */
-var isSelectionStale = function (node, selection) {
-    var selectionEnd = node.selectionEnd, selectionStart = node.selectionStart;
-    var start = selection.start, end = selection.end;
+const isSelectionStale = (node, selection) => {
+    const { selectionEnd, selectionStart } = node;
+    const { start, end } = selection;
     return start !== selectionStart || end !== selectionEnd;
 };
 /**
  * Certain input types do no support 'selectSelectionRange' and will throw an
  * error.
  */
-var setSelection = function (node, selection) {
+const setSelection = (node, selection) => {
     if (isSelectionStale(node, selection)) {
-        var start = selection.start, end = selection.end;
+        const { start, end } = selection;
         try {
             node.setSelectionRange(start, end || start);
         }
@@ -59,12 +76,12 @@ var setSelection = function (node, selection) {
 function isEventComposing(nativeEvent) {
     return nativeEvent.isComposing || nativeEvent.keyCode === 229;
 }
-var TextInput = React.forwardRef(function (_a, forwardedRef) {
-    var _b = _a.autoCapitalize, autoCapitalize = _b === void 0 ? "sentences" : _b, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _c = _a.autoCorrect, autoCorrect = _c === void 0 ? true : _c, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _d = _a.editable, editable = _d === void 0 ? true : _d, _f = _a.keyboardType, keyboardType = _f === void 0 ? "default" : _f, _g = _a.multiline, multiline = _g === void 0 ? false : _g, _h = _a.numberOfLines, numberOfLines = _h === void 0 ? 1 : _h, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, returnKeyType = _a.returnKeyType, _j = _a.secureTextEntry, secureTextEntry = _j === void 0 ? false : _j, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, testID = _a.testID, disabled = _a.disabled, theme = _a.theme, _k = _a.unit, unit = _k === void 0 ? "viewport" : _k, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "editable", "keyboardType", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "returnKeyType", "secureTextEntry", "selection", "selectTextOnFocus", "spellCheck", "className", "testID", "disabled", "theme", "unit", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear"]);
-    var classes = useStyles();
-    var _l = useState(false), isHover = _l[0], setIsHover = _l[1];
-    var type;
-    var inputMode;
+const TextInput = React.forwardRef((_a, forwardedRef) => {
+    var { autoCapitalize = "sentences", autoComplete, autoCompleteType, autoCorrect = true, blurOnSubmit, clearTextOnFocus, editable = true, keyboardType = "default", multiline = false, numberOfLines = 1, onBlur, onChange, onChangeText, onContentSizeChange, onFocus, onKeyPress, onSelectionChange, onSubmitEditing, returnKeyType, secureTextEntry = false, selection, selectTextOnFocus, spellCheck, className, testID, disabled, theme, unit = "viewport", AddonAfter, addonBefore, addonAfterClassName, addonBeforeClassName, addonAfterStyle, addonBeforeStyle, value, onClear, wrapperStyle, allowClear } = _a, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "editable", "keyboardType", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "returnKeyType", "secureTextEntry", "selection", "selectTextOnFocus", "spellCheck", "className", "testID", "disabled", "theme", "unit", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear"]);
+    const classes = (0, style_1.useStyles)();
+    const [isHover, setIsHover] = (0, react_1.useState)(false);
+    let type;
+    let inputMode;
     switch (keyboardType) {
         case "email-address":
             type = "email";
@@ -93,12 +110,12 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
     if (secureTextEntry) {
         type = "password";
     }
-    var dimensions = React.useRef({ height: 0, width: 0 });
-    var hostRef = React.useRef(null);
-    var handleContentSizeChange = React.useCallback(function (hostNode) {
+    const dimensions = React.useRef({ height: 0, width: 0 });
+    const hostRef = React.useRef(null);
+    const handleContentSizeChange = React.useCallback((hostNode) => {
         if (multiline && onContentSizeChange && hostNode != null) {
-            var newHeight = hostNode.scrollHeight;
-            var newWidth = hostNode.scrollWidth;
+            const newHeight = hostNode.scrollHeight;
+            const newWidth = hostNode.scrollWidth;
             if (newHeight !== dimensions.current.height ||
                 newWidth !== dimensions.current.width) {
                 dimensions.current.height = newHeight;
@@ -114,7 +131,7 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
             }
         }
     }, [multiline, onContentSizeChange]);
-    var imperativeRef = React.useMemo(function () { return function (hostNode) {
+    const imperativeRef = React.useMemo(() => (hostNode) => {
         // TextInput needs to add more methods to the hostNode in addition to those
         // added by `usePlatformMethods`. This is temporarily until an API like
         // `TextInput.clear(hostRef)` is added to React Native.
@@ -126,13 +143,13 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
             };
             hostNode.isFocused = function () {
                 return (hostNode != null &&
-                    TextInputState.currentlyFocusedField() === hostNode);
+                    TextInputState_1.default.currentlyFocusedField() === hostNode);
             };
             handleContentSizeChange(hostNode);
         }
-    }; }, [handleContentSizeChange]);
+    }, [handleContentSizeChange]);
     function handleBlur(e) {
-        TextInputState._currentlyFocusedNode = null;
+        TextInputState_1.default._currentlyFocusedNode = null;
         if (onBlur) {
             //@ts-ignore
             e.nativeEvent.text = e.target.value;
@@ -140,8 +157,8 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
         }
     }
     function handleChange(e) {
-        var hostNode = e.target;
-        var text = hostNode.value;
+        const hostNode = e.target;
+        const text = hostNode.value;
         //@ts-ignore
         e.nativeEvent.text = text;
         handleContentSizeChange(hostNode);
@@ -153,33 +170,33 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
         }
     }
     function handleFocus(e) {
-        var hostNode = e.target;
+        const hostNode = e.target;
         if (onFocus) {
             //@ts-ignore
             e.nativeEvent.text = hostNode.value;
             onFocus(e);
         }
         if (hostNode != null) {
-            TextInputState._currentlyFocusedNode = hostNode;
+            TextInputState_1.default._currentlyFocusedNode = hostNode;
             if (clearTextOnFocus) {
                 hostNode.value = "";
             }
             if (selectTextOnFocus) {
                 // Safari requires selection to occur in a setTimeout
-                setTimeout(function () {
+                setTimeout(() => {
                     hostNode.select();
                 }, 0);
             }
         }
     }
     function handleKeyDown(e) {
-        var hostNode = e.target;
+        const hostNode = e.target;
         // Prevent key events bubbling (see #612)
         e.stopPropagation();
-        var isBlurOnSubmitDefault = !multiline;
-        var shouldBlurOnSubmit = blurOnSubmit == null ? isBlurOnSubmitDefault : blurOnSubmit;
-        var nativeEvent = e.nativeEvent;
-        var isComposing = isEventComposing(nativeEvent);
+        const isBlurOnSubmitDefault = !multiline;
+        const shouldBlurOnSubmit = blurOnSubmit == null ? isBlurOnSubmitDefault : blurOnSubmit;
+        const nativeEvent = e.nativeEvent;
+        const isComposing = isEventComposing(nativeEvent);
         if (onKeyPress) {
             onKeyPress(e);
         }
@@ -201,13 +218,13 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
             }
         }
     }
-    var handleSelectionChange = function (e) {
+    const handleSelectionChange = (e) => {
         if (onSelectionChange) {
             try {
-                var _e = e;
-                var node = _e.target;
-                var selectionStart = node.selectionStart, selectionEnd = node.selectionEnd;
-                var nativeEvent = _e.nativeEvent;
+                const _e = e;
+                const node = _e.target;
+                const { selectionStart, selectionEnd } = node;
+                const nativeEvent = _e.nativeEvent;
                 nativeEvent.selection = {
                     start: selectionStart,
                     end: selectionEnd,
@@ -218,22 +235,22 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
             catch (_e) { }
         }
     };
-    var onMouseEnter = function () {
+    const onMouseEnter = () => {
         setIsHover(true);
     };
-    var onMouseLeave = function () {
+    const onMouseLeave = () => {
         setIsHover(false);
     };
-    React.useEffect(function () {
-        var node = hostRef.current;
+    React.useEffect(() => {
+        const node = hostRef.current;
         if (node && selection) {
             setSelection(node, selection);
         }
         if (document.activeElement === node) {
-            TextInputState._currentlyFocusedNode = node;
+            TextInputState_1.default._currentlyFocusedNode = node;
         }
     }, [hostRef, selection]);
-    var supportedProps = rest;
+    const supportedProps = rest;
     supportedProps.value;
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
@@ -251,28 +268,28 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
     // supportedProps.style = style;
     supportedProps.type = (multiline ? undefined : type);
     supportedProps.inputMode = inputMode;
-    var setRef = composeRef(hostRef, imperativeRef, forwardedRef);
-    var themes = useFonts();
-    var _height = unit === "viewport" ? pxToVhString(32) : 32;
-    var _borderRadius = unit === "viewport" ? pxToVhString(7) : 7;
-    var _paddingBlock = unit === "viewport" ? pxToVhString(8) : 8;
-    var _paddingInline = unit === "viewport" ? pxToVhString(10) : 10;
-    var _fontSize = unit === "viewport" ? pxToVhString(14) : 14;
-    var _clearIconSize = unit === "viewport" ? pxToVh(9) : 9;
-    var _value = value === null || value === undefined ? "" : value;
-    var _clearIcon = typeof allowClear === "object"
+    const setRef = (0, reactjs_view_core_1.composeRef)(hostRef, imperativeRef, forwardedRef);
+    const themes = (0, style_2.useFonts)();
+    const _height = unit === "viewport" ? (0, utils_1.pxToVhString)(32) : 32;
+    const _borderRadius = unit === "viewport" ? (0, utils_1.pxToVhString)(7) : 7;
+    const _paddingBlock = unit === "viewport" ? (0, utils_1.pxToVhString)(8) : 8;
+    const _paddingInline = unit === "viewport" ? (0, utils_1.pxToVhString)(10) : 10;
+    const _fontSize = unit === "viewport" ? (0, utils_1.pxToVhString)(14) : 14;
+    const _clearIconSize = unit === "viewport" ? (0, utils_1.pxToVh)(9) : 9;
+    const _value = value === null || value === undefined ? "" : value;
+    const _clearIcon = typeof allowClear === "object"
         ? allowClear
-        : typeof allowClear === "boolean" && (_jsxDEV(BaseIcon, { onClick: onClear, wrapperStyle: {
+        : typeof allowClear === "boolean" && ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: onClear, wrapperStyle: {
                 cursor: "pointer",
                 visibility: isHover && _value ? "visible" : "hidden",
-            }, name: "Every-Boxes-_-Cross-Icon", unit: unit, size: { height: _clearIconSize, width: _clearIconSize } }, void 0, false, { fileName: _jsxFileName, lineNumber: 363, columnNumber: 47 }, _this));
-    var addOnAfterIcon = isHover && _value && allowClear
+            }, name: "Every-Boxes-_-Cross-Icon", unit: unit, size: { height: _clearIconSize, width: _clearIconSize } }, void 0, false, { fileName: _jsxFileName, lineNumber: 363, columnNumber: 47 }, this));
+    const addOnAfterIcon = isHover && _value && allowClear
         ? _clearIcon
         : AddonAfter
             ? AddonAfter
             : null;
-    return multiline ? (_jsxDEV("textarea", __assign({ ref: setRef }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 383, columnNumber: 25 }, _this)) : (_jsxDEV("div", __assign({ onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, className: classes["inputWrapper"], style: wrapperStyle }, { children: [_jsxDEV("input", __assign({}, supportedProps, { value: _value, className: classNames(classes["textInput"], disabled && classes.disabled, themes[theme || "Regular"], className), ref: setRef, type: rest.type, disabled: disabled, style: __assign({ height: _height, borderRadius: _borderRadius, paddingInline: _paddingInline, paddingBlock: _paddingBlock, fontSize: _fontSize }, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 395, columnNumber: 9 }, _this), addonBefore ? (_jsxDEV("div", __assign({ className: classNames(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 416, columnNumber: 25 }, _this)) : null, addOnAfterIcon ? (_jsxDEV("div", __assign({ className: classNames(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 428, columnNumber: 28 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 388, columnNumber: 10 }, _this));
+    return multiline ? ((0, jsx_dev_runtime_1.jsxDEV)("textarea", Object.assign({ ref: setRef }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 383, columnNumber: 25 }, this)) : ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, className: classes["inputWrapper"], style: wrapperStyle }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", Object.assign({}, supportedProps, { value: _value, className: (0, classnames_1.default)(classes["textInput"], disabled && classes.disabled, themes[theme || "Regular"], className), ref: setRef, type: rest.type, disabled: disabled, style: Object.assign({ height: _height, borderRadius: _borderRadius, paddingInline: _paddingInline, paddingBlock: _paddingBlock, fontSize: _fontSize }, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 395, columnNumber: 9 }, this), addonBefore ? ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: (0, classnames_1.default)(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 416, columnNumber: 25 }, this)) : null, addOnAfterIcon ? ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ className: (0, classnames_1.default)(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 428, columnNumber: 28 }, this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 388, columnNumber: 10 }, this));
 });
+exports.TextInput = TextInput;
 TextInput.displayName = "TextInput";
-export { TextInput };
 //# sourceMappingURL=index.js.map

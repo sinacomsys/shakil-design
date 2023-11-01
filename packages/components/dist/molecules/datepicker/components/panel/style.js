@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../../../theme";
-export var useStyle = createUseStyles({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyle = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../../../theme");
+exports.useStyle = (0, react_jss_1.createUseStyles)({
     expandIcon: {
         marginInlineStart: 14,
         display: "flex",
@@ -20,5 +23,5 @@ export var useStyle = createUseStyles({
     matrix: {
         paddingInline: 22,
     },
-}, { theming: theming, name: "date-picker-panel" });
+}, { theming: theme_1.theming, name: "date-picker-panel" });
 //# sourceMappingURL=style.js.map

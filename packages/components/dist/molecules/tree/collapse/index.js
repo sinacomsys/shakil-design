@@ -1,65 +1,57 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/collapse/index.tsx";
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState, useContext } from "react";
-import Measure from "react-measure";
-import { Item } from "../item";
-import { useStyles } from "./style";
-import { TreeContext } from "../context/treeProvider";
-import { pxToVhString } from "@shakil-design/utils";
-var Collapse = function (_a) {
-    var title = _a.title, children = _a.children, level = _a.level, data = _a.data, onLoadData = _a.onLoadData, onClick = _a.onClick, activeItemId = _a.activeItemId, id = _a.id, defaultOpen = _a.defaultOpen;
-    var ref = useRef(null);
-    var unit = useContext(TreeContext).unit;
-    var classes = useStyles();
-    var _b = useState(false), isOpen = _b[0], setOpen = _b[1];
-    var _c = useState(false), isLoading = _c[0], setLoading = _c[1];
-    var handleOnClick = function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Collapse = void 0;
+const jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/collapse/index.tsx";
+const framer_motion_1 = require("framer-motion");
+const react_1 = require("react");
+const react_measure_1 = __importDefault(require("react-measure"));
+const item_1 = require("../item");
+const style_1 = require("./style");
+const treeProvider_1 = require("../context/treeProvider");
+const utils_1 = require("@shakil-design/utils");
+const Collapse = ({ title, children, level, data, onLoadData, onClick, activeItemId, id, defaultOpen, }) => {
+    const ref = (0, react_1.useRef)(null);
+    const { unit } = (0, react_1.useContext)(treeProvider_1.TreeContext);
+    const classes = (0, style_1.useStyles)();
+    const [isOpen, setOpen] = (0, react_1.useState)(false);
+    const [isLoading, setLoading] = (0, react_1.useState)(false);
+    const handleOnClick = () => {
         var _a;
-        onClick === null || onClick === void 0 ? void 0 : onClick({ data: data, level: level });
+        onClick === null || onClick === void 0 ? void 0 : onClick({ data, level });
         if (children) {
-            setOpen(function (prev) { return !prev; });
+            setOpen((prev) => !prev);
         }
         if (typeof onLoadData === "undefined")
             return;
         setLoading(true);
-        (_a = onLoadData === null || onLoadData === void 0 ? void 0 : onLoadData({ data: data, level: level })) === null || _a === void 0 ? void 0 : _a.finally(function () {
+        (_a = onLoadData === null || onLoadData === void 0 ? void 0 : onLoadData({ data, level })) === null || _a === void 0 ? void 0 : _a.finally(() => {
             setLoading(false);
             if (!children) {
                 setOpen(true);
             }
         });
     };
-    useEffect(function () {
+    (0, react_1.useEffect)(() => {
         var _a;
         if (defaultOpen) {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ block: "center", behavior: "smooth" });
             setOpen(true);
         }
     }, [defaultOpen]);
-    var itemPaddingTop = unit === "viewport" ? pxToVhString(20) : 20;
-    return (_jsxDEV("div", __assign({ style: { paddingTop: itemPaddingTop } }, { children: [_jsxDEV(Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }, void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 7 }, _this), children ? (_jsxDEV(Measure, __assign({ bounds: true }, { children: function (_a) {
-                    var _b, _c;
-                    var contentRect = _a.contentRect, measureRef = _a.measureRef;
-                    var height = (_c = (_b = contentRect.bounds) === null || _b === void 0 ? void 0 : _b.height) !== null && _c !== void 0 ? _c : 0;
-                    return (_jsxDEV(motion.div, __assign({ className: classes["animation-wrapper"], animate: {
+    const itemPaddingTop = unit === "viewport" ? (0, utils_1.pxToVhString)(20) : 20;
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ style: { paddingTop: itemPaddingTop } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(item_1.Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }, void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 7 }, this), children ? ((0, jsx_dev_runtime_1.jsxDEV)(react_measure_1.default, Object.assign({ bounds: true }, { children: ({ contentRect, measureRef }) => {
+                    var _a, _b;
+                    const height = (_b = (_a = contentRect.bounds) === null || _a === void 0 ? void 0 : _a.height) !== null && _b !== void 0 ? _b : 0;
+                    return ((0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, Object.assign({ className: classes["animation-wrapper"], animate: {
                             height: isOpen ? "auto" : 0,
-                        } }, { children: _jsxDEV("div", __assign({ ref: measureRef }, { children: [children, _jsxDEV("div", { className: classes["dots"], style: {
+                        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ ref: measureRef }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["dots"], style: {
                                         height: height - 15,
-                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 19 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 21 }, _this));
-                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 20 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 11 }, _this));
+                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 19 }, this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 17 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 21 }, this));
+                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 20 }, this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 11 }, this));
 };
-export { Collapse };
+exports.Collapse = Collapse;
 //# sourceMappingURL=index.js.map

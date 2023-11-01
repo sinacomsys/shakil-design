@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../../../theme";
-export var useStyle = createUseStyles({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyle = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../../../theme");
+exports.useStyle = (0, react_jss_1.createUseStyles)({
     container: {
         display: "flex",
         flexDirection: "row-reverse",
@@ -13,5 +16,5 @@ export var useStyle = createUseStyles({
         justifyContent: "center",
         alignItems: "center",
     },
-}, { theming: theming, name: "days-of-week" });
+}, { theming: theme_1.theming, name: "days-of-week" });
 //# sourceMappingURL=style.js.map

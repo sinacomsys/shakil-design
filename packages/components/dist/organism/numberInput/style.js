@@ -1,6 +1,9 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
-export var useStyles = createUseStyles({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)({
     arrowDown: {
         position: "absolute",
         insetInlineStart: 10,
@@ -23,5 +26,5 @@ export var useStyles = createUseStyles({
             "-moz-appearance": "textfield",
         },
     },
-}, { theming: theming, name: "number-input" });
+}, { theming: theme_1.theming, name: "number-input" });
 //# sourceMappingURL=style.js.map

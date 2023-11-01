@@ -1,10 +1,13 @@
-import { createContext } from "react";
-var initialValue = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RadioContext = void 0;
+const react_1 = require("react");
+const initialValue = {
     value: undefined,
-    onChange: function () { return ({}); },
+    onChange: () => ({}),
     name: undefined,
     // mode: "light",
 };
-var RadioContext = createContext(initialValue);
-export { RadioContext };
+const RadioContext = (0, react_1.createContext)(initialValue);
+exports.RadioContext = RadioContext;
 //# sourceMappingURL=context.js.map

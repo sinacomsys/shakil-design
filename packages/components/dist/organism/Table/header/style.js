@@ -1,10 +1,13 @@
-import { createUseStyles } from "react-jss";
-import { theming } from "../../../theme";
-export var useStyles = createUseStyles(function (theme) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+const react_jss_1 = require("react-jss");
+const theme_1 = require("../../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)((theme) => {
     var _a, _b;
     return {
         search: {
-            borderRight: "1px solid ".concat((_a = theme.table) === null || _a === void 0 ? void 0 : _a.divider),
+            borderRight: `1px solid ${(_a = theme.table) === null || _a === void 0 ? void 0 : _a.divider}`,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -12,7 +15,7 @@ export var useStyles = createUseStyles(function (theme) {
             width: 31,
         },
         selectAll: {
-            borderRight: "1px solid ".concat((_b = theme.table) === null || _b === void 0 ? void 0 : _b.divider),
+            borderRight: `1px solid ${(_b = theme.table) === null || _b === void 0 ? void 0 : _b.divider}`,
             width: 31,
             display: "flex",
             justifyContent: "center",
@@ -20,5 +23,5 @@ export var useStyles = createUseStyles(function (theme) {
             height: 24,
         },
     };
-}, { theming: theming, name: "table-header" });
+}, { theming: theme_1.theming, name: "table-header" });
 //# sourceMappingURL=style.js.map
