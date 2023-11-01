@@ -1,4 +1,3 @@
-"use strict";
 /**
  * Copyright (c) Nicolas Gallagher. Copyright (c) Facebook, Inc. and its
  * affiliates.
@@ -8,7 +7,6 @@
  *
  * @flow
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * This class is responsible for coordinating the "focused" state for
  * TextInputs. All calls relating to the keyboard should be funneled through
@@ -29,5 +27,5 @@ var TextInputState = {
         return this._currentlyFocusedNode;
     },
 };
-exports.default = TextInputState;
+export default TextInputState;
 //# sourceMappingURL=index.js.map

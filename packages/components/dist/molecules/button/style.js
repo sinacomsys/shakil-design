@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -10,10 +9,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
 var button = {
     overflow: "hidden",
     boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.16)",
@@ -26,7 +23,7 @@ var button = {
     justifyContent: "center",
     alignItems: "center",
 };
-var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
+var useStyles = createUseStyles(function (theme) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j;
     return {
         "@keyframes ripple": {
@@ -72,6 +69,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             transform: "translate(-50%,-50%)",
         },
     };
-}, { theming: theme_1.theming, name: "button" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "button" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

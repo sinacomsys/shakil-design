@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyle = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-exports.useStyle = (0, react_jss_1.createUseStyles)(function (theme) {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+export var useStyle = createUseStyles(function (theme) {
     return {
         fileInput: {
             alignItems: "center",
@@ -28,5 +25,5 @@ exports.useStyle = (0, react_jss_1.createUseStyles)(function (theme) {
             height: "2.5rem",
         },
     };
-}, { theming: theme_1.theming, name: "file-input" });
+}, { theming: theming, name: "file-input" });
 //# sourceMappingURL=style.js.map

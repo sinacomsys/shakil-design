@@ -1,14 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../../theme");
-var useStyles = (0, react_jss_1.createUseStyles)({
+import { createUseStyles } from "react-jss";
+import { theming } from "../../../theme";
+var useStyles = createUseStyles({
     column: {
         height: "100%",
         alignItems: "center",
         display: "flex",
     },
-}, { theming: theme_1.theming, name: "table-column" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "table-column" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

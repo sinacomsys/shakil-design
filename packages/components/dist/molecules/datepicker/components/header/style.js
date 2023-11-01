@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyle = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../../../theme");
-var useStyle = (0, react_jss_1.createUseStyles)({
+import { createUseStyles } from "react-jss";
+import { theming } from "../../../../theme";
+var useStyle = createUseStyles({
     month: {
         display: "flex",
         flexDirection: "column",
@@ -27,6 +24,6 @@ var useStyle = (0, react_jss_1.createUseStyles)({
         top: 20,
         cursor: "pointer",
     },
-}, { theming: theme_1.theming, name: "datepicker-header" });
-exports.useStyle = useStyle;
+}, { theming: theming, name: "datepicker-header" });
+export { useStyle };
 //# sourceMappingURL=style.js.map

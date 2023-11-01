@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../../theme");
-exports.useStyles = (0, react_jss_1.createUseStyles)({
+import { createUseStyles } from "react-jss";
+import { theming } from "../../../theme";
+export var useStyles = createUseStyles({
     wrapper: {
         borderRadius: 3,
         position: "relative",
@@ -15,5 +12,5 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         left: "50%",
         transform: "translate(-50%, -50%)",
     },
-}, { theming: theme_1.theming, name: "custom-square" });
+}, { theming: theming, name: "custom-square" });
 //# sourceMappingURL=style.js.map

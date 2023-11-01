@@ -1,16 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-var utils_1 = require("@shakil-design/utils");
-var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+import { pxToVh } from "@shakil-design/utils";
+var useStyles = createUseStyles(function (theme) {
     return {
         container: {
             overflow: "auto",
             "&::-webkit-scrollbar": {
                 width: 7,
-                height: "".concat((0, utils_1.pxToVh)(7), "vh"),
+                height: "".concat(pxToVh(7), "vh"),
             },
             /* Track */
             "&::-webkit-scrollbar-track": {
@@ -28,6 +25,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             },
         },
     };
-}, { theming: theme_1.theming, name: "scroll-view" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "scroll-view" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

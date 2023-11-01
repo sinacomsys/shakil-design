@@ -9,7 +9,7 @@
     "sourceMap": true,
     "emitDeclarationOnly": false,
     "target": "ES5",
-    "module": "CommonJS"
+    "module": "ES2015"
   },
   "include": ["./src", "./src/custom.d.ts"],
   "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]

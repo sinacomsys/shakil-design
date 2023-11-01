@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -10,10 +9,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
 var addonStyle = {
     position: "absolute",
     transform: "translateY(-50%)",
@@ -22,7 +19,7 @@ var addonStyle = {
     display: "flex",
     insetBlockStart: "50%",
 };
-var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
+var useStyles = createUseStyles(function (theme) {
     var _a;
     return {
         textInput: {
@@ -43,6 +40,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         addonBefore: __assign(__assign({}, addonStyle), { insetInlineStart: 10 }),
         addonAfter: __assign(__assign({}, addonStyle), { insetInlineEnd: 10 }),
     };
-}, { theming: theme_1.theming, name: "text-input" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "text-input" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

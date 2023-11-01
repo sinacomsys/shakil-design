@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyle = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../../../theme");
-exports.useStyle = (0, react_jss_1.createUseStyles)({
+import { createUseStyles } from "react-jss";
+import { theming } from "../../../../theme";
+export var useStyle = createUseStyles({
     container: {
         display: "flex",
         flexDirection: "row-reverse",
@@ -16,5 +13,5 @@ exports.useStyle = (0, react_jss_1.createUseStyles)({
         justifyContent: "center",
         alignItems: "center",
     },
-}, { theming: theme_1.theming, name: "days-of-week" });
+}, { theming: theming, name: "days-of-week" });
 //# sourceMappingURL=style.js.map

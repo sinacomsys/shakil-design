@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../../theme");
-exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../../theme";
+export var useStyles = createUseStyles(function (theme) {
     var _a, _b;
     return {
         search: {
@@ -23,5 +20,5 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             height: 24,
         },
     };
-}, { theming: theme_1.theming, name: "table-header" });
+}, { theming: theming, name: "table-header" });
 //# sourceMappingURL=style.js.map

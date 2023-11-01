@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -21,25 +20,19 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var _this = this;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseText = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/text/baseText/baseText.tsx";
-var classnames_1 = __importDefault(require("classnames"));
-var react_1 = require("react");
-var react_jss_1 = require("react-jss");
+import classNames from "classnames";
+import { forwardRef, memo } from "react";
+import { createUseStyles } from "react-jss";
 /** Inspired of React-native Text */
-var BaseText = (0, react_1.memo)((0, react_1.forwardRef)(function (_a, forwardedRef) {
+var BaseText = memo(forwardRef(function (_a, forwardedRef) {
     var dir = _a.dir, numberOfLines = _a.numberOfLines, selectable = _a.selectable, className = _a.className, style = _a.style, ellipsis = _a.ellipsis, rest = __rest(_a, ["dir", "numberOfLines", "selectable", "className", "style", "ellipsis"]);
     var classes = useStyles();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: (0, classnames_1.default)(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 15 }, _this));
+    return (_jsxDEV("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: classNames(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 15 }, _this));
 }));
-exports.BaseText = BaseText;
-var useStyles = (0, react_jss_1.createUseStyles)({
+var useStyles = createUseStyles({
     text: {
         border: "0 solid black",
         boxSizing: "border-box",
@@ -74,4 +67,5 @@ var useStyles = (0, react_jss_1.createUseStyles)({
     },
 }, { name: "base-text" });
 BaseText.displayName = "BaseText";
+export { BaseText };
 //# sourceMappingURL=baseText.js.map

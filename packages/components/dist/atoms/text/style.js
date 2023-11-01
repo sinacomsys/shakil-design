@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -10,44 +9,39 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useFonts = exports.fonts = exports.fontSizes = exports.fontWeights = exports.FiraBold = void 0;
-var react_jss_1 = require("react-jss");
-var FiraGO_Bold_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Bold.ttf"));
-exports.FiraBold = FiraGO_Bold_ttf_1.default;
-var FiraGO_BoldItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-BoldItalic.ttf"));
-var FiraGO_Book_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Book.ttf"));
-var FiraGO_BookItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-BookItalic.ttf"));
-var FiraGO_Eight_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Eight.ttf"));
-var FiraGO_EightItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-EightItalic.ttf"));
-var FiraGO_Four_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Four.ttf"));
-var FiraGO_FourItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-FourItalic.ttf"));
-var FiraGO_Hair_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Hair.ttf"));
-var FiraGO_HairItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-HairItalic.ttf"));
-var FiraGO_HeavyItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-HeavyItalic.ttf"));
-var FiraGO_Italic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Italic.ttf"));
-var FiraGO_Light_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Light.ttf"));
-var FiraGO_LightItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-LightItalic.ttf"));
-var FiraGO_Medium_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Medium.ttf"));
-var FiraGO_MediumItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-MediumItalic.ttf"));
-var FiraGO_Regular_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Regular.ttf"));
-var FiraGO_SemiBold_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-SemiBold.ttf"));
-var FiraGO_SemiBoldItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-SemiBoldItalic.ttf"));
-var FiraGO_Thin_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Thin.ttf"));
-var FiraGO_ThinItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-ThinItalic.ttf"));
-var FiraGO_Two_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Two.ttf"));
-var FiraGO_TwoItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-TwoItalic.ttf"));
-var FiraGO_UltraLight_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-UltraLight.ttf"));
-exports.fontWeights = {
+import { createUseStyles } from "react-jss";
+import FiraBold from "@shakil-design/asset/src/fonts/FiraGO-Bold.ttf";
+import FiraBoldItalic from "@shakil-design/asset/src/fonts/FiraGO-BoldItalic.ttf";
+import FiroGoBook from "@shakil-design/asset/src/fonts/FiraGO-Book.ttf";
+import FiroGoBookItalic from "@shakil-design/asset/src/fonts/FiraGO-BookItalic.ttf";
+import FiraGOEight from "@shakil-design/asset/src/fonts/FiraGO-Eight.ttf";
+import FiraGOEightItalic from "@shakil-design/asset/src/fonts/FiraGO-EightItalic.ttf";
+import FiraGOFour from "@shakil-design/asset/src/fonts/FiraGO-Four.ttf";
+import FiraGOFourItalic from "@shakil-design/asset/src/fonts/FiraGO-FourItalic.ttf";
+import FiraGOHair from "@shakil-design/asset/src/fonts/FiraGO-Hair.ttf";
+import FiraGOHairItalic from "@shakil-design/asset/src/fonts/FiraGO-HairItalic.ttf";
+import FiraGOHeavyItalic from "@shakil-design/asset/src/fonts/FiraGO-HeavyItalic.ttf";
+import FiraGOItalic from "@shakil-design/asset/src/fonts/FiraGO-Italic.ttf";
+import FiraGOLight from "@shakil-design/asset/src/fonts/FiraGO-Light.ttf";
+import FiraGOLightItalic from "@shakil-design/asset/src/fonts/FiraGO-LightItalic.ttf";
+import FiraGOMedium from "@shakil-design/asset/src/fonts/FiraGO-Medium.ttf";
+import FiraGOMediumItalic from "@shakil-design/asset/src/fonts/FiraGO-MediumItalic.ttf";
+import FiraGORegular from "@shakil-design/asset/src/fonts/FiraGO-Regular.ttf";
+import FiraGOSemiBold from "@shakil-design/asset/src/fonts/FiraGO-SemiBold.ttf";
+import FiraGOSemiBoldItalic from "@shakil-design/asset/src/fonts/FiraGO-SemiBoldItalic.ttf";
+import FiraGOThin from "@shakil-design/asset/src/fonts/FiraGO-Thin.ttf";
+import FiraGOThinItalic from "@shakil-design/asset/src/fonts/FiraGO-ThinItalic.ttf";
+import FiraGOTwo from "@shakil-design/asset/src/fonts/FiraGO-Two.ttf";
+import FiraGOTwoItalic from "@shakil-design/asset/src/fonts/FiraGO-TwoItalic.ttf";
+import FiraGOUltraLight from "@shakil-design/asset/src/fonts/FiraGO-UltraLight.ttf";
+export { FiraBold };
+export var fontWeights = {
     light: 100,
     regular: 400,
     medium: 500,
     bold: 700,
 };
-exports.fontSizes = {
+export var fontSizes = {
     xxsmall: 10,
     xsmall: 12,
     small: 14,
@@ -63,125 +57,125 @@ exports.fontSizes = {
     h6: 10.7,
 };
 /** Change font before run any component */
-exports.fonts = {
+export var fonts = {
     bold: {
         name: "FiraBold",
-        url: FiraGO_Bold_ttf_1.default,
+        url: FiraBold,
         format: "truetype",
     },
     BoldItalic: {
         name: "FiraBoldItalic",
-        url: FiraGO_BoldItalic_ttf_1.default,
+        url: FiraBoldItalic,
         format: "truetype",
     },
     Book: {
         name: "FiroGoBook",
-        url: FiraGO_Book_ttf_1.default,
+        url: FiroGoBook,
         format: "truetype",
     },
     BookItalic: {
         name: "FiroGoBookItalic",
-        url: FiraGO_BookItalic_ttf_1.default,
+        url: FiroGoBookItalic,
         format: "truetype",
     },
     Eight: {
         name: "FiraGOEight",
-        url: FiraGO_Eight_ttf_1.default,
+        url: FiraGOEight,
         format: "truetype",
     },
     EightItalic: {
         name: "FiraGOEightItalic",
-        url: FiraGO_EightItalic_ttf_1.default,
+        url: FiraGOEightItalic,
         format: "truetype",
     },
     Four: {
         name: "FiraGOFour",
-        url: FiraGO_Four_ttf_1.default,
+        url: FiraGOFour,
         format: "truetype",
     },
     FourItalic: {
         name: "FiraGOFourItalic",
-        url: FiraGO_FourItalic_ttf_1.default,
+        url: FiraGOFourItalic,
         format: "truetype",
     },
     Hair: {
         name: "FiraGOHair",
-        url: FiraGO_Hair_ttf_1.default,
+        url: FiraGOHair,
         format: "truetype",
     },
     HairItalic: {
         name: "FiraGOHairItalic",
-        url: FiraGO_HairItalic_ttf_1.default,
+        url: FiraGOHairItalic,
         format: "truetype",
     },
     HeavyItalic: {
         name: "FiraGOHeavyItalic",
-        url: FiraGO_HeavyItalic_ttf_1.default,
+        url: FiraGOHeavyItalic,
         format: "truetype",
     },
     Italic: {
         name: "FiraGOItalic",
-        url: FiraGO_Italic_ttf_1.default,
+        url: FiraGOItalic,
         format: "truetype",
     },
     Light: {
         name: "FiraGOLight",
-        url: FiraGO_Light_ttf_1.default,
+        url: FiraGOLight,
         format: "truetype",
     },
     LightItalic: {
         name: "FiraGOLightItalic",
-        url: FiraGO_LightItalic_ttf_1.default,
+        url: FiraGOLightItalic,
         format: "truetype",
     },
     Medium: {
         name: "FiraGOMedium",
-        url: FiraGO_Medium_ttf_1.default,
+        url: FiraGOMedium,
         format: "truetype",
     },
     MediumItalic: {
         name: "FiraGOMediumItalic",
-        url: FiraGO_MediumItalic_ttf_1.default,
+        url: FiraGOMediumItalic,
         format: "truetype",
     },
     Regular: {
         name: "FiraGORegular",
-        url: FiraGO_Regular_ttf_1.default,
+        url: FiraGORegular,
         format: "truetype",
     },
     SemiBold: {
         name: "FiraGOSemiBold",
-        url: FiraGO_SemiBold_ttf_1.default,
+        url: FiraGOSemiBold,
         format: "truetype",
     },
     SemiBoldItalic: {
         name: "FiraGOSemiBoldItalic",
-        url: FiraGO_SemiBoldItalic_ttf_1.default,
+        url: FiraGOSemiBoldItalic,
         format: "truetype",
     },
     Thin: {
         name: "FiraGOThin",
-        url: FiraGO_Thin_ttf_1.default,
+        url: FiraGOThin,
         format: "truetype",
     },
     ThinItalic: {
         name: "FiraGOThinItalic",
-        url: FiraGO_ThinItalic_ttf_1.default,
+        url: FiraGOThinItalic,
         format: "truetype",
     },
     Two: {
         name: "FiraGOTwo",
-        url: FiraGO_Two_ttf_1.default,
+        url: FiraGOTwo,
         format: "truetype",
     },
     TwoItalic: {
         name: "FiraGOTwoItalic",
-        url: FiraGO_TwoItalic_ttf_1.default,
+        url: FiraGOTwoItalic,
         format: "truetype",
     },
     UltraLight: {
         name: "FiraGOUltraLight",
-        url: FiraGO_UltraLight_ttf_1.default,
+        url: FiraGOUltraLight,
         format: "truetype",
     },
 };
@@ -189,7 +183,7 @@ var _useFonts;
 var useFonts = function () {
     var _a;
     if (!_useFonts) {
-        _useFonts = (0, react_jss_1.createUseStyles)(__assign(__assign({}, Object.fromEntries(Object.entries(exports.fonts).map(function (_a) {
+        _useFonts = createUseStyles(__assign(__assign({}, Object.fromEntries(Object.entries(fonts).map(function (_a) {
             var key = _a[0], name = _a[1].name;
             return [
                 key,
@@ -197,7 +191,7 @@ var useFonts = function () {
                     fontFamily: name,
                 },
             ];
-        }))), (_a = {}, _a["@font-face"] = Object.values(exports.fonts).map(function (_a) {
+        }))), (_a = {}, _a["@font-face"] = Object.values(fonts).map(function (_a) {
             var format = _a.format, name = _a.name, url = _a.url;
             return ({
                 fontFamily: name,
@@ -207,5 +201,5 @@ var useFonts = function () {
     }
     return _useFonts();
 };
-exports.useFonts = useFonts;
+export { useFonts };
 //# sourceMappingURL=style.js.map

@@ -1,13 +1,7 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DatePickerContext = void 0;
-var moment_jalaali_1 = __importDefault(require("moment-jalaali"));
-var react_1 = require("react");
-exports.DatePickerContext = (0, react_1.createContext)({
-    currentDate: (0, moment_jalaali_1.default)(),
+import moment from "moment-jalaali";
+import { createContext } from "react";
+export var DatePickerContext = createContext({
+    currentDate: moment(),
     onAddMonth: function () { },
     onSubtractMonth: function () { },
     onAddYear: function () { },

@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TableContext = void 0;
-var react_1 = require("react");
-exports.TableContext = (0, react_1.createContext)({
+import { createContext } from "react";
+export var TableContext = createContext({
     order: undefined,
     orderBy: undefined,
     onOrderChange: function () { return ({}); },

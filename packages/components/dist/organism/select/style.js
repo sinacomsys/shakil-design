@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-exports.useStyles = (0, react_jss_1.createUseStyles)(function () {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+export var useStyles = createUseStyles(function () {
     return {
         select: {
             background: "#ebedf2",
@@ -49,5 +46,5 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function () {
             cursor: "pointer",
         },
     };
-}, { theming: theme_1.theming, name: "select" });
+}, { theming: theming, name: "select" });
 //# sourceMappingURL=style.js.map

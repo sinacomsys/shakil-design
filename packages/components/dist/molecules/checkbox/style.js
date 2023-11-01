@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-var useStyles = (0, react_jss_1.createUseStyles)(function () {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+var useStyles = createUseStyles(function () {
     return {
         checkBoxWrapper: {
             position: "relative",
@@ -21,6 +18,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function () {
             cursor: "pointer",
         },
     };
-}, { theming: theme_1.theming, name: "checkbox" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "checkbox" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

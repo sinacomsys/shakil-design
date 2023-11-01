@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -11,20 +10,18 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 var _this = this;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Option = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/components/option/index.tsx";
-var text_1 = require("../../../../atoms/text");
-var style_1 = require("./style");
-var molecules_1 = require("../../../../molecules");
+import { Text } from "../../../../atoms/text";
+import { useStyles } from "./style";
+import { CheckBox } from "../../../../molecules";
 var Option = function (_a) {
     var children = _a.children, value = _a.value, onClick = _a.onClick, isSelected = _a.isSelected, multiple = _a.multiple;
-    var classes = (0, style_1.useStyles)();
+    var classes = useStyles();
     var handleOnClick = function () {
         onClick(value.value);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
+    return (_jsxDEV("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? (_jsxDEV("div", __assign({ style: { marginInlineEnd: 5 } }, { children: _jsxDEV(CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, _jsxDEV(Text, __assign({ size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
 };
-exports.Option = Option;
+export { Option };
 //# sourceMappingURL=index.js.map

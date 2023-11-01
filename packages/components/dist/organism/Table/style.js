@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-exports.useStyles = (0, react_jss_1.createUseStyles)({
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+export var useStyles = createUseStyles({
     table: {
         width: "100%",
         borderCollapse: "collapse",
@@ -40,5 +37,5 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         overflowY: "auto",
         position: "relative",
     },
-}, { theming: theme_1.theming, name: "table" });
+}, { theming: theming, name: "table" });
 //# sourceMappingURL=style.js.map

@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyle = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-exports.useStyle = (0, react_jss_1.createUseStyles)(function () {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+export var useStyle = createUseStyles(function () {
     return {
         mask: {
             width: "100%",
@@ -14,5 +11,5 @@ exports.useStyle = (0, react_jss_1.createUseStyles)(function () {
             position: "absolute",
         },
     };
-}, { theming: theme_1.theming, name: "drawer" });
+}, { theming: theming, name: "drawer" });
 //# sourceMappingURL=style.js.map

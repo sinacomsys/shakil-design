@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Radio = void 0;
-var group_1 = require("./group");
-var internalRadio_1 = require("./internalRadio");
-var Radio = internalRadio_1.InternalRadio;
-exports.Radio = Radio;
-Radio.Group = group_1.Group;
+import { Group } from './group';
+import { InternalRadio } from './internalRadio';
+var Radio = InternalRadio;
+Radio.Group = Group;
+export { Radio };
 //# sourceMappingURL=index.js.map

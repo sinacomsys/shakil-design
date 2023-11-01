@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -21,17 +20,12 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var _this = this;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.theming = exports.ThemeProvider = exports.rest = exports.ShakilDesignThemeProvider = exports.Colors = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/theme/context.tsx";
-var react_1 = __importDefault(require("react"));
-var react_jss_1 = require("react-jss");
-exports.Colors = {
+import React from "react";
+import { JssProvider, createTheming } from "react-jss";
+export var Colors = {
     primary: "#374775",
     checkbox: {
         borderSelected: "#374775",
@@ -96,16 +90,13 @@ exports.Colors = {
     },
     noContent: "red",
 };
-var ThemeContext = react_1.default.createContext(exports.Colors);
+var ThemeContext = React.createContext(Colors);
 // Creating a namespaced theming object.
-var theming = (0, react_jss_1.createTheming)(ThemeContext);
-exports.theming = theming;
+var theming = createTheming(ThemeContext);
 var ThemeProvider = theming.ThemeProvider, rest = __rest(theming, ["ThemeProvider"]);
-exports.ThemeProvider = ThemeProvider;
-exports.rest = rest;
 var ShakilDesignThemeProvider = function (_a) {
     var children = _a.children, colors = _a.colors;
-    return ((0, jsx_dev_runtime_1.jsxDEV)(react_jss_1.JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(ThemeProvider, __assign({ theme: colors }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { width: "100%", height: "100%" } }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 154, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 153, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 147, columnNumber: 11 }, _this));
+    return (_jsxDEV(JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: _jsxDEV(ThemeProvider, __assign({ theme: colors }, { children: _jsxDEV("div", __assign({ style: { width: "100%", height: "100%" } }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 154, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 153, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 147, columnNumber: 11 }, _this));
 };
-exports.ShakilDesignThemeProvider = ShakilDesignThemeProvider;
+export { ShakilDesignThemeProvider, rest, ThemeProvider, theming };
 //# sourceMappingURL=context.js.map

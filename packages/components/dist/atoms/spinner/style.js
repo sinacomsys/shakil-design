@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyle = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-exports.useStyle = (0, react_jss_1.createUseStyles)(function () {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+export var useStyle = createUseStyles(function () {
     return {
         ldsRing: {
             display: "inline-block",
@@ -34,5 +31,5 @@ exports.useStyle = (0, react_jss_1.createUseStyles)(function () {
             },
         },
     };
-}, { theming: theme_1.theming, name: "spinner" });
+}, { theming: theming, name: "spinner" });
 //# sourceMappingURL=style.js.map

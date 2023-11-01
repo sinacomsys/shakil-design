@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -30,8 +29,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.flatData = void 0;
 var flatData = function (treeSources) {
     return treeSources === null || treeSources === void 0 ? void 0 : treeSources.flatMap(function (_a) {
         var children = _a.children, rest = __rest(_a, ["children"]);
@@ -41,5 +38,5 @@ var flatData = function (treeSources) {
         return rest;
     });
 };
-exports.flatData = flatData;
+export { flatData };
 //# sourceMappingURL=flattenArray.js.map

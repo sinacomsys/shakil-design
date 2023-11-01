@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStyles = void 0;
-var react_jss_1 = require("react-jss");
-var theme_1 = require("../../theme");
-var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
+import { createUseStyles } from "react-jss";
+import { theming } from "../../theme";
+var useStyles = createUseStyles(function (theme) {
     return {
         mask: {
             width: "100%",
@@ -30,6 +27,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             transform: "translate(-50%, -50%)",
         },
     };
-}, { theming: theme_1.theming, name: "modal" });
-exports.useStyles = useStyles;
+}, { theming: theming, name: "modal" });
+export { useStyles };
 //# sourceMappingURL=style.js.map

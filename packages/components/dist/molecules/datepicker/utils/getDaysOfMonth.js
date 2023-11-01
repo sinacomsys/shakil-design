@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDaysOfMonth = void 0;
-function getDaysOfMonth(month, isGregorian) {
+export function getDaysOfMonth(month, isGregorian) {
     var days = [];
     // month.clone().startOf("jMonth");
     // const monthFormat = isGregorian ? "month" : "jMonth";
@@ -18,5 +15,4 @@ function getDaysOfMonth(month, isGregorian) {
     }
     return days;
 }
-exports.getDaysOfMonth = getDaysOfMonth;
 //# sourceMappingURL=getDaysOfMonth.js.map
