@@ -5,7 +5,11 @@
     "declarationDir": "types",
     "outDir": "dist",
     "rootDir": "./src",
-    "emitDeclarationOnly": true
+    "noEmit": false,
+    "sourceMap": true,
+    "emitDeclarationOnly": false,
+    "target": "ES5",
+    "module": "CommonJS"
   },
   "include": ["./src", "./src/custom.d.ts"],
   "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]
