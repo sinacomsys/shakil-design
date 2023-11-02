@@ -1,4 +1,3 @@
-"use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -13,9 +12,12 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./atoms"), exports);
-__exportStar(require("./molecules"), exports);
-__exportStar(require("./organism"), exports);
-__exportStar(require("./theme"), exports);
+define(["require", "exports", "./atoms", "./molecules", "./organism", "./theme"], function (require, exports, atoms_1, molecules_1, organism_1, theme_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    __exportStar(atoms_1, exports);
+    __exportStar(molecules_1, exports);
+    __exportStar(organism_1, exports);
+    __exportStar(theme_1, exports);
+});
 //# sourceMappingURL=index.js.map

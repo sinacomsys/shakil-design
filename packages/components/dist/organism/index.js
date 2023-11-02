@@ -1,4 +1,3 @@
-"use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -13,9 +12,12 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./dropDown"), exports);
-__exportStar(require("./select"), exports);
-__exportStar(require("./Table"), exports);
-__exportStar(require("./numberInput"), exports);
+define(["require", "exports", "./dropDown", "./select", "./Table", "./numberInput"], function (require, exports, dropDown_1, select_1, Table_1, numberInput_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    __exportStar(dropDown_1, exports);
+    __exportStar(select_1, exports);
+    __exportStar(Table_1, exports);
+    __exportStar(numberInput_1, exports);
+});
 //# sourceMappingURL=index.js.map

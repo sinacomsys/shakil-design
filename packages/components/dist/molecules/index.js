@@ -1,4 +1,3 @@
-"use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -13,15 +12,18 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./button"), exports);
-__exportStar(require("./checkbox"), exports);
-__exportStar(require("./collapse"), exports);
-__exportStar(require("./file-input"), exports);
-__exportStar(require("./radio"), exports);
-__exportStar(require("./tabs"), exports);
-__exportStar(require("./textInput"), exports);
-__exportStar(require("./tree"), exports);
-__exportStar(require("./noContent"), exports);
-__exportStar(require("./datepicker"), exports);
+define(["require", "exports", "./button", "./checkbox", "./collapse", "./file-input", "./radio", "./tabs", "./textInput", "./tree", "./noContent", "./datepicker"], function (require, exports, button_1, checkbox_1, collapse_1, file_input_1, radio_1, tabs_1, textInput_1, tree_1, noContent_1, datepicker_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    __exportStar(button_1, exports);
+    __exportStar(checkbox_1, exports);
+    __exportStar(collapse_1, exports);
+    __exportStar(file_input_1, exports);
+    __exportStar(radio_1, exports);
+    __exportStar(tabs_1, exports);
+    __exportStar(textInput_1, exports);
+    __exportStar(tree_1, exports);
+    __exportStar(noContent_1, exports);
+    __exportStar(datepicker_1, exports);
+});
 //# sourceMappingURL=index.js.map
