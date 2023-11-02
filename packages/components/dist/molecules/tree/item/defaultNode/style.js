@@ -1,63 +1,70 @@
-define(["require", "exports", "@shakil-design/utils", "react-jss", "../../../../types", "../../../../theme"], function (require, exports, utils_1, react_jss_1, types_1, theme_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.useStyles = void 0;
-    exports.useStyles = (0, react_jss_1.createUseStyles)(({ tree }) => {
-        return {
-            wrapper: {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStyles = void 0;
+var utils_1 = require("@shakil-design/utils");
+var react_jss_1 = require("react-jss");
+var types_1 = require("../../../../types");
+var theme_1 = require("../../../../theme");
+exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
+    var _b, _c, _d;
+    var tree = _a.tree;
+    return {
+        wrapper: (_b = {
                 display: "flex",
                 height: "100%",
-                backgroundColor: "#f0f0f0",
-                [`&${types_1.PX_UNIT}`]: {
-                    borderRadius: 7,
-                },
-                [`&${types_1.VIEW_PORT_UNIT}`]: {
-                    borderRadius: (0, utils_1.pxToVhString)(7),
-                },
-                "&--active": {
-                    backgroundColor: tree === null || tree === void 0 ? void 0 : tree.activeItem,
-                },
+                backgroundColor: "#f0f0f0"
             },
-            "status-line": {
+            _b["&".concat(types_1.PX_UNIT)] = {
+                borderRadius: 7,
+            },
+            _b["&".concat(types_1.VIEW_PORT_UNIT)] = {
+                borderRadius: (0, utils_1.pxToVhString)(7),
+            },
+            _b["&--active"] = {
+                backgroundColor: tree === null || tree === void 0 ? void 0 : tree.activeItem,
+            },
+            _b),
+        "status-line": (_c = {
                 height: "100%",
                 backgroundColor: "#ababab",
-                position: "relative",
-                [`&${types_1.PX_UNIT}`]: {
-                    width: (0, utils_1.pxToVwString)(3),
-                    marginInlineStart: (0, utils_1.pxToVwString)(10),
-                },
-                [`&${types_1.VIEW_PORT_UNIT}`]: {
-                    width: (0, utils_1.pxToVwString)(3),
-                    marginInlineStart: (0, utils_1.pxToVwString)(10),
-                },
+                position: "relative"
             },
-            "item-content": {
-                flex: 1,
-                height: "100%",
+            _c["&".concat(types_1.PX_UNIT)] = {
+                width: (0, utils_1.pxToVwString)(3),
+                marginInlineStart: (0, utils_1.pxToVwString)(10),
             },
-            "default-item-content": {
+            _c["&".concat(types_1.VIEW_PORT_UNIT)] = {
+                width: (0, utils_1.pxToVwString)(3),
+                marginInlineStart: (0, utils_1.pxToVwString)(10),
+            },
+            _c),
+        "item-content": {
+            flex: 1,
+            height: "100%",
+        },
+        "default-item-content": (_d = {
                 display: "flex",
                 alignItems: "center",
-                height: "100%",
-                [`&${types_1.PX_UNIT}`]: {
-                    marginInlineStart: 24,
-                },
-                [`&${types_1.VIEW_PORT_UNIT}`]: {
-                    marginInlineStart: (0, utils_1.pxToVwString)(24),
-                },
+                height: "100%"
             },
-            "spinner-wrapper": {
-                display: "flex",
-                alignItems: "center",
-                marginInlineEnd: 10,
+            _d["&".concat(types_1.PX_UNIT)] = {
+                marginInlineStart: 24,
             },
-            "arrow-down": {
-                transition: "all 0.2s",
+            _d["&".concat(types_1.VIEW_PORT_UNIT)] = {
+                marginInlineStart: (0, utils_1.pxToVwString)(24),
             },
-            "arrow-up": {
-                transform: "rotate(180deg)",
-            },
-        };
-    }, { name: "default-node", theming: theme_1.theming });
-});
+            _d),
+        "spinner-wrapper": {
+            display: "flex",
+            alignItems: "center",
+            marginInlineEnd: 10,
+        },
+        "arrow-down": {
+            transition: "all 0.2s",
+        },
+        "arrow-up": {
+            transform: "rotate(180deg)",
+        },
+    };
+}, { name: "default-node", theming: theme_1.theming });
 //# sourceMappingURL=style.js.map

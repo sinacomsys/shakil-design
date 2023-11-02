@@ -1,15 +1,30 @@
-define(["require", "exports", "react/jsx-dev-runtime", "../../../../atoms/text", "./style", "../../../../molecules"], function (require, exports, jsx_dev_runtime_1, text_1, style_1, molecules_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.Option = void 0;
-    const _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/components/option/index.tsx";
-    const Option = ({ children, value, onClick, isSelected, multiple, }) => {
-        const classes = (0, style_1.useStyles)();
-        const handleOnClick = () => {
-            onClick(value.value);
-        };
-        return ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", Object.assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, Object.assign({ size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, this));
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
     };
-    exports.Option = Option;
-});
+    return __assign.apply(this, arguments);
+};
+var _this = this;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Option = void 0;
+var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
+var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/components/option/index.tsx";
+var text_1 = require("../../../../atoms/text");
+var style_1 = require("./style");
+var molecules_1 = require("../../../../molecules");
+var Option = function (_a) {
+    var children = _a.children, value = _a.value, onClick = _a.onClick, isSelected = _a.isSelected, multiple = _a.multiple;
+    var classes = (0, style_1.useStyles)();
+    var handleOnClick = function () {
+        onClick(value.value);
+    };
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
+};
+exports.Option = Option;
 //# sourceMappingURL=index.js.map

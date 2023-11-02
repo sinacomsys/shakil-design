@@ -1,7 +1,10 @@
-import { useRef, useEffect } from 'react';
-export function useHorizontalScroll() {
-    var elRef = useRef(null);
-    useEffect(function () {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useHorizontalScroll = void 0;
+var react_1 = require("react");
+function useHorizontalScroll() {
+    var elRef = (0, react_1.useRef)(null);
+    (0, react_1.useEffect)(function () {
         var el = elRef.current;
         if (!el)
             return;
@@ -19,4 +22,5 @@ export function useHorizontalScroll() {
     }, []);
     return elRef;
 }
+exports.useHorizontalScroll = useHorizontalScroll;
 //# sourceMappingURL=useHorizontalScroll.js.map

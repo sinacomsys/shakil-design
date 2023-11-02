@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Copyright (c) Nicolas Gallagher.
  *
@@ -6,8 +7,5 @@
  *
  * @flow
  */
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-});
+Object.defineProperty(exports, "__esModule", { value: true });
 //# sourceMappingURL=types.js.map

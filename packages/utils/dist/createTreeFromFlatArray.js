@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -9,6 +10,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createTreeFromFlatArray = void 0;
 var createTreeFromFlatArray = function (items, parentId) {
     return ((items === null || items === void 0 ? void 0 : items.filter(function (item) {
         return parentId === undefined
@@ -18,5 +21,5 @@ var createTreeFromFlatArray = function (items, parentId) {
         return __assign(__assign({}, item), { children: createTreeFromFlatArray(items, item.id) });
     })) || []);
 };
-export { createTreeFromFlatArray };
+exports.createTreeFromFlatArray = createTreeFromFlatArray;
 //# sourceMappingURL=createTreeFromFlatArray.js.map

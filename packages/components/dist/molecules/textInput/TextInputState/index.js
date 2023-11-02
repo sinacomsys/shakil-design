@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Copyright (c) Nicolas Gallagher. Copyright (c) Facebook, Inc. and its
  * affiliates.
@@ -7,29 +8,26 @@
  *
  * @flow
  */
-define(["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * This class is responsible for coordinating the "focused" state for
+ * TextInputs. All calls relating to the keyboard should be funneled through
+ * here
+ */
+var TextInputState = {
+    // eslint-disable-next-line
+    _currentlyFocusedNode: null,
     /**
-     * This class is responsible for coordinating the "focused" state for
-     * TextInputs. All calls relating to the keyboard should be funneled through
-     * here
+     * Returns the ID of the currently focused text field, if one exists If no
+     * text field is focused it returns null
      */
-    const TextInputState = {
-        // eslint-disable-next-line
-        _currentlyFocusedNode: null,
-        /**
-         * Returns the ID of the currently focused text field, if one exists If no
-         * text field is focused it returns null
-         */
-        // eslint-disable-next-line
-        currentlyFocusedField() {
-            if (document.activeElement !== this._currentlyFocusedNode) {
-                this._currentlyFocusedNode = null;
-            }
-            return this._currentlyFocusedNode;
-        },
-    };
-    exports.default = TextInputState;
-});
+    // eslint-disable-next-line
+    currentlyFocusedField: function () {
+        if (document.activeElement !== this._currentlyFocusedNode) {
+            this._currentlyFocusedNode = null;
+        }
+        return this._currentlyFocusedNode;
+    },
+};
+exports.default = TextInputState;
 //# sourceMappingURL=index.js.map

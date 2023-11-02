@@ -8,8 +8,8 @@
     "noEmit": false,
     "sourceMap": true,
     "emitDeclarationOnly": false,
-    "target": "ES2015",
-    "module": "AMD"
+    "target": "ES5",
+    "module": "CommonJS"
   },
   "include": ["./src", "./src/custom.d.ts"],
   "exclude": ["node_modules", "./src/stories", "dist", "**/*.test.ts"]
