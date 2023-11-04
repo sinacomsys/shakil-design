@@ -6,7 +6,8 @@
   "main": "src/index.ts",
   "files": [
     "types",
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
