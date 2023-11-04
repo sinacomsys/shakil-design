@@ -25,7 +25,7 @@ var item_1 = require("../item");
 var style_1 = require("./style");
 var treeProvider_1 = require("../context/treeProvider");
 var classnames_1 = __importDefault(require("classnames"));
-var types_1 = require("types");
+var types_1 = require("../../../types");
 var Collapse = function (_a) {
     var title = _a.title, children = _a.children, level = _a.level, data = _a.data, onLoadData = _a.onLoadData, onClick = _a.onClick, activeItemId = _a.activeItemId, id = _a.id, defaultOpen = _a.defaultOpen, index = _a.index;
     var ref = (0, react_1.useRef)(null);
