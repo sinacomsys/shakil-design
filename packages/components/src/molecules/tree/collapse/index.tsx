@@ -6,7 +6,7 @@ import { Item } from "../item";
 import { useStyles } from "./style";
 import { TreeContext } from "../context/treeProvider";
 import classnames from "classnames";
-import { VIEW_PORT_UNIT } from "types";
+import { VIEW_PORT_UNIT } from "../../../types";
 
 const Collapse = <T extends TreeBasicType<T>>({
   title,

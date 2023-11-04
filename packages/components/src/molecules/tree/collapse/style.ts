@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { theming } from "../../../theme";
-import { VIEW_PORT_UNIT } from "types";
+import { VIEW_PORT_UNIT } from "../../../types";
 import { pxToVhString } from "@shakil-design/utils";
 
 export const useStyles = createUseStyles(
