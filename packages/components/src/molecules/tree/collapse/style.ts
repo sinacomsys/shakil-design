@@ -1,5 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { theming } from "../../../theme";
+import { VIEW_PORT_UNIT } from "types";
+import { pxToVhString } from "@shakil-design/utils";
 
 export const useStyles = createUseStyles(
   (theme) => {
@@ -15,6 +17,15 @@ export const useStyles = createUseStyles(
         position: "relative",
         overflow: "hidden",
         height: 0,
+      },
+      wrapper: {
+        paddingTop: 20,
+        [`${VIEW_PORT_UNIT}`]: {
+          paddingTop: pxToVhString(20),
+        },
+        "&--first-item": {
+          paddingTop: 0,
+        },
       },
     };
   },

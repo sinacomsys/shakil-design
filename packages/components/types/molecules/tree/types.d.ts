@@ -45,5 +45,6 @@ export interface CollapseProps<T extends TreeBasicType<T>> extends Pick<ItemProp
     activeItemId?: string;
     id: string;
     defaultOpen?: boolean;
+    index: number;
 }
 export {};

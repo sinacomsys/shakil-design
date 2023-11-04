@@ -32,7 +32,7 @@ const Tree = <T extends TreeBasicType<T>>({
               `${classes["wrapper"]}${VIEW_PORT_UNIT}`,
       )}
     >
-      {data.map((child) => {
+      {data.map((child, index) => {
         const isExist = grandPrents.find((item) => item.id === child.id);
         return (
           <Collapse
@@ -45,6 +45,7 @@ const Tree = <T extends TreeBasicType<T>>({
             id={child.id}
             activeItemId={activeItemId}
             defaultOpen={Boolean(isExist)}
+            index={index}
           >
             {child?.children?.length ? (
               <LevelContext.Provider value={level + 1}>

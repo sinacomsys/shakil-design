@@ -48,15 +48,15 @@ var Tree = function (_a) {
             ? "".concat(classes["wrapper"]).concat(types_1.PX_UNIT)
             : level > 1 &&
                 unit === "viewport" &&
-                "".concat(classes["wrapper"]).concat(types_1.VIEW_PORT_UNIT)) }, { children: data.map(function (child) {
+                "".concat(classes["wrapper"]).concat(types_1.VIEW_PORT_UNIT)) }, { children: data.map(function (child, index) {
             var _a;
             var isExist = grandPrents.find(function (item) { return item.id === child.id; });
-            return ((0, jsx_dev_runtime_1.jsxDEV)(collapse_1.Collapse, __assign({ onClick: onSelectItem, data: child, title: child.title, level: level, onLoadData: onLoadData, id: child.id, activeItemId: activeItemId, defaultOpen: Boolean(isExist) }, { children: ((_a = child === null || child === void 0 ? void 0 : child.children) === null || _a === void 0 ? void 0 : _a.length) ? ((0, jsx_dev_runtime_1.jsxDEV)(levelProvider_1.LevelContext.Provider, __assign({ value: level + 1 }, { children: (0, jsx_dev_runtime_1.jsxDEV)(Tree, { onSelectItem: onSelectItem, data: child.children, onLoadData: onLoadData, activeItemId: activeItemId, defaultSeletedItem: defaultSeletedItem }, void 0, false, { fileName: _jsxFileName, lineNumber: 51, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 41 }, _this)) : null }), child.id, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 17 }, _this));
+            return ((0, jsx_dev_runtime_1.jsxDEV)(collapse_1.Collapse, __assign({ onClick: onSelectItem, data: child, title: child.title, level: level, onLoadData: onLoadData, id: child.id, activeItemId: activeItemId, defaultOpen: Boolean(isExist), index: index }, { children: ((_a = child === null || child === void 0 ? void 0 : child.children) === null || _a === void 0 ? void 0 : _a.length) ? ((0, jsx_dev_runtime_1.jsxDEV)(levelProvider_1.LevelContext.Provider, __assign({ value: level + 1 }, { children: (0, jsx_dev_runtime_1.jsxDEV)(Tree, { onSelectItem: onSelectItem, data: child.children, onLoadData: onLoadData, activeItemId: activeItemId, defaultSeletedItem: defaultSeletedItem }, void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 41 }, _this)) : null }), child.id, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 17 }, _this));
         }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 }, _this));
 };
 var TreeWrapper = function (_a) {
     var _b = _a.unit, unit = _b === void 0 ? "viewport" : _b, props = __rest(_a, ["unit"]);
-    return ((0, jsx_dev_runtime_1.jsxDEV)(treeProvider_1.TreeContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(Tree, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(treeProvider_1.TreeContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(Tree, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 74, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 11 }, _this));
 };
 exports.Tree = TreeWrapper;
 //# sourceMappingURL=index.js.map

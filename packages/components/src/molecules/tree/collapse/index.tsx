@@ -5,7 +5,8 @@ import { CollapseProps, TreeBasicType } from "../types";
 import { Item } from "../item";
 import { useStyles } from "./style";
 import { TreeContext } from "../context/treeProvider";
-import { pxToVhString } from "@shakil-design/utils";
+import classnames from "classnames";
+import { VIEW_PORT_UNIT } from "types";
 
 const Collapse = <T extends TreeBasicType<T>>({
   title,
@@ -17,6 +18,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   activeItemId,
   id,
   defaultOpen,
+  index,
 }: CollapseProps<T>) => {
   const ref = useRef<HTMLDivElement>(null);
   const { unit } = useContext(TreeContext);
@@ -45,10 +47,18 @@ const Collapse = <T extends TreeBasicType<T>>({
       setOpen(true);
     }
   }, [defaultOpen]);
-  const itemPaddingTop = unit === "viewport" ? pxToVhString(20) : 20;
+  const isFirstItem = index === 0 && level === 1;
 
   return (
-    <div style={{ paddingTop: itemPaddingTop }}>
+    <div
+      className={
+        isFirstItem
+          ? classnames(classes.wrapper, `${classes.wrapper}--first-item`)
+          : unit === "viewport"
+          ? classnames(classes.wrapper, `${classes.wrapper}${VIEW_PORT_UNIT}`)
+          : classes.wrapper
+      }
+    >
       <Item
         data={data}
         isActive={id === activeItemId}

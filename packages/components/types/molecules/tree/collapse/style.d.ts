@@ -1,3 +1,3 @@
 export declare const useStyles: (data?: {
     theme?: import("../../../theme/context").ColorsType | undefined;
-} | undefined) => import("jss").Classes<"dots" | "animation-wrapper">;
+} | undefined) => import("jss").Classes<"wrapper" | "dots" | "animation-wrapper">;

@@ -117,22 +117,29 @@ const mockData: AnyCompProps["data"] = [
   },
 ];
 
-const Template: ComponentStory<typeof Tree> = () => (
+const Template: ComponentStory<typeof Tree> = (args) => (
   <StoryContainer>
     <div
       style={{
         width: "100%",
         height: "100%",
-        padding: 50,
+        padding: 20,
       }}
     >
-      <Tree data={mockData} />
+      <Tree {...args} />
     </div>
   </StoryContainer>
 );
 
-export const Primary = Template.bind({});
+export const ViewportUnit = Template.bind({});
+export const PixelUnit = Template.bind({});
 
-Primary.args = {
+ViewportUnit.args = {
   data: mockData,
+  unit: "viewport",
+};
+
+PixelUnit.args = {
+  data: mockData,
+  unit: "pixel",
 };
