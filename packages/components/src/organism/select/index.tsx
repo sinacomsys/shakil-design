@@ -162,7 +162,7 @@ const Select = <T extends Record<string, unknown> = Default>({
         unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
-        AddonAfter={<FleshIcon isVisible={isVisible} />}
+        AddonAfter={<FleshIcon isVisible={isVisible} unit={unit} />}
       />
 
       {body.current && isVisible

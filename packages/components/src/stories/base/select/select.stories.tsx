@@ -29,7 +29,7 @@ export const SingleSelect = Template.bind({});
 export const MultipleSelect = Template.bind({});
 
 SingleSelect.args = {
-  unit: "viewport",
+  unit: "pixel",
   valueExtractor: ({ test }) => test,
   labelExtractor: ({ test1 }) => test1,
   data: fakeData,

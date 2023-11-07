@@ -90,6 +90,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       onClear,
       wrapperStyle,
       allowClear,
+      wrapperClassName,
       ...rest
     },
     forwardedRef,
@@ -355,7 +356,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const _paddingBlock = unit === "viewport" ? pxToVhString(8) : 8;
     const _paddingInline = unit === "viewport" ? pxToVhString(10) : 10;
     const _fontSize = unit === "viewport" ? pxToVhString(14) : 14;
-    const _clearIconSize = unit === "viewport" ? pxToVh(9) : 9;
+    const _clearIconSize = unit === "viewport" ? pxToVh(12) : 12;
     const _value = value === null || value === undefined ? "" : value;
     const _clearIcon =
       typeof allowClear === "object"
@@ -389,7 +390,10 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       <div
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className={classes["inputWrapper"]}
+        className={classNames(
+          classes["inputWrapper"],
+          wrapperClassName && wrapperClassName,
+        )}
         style={wrapperStyle}
       >
         <input
