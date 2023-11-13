@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { theming } from "../../../theme";
+import { CustomCircleProps } from "./customCircle";
 
 export const useStyles = createUseStyles(
   (theme) => {
@@ -39,18 +40,28 @@ export const useStyles = createUseStyles(
         position: "relative",
       },
 
-      outterCircle: {
+      "outter-circle": {
         borderRadius: "50%",
         backgroundColor: "white",
         zIndex: 2,
         position: "relative",
+        width: 16,
+        height: 16,
+        border: (props: CustomCircleProps) => {
+          return `1px solid ${props?.borderColor}`;
+        },
       },
-      innerCircle: {
+      "inner-circle": {
         position: "absolute",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         borderRadius: "50%",
+        width: 10,
+        height: 10,
+        backgroundColor: (props: CustomCircleProps) => {
+          return props?.backgroundColor;
+        },
       },
     };
   },

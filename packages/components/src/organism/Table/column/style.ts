@@ -8,6 +8,10 @@ const useStyles = createUseStyles(
       alignItems: "center",
       display: "flex",
     },
+    wrapper: {
+      height: 45,
+      padding: 0,
+    },
   },
   { theming, name: "table-column" },
 );

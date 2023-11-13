@@ -3,10 +3,14 @@ import { theming } from "../../../../theme";
 
 export const useStyle = createUseStyles(
   {
-    expandIcon: {
+    expandIconWrap: {
       marginInlineStart: 14,
       display: "flex",
       flexDirection: "column",
+      "&--more-choices": {
+        marginBottom: 5,
+        justifyContent: "center",
+      },
     },
     manualInput: { display: "flex", marginLeft: 75, marginTop: 20 },
     matrixContainer: {

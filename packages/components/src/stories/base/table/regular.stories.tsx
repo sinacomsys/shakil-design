@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(4000)].map((_, index) => {
+const mockData = [...new Array(1000)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),
@@ -77,7 +77,7 @@ const Template: Story<any> = () => {
       <Table
         rowKey="id"
         onSelectRow={() => {}}
-        height={200}
+        height={400}
         coloums={columns}
         data={mockData}
       />

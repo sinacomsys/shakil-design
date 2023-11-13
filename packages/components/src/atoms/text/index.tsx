@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 import { BaseText, BaseTextProps, Variant } from "./baseText/baseText";
-import { fonts, fontWeights, useFonts } from "./style";
+import { fonts, fontWeights, useFonts, useStyles } from "./style";
 
 interface TextProps extends BaseTextProps {
   theme?: keyof typeof fonts;
@@ -27,6 +27,7 @@ const Text = React.memo(
       ref,
     ) => {
       const fonts = useFonts();
+      const classes = useStyles(size);
 
       const fontWeight =
         typeof weight === "string" ? fontWeights[weight] : weight;
@@ -41,10 +42,9 @@ const Text = React.memo(
         <BaseText
           ref={ref}
           variant={variant || setVariant()}
-          className={classNames(fonts[theme], className)}
+          className={classNames(fonts[theme], className, classes.text)}
           style={{
             color,
-            fontSize: size,
             fontWeight,
             lineHeight,
             ...style,

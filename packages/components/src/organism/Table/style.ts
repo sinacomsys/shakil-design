@@ -29,7 +29,7 @@ export const useStyles = createUseStyles(
       left: "50%",
       transform: "translate(-50%, -50%)",
     },
-    body: {
+    wrapper: {
       display: "flex",
       flexDirection: "column",
       height: "100%",
@@ -38,6 +38,10 @@ export const useStyles = createUseStyles(
       width: "100%",
       overflowY: "auto",
       position: "relative",
+    },
+    "table-body": {
+      flex: 1,
+      overflowY: "auto",
     },
   },
   { theming, name: "table" },

@@ -26,15 +26,7 @@ interface BaseIconProps
 
 const BaseIcon = React.forwardRef<HTMLDivElement, BaseIconProps>(
   (
-    {
-      name,
-      color,
-      size,
-      wrapperStyle,
-      wrapperClassName,
-      unit = "pixel",
-      ...rest
-    },
+    { name, color, size, wrapperStyle, wrapperClassName, unit, ...rest },
     ref,
   ) => {
     return (

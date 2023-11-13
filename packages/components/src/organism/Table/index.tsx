@@ -11,6 +11,8 @@ import { Rows } from "./rowContainer";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
+import { Unit } from "../../types";
+import { pxToVw, pxToVwString } from "@shakil-design/utils";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
@@ -34,6 +36,7 @@ export interface TableProps<T> {
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
   overScan?: number;
+  unit?: Unit;
 }
 
 const Table = <T extends Record<string, any>>({
@@ -53,6 +56,7 @@ const Table = <T extends Record<string, any>>({
   coloums,
   noContent,
   overScan,
+  unit = "viewport",
 }: TableProps<T>) => {
   const { table: { header } = {} } = useTheme();
   const classes = useStyles();
@@ -64,6 +68,9 @@ const Table = <T extends Record<string, any>>({
 
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
   const tableContainerRef = useRef<HTMLDivElement>(null);
+  const [isOverflowed, setIsOverflowed] = useState(false);
+
+  const isViewPortUnit = unit === "viewport";
 
   const list = useMemo(() => {
     let result = data || [];
@@ -86,6 +93,13 @@ const Table = <T extends Record<string, any>>({
     });
     searchBarToggle?.();
   };
+  useEffect(() => {
+    const element = tableContainerRef.current;
+    if (element) {
+      const isElementOverflowed = element.scrollWidth > element.clientWidth;
+      setIsOverflowed(isElementOverflowed);
+    }
+  }, [data]);
 
   const calculateWidth = (totalWidth: number) => {
     let withOutWidthNum = 0;
@@ -93,19 +107,40 @@ const Table = <T extends Record<string, any>>({
       return prev + (width || 0);
     }, 0);
 
-    const remainWidth = totalWidth - (columnsWidth + SCROLL_BAR + SEARCH_ICON);
+    const scrollBarWidth = isOverflowed
+      ? 0
+      : isViewPortUnit
+      ? pxToVw(SCROLL_BAR)
+      : SCROLL_BAR;
+    const _columnsWidth = isViewPortUnit ? pxToVw(columnsWidth) : columnsWidth;
+
+    const searchIconWidth = isViewPortUnit ? pxToVw(SEARCH_ICON) : SEARCH_ICON;
+    const _totalWidth = isViewPortUnit ? pxToVw(totalWidth) : totalWidth;
+
+    const remainWidth =
+      _totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
 
     coloums.forEach(({ width }) => {
       if (!width) {
         withOutWidthNum += 1;
       }
     });
-    if (withOutWidthNum) {
+    if (withOutWidthNum && unit === "pixel") {
       return remainWidth / withOutWidthNum;
+    } else if (withOutWidthNum && isViewPortUnit) {
+      return `${remainWidth / withOutWidthNum}vw`;
     }
   };
 
-  const searchIconWidth = onCheckedRows ? ROW_SELECTION : SEARCH_ICON;
+  const rowSelectionWidth = isViewPortUnit
+    ? pxToVwString(ROW_SELECTION)
+    : ROW_SELECTION;
+
+  const searchIconWidth = isViewPortUnit
+    ? pxToVwString(SEARCH_ICON)
+    : SEARCH_ICON;
+
+  const _searchIconWidth = onCheckedRows ? rowSelectionWidth : searchIconWidth;
 
   const isSearchAvailable = coloums.find(({ renderFilter }) => renderFilter);
 
@@ -203,7 +238,7 @@ const Table = <T extends Record<string, any>>({
           <div
             ref={measureRef}
             style={{
-              height: height,
+              height,
             }}
             className={classNames(
               isLoading && classes["backDrop"],
@@ -226,26 +261,31 @@ const Table = <T extends Record<string, any>>({
                 onSelectRow: handleOnSelectRow,
                 isOnCheckedRowsAvailable: Boolean(onCheckedRows),
                 isSelectSingleRowAvailable: Boolean(onSelectRow),
+                isOverflowed,
               }}
             >
               {boundsWidth ? (
-                <div className={classes["body"]}>
+                <div className={classes["wrapper"]}>
                   <table className={classes["table"]} role={"table"}>
                     <colgroup>
                       <col
                         style={{
-                          width: searchIconWidth,
+                          width: _searchIconWidth,
                         }}
                       />
                       {coloums.map(({ width, dataIndex }) => {
+                        const _width =
+                          isViewPortUnit && width ? pxToVwString(width) : width;
                         return (
                           <col
                             key={dataIndex as string}
-                            style={{ width: width ? width : colWidth }}
+                            style={{ width: _width ? _width : colWidth }}
                           />
                         );
                       })}
-                      <col style={{ width: SCROLL_BAR }} />
+                      {isOverflowed ? (
+                        <col style={{ width: SCROLL_BAR }} />
+                      ) : null}
                     </colgroup>
                     <thead
                       className={headerClassName}
@@ -284,12 +324,16 @@ const Table = <T extends Record<string, any>>({
                     {virtualRows.length > 0 ? (
                       <table className={classes["table"]} role={"table"}>
                         <colgroup>
-                          <col style={{ width: searchIconWidth }} />
+                          <col style={{ width: _searchIconWidth }} />
                           {coloums.map(({ width, dataIndex }) => {
+                            const _width =
+                              isViewPortUnit && width
+                                ? pxToVwString(width)
+                                : width;
                             return (
                               <col
                                 key={dataIndex as string}
-                                style={{ width: width ? width : colWidth }}
+                                style={{ width: _width ? _width : colWidth }}
                               />
                             );
                           })}

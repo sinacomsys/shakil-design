@@ -4,11 +4,14 @@ import { theming } from "../../theme";
 const useStyles = createUseStyles(
   () => {
     return {
-      checkBoxWrapper: {
+      "check-box-wrapper": {
         position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        "&--with-label": {
+          marginInlineEnd: 4,
+        },
       },
       hiddenInput: {
         position: "absolute",
@@ -18,6 +21,9 @@ const useStyles = createUseStyles(
         margin: 0,
         opacity: 0,
         cursor: "pointer",
+      },
+      label: {
+        display: "inline-flex",
       },
     };
   },

@@ -12418,7 +12418,7 @@ jss-plugin-compose@10.10.0:
     jss "10.10.0"
     tiny-warning "^1.0.2"
 
-jss-plugin-default-unit@10.10.0:
+jss-plugin-default-unit@10.10.0, jss-plugin-default-unit@^10.10.0:
   version "10.10.0"
   resolved "https://registry.yarnpkg.com/jss-plugin-default-unit/-/jss-plugin-default-unit-10.10.0.tgz#db3925cf6a07f8e1dd459549d9c8aadff9804293"
   integrity sha512-SvpajxIECi4JDUbGLefvNckmI+c2VWmP43qnEy/0eiwzRUsafg5DVSIWSzZe4d2vFX1u9nRDP46WCFV/PXVBGQ==

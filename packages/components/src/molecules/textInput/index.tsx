@@ -342,7 +342,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     // @ts-ignore
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
-    // supportedProps.style = style;
     (supportedProps as React.InputHTMLAttributes<HTMLInputElement>).type = (
       multiline ? undefined : type
     ) as string;
@@ -351,26 +350,20 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
     const themes = useFonts();
-    const _height = unit === "viewport" ? pxToVhString(32) : 32;
-    const _borderRadius = unit === "viewport" ? pxToVhString(7) : 7;
-    const _paddingBlock = unit === "viewport" ? pxToVhString(8) : 8;
-    const _paddingInline = unit === "viewport" ? pxToVhString(10) : 10;
-    const _fontSize = unit === "viewport" ? pxToVhString(14) : 14;
-    const _clearIconSize = unit === "viewport" ? pxToVh(12) : 12;
     const _value = value === null || value === undefined ? "" : value;
     const _clearIcon =
       typeof allowClear === "object"
         ? allowClear
         : typeof allowClear === "boolean" && (
             <BaseIcon
+              wrapperClassName={
+                isHover && _value
+                  ? classes["clear--visible"]
+                  : classes["clear--hidden"]
+              }
               onClick={onClear}
-              wrapperStyle={{
-                cursor: "pointer",
-                visibility: isHover && _value ? "visible" : "hidden",
-              }}
               name="Every-Boxes-_-Cross-Icon"
-              unit={unit}
-              size={{ height: _clearIconSize, width: _clearIconSize }}
+              size={{ height: 12, width: 12 }}
             />
           );
 
@@ -409,11 +402,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           type={rest.type}
           disabled={disabled}
           style={{
-            height: _height,
-            borderRadius: _borderRadius,
-            paddingInline: _paddingInline,
-            paddingBlock: _paddingBlock,
-            fontSize: _fontSize,
             ...supportedProps.style,
           }}
         />

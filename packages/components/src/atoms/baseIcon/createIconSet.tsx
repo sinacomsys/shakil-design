@@ -1,6 +1,8 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useContext } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { Unit } from "../../types";
+import { pxToVh } from "@shakil-design/utils";
+import { UnitContext } from "../../theme/context";
 
 export interface CreateIcomoonIconSetProps {
   icons: {
@@ -70,22 +72,24 @@ export function createIcomoonIconSet(glyphMap: CreateIcomoonIconSetProps) {
     name?: string;
     color?: string | string[];
     style?: CSSProperties;
-    unit: Unit;
+    unit?: Unit;
   }) => {
+    const { unit } = useContext(UnitContext);
     const { height, width } = props.size;
-
     const { height: windowHeight } = useWindowSize();
     const vh = windowHeight / 100;
+
+    const _unit = props.unit ?? unit;
 
     let realWidth: number | null = null;
     let realHeight: number | null = null;
 
-    if (props.unit === "pixel") {
+    if (_unit === "pixel") {
       realWidth = width;
       realHeight = height;
-    } else if (props.unit === "viewport") {
-      realWidth = width * vh;
-      realHeight = height * vh;
+    } else if (_unit === "viewport") {
+      realWidth = pxToVh(width) * vh;
+      realHeight = pxToVh(height) * vh;
     }
 
     let viewBox = "0 0 1024 1024";

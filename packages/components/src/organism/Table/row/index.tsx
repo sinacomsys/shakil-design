@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useTheme } from "../../../theme";
+import { TableContext } from "../context";
+import { useStyles } from "./style";
+
 interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   children?: React.ReactNode;
   isExpanded?: boolean;
@@ -15,7 +18,13 @@ const Row = ({
   ...rest
 }: RowProps) => {
   const [isHoverd, setIsHovered] = useState(false);
-  const { table: { selectedRow, rowHover } = {} } = useTheme();
+  const classes = useStyles({
+    isChecked,
+    isHoverd,
+    isOnCheckedRowsAvailable,
+    isSelected,
+  });
+
   return (
     <tr
       {...rest}
@@ -25,17 +34,7 @@ const Row = ({
       onMouseLeave={() => {
         setIsHovered(false);
       }}
-      style={{
-        backgroundColor:
-          isChecked || isSelected
-            ? selectedRow
-            : isHoverd
-            ? rowHover
-            : "transparent",
-        height: 32,
-        borderBottom: ".5px solid #C1C0C0",
-        cursor: isOnCheckedRowsAvailable ? "default" : "pointer",
-      }}
+      className={classes["row"]}
     />
   );
 };

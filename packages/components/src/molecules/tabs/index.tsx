@@ -77,7 +77,7 @@ const Tabs = ({
 
   return (
     <div className={classNames(classes["tabs"], className)}>
-      <div className={classes["tabsContainer"]}>
+      <div className={classes["tabs-nav-wrap"]}>
         {TabsTitle ? (
           <div
             style={{
@@ -101,7 +101,7 @@ const Tabs = ({
           </div>
         ) : null}
 
-        <div ref={tabListRef} className={classes["tabsList"]}>
+        <div ref={tabListRef} className={classes["tabs-nav-list"]}>
           {items?.map(({ id, renderTitle, closeable }) => {
             const isActive = id === _activeTab;
             return (
@@ -119,19 +119,21 @@ const Tabs = ({
         </div>
       </div>
 
-      <div className={classes["tabsContentContainer"]}>
+      <div className={classes["tabs-content-holder"]}>
         {noContent ? (
-          <div style={{ height: "100%" }}>{noContent}</div>
+          <div className={classes["no-content"]}>{noContent}</div>
         ) : (
           openedTabs.map((_id) => {
             const tab = items?.find(({ id }) => id === _id);
             return (
               <div
+                className={classNames(
+                  classes["tab-content"],
+                  tab?.id === _activeTab
+                    ? `${classes["tab-content"]}--active`
+                    : `${classes["tab-content"]}--not-active`,
+                )}
                 key={_id}
-                style={{
-                  display: tab?.id === _activeTab ? "block" : "none",
-                  height: "100%",
-                }}
               >
                 {tab?.content}
               </div>

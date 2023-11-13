@@ -162,7 +162,7 @@ const Select = <T extends Record<string, unknown> = Default>({
         unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
-        AddonAfter={<FleshIcon isVisible={isVisible} unit={unit} />}
+        AddonAfter={<FleshIcon isVisible={isVisible} />}
       />
 
       {body.current && isVisible
@@ -187,7 +187,6 @@ const Select = <T extends Record<string, unknown> = Default>({
                           <BaseIcon
                             color={"#d1d1d1"}
                             name="Search-Box_Search-Icon"
-                            unit="pixel"
                             size={{ height: 15, width: 15 }}
                           />
                         }

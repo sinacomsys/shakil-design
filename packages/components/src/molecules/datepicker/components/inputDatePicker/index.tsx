@@ -25,7 +25,6 @@ const InputDatePicker = (props: InputDatePickerProps) => {
                   color={Colors.disableText}
                   name="Table-_-Clock"
                   size={{ height: 18, width: 18 }}
-                  unit="pixel"
                 />
               }
               onClear={props.onClear}

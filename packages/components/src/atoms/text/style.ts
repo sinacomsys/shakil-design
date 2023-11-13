@@ -23,7 +23,8 @@ import FiraGOThinItalic from "@shakil-design/asset/src/fonts/FiraGO-ThinItalic.t
 import FiraGOTwo from "@shakil-design/asset/src/fonts/FiraGO-Two.ttf";
 import FiraGOTwoItalic from "@shakil-design/asset/src/fonts/FiraGO-TwoItalic.ttf";
 import FiraGOUltraLight from "@shakil-design/asset/src/fonts/FiraGO-UltraLight.ttf";
-export { FiraBold };
+import { theming } from "../../theme";
+import { TextProps } from ".";
 
 export const fontWeights = {
   light: 100,
@@ -193,11 +194,22 @@ const useFonts = () => {
           }),
         ),
       },
-      { name: "text" },
+      { name: "base-text" },
     );
   }
 
   return _useFonts();
 };
 
-export { useFonts };
+const useStyles = createUseStyles(
+  () => {
+    return {
+      text: (size: TextProps["size"]) => ({
+        fontSize: size || 16,
+      }),
+    };
+  },
+  { theming, name: "font" },
+);
+
+export { useFonts, useStyles };

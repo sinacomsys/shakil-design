@@ -21,19 +21,17 @@ const Header = <T extends object>({
 }: HeaderProps<T>) => {
   const { table: { filterIcon: filterIconColor } = {} } = useTheme();
   const classes = useStyles();
-  const { onCheckAllRows, isAllRowsChecked, isOnCheckedRowsAvailable } =
-    useContext(TableContext);
+  const {
+    onCheckAllRows,
+    isAllRowsChecked,
+    isOnCheckedRowsAvailable,
+    isOverflowed,
+  } = useContext(TableContext);
 
   return (
     <tr>
       <th>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className={classes["filter-icon-wrapper"]}>
           {isOnCheckedRowsAvailable ? (
             <div className={classes["selectAll"]}>
               <CheckBox
@@ -44,7 +42,7 @@ const Header = <T extends object>({
             </div>
           ) : null}
 
-          <div style={{ height: 24 }} className={classes["search"]}>
+          <div className={classes["search"]}>
             {filterIcon ? (
               filterIcon
             ) : (
@@ -69,7 +67,7 @@ const Header = <T extends object>({
           />
         );
       })}
-      <th />
+      {isOverflowed ? <th /> : null}
     </tr>
   );
 };

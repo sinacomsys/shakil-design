@@ -3,9 +3,10 @@ import { DEFAULT_ALIGN, SEARCH_ICON } from "..";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules";
 import { useTheme } from "../../../theme";
-import { pxToVh } from "@shakil-design/utils";
 import { ColumnType } from "../column";
 import { TableContext } from "../context";
+import { useStyles } from "./style";
+import classNames from "classnames";
 
 interface SearchBarProps<T> {
   isSearchVisible: boolean;
@@ -28,38 +29,29 @@ const SearchBar = <T extends Record<string, unknown>>({
   clearFilterIcon,
   isIndeterminate,
 }: SearchBarProps<T>) => {
-  const { table: { filtersTab, divider } = {} } = useTheme();
-  const { onCheckAllRows, isAllRowsChecked, isOnCheckedRowsAvailable } =
-    useContext(TableContext);
+  const { table: { clearFilterIcon: clearFilterIconColor } = {} } = useTheme();
+  const {
+    onCheckAllRows,
+    isAllRowsChecked,
+    isOnCheckedRowsAvailable,
+    isOverflowed,
+  } = useContext(TableContext);
+  const classes = useStyles({ isSearchVisible });
+
   return (
     <tr
-      className={searchBarClassName}
+      className={classNames(
+        classes["wrapper"],
+        searchBarClassName && searchBarClassName,
+      )}
       style={{
-        display: isSearchVisible ? "table-row" : "none",
-        height: `${pxToVh(45)}vh`,
-        backgroundColor: filtersTab,
         ...searchBarStyle,
       }}
     >
       <th style={{ width: SEARCH_ICON }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className={`${classes["clear-filter"]}--wrapper`}>
           {isOnCheckedRowsAvailable ? (
-            <div
-              style={{
-                borderRight: `1px solid ${divider}`,
-                width: 31,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 24,
-              }}
-            >
+            <div className={classes["checkbox"]}>
               <CheckBox
                 checked={isAllRowsChecked}
                 onChange={onCheckAllRows}
@@ -67,25 +59,16 @@ const SearchBar = <T extends Record<string, unknown>>({
               />
             </div>
           ) : null}
-          <div
-            style={{
-              height: 24,
-              width: 31,
-              borderRight: `1px solid ${divider}`,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div className={classes["clear-filter"]}>
             {clearFilterIcon ? (
               clearFilterIcon
             ) : (
               <BaseIcon
                 wrapperStyle={{ cursor: "pointer" }}
                 onClick={onResetFilters}
-                color={"white"}
+                color={clearFilterIconColor}
                 name="Table-_-Clear-Filters"
-                size={{ width: 16, height: 16 }}
+                size={{ width: 14, height: 14 }}
               />
             )}
           </div>
@@ -98,7 +81,7 @@ const SearchBar = <T extends Record<string, unknown>>({
           </th>
         );
       })}
-      <th />
+      {isOverflowed ? <th /> : null}
     </tr>
   );
 };

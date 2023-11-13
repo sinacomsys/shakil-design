@@ -30,16 +30,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       primary,
     } = useTheme();
     const [isFocused, setFocus] = useState(false);
-
-    const { height: windowHeight } = useWindowSize();
-    const vh = windowHeight / 100;
-
-    const {
-      onChange,
-      value: contextValue,
-      // mode,
-      name,
-    } = useContext(RadioContext);
+    const { onChange, value: contextValue, name } = useContext(RadioContext);
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange(e);
@@ -75,9 +66,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       : (isUncheckedEnable || isUncheckedDisable) &&
         (enableInnerCircleUnselected || disableInnerCricleUnselected);
 
-    const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
-    const rippleSize =
-      unit === "viewport" ? 2 * Math.round((pxToVh(20) * vh) / 2) : 20;
+    const rippleSize = unit === "viewport" ? pxToVhString(20) : 20;
 
     return (
       <label className={classes["label"]}>
@@ -107,9 +96,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
 
         {typeof children === "string" ? (
           <span>
-            <Text color={isDisabled ? disableText : primary} size={fontSize}>
-              {children}
-            </Text>
+            <Text color={isDisabled ? disableText : primary}>{children}</Text>
           </span>
         ) : (
           <span>{children}</span>

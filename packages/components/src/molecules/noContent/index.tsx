@@ -14,9 +14,8 @@ const NoContent = ({ text }: NoContentProps) => {
     <div className={classes["noContent"]}>
       <BaseIcon
         wrapperStyle={{ marginBottom: 10 }}
-        size={{ height: pxToVh(107), width: pxToVh(91) }}
+        size={{ height: 107, width: 91 }}
         name="Shelf-View-_-Traffic-Cone"
-        unit="viewport"
       />
       <Text color={noContent} size={16}>
         {text}

@@ -50,12 +50,12 @@ export const Panel = () => {
 
       <div className={classes["manualInput"]}>
         <ManualImportDate {...{ goToday, onSelectDate, onSetCurrentDate }} />
-        <div className={classes["expandIcon"]}>
+        <div className={classes["expandIconWrap"]}>
           <BaseIcon
+            wrapperClassName={`${classes["expandIconWrap"]}--more-choices`}
             color={"#eeeeee"}
             name="Every-Boxes-_-Flesh-Icon-for-more-choices"
             size={{ height: 5, width: 9 }}
-            wrapperStyle={{ marginBottom: 5, justifyContent: "center" }}
           />
           <BaseIcon
             wrapperStyle={{ cursor: "pointer" }}

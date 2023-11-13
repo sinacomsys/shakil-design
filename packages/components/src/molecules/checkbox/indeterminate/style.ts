@@ -9,6 +9,8 @@ export const useStyles = createUseStyles(
         border: `1px solid ${theme.checkbox?.borderSelected}`,
         position: "relative",
         backgroundColor: "transparent",
+        width: 16,
+        height: 16,
       },
       square: {
         position: "absolute",
@@ -16,6 +18,8 @@ export const useStyles = createUseStyles(
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
+        width: 6,
+        height: 6,
       },
     };
   },

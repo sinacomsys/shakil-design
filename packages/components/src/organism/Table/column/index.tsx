@@ -52,7 +52,7 @@ const Column = <T extends object>({
   const classes = useStyles();
 
   return (
-    <th style={{ ...style, height: `${pxToVh(45)}vh`, padding: 0 }}>
+    <th className={classes["wrapper"]} style={{ ...style }}>
       <div
         className={classes["column"]}
         style={{
@@ -67,7 +67,7 @@ const Column = <T extends object>({
         onClick={onSort}
       >
         {typeof title !== "object" ? (
-          <Text size={`${pxToVh(16)}vh`} theme="Regular" color={"white"}>
+          <Text size={16} theme="Regular" color={"white"}>
             {title}
           </Text>
         ) : (

@@ -32,10 +32,13 @@ function InternalTabPane({
         e.preventDefault();
         onClick(id);
       }}
-      className={classNames(classes["tab"], isActive && classes["tabActive"])}
+      className={classNames(
+        classes["tab"],
+        isActive && classes["active-tab-pane"],
+      )}
       key={id}
     >
-      <div className={classes["tabsTitleWrapper"]}>
+      <div className={classes["tab-pane-title"]}>
         {typeof renderTitle === "string" ? (
           <Text size={14} theme={"Regular"} color={textColor}>
             {renderTitle}
@@ -46,13 +49,10 @@ function InternalTabPane({
       </div>
       {closable && (
         <BaseIcon
-          wrapperStyle={{
-            width: 16,
-          }}
+          wrapperClassName={classes["tab-pane-close"]}
           color={"#575757"}
           name="Table-_-Cross-Icon-for-erasing-all-of-filters"
-          size={{ height: pxToVh(10), width: pxToVh(10) }}
-          unit={"viewport"}
+          size={{ height: 10, width: 10 }}
           onClick={(event: React.MouseEvent) => {
             event.stopPropagation();
             onClose?.(id);

@@ -5,19 +5,24 @@ import { pxToVh } from "@shakil-design/utils";
 export const useStyles = createUseStyles(
   (theme) => {
     return {
+      "no-content": {
+        height: "100%",
+      },
       tabs: {
         display: "flex",
         flexDirection: "column",
         height: "100%",
+        borderRadius: 20,
+        overflow: "hidden",
       },
       tabsTitle: {
-        width: 131,
+        width: 130,
         height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       },
-      tabsList: {
+      "tabs-nav-list": {
         display: "flex",
         height: `${pxToVh(42)}vh`,
         justifyContent: "space-between",
@@ -65,26 +70,34 @@ export const useStyles = createUseStyles(
           cursor: "pointer",
         },
       },
-      tabActive: {
+      "tab-pane-close": {
+        width: 16,
+      },
+      "active-tab-pane": {
         backgroundColor: theme.tab?.selectedTab,
       },
-      tabsTitleWrapper: {
+      "tab-pane-title": {
         width: "calc(100% - 16px)",
         padding: "0px 8px",
       },
-      tabsContentContainer: {
+      "tabs-content-holder": {
         overflow: "auto",
         backgroundColor: "white",
-        borderBottomLeftRadius: "1.25rem",
-        borderBottomRightRadius: "1.25rem",
         width: "100%",
         position: "relative",
         flex: 1,
       },
-      tabsContainer: {
+      "tab-content": {
+        height: "100%",
+        "&--active": {
+          display: "block",
+        },
+        "&--not-active": {
+          display: "none",
+        },
+      },
+      "tabs-nav-wrap": {
         display: "flex",
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
         overflow: "hidden",
         height: `${pxToVh(42)}vh`,
       },
