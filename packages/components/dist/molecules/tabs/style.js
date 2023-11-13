@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStyles = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../theme");
-var utils_1 = require("@shakil-design/utils");
 exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     var _a, _b, _c;
     return {
@@ -23,10 +22,10 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "#ffffff",
         },
         "tabs-nav-list": {
             display: "flex",
-            height: "".concat((0, utils_1.pxToVh)(42), "vh"),
             justifyContent: "space-between",
             columnGap: 4,
             backgroundColor: "white",
@@ -73,14 +72,21 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             },
         },
         "tab-pane-close": {
-            width: 16,
+            width: 15,
+            display: "flex",
+            alignItems: "flex-start",
+            height: "100%",
+            paddingTop: 8,
         },
         "active-tab-pane": {
             backgroundColor: (_c = theme.tab) === null || _c === void 0 ? void 0 : _c.selectedTab,
         },
         "tab-pane-title": {
-            width: "calc(100% - 16px)",
             padding: "0px 8px",
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
         },
         "tabs-content-holder": {
             overflow: "auto",
@@ -101,7 +107,10 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         "tabs-nav-wrap": {
             display: "flex",
             overflow: "hidden",
-            height: "".concat((0, utils_1.pxToVh)(42), "vh"),
+            height: 64,
+        },
+        "rendered-title-wrap": {
+            flex: 1,
         },
     };
 }, { theming: theme_1.theming, name: "tabs" });

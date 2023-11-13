@@ -4,7 +4,7 @@ import "./style.css";
 
 export const StoryContainer = ({ children }: any) => {
   return (
-    <ShakilDesignThemeProvider colors={Colors}>
+    <ShakilDesignThemeProvider unit="viewport" colors={Colors}>
       <div style={{ width: "100%", height: "100%" }}>{children}</div>
     </ShakilDesignThemeProvider>
   );

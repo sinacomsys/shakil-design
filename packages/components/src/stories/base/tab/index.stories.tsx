@@ -31,13 +31,7 @@ const Template: Story<TabsProps> = () => {
     {
       closeable: true,
       id: "2",
-      renderTitle: () => {
-        return (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Text>Title2</Text>
-          </div>
-        );
-      },
+      renderTitle: "Title",
       content: (
         <div style={{ backgroundColor: "lightblue", height: "100%" }}>
           TEST CONTENT2
@@ -49,6 +43,7 @@ const Template: Story<TabsProps> = () => {
     <StoryContainer>
       <div style={{ backgroundColor: "gray", padding: 20, height: "100%" }}>
         <Tabs
+          TabsTitle={"test title"}
           activeTab={activeTab}
           onChange={(id: string) => {
             setActiveTab(id);

@@ -37,26 +37,31 @@ function InternalTabPane({
       )}
       key={id}
     >
-      <div className={classes["tab-pane-title"]}>
+      <>
         {typeof renderTitle === "string" ? (
-          <Text size={14} theme={"Regular"} color={textColor}>
-            {renderTitle}
-          </Text>
+          <div className={classes["tab-pane-title"]}>
+            <Text size={14} theme={"Regular"} color={textColor}>
+              {renderTitle}
+            </Text>
+          </div>
         ) : typeof renderTitle === "function" ? (
-          renderTitle({ id, isActive })
+          <div className={classes["rendered-title-wrap"]}>
+            {renderTitle({ id, isActive })}
+          </div>
         ) : null}
-      </div>
-      {closable && (
-        <BaseIcon
-          wrapperClassName={classes["tab-pane-close"]}
-          color={"#575757"}
-          name="Table-_-Cross-Icon-for-erasing-all-of-filters"
-          size={{ height: 10, width: 10 }}
-          onClick={(event: React.MouseEvent) => {
-            event.stopPropagation();
-            onClose?.(id);
-          }}
-        />
+      </>
+      {!!closable && (
+        <div className={classes["tab-pane-close"]}>
+          <BaseIcon
+            color={"#575757"}
+            name="Table-_-Cross-Icon-for-erasing-all-of-filters"
+            size={{ height: 10, width: 10 }}
+            onClick={(event: React.MouseEvent) => {
+              event.stopPropagation();
+              onClose?.(id);
+            }}
+          />
+        </div>
       )}
     </div>
   );

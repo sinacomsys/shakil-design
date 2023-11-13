@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactNode, useEffect, useState } from "react";
 import { Text } from "../../atoms/text";
-import { pxToVh, useHorizontalScroll } from "@shakil-design/utils";
+import { useHorizontalScroll } from "@shakil-design/utils";
 import { InternalTabPane } from "./internalTabPane";
 import { useStyles } from "./style";
 import { useTheme } from "../../theme";
@@ -79,26 +79,17 @@ const Tabs = ({
     <div className={classNames(classes["tabs"], className)}>
       <div className={classes["tabs-nav-wrap"]}>
         {TabsTitle ? (
-          <div
-            style={{
-              backgroundColor: "white",
-              borderTopLeftRadius: 20,
-            }}
-          >
+          <>
             {typeof TabsTitle === "string" ? (
               <div className={classes["tabsTitle"]}>
-                <Text
-                  theme="Regular"
-                  size={`${pxToVh(20)}vh`}
-                  color={textColor}
-                >
+                <Text theme="Regular" size={20} color={textColor}>
                   {TabsTitle}
                 </Text>
               </div>
             ) : typeof TabsTitle === "object" ? (
               TabsTitle
             ) : null}
-          </div>
+          </>
         ) : null}
 
         <div ref={tabListRef} className={classes["tabs-nav-list"]}>

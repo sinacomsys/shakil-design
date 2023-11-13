@@ -1,6 +1,5 @@
 import { createUseStyles } from "react-jss";
 import { theming } from "../../theme";
-import { pxToVh } from "@shakil-design/utils";
 
 export const useStyles = createUseStyles(
   (theme) => {
@@ -21,10 +20,10 @@ export const useStyles = createUseStyles(
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "#ffffff",
       },
       "tabs-nav-list": {
         display: "flex",
-        height: `${pxToVh(42)}vh`,
         justifyContent: "space-between",
         columnGap: 4,
         backgroundColor: "white",
@@ -71,14 +70,21 @@ export const useStyles = createUseStyles(
         },
       },
       "tab-pane-close": {
-        width: 16,
+        width: 15,
+        display: "flex",
+        alignItems: "flex-start",
+        height: "100%",
+        paddingTop: 8,
       },
       "active-tab-pane": {
         backgroundColor: theme.tab?.selectedTab,
       },
       "tab-pane-title": {
-        width: "calc(100% - 16px)",
         padding: "0px 8px",
+        flex: 1,
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
       },
       "tabs-content-holder": {
         overflow: "auto",
@@ -99,7 +105,10 @@ export const useStyles = createUseStyles(
       "tabs-nav-wrap": {
         display: "flex",
         overflow: "hidden",
-        height: `${pxToVh(42)}vh`,
+        height: 64,
+      },
+      "rendered-title-wrap": {
+        flex: 1,
       },
     };
   },
