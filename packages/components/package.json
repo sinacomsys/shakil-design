@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/component",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "private": false,
   "types": "types/index.d.ts",
   "main": "src/index.ts",
