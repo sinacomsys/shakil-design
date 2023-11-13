@@ -8,7 +8,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         borderRadius: 8,
         border: 0,
         outline: "none",
-        padding: 2,
+        padding: "2px",
         position: "relative",
         cursor: "pointer",
         zIndex: 2,

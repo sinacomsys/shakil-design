@@ -1,6 +1,5 @@
 import { BaseIcon, Text } from "../../atoms";
 import { useTheme } from "../../theme";
-import { pxToVh } from "@shakil-design/utils";
 import { useStyles } from "./style";
 
 export interface NoContentProps {
@@ -13,7 +12,7 @@ const NoContent = ({ text }: NoContentProps) => {
   return (
     <div className={classes["noContent"]}>
       <BaseIcon
-        wrapperStyle={{ marginBottom: 10 }}
+        wrapperClassName={classes["icon"]}
         size={{ height: 107, width: 91 }}
         name="Shelf-View-_-Traffic-Cone"
       />

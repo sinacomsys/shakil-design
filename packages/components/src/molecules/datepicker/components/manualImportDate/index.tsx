@@ -4,6 +4,8 @@ import { Text } from "../../../../atoms";
 import { Button } from "../../..";
 import moment, { Moment } from "moment-jalaali";
 import { checkIsDateValid } from "../../utils/checkDateIsValid";
+import { useStyles } from "./style";
+import classNames from "classnames";
 
 type CountActionKind = "YEAR" | "MONTH" | "DAY";
 interface CountAction {
@@ -52,17 +54,17 @@ export const ManualImportDate = ({
       onSelectDate(date);
     }
   };
+  const classes = useStyles();
 
   return (
-    <div>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-        <Text color={"#ABABAB"} style={{ marginRight: 13 }}>
+    <>
+      <div className={classes["wrapper"]}>
+        <Text className={classes["title"]} color={"#ABABAB"}>
           Date
         </Text>
         <div style={{ display: "flex" }}>
-          <div style={{ width: 44 }}>
+          <div className={classes["input"]}>
             <TextInput
-              unit="pixel"
               value={year}
               style={{ textAlign: "center" }}
               onChangeText={(value) => {
@@ -71,9 +73,8 @@ export const ManualImportDate = ({
               }}
             />
           </div>
-          <div style={{ width: 44, marginInline: 6 }}>
+          <div className={classNames(classes["minute"], classes["input"])}>
             <TextInput
-              unit="pixel"
               value={month}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -82,9 +83,8 @@ export const ManualImportDate = ({
               style={{ textAlign: "center" }}
             />
           </div>
-          <div style={{ width: 44 }}>
+          <div className={classes["input"]}>
             <TextInput
-              unit="pixel"
               value={day}
               onChangeText={(value) => {
                 if (value.length === 3) return;
@@ -95,26 +95,25 @@ export const ManualImportDate = ({
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-        <Text style={{ marginRight: 12 }} color={"#ABABAB"}>
+      <div className={classes["wrapper"]}>
+        <Text className={classes["title"]} color={"#ABABAB"}>
           Time
         </Text>
         <div style={{ display: "flex" }}>
-          <div style={{ width: 44 }}>
-            <TextInput unit="pixel" style={{ textAlign: "center" }} />
+          <div className={classes["input"]}>
+            <TextInput style={{ textAlign: "center" }} />
           </div>
-          <div style={{ width: 44, marginInline: 6 }}>
-            <TextInput unit="pixel" style={{ textAlign: "center" }} />
+          <div className={classNames(classes["input"], classes["minute"])}>
+            <TextInput style={{ textAlign: "center" }} />
           </div>
-          <Button size="small" style={{ width: 44 }} onClick={onConfirm}>
+          <Button className={classes["input"]} size="small" onClick={onConfirm}>
             ok
           </Button>
         </div>
       </div>
-
-      <Button style={{ marginLeft: 42 }} size="small" onClick={goToday}>
+      <Button className={classes["submit"]} size="small" onClick={goToday}>
         Go Today!
       </Button>
-    </div>
+    </>
   );
 };

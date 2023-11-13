@@ -1,4 +1,3 @@
-import { pxToVh } from "@shakil-design/utils";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import { BaseIcon, Text } from "../../atoms";

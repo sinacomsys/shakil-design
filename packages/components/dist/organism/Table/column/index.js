@@ -19,7 +19,6 @@ var react_1 = require("react");
 var __1 = require("..");
 var atoms_1 = require("../../../atoms");
 var theme_1 = require("../../../theme");
-var utils_1 = require("@shakil-design/utils");
 var context_1 = require("../context");
 var style_1 = require("./style");
 var Column = function (_a) {
@@ -34,14 +33,14 @@ var Column = function (_a) {
         }
     };
     var classes = (0, style_1.useStyles)();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("th", __assign({ style: __assign(__assign({}, style), { height: "".concat((0, utils_1.pxToVh)(45), "vh"), padding: 0 }) }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["column"], style: {
+    return ((0, jsx_dev_runtime_1.jsxDEV)("th", __assign({ className: classes["wrapper"], style: __assign({}, style) }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["column"], style: {
                 cursor: sorter ? "pointer" : "default",
                 justifyContent: align === "center"
                     ? "center"
                     : align === "start"
                         ? "flex-start"
                         : "flex-end",
-            }, onClick: onSort }, { children: [typeof title !== "object" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: "".concat((0, utils_1.pxToVh)(16), "vh"), theme: "Regular", color: "white" }, { children: title }), void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 39 }, _this)) : (title), sorter ? (isDescending ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: sortArrow, name: "Table-_-Sort-Icon_A-to-Z" }, void 0, false, { fileName: _jsxFileName, lineNumber: 77, columnNumber: 27 }, _this)) : isAscending ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: sortArrow, name: "Table-_-Sort-Icon_Z-to-A" }, void 0, false, { fileName: _jsxFileName, lineNumber: 83, columnNumber: 30 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: "white", name: "Table-_-Sort-Icon_OFF" }, void 0, false, { fileName: _jsxFileName, lineNumber: 89, columnNumber: 16 }, _this))) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 11 }, _this));
+            }, onClick: onSort }, { children: [typeof title !== "object" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 16, theme: "Regular", color: "white" }, { children: title }), void 0, false, { fileName: _jsxFileName, lineNumber: 68, columnNumber: 39 }, _this)) : (title), sorter ? (isDescending ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: sortArrow, name: "Table-_-Sort-Icon_A-to-Z" }, void 0, false, { fileName: _jsxFileName, lineNumber: 76, columnNumber: 27 }, _this)) : isAscending ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: sortArrow, name: "Table-_-Sort-Icon_Z-to-A" }, void 0, false, { fileName: _jsxFileName, lineNumber: 82, columnNumber: 30 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { size: { width: 9, height: 20 }, color: "white", name: "Table-_-Sort-Icon_OFF" }, void 0, false, { fileName: _jsxFileName, lineNumber: 88, columnNumber: 16 }, _this))) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 55, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 11 }, _this));
 };
 exports.Column = Column;
 //# sourceMappingURL=index.js.map

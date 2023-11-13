@@ -25,12 +25,25 @@ var addonStyle = {
 var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     var _a;
     return {
+        "clear--visible": {
+            cursor: "pointer",
+            visibility: "visible",
+        },
+        "clear--hidden": {
+            cursor: "pointer",
+            visibility: "hidden",
+        },
         textInput: {
             width: "100%",
             backgroundColor: (_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.fieldColor,
             color: theme.primary,
             border: "none",
             outline: "none",
+            height: 32,
+            borderRadius: 7,
+            paddingBlock: 8,
+            paddingInline: 10,
+            fontSize: 14,
         },
         disabled: {
             backgroundColor: theme.disableField,

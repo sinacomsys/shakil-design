@@ -1,10 +1,12 @@
 /// <reference types="react" />
-interface RowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+import { RowsProps } from "../rowContainer";
+interface RowProps<T> extends React.HTMLAttributes<HTMLTableRowElement>, Pick<RowsProps<T>, "rowKey" | "rowData"> {
     children?: React.ReactNode;
     isExpanded?: boolean;
     isChecked: boolean;
     isSelected: boolean;
     isOnCheckedRowsAvailable: boolean;
+    rowIndex: number;
 }
-declare const Row: ({ isChecked, isOnCheckedRowsAvailable, isSelected, ...rest }: RowProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Row: <T extends Record<string, unknown>>({ isChecked, isOnCheckedRowsAvailable, isSelected, rowKey, rowIndex, rowData, ...rest }: RowProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Row };

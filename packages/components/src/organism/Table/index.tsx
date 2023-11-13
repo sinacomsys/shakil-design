@@ -1,25 +1,33 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Measure from "react-measure";
 import { useVirtual } from "react-virtual";
 import { ScrollView, Spinner } from "../../atoms";
 import { NoContent } from "../../molecules/noContent";
 import { useTheme } from "../../theme";
 import { ColumnType } from "./column";
-import { Order, OrderBy, TableContext } from "./context";
+import { Order, OrderBy, TableContext, TableContextProps } from "./context";
 import { Header } from "./header";
-import { Rows } from "./rowContainer";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
 import { Unit } from "../../types";
 import { pxToVw, pxToVwString } from "@shakil-design/utils";
+import { UnitContext } from "../../theme/context";
+import { TableBody } from "./body";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
 export const SCROLL_BAR = 8;
 export const DEFAULT_ALIGN = "center";
 
-export interface TableProps<T> {
+export interface TableProps<T> extends Pick<TableContextProps, "testid"> {
   data?: T[];
   rowKey?: keyof T;
   onCheckedRows?: (value: T[]) => void;
@@ -56,7 +64,7 @@ const Table = <T extends Record<string, any>>({
   coloums,
   noContent,
   overScan,
-  unit = "viewport",
+  testid,
 }: TableProps<T>) => {
   const { table: { header } = {} } = useTheme();
   const classes = useStyles();
@@ -65,6 +73,7 @@ const Table = <T extends Record<string, any>>({
   const [orderBy, setOrderBy] = useState<OrderBy>(undefined);
   const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
   const [checkedRows, setCheckRows] = useState<T[]>([]);
+  const { unit } = useContext(UnitContext);
 
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
   const tableContainerRef = useRef<HTMLDivElement>(null);
@@ -93,7 +102,7 @@ const Table = <T extends Record<string, any>>({
     });
     searchBarToggle?.();
   };
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = tableContainerRef.current;
     if (element) {
       const isElementOverflowed = element.scrollWidth > element.clientWidth;
@@ -102,7 +111,7 @@ const Table = <T extends Record<string, any>>({
   }, [data]);
 
   const calculateWidth = (totalWidth: number) => {
-    let withOutWidthNum = 0;
+    let withOutDeclaredWidth = 0;
     const columnsWidth = coloums.reduce((prev, { width }) => {
       return prev + (width || 0);
     }, 0);
@@ -122,13 +131,13 @@ const Table = <T extends Record<string, any>>({
 
     coloums.forEach(({ width }) => {
       if (!width) {
-        withOutWidthNum += 1;
+        withOutDeclaredWidth += 1;
       }
     });
-    if (withOutWidthNum && unit === "pixel") {
-      return remainWidth / withOutWidthNum;
-    } else if (withOutWidthNum && isViewPortUnit) {
-      return `${remainWidth / withOutWidthNum}vw`;
+    if (withOutDeclaredWidth && unit === "pixel") {
+      return remainWidth / withOutDeclaredWidth;
+    } else if (withOutDeclaredWidth && isViewPortUnit) {
+      return `${remainWidth / withOutDeclaredWidth}vw`;
     }
   };
 
@@ -262,6 +271,7 @@ const Table = <T extends Record<string, any>>({
                 isOnCheckedRowsAvailable: Boolean(onCheckedRows),
                 isSelectSingleRowAvailable: Boolean(onSelectRow),
                 isOverflowed,
+                testid,
               }}
             >
               {boundsWidth ? (
@@ -319,57 +329,22 @@ const Table = <T extends Record<string, any>>({
                   </table>
                   <ScrollView
                     ref={tableContainerRef}
-                    style={{ flex: 1, overflowY: "auto" }}
+                    className={classes["table-body"]}
                   >
-                    {virtualRows.length > 0 ? (
-                      <table className={classes["table"]} role={"table"}>
-                        <colgroup>
-                          <col style={{ width: _searchIconWidth }} />
-                          {coloums.map(({ width, dataIndex }) => {
-                            const _width =
-                              isViewPortUnit && width
-                                ? pxToVwString(width)
-                                : width;
-                            return (
-                              <col
-                                key={dataIndex as string}
-                                style={{ width: _width ? _width : colWidth }}
-                              />
-                            );
-                          })}
-                        </colgroup>
-
-                        <tbody>
-                          {paddingTop > 0 && (
-                            <tr>
-                              <td style={{ height: `${paddingTop}px` }} />
-                            </tr>
-                          )}
-                          {virtualRows.map((virtualRow, index) => {
-                            const row = list[virtualRow.index];
-                            return (
-                              <Rows
-                                key={index}
-                                rowKey={rowKey}
-                                rowData={row}
-                                data={data || []}
-                                index={index}
-                                columns={coloums}
-                                checkedRows={checkedRows}
-                                handleCheckRow={handleCheckRow}
-                              />
-                            );
-                          })}
-                          {paddingBottom > 0 && (
-                            <tr>
-                              <td style={{ height: `${paddingBottom}px` }} />
-                            </tr>
-                          )}
-                        </tbody>
-                      </table>
-                    ) : (
-                      _noContent
-                    )}
+                    <TableBody
+                      noContent={_noContent}
+                      searchIconWidth={_searchIconWidth}
+                      virtualPaddingBottom={paddingBottom}
+                      virtualPaddingTop={paddingTop}
+                      virtualRows={virtualRows}
+                      checkedRows={checkedRows}
+                      colWidth={colWidth}
+                      coloums={coloums}
+                      dataList={list}
+                      handleCheckRow={handleCheckRow}
+                      data={data}
+                      rowKey={rowKey}
+                    />
                   </ScrollView>
                 </div>
               ) : null}

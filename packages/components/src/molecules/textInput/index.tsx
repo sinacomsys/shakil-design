@@ -5,7 +5,6 @@ import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useFonts } from "../../atoms/text/style";
-import { pxToVh, pxToVhString } from "@shakil-design/utils";
 import { BaseIcon } from "../../atoms";
 import { useState } from "react";
 
@@ -79,7 +78,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       testID,
       disabled,
       theme,
-      unit = "viewport",
       AddonAfter,
       addonBefore,
       addonAfterClassName,

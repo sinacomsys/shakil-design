@@ -23,6 +23,9 @@ export interface SelectProps<T extends Record<string, unknown> = Default> extend
     multiple?: boolean;
     onSearch?: (args: string) => void;
     hasSearch?: boolean;
+    testid?: {
+        overlay?: string;
+    };
 }
 export interface OptionProps extends Pick<SelectProps, "multiple"> {
     isSelected: boolean;

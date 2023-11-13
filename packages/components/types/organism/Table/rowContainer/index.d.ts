@@ -1,5 +1,5 @@
 import { ColumnType } from "../column";
-interface RowsProps<T> {
+export interface RowsProps<T> {
     rowData: T;
     data: T[];
     columns: ColumnType<T>[];

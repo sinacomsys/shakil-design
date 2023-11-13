@@ -11,6 +11,8 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             border: "1px solid ".concat((_a = theme.checkbox) === null || _a === void 0 ? void 0 : _a.borderSelected),
             position: "relative",
             backgroundColor: "transparent",
+            width: 16,
+            height: 16,
         },
         square: {
             position: "absolute",
@@ -18,6 +20,8 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            width: 6,
+            height: 6,
         },
     };
 }, {

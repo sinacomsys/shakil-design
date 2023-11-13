@@ -2,7 +2,6 @@ import { ReactNode, useContext } from "react";
 import { DEFAULT_ALIGN } from "..";
 import { BaseIcon, Text } from "../../../atoms";
 import { useTheme } from "../../../theme";
-import { pxToVh } from "@shakil-design/utils";
 import { TableContext } from "../context";
 import { useStyles } from "./style";
 

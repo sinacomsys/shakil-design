@@ -12,5 +12,7 @@ exports.TableContext = (0, react_1.createContext)({
     selectedRow: undefined,
     isOnCheckedRowsAvailable: false,
     isSelectSingleRowAvailable: false,
+    isOverflowed: false,
+    testid: undefined,
 });
 //# sourceMappingURL=index.js.map

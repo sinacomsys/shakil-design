@@ -35,13 +35,13 @@ var Rows = function (_a) {
             handleCheckRow({ rowId: rowData[rowKey] });
         }
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ isOnCheckedRowsAvailable: isOnCheckedRowsAvailable, isSelected: Boolean(rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey]), onClick: onClickRow, isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ rowData: rowData, rowKey: rowKey, rowIndex: rowIndex, isOnCheckedRowsAvailable: isOnCheckedRowsAvailable, isSelected: Boolean(rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey]), onClick: onClickRow, isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
                             position: "relative",
                             height: "100%",
                             borderInlineStart: "5px solid ".concat(selectedRowBookmark),
-                        } }, void 0, false, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 79 }, _this)) : null, isOnCheckedRowsAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { paddingInlineStart: 8 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { onChange: function () {
+                        } }, void 0, false, { fileName: _jsxFileName, lineNumber: 63, columnNumber: 79 }, _this)) : null, isOnCheckedRowsAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { paddingInlineStart: 8 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { onChange: function () {
                                 rowKey && handleCheckRow({ rowId: rowData[rowKey] });
-                            }, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 38 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 59, columnNumber: 7 }, _this), columns.map(function (_a, index) {
+                            }, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 74, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 38 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 7 }, _this), columns.map(function (_a, index) {
                 var dataIndex = _a.dataIndex, render = _a.render, align = _a.align;
                 var cell = rowData[dataIndex];
                 return ((0, jsx_dev_runtime_1.jsxDEV)(cell_1.Cell, __assign({ align: align }, { children: (0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: render
@@ -51,7 +51,7 @@ var Rows = function (_a) {
                                 row: rowData,
                                 data: data,
                             })
-                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 82, columnNumber: 17 }, _this));
+                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 87, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 17 }, _this));
             })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 11 }, _this));
 };
 exports.Rows = Rows;

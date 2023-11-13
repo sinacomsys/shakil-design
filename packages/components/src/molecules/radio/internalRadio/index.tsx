@@ -1,21 +1,19 @@
 import { motion } from "framer-motion";
 import React, { useContext, useState } from "react";
-import { useWindowSize } from "usehooks-ts";
 import { Text } from "../../../atoms/text";
 import { useTheme } from "../../../theme";
-import { pxToVh, pxToVhString } from "@shakil-design/utils";
+import { pxToVhString } from "@shakil-design/utils";
 import { RadioContext, ValueType } from "../context";
 import { CustomCircle } from "./customCircle";
 import { useStyles } from "./style";
-import { Unit } from "../../../types";
+import { UnitContext } from "../../../theme/context";
 export interface RadioProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "name"> {
   children?: React.ReactNode;
   value: ValueType;
-  unit?: Unit;
 }
 const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
-  ({ children, value, onFocus, onBlur, unit = "viewport", ...rest }, ref) => {
+  ({ children, value, onFocus, onBlur, ...rest }, ref) => {
     const classes = useStyles();
     const {
       radio: {
@@ -65,6 +63,8 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
       ? disableInnerCircleSelected
       : (isUncheckedEnable || isUncheckedDisable) &&
         (enableInnerCircleUnselected || disableInnerCricleUnselected);
+
+    const { unit } = useContext(UnitContext);
 
     const rippleSize = unit === "viewport" ? pxToVhString(20) : 20;
 

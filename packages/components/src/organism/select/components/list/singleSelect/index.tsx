@@ -4,6 +4,7 @@ import { ListPorps } from "../types";
 import { Default } from "../../../types";
 import { Radio } from "../../../../../molecules";
 import { theming } from "../../../../../theme";
+import { createUseStyles } from "react-jss";
 
 const { useTheme } = theming;
 
@@ -18,11 +19,12 @@ export const SingleSelectList = <T extends Default>({
   const selectedItem = data.find((item) => {
     return valueExtractor?.(item) === internalValue;
   });
+  const classes = useStyles();
   return (
     <ScrollView style={{ flex: 1 }}>
       {internalValue ? (
-        <div style={{ marginInlineStart: 20 }}>
-          <Radio unit="pixel" value="test" checked>
+        <div className={classes["radio"]}>
+          <Radio value="test" checked>
             <Text size={16} theme={"Regular"} color={"#575757"}>
               {selectedItem && labelExtractor?.(selectedItem)}
             </Text>
@@ -54,3 +56,12 @@ export const SingleSelectList = <T extends Default>({
     </ScrollView>
   );
 };
+
+const useStyles = createUseStyles(
+  {
+    radio: {
+      marginInlineStart: 20,
+    },
+  },
+  { theming, name: "singe-select" },
+);

@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 export type Order = undefined | "ascending" | "descending";
 export type OrderBy = undefined | string | number | symbol;
-interface TableContextProps {
+export interface TableContextProps {
   order: Order;
   orderBy: OrderBy;
   onOrderChange: (data: { dataIndex: OrderBy }) => void;
@@ -12,6 +12,14 @@ interface TableContextProps {
   selectedRow: unknown;
   isOnCheckedRowsAvailable: boolean;
   isSelectSingleRowAvailable: boolean;
+  isOverflowed: boolean;
+  testid?: {
+    filterBarIcon?: string;
+    clearFiltersIcon?: string;
+    filterBar?: string;
+    header?: string;
+    body?: string;
+  };
 }
 
 export const TableContext = createContext<TableContextProps>({
@@ -24,4 +32,6 @@ export const TableContext = createContext<TableContextProps>({
   selectedRow: undefined,
   isOnCheckedRowsAvailable: false,
   isSelectSingleRowAvailable: false,
+  isOverflowed: false,
+  testid: undefined,
 });

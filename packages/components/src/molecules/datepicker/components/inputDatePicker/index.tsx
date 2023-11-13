@@ -29,7 +29,6 @@ const InputDatePicker = (props: InputDatePickerProps) => {
               }
               onClear={props.onClear}
               allowClear={props.allowClear}
-              unit={props.unit}
               value={value}
               onChangeText={onChangeDateInputText}
             />

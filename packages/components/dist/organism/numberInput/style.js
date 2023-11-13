@@ -19,6 +19,9 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         cursor: "pointer",
     },
     input: {
+        paddingInline: 24,
+        textAlign: "center",
+        fontSize: 14,
         "&::-webkit-outer-spin-button , &::-webkit-inner-spin-button": {
             appearance: "none",
         },

@@ -8,7 +8,6 @@
  */
 import React from "react";
 import { TextProps } from "../../atoms";
-import { Unit } from "../../types";
 interface InputElement extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "className" | "style" | "children"> {
     testID?: string;
     href?: string;
@@ -24,7 +23,6 @@ export interface TextInputProps extends Omit<InputElement, "autoCorrect" | "valu
     addonBeforeClassName?: string;
     AddonAfter?: React.ReactNode;
     addonBefore?: React.ReactNode;
-    unit?: Unit;
     className?: string;
     autoCapitalize?: "characters" | "none" | "sentences" | "words";
     theme?: TextProps["theme"];

@@ -14,10 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useFonts = exports.fonts = exports.fontSizes = exports.fontWeights = exports.FiraBold = void 0;
+exports.useStyles = exports.useFonts = exports.fonts = exports.fontSizes = exports.fontWeights = void 0;
 var react_jss_1 = require("react-jss");
 var FiraGO_Bold_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Bold.ttf"));
-exports.FiraBold = FiraGO_Bold_ttf_1.default;
 var FiraGO_BoldItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-BoldItalic.ttf"));
 var FiraGO_Book_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Book.ttf"));
 var FiraGO_BookItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-BookItalic.ttf"));
@@ -41,6 +40,7 @@ var FiraGO_ThinItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/
 var FiraGO_Two_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-Two.ttf"));
 var FiraGO_TwoItalic_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-TwoItalic.ttf"));
 var FiraGO_UltraLight_ttf_1 = __importDefault(require("@shakil-design/asset/src/fonts/FiraGO-UltraLight.ttf"));
+var theme_1 = require("../../theme");
 exports.fontWeights = {
     light: 100,
     regular: 400,
@@ -203,9 +203,17 @@ var useFonts = function () {
                 fontFamily: name,
                 src: "url(".concat(url, ") format('").concat(format, "')"),
             });
-        }), _a)), { name: "text" });
+        }), _a)), { name: "base-text" });
     }
     return _useFonts();
 };
 exports.useFonts = useFonts;
+var useStyles = (0, react_jss_1.createUseStyles)(function () {
+    return {
+        text: function (size) { return ({
+            fontSize: size || 16,
+        }); },
+    };
+}, { theming: theme_1.theming, name: "font" });
+exports.useStyles = useStyles;
 //# sourceMappingURL=style.js.map

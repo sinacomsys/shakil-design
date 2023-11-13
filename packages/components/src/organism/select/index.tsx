@@ -19,7 +19,6 @@ const Select = <T extends Record<string, unknown> = Default>({
   onChange,
   onClear,
   disabled,
-  unit = "viewport",
   allowClear,
   AddonAfter,
   addonAfterClassName,
@@ -41,6 +40,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   hasSearch = true,
   onMouseEnter,
   onMouseLeave,
+  testid,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
@@ -159,7 +159,6 @@ const Select = <T extends Record<string, unknown> = Default>({
           ...style,
         }}
         className={classes["textInput"]}
-        unit={unit}
         placeholder={placeholder}
         allowClear={allowClear}
         AddonAfter={<FleshIcon isVisible={isVisible} />}
@@ -174,6 +173,7 @@ const Select = <T extends Record<string, unknown> = Default>({
                 {...attributes.popper}
               >
                 <div
+                  data-testid={testid?.overlay}
                   style={{ width, ...popupStyles }}
                   className={classnames(popupClassName, classes["overlay"])}
                 >
@@ -182,7 +182,6 @@ const Select = <T extends Record<string, unknown> = Default>({
                       <TextInput
                         value={searchValue}
                         placeholder="Search"
-                        unit="pixel"
                         AddonAfter={
                           <BaseIcon
                             color={"#d1d1d1"}

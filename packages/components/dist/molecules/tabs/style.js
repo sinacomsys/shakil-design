@@ -7,19 +7,24 @@ var utils_1 = require("@shakil-design/utils");
 exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     var _a, _b, _c;
     return {
+        "no-content": {
+            height: "100%",
+        },
         tabs: {
             display: "flex",
             flexDirection: "column",
             height: "100%",
+            borderRadius: 20,
+            overflow: "hidden",
         },
         tabsTitle: {
-            width: 131,
+            width: 130,
             height: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
         },
-        tabsList: {
+        "tabs-nav-list": {
             display: "flex",
             height: "".concat((0, utils_1.pxToVh)(42), "vh"),
             justifyContent: "space-between",
@@ -67,26 +72,34 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
                 cursor: "pointer",
             },
         },
-        tabActive: {
+        "tab-pane-close": {
+            width: 16,
+        },
+        "active-tab-pane": {
             backgroundColor: (_c = theme.tab) === null || _c === void 0 ? void 0 : _c.selectedTab,
         },
-        tabsTitleWrapper: {
+        "tab-pane-title": {
             width: "calc(100% - 16px)",
             padding: "0px 8px",
         },
-        tabsContentContainer: {
+        "tabs-content-holder": {
             overflow: "auto",
             backgroundColor: "white",
-            borderBottomLeftRadius: "1.25rem",
-            borderBottomRightRadius: "1.25rem",
             width: "100%",
             position: "relative",
             flex: 1,
         },
-        tabsContainer: {
+        "tab-content": {
+            height: "100%",
+            "&--active": {
+                display: "block",
+            },
+            "&--not-active": {
+                display: "none",
+            },
+        },
+        "tabs-nav-wrap": {
             display: "flex",
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
             overflow: "hidden",
             height: "".concat((0, utils_1.pxToVh)(42), "vh"),
         },

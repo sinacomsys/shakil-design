@@ -58,7 +58,6 @@ var reactjs_view_core_1 = require("reactjs-view-core");
 var style_1 = require("./style");
 var TextInputState_1 = __importDefault(require("./TextInputState"));
 var style_2 = require("../../atoms/text/style");
-var utils_1 = require("@shakil-design/utils");
 var atoms_1 = require("../../atoms");
 var react_1 = require("react");
 /**
@@ -89,9 +88,9 @@ function isEventComposing(nativeEvent) {
     return nativeEvent.isComposing || nativeEvent.keyCode === 229;
 }
 var TextInput = React.forwardRef(function (_a, forwardedRef) {
-    var _b = _a.autoCapitalize, autoCapitalize = _b === void 0 ? "sentences" : _b, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _c = _a.autoCorrect, autoCorrect = _c === void 0 ? true : _c, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _d = _a.editable, editable = _d === void 0 ? true : _d, _f = _a.keyboardType, keyboardType = _f === void 0 ? "default" : _f, _g = _a.multiline, multiline = _g === void 0 ? false : _g, _h = _a.numberOfLines, numberOfLines = _h === void 0 ? 1 : _h, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, returnKeyType = _a.returnKeyType, _j = _a.secureTextEntry, secureTextEntry = _j === void 0 ? false : _j, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, testID = _a.testID, disabled = _a.disabled, theme = _a.theme, _k = _a.unit, unit = _k === void 0 ? "viewport" : _k, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "editable", "keyboardType", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "returnKeyType", "secureTextEntry", "selection", "selectTextOnFocus", "spellCheck", "className", "testID", "disabled", "theme", "unit", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear"]);
+    var _b = _a.autoCapitalize, autoCapitalize = _b === void 0 ? "sentences" : _b, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _c = _a.autoCorrect, autoCorrect = _c === void 0 ? true : _c, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _d = _a.editable, editable = _d === void 0 ? true : _d, _f = _a.keyboardType, keyboardType = _f === void 0 ? "default" : _f, _g = _a.multiline, multiline = _g === void 0 ? false : _g, _h = _a.numberOfLines, numberOfLines = _h === void 0 ? 1 : _h, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, returnKeyType = _a.returnKeyType, _j = _a.secureTextEntry, secureTextEntry = _j === void 0 ? false : _j, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, testID = _a.testID, disabled = _a.disabled, theme = _a.theme, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, wrapperClassName = _a.wrapperClassName, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "editable", "keyboardType", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "returnKeyType", "secureTextEntry", "selection", "selectTextOnFocus", "spellCheck", "className", "testID", "disabled", "theme", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear", "wrapperClassName"]);
     var classes = (0, style_1.useStyles)();
-    var _l = (0, react_1.useState)(false), isHover = _l[0], setIsHover = _l[1];
+    var _k = (0, react_1.useState)(false), isHover = _k[0], setIsHover = _k[1];
     var type;
     var inputMode;
     switch (keyboardType) {
@@ -277,30 +276,22 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
     // @ts-ignore
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
-    // supportedProps.style = style;
     supportedProps.type = (multiline ? undefined : type);
     supportedProps.inputMode = inputMode;
     var setRef = (0, reactjs_view_core_1.composeRef)(hostRef, imperativeRef, forwardedRef);
     var themes = (0, style_2.useFonts)();
-    var _height = unit === "viewport" ? (0, utils_1.pxToVhString)(32) : 32;
-    var _borderRadius = unit === "viewport" ? (0, utils_1.pxToVhString)(7) : 7;
-    var _paddingBlock = unit === "viewport" ? (0, utils_1.pxToVhString)(8) : 8;
-    var _paddingInline = unit === "viewport" ? (0, utils_1.pxToVhString)(10) : 10;
-    var _fontSize = unit === "viewport" ? (0, utils_1.pxToVhString)(14) : 14;
-    var _clearIconSize = unit === "viewport" ? (0, utils_1.pxToVh)(9) : 9;
     var _value = value === null || value === undefined ? "" : value;
     var _clearIcon = typeof allowClear === "object"
         ? allowClear
-        : typeof allowClear === "boolean" && ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: onClear, wrapperStyle: {
-                cursor: "pointer",
-                visibility: isHover && _value ? "visible" : "hidden",
-            }, name: "Every-Boxes-_-Cross-Icon", unit: unit, size: { height: _clearIconSize, width: _clearIconSize } }, void 0, false, { fileName: _jsxFileName, lineNumber: 363, columnNumber: 47 }, _this));
+        : typeof allowClear === "boolean" && ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: isHover && _value
+                ? classes["clear--visible"]
+                : classes["clear--hidden"], onClick: onClear, name: "Every-Boxes-_-Cross-Icon", size: { height: 12, width: 12 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 355, columnNumber: 47 }, _this));
     var addOnAfterIcon = isHover && _value && allowClear
         ? _clearIcon
         : AddonAfter
             ? AddonAfter
             : null;
-    return multiline ? ((0, jsx_dev_runtime_1.jsxDEV)("textarea", __assign({ ref: setRef }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 383, columnNumber: 25 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, className: classes["inputWrapper"], style: wrapperStyle }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, supportedProps, { value: _value, className: (0, classnames_1.default)(classes["textInput"], disabled && classes.disabled, themes[theme || "Regular"], className), ref: setRef, type: rest.type, disabled: disabled, style: __assign({ height: _height, borderRadius: _borderRadius, paddingInline: _paddingInline, paddingBlock: _paddingBlock, fontSize: _fontSize }, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 395, columnNumber: 9 }, _this), addonBefore ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 416, columnNumber: 25 }, _this)) : null, addOnAfterIcon ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 428, columnNumber: 28 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 388, columnNumber: 10 }, _this));
+    return multiline ? ((0, jsx_dev_runtime_1.jsxDEV)("textarea", __assign({ ref: setRef }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 375, columnNumber: 25 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: onMouseEnter, onMouseLeave: onMouseLeave, className: (0, classnames_1.default)(classes["inputWrapper"], wrapperClassName && wrapperClassName), style: wrapperStyle }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, supportedProps, { value: _value, className: (0, classnames_1.default)(classes["textInput"], disabled && classes.disabled, themes[theme || "Regular"], className), ref: setRef, type: rest.type, disabled: disabled, style: __assign({}, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 390, columnNumber: 9 }, _this), addonBefore ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 406, columnNumber: 25 }, _this)) : null, addOnAfterIcon ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 418, columnNumber: 28 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 380, columnNumber: 10 }, _this));
 });
 exports.TextInput = TextInput;
 TextInput.displayName = "TextInput";

@@ -37,18 +37,28 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         container: {
             position: "relative",
         },
-        outterCircle: {
+        "outter-circle": {
             borderRadius: "50%",
             backgroundColor: "white",
             zIndex: 2,
             position: "relative",
+            width: 16,
+            height: 16,
+            border: function (props) {
+                return "1px solid ".concat(props === null || props === void 0 ? void 0 : props.borderColor);
+            },
         },
-        innerCircle: {
+        "inner-circle": {
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             borderRadius: "50%",
+            width: 10,
+            height: 10,
+            backgroundColor: function (props) {
+                return props === null || props === void 0 ? void 0 : props.backgroundColor;
+            },
         },
     };
 }, { theming: theme_1.theming, name: "internal-radio" });

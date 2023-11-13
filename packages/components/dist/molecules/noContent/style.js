@@ -13,6 +13,9 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function () {
             alignItems: "center",
             flexDirection: "column",
         },
+        icon: {
+            marginBottom: 10,
+        },
     };
 }, { theming: theme_1.theming, name: "no-content" });
 //# sourceMappingURL=style.js.map

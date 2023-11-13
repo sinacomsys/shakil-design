@@ -1,5 +1,3 @@
-import FiraBold from "@shakil-design/asset/src/fonts/FiraGO-Bold.ttf";
-export { FiraBold };
 export declare const fontWeights: {
     light: number;
     regular: number;
@@ -145,4 +143,9 @@ export declare const fonts: {
     };
 };
 declare const useFonts: () => Record<"bold" | "BoldItalic" | "Book" | "BookItalic" | "Eight" | "EightItalic" | "Four" | "FourItalic" | "Hair" | "HairItalic" | "HeavyItalic" | "Italic" | "Light" | "LightItalic" | "Medium" | "MediumItalic" | "Regular" | "SemiBold" | "SemiBoldItalic" | "Thin" | "ThinItalic" | "Two" | "TwoItalic" | "UltraLight", string>;
-export { useFonts };
+declare const useStyles: (data?: (string & {
+    theme?: import("../../theme/context").ColorsType | undefined;
+}) | (number & {
+    theme?: import("../../theme/context").ColorsType | undefined;
+}) | undefined) => import("jss").Classes<"text">;
+export { useFonts, useStyles };

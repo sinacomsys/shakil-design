@@ -1,3 +1,3 @@
 export declare const useStyles: (data?: {
     theme?: import("../../../theme/context").ColorsType | undefined;
-} | undefined) => import("jss").Classes<"search" | "selectAll">;
+} | undefined) => import("jss").Classes<"search" | "@font-face" | "filter-icon-wrapper" | "selectAll">;

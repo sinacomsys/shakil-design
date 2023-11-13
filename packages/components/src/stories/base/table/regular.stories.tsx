@@ -19,7 +19,7 @@ const mockData = [...new Array(1000)].map((_, index) => {
     city: faker.address.cityName(),
     country: faker.address.country(),
     address: "test address",
-    id: `${index}id`,
+    id: `${index}`,
   };
 });
 

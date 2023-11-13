@@ -21,6 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CheckBox = void 0;
@@ -30,14 +33,15 @@ var text_1 = require("../../atoms/text");
 var indeterminate_1 = require("./indeterminate");
 var customSquare_1 = require("./customSquare");
 var style_1 = require("./style");
-var utils_1 = require("@shakil-design/utils");
+var classnames_1 = __importDefault(require("classnames"));
 var CheckBox = function (_a) {
-    var checked = _a.checked, value = _a.value, onChange = _a.onChange, children = _a.children, name = _a.name, indeterminate = _a.indeterminate, _b = _a.unit, unit = _b === void 0 ? "pixel" : _b, rest = __rest(_a, ["checked", "value", "onChange", "children", "name", "indeterminate", "unit"]);
+    var checked = _a.checked, value = _a.value, onChange = _a.onChange, children = _a.children, name = _a.name, indeterminate = _a.indeterminate, rest = __rest(_a, ["checked", "value", "onChange", "children", "name", "indeterminate"]);
     var classes = (0, style_1.useStyles)();
     var onChangeHandler = function (e) {
         onChange === null || onChange === void 0 ? void 0 : onChange(e);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("label", __assign({ style: { display: "inline-flex" } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["checkBoxWrapper"], style: __assign({}, (typeof children !== "undefined" && { marginInlineEnd: 4 })) }, { children: [indeterminate ? ((0, jsx_dev_runtime_1.jsxDEV)(indeterminate_1.Indeterminate, { unit: unit }, void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 27 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)(customSquare_1.CustomSquare, { checked: checked, unit: unit }, void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 14 }, _this)), (0, jsx_dev_runtime_1.jsxDEV)("input", __assign({ className: classes["hiddenInput"], type: "checkbox", value: value, name: name, checked: checked, onChange: onChangeHandler }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 45, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 7 }, _this), typeof children === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: unit === "viewport" ? (0, utils_1.pxToVhString)(16) : 16 }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 40 }, _this)) : (children)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 31, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("label", __assign({ className: classes["label"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["check-box-wrapper"], typeof children !== "undefined" &&
+                    "".concat(classes["check-box-wrapper"], "--with-label")) }, { children: [indeterminate ? (0, jsx_dev_runtime_1.jsxDEV)(indeterminate_1.Indeterminate, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 25 }, _this) : (0, jsx_dev_runtime_1.jsxDEV)(customSquare_1.CustomSquare, { checked: checked }, void 0, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 45 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("input", __assign({ className: classes["hiddenInput"], type: "checkbox", value: value, name: name, checked: checked, onChange: onChangeHandler }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 30, columnNumber: 7 }, _this), typeof children === "string" ? (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, { children: children }, void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 38 }, _this) : children] }), void 0, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 11 }, _this));
 };
 exports.CheckBox = CheckBox;
 //# sourceMappingURL=index.js.map

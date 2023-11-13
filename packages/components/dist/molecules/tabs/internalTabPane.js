@@ -17,7 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InternalTabPane = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tabs/internalTabPane.tsx";
-var utils_1 = require("@shakil-design/utils");
 var classnames_1 = __importDefault(require("classnames"));
 var atoms_1 = require("../../atoms");
 var theme_1 = require("../../theme");
@@ -29,12 +28,10 @@ function InternalTabPane(_a) {
     return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: function (e) {
             e.preventDefault();
             onClick(id);
-        }, className: (0, classnames_1.default)(classes["tab"], isActive && classes["tabActive"]) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["tabsTitleWrapper"] }, { children: typeof renderTitle === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, theme: "Regular", color: textColor }, { children: renderTitle }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 45 }, this)) : typeof renderTitle === "function" ? (renderTitle({ id: id, isActive: isActive })) : null }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 7 }, this), closable && ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: {
-                    width: 16,
-                }, color: "#575757", name: "Table-_-Cross-Icon-for-erasing-all-of-filters", size: { height: (0, utils_1.pxToVh)(10), width: (0, utils_1.pxToVh)(10) }, unit: "viewport", onClick: function (event) {
+        }, className: (0, classnames_1.default)(classes["tab"], isActive && classes["active-tab-pane"]) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["tab-pane-title"] }, { children: typeof renderTitle === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, theme: "Regular", color: textColor }, { children: renderTitle }), void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 45 }, this)) : typeof renderTitle === "function" ? (renderTitle({ id: id, isActive: isActive })) : null }), void 0, false, { fileName: _jsxFileName, lineNumber: 40, columnNumber: 7 }, this), closable && ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: classes["tab-pane-close"], color: "#575757", name: "Table-_-Cross-Icon-for-erasing-all-of-filters", size: { height: 10, width: 10 }, onClick: function (event) {
                     event.stopPropagation();
                     onClose === null || onClose === void 0 ? void 0 : onClose(id);
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 21 }, this))] }), id, true, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 11 }, this));
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 21 }, this))] }), id, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 11 }, this));
 }
 exports.InternalTabPane = InternalTabPane;
 //# sourceMappingURL=internalTabPane.js.map

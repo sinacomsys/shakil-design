@@ -26,10 +26,11 @@ const Header = <T extends object>({
     isAllRowsChecked,
     isOnCheckedRowsAvailable,
     isOverflowed,
+    testid,
   } = useContext(TableContext);
 
   return (
-    <tr>
+    <tr data-testid={testid?.header}>
       <th>
         <div className={classes["filter-icon-wrapper"]}>
           {isOnCheckedRowsAvailable ? (
@@ -47,6 +48,7 @@ const Header = <T extends object>({
               filterIcon
             ) : (
               <BaseIcon
+                data-testid={testid?.filterBarIcon}
                 color={filterIconColor}
                 onClick={onToggleSearchBar}
                 name="Table-_-Filter"

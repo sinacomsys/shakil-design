@@ -13,6 +13,9 @@ export const useStyles = createUseStyles(
         alignItems: "center",
         flexDirection: "column",
       },
+      icon: {
+        marginBottom: 10,
+      },
     };
   },
   { theming, name: "no-content" },

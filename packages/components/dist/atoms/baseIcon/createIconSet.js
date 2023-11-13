@@ -14,22 +14,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createIcomoonIconSet = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/baseIcon/createIconSet.tsx";
+var react_1 = require("react");
 var usehooks_ts_1 = require("usehooks-ts");
+var utils_1 = require("@shakil-design/utils");
+var context_1 = require("../../theme/context");
 function createIcomoonIconSet(glyphMap) {
     var _this = this;
     var Icon = function (props) {
-        var _a = props.size, height = _a.height, width = _a.width;
+        var _a;
+        var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
+        var _b = props.size, height = _b.height, width = _b.width;
         var windowHeight = (0, usehooks_ts_1.useWindowSize)().height;
         var vh = windowHeight / 100;
+        var _unit = (_a = props.unit) !== null && _a !== void 0 ? _a : unit;
         var realWidth = null;
         var realHeight = null;
-        if (props.unit === "pixel") {
+        if (_unit === "pixel") {
             realWidth = width;
             realHeight = height;
         }
-        else if (props.unit === "viewport") {
-            realWidth = width * vh;
-            realHeight = height * vh;
+        else if (_unit === "viewport") {
+            realWidth = (0, utils_1.pxToVh)(width) * vh;
+            realHeight = (0, utils_1.pxToVh)(height) * vh;
         }
         var viewBox = "0 0 1024 1024";
         if (realWidth && realHeight && realWidth > realHeight) {
@@ -59,8 +65,8 @@ function createIcomoonIconSet(glyphMap) {
             viewBox: viewBox, fill: "none", width: realWidth || 0, height: realHeight || 0 }, { children: (glyph === null || glyph === void 0 ? void 0 : glyph.icon.paths).map(function (d, index) {
                 return ((0, jsx_dev_runtime_1.jsxDEV)("path", __assign({ d: d }, glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index], { fill: Array.isArray(props.color)
                         ? props.color[index]
-                        : props.color || (glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index].fill) }), index, false, { fileName: _jsxFileName, lineNumber: 122, columnNumber: 19 }, _this));
-            }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 113, columnNumber: 13 }, _this));
+                        : props.color || (glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index].fill) }), index, false, { fileName: _jsxFileName, lineNumber: 126, columnNumber: 19 }, _this));
+            }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 117, columnNumber: 13 }, _this));
     };
     return Icon;
 }

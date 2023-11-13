@@ -5,11 +5,14 @@ var react_jss_1 = require("react-jss");
 var theme_1 = require("../../theme");
 var useStyles = (0, react_jss_1.createUseStyles)(function () {
     return {
-        checkBoxWrapper: {
+        "check-box-wrapper": {
             position: "relative",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            "&--with-label": {
+                marginInlineEnd: 4,
+            },
         },
         hiddenInput: {
             position: "absolute",
@@ -19,6 +22,9 @@ var useStyles = (0, react_jss_1.createUseStyles)(function () {
             margin: 0,
             opacity: 0,
             cursor: "pointer",
+        },
+        label: {
+            display: "inline-flex",
         },
     };
 }, { theming: theme_1.theming, name: "checkbox" });

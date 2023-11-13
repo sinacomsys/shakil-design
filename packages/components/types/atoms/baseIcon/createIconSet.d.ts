@@ -69,5 +69,5 @@ export declare function createIcomoonIconSet(glyphMap: CreateIcomoonIconSetProps
     name?: string | undefined;
     color?: string | string[] | undefined;
     style?: CSSProperties | undefined;
-    unit: Unit;
+    unit?: Unit | undefined;
 }) => import("react/jsx-dev-runtime").JSX.Element;

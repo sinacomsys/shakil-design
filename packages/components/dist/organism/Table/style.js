@@ -30,7 +30,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         left: "50%",
         transform: "translate(-50%, -50%)",
     },
-    body: {
+    wrapper: {
         display: "flex",
         flexDirection: "column",
         height: "100%",
@@ -39,6 +39,10 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         width: "100%",
         overflowY: "auto",
         position: "relative",
+    },
+    "table-body": {
+        flex: 1,
+        overflowY: "auto",
     },
 }, { theming: theme_1.theming, name: "table" });
 //# sourceMappingURL=style.js.map

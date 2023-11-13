@@ -4,10 +4,14 @@ exports.useStyle = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../../../theme");
 exports.useStyle = (0, react_jss_1.createUseStyles)({
-    expandIcon: {
+    expandIconWrap: {
         marginInlineStart: 14,
         display: "flex",
         flexDirection: "column",
+        "&--more-choices": {
+            marginBottom: 5,
+            justifyContent: "center",
+        },
     },
     manualInput: { display: "flex", marginLeft: 75, marginTop: 20 },
     matrixContainer: {

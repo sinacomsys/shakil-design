@@ -49,7 +49,9 @@ export const Panel = () => {
       </div>
 
       <div className={classes["manualInput"]}>
-        <ManualImportDate {...{ goToday, onSelectDate, onSetCurrentDate }} />
+        <div>
+          <ManualImportDate {...{ goToday, onSelectDate, onSetCurrentDate }} />
+        </div>
         <div className={classes["expandIconWrap"]}>
           <BaseIcon
             wrapperClassName={`${classes["expandIconWrap"]}--more-choices`}

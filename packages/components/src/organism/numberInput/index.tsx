@@ -15,7 +15,6 @@ const NumberInput = ({
   wrapperStyle,
   onDecrease,
   onIncrease,
-  unit = "viewport",
   wrapperClassName,
   ...rest
 }: NumberInput) => {
@@ -29,7 +28,6 @@ const NumberInput = ({
     >
       <TextInput
         {...rest}
-        unit={unit}
         className={classes["input"]}
         style={{
           ...rest.style,

@@ -35,11 +35,13 @@ const SearchBar = <T extends Record<string, unknown>>({
     isAllRowsChecked,
     isOnCheckedRowsAvailable,
     isOverflowed,
+    testid,
   } = useContext(TableContext);
   const classes = useStyles({ isSearchVisible });
 
   return (
     <tr
+      data-testid={testid?.filterBar}
       className={classNames(
         classes["wrapper"],
         searchBarClassName && searchBarClassName,
@@ -64,6 +66,7 @@ const SearchBar = <T extends Record<string, unknown>>({
               clearFilterIcon
             ) : (
               <BaseIcon
+                data-testid={testid?.clearFiltersIcon}
                 wrapperStyle={{ cursor: "pointer" }}
                 onClick={onResetFilters}
                 color={clearFilterIconColor}

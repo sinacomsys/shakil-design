@@ -1,4 +1,5 @@
 import React from "react";
+import { Unit } from "../types";
 export declare const Colors: ColorsType;
 type ColorsType = {
     primary: string;
@@ -40,6 +41,8 @@ type ColorsType = {
         rowHover: string;
         selectedRow: string;
         selectedRowBookmark: string;
+        clearFilterIcon: string;
+        rowBorder: string;
     };
     select?: {
         hover: string;
@@ -65,6 +68,9 @@ type ColorsType = {
     };
     noContent?: string;
 };
+export declare const UnitContext: React.Context<{
+    unit?: Unit | undefined;
+}>;
 declare const theming: import("theming").Theming<ColorsType>;
 declare const ThemeProvider: React.ComponentClass<import("theming").ThemeProviderProps<ColorsType>, any> | React.FunctionComponent<import("theming").ThemeProviderProps<ColorsType>>, rest: {
     context: React.Context<ColorsType>;
@@ -75,9 +81,10 @@ declare const ThemeProvider: React.ComponentClass<import("theming").ThemeProvide
     }>(comp: InnerComponent) => React.ComponentType<OuterProps>;
     useTheme: <CustomTheme = ColorsType>() => CustomTheme;
 };
-declare const ShakilDesignThemeProvider: ({ children, colors, }: {
+declare const ShakilDesignThemeProvider: ({ children, colors, unit, }: {
     children: React.ReactNode;
     colors: ColorsType;
+    unit?: Unit | undefined;
 }) => import("react/jsx-dev-runtime").JSX.Element;
 export type { ColorsType };
 export { ShakilDesignThemeProvider, rest, ThemeProvider, theming };

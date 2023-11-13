@@ -6,7 +6,7 @@ import { ColumnType } from "../column";
 import { TableContext } from "../context";
 import { Row } from "../row";
 
-interface RowsProps<T> {
+export interface RowsProps<T> {
   rowData: T;
   data: T[];
   columns: ColumnType<T>[];
@@ -49,6 +49,9 @@ const Rows = <T extends Record<string, unknown>>({
 
   return (
     <Row
+      rowData={rowData}
+      rowKey={rowKey}
+      rowIndex={rowIndex}
       isOnCheckedRowsAvailable={isOnCheckedRowsAvailable}
       isSelected={Boolean(
         rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey],

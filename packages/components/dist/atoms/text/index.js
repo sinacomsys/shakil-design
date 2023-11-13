@@ -60,6 +60,7 @@ Object.defineProperty(exports, "fonts", { enumerable: true, get: function () { r
 var Text = React.memo(React.forwardRef(function (_a, ref) {
     var _b = _a.theme, theme = _b === void 0 ? "Regular" : _b, className = _a.className, color = _a.color, style = _a.style, size = _a.size, weight = _a.weight, variant = _a.variant, lineHeight = _a.lineHeight, rest = __rest(_a, ["theme", "className", "color", "style", "size", "weight", "variant", "lineHeight"]);
     var fonts = (0, style_1.useFonts)();
+    var classes = (0, style_1.useStyles)(size);
     var fontWeight = typeof weight === "string" ? style_1.fontWeights[weight] : weight;
     var setVariant = function () {
         if (typeof size !== "number" && (size === null || size === void 0 ? void 0 : size.match(/h(1|2|3|4|5|6)/g))) {
@@ -67,7 +68,7 @@ var Text = React.memo(React.forwardRef(function (_a, ref) {
         }
         return "p";
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className), style: __assign({ color: color, fontSize: size, fontWeight: fontWeight, lineHeight: lineHeight }, style) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 40, columnNumber: 15 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className, classes.text), style: __assign({ color: color, fontWeight: fontWeight, lineHeight: lineHeight }, style) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 15 }, _this));
 }));
 exports.Text = Text;
 //# sourceMappingURL=index.js.map

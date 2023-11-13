@@ -26,20 +26,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NumberInput = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/numberInput/index.tsx";
-var utils_1 = require("@shakil-design/utils");
 var atoms_1 = require("../../atoms");
 var molecules_1 = require("../../molecules");
 var theme_1 = require("../../theme");
 var style_1 = require("./style");
 var useTheme = theme_1.theming.useTheme;
 var NumberInput = function (_a) {
-    var wrapperStyle = _a.wrapperStyle, onDecrease = _a.onDecrease, onIncrease = _a.onIncrease, _b = _a.unit, unit = _b === void 0 ? "viewport" : _b, rest = __rest(_a, ["wrapperStyle", "onDecrease", "onIncrease", "unit"]);
+    var wrapperStyle = _a.wrapperStyle, onDecrease = _a.onDecrease, onIncrease = _a.onIncrease, wrapperClassName = _a.wrapperClassName, rest = __rest(_a, ["wrapperStyle", "onDecrease", "onIncrease", "wrapperClassName"]);
     var classes = (0, style_1.useStyles)();
     var disableField = useTheme().disableField;
-    var iconWidth = unit === "viewport" ? (0, utils_1.pxToVh)(12) : 12;
-    var iconHeight = unit === "viewport" ? (0, utils_1.pxToVh)(7) : 7;
-    var fontSize = unit === "viewport" ? (0, utils_1.pxToVhString)(14) : 14;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: __assign({ position: "relative" }, wrapperStyle) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(molecules_1.TextInput, __assign({}, rest, { unit: unit, className: classes["input"], style: __assign({ paddingInline: 24, textAlign: "center", fontSize: fontSize }, rest.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { name: "Amount-Boxes_Decrease", size: { height: iconHeight, width: iconWidth }, unit: unit, wrapperClassName: classes["arrowDown"], color: rest.disabled ? disableField : "#575757", onClick: onDecrease }, void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: onIncrease, color: rest.disabled ? disableField : "#575757", name: "Amount-Boxes_Increase", size: { height: iconHeight, width: iconWidth }, unit: unit, wrapperClassName: classes["arrowUp"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 26, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: wrapperClassName && wrapperClassName, style: __assign({ position: "relative" }, wrapperStyle) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(molecules_1.TextInput, __assign({}, rest, { className: classes["input"], style: __assign({}, rest.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { name: "Amount-Boxes_Decrease", size: { height: 7, width: 7 }, wrapperClassName: classes["arrowDown"], color: rest.disabled ? disableField : "#575757", onClick: onDecrease }, void 0, false, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: onIncrease, color: rest.disabled ? disableField : "#575757", name: "Amount-Boxes_Increase", size: { height: 7, width: 7 }, wrapperClassName: classes["arrowUp"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 }, _this));
 };
 exports.NumberInput = NumberInput;
 //# sourceMappingURL=index.js.map
