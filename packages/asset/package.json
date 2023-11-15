@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/asset",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "files": [
     "src"
   ],
@@ -12,5 +12,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "fc413ca77d07c53c379184c47f0dee62c390030b"
+  "gitHead": "5ba3852b380d0b840c12b8389e4fddcc4dbb21d0"
 }
