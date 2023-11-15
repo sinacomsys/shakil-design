@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { VirtualItem } from "react-virtual";
+import { VirtualItem } from "@tanstack/react-virtual";
 import { TableProps } from "..";
 interface TableBodyProps<T extends Record<string, any>> extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
     virtualPaddingTop: number;

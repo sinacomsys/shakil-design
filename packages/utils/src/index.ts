@@ -5,3 +5,4 @@ export * from "./useHorizontalScroll";
 export * from "./useOnclickOutsiede";
 export * from "./useHover";
 export * from "./createTreeFromFlatArray";
+export * from "./useWindowSize";

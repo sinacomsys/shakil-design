@@ -13,6 +13,12 @@ module.exports = {
     builder: "@storybook/builder-webpack5",
   },
   webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      use: {
+        loader: "ts-loader",
+      },
+    });
     return config;
   },
 };

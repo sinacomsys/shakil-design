@@ -21,4 +21,5 @@ __exportStar(require("./useHorizontalScroll"), exports);
 __exportStar(require("./useOnclickOutsiede"), exports);
 __exportStar(require("./useHover"), exports);
 __exportStar(require("./createTreeFromFlatArray"), exports);
+__exportStar(require("./useWindowSize"), exports);
 //# sourceMappingURL=index.js.map

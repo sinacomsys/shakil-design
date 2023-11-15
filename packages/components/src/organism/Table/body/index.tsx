@@ -1,4 +1,4 @@
-import { VirtualItem } from "react-virtual";
+import { VirtualItem } from "@tanstack/react-virtual";
 import { useStyles } from "./style";
 import { pxToVwString } from "@shakil-design/utils";
 import { Rows } from "../rowContainer";

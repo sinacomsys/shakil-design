@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import Measure from "react-measure";
-import { useVirtual } from "react-virtual";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import { ScrollView, Spinner } from "../../atoms";
 import { NoContent } from "../../molecules/noContent";
 import { useTheme } from "../../theme";
@@ -18,7 +18,7 @@ import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
 import { Unit } from "../../types";
-import { pxToVw, pxToVwString } from "@shakil-design/utils";
+import { pxToVw, pxToVwString, useWindowSize } from "@shakil-design/utils";
 import { UnitContext } from "../../theme/context";
 import { TableBody } from "./body";
 
@@ -26,6 +26,7 @@ export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
 export const SCROLL_BAR = 8;
 export const DEFAULT_ALIGN = "center";
+const ROW_HEIGHT = 32;
 
 export interface TableProps<T> extends Pick<TableContextProps, "testid"> {
   data?: T[];
@@ -74,10 +75,10 @@ const Table = <T extends Record<string, any>>({
   const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
   const [checkedRows, setCheckRows] = useState<T[]>([]);
   const { unit } = useContext(UnitContext);
-
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
   const tableContainerRef = useRef<HTMLDivElement>(null);
   const [isOverflowed, setIsOverflowed] = useState(false);
+  const { height: windowHeight } = useWindowSize();
 
   const isViewPortUnit = unit === "viewport";
 
@@ -220,17 +221,22 @@ const Table = <T extends Record<string, any>>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, checkedRows]);
 
-  const rowVirtualizer = useVirtual({
-    parentRef: tableContainerRef,
-    size: list.length,
+  const rowVirtualizer = useVirtualizer({
+    getScrollElement: () => tableContainerRef.current,
     overscan: overScan || 20,
+    count: list.length,
+    estimateSize: () => {
+      return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
+    },
   });
 
-  const { virtualItems: virtualRows, totalSize } = rowVirtualizer;
-  const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
+  const { getVirtualItems, getTotalSize } = rowVirtualizer;
+  const paddingTop =
+    getVirtualItems().length > 0 ? getVirtualItems()?.[0]?.start || 0 : 0;
   const paddingBottom =
-    virtualRows.length > 0
-      ? totalSize - (virtualRows?.[virtualRows.length - 1]?.end || 0)
+    getVirtualItems().length > 0
+      ? getTotalSize() -
+        (getVirtualItems()?.[getVirtualItems().length - 1]?.end || 0)
       : 0;
 
   const isIndeterminate =
@@ -274,80 +280,76 @@ const Table = <T extends Record<string, any>>({
                 testid,
               }}
             >
-              {boundsWidth ? (
-                <div className={classes["wrapper"]}>
-                  <table className={classes["table"]} role={"table"}>
-                    <colgroup>
-                      <col
-                        style={{
-                          width: _searchIconWidth,
-                        }}
-                      />
-                      {coloums.map(({ width, dataIndex }) => {
-                        const _width =
-                          isViewPortUnit && width ? pxToVwString(width) : width;
-                        return (
-                          <col
-                            key={dataIndex as string}
-                            style={{ width: _width ? _width : colWidth }}
-                          />
-                        );
-                      })}
-                      {isOverflowed ? (
-                        <col style={{ width: SCROLL_BAR }} />
-                      ) : null}
-                    </colgroup>
-                    <thead
-                      className={headerClassName}
+              <div className={classes["wrapper"]}>
+                <table className={classes["table"]} role={"table"}>
+                  <colgroup>
+                    <col
                       style={{
-                        backgroundColor: header,
-                        ...headerStyle,
+                        width: _searchIconWidth,
                       }}
-                    >
-                      <Header
-                        filterIcon={filterIcon}
-                        isSearchVisible={isSearchVisible}
-                        onToggleSearchBar={
-                          isSearchAvailable && onToggleSearchBar
-                        }
-                        columns={coloums}
-                        isIndeterminate={isIndeterminate}
-                      />
-
-                      {isSearchAvailable ? (
-                        <SearchBar
-                          isIndeterminate={isIndeterminate}
-                          clearFilterIcon={clearFilterIcon}
-                          searchBarStyle={searchBarStyle}
-                          searchBarClassName={searchBarClassName}
-                          columns={coloums}
-                          data={data || []}
-                          isSearchVisible={isSearchVisible}
-                        />
-                      ) : null}
-                    </thead>
-                  </table>
-                  <ScrollView
-                    ref={tableContainerRef}
-                    className={classes["table-body"]}
-                  >
-                    <TableBody
-                      noContent={_noContent}
-                      searchIconWidth={_searchIconWidth}
-                      virtualPaddingBottom={paddingBottom}
-                      virtualPaddingTop={paddingTop}
-                      virtualRows={virtualRows}
-                      checkedRows={checkedRows}
-                      colWidth={colWidth}
-                      coloums={coloums}
-                      dataList={list}
-                      handleCheckRow={handleCheckRow}
-                      data={data}
-                      rowKey={rowKey}
                     />
-                  </ScrollView>
-                </div>
-              ) : null}
+                    {coloums.map(({ width, dataIndex }) => {
+                      const _width =
+                        isViewPortUnit && width ? pxToVwString(width) : width;
+                      return (
+                        <col
+                          key={dataIndex as string}
+                          style={{ width: _width ? _width : colWidth }}
+                        />
+                      );
+                    })}
+                    {isOverflowed ? (
+                      <col style={{ width: SCROLL_BAR }} />
+                    ) : null}
+                  </colgroup>
+                  <thead
+                    className={headerClassName}
+                    style={{
+                      backgroundColor: header,
+                      ...headerStyle,
+                    }}
+                  >
+                    <Header
+                      filterIcon={filterIcon}
+                      isSearchVisible={isSearchVisible}
+                      onToggleSearchBar={isSearchAvailable && onToggleSearchBar}
+                      columns={coloums}
+                      isIndeterminate={isIndeterminate}
+                    />
+
+                    {isSearchAvailable ? (
+                      <SearchBar
+                        isIndeterminate={isIndeterminate}
+                        clearFilterIcon={clearFilterIcon}
+                        searchBarStyle={searchBarStyle}
+                        searchBarClassName={searchBarClassName}
+                        columns={coloums}
+                        data={data || []}
+                        isSearchVisible={isSearchVisible}
+                      />
+                    ) : null}
+                  </thead>
+                </table>
+                <ScrollView
+                  ref={tableContainerRef}
+                  className={classes["table-body"]}
+                >
+                  <TableBody
+                    noContent={_noContent}
+                    searchIconWidth={_searchIconWidth}
+                    virtualPaddingBottom={paddingBottom}
+                    virtualPaddingTop={paddingTop}
+                    virtualRows={getVirtualItems()}
+                    checkedRows={checkedRows}
+                    colWidth={colWidth}
+                    coloums={coloums}
+                    dataList={list}
+                    handleCheckRow={handleCheckRow}
+                    data={data}
+                    rowKey={rowKey}
+                  />
+                </ScrollView>
+              </div>
             </TableContext.Provider>
           </div>
         );
