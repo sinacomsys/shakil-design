@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TableContext = void 0;
+exports.useMyTableContext = exports.TableContext = void 0;
 var react_1 = require("react");
 exports.TableContext = (0, react_1.createContext)({
     order: undefined,
@@ -14,5 +14,10 @@ exports.TableContext = (0, react_1.createContext)({
     isSelectSingleRowAvailable: false,
     isOverflowed: false,
     testid: undefined,
+    onRow: function () { return ({}); },
 });
+function useMyTableContext() {
+    return (0, react_1.useContext)(exports.TableContext);
+}
+exports.useMyTableContext = useMyTableContext;
 //# sourceMappingURL=index.js.map

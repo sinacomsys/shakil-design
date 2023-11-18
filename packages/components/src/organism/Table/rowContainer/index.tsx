@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { CheckBox } from "../../../molecules/checkbox";
 import { useTheme } from "../../../theme";
 import { Cell } from "../cell";
 import { ColumnType } from "../column";
-import { TableContext } from "../context";
+import { useMyTableContext } from "../context";
 import { Row } from "../row";
 
 export interface RowsProps<T> {
@@ -31,7 +30,7 @@ const Rows = <T extends Record<string, unknown>>({
     onSelectRow,
     isOnCheckedRowsAvailable,
     isSelectSingleRowAvailable,
-  } = useContext(TableContext);
+  } = useMyTableContext();
   const _selectedRow = selectedRow as T;
 
   const isChecked = checkedRows.find(

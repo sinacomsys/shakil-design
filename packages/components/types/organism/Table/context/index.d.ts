@@ -1,7 +1,7 @@
 /// <reference types="react" />
 export type Order = undefined | "ascending" | "descending";
 export type OrderBy = undefined | string | number | symbol;
-export interface TableContextProps {
+export interface TableContextProps<T> {
     order: Order;
     orderBy: OrderBy;
     onOrderChange: (data: {
@@ -21,5 +21,7 @@ export interface TableContextProps {
         header?: string;
         body?: string;
     };
+    onRow?: (data: T, index?: number) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
 }
-export declare const TableContext: import("react").Context<TableContextProps>;
+export declare const TableContext: import("react").Context<TableContextProps<any>>;
+export declare function useMyTableContext<T>(): TableContextProps<T>;

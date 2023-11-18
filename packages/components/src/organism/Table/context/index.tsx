@@ -1,8 +1,8 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export type Order = undefined | "ascending" | "descending";
 export type OrderBy = undefined | string | number | symbol;
-export interface TableContextProps {
+export interface TableContextProps<T> {
   order: Order;
   orderBy: OrderBy;
   onOrderChange: (data: { dataIndex: OrderBy }) => void;
@@ -20,9 +20,13 @@ export interface TableContextProps {
     header?: string;
     body?: string;
   };
+  onRow?: (
+    data: T,
+    index?: number,
+  ) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
 }
 
-export const TableContext = createContext<TableContextProps>({
+export const TableContext = createContext<TableContextProps<any>>({
   order: undefined,
   orderBy: undefined,
   onOrderChange: () => ({}),
@@ -34,4 +38,9 @@ export const TableContext = createContext<TableContextProps>({
   isSelectSingleRowAvailable: false,
   isOverflowed: false,
   testid: undefined,
+  onRow: () => ({}),
 });
+
+export function useMyTableContext<T>() {
+  return useContext(TableContext) as TableContextProps<T>;
+}

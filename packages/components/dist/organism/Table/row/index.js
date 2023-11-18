@@ -28,8 +28,10 @@ var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/row/index.tsx";
 var react_1 = require("react");
 var style_1 = require("./style");
+var context_1 = require("../context");
 var Row = function (_a) {
     var isChecked = _a.isChecked, isOnCheckedRowsAvailable = _a.isOnCheckedRowsAvailable, isSelected = _a.isSelected, rowKey = _a.rowKey, rowIndex = _a.rowIndex, rowData = _a.rowData, rest = __rest(_a, ["isChecked", "isOnCheckedRowsAvailable", "isSelected", "rowKey", "rowIndex", "rowData"]);
+    var onRow = (0, context_1.useMyTableContext)().onRow;
     var _b = (0, react_1.useState)(false), isHoverd = _b[0], setIsHovered = _b[1];
     var classes = (0, style_1.useStyles)({
         isChecked: isChecked,
@@ -37,11 +39,15 @@ var Row = function (_a) {
         isOnCheckedRowsAvailable: isOnCheckedRowsAvailable,
         isSelected: isSelected,
     });
-    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({}, rest, { "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function () {
+    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({}, rest, onRow === null || onRow === void 0 ? void 0 : onRow(rowData, rowIndex), { "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function (e) {
+            var _a, _b;
+            (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseEnter) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(true);
-        }, onMouseLeave: function () {
+        }, onMouseLeave: function (e) {
+            var _a, _b;
+            (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseLeave) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(false);
-        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 11 }, _this));
+        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 11 }, _this));
 };
 exports.Row = Row;
 //# sourceMappingURL=index.js.map

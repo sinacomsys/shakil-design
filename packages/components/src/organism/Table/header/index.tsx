@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules/checkbox";
 import { useTheme } from "../../../theme";
 import { Column, ColumnType } from "../column";
-import { TableContext } from "../context";
+import { useMyTableContext } from "../context";
 import { useStyles } from "./style";
 interface HeaderProps<T extends object> {
   onToggleSearchBar?: () => void;
@@ -27,7 +27,7 @@ const Header = <T extends object>({
     isOnCheckedRowsAvailable,
     isOverflowed,
     testid,
-  } = useContext(TableContext);
+  } = useMyTableContext();
 
   return (
     <tr data-testid={testid?.header}>

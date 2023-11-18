@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStyles } from "./style";
 import { RowsProps } from "../rowContainer";
+import { useMyTableContext } from "../context";
 
 interface RowProps<T>
   extends React.HTMLAttributes<HTMLTableRowElement>,
@@ -22,6 +23,7 @@ const Row = <T extends Record<string, unknown>>({
   rowData,
   ...rest
 }: RowProps<T>) => {
+  const { onRow } = useMyTableContext<T>();
   const [isHoverd, setIsHovered] = useState(false);
   const classes = useStyles({
     isChecked,
@@ -33,11 +35,14 @@ const Row = <T extends Record<string, unknown>>({
   return (
     <tr
       {...rest}
+      {...onRow?.(rowData, rowIndex)}
       data-testid={rowKey ? `row-${String(rowData[rowKey])}` : rowIndex}
-      onMouseEnter={() => {
+      onMouseEnter={(e) => {
+        onRow?.(rowData, rowIndex).onMouseEnter?.(e);
         setIsHovered(true);
       }}
-      onMouseLeave={() => {
+      onMouseLeave={(e) => {
+        onRow?.(rowData, rowIndex).onMouseLeave?.(e);
         setIsHovered(false);
       }}
       className={classes["row"]}

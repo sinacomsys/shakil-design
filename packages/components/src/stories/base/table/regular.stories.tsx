@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(1000)].map((_, index) => {
+const mockData = [...new Array(10000)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),
@@ -38,7 +38,11 @@ const Template: Story<any> = () => {
         dataIndex: "address",
         title: "Acknowledge Status",
         render({ row: { address } }) {
-          return <Text size={13}>{address}</Text>;
+          return (
+            <div style={{ width: 50, height: 10, backgroundColor: "red" }}>
+              <Text size={13}>{address}</Text>
+            </div>
+          );
         },
       },
       {
@@ -75,6 +79,18 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
+        onRow={() => {
+          return {
+            onClick: (e) => {
+              // eslint-disable-next-line no-console
+              console.log(e);
+            },
+            onMouseLeave: (e) => {
+              // eslint-disable-next-line no-console
+              console.log(e);
+            },
+          };
+        }}
         rowKey="id"
         onSelectRow={() => {}}
         height={400}

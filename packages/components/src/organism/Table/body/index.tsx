@@ -5,7 +5,7 @@ import { Rows } from "../rowContainer";
 import { TableProps } from "..";
 import { UnitContext } from "../../../theme/context";
 import { useContext } from "react";
-import { TableContext } from "../context";
+import { useMyTableContext } from "../context";
 
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
@@ -36,7 +36,7 @@ const TableBody = <T extends Record<string, any>>({
 }: TableBodyProps<T>) => {
   const classes = useStyles();
   const { unit } = useContext(UnitContext);
-  const { testid } = useContext(TableContext);
+  const { testid } = useMyTableContext<T>();
 
   return (
     <>

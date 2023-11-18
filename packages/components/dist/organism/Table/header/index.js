@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Header = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/header/index.tsx";
-var react_1 = require("react");
 var atoms_1 = require("../../../atoms");
 var checkbox_1 = require("../../../molecules/checkbox");
 var theme_1 = require("../../../theme");
@@ -26,7 +25,7 @@ var Header = function (_a) {
     var onToggleSearchBar = _a.onToggleSearchBar, filterIcon = _a.filterIcon, columns = _a.columns, isIndeterminate = _a.isIndeterminate;
     var _b = (0, theme_1.useTheme)().table, _c = _b === void 0 ? {} : _b, filterIconColor = _c.filterIcon;
     var classes = (0, style_1.useStyles)();
-    var _d = (0, react_1.useContext)(context_1.TableContext), onCheckAllRows = _d.onCheckAllRows, isAllRowsChecked = _d.isAllRowsChecked, isOnCheckedRowsAvailable = _d.isOnCheckedRowsAvailable, isOverflowed = _d.isOverflowed, testid = _d.testid;
+    var _d = (0, context_1.useMyTableContext)(), onCheckAllRows = _d.onCheckAllRows, isAllRowsChecked = _d.isAllRowsChecked, isOnCheckedRowsAvailable = _d.isOnCheckedRowsAvailable, isOverflowed = _d.isOverflowed, testid = _d.testid;
     return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.header }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("th", { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["filter-icon-wrapper"] }, { children: [isOnCheckedRowsAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["selectAll"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { checked: isAllRowsChecked, onChange: onCheckAllRows, indeterminate: isIndeterminate }, void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 15 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 40 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["search"] }, { children: filterIcon ? (filterIcon) : ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { "data-testid": testid === null || testid === void 0 ? void 0 : testid.filterBarIcon, color: filterIconColor, onClick: onToggleSearchBar, name: "Table-_-Filter", size: { width: 14, height: 14 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 18 }, _this)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 9 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 7 }, _this), columns.map(function (_a) {
                 var dataIndex = _a.dataIndex, title = _a.title, sorter = _a.sorter, style = _a.style;
                 return ((0, jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 17 }, _this));

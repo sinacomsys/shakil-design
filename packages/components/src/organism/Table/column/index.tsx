@@ -1,8 +1,8 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 import { DEFAULT_ALIGN } from "..";
 import { BaseIcon, Text } from "../../../atoms";
 import { useTheme } from "../../../theme";
-import { TableContext } from "../context";
+import { useMyTableContext } from "../context";
 import { useStyles } from "./style";
 
 export interface ColumnType<T, TIndex extends keyof T = keyof T> {
@@ -38,7 +38,7 @@ const Column = <T extends object>({
   align = DEFAULT_ALIGN,
 }: ColumnProps<T>) => {
   const { table: { sortArrow } = {} } = useTheme();
-  const { onOrderChange, order, orderBy } = useContext(TableContext);
+  const { onOrderChange, order, orderBy } = useMyTableContext<T>();
   const isAscending = orderBy === dataIndex && order === "ascending";
   const isDescending = orderBy === dataIndex && order === "descending";
 

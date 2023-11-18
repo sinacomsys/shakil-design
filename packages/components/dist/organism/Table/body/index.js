@@ -25,7 +25,7 @@ var TableBody = function (_a) {
     var virtualPaddingTop = _a.virtualPaddingTop, virtualRows = _a.virtualRows, virtualPaddingBottom = _a.virtualPaddingBottom, noContent = _a.noContent, searchIconWidth = _a.searchIconWidth, dataList = _a.dataList, coloums = _a.coloums, rowKey = _a.rowKey, data = _a.data, checkedRows = _a.checkedRows, handleCheckRow = _a.handleCheckRow, colWidth = _a.colWidth;
     var classes = (0, style_1.useStyles)();
     var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
-    var testid = (0, react_1.useContext)(context_2.TableContext).testid;
+    var testid = (0, context_2.useMyTableContext)().testid;
     return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: virtualRows.length > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)("table", __assign({ className: classes["table"], role: "table" }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("colgroup", { children: [(0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: searchIconWidth } }, void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 13 }, _this), coloums.map(function (_a) {
                             var width = _a.width, dataIndex = _a.dataIndex;
                             var _width = unit === "viewport" && width ? (0, utils_1.pxToVwString)(width) : width;

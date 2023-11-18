@@ -17,7 +17,6 @@ import { Header } from "./header";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
-import { Unit } from "../../types";
 import { pxToVw, pxToVwString, useWindowSize } from "@shakil-design/utils";
 import { UnitContext } from "../../theme/context";
 import { TableBody } from "./body";
@@ -28,7 +27,8 @@ export const SCROLL_BAR = 8;
 export const DEFAULT_ALIGN = "center";
 const ROW_HEIGHT = 32;
 
-export interface TableProps<T> extends Pick<TableContextProps, "testid"> {
+export interface TableProps<T>
+  extends Pick<TableContextProps<T>, "testid" | "onRow"> {
   data?: T[];
   rowKey?: keyof T;
   onCheckedRows?: (value: T[]) => void;
@@ -45,7 +45,6 @@ export interface TableProps<T> extends Pick<TableContextProps, "testid"> {
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
   overScan?: number;
-  unit?: Unit;
 }
 
 const Table = <T extends Record<string, any>>({
@@ -66,6 +65,7 @@ const Table = <T extends Record<string, any>>({
   noContent,
   overScan,
   testid,
+  onRow,
 }: TableProps<T>) => {
   const { table: { header } = {} } = useTheme();
   const classes = useStyles();
@@ -221,13 +221,15 @@ const Table = <T extends Record<string, any>>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, checkedRows]);
 
+  const estimateSize = useMemo(() => {
+    return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
+  }, [windowHeight]);
+
   const rowVirtualizer = useVirtualizer({
     getScrollElement: () => tableContainerRef.current,
     overscan: overScan || 20,
     count: list.length,
-    estimateSize: () => {
-      return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
-    },
+    estimateSize: () => estimateSize,
   });
 
   const { getVirtualItems, getTotalSize } = rowVirtualizer;
@@ -278,6 +280,7 @@ const Table = <T extends Record<string, any>>({
                 isSelectSingleRowAvailable: Boolean(onSelectRow),
                 isOverflowed,
                 testid,
+                onRow,
               }}
             >
               <div className={classes["wrapper"]}>

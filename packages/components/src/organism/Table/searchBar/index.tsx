@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { DEFAULT_ALIGN, SEARCH_ICON } from "..";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules";
 import { useTheme } from "../../../theme";
 import { ColumnType } from "../column";
-import { TableContext } from "../context";
+import { useMyTableContext } from "../context";
 import { useStyles } from "./style";
 import classNames from "classnames";
 
@@ -36,7 +35,7 @@ const SearchBar = <T extends Record<string, unknown>>({
     isOnCheckedRowsAvailable,
     isOverflowed,
     testid,
-  } = useContext(TableContext);
+  } = useMyTableContext();
   const classes = useStyles({ isSearchVisible });
 
   return (

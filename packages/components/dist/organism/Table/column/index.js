@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Column = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/column/index.tsx";
-var react_1 = require("react");
 var __1 = require("..");
 var atoms_1 = require("../../../atoms");
 var theme_1 = require("../../../theme");
@@ -24,7 +23,7 @@ var style_1 = require("./style");
 var Column = function (_a) {
     var title = _a.title, dataIndex = _a.dataIndex, sorter = _a.sorter, style = _a.style, _b = _a.align, align = _b === void 0 ? __1.DEFAULT_ALIGN : _b;
     var _c = (0, theme_1.useTheme)().table, _d = _c === void 0 ? {} : _c, sortArrow = _d.sortArrow;
-    var _e = (0, react_1.useContext)(context_1.TableContext), onOrderChange = _e.onOrderChange, order = _e.order, orderBy = _e.orderBy;
+    var _e = (0, context_1.useMyTableContext)(), onOrderChange = _e.onOrderChange, order = _e.order, orderBy = _e.orderBy;
     var isAscending = orderBy === dataIndex && order === "ascending";
     var isDescending = orderBy === dataIndex && order === "descending";
     var onSort = function () {

@@ -8,6 +8,7 @@ export const useStyles = createUseStyles(
       borderCollapse: "collapse",
       "& tr,td,th": {
         padding: 0,
+        fontWeight: "unset",
       },
     },
     backDrop: {

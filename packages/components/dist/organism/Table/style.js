@@ -9,6 +9,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
         borderCollapse: "collapse",
         "& tr,td,th": {
             padding: 0,
+            fontWeight: "unset",
         },
     },
     backDrop: {
