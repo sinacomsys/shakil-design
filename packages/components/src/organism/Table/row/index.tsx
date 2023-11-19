@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useStyles } from "./style";
 import { RowsProps } from "../rowContainer";
 import { useMyTableContext } from "../context";
+import { VirtualItem } from "@tanstack/react-virtual";
 
 interface RowProps<T>
   extends React.HTMLAttributes<HTMLTableRowElement>,
@@ -12,6 +13,7 @@ interface RowProps<T>
   isSelected: boolean;
   isOnCheckedRowsAvailable: boolean;
   rowIndex: number;
+  virtualItem: VirtualItem;
 }
 
 const Row = <T extends Record<string, unknown>>({
@@ -21,6 +23,7 @@ const Row = <T extends Record<string, unknown>>({
   rowKey,
   rowIndex,
   rowData,
+  virtualItem,
   ...rest
 }: RowProps<T>) => {
   const { onRow } = useMyTableContext<T>();
@@ -46,6 +49,12 @@ const Row = <T extends Record<string, unknown>>({
         setIsHovered(false);
       }}
       className={classes["row"]}
+      style={{
+        height: `${virtualItem.size}px`,
+        transform: `translateY(${
+          virtualItem.start - rowIndex * virtualItem.size
+        }px)`,
+      }}
     />
   );
 };

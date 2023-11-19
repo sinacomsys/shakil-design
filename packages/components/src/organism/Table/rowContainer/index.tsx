@@ -1,3 +1,4 @@
+import { VirtualItem } from "@tanstack/react-virtual";
 import { CheckBox } from "../../../molecules/checkbox";
 import { useTheme } from "../../../theme";
 import { Cell } from "../cell";
@@ -13,6 +14,7 @@ export interface RowsProps<T> {
   rowKey?: keyof T;
   checkedRows: T[];
   handleCheckRow: (value: { rowId: T[keyof T] }) => void;
+  virtualItem: VirtualItem;
 }
 
 const Rows = <T extends Record<string, unknown>>({
@@ -23,6 +25,7 @@ const Rows = <T extends Record<string, unknown>>({
   rowKey,
   checkedRows,
   handleCheckRow,
+  virtualItem,
 }: RowsProps<T>) => {
   const { table: { selectedRowBookmark } = {} } = useTheme();
   const {
@@ -48,6 +51,7 @@ const Rows = <T extends Record<string, unknown>>({
 
   return (
     <Row
+      virtualItem={virtualItem}
       rowData={rowData}
       rowKey={rowKey}
       rowIndex={rowIndex}

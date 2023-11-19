@@ -1,3 +1,4 @@
+import { Virtualizer } from "@tanstack/react-virtual";
 import { createContext, useContext } from "react";
 
 export type Order = undefined | "ascending" | "descending";
@@ -24,6 +25,7 @@ export interface TableContextProps<T> {
     data: T,
     index?: number,
   ) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
+  virtualizer: Virtualizer<HTMLDivElement, Element> | undefined;
 }
 
 export const TableContext = createContext<TableContextProps<any>>({
@@ -39,6 +41,7 @@ export const TableContext = createContext<TableContextProps<any>>({
   isOverflowed: false,
   testid: undefined,
   onRow: () => ({}),
+  virtualizer: undefined,
 });
 
 export function useMyTableContext<T>() {

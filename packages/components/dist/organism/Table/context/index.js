@@ -15,6 +15,7 @@ exports.TableContext = (0, react_1.createContext)({
     isOverflowed: false,
     testid: undefined,
     onRow: function () { return ({}); },
+    virtualizer: undefined,
 });
 function useMyTableContext() {
     return (0, react_1.useContext)(exports.TableContext);

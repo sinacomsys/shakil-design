@@ -30,7 +30,7 @@ var react_1 = require("react");
 var style_1 = require("./style");
 var context_1 = require("../context");
 var Row = function (_a) {
-    var isChecked = _a.isChecked, isOnCheckedRowsAvailable = _a.isOnCheckedRowsAvailable, isSelected = _a.isSelected, rowKey = _a.rowKey, rowIndex = _a.rowIndex, rowData = _a.rowData, rest = __rest(_a, ["isChecked", "isOnCheckedRowsAvailable", "isSelected", "rowKey", "rowIndex", "rowData"]);
+    var isChecked = _a.isChecked, isOnCheckedRowsAvailable = _a.isOnCheckedRowsAvailable, isSelected = _a.isSelected, rowKey = _a.rowKey, rowIndex = _a.rowIndex, rowData = _a.rowData, virtualItem = _a.virtualItem, rest = __rest(_a, ["isChecked", "isOnCheckedRowsAvailable", "isSelected", "rowKey", "rowIndex", "rowData", "virtualItem"]);
     var onRow = (0, context_1.useMyTableContext)().onRow;
     var _b = (0, react_1.useState)(false), isHoverd = _b[0], setIsHovered = _b[1];
     var classes = (0, style_1.useStyles)({
@@ -47,7 +47,10 @@ var Row = function (_a) {
             var _a, _b;
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseLeave) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(false);
-        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 11 }, _this));
+        }, className: classes["row"], style: {
+            height: "".concat(virtualItem.size, "px"),
+            transform: "translateY(".concat(virtualItem.start - rowIndex * virtualItem.size, "px)"),
+        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, _this));
 };
 exports.Row = Row;
 //# sourceMappingURL=index.js.map

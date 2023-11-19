@@ -232,14 +232,7 @@ const Table = <T extends Record<string, any>>({
     estimateSize: () => estimateSize,
   });
 
-  const { getVirtualItems, getTotalSize } = rowVirtualizer;
-  const paddingTop =
-    getVirtualItems().length > 0 ? getVirtualItems()?.[0]?.start || 0 : 0;
-  const paddingBottom =
-    getVirtualItems().length > 0
-      ? getTotalSize() -
-        (getVirtualItems()?.[getVirtualItems().length - 1]?.end || 0)
-      : 0;
+  const { getVirtualItems } = rowVirtualizer;
 
   const isIndeterminate =
     checkedRows.length > 0 && checkedRows.length !== (data || []).length;
@@ -281,6 +274,7 @@ const Table = <T extends Record<string, any>>({
                 isOverflowed,
                 testid,
                 onRow,
+                virtualizer: rowVirtualizer,
               }}
             >
               <div className={classes["wrapper"]}>
@@ -340,8 +334,6 @@ const Table = <T extends Record<string, any>>({
                   <TableBody
                     noContent={_noContent}
                     searchIconWidth={_searchIconWidth}
-                    virtualPaddingBottom={paddingBottom}
-                    virtualPaddingTop={paddingTop}
                     virtualRows={getVirtualItems()}
                     checkedRows={checkedRows}
                     colWidth={colWidth}

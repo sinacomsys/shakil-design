@@ -21,7 +21,7 @@ var cell_1 = require("../cell");
 var context_1 = require("../context");
 var row_1 = require("../row");
 var Rows = function (_a) {
-    var rowData = _a.rowData, columns = _a.columns, data = _a.data, rowIndex = _a.index, rowKey = _a.rowKey, checkedRows = _a.checkedRows, handleCheckRow = _a.handleCheckRow;
+    var rowData = _a.rowData, columns = _a.columns, data = _a.data, rowIndex = _a.index, rowKey = _a.rowKey, checkedRows = _a.checkedRows, handleCheckRow = _a.handleCheckRow, virtualItem = _a.virtualItem;
     var _b = (0, theme_1.useTheme)().table, _c = _b === void 0 ? {} : _b, selectedRowBookmark = _c.selectedRowBookmark;
     var _d = (0, context_1.useMyTableContext)(), selectedRow = _d.selectedRow, onSelectRow = _d.onSelectRow, isOnCheckedRowsAvailable = _d.isOnCheckedRowsAvailable, isSelectSingleRowAvailable = _d.isSelectSingleRowAvailable;
     var _selectedRow = selectedRow;
@@ -34,13 +34,13 @@ var Rows = function (_a) {
             handleCheckRow({ rowId: rowData[rowKey] });
         }
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ rowData: rowData, rowKey: rowKey, rowIndex: rowIndex, isOnCheckedRowsAvailable: isOnCheckedRowsAvailable, isSelected: Boolean(rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey]), onClick: onClickRow, isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ virtualItem: virtualItem, rowData: rowData, rowKey: rowKey, rowIndex: rowIndex, isOnCheckedRowsAvailable: isOnCheckedRowsAvailable, isSelected: Boolean(rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey]), onClick: onClickRow, isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
                             position: "relative",
                             height: "100%",
                             borderInlineStart: "5px solid ".concat(selectedRowBookmark),
-                        } }, void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 79 }, _this)) : null, isOnCheckedRowsAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { paddingInlineStart: 8 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { onChange: function () {
+                        } }, void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 79 }, _this)) : null, isOnCheckedRowsAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { paddingInlineStart: 8 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { onChange: function () {
                                 rowKey && handleCheckRow({ rowId: rowData[rowKey] });
-                            }, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 38 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 61, columnNumber: 7 }, _this), columns.map(function (_a, index) {
+                            }, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 77, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 38 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 7 }, _this), columns.map(function (_a, index) {
                 var dataIndex = _a.dataIndex, render = _a.render, align = _a.align;
                 var cell = rowData[dataIndex];
                 return ((0, jsx_dev_runtime_1.jsxDEV)(cell_1.Cell, __assign({ align: align }, { children: (0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: render
@@ -50,8 +50,8 @@ var Rows = function (_a) {
                                 row: rowData,
                                 data: data,
                             })
-                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 17 }, _this));
-            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 11 }, _this));
+                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 90, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 88, columnNumber: 17 }, _this));
+            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 11 }, _this));
 };
 exports.Rows = Rows;
 //# sourceMappingURL=index.js.map

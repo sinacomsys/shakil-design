@@ -1,3 +1,4 @@
+import { VirtualItem } from "@tanstack/react-virtual";
 import { ColumnType } from "../column";
 export interface RowsProps<T> {
     rowData: T;
@@ -9,6 +10,7 @@ export interface RowsProps<T> {
     handleCheckRow: (value: {
         rowId: T[keyof T];
     }) => void;
+    virtualItem: VirtualItem;
 }
-declare const Rows: <T extends Record<string, unknown>>({ rowData, columns, data, index: rowIndex, rowKey, checkedRows, handleCheckRow, }: RowsProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Rows: <T extends Record<string, unknown>>({ rowData, columns, data, index: rowIndex, rowKey, checkedRows, handleCheckRow, virtualItem, }: RowsProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Rows };

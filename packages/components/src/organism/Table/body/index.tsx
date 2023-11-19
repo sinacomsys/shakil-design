@@ -9,8 +9,6 @@ import { useMyTableContext } from "../context";
 
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
-  virtualPaddingTop: number;
-  virtualPaddingBottom: number;
   virtualRows: VirtualItem[];
   noContent: React.ReactNode;
   searchIconWidth: number | string;
@@ -21,9 +19,7 @@ interface TableBodyProps<T extends Record<string, any>>
 }
 
 const TableBody = <T extends Record<string, any>>({
-  virtualPaddingTop,
   virtualRows,
-  virtualPaddingBottom,
   noContent,
   searchIconWidth,
   dataList,
@@ -36,53 +32,46 @@ const TableBody = <T extends Record<string, any>>({
 }: TableBodyProps<T>) => {
   const classes = useStyles();
   const { unit } = useContext(UnitContext);
-  const { testid } = useMyTableContext<T>();
+  const { testid, virtualizer } = useMyTableContext<T>();
 
   return (
     <>
       {virtualRows.length > 0 ? (
-        <table className={classes["table"]} role={"table"}>
-          <colgroup>
-            <col style={{ width: searchIconWidth }} />
-            {coloums.map(({ width, dataIndex }) => {
-              const _width =
-                unit === "viewport" && width ? pxToVwString(width) : width;
-              return (
-                <col
-                  key={dataIndex as string}
-                  style={{ width: _width ? _width : colWidth }}
-                />
-              );
-            })}
-          </colgroup>
-          <tbody data-testid={testid?.body}>
-            {virtualPaddingTop > 0 && (
-              <tr>
-                <td style={{ height: `${virtualPaddingTop}px` }} />
-              </tr>
-            )}
-            {virtualRows.map((virtualRow, index) => {
-              const row = dataList[virtualRow.index];
-              return (
-                <Rows
-                  key={rowKey ? row[rowKey] : index}
-                  rowKey={rowKey}
-                  rowData={row}
-                  data={data || []}
-                  index={index}
-                  columns={coloums}
-                  checkedRows={checkedRows}
-                  handleCheckRow={handleCheckRow}
-                />
-              );
-            })}
-            {virtualPaddingBottom > 0 && (
-              <tr>
-                <td style={{ height: `${virtualPaddingBottom}px` }} />
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <div style={{ height: `${virtualizer?.getTotalSize()}px` }}>
+          <table className={classes["table"]} role={"table"}>
+            <colgroup>
+              <col style={{ width: searchIconWidth }} />
+              {coloums.map(({ width, dataIndex }) => {
+                const _width =
+                  unit === "viewport" && width ? pxToVwString(width) : width;
+                return (
+                  <col
+                    key={dataIndex as string}
+                    style={{ width: _width ? _width : colWidth }}
+                  />
+                );
+              })}
+            </colgroup>
+            <tbody data-testid={testid?.body}>
+              {virtualRows.map((virtualRow, index) => {
+                const row = dataList[virtualRow.index];
+                return (
+                  <Rows
+                    key={rowKey ? row[rowKey] : index}
+                    rowKey={rowKey}
+                    rowData={row}
+                    data={data || []}
+                    index={index}
+                    columns={coloums}
+                    checkedRows={checkedRows}
+                    handleCheckRow={handleCheckRow}
+                    virtualItem={virtualRow}
+                  />
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       ) : (
         noContent
       )}
