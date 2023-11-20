@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/utils",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "types": "types/index.d.ts",
   "main": "src/index.ts",
   "files": [
