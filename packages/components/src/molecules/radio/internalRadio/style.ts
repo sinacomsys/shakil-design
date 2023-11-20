@@ -50,6 +50,7 @@ export const useStyles = createUseStyles(
         border: (props: CustomCircleProps) => {
           return `1px solid ${props?.borderColor}`;
         },
+        "same-size": true,
       },
       "inner-circle": {
         position: "absolute",
@@ -59,6 +60,7 @@ export const useStyles = createUseStyles(
         borderRadius: "50%",
         width: 10,
         height: 10,
+        "same-size": true,
         backgroundColor: (props: CustomCircleProps) => {
           return props?.backgroundColor;
         },

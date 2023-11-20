@@ -47,6 +47,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             border: function (props) {
                 return "1px solid ".concat(props === null || props === void 0 ? void 0 : props.borderColor);
             },
+            "same-size": true,
         },
         "inner-circle": {
             position: "absolute",
@@ -56,6 +57,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             borderRadius: "50%",
             width: 10,
             height: 10,
+            "same-size": true,
             backgroundColor: function (props) {
                 return props === null || props === void 0 ? void 0 : props.backgroundColor;
             },

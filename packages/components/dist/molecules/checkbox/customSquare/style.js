@@ -12,6 +12,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
             backgroundColor: "transparent",
             width: 16,
             height: 16,
+            "same-size": true,
             border: function (_a) {
                 var checked = _a.checked;
                 var borderColor = checked
@@ -27,6 +28,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
             transform: "translate(-50%, -50%)",
             width: 10,
             height: 10,
+            "same-size": true,
             backgroundColor: function (_a) {
                 var checked = _a.checked;
                 return checked
