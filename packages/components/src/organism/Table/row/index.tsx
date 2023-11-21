@@ -49,12 +49,6 @@ const Row = <T extends Record<string, unknown>>({
         setIsHovered(false);
       }}
       className={classes["row"]}
-      style={{
-        height: `${virtualItem.size}px`,
-        transform: `translateY(${
-          virtualItem.start - rowIndex * virtualItem.size
-        }px)`,
-      }}
     />
   );
 };

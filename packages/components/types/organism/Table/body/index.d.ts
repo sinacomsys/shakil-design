@@ -11,6 +11,8 @@ interface TableBodyProps<T extends Record<string, any>> extends Pick<TableProps<
         rowId: T[keyof T];
     }) => void;
     colWidth: number | string | undefined;
+    paddingTop: number;
+    paddingBottom: number;
 }
-declare const TableBody: <T extends Record<string, any>>({ virtualRows, noContent, searchIconWidth, dataList, coloums, rowKey, data, checkedRows, handleCheckRow, colWidth, }: TableBodyProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+declare const TableBody: <T extends Record<string, any>>({ virtualRows, noContent, searchIconWidth, dataList, coloums, rowKey, data, checkedRows, handleCheckRow, colWidth, paddingBottom, paddingTop, }: TableBodyProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { TableBody };

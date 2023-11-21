@@ -226,13 +226,23 @@ const Table = <T extends Record<string, any>>({
   }, [windowHeight]);
 
   const rowVirtualizer = useVirtualizer({
-    getScrollElement: () => tableContainerRef.current,
-    overscan: overScan || 20,
+    getScrollElement() {
+      return tableContainerRef.current;
+    },
     count: list.length,
+    overscan: overScan || 20,
     estimateSize: () => estimateSize,
   });
 
-  const { getVirtualItems } = rowVirtualizer;
+  const { getVirtualItems, getTotalSize } = rowVirtualizer;
+
+  const paddingTop =
+    getVirtualItems().length > 0 ? getVirtualItems()?.[0]?.start || 0 : 0;
+  const paddingBottom =
+    getVirtualItems().length > 0
+      ? getTotalSize() -
+        (getVirtualItems()[getVirtualItems().length - 1]?.end || 0)
+      : 0;
 
   const isIndeterminate =
     checkedRows.length > 0 && checkedRows.length !== (data || []).length;
@@ -332,6 +342,8 @@ const Table = <T extends Record<string, any>>({
                   className={classes["table-body"]}
                 >
                   <TableBody
+                    paddingTop={paddingTop}
+                    paddingBottom={paddingBottom}
                     noContent={_noContent}
                     searchIconWidth={_searchIconWidth}
                     virtualRows={getVirtualItems()}

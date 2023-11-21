@@ -2908,13 +2908,13 @@
     "@sentry/types" "7.80.1"
 
 "@shakil-design/asset@./packages/asset":
-  version "0.0.41"
+  version "0.0.47"
 
 "@shakil-design/component@./packages/components":
-  version "0.0.41"
+  version "0.0.47"
 
 "@shakil-design/utils@./packages/utils":
-  version "0.0.41"
+  version "0.0.47"
 
 "@sigstore/bundle@^1.1.0":
   version "1.1.0"

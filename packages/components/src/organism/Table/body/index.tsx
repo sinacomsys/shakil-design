@@ -16,6 +16,8 @@ interface TableBodyProps<T extends Record<string, any>>
   checkedRows: T[];
   handleCheckRow: (arg: { rowId: T[keyof T] }) => void;
   colWidth: number | string | undefined;
+  paddingTop: number;
+  paddingBottom: number;
 }
 
 const TableBody = <T extends Record<string, any>>({
@@ -29,6 +31,8 @@ const TableBody = <T extends Record<string, any>>({
   checkedRows,
   handleCheckRow,
   colWidth,
+  paddingBottom,
+  paddingTop,
 }: TableBodyProps<T>) => {
   const classes = useStyles();
   const { unit } = useContext(UnitContext);
@@ -53,6 +57,9 @@ const TableBody = <T extends Record<string, any>>({
               })}
             </colgroup>
             <tbody data-testid={testid?.body}>
+              {paddingTop > 0 && (
+                <tr style={{ height: `${paddingTop}px` }}>{/* <td /> */}</tr>
+              )}
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
                 return (
@@ -69,6 +76,11 @@ const TableBody = <T extends Record<string, any>>({
                   />
                 );
               })}
+              {paddingBottom > 0 && (
+                <tr style={{ height: `${paddingBottom}px` }}>
+                  {/* <td  /> */}
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

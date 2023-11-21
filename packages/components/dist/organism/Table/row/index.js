@@ -47,10 +47,7 @@ var Row = function (_a) {
             var _a, _b;
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseLeave) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(false);
-        }, className: classes["row"], style: {
-            height: "".concat(virtualItem.size, "px"),
-            transform: "translateY(".concat(virtualItem.start - rowIndex * virtualItem.size, "px)"),
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, _this));
+        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, _this));
 };
 exports.Row = Row;
 //# sourceMappingURL=index.js.map
