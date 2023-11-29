@@ -139,7 +139,7 @@ const DropDown = <T extends Default>({
       {items.map((item) => {
         return (
           <div
-            data-testid={`${item.label}_${item.value}`}
+            data-testid={item.value}
             onClick={() => onSelectItem(item)}
             className={classNames(
               classes["item"],
