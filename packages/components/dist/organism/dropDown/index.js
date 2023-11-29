@@ -124,11 +124,11 @@ var DropDown = function (_a) {
     };
     var _value = propValue || internalValue;
     var list = ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["overlay"] }, { children: items.map(function (item) {
-            return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 149, columnNumber: 13 }, _this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, _this));
+            return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": item.value, onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 150, columnNumber: 13 }, _this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, _this));
         }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 137, columnNumber: 17 }, _this));
     return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
-                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 164, columnNumber: 15 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 162, columnNumber: 33 }, _this), body.current)
-                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 158, columnNumber: 11 }, _this));
+                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 165, columnNumber: 13 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 163, columnNumber: 33 }, _this), body.current)
+                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 159, columnNumber: 11 }, _this));
 };
 exports.DropDown = DropDown;
 //# sourceMappingURL=index.js.map

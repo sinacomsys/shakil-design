@@ -12,6 +12,10 @@ export const useStyle = createUseStyles(
         backgroundColor: "rgba(0, 0, 0, 0.35)",
         position: "absolute",
       },
+      content: {
+        backgroundColor: "#ffffff",
+        position: (position: React.CSSProperties["position"]) => position,
+      },
     };
   },
   { theming, name: "drawer" },

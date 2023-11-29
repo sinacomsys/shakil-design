@@ -15,6 +15,8 @@ export interface DrawerProps {
   height?: number;
   destroyOnClose?: boolean;
   maskCloseable?: boolean;
+  contentClassName?: string;
+  maskClassName?: string;
 }
 
 type DrawerRect = {
@@ -45,22 +47,14 @@ const Drawer = ({
   width,
   destroyOnClose,
   maskCloseable = true,
+  contentClassName,
+  maskClassName,
 }: DrawerProps) => {
-  const classes = useStyle();
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     setBodyRef(document.body);
   }, []);
-
-  const mask = (
-    <div
-      onClick={() => {
-        isVisible && maskCloseable && onClose();
-      }}
-      className={classNames(classes["mask"])}
-    />
-  );
 
   const portalContainerElement = useMemo(() => {
     if (
@@ -75,6 +69,17 @@ const Drawer = ({
 
   const drawerPositionStrategy: React.CSSProperties["position"] =
     portalContainerElement?.localName === "body" ? "fixed" : "absolute";
+
+  const classes = useStyle(drawerPositionStrategy);
+
+  const mask = (
+    <div
+      onClick={() => {
+        isVisible && maskCloseable && onClose();
+      }}
+      className={classNames(classes["mask"], maskClassName)}
+    />
+  );
 
   const dimentions = useMemo((): DrawerDimentions | undefined => {
     const portalContainerElementRect =
@@ -124,10 +129,9 @@ const Drawer = ({
       }}
       exit={{ ...dimentions?.initial, opacity: 0 }}
       style={{
-        position: drawerPositionStrategy,
-        backgroundColor: "white",
         ...dimentions?.rect,
       }}
+      className={classNames(contentClassName, classes["content"])}
     >
       {children}
     </motion.div>

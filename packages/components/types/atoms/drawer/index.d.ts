@@ -9,6 +9,8 @@ export interface DrawerProps {
     height?: number;
     destroyOnClose?: boolean;
     maskCloseable?: boolean;
+    contentClassName?: string;
+    maskClassName?: string;
 }
-declare const Drawer: ({ isVisible, children, onClose, getContainer, placement, height, width, destroyOnClose, maskCloseable, }: DrawerProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const Drawer: ({ isVisible, children, onClose, getContainer, placement, height, width, destroyOnClose, maskCloseable, contentClassName, maskClassName, }: DrawerProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { Drawer };

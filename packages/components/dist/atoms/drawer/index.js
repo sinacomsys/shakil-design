@@ -24,15 +24,11 @@ var react_1 = require("react");
 var react_dom_1 = __importDefault(require("react-dom"));
 var style_1 = require("./style");
 var Drawer = function (_a) {
-    var isVisible = _a.isVisible, children = _a.children, onClose = _a.onClose, getContainer = _a.getContainer, _b = _a.placement, placement = _b === void 0 ? "bottom" : _b, height = _a.height, width = _a.width, destroyOnClose = _a.destroyOnClose, _c = _a.maskCloseable, maskCloseable = _c === void 0 ? true : _c;
-    var classes = (0, style_1.useStyle)();
+    var isVisible = _a.isVisible, children = _a.children, onClose = _a.onClose, getContainer = _a.getContainer, _b = _a.placement, placement = _b === void 0 ? "bottom" : _b, height = _a.height, width = _a.width, destroyOnClose = _a.destroyOnClose, _c = _a.maskCloseable, maskCloseable = _c === void 0 ? true : _c, contentClassName = _a.contentClassName, maskClassName = _a.maskClassName;
     var _d = (0, react_1.useState)(null), bodyRef = _d[0], setBodyRef = _d[1];
     (0, react_1.useEffect)(function () {
         setBodyRef(document.body);
     }, []);
-    var mask = ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: function () {
-            isVisible && maskCloseable && onClose();
-        }, className: (0, classnames_1.default)(classes["mask"]) }, void 0, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 17 }, _this));
     var portalContainerElement = (0, react_1.useMemo)(function () {
         if (getContainer &&
             (getContainer === null || getContainer === void 0 ? void 0 : getContainer.style.position) &&
@@ -44,6 +40,10 @@ var Drawer = function (_a) {
             return bodyRef;
     }, [getContainer, bodyRef]);
     var drawerPositionStrategy = (portalContainerElement === null || portalContainerElement === void 0 ? void 0 : portalContainerElement.localName) === "body" ? "fixed" : "absolute";
+    var classes = (0, style_1.useStyle)(drawerPositionStrategy);
+    var mask = ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: function () {
+            isVisible && maskCloseable && onClose();
+        }, className: (0, classnames_1.default)(classes["mask"], maskClassName) }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 17 }, _this));
     var dimentions = (0, react_1.useMemo)(function () {
         var portalContainerElementRect = portalContainerElement === null || portalContainerElement === void 0 ? void 0 : portalContainerElement.getBoundingClientRect();
         var containerHeight = portalContainerElementRect === null || portalContainerElementRect === void 0 ? void 0 : portalContainerElementRect.height;
@@ -83,10 +83,10 @@ var Drawer = function (_a) {
             };
         }
     }, [height, placement, portalContainerElement, width]);
-    var content = ((0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ initial: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), animate: __assign(__assign({}, (isVisible && (dimentions === null || dimentions === void 0 ? void 0 : dimentions.animateTo))), { opacity: isVisible ? 1 : 0 }), exit: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), style: __assign({ position: drawerPositionStrategy, backgroundColor: "white" }, dimentions === null || dimentions === void 0 ? void 0 : dimentions.rect) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 118, columnNumber: 20 }, _this));
+    var content = ((0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ initial: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), animate: __assign(__assign({}, (isVisible && (dimentions === null || dimentions === void 0 ? void 0 : dimentions.animateTo))), { opacity: isVisible ? 1 : 0 }), exit: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), style: __assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.rect), className: (0, classnames_1.default)(contentClassName, classes["content"]) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 123, columnNumber: 20 }, _this));
     return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: portalContainerElement
-            ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.AnimatePresence, { children: !isVisible && destroyOnClose ? null : content }, void 0, false, { fileName: _jsxFileName, lineNumber: 142, columnNumber: 15 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 139, columnNumber: 33 }, _this), portalContainerElement)
-            : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 136, columnNumber: 11 }, _this));
+            ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.AnimatePresence, { children: !isVisible && destroyOnClose ? null : content }, void 0, false, { fileName: _jsxFileName, lineNumber: 146, columnNumber: 15 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 143, columnNumber: 33 }, _this), portalContainerElement)
+            : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 11 }, _this));
 };
 exports.Drawer = Drawer;
 //# sourceMappingURL=index.js.map

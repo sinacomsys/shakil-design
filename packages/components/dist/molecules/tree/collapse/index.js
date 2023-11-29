@@ -35,6 +35,8 @@ var Collapse = function (_a) {
     var _c = (0, react_1.useState)(false), isLoading = _c[0], setLoading = _c[1];
     var handleOnClick = function () {
         var _a;
+        if (isLoading)
+            return;
         onClick === null || onClick === void 0 ? void 0 : onClick({ data: data, level: level });
         if (children) {
             setOpen(function (prev) { return !prev; });
@@ -61,7 +63,7 @@ var Collapse = function (_a) {
             ? (0, classnames_1.default)(classes.wrapper, "".concat(classes.wrapper, "--first-item"))
             : unit === "viewport"
                 ? (0, classnames_1.default)(classes.wrapper, "".concat(classes.wrapper).concat(types_1.VIEW_PORT_UNIT))
-                : classes.wrapper }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(item_1.Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }, void 0, false, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 7 }, _this), children ? ((0, jsx_dev_runtime_1.jsxDEV)(react_measure_1.default, __assign({ bounds: true }, { children: function (_a) {
+                : classes.wrapper }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(item_1.Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }, void 0, false, { fileName: _jsxFileName, lineNumber: 63, columnNumber: 7 }, _this), children ? ((0, jsx_dev_runtime_1.jsxDEV)(react_measure_1.default, __assign({ bounds: true }, { children: function (_a) {
                     var _b, _c;
                     var contentRect = _a.contentRect, measureRef = _a.measureRef;
                     var height = (_c = (_b = contentRect.bounds) === null || _b === void 0 ? void 0 : _b.height) !== null && _c !== void 0 ? _c : 0;
@@ -69,8 +71,8 @@ var Collapse = function (_a) {
                             height: isOpen ? "auto" : 0,
                         } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: measureRef }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["dots"], style: {
                                         height: height - 15,
-                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 19 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 83, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 76, columnNumber: 21 }, _this));
-                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 20 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 11 }, _this));
+                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 19 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 77, columnNumber: 21 }, _this));
+                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 20 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 11 }, _this));
 };
 exports.Collapse = Collapse;
 //# sourceMappingURL=index.js.map

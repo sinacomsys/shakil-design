@@ -13,6 +13,10 @@ exports.useStyle = (0, react_jss_1.createUseStyles)(function () {
             backgroundColor: "rgba(0, 0, 0, 0.35)",
             position: "absolute",
         },
+        content: {
+            backgroundColor: "#ffffff",
+            position: function (position) { return position; },
+        },
     };
 }, { theming: theme_1.theming, name: "drawer" });
 //# sourceMappingURL=style.js.map
