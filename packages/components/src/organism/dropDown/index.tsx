@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
+import React, {HTMLAttributes, useEffect, useRef, useState} from "react";
 import ReactDOM from "react-dom";
-import { PopperProps, usePopper } from "react-popper";
-import { Text } from "../../atoms/text";
-import { useOnClickOutSide } from "@shakil-design/utils";
-import { useStyles } from "./style";
+import {PopperProps, usePopper} from "react-popper";
+import {Text} from "../../atoms/text";
+import {useOnClickOutSide} from "@shakil-design/utils";
+import {useStyles} from "./style";
 
 type Value = string | number | null | undefined;
 type Default = {
@@ -25,14 +25,14 @@ interface DropDownProps<T extends Default> {
 }
 
 const DropDown = <T extends Default>({
-  children,
-  trigger = "hover",
-  placement = "bottom",
-  isVisible: isVisibleProp,
-  items,
-  onChange,
-  value: propValue,
-}: DropDownProps<T>) => {
+                                       children,
+                                       trigger = "hover",
+                                       placement = "bottom",
+                                       isVisible: isVisibleProp,
+                                       items,
+                                       onChange,
+                                       value: propValue,
+                                     }: DropDownProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<Value | null>(null);
   const body = useRef<HTMLElement | null>(null);
@@ -43,7 +43,7 @@ const DropDown = <T extends Default>({
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const timerDelay = useRef<null | NodeJS.Timeout>(null);
 
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+  const {styles, attributes} = usePopper(referenceElement, popperElement, {
     placement: placement,
     strategy: "fixed",
   });
@@ -139,6 +139,7 @@ const DropDown = <T extends Default>({
       {items.map((item) => {
         return (
           <div
+            data-testid={item.value}
             onClick={() => onSelectItem(item)}
             className={classNames(
               classes["item"],
@@ -160,22 +161,22 @@ const DropDown = <T extends Default>({
       {anchor}
       {body.current && _isVisible
         ? ReactDOM.createPortal(
-            <>
-              <div
-                onMouseEnter={handlePopupMouseEnter}
-                onMouseLeave={handlePopupMouseLeave}
-                ref={setPopperElement}
-                style={styles.popper}
-                {...attributes.popper}
-              >
-                {list}
-              </div>
-            </>,
-            body.current,
-          )
+          <>
+            <div
+              onMouseEnter={handlePopupMouseEnter}
+              onMouseLeave={handlePopupMouseLeave}
+              ref={setPopperElement}
+              style={styles.popper}
+              {...attributes.popper}
+            >
+              {list}
+            </div>
+          </>,
+          body.current,
+        )
         : null}
     </>
   );
 };
 
-export { DropDown };
+export {DropDown};
