@@ -27,6 +27,7 @@ const Collapse = <T extends TreeBasicType<T>>({
   const [isLoading, setLoading] = useState<boolean>(false);
 
   const handleOnClick = () => {
+    if (isLoading) return;
     onClick?.({ data, level });
     if (children) {
       setOpen((prev) => !prev);
