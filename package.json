@@ -20,7 +20,8 @@
     "streight-release": "yarn lint-commit  && yarn compile  && npx lerna publish",
     "lerna-watch": "lerna run watch --stream",
     "lerna-build": "lerna run compile --stream",
-    "lerna-clean": "lerna run clean --parallel"
+    "lerna-clean": "lerna run clean --parallel",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",
@@ -62,7 +63,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.12",
     "framer-motion": "^7.6.5",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "jest-watch-typeahead": "^0.6.2",
     "lerna": "^6.6.1",
     "less": "^4.1.3",

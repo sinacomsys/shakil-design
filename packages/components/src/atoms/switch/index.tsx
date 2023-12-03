@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../theme";
 import { useStyles } from "./style";
 import { Unit } from "../../types";
@@ -8,12 +8,10 @@ import { pxToVhString } from "@shakil-design/utils";
 interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   checked?: boolean;
-  onChange?: (
-    checked: boolean,
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   name?: string;
   unit?: Unit;
+  testId?: string;
 }
 
 const CIRCLE_WIDTH = 12;
@@ -22,22 +20,26 @@ const SWITCH_HEIGHT = 16;
 
 const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   (
-    { onChange, checked, name, onFocus, onBlur, unit = "viewport", ...rest },
+    {
+      testId,
+      onChange,
+      checked,
+      name,
+      onFocus,
+      onBlur,
+      unit = "viewport",
+      ...rest
+    },
     ref,
   ) => {
     const classes = useStyles();
     const { switch: { checked: checkedColor, unchecked } = {} } = useTheme();
-    const [isCheck, setIsCheck] = useState<boolean>(false);
+    // const [isCheck, setIsCheck] = useState<boolean>(false);
     const [isFocused, setFocus] = useState(false);
 
     const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      setIsCheck((prev) => !prev);
-      onChange?.(!isCheck, e);
+      onChange?.(e);
     };
-
-    useEffect(() => {
-      checked && setIsCheck(checked);
-    }, [checked]);
 
     const focusHandler: React.FocusEventHandler<HTMLInputElement> = (e) => {
       setFocus(true);
@@ -59,10 +61,11 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
     return (
       <label style={{ display: "inline-block", position: "relative" }}>
         <div
+          data-testid={testId}
           role={"switch"}
           className={classes["wrapper"]}
           style={{
-            backgroundColor: isCheck ? checkedColor : unchecked,
+            backgroundColor: checked ? checkedColor : unchecked,
             width: _width,
             height: _height,
           }}
@@ -74,13 +77,14 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             onChange={handleOnChange}
             onFocus={focusHandler}
             onBlur={blurHandler}
-            checked={isCheck}
+            aria-checked={checked}
+            checked={checked}
             type={"checkbox"}
             name={name}
           />
           <div style={{ position: "relative", height: "100%" }}>
             <motion.div
-              animate={{ left: isCheck ? `calc(100% - ${_circle})` : 0 }}
+              animate={{ left: checked ? `calc(100% - ${_circle})` : 0 }}
               style={{
                 width: _circle,
                 height: _circle,
@@ -92,7 +96,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         <motion.div
           className={classes["ripple"]}
           style={{
-            backgroundColor: isCheck ? checkedColor : unchecked,
+            backgroundColor: checked ? checkedColor : unchecked,
           }}
           animate={{
             width: isFocused ? 30 : 0,
