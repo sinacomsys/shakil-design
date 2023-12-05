@@ -24,6 +24,7 @@ const Row = <T extends Record<string, unknown>>({
   rowIndex,
   rowData,
   virtualItem,
+  onClick,
   ...rest
 }: RowProps<T>) => {
   const { onRow } = useMyTableContext<T>();
@@ -47,6 +48,10 @@ const Row = <T extends Record<string, unknown>>({
       onMouseLeave={(e) => {
         onRow?.(rowData, rowIndex).onMouseLeave?.(e);
         setIsHovered(false);
+      }}
+      onClick={(e) => {
+        onRow?.(rowData, rowIndex).onClick?.(e);
+        onClick?.(e);
       }}
       className={classes["row"]}
     />

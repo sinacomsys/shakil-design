@@ -80,8 +80,10 @@ const Template: Story<any> = () => {
     <StoryContainer>
       <Table
         onCheckedRows={() => {}}
+        onRow={() => {
+          return { onClick: () => {} };
+        }}
         rowKey="id"
-        onSelectRow={() => {}}
         height={400}
         coloums={columns}
         data={mockData}
