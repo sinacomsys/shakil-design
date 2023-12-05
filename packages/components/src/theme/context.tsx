@@ -22,6 +22,7 @@ export const Colors: ColorsType = {
   },
   textInput: {
     fieldColor: "#ebedf2",
+    errorMessage: "#c65161",
   },
   button: {
     main: "#324775",
@@ -90,6 +91,7 @@ type ColorsType = {
   };
   textInput?: {
     fieldColor: string;
+    errorMessage: string;
   };
   button?: {
     main: string;

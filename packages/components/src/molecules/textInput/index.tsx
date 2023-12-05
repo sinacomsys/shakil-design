@@ -5,8 +5,10 @@ import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useFonts } from "../../atoms/text/style";
-import { BaseIcon } from "../../atoms";
+import { BaseIcon, Text } from "../../atoms";
 import { useState } from "react";
+import { theming } from "../../theme";
+const { useTheme } = theming;
 
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -89,12 +91,17 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       wrapperStyle,
       allowClear,
       wrapperClassName,
+      errorMessage,
+      errorMessageClassName,
+      hasError,
       ...rest
     },
     forwardedRef,
   ) => {
     const classes = useStyles();
     const [isHover, setIsHover] = useState<boolean>(false);
+    const Colors = useTheme();
+
     let type: React.InputHTMLAttributes<HTMLInputElement>["type"];
     let inputMode: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 
@@ -374,6 +381,13 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
 
     return multiline ? (
       <textarea
+        className={classNames(
+          classes["text-area"],
+          disabled && classes.disabled,
+          (hasError || errorMessage) && classes["input-with-error"],
+          themes[theme || "Regular"],
+          className,
+        )}
         ref={setRef}
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
@@ -393,6 +407,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           className={classNames(
             classes["textInput"],
             disabled && classes.disabled,
+            (hasError || errorMessage) && classes["input-with-error"],
             themes[theme || "Regular"],
             className,
           )}
@@ -403,6 +418,18 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             ...supportedProps.style,
           }}
         />
+        {errorMessage ? (
+          <Text
+            className={classNames(
+              classes["error-message"],
+              errorMessageClassName,
+            )}
+            color={Colors.textInput?.errorMessage}
+            size={13}
+          >
+            {errorMessage}
+          </Text>
+        ) : null}
         {addonBefore ? (
           <div
             className={classNames(

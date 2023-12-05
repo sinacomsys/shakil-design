@@ -41,6 +41,9 @@ const Select = <T extends Record<string, unknown> = Default>({
   onMouseEnter,
   onMouseLeave,
   testid,
+  errorMessage,
+  errorMessageClassName,
+  hasError,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
@@ -123,14 +126,15 @@ const Select = <T extends Record<string, unknown> = Default>({
     },
   });
 
-  let displayValue: Value = null;
+  let displayValue: string = "";
   if (multiple) {
     displayValue =
       Array.isArray(internalValue) && internalValue.length
         ? `${internalValue?.length} Items Selected`
-        : undefined;
+        : "";
   } else {
-    displayValue = internalValue as Value;
+    const value = data.find((item) => valueExtractor(item) === internalValue);
+    displayValue = value ? labelExtractor(value) : "";
   }
 
   return (
@@ -150,6 +154,9 @@ const Select = <T extends Record<string, unknown> = Default>({
           wrapperStyle,
           onMouseEnter,
           onMouseLeave,
+          errorMessage,
+          errorMessageClassName,
+          hasError,
         }}
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}

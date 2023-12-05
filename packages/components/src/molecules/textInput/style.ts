@@ -1,6 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import { theming } from "../../theme";
+import { ColorsType, theming } from "../../theme";
 
 const addonStyle: React.CSSProperties = {
   position: "absolute",
@@ -10,6 +10,18 @@ const addonStyle: React.CSSProperties = {
   display: "flex",
   insetBlockStart: "50%",
 };
+
+const textInputSharedStyle = (theme: ColorsType) => ({
+  width: "100%",
+  backgroundColor: theme.textInput?.fieldColor,
+  color: theme.primary,
+  border: "none",
+  outline: "none",
+  borderRadius: 7,
+  paddingBlock: 8,
+  paddingInline: 10,
+  fontSize: 14,
+});
 
 const useStyles = createUseStyles(
   (theme) => {
@@ -23,16 +35,14 @@ const useStyles = createUseStyles(
         visibility: "hidden",
       },
       textInput: {
-        width: "100%",
-        backgroundColor: theme.textInput?.fieldColor,
-        color: theme.primary,
-        border: "none",
-        outline: "none",
+        ...textInputSharedStyle(theme),
         height: 32,
-        borderRadius: 7,
-        paddingBlock: 8,
-        paddingInline: 10,
-        fontSize: 14,
+      },
+      "text-area": {
+        ...textInputSharedStyle(theme),
+      },
+      "input-with-error": {
+        border: `1px solid ${theme.textInput?.errorMessage}`,
       },
       disabled: {
         backgroundColor: theme.disableField,
@@ -41,6 +51,8 @@ const useStyles = createUseStyles(
       },
       inputWrapper: {
         position: "relative",
+        display: "flex",
+        flexDirection: "column",
       },
       addonBefore: {
         ...addonStyle,
@@ -49,6 +61,12 @@ const useStyles = createUseStyles(
       addonAfter: {
         ...addonStyle,
         insetInlineEnd: 10,
+      },
+      "error-message": {
+        position: "absolute",
+        top: "100%",
+        insetInlineStart: 0,
+        insetBlockStart: "100%",
       },
     };
   },

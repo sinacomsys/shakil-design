@@ -103,4 +103,7 @@ export interface TextInputProps
   spellCheck?: boolean;
   style?: React.CSSProperties;
   value?: string | number | null;
+  errorMessage?: string;
+  errorMessageClassName?: string;
+  hasError?: boolean;
 }
