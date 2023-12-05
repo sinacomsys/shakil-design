@@ -45,12 +45,9 @@ export const useStyles = createUseStyles(
         backgroundColor: "white",
         zIndex: 2,
         position: "relative",
-        width: 16,
-        height: 16,
         border: (props: CustomCircleProps) => {
           return `1px solid ${props?.borderColor}`;
         },
-        "same-size": true,
       },
       "inner-circle": {
         position: "absolute",
@@ -58,9 +55,6 @@ export const useStyles = createUseStyles(
         left: "50%",
         transform: "translate(-50%, -50%)",
         borderRadius: "50%",
-        width: 10,
-        height: 10,
-        "same-size": true,
         backgroundColor: (props: CustomCircleProps) => {
           return props?.backgroundColor;
         },

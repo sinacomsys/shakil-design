@@ -5,12 +5,8 @@ export const useStyles = createUseStyles(
   ({ checkbox }) => {
     return {
       wrapper: {
-        borderRadius: 3,
         position: "relative",
         backgroundColor: "transparent",
-        width: 16,
-        height: 16,
-        "same-size": true,
         border: ({ checked }: { checked?: boolean }) => {
           const borderColor = checked
             ? checkbox?.borderSelected
@@ -23,9 +19,6 @@ export const useStyles = createUseStyles(
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: 10,
-        height: 10,
-        "same-size": true,
         backgroundColor: ({ checked }: { checked?: boolean }) => {
           return checked
             ? checkbox?.squareSelected
