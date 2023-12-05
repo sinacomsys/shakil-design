@@ -1,10 +1,10 @@
 import { VirtualItem } from "@tanstack/react-virtual";
 import { CheckBox } from "../../../molecules/checkbox";
-import { useTheme } from "../../../theme";
 import { Cell } from "../cell";
 import { ColumnType } from "../column";
 import { useMyTableContext } from "../context";
 import { Row } from "../row";
+import { useStyles } from "./style";
 
 export interface RowsProps<T> {
   rowData: T;
@@ -13,7 +13,6 @@ export interface RowsProps<T> {
   index: number;
   rowKey?: keyof T;
   checkedRows: T[];
-  handleCheckRow: (value: { rowId: T[keyof T] }) => void;
   virtualItem: VirtualItem;
 }
 
@@ -24,16 +23,18 @@ const Rows = <T extends Record<string, unknown>>({
   index: rowIndex,
   rowKey,
   checkedRows,
-  handleCheckRow,
   virtualItem,
 }: RowsProps<T>) => {
-  const { table: { selectedRowBookmark } = {} } = useTheme();
   const {
     selectedRow,
     onSelectRow,
     isOnCheckedRowsAvailable,
     isSelectSingleRowAvailable,
-  } = useMyTableContext();
+    handleCheckRow,
+  } = useMyTableContext<T>();
+
+  const classes = useStyles();
+
   const _selectedRow = selectedRow as T;
 
   const isChecked = checkedRows.find(
@@ -64,13 +65,7 @@ const Rows = <T extends Record<string, unknown>>({
     >
       <td style={{ height: "inherit" }}>
         {rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? (
-          <div
-            style={{
-              position: "relative",
-              height: "100%",
-              borderInlineStart: `5px solid ${selectedRowBookmark}`,
-            }}
-          />
+          <div className={classes["selected"]} />
         ) : null}
         {isOnCheckedRowsAvailable ? (
           <div style={{ paddingInlineStart: 8 }}>

@@ -26,6 +26,7 @@ export interface TableContextProps<T> {
     index?: number,
   ) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
   virtualizer: Virtualizer<HTMLDivElement, Element> | undefined;
+  handleCheckRow: (arg: { rowId: T[keyof T] }) => void;
 }
 
 export const TableContext = createContext<TableContextProps<any>>({
@@ -42,6 +43,7 @@ export const TableContext = createContext<TableContextProps<any>>({
   testid: undefined,
   onRow: () => ({}),
   virtualizer: undefined,
+  handleCheckRow: () => {},
 });
 
 export function useMyTableContext<T>() {

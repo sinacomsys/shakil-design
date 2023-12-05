@@ -35,6 +35,7 @@ SingleSelect.args = {
   data: fakeData,
   allowClear: true,
   placeholder: "Select Item...",
+  errorMessage: "Error Message!",
 };
 
 MultipleSelect.args = {

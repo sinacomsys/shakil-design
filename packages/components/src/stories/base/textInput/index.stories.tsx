@@ -25,7 +25,6 @@ const Template: Story<TextInputProps> = () => {
       </Button>
       <TextInput
         onClear={onClear}
-        unit="pixel"
         value={value}
         onChangeText={setValue}
         wrapperStyle={{ marginBottom: 30, width: "300px" }}
@@ -34,7 +33,6 @@ const Template: Story<TextInputProps> = () => {
         AddonAfter={
           <BaseIcon
             name="Search-Box_Search-Icon"
-            unit={"pixel"}
             size={{ height: 15, width: 15 }}
           />
         }

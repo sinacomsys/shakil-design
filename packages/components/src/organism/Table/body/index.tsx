@@ -14,7 +14,7 @@ interface TableBodyProps<T extends Record<string, any>>
   searchIconWidth: number | string;
   dataList: T[];
   checkedRows: T[];
-  handleCheckRow: (arg: { rowId: T[keyof T] }) => void;
+
   colWidth: number | string | undefined;
   paddingTop: number;
   paddingBottom: number;
@@ -29,7 +29,6 @@ const TableBody = <T extends Record<string, any>>({
   rowKey,
   data,
   checkedRows,
-  handleCheckRow,
   colWidth,
   paddingBottom,
   paddingTop,
@@ -71,7 +70,6 @@ const TableBody = <T extends Record<string, any>>({
                     index={index}
                     columns={coloums}
                     checkedRows={checkedRows}
-                    handleCheckRow={handleCheckRow}
                     virtualItem={virtualRow}
                   />
                 );

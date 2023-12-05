@@ -79,18 +79,7 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        onRow={() => {
-          return {
-            onClick: (e) => {
-              // eslint-disable-next-line no-console
-              console.log(e);
-            },
-            onMouseLeave: (e) => {
-              // eslint-disable-next-line no-console
-              console.log(e);
-            },
-          };
-        }}
+        onCheckedRows={() => {}}
         rowKey="id"
         onSelectRow={() => {}}
         height={400}

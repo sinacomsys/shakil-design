@@ -285,6 +285,7 @@ const Table = <T extends Record<string, any>>({
                 testid,
                 onRow,
                 virtualizer: rowVirtualizer,
+                handleCheckRow,
               }}
             >
               <div className={classes["wrapper"]}>
@@ -351,7 +352,6 @@ const Table = <T extends Record<string, any>>({
                     colWidth={colWidth}
                     coloums={coloums}
                     dataList={list}
-                    handleCheckRow={handleCheckRow}
                     data={data}
                     rowKey={rowKey}
                   />
