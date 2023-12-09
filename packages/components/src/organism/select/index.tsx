@@ -44,6 +44,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   errorMessage,
   errorMessageClassName,
   hasError,
+  testID,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
@@ -157,6 +158,7 @@ const Select = <T extends Record<string, unknown> = Default>({
           errorMessage,
           errorMessageClassName,
           hasError,
+          testID,
         }}
         onClear={handleOnClear}
         ref={handleRefOfRefrenceElement}

@@ -35,10 +35,13 @@ export const useStyles = createUseStyles(
       flexDirection: "column",
       height: "100%",
     },
-    container: {
-      width: "100%",
-      overflowY: "auto",
-      position: "relative",
+    container: ({ height }: { height: number }) => {
+      return {
+        width: "100%",
+        overflowY: "auto",
+        position: "relative",
+        height: height,
+      };
     },
     "table-body": {
       flex: 1,

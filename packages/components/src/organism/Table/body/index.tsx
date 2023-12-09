@@ -4,8 +4,9 @@ import { pxToVwString } from "@shakil-design/utils";
 import { Rows } from "../rowContainer";
 import { TableProps } from "..";
 import { UnitContext } from "../../../theme/context";
-import { useContext } from "react";
+import { ReactElement, Ref, useContext } from "react";
 import { useMyTableContext } from "../context";
+import React from "react";
 
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
@@ -14,25 +15,27 @@ interface TableBodyProps<T extends Record<string, any>>
   searchIconWidth: number | string;
   dataList: T[];
   checkedRows: T[];
-
   colWidth: number | string | undefined;
   paddingTop: number;
   paddingBottom: number;
 }
 
-const TableBody = <T extends Record<string, any>>({
-  virtualRows,
-  noContent,
-  searchIconWidth,
-  dataList,
-  coloums,
-  rowKey,
-  data,
-  checkedRows,
-  colWidth,
-  paddingBottom,
-  paddingTop,
-}: TableBodyProps<T>) => {
+const TableBody = <T extends Record<string, any>>(
+  {
+    virtualRows,
+    noContent,
+    searchIconWidth,
+    dataList,
+    coloums,
+    rowKey,
+    data,
+    checkedRows,
+    colWidth,
+    paddingBottom,
+    paddingTop,
+  }: TableBodyProps<T>,
+  ref: Ref<HTMLDivElement>,
+) => {
   const classes = useStyles();
   const { unit } = useContext(UnitContext);
   const { testid, virtualizer } = useMyTableContext<T>();
@@ -40,7 +43,7 @@ const TableBody = <T extends Record<string, any>>({
   return (
     <>
       {virtualRows.length > 0 ? (
-        <div style={{ height: `${virtualizer?.getTotalSize()}px` }}>
+        <div ref={ref} style={{ height: `${virtualizer?.getTotalSize()}px` }}>
           <table className={classes["table"]} role={"table"}>
             <colgroup>
               <col style={{ width: searchIconWidth }} />
@@ -75,9 +78,7 @@ const TableBody = <T extends Record<string, any>>({
                 );
               })}
               {paddingBottom > 0 && (
-                <tr style={{ height: `${paddingBottom}px` }}>
-                  {/* <td  /> */}
-                </tr>
+                <tr style={{ height: `${paddingBottom}px` }}></tr>
               )}
             </tbody>
           </table>
@@ -89,4 +90,10 @@ const TableBody = <T extends Record<string, any>>({
   );
 };
 
-export { TableBody };
+const TableBodyWrapper = React.forwardRef(TableBody) as <
+  T extends Record<string, any>,
+>(
+  p: TableBodyProps<T> & { ref?: Ref<HTMLDivElement> },
+) => ReactElement;
+
+export { TableBodyWrapper as TableBody };

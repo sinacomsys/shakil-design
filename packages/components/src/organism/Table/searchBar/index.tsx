@@ -1,4 +1,4 @@
-import { DEFAULT_ALIGN, SEARCH_ICON } from "..";
+import { DEFAULT_ALIGN } from "..";
 import { BaseIcon } from "../../../atoms";
 import { CheckBox } from "../../../molecules";
 import { useTheme } from "../../../theme";
@@ -49,7 +49,7 @@ const SearchBar = <T extends Record<string, unknown>>({
         ...searchBarStyle,
       }}
     >
-      <th style={{ width: SEARCH_ICON }}>
+      <th>
         <div className={`${classes["clear-filter"]}--wrapper`}>
           {isOnCheckedRowsAvailable ? (
             <div className={classes["checkbox"]}>
@@ -70,7 +70,7 @@ const SearchBar = <T extends Record<string, unknown>>({
                 onClick={onResetFilters}
                 color={clearFilterIconColor}
                 name="Table-_-Clear-Filters"
-                size={{ width: 14, height: 14 }}
+                size={{ width: 16, height: 16 }}
               />
             )}
           </div>

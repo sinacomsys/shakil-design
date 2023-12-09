@@ -17,6 +17,12 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(
             : _a.selectedRowBookmark,
         ),
       },
+      "check-box": {
+        paddingInlineStart: 9,
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+      },
     };
   },
   { name: "row-container", theming: theme_1.theming },

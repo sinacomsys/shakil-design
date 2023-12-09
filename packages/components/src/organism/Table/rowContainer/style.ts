@@ -9,6 +9,12 @@ export const useStyles = createUseStyles(
         height: "100%",
         borderInlineStart: `5px solid ${theme?.table?.selectedRowBookmark}`,
       },
+      "check-box": {
+        paddingInlineStart: 9,
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+      },
     };
   },
   { name: "row-container", theming },

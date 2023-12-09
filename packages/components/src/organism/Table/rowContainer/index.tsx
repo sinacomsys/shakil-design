@@ -68,7 +68,7 @@ const Rows = <T extends Record<string, unknown>>({
           <div className={classes["selected"]} />
         ) : null}
         {isOnCheckedRowsAvailable ? (
-          <div style={{ paddingInlineStart: 8 }}>
+          <div className={classes["check-box"]}>
             <CheckBox
               onChange={() => {
                 rowKey && handleCheckRow({ rowId: rowData[rowKey] });

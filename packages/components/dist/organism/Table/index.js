@@ -54,7 +54,6 @@ var searchBar_1 = require("./searchBar");
 var style_1 = require("./style");
 var classnames_1 = __importDefault(require("classnames"));
 var utils_1 = require("@shakil-design/utils");
-var context_2 = require("../../theme/context");
 var body_1 = require("./body");
 exports.SEARCH_ICON = 32;
 exports.ROW_SELECTION = 62;
@@ -84,7 +83,7 @@ var Table = function (_a) {
   var _e = (0, theme_1.useTheme)().table,
     _f = _e === void 0 ? {} : _e,
     header = _f.header;
-  var classes = (0, style_1.useStyles)();
+  var classes = (0, style_1.useStyles)({ height: height });
   var _g = (0, react_1.useState)(undefined),
     order = _g[0],
     setOrder = _g[1];
@@ -100,16 +99,24 @@ var Table = function (_a) {
   var _l = (0, react_1.useState)([]),
     checkedRows = _l[0],
     setCheckRows = _l[1];
-  var unit = (0, react_1.useContext)(context_2.UnitContext).unit;
   var _m = (0, react_1.useState)(false),
     isAllRowsChecked = _m[0],
     setAllRowsChecked = _m[1];
   var tableContainerRef = (0, react_1.useRef)(null);
-  var _o = (0, react_1.useState)(false),
-    isOverflowed = _o[0],
-    setIsOverflowed = _o[1];
+  var _o = (0, react_1.useState)(0),
+    bodyHeight = _o[0],
+    setBodyHeight = _o[1];
+  var _p = (0, react_1.useState)(false),
+    isOverFlowed = _p[0],
+    setIsOverflowed = _p[1];
   var windowHeight = (0, utils_1.useWindowSize)().height;
-  var isViewPortUnit = unit === "viewport";
+  (0, react_1.useEffect)(
+    function () {
+      var isOver = bodyHeight > height;
+      setIsOverflowed(isOver);
+    },
+    [bodyHeight, height],
+  );
   var list = (0, react_1.useMemo)(
     function () {
       var _a;
@@ -146,36 +153,18 @@ var Table = function (_a) {
       ? void 0
       : searchBarToggle();
   };
-  (0, react_1.useLayoutEffect)(
-    function () {
-      var element = tableContainerRef.current;
-      if (element) {
-        var isElementOverflowed = element.scrollWidth > element.clientWidth;
-        setIsOverflowed(isElementOverflowed);
-      }
-    },
-    [data],
-  );
   var calculateWidth = function (totalWidth) {
     var withOutDeclaredWidth = 0;
     var columnsWidth = coloums.reduce(function (prev, _a) {
       var width = _a.width;
       return prev + (width || 0);
     }, 0);
-    var scrollBarWidth = isOverflowed
+    var scrollBarWidth = isOverFlowed
       ? 0
-      : isViewPortUnit
-      ? (0, utils_1.pxToVw)(exports.SCROLL_BAR)
-      : exports.SCROLL_BAR;
-    var _columnsWidth = isViewPortUnit
-      ? (0, utils_1.pxToVw)(columnsWidth)
-      : columnsWidth;
-    var searchIconWidth = isViewPortUnit
-      ? (0, utils_1.pxToVw)(exports.SEARCH_ICON)
-      : exports.SEARCH_ICON;
-    var _totalWidth = isViewPortUnit
-      ? (0, utils_1.pxToVw)(totalWidth)
-      : totalWidth;
+      : (0, utils_1.pxToVw)(exports.SCROLL_BAR);
+    var _columnsWidth = (0, utils_1.pxToVw)(columnsWidth);
+    var searchIconWidth = (0, utils_1.pxToVw)(exports.SEARCH_ICON);
+    var _totalWidth = (0, utils_1.pxToVw)(totalWidth);
     var remainWidth =
       _totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
     coloums.forEach(function (_a) {
@@ -184,18 +173,12 @@ var Table = function (_a) {
         withOutDeclaredWidth += 1;
       }
     });
-    if (withOutDeclaredWidth && unit === "pixel") {
-      return remainWidth / withOutDeclaredWidth;
-    } else if (withOutDeclaredWidth && isViewPortUnit) {
+    if (withOutDeclaredWidth) {
       return "".concat(remainWidth / withOutDeclaredWidth, "vw");
     }
   };
-  var rowSelectionWidth = isViewPortUnit
-    ? (0, utils_1.pxToVwString)(exports.ROW_SELECTION)
-    : exports.ROW_SELECTION;
-  var searchIconWidth = isViewPortUnit
-    ? (0, utils_1.pxToVwString)(exports.SEARCH_ICON)
-    : exports.SEARCH_ICON;
+  var rowSelectionWidth = (0, utils_1.pxToVwString)(exports.ROW_SELECTION);
+  var searchIconWidth = (0, utils_1.pxToVwString)(exports.SEARCH_ICON);
   var _searchIconWidth = onCheckedRows ? rowSelectionWidth : searchIconWidth;
   var isSearchAvailable = coloums.find(function (_a) {
     var renderFilter = _a.renderFilter;
@@ -322,9 +305,14 @@ var Table = function (_a) {
         { text: "No Data!" },
         void 0,
         false,
-        { fileName: _jsxFileName, lineNumber: 250, columnNumber: 45 },
+        { fileName: _jsxFileName, lineNumber: 226, columnNumber: 45 },
         _this,
       );
+  var getBodyHeight = function (body) {
+    setBodyHeight(
+      (body === null || body === void 0 ? void 0 : body.clientHeight) || 0,
+    );
+  };
   return (0, jsx_dev_runtime_1.jsxDEV)(
     react_measure_1.default,
     __assign(
@@ -346,9 +334,6 @@ var Table = function (_a) {
             __assign(
               {
                 ref: measureRef,
-                style: {
-                  height: height,
-                },
                 className: (0, classnames_1.default)(
                   isLoading && classes["backDrop"],
                   classes["container"],
@@ -369,7 +354,7 @@ var Table = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 270,
+                              lineNumber: 247,
                               columnNumber: 17,
                             },
                             _this,
@@ -380,7 +365,7 @@ var Table = function (_a) {
                       false,
                       {
                         fileName: _jsxFileName,
-                        lineNumber: 268,
+                        lineNumber: 245,
                         columnNumber: 28,
                       },
                       _this,
@@ -399,7 +384,7 @@ var Table = function (_a) {
                           onSelectRow: handleOnSelectRow,
                           isOnCheckedRowsAvailable: Boolean(onCheckedRows),
                           isSelectSingleRowAvailable: Boolean(onSelectRow),
-                          isOverflowed: isOverflowed,
+                          isOverflowed: isOverFlowed,
                           testid: testid,
                           onRow: onRow,
                           virtualizer: rowVirtualizer,
@@ -437,7 +422,7 @@ var Table = function (_a) {
                                                 false,
                                                 {
                                                   fileName: _jsxFileName,
-                                                  lineNumber: 294,
+                                                  lineNumber: 271,
                                                   columnNumber: 21,
                                                 },
                                                 _this,
@@ -446,28 +431,29 @@ var Table = function (_a) {
                                                 var width = _a.width,
                                                   dataIndex = _a.dataIndex;
                                                 var _width =
-                                                  isViewPortUnit && width
-                                                    ? (0, utils_1.pxToVwString)(
-                                                        width,
-                                                      )
-                                                    : width;
+                                                  width &&
+                                                  (0, utils_1.pxToVwString)(
+                                                    width,
+                                                  );
                                                 return (0,
-                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 302, columnNumber: 31 }, _this);
+                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 278, columnNumber: 31 }, _this);
                                               }),
-                                              isOverflowed
+                                              isOverFlowed
                                                 ? (0, jsx_dev_runtime_1.jsxDEV)(
                                                     "col",
                                                     {
                                                       style: {
-                                                        width:
+                                                        width: (0,
+                                                        utils_1.pxToVwString)(
                                                           exports.SCROLL_BAR,
+                                                        ),
                                                       },
                                                     },
                                                     void 0,
                                                     false,
                                                     {
                                                       fileName: _jsxFileName,
-                                                      lineNumber: 309,
+                                                      lineNumber: 285,
                                                       columnNumber: 38,
                                                     },
                                                     _this,
@@ -479,7 +465,7 @@ var Table = function (_a) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 293,
+                                            lineNumber: 270,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -513,7 +499,7 @@ var Table = function (_a) {
                                                   false,
                                                   {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 320,
+                                                    lineNumber: 296,
                                                     columnNumber: 21,
                                                   },
                                                   _this,
@@ -540,7 +526,7 @@ var Table = function (_a) {
                                                       false,
                                                       {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 328,
+                                                        lineNumber: 304,
                                                         columnNumber: 43,
                                                       },
                                                       _this,
@@ -553,7 +539,7 @@ var Table = function (_a) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 313,
+                                            lineNumber: 289,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -565,7 +551,7 @@ var Table = function (_a) {
                                   true,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 292,
+                                    lineNumber: 269,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -581,6 +567,7 @@ var Table = function (_a) {
                                       children: (0, jsx_dev_runtime_1.jsxDEV)(
                                         body_1.TableBody,
                                         {
+                                          ref: getBodyHeight,
                                           paddingTop: paddingTop,
                                           paddingBottom: paddingBottom,
                                           noContent: _noContent,
@@ -597,7 +584,7 @@ var Table = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 345,
+                                          lineNumber: 321,
                                           columnNumber: 19,
                                         },
                                         _this,
@@ -608,7 +595,7 @@ var Table = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 341,
+                                    lineNumber: 317,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -620,7 +607,7 @@ var Table = function (_a) {
                           true,
                           {
                             fileName: _jsxFileName,
-                            lineNumber: 291,
+                            lineNumber: 268,
                             columnNumber: 15,
                           },
                           _this,
@@ -631,7 +618,7 @@ var Table = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 273,
+                      lineNumber: 250,
                       columnNumber: 13,
                     },
                     _this,
@@ -641,7 +628,7 @@ var Table = function (_a) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 257, columnNumber: 17 },
+            { fileName: _jsxFileName, lineNumber: 237, columnNumber: 17 },
             _this,
           );
         },
@@ -649,7 +636,7 @@ var Table = function (_a) {
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 252, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 232, columnNumber: 11 },
     _this,
   );
 };

@@ -1,11 +1,4 @@
-import {
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Measure from "react-measure";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ScrollView, Spinner } from "../../atoms";
@@ -18,7 +11,6 @@ import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
 import { pxToVw, pxToVwString, useWindowSize } from "@shakil-design/utils";
-import { UnitContext } from "../../theme/context";
 import { TableBody } from "./body";
 
 export const SEARCH_ICON = 32;
@@ -68,19 +60,22 @@ const Table = <T extends Record<string, any>>({
   onRow,
 }: TableProps<T>) => {
   const { table: { header } = {} } = useTheme();
-  const classes = useStyles();
+  const classes = useStyles({ height });
   const [order, setOrder] = useState<Order>(undefined);
   const [isSearchVisible, setShowSearchBar] = useState(false);
   const [orderBy, setOrderBy] = useState<OrderBy>(undefined);
   const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
   const [checkedRows, setCheckRows] = useState<T[]>([]);
-  const { unit } = useContext(UnitContext);
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
   const tableContainerRef = useRef<HTMLDivElement>(null);
-  const [isOverflowed, setIsOverflowed] = useState(false);
+  const [bodyHeight, setBodyHeight] = useState(0);
+  const [isOverFlowed, setIsOverflowed] = useState(false);
   const { height: windowHeight } = useWindowSize();
 
-  const isViewPortUnit = unit === "viewport";
+  useEffect(() => {
+    const isOver = bodyHeight > height;
+    setIsOverflowed(isOver);
+  }, [bodyHeight, height]);
 
   const list = useMemo(() => {
     let result = data || [];
@@ -103,13 +98,6 @@ const Table = <T extends Record<string, any>>({
     });
     searchBarToggle?.();
   };
-  useLayoutEffect(() => {
-    const element = tableContainerRef.current;
-    if (element) {
-      const isElementOverflowed = element.scrollWidth > element.clientWidth;
-      setIsOverflowed(isElementOverflowed);
-    }
-  }, [data]);
 
   const calculateWidth = (totalWidth: number) => {
     let withOutDeclaredWidth = 0;
@@ -117,15 +105,10 @@ const Table = <T extends Record<string, any>>({
       return prev + (width || 0);
     }, 0);
 
-    const scrollBarWidth = isOverflowed
-      ? 0
-      : isViewPortUnit
-      ? pxToVw(SCROLL_BAR)
-      : SCROLL_BAR;
-    const _columnsWidth = isViewPortUnit ? pxToVw(columnsWidth) : columnsWidth;
-
-    const searchIconWidth = isViewPortUnit ? pxToVw(SEARCH_ICON) : SEARCH_ICON;
-    const _totalWidth = isViewPortUnit ? pxToVw(totalWidth) : totalWidth;
+    const scrollBarWidth = isOverFlowed ? 0 : pxToVw(SCROLL_BAR);
+    const _columnsWidth = pxToVw(columnsWidth);
+    const searchIconWidth = pxToVw(SEARCH_ICON);
+    const _totalWidth = pxToVw(totalWidth);
 
     const remainWidth =
       _totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
@@ -135,20 +118,13 @@ const Table = <T extends Record<string, any>>({
         withOutDeclaredWidth += 1;
       }
     });
-    if (withOutDeclaredWidth && unit === "pixel") {
-      return remainWidth / withOutDeclaredWidth;
-    } else if (withOutDeclaredWidth && isViewPortUnit) {
+    if (withOutDeclaredWidth) {
       return `${remainWidth / withOutDeclaredWidth}vw`;
     }
   };
+  const rowSelectionWidth = pxToVwString(ROW_SELECTION);
 
-  const rowSelectionWidth = isViewPortUnit
-    ? pxToVwString(ROW_SELECTION)
-    : ROW_SELECTION;
-
-  const searchIconWidth = isViewPortUnit
-    ? pxToVwString(SEARCH_ICON)
-    : SEARCH_ICON;
+  const searchIconWidth = pxToVwString(SEARCH_ICON);
 
   const _searchIconWidth = onCheckedRows ? rowSelectionWidth : searchIconWidth;
 
@@ -249,6 +225,10 @@ const Table = <T extends Record<string, any>>({
 
   const _noContent = noContent ? noContent : <NoContent text="No Data!" />;
 
+  const getBodyHeight = (body: HTMLDivElement) => {
+    setBodyHeight(body?.clientHeight || 0);
+  };
+
   return (
     <Measure bounds>
       {({ contentRect, measureRef }) => {
@@ -257,9 +237,6 @@ const Table = <T extends Record<string, any>>({
         return (
           <div
             ref={measureRef}
-            style={{
-              height,
-            }}
             className={classNames(
               isLoading && classes["backDrop"],
               classes["container"],
@@ -281,7 +258,7 @@ const Table = <T extends Record<string, any>>({
                 onSelectRow: handleOnSelectRow,
                 isOnCheckedRowsAvailable: Boolean(onCheckedRows),
                 isSelectSingleRowAvailable: Boolean(onSelectRow),
-                isOverflowed,
+                isOverflowed: isOverFlowed,
                 testid,
                 onRow,
                 virtualizer: rowVirtualizer,
@@ -297,8 +274,7 @@ const Table = <T extends Record<string, any>>({
                       }}
                     />
                     {coloums.map(({ width, dataIndex }) => {
-                      const _width =
-                        isViewPortUnit && width ? pxToVwString(width) : width;
+                      const _width = width && pxToVwString(width);
                       return (
                         <col
                           key={dataIndex as string}
@@ -306,8 +282,8 @@ const Table = <T extends Record<string, any>>({
                         />
                       );
                     })}
-                    {isOverflowed ? (
-                      <col style={{ width: SCROLL_BAR }} />
+                    {isOverFlowed ? (
+                      <col style={{ width: pxToVwString(SCROLL_BAR) }} />
                     ) : null}
                   </colgroup>
                   <thead
@@ -343,6 +319,7 @@ const Table = <T extends Record<string, any>>({
                   className={classes["table-body"]}
                 >
                   <TableBody
+                    ref={getBodyHeight}
                     paddingTop={paddingTop}
                     paddingBottom={paddingBottom}
                     noContent={_noContent}

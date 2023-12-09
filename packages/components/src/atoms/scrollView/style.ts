@@ -5,6 +5,8 @@ const useStyles = createUseStyles(
   (theme) => {
     return {
       container: {
+        scrollbarWidth: "thin",
+        scrollbarColor: `${theme.disableText} #f8f8f8`,
         overflow: "auto",
         "&::-webkit-scrollbar": {
           width: 7,

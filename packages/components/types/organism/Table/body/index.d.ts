@@ -1,6 +1,7 @@
-/// <reference types="react" />
 import { VirtualItem } from "@tanstack/react-virtual";
 import { TableProps } from "..";
+import { ReactElement, Ref } from "react";
+import React from "react";
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
   virtualRows: VirtualItem[];
@@ -12,17 +13,9 @@ interface TableBodyProps<T extends Record<string, any>>
   paddingTop: number;
   paddingBottom: number;
 }
-declare const TableBody: <T extends Record<string, any>>({
-  virtualRows,
-  noContent,
-  searchIconWidth,
-  dataList,
-  coloums,
-  rowKey,
-  data,
-  checkedRows,
-  colWidth,
-  paddingBottom,
-  paddingTop,
-}: TableBodyProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
-export { TableBody };
+declare const TableBodyWrapper: <T extends Record<string, any>>(
+  p: TableBodyProps<T> & {
+    ref?: Ref<HTMLDivElement> | undefined;
+  },
+) => ReactElement;
+export { TableBodyWrapper as TableBody };

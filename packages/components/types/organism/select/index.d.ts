@@ -32,5 +32,6 @@ declare const Select: <T extends Record<string, unknown> = Default>({
   errorMessage,
   errorMessageClassName,
   hasError,
+  testID,
 }: SelectProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Select };

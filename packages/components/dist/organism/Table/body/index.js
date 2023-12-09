@@ -14,6 +14,11 @@ var __assign =
       };
     return __assign.apply(this, arguments);
   };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TableBody = void 0;
@@ -26,7 +31,8 @@ var rowContainer_1 = require("../rowContainer");
 var context_1 = require("../../../theme/context");
 var react_1 = require("react");
 var context_2 = require("../context");
-var TableBody = function (_a) {
+var react_2 = __importDefault(require("react"));
+var TableBody = function (_a, ref) {
   var virtualRows = _a.virtualRows,
     noContent = _a.noContent,
     searchIconWidth = _a.searchIconWidth,
@@ -52,6 +58,7 @@ var TableBody = function (_a) {
               "div",
               __assign(
                 {
+                  ref: ref,
                   style: {
                     height: "".concat(
                       virtualizer === null || virtualizer === void 0
@@ -79,7 +86,7 @@ var TableBody = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 46,
+                                    lineNumber: 49,
                                     columnNumber: 15,
                                   },
                                   _this,
@@ -92,7 +99,7 @@ var TableBody = function (_a) {
                                       ? (0, utils_1.pxToVwString)(width)
                                       : width;
                                   return (0,
-                                  jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 25 }, _this);
+                                  jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 25 }, _this);
                                 }),
                               ],
                             },
@@ -100,7 +107,7 @@ var TableBody = function (_a) {
                             true,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 45,
+                              lineNumber: 48,
                               columnNumber: 13,
                             },
                             _this,
@@ -128,7 +135,7 @@ var TableBody = function (_a) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 59,
+                                        lineNumber: 62,
                                         columnNumber: 35,
                                       },
                                       _this,
@@ -136,7 +143,7 @@ var TableBody = function (_a) {
                                   virtualRows.map(function (virtualRow, index) {
                                     var row = dataList[virtualRow.index];
                                     return (0,
-                                    jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { rowKey: rowKey, rowData: row, data: data || [], index: index, columns: coloums, checkedRows: checkedRows, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 64, columnNumber: 25 }, _this);
+                                    jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { rowKey: rowKey, rowData: row, data: data || [], index: index, columns: coloums, checkedRows: checkedRows, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 67, columnNumber: 25 }, _this);
                                   }),
                                   paddingBottom > 0 &&
                                     (0, jsx_dev_runtime_1.jsxDEV)(
@@ -153,7 +160,7 @@ var TableBody = function (_a) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 77,
+                                        lineNumber: 80,
                                         columnNumber: 38,
                                       },
                                       _this,
@@ -165,7 +172,7 @@ var TableBody = function (_a) {
                             true,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 58,
+                              lineNumber: 61,
                               columnNumber: 13,
                             },
                             _this,
@@ -177,7 +184,7 @@ var TableBody = function (_a) {
                     true,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 44,
+                      lineNumber: 47,
                       columnNumber: 11,
                     },
                     _this,
@@ -186,16 +193,17 @@ var TableBody = function (_a) {
               ),
               void 0,
               false,
-              { fileName: _jsxFileName, lineNumber: 42, columnNumber: 34 },
+              { fileName: _jsxFileName, lineNumber: 45, columnNumber: 34 },
               _this,
             )
           : noContent,
     },
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 40, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 },
     _this,
   );
 };
-exports.TableBody = TableBody;
+var TableBodyWrapper = react_2.default.forwardRef(TableBody);
+exports.TableBody = TableBodyWrapper;
 //# sourceMappingURL=index.js.map

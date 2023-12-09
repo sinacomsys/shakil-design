@@ -5,7 +5,7 @@ const useStyles = createUseStyles(
   ({ table }) => {
     return {
       checkbox: {
-        width: 30,
+        flex: 1,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -14,15 +14,15 @@ const useStyles = createUseStyles(
       },
       "clear-filter": {
         height: 24,
-        width: 30,
+        flex: 1,
         borderRight: `1px solid ${table?.divider}`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         "&--wrapper": {
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
+          justifyContent: "flex-end",
         },
       },
       wrapper: {

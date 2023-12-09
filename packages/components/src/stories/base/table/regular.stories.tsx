@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(1000)].map((_, index) => {
+const mockData = [...new Array(500)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),

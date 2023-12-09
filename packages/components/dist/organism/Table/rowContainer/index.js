@@ -101,7 +101,7 @@ var Rows = function (_a) {
                     ? (0, jsx_dev_runtime_1.jsxDEV)(
                         "div",
                         __assign(
-                          { style: { paddingInlineStart: 8 } },
+                          { className: classes["check-box"] },
                           {
                             children: (0, jsx_dev_runtime_1.jsxDEV)(
                               checkbox_1.CheckBox,

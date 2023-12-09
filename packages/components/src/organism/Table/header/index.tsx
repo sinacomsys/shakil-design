@@ -28,7 +28,6 @@ const Header = <T extends object>({
     isOverflowed,
     testid,
   } = useMyTableContext();
-
   return (
     <tr data-testid={testid?.header}>
       <th>
@@ -43,16 +42,15 @@ const Header = <T extends object>({
             </div>
           ) : null}
 
-          <div className={classes["search"]}>
+          <div onClick={onToggleSearchBar} className={classes["search"]}>
             {filterIcon ? (
               filterIcon
             ) : (
               <BaseIcon
                 data-testid={testid?.filterBarIcon}
                 color={filterIconColor}
-                onClick={onToggleSearchBar}
                 name="Table-_-Filter"
-                size={{ width: 14, height: 14 }}
+                size={{ width: 16, height: 16 }}
               />
             )}
           </div>

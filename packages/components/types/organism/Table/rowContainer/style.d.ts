@@ -4,4 +4,4 @@ export declare const useStyles: (
         theme?: import("../../../theme/context").ColorsType | undefined;
       }
     | undefined,
-) => import("jss").Classes<"selected">;
+) => import("jss").Classes<"selected" | "check-box">;
