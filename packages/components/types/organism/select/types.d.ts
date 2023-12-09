@@ -30,7 +30,6 @@ interface TextInputCommon
     | "errorMessage"
     | "errorMessageClassName"
     | "hasError"
-    | "testID"
   > {}
 export interface SelectProps<T extends Record<string, unknown> = Default>
   extends Omit<TextInputCommon, "value"> {
@@ -50,6 +49,7 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
   hasSearch?: boolean;
   testid?: {
     overlay?: string;
+    input?: string;
   };
 }
 export interface OptionProps extends Pick<SelectProps, "multiple"> {

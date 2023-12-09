@@ -93,8 +93,7 @@ var Select = function (_a) {
     testid = _a.testid,
     errorMessage = _a.errorMessage,
     errorMessageClassName = _a.errorMessageClassName,
-    hasError = _a.hasError,
-    testID = _a.testID;
+    hasError = _a.hasError;
   var classes = (0, style_1.useStyles)();
   var _e = (0, react_1.useState)(null),
     internalValue = _e[0],
@@ -244,7 +243,8 @@ var Select = function (_a) {
               errorMessage: errorMessage,
               errorMessageClassName: errorMessageClassName,
               hasError: hasError,
-              testID: testID,
+              testID:
+                testid === null || testid === void 0 ? void 0 : testid.input,
             },
             {
               onClear: handleOnClear,
@@ -260,14 +260,14 @@ var Select = function (_a) {
                 { isVisible: isVisible },
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 173, columnNumber: 21 },
+                { fileName: _jsxFileName, lineNumber: 172, columnNumber: 21 },
                 _this,
               ),
             },
           ),
           void 0,
           false,
-          { fileName: _jsxFileName, lineNumber: 143, columnNumber: 7 },
+          { fileName: _jsxFileName, lineNumber: 142, columnNumber: 7 },
           _this,
         ),
         body.current && isVisible
@@ -324,7 +324,7 @@ var Select = function (_a) {
                                                 false,
                                                 {
                                                   fileName: _jsxFileName,
-                                                  lineNumber: 194,
+                                                  lineNumber: 193,
                                                   columnNumber: 37,
                                                 },
                                                 _this,
@@ -341,7 +341,7 @@ var Select = function (_a) {
                                             false,
                                             {
                                               fileName: _jsxFileName,
-                                              lineNumber: 191,
+                                              lineNumber: 190,
                                               columnNumber: 23,
                                             },
                                             _this,
@@ -352,7 +352,7 @@ var Select = function (_a) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 189,
+                                        lineNumber: 188,
                                         columnNumber: 33,
                                       },
                                       _this,
@@ -372,7 +372,7 @@ var Select = function (_a) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 209,
+                                        lineNumber: 208,
                                         columnNumber: 32,
                                       },
                                       _this,
@@ -390,7 +390,7 @@ var Select = function (_a) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 217,
+                                        lineNumber: 216,
                                         columnNumber: 24,
                                       },
                                       _this,
@@ -402,7 +402,7 @@ var Select = function (_a) {
                           true,
                           {
                             fileName: _jsxFileName,
-                            lineNumber: 184,
+                            lineNumber: 183,
                             columnNumber: 17,
                           },
                           _this,
@@ -413,7 +413,7 @@ var Select = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 179,
+                      lineNumber: 178,
                       columnNumber: 15,
                     },
                     _this,
@@ -421,7 +421,7 @@ var Select = function (_a) {
                 },
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 177, columnNumber: 33 },
+                { fileName: _jsxFileName, lineNumber: 176, columnNumber: 33 },
                 _this,
               ),
               body.current,
@@ -431,7 +431,7 @@ var Select = function (_a) {
     },
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 141, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 140, columnNumber: 11 },
     _this,
   );
 };
