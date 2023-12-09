@@ -28,6 +28,7 @@ const CheckBox = ({
   return (
     <label className={classes["label"]}>
       <div
+        data-is-checked={checked}
         className={classNames(
           classes["check-box-wrapper"],
           typeof children !== "undefined" &&
@@ -41,6 +42,7 @@ const CheckBox = ({
           type={"checkbox"}
           value={value}
           name={name}
+          data-is-checked={checked}
           checked={checked}
           onChange={onChangeHandler}
           {...rest}

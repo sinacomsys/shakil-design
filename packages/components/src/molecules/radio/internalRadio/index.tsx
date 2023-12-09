@@ -70,7 +70,11 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
 
     return (
       <label className={classes["label"]}>
-        <div ref={ref} className={classes["container"]}>
+        <div
+          data-is-checked={isChecked}
+          ref={ref}
+          className={classes["container"]}
+        >
           <CustomCircle
             {...{ borderColor, backgroundColor: circleColor as string }}
           />
@@ -83,6 +87,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
             value={_value}
             name={name}
             checked={isChecked}
+            data-is-checked={isChecked}
             {...rest}
           />
           <motion.div
