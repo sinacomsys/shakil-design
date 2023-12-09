@@ -510,6 +510,7 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
                   ref: setRef,
                   type: rest.type,
                   disabled: disabled,
+                  "data-testid": supportedProps["data-testid"] || testID,
                   style: __assign({}, supportedProps.style),
                 }),
                 void 0,
@@ -538,7 +539,7 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 421,
+                      lineNumber: 423,
                       columnNumber: 26,
                     },
                     _this,
@@ -561,7 +562,7 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 433,
+                      lineNumber: 435,
                       columnNumber: 25,
                     },
                     _this,
@@ -583,7 +584,7 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 445,
+                      lineNumber: 447,
                       columnNumber: 28,
                     },
                     _this,

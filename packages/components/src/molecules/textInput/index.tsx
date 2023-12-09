@@ -414,6 +414,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           ref={setRef}
           type={rest.type}
           disabled={disabled}
+          //@ts-ignore
+          data-testid={supportedProps["data-testid"] || testID}
           style={{
             ...supportedProps.style,
           }}
