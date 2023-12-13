@@ -1,12 +1,13 @@
 import { Moment } from "moment-jalaali";
-export function getDaysOfMonth(month: Moment, isGregorian: boolean) {
+import { GREGORIAN_MONTH, PERSIAN_MONTH } from "./calendarMode";
+export function getDaysOfMonth(month: Moment, isPersian: boolean) {
   const days = [];
   // month.clone().startOf("jMonth");
   // const monthFormat = isGregorian ? "month" : "jMonth";
-  const dayOffset = isGregorian ? 0 : 1;
-
-  const current = month.clone().startOf("jMonth");
-  const end = month.clone().endOf("jMonth");
+  const monthFormat = isPersian ? PERSIAN_MONTH : GREGORIAN_MONTH;
+  const dayOffset = isPersian ? 1 : 0;
+  const current = month.clone().startOf(monthFormat as any);
+  const end = month.clone().endOf(monthFormat as any);
 
   // Set start to the first day of week in the last month
   current.subtract((current.day() + dayOffset) % 7, "days");

@@ -8,6 +8,9 @@ export const useStyle = createUseStyles(
       flexDirection: "row-reverse",
       justifyContent: "space-between",
       marginBottom: 10,
+      "&--gregorian": {
+        flexDirection: "row",
+      },
     },
     day: {
       flex: 1,

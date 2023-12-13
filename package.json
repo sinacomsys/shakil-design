@@ -95,6 +95,7 @@
     "@tanstack/react-virtual": "^3.0.0-beta.68",
     "jss-plugin-default-unit": "^10.10.0",
     "moment-jalaali": "^0.10.0",
+    "react-hook-form-context": "^1.0.0",
     "react-measure": "^2.5.2",
     "react-poper": "^1.1.5",
     "react-popper": "^2.3.0",

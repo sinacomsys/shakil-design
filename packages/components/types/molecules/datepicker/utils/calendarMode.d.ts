@@ -1,0 +1,16 @@
+export declare const PERSIAN_YEAR_FORMAT = "jYYYY";
+export declare const PERSIAN_MONTH_NAME_FORMAT = "jMMMM";
+export declare const PERSIAN_MONTH_NUMBER_FORMAT = "jMM";
+export declare const PERSIAN_DAY_FORMAT = "jDD";
+export declare const PERSIAN_DAY_SHORT_FORMAT = "jD";
+export declare const PERSIAN_FULL_TIME_FORMAT = "jYYYY/jMM/jDD HH:mm";
+export declare const PERSIAN_FULL_DATE_FORMAT = "jYYYY/jMM/jDD";
+export declare const PERSIAN_MONTH = "jMonth";
+export declare const GREGORIAN_YEAR_FORMAT = "YYYY";
+export declare const GREGORIAN_MONTH_NAME_FORMAT = "MMMM";
+export declare const GREGORIAN_DAY_SHORT_FORMAT = "D";
+export declare const GREGORIAN_DAY_FORMAT = "DD";
+export declare const GREGORIAN_FULL_TIME_FORMAT = "YYYY/MM/DD HH:mm";
+export declare const GREGORIAN_FULL_DATE_FORMAT = "YYYY/MM/DD";
+export declare const GREGORIAN_MONTH = "month";
+export declare const GREGORIAN_MONTH_NUMBER_FORMAT = "MM";

@@ -24,7 +24,15 @@ const useStyles = createUseStyles(
           transform: "scale(2)",
         },
       },
-      button: button,
+      button: {
+        ...button,
+        "&--small": {
+          height: 32,
+        },
+        "&--middle": {
+          height: 40,
+        },
+      },
       buttonMain: {
         ...button,
         backgroundColor: theme.button?.main as string,

@@ -204,9 +204,7 @@ const useFonts = () => {
 const useStyles = createUseStyles(
   () => {
     return {
-      text: (size: TextProps["size"]) => ({
-        fontSize: size || 16,
-      }),
+      text: { fontSize: 16 },
     };
   },
   { theming, name: "font" },

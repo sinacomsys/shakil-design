@@ -1,0 +1,36 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GREGORIAN_MONTH_NUMBER_FORMAT =
+  exports.GREGORIAN_MONTH =
+  exports.GREGORIAN_FULL_DATE_FORMAT =
+  exports.GREGORIAN_FULL_TIME_FORMAT =
+  exports.GREGORIAN_DAY_FORMAT =
+  exports.GREGORIAN_DAY_SHORT_FORMAT =
+  exports.GREGORIAN_MONTH_NAME_FORMAT =
+  exports.GREGORIAN_YEAR_FORMAT =
+  exports.PERSIAN_MONTH =
+  exports.PERSIAN_FULL_DATE_FORMAT =
+  exports.PERSIAN_FULL_TIME_FORMAT =
+  exports.PERSIAN_DAY_SHORT_FORMAT =
+  exports.PERSIAN_DAY_FORMAT =
+  exports.PERSIAN_MONTH_NUMBER_FORMAT =
+  exports.PERSIAN_MONTH_NAME_FORMAT =
+  exports.PERSIAN_YEAR_FORMAT =
+    void 0;
+exports.PERSIAN_YEAR_FORMAT = "jYYYY";
+exports.PERSIAN_MONTH_NAME_FORMAT = "jMMMM";
+exports.PERSIAN_MONTH_NUMBER_FORMAT = "jMM";
+exports.PERSIAN_DAY_FORMAT = "jDD";
+exports.PERSIAN_DAY_SHORT_FORMAT = "jD";
+exports.PERSIAN_FULL_TIME_FORMAT = "jYYYY/jMM/jDD HH:mm";
+exports.PERSIAN_FULL_DATE_FORMAT = "jYYYY/jMM/jDD";
+exports.PERSIAN_MONTH = "jMonth";
+exports.GREGORIAN_YEAR_FORMAT = "YYYY";
+exports.GREGORIAN_MONTH_NAME_FORMAT = "MMMM";
+exports.GREGORIAN_DAY_SHORT_FORMAT = "D";
+exports.GREGORIAN_DAY_FORMAT = "DD";
+exports.GREGORIAN_FULL_TIME_FORMAT = "YYYY/MM/DD HH:mm";
+exports.GREGORIAN_FULL_DATE_FORMAT = "YYYY/MM/DD";
+exports.GREGORIAN_MONTH = "month";
+exports.GREGORIAN_MONTH_NUMBER_FORMAT = "MM";
+//# sourceMappingURL=calendarMode.js.map

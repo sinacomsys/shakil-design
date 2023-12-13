@@ -5,9 +5,6 @@ import { Spinner } from "../../atoms";
 import { Text } from "../../atoms/text";
 import { useTheme } from "../../theme";
 import { useStyles } from "./style";
-import { pxToVh } from "@shakil-design/utils";
-import { Unit } from "../../types";
-
 type Mode = "main" | "success" | "danger";
 
 export type Ripple = {
@@ -27,7 +24,6 @@ export interface ButtonProps
   disabled?: boolean;
   form?: string;
   size?: "small" | "middle";
-  unit?: Unit;
   ghost?: boolean;
 }
 
@@ -42,8 +38,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isLoading,
       disabled,
       onClick,
-      unit = "pixel",
-      size,
+      size = "middle",
       ghost,
       ...rest
     },
@@ -56,6 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         success: successColor,
       } = {},
     } = useTheme();
+
     const classes = useStyles();
     const [ripples, setRipples] = useState<Ripple[]>([]);
 
@@ -103,9 +99,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       [],
     );
 
-    const height = size === "small" ? 32 : 40;
-    const fontSize = unit === "viewport" ? `${pxToVh(16)}vh` : 16;
-
     const isMainGhost = ghost && mode === "main";
     const isSuccessGhost = ghost && mode === "success";
     const isDangerGhost = ghost && mode === "danger";
@@ -123,7 +116,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...rest}
         style={{
           ...rest.style,
-          height: unit === "viewport" ? `${pxToVh(height)}vh` : height,
           cursor: disabled || isLoading ? "not-allowed" : "pointer",
         }}
         ref={ref}
@@ -138,6 +130,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           mode === "main" && classes["buttonMain"],
           mode === "success" && classes["buttonSuccess"],
           mode === "danger" && classes["buttonDanger"],
+          size === "small" && `${classes["button"]}--small`,
+          size === "middle" && `${classes["button"]}--middle`,
           isMainGhost && classes["ghostMain"],
           isSuccessGhost && classes["ghostSuccess"],
           isDangerGhost && classes["ghostDanger"],
@@ -151,7 +145,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           }}
         >
           {typeof children !== "object" ? (
-            <Text style={{ color: "inherit" }} size={fontSize}>
+            <Text style={{ color: "inherit" }} size={16}>
               {children}
             </Text>
           ) : (

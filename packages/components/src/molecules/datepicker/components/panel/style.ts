@@ -3,28 +3,24 @@ import { theming } from "../../../../theme";
 
 export const useStyle = createUseStyles(
   {
-    expandIconWrap: {
-      marginInlineStart: 14,
-      display: "flex",
-      flexDirection: "column",
-      "&--more-choices": {
-        marginBottom: 5,
-        justifyContent: "center",
-      },
-    },
     manualInput: { display: "flex", marginLeft: 75, marginTop: 20 },
-    matrixContainer: {
-      transition: "0.3s",
-      overflow: "hidden",
+    expand: {
+      marginInlineStart: 14,
     },
-    panel: {
+    wrapper: {
       width: 320,
       borderRadius: 10,
       backgroundColor: "#575757",
-      paddingBottom: 20,
+      paddingBottom: 12,
     },
-    matrix: {
-      paddingInline: 22,
+    "footer-icons": {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      paddingInline: 14,
+    },
+    "go-today": {
+      marginInlineStart: 118,
     },
   },
   { theming, name: "date-picker-panel" },

@@ -2,6 +2,7 @@ import { BaseIcon, Text } from "../../../../atoms";
 import { DatePickerContext } from "../../context";
 import { useContext } from "react";
 import { useStyle } from "./style";
+import moment from "moment-jalaali";
 
 export const Header = () => {
   const {
@@ -10,18 +11,32 @@ export const Header = () => {
     onAddYear,
     onSubtractMonth,
     onSubtractYear,
+    calendarMode,
   } = useContext(DatePickerContext);
   const classes = useStyle();
+
+  const date =
+    currentDate &&
+    new Date(
+      Number(moment(currentDate).format("YYYY")),
+      Number(moment(currentDate).format("MM")) - 1,
+      Number(moment(currentDate).format("DD")),
+    );
+
+  const month =
+    date &&
+    new Intl.DateTimeFormat(calendarMode === "persian" ? "fa-IR" : "en-US", {
+      month: "short",
+    }).format(date);
+
+  const year =
+    date &&
+    new Intl.DateTimeFormat(calendarMode === "persian" ? "fa-IR" : "en-US", {
+      year: "numeric",
+    }).format(date);
+
   return (
-    <div
-      style={{
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        marginBottom: 15,
-        marginInline: 22,
-      }}
-    >
+    <div className={classes["wrapper"]}>
       <BaseIcon
         onClick={onSubtractMonth}
         wrapperClassName={classes["prevMonth"]}
@@ -44,7 +59,7 @@ export const Header = () => {
       />
       <div className={classes["month"]}>
         <Text size={14} color={"white"} theme="Regular">
-          {currentDate?.format("jMMMM") ?? ""}
+          {month ?? ""}
         </Text>
         <div style={{ display: "flex", alignItems: "center", marginTop: 5 }}>
           <BaseIcon
@@ -54,12 +69,8 @@ export const Header = () => {
             onClick={onSubtractYear}
             wrapperStyle={{ cursor: "pointer" }}
           />
-          <Text
-            style={{ marginInline: 10, width: 40, textAlign: "center" }}
-            color={"white"}
-            size={14}
-          >
-            {currentDate?.format("jYYYY") ?? ""}
+          <Text className={classes["year"]} color={"white"} size={14}>
+            {year ?? ""}
           </Text>
           <BaseIcon
             name="Calendar-_-Year-_-Next-Year"

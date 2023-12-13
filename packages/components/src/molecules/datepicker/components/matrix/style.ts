@@ -21,6 +21,9 @@ export const useStyles = createUseStyles(
       display: "flex",
       flexDirection: "row-reverse",
       justifyContent: "space-between",
+      "&--gregorian": {
+        flexDirection: "row",
+      },
     },
   },
   { theming, name: "martix" },

@@ -1,37 +1,46 @@
 import { useContext } from "react";
 import { Text } from "../../../../atoms";
-import moment, { Moment } from "moment-jalaali";
+import moment from "moment-jalaali";
 import { DatePickerContext } from "../../context";
 import { useStyles } from "./style";
+import classNames from "classnames";
 
-interface MatrixProps {
-  monthMatrix: Moment[][] | undefined;
-}
-
-export const Matrix = ({ monthMatrix }: MatrixProps) => {
+export const Matrix = () => {
   const classes = useStyles();
   const today = moment();
-  const { currentDate, onSelectDate, selectedDate } =
-    useContext(DatePickerContext);
+  const {
+    currentDate,
+    onSelectDate,
+    selectedDate,
+    monthMatrix,
+    formats: { FULL_DATE_FORMAT, MONTH_NUMBER_FORMAT, SHORT_DAY_FORMAT },
+    calendarMode,
+  } = useContext(DatePickerContext);
 
   return (
     <div className={classes["matrix"]}>
       {monthMatrix?.map((week, index2) => {
         return (
-          <div className={classes["week"]} key={index2}>
+          <div
+            className={classNames(
+              classes["week"],
+              calendarMode === "gregorian" && `${classes["week"]}--gregorian`,
+            )}
+            key={index2}
+          >
             {week.map((day) => {
               const key = day.format("YYYYMMDD");
               const isToday =
-                day.local().format("jYYYY/jMM/jDD") ===
-                today.local().format("jYYYY/jMM/jDD");
+                day.local().format(FULL_DATE_FORMAT) ===
+                today.local().format(FULL_DATE_FORMAT);
 
               const isSelected =
-                day.local().format("jYYYY/jMM/jDD") ===
-                selectedDate?.local().format("jYYYY/jMM/jDD");
+                day.local().format(FULL_DATE_FORMAT) ===
+                selectedDate?.local().format(FULL_DATE_FORMAT);
 
               const isCurrentMonth =
-                day.local().format("jMM") ===
-                currentDate?.local().format("jMM");
+                day.local().format(MONTH_NUMBER_FORMAT) ===
+                currentDate?.local().format(MONTH_NUMBER_FORMAT);
               return (
                 <div className={classes["dayContainer"]} key={key}>
                   <div
@@ -62,7 +71,7 @@ export const Matrix = ({ monthMatrix }: MatrixProps) => {
                           : "white"
                       }
                     >
-                      {day.format("jD")}
+                      {day.format(SHORT_DAY_FORMAT)}
                     </Text>
                   </div>
                 </div>

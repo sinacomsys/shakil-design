@@ -1,96 +1,110 @@
-import { useReducer } from "react";
 import { TextInput } from "../../..";
-import { Text } from "../../../../atoms";
+import { BaseIcon, Text } from "../../../../atoms";
 import { Button } from "../../..";
-import moment, { Moment } from "moment-jalaali";
 import { checkIsDateValid } from "../../utils/checkDateIsValid";
 import { useStyles } from "./style";
 import classNames from "classnames";
-
-type CountActionKind = "YEAR" | "MONTH" | "DAY";
-interface CountAction {
-  type: CountActionKind;
-  payload: string;
-}
-interface CountState {
-  year: string;
-  month: string;
-  day: string;
-}
+import { ManualImportDateContext } from "./context";
+import { useContext } from "react";
+import { DatePickerContext } from "../../context";
 
 interface ManualImportDateProps {
-  onSelectDate: (args: Moment) => void;
-  onSetCurrentDate: (args: Moment) => void;
-  goToday: () => void;
+  onConfirmDate: () => void;
+  isConfirmed: boolean;
+  onDisproveDate: () => void;
 }
 
-const reducer = (state: CountState, action: CountAction) => {
-  if (action.type === "YEAR") {
-    return { ...state, year: action.payload };
-  } else if (action.type === "MONTH") {
-    return { ...state, month: action.payload };
-  } else if (action.type === "DAY") {
-    return { ...state, day: action.payload };
-  } else return state;
-};
-
-export const ManualImportDate = ({
-  goToday,
-  onSelectDate,
-  onSetCurrentDate,
+const ManualImportDate = ({
+  onConfirmDate,
+  isConfirmed,
+  onDisproveDate,
 }: ManualImportDateProps) => {
-  const [{ day, month, year }, dispatch] = useReducer(reducer, {
-    year: "",
-    month: "",
-    day: "",
-  });
+  const { getValues, handleSubmit, setError } =
+    ManualImportDateContext.useFormContext();
+  const { errors } = ManualImportDateContext.useFormState();
+
+  const { onCollapseMatrix } = useContext(DatePickerContext);
 
   const onConfirm = () => {
-    const date = `${year}/${month}/${day}`;
-    const isDateValid = checkIsDateValid(date);
+    const { year, month, day } = getValues();
+    const date = year && day && month ? `${year}/${month}/${day}` : undefined;
+    const isDateValid = date && checkIsDateValid(date);
     if (isDateValid) {
-      const date = moment(`${year}/${month}/${day}`, "jYYYY/jMM/jDD");
-      onSetCurrentDate(date);
-      onSelectDate(date);
+      onConfirmDate();
+      onCollapseMatrix();
+    } else {
+      setError("day", { message: "invalid" });
+      setError("month", { message: "invalid" });
+      setError("year", { message: "invalid" });
     }
   };
   const classes = useStyles();
 
   return (
-    <>
+    <div style={{ position: "relative", opacity: isConfirmed ? 0.4 : 1 }}>
       <div className={classes["wrapper"]}>
         <Text className={classes["title"]} color={"#ABABAB"}>
           Date
         </Text>
         <div style={{ display: "flex" }}>
           <div className={classes["input"]}>
-            <TextInput
-              value={year}
-              style={{ textAlign: "center" }}
-              onChangeText={(value) => {
-                if (value.length === 5) return;
-                dispatch({ payload: value, type: "YEAR" });
+            <ManualImportDateContext.Controller
+              rules={{ required: true }}
+              name="year"
+              render={({ field: { value, onChange } }) => {
+                return (
+                  <TextInput
+                    disabled={isConfirmed}
+                    hasError={Boolean(errors.year)}
+                    value={value}
+                    style={{ textAlign: "center" }}
+                    onChangeText={(value) => {
+                      if (value.length === 5) return;
+                      onChange(value);
+                    }}
+                  />
+                );
               }}
             />
           </div>
           <div className={classNames(classes["minute"], classes["input"])}>
-            <TextInput
-              value={month}
-              onChangeText={(value) => {
-                if (value.length === 3) return;
-                dispatch({ payload: value, type: "MONTH" });
+            <ManualImportDateContext.Controller
+              rules={{ required: true, min: 1, max: 12 }}
+              name="month"
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <TextInput
+                    disabled={isConfirmed}
+                    hasError={Boolean(errors.month)}
+                    value={value}
+                    onChangeText={(value) => {
+                      if (value.length === 3) return;
+                      onChange(value);
+                    }}
+                    style={{ textAlign: "center" }}
+                  />
+                );
               }}
-              style={{ textAlign: "center" }}
             />
           </div>
           <div className={classes["input"]}>
-            <TextInput
-              value={day}
-              onChangeText={(value) => {
-                if (value.length === 3) return;
-                dispatch({ payload: value, type: "DAY" });
+            <ManualImportDateContext.Controller
+              rules={{ required: true, min: 1, max: 31 }}
+              name="day"
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <TextInput
+                    disabled={isConfirmed}
+                    hasError={Boolean(errors.day)}
+                    value={value}
+                    onChangeText={(value) => {
+                      if (value.length === 3) return;
+                      onChange(value);
+                    }}
+                    style={{ textAlign: "center" }}
+                  />
+                );
               }}
-              style={{ textAlign: "center" }}
             />
           </div>
         </div>
@@ -101,19 +115,71 @@ export const ManualImportDate = ({
         </Text>
         <div style={{ display: "flex" }}>
           <div className={classes["input"]}>
-            <TextInput style={{ textAlign: "center" }} />
+            <ManualImportDateContext.Controller
+              rules={{
+                min: 0,
+                max: 23,
+              }}
+              name="hour"
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <TextInput
+                    disabled={isConfirmed}
+                    hasError={Boolean(errors.hour)}
+                    onChangeText={(value) => {
+                      onChange(value);
+                    }}
+                    value={value}
+                    style={{ textAlign: "center" }}
+                  />
+                );
+              }}
+            />
           </div>
           <div className={classNames(classes["input"], classes["minute"])}>
-            <TextInput style={{ textAlign: "center" }} />
+            <ManualImportDateContext.Controller
+              name="minute"
+              rules={{
+                min: 0,
+                max: 59,
+              }}
+              render={({ field: { onChange, value } }) => {
+                return (
+                  <TextInput
+                    disabled={isConfirmed}
+                    hasError={Boolean(errors.minute)}
+                    onChangeText={(value) => {
+                      onChange(value);
+                    }}
+                    value={value}
+                    style={{ textAlign: "center" }}
+                  />
+                );
+              }}
+            />
           </div>
-          <Button className={classes["input"]} size="small" onClick={onConfirm}>
-            ok
+          <Button
+            className={classes["input"]}
+            size="small"
+            onClick={handleSubmit(onConfirm)}
+          >
+            {isConfirmed ? (
+              <BaseIcon
+                name="Create-Project_Checked-Icon"
+                size={{ width: 13, height: 9 }}
+              />
+            ) : (
+              "ok"
+            )}
           </Button>
         </div>
       </div>
-      <Button className={classes["submit"]} size="small" onClick={goToday}>
-        Go Today!
-      </Button>
-    </>
+
+      {isConfirmed ? (
+        <div onClick={onDisproveDate} className={classes["overlay"]} />
+      ) : null}
+    </div>
   );
 };
+
+export { ManualImportDate };

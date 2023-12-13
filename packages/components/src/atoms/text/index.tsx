@@ -2,6 +2,8 @@ import classNames from "classnames";
 import * as React from "react";
 import { BaseText, BaseTextProps, Variant } from "./baseText/baseText";
 import { fonts, fontWeights, useFonts, useStyles } from "./style";
+import { UnitContext } from "../../theme/context";
+import { pxToVhString } from "@shakil-design/utils";
 
 interface TextProps extends BaseTextProps {
   theme?: keyof typeof fonts;
@@ -27,7 +29,10 @@ const Text = React.memo(
       ref,
     ) => {
       const fonts = useFonts();
-      const classes = useStyles(size);
+      const classes = useStyles();
+      const { unit } = React.useContext(UnitContext);
+
+      const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
 
       const fontWeight =
         typeof weight === "string" ? fontWeights[weight] : weight;
@@ -47,6 +52,7 @@ const Text = React.memo(
             color,
             fontWeight,
             lineHeight,
+            fontSize,
             ...style,
           }}
           {...rest}

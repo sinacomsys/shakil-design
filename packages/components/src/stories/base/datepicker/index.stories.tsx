@@ -12,7 +12,12 @@ export default {
 const Template: Story<any> = () => (
   <StoryContainer>
     <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-      <Tooltip placement="bottom" arrowColor="#575757" content={<DatePicker />}>
+      <Tooltip
+        placement="bottom"
+        arrowColor="#575757"
+        content={<DatePicker calendarMode="gregorian" />}
+        trigger="click"
+      >
         <Button>Date Picker</Button>
       </Tooltip>
     </div>
