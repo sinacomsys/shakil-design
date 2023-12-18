@@ -7,31 +7,47 @@ import classNames from "classnames";
 import { ManualImportDateContext } from "./context";
 import { useContext } from "react";
 import { DatePickerContext } from "../../context";
+import moment from "moment-jalaali";
 
 interface ManualImportDateProps {
   onConfirmDate: () => void;
   isConfirmed: boolean;
-  onDisproveDate: () => void;
 }
 
 const ManualImportDate = ({
   onConfirmDate,
   isConfirmed,
-  onDisproveDate,
 }: ManualImportDateProps) => {
   const { getValues, handleSubmit, setError } =
     ManualImportDateContext.useFormContext();
   const { errors } = ManualImportDateContext.useFormState();
 
-  const { onCollapseMatrix } = useContext(DatePickerContext);
+  const {
+    selectedDate,
+    onShrinkMatrix,
+    onSetCurrentDate,
+    handleSetSelectedDateFromInputs,
+    formats: { FULL_DATE_FORMAT },
+    onOkDate,
+  } = useContext(DatePickerContext);
 
   const onConfirm = () => {
-    const { year, month, day } = getValues();
+    const { year, month, day, hour, minute } = getValues();
     const date = year && day && month ? `${year}/${month}/${day}` : undefined;
     const isDateValid = date && checkIsDateValid(date);
     if (isDateValid) {
       onConfirmDate();
-      onCollapseMatrix();
+      const date =
+        year && day && month
+          ? moment(
+              `${year}/${month}/${day} ${hour}:${minute}`,
+              FULL_DATE_FORMAT,
+            )
+          : null;
+      date && onSetCurrentDate(date);
+      date && handleSetSelectedDateFromInputs(date);
+      onOkDate?.(date);
+      onShrinkMatrix();
     } else {
       setError("day", { message: "invalid" });
       setError("month", { message: "invalid" });
@@ -41,7 +57,7 @@ const ManualImportDate = ({
   const classes = useStyles();
 
   return (
-    <div style={{ position: "relative", opacity: isConfirmed ? 0.4 : 1 }}>
+    <div style={{ position: "relative" }}>
       <div className={classes["wrapper"]}>
         <Text className={classes["title"]} color={"#ABABAB"}>
           Date
@@ -54,6 +70,7 @@ const ManualImportDate = ({
               render={({ field: { value, onChange } }) => {
                 return (
                   <TextInput
+                    placeholder="Year"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.year)}
                     value={value}
@@ -74,6 +91,7 @@ const ManualImportDate = ({
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    placeholder="Month"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.month)}
                     value={value}
@@ -94,6 +112,7 @@ const ManualImportDate = ({
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    placeholder="Day"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.day)}
                     value={value}
@@ -124,6 +143,7 @@ const ManualImportDate = ({
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    placeholder="Hour"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.hour)}
                     onChangeText={(value) => {
@@ -146,6 +166,7 @@ const ManualImportDate = ({
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    placeholder="Min"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.minute)}
                     onChangeText={(value) => {
@@ -163,7 +184,7 @@ const ManualImportDate = ({
             size="small"
             onClick={handleSubmit(onConfirm)}
           >
-            {isConfirmed ? (
+            {isConfirmed && selectedDate ? (
               <BaseIcon
                 name="Create-Project_Checked-Icon"
                 size={{ width: 13, height: 9 }}
@@ -174,10 +195,6 @@ const ManualImportDate = ({
           </Button>
         </div>
       </div>
-
-      {isConfirmed ? (
-        <div onClick={onDisproveDate} className={classes["overlay"]} />
-      ) : null}
     </div>
   );
 };

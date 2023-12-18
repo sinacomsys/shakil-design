@@ -10,11 +10,12 @@ export const Matrix = () => {
   const today = moment();
   const {
     currentDate,
-    onSelectDate,
+    handleSelectDateFromMatrix,
     selectedDate,
     monthMatrix,
     formats: { FULL_DATE_FORMAT, MONTH_NUMBER_FORMAT, SHORT_DAY_FORMAT },
     calendarMode,
+    disableDateFrom,
   } = useContext(DatePickerContext);
 
   return (
@@ -41,11 +42,19 @@ export const Matrix = () => {
               const isCurrentMonth =
                 day.local().format(MONTH_NUMBER_FORMAT) ===
                 currentDate?.local().format(MONTH_NUMBER_FORMAT);
+
+              const isDayBeforeStartDate =
+                disableDateFrom && day.isBefore(disableDateFrom, "day");
+
+              const isUnselectable = Boolean(
+                !isCurrentMonth || isDayBeforeStartDate,
+              );
+
               return (
                 <div className={classes["dayContainer"]} key={key}>
                   <div
                     onClick={() => {
-                      onSelectDate(day);
+                      !isUnselectable && handleSelectDateFromMatrix(day);
                     }}
                     className={classes["day"]}
                     style={{
@@ -66,7 +75,7 @@ export const Matrix = () => {
                       color={
                         isSelected
                           ? "#575757"
-                          : !isCurrentMonth
+                          : isUnselectable
                           ? "#828282"
                           : "white"
                       }

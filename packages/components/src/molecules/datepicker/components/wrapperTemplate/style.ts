@@ -1,12 +1,7 @@
 import { createUseStyles } from "react-jss";
-import { theming } from "../../../../theme";
 
-export const useStyle = createUseStyles(
+export const useStyles = createUseStyles(
   {
-    manualInput: { display: "flex", marginLeft: 75, marginTop: 20 },
-    expand: {
-      marginInlineStart: 14,
-    },
     wrapper: {
       width: 320,
       borderRadius: 10,
@@ -23,5 +18,5 @@ export const useStyle = createUseStyles(
       marginInlineStart: 118,
     },
   },
-  { theming, name: "date-picker-panel" },
+  { name: "panel-template" },
 );

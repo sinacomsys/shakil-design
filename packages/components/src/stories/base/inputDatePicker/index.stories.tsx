@@ -12,12 +12,10 @@ export default {
 const Template: Story<any> = () => {
   const [isExtended, setIsExtended] = useState(false);
   const [isPersian, setPersian] = useState(true);
-  const [value, setValue] = useState<Moment | undefined>(
+  const [value, setValue] = useState<Moment | undefined | null>(
     moment("1402/9/22", "jYYYY/jMM/jDD"),
   );
-  const onValueChange = (date: Moment | null | undefined) => {
-    setValue(date as Moment);
-  };
+
   return (
     <StoryContainer>
       <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
@@ -27,11 +25,17 @@ const Template: Story<any> = () => {
               setValue(undefined);
             }}
             allowClear
-            onChange={onValueChange}
+            onChange={({ value }) => {
+              setValue(value);
+            }}
             value={value}
             isCalendarExtended={isExtended}
-            handleExtendCalendar={() => {
-              setIsExtended((prev) => !prev);
+            handleExtendCalendar={({ status }) => {
+              if (status === "extend") {
+                setIsExtended(true);
+              } else {
+                setIsExtended(false);
+              }
             }}
             calendarMode={isPersian ? "persian" : "gregorian"}
           />

@@ -9,11 +9,16 @@ export const ExpandIcon = ({
   handleOndisproveDate: () => void;
 }) => {
   const classes = useStyles();
-  const { onCollapseMatrix } = useContext(DatePickerContext);
+  const { onExtendMatrix, onShrinkMatrix, isMatrixOpen } =
+    useContext(DatePickerContext);
 
   const handleOnClick = () => {
     handleOndisproveDate();
-    onCollapseMatrix();
+    if (isMatrixOpen) {
+      onShrinkMatrix();
+    } else {
+      onExtendMatrix();
+    }
   };
 
   return (

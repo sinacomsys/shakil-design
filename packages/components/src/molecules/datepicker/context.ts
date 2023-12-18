@@ -1,6 +1,6 @@
 import moment, { Moment } from "moment-jalaali";
 import { createContext } from "react";
-import { DatePickerProps } from "./components/types";
+import { DatePickerProviderProps } from "./components/types";
 import {
   PERSIAN_DAY_FORMAT,
   PERSIAN_DAY_SHORT_FORMAT,
@@ -13,18 +13,25 @@ import {
 } from "./utils/calendarMode";
 
 interface DatePickerContext
-  extends Pick<DatePickerProps, "calendarMode" | "onChange"> {
-  currentDate: DatePickerProps["value"];
+  extends Pick<
+    DatePickerProviderProps,
+    | "calendarMode"
+    | "isDisable"
+    | "onOkDate"
+    | "disableDateFrom"
+    | "onEditAgain"
+  > {
+  currentDate: DatePickerProviderProps["value"];
   onAddMonth: () => void;
   onSubtractMonth: () => void;
   onAddYear: () => void;
   onSubtractYear: () => void;
   onSetCurrentDate: (value: Moment) => void;
-  onSelectDate: (value: Moment) => void;
-  selectedDate: DatePickerProps["value"];
+  handleSelectDateFromMatrix: (value: Moment) => void;
+  handleSetSelectedDateFromInputs: (value: Moment) => void;
+  selectedDate: DatePickerProviderProps["value"];
   isCalendarExtended?: boolean;
   monthMatrix: Moment[][];
-  onCollapseMatrix: () => void;
   isMatrixOpen: boolean;
   formats: {
     YEAR_FORMAT: string;
@@ -36,6 +43,10 @@ interface DatePickerContext
     SHORT_DAY_FORMAT: string;
     MONTH: string;
   };
+  isConfirmed: boolean;
+  onConfirmDate: (value: boolean) => void;
+  onExtendMatrix: () => void;
+  onShrinkMatrix: () => void;
 }
 
 export const DatePickerContext = createContext<DatePickerContext>({
@@ -45,11 +56,11 @@ export const DatePickerContext = createContext<DatePickerContext>({
   onAddYear() {},
   onSubtractYear() {},
   onSetCurrentDate: () => {},
-  onSelectDate() {},
+  handleSelectDateFromMatrix() {},
+  handleSetSelectedDateFromInputs() {},
   selectedDate: null,
   isCalendarExtended: false,
   monthMatrix: [],
-  onCollapseMatrix: () => {},
   isMatrixOpen: false,
   calendarMode: "persian",
   formats: {
@@ -62,5 +73,9 @@ export const DatePickerContext = createContext<DatePickerContext>({
     MONTH: PERSIAN_MONTH,
     MONTH_NUMBER_FORMAT: PERSIAN_MONTH_NUMBER_FORMAT,
   },
-  onChange: () => {},
+  onEditAgain() {},
+  isConfirmed: false,
+  onConfirmDate() {},
+  onExtendMatrix() {},
+  onShrinkMatrix() {},
 });

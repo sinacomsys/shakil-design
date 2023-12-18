@@ -1,8 +1,7 @@
-import { checkIsDateValid } from "../../utils/checkDateIsValid";
 import moment, { Moment } from "moment-jalaali";
 import { useState, useEffect } from "react";
 import { DatePickerContext } from "../../context";
-import { DatePickerProps, DatePickerProviderProps } from "../types";
+import { DatePickerProviderProps } from "../types";
 import { chunkDaysOfMonth } from "../../utils/chuckDaysOfMonth";
 import {
   GREGORIAN_YEAR_FORMAT,
@@ -21,24 +20,29 @@ import {
   GREGORIAN_DAY_SHORT_FORMAT,
   PERSIAN_MONTH_NUMBER_FORMAT,
   GREGORIAN_MONTH_NUMBER_FORMAT,
+  PERSIAN_YEAR,
+  GREGORIAN_YEAR,
 } from "../../utils/calendarMode";
 import { ManualImportDateContext } from "../manualImportDate/context";
+// import { DatePickerPanel } from "../datePickerPanel";
 
 const DatePickerProvider = ({
-  onMonthChange,
-  onDayChange,
-  onYearChange,
-  onChange,
-  children,
   handleExtendCalendar,
   isCalendarExtended,
   value,
   calendarMode = "persian",
+  onOkDate,
+  disableDateFrom,
+  onEditAgain,
+  isDisable,
+  children,
 }: DatePickerProviderProps) => {
   const { setValue } = ManualImportDateContext.useFormContext();
+  const [isConfirmed, setConfirm] = useState(false);
 
   const isPersian = calendarMode === "persian";
   const YEAR_FORMAT = isPersian ? PERSIAN_YEAR_FORMAT : GREGORIAN_YEAR_FORMAT;
+  const YEAR = isPersian ? PERSIAN_YEAR : GREGORIAN_YEAR;
 
   const MONTH_NAME_FORMAT = isPersian
     ? PERSIAN_MONTH_NAME_FORMAT
@@ -67,15 +71,19 @@ const DatePickerProvider = ({
   const [monthMatrix, setMonthMatrix] = useState<Moment[][]>([]);
   const [isMatrixOpen, setMatrixOpen] = useState(false);
   const [selectedDate, setSelectedDate] =
-    useState<DatePickerProps["value"]>(null);
-  const [inputValue, setInputValue] = useState("");
-  const [currentDate, setCurrentDate] = useState<DatePickerProps["value"]>(
-    moment(),
-  );
+    useState<DatePickerProviderProps["value"]>(null);
+  const [currentDate, setCurrentDate] = useState<
+    DatePickerProviderProps["value"]
+  >(moment());
 
-  const onCollapseMatrix = () => {
-    setMatrixOpen((prev) => !prev);
-    handleExtendCalendar?.();
+  const onExtendMatrix = () => {
+    setMatrixOpen(true);
+    handleExtendCalendar?.({ status: "extend" });
+  };
+
+  const onShrinkMatrix = () => {
+    setMatrixOpen(false);
+    handleExtendCalendar?.({ status: "shrink" });
   };
 
   useEffect(() => {
@@ -86,54 +94,49 @@ const DatePickerProvider = ({
   useEffect(() => {
     setCurrentDate(value ?? moment());
     setSelectedDate(value);
-    setInputValue(value?.format(FULL_TIME_FORMAT) ?? "");
-  }, [FULL_TIME_FORMAT, value]);
-
-  const handleMonthChange = (value: Moment) => {
-    onMonthChange?.({
-      name: value?.format("jMMMM"),
-      value: Number(value?.format(MONTH_NAME_FORMAT)),
-    });
-  };
-
-  const handleOnChangeYear = (value: number) => {
-    onYearChange?.(value);
-  };
+    if (!value) {
+      setValue("day", "");
+      setValue("month", "");
+      setValue("year", "");
+      setValue("hour", "");
+      setValue("minute", "");
+      // onEditAgain?.();
+      setConfirm(false);
+    }
+  }, [FULL_TIME_FORMAT, setValue, value]);
 
   const onAddMonth = () => {
-    const newValue = currentDate?.clone().add(1, "jMonth");
+    //@ts-ignore
+    const newValue = currentDate?.clone().add(1, MONTH);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleMonthChange(newValue);
   };
 
   const onSubtractMonth = () => {
-    const newValue = currentDate?.clone().subtract(1, "jMonth");
+    //@ts-ignore
+    const newValue = currentDate?.clone().subtract(1, MONTH);
     setCurrentDate(newValue);
-    if (!newValue) return;
-    handleMonthChange(newValue);
   };
 
   const onAddYear = () => {
-    const newValue = currentDate?.clone().add(1, "jYear");
+    //@ts-ignore
+    const newValue = currentDate?.clone().add(1, YEAR);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleOnChangeYear(newValue.format(YEAR_FORMAT) as unknown as number);
   };
   const onSubtractYear = () => {
-    const newValue = currentDate?.clone().subtract(1, "jYear");
+    //@ts-ignore
+    const newValue = currentDate?.clone().subtract(1, YEAR);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleOnChangeYear(newValue.format(YEAR_FORMAT) as unknown as number);
   };
 
   const onSetCurrentDate = (value: Moment) => {
     setCurrentDate(value);
   };
 
-  const onSelectDate = (value: Moment) => {
+  const handleSelectDateFromMatrix = (value: Moment) => {
     setSelectedDate(value);
-    onDayChange?.(value.format(DAY_FORMAT) as unknown as number);
     const day = value.format(DAY_FORMAT);
     const month = value.format(MONTH_NUMBER_FORMAT);
     const year = value.format(YEAR_FORMAT);
@@ -146,35 +149,43 @@ const DatePickerProvider = ({
     setValue("minute", minute);
   };
 
-  const onChangeDateInputText = (value: string) => {
-    setInputValue(value);
-    const isValid = checkIsDateValid(value);
-    if (isValid) {
-      setCurrentDate(moment(value, FULL_DATE_FORMAT));
-      setSelectedDate(moment(value, FULL_DATE_FORMAT));
-      return;
-    }
-    setCurrentDate(moment());
-    setSelectedDate(null);
+  const handleSetSelectedDateFromInputs = (value: Moment) => {
+    setSelectedDate(value);
+  };
+
+  const onConfirmDate = (confirm: boolean) => {
+    setConfirm(confirm);
+  };
+
+  const handleOnEditAgain = () => {
+    onEditAgain?.();
+    setConfirm(false);
   };
 
   return (
     <DatePickerContext.Provider
       value={{
-        onChange,
+        onConfirmDate,
+        isDisable,
         currentDate,
         onAddMonth,
         onSubtractMonth,
         onAddYear,
         onSubtractYear,
         onSetCurrentDate,
-        onSelectDate,
+        handleSelectDateFromMatrix,
+        handleSetSelectedDateFromInputs,
         selectedDate,
         isCalendarExtended,
         monthMatrix,
-        onCollapseMatrix,
         isMatrixOpen,
         calendarMode,
+        onOkDate,
+        disableDateFrom,
+        onEditAgain: handleOnEditAgain,
+        isConfirmed,
+        onExtendMatrix,
+        onShrinkMatrix,
         formats: {
           DAY_FORMAT,
           FULL_DATE_FORMAT,
@@ -187,12 +198,7 @@ const DatePickerProvider = ({
         },
       }}
     >
-      {typeof children === "function"
-        ? children({
-            value: inputValue,
-            onChangeDateInputText,
-          })
-        : children}
+      {children({ value: selectedDate, disable: !isConfirmed })}
     </DatePickerContext.Provider>
   );
 };

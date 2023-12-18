@@ -6,8 +6,10 @@ export const PERSIAN_DAY_SHORT_FORMAT = "jD";
 export const PERSIAN_FULL_TIME_FORMAT = "jYYYY/jMM/jDD HH:mm";
 export const PERSIAN_FULL_DATE_FORMAT = "jYYYY/jMM/jDD";
 export const PERSIAN_MONTH = "jMonth";
+export const PERSIAN_YEAR = "jYear";
 
 export const GREGORIAN_YEAR_FORMAT = "YYYY";
+export const GREGORIAN_YEAR = "year";
 export const GREGORIAN_MONTH_NAME_FORMAT = "MMMM";
 export const GREGORIAN_DAY_SHORT_FORMAT = "D";
 export const GREGORIAN_DAY_FORMAT = "DD";

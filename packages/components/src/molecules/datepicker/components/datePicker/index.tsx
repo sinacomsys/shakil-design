@@ -1,11 +1,31 @@
+import { Moment } from "moment-jalaali";
+import { DatePickerPanel } from "../datePickerPanel";
 import { DatePickerProvider } from "../datePickerProvider";
-import { Panel } from "../panel";
-import { DatePickerProps } from "../types";
+import { DatePickerProviderProps } from "../types";
+import { WrapperTemplate } from "../wrapperTemplate";
 
-const DatePicker = (props: DatePickerProps) => {
+interface DatePickerProps
+  extends Omit<
+    DatePickerProviderProps,
+    "children" | "onOkDate" | "isDisable" | "onEditAgain" | "disableDateFrom"
+  > {
+  onChange?: (arg: { value: Moment | undefined | null }) => void;
+}
+
+const DatePicker = ({ onChange, ...rest }: DatePickerProps) => {
   return (
-    <DatePickerProvider {...props}>
-      <Panel />
+    <DatePickerProvider {...rest}>
+      {({ value, disable }) => {
+        return (
+          <WrapperTemplate
+            disable={disable}
+            value={value}
+            onFinalConfirm={onChange}
+          >
+            <DatePickerPanel />
+          </WrapperTemplate>
+        );
+      }}
     </DatePickerProvider>
   );
 };
