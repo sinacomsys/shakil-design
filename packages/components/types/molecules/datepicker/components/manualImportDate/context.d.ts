@@ -81,12 +81,12 @@ export declare const ManualImportDateContext: {
     TKeyName
   >;
   Controller: <
-    TName extends "month" | "year" | "day" | "hour" | "minute" =
+    TName extends "month" | "year" | "minute" | "day" | "hour" =
       | "month"
       | "year"
+      | "minute"
       | "day"
-      | "hour"
-      | "minute",
+      | "hour",
   >({
     name,
     ...rest

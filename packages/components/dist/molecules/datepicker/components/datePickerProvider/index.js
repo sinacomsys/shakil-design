@@ -25,29 +25,35 @@ exports.DatePickerProvider = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName =
   "D:/project/shakil-design-release/packages/components/src/molecules/datepicker/components/datePickerProvider/index.tsx";
-var checkDateIsValid_1 = require("../../utils/checkDateIsValid");
 var moment_jalaali_1 = __importDefault(require("moment-jalaali"));
 var react_1 = require("react");
 var context_1 = require("../../context");
 var chuckDaysOfMonth_1 = require("../../utils/chuckDaysOfMonth");
 var calendarMode_1 = require("../../utils/calendarMode");
 var context_2 = require("../manualImportDate/context");
+// import { DatePickerPanel } from "../datePickerPanel";
 var DatePickerProvider = function (_a) {
-  var onMonthChange = _a.onMonthChange,
-    onDayChange = _a.onDayChange,
-    onYearChange = _a.onYearChange,
-    onChange = _a.onChange,
-    children = _a.children,
-    handleExtendCalendar = _a.handleExtendCalendar,
+  var handleExtendCalendar = _a.handleExtendCalendar,
     isCalendarExtended = _a.isCalendarExtended,
     value = _a.value,
     _b = _a.calendarMode,
-    calendarMode = _b === void 0 ? "persian" : _b;
+    calendarMode = _b === void 0 ? "persian" : _b,
+    onOkDate = _a.onOkDate,
+    disableDateFrom = _a.disableDateFrom,
+    onEditAgain = _a.onEditAgain,
+    isDisable = _a.isDisable,
+    children = _a.children;
   var setValue = context_2.ManualImportDateContext.useFormContext().setValue;
+  var _c = (0, react_1.useState)(false),
+    isConfirmed = _c[0],
+    setConfirm = _c[1];
   var isPersian = calendarMode === "persian";
   var YEAR_FORMAT = isPersian
     ? calendarMode_1.PERSIAN_YEAR_FORMAT
     : calendarMode_1.GREGORIAN_YEAR_FORMAT;
+  var YEAR = isPersian
+    ? calendarMode_1.PERSIAN_YEAR
+    : calendarMode_1.GREGORIAN_YEAR;
   var MONTH_NAME_FORMAT = isPersian
     ? calendarMode_1.PERSIAN_MONTH_NAME_FORMAT
     : calendarMode_1.GREGORIAN_MONTH_NAME_FORMAT;
@@ -69,28 +75,29 @@ var DatePickerProvider = function (_a) {
   var SHORT_DAY_FORMAT = isPersian
     ? calendarMode_1.PERSIAN_DAY_SHORT_FORMAT
     : calendarMode_1.GREGORIAN_DAY_SHORT_FORMAT;
-  var _c = (0, react_1.useState)([]),
-    monthMatrix = _c[0],
-    setMonthMatrix = _c[1];
-  var _d = (0, react_1.useState)(false),
-    isMatrixOpen = _d[0],
-    setMatrixOpen = _d[1];
-  var _e = (0, react_1.useState)(null),
-    selectedDate = _e[0],
-    setSelectedDate = _e[1];
-  var _f = (0, react_1.useState)(""),
-    inputValue = _f[0],
-    setInputValue = _f[1];
+  var _d = (0, react_1.useState)([]),
+    monthMatrix = _d[0],
+    setMonthMatrix = _d[1];
+  var _e = (0, react_1.useState)(false),
+    isMatrixOpen = _e[0],
+    setMatrixOpen = _e[1];
+  var _f = (0, react_1.useState)(null),
+    selectedDate = _f[0],
+    setSelectedDate = _f[1];
   var _g = (0, react_1.useState)((0, moment_jalaali_1.default)()),
     currentDate = _g[0],
     setCurrentDate = _g[1];
-  var onCollapseMatrix = function () {
-    setMatrixOpen(function (prev) {
-      return !prev;
-    });
+  var onExtendMatrix = function () {
+    setMatrixOpen(true);
     handleExtendCalendar === null || handleExtendCalendar === void 0
       ? void 0
-      : handleExtendCalendar();
+      : handleExtendCalendar({ status: "extend" });
+  };
+  var onShrinkMatrix = function () {
+    setMatrixOpen(false);
+    handleExtendCalendar === null || handleExtendCalendar === void 0
+      ? void 0
+      : handleExtendCalendar({ status: "shrink" });
   };
   (0, react_1.useEffect)(
     function () {
@@ -103,86 +110,64 @@ var DatePickerProvider = function (_a) {
   );
   (0, react_1.useEffect)(
     function () {
-      var _a;
       setCurrentDate(
         value !== null && value !== void 0
           ? value
           : (0, moment_jalaali_1.default)(),
       );
       setSelectedDate(value);
-      setInputValue(
-        (_a =
-          value === null || value === void 0
-            ? void 0
-            : value.format(FULL_TIME_FORMAT)) !== null && _a !== void 0
-          ? _a
-          : "",
-      );
+      if (!value) {
+        setValue("day", "");
+        setValue("month", "");
+        setValue("year", "");
+        setValue("hour", "");
+        setValue("minute", "");
+        // onEditAgain?.();
+        setConfirm(false);
+      }
     },
-    [FULL_TIME_FORMAT, value],
+    [FULL_TIME_FORMAT, setValue, value],
   );
-  var handleMonthChange = function (value) {
-    onMonthChange === null || onMonthChange === void 0
-      ? void 0
-      : onMonthChange({
-          name:
-            value === null || value === void 0 ? void 0 : value.format("jMMMM"),
-          value: Number(
-            value === null || value === void 0
-              ? void 0
-              : value.format(MONTH_NAME_FORMAT),
-          ),
-        });
-  };
-  var handleOnChangeYear = function (value) {
-    onYearChange === null || onYearChange === void 0
-      ? void 0
-      : onYearChange(value);
-  };
   var onAddMonth = function () {
+    //@ts-ignore
     var newValue =
       currentDate === null || currentDate === void 0
         ? void 0
-        : currentDate.clone().add(1, "jMonth");
+        : currentDate.clone().add(1, MONTH);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleMonthChange(newValue);
   };
   var onSubtractMonth = function () {
+    //@ts-ignore
     var newValue =
       currentDate === null || currentDate === void 0
         ? void 0
-        : currentDate.clone().subtract(1, "jMonth");
+        : currentDate.clone().subtract(1, MONTH);
     setCurrentDate(newValue);
-    if (!newValue) return;
-    handleMonthChange(newValue);
   };
   var onAddYear = function () {
+    //@ts-ignore
     var newValue =
       currentDate === null || currentDate === void 0
         ? void 0
-        : currentDate.clone().add(1, "jYear");
+        : currentDate.clone().add(1, YEAR);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleOnChangeYear(newValue.format(YEAR_FORMAT));
   };
   var onSubtractYear = function () {
+    //@ts-ignore
     var newValue =
       currentDate === null || currentDate === void 0
         ? void 0
-        : currentDate.clone().subtract(1, "jYear");
+        : currentDate.clone().subtract(1, YEAR);
     if (!newValue) return;
     setCurrentDate(newValue);
-    handleOnChangeYear(newValue.format(YEAR_FORMAT));
   };
   var onSetCurrentDate = function (value) {
     setCurrentDate(value);
   };
-  var onSelectDate = function (value) {
+  var handleSelectDateFromMatrix = function (value) {
     setSelectedDate(value);
-    onDayChange === null || onDayChange === void 0
-      ? void 0
-      : onDayChange(value.format(DAY_FORMAT));
     var day = value.format(DAY_FORMAT);
     var month = value.format(MONTH_NUMBER_FORMAT);
     var year = value.format(YEAR_FORMAT);
@@ -194,36 +179,42 @@ var DatePickerProvider = function (_a) {
     setValue("hour", hour);
     setValue("minute", minute);
   };
-  var onChangeDateInputText = function (value) {
-    setInputValue(value);
-    var isValid = (0, checkDateIsValid_1.checkIsDateValid)(value);
-    if (isValid) {
-      setCurrentDate((0, moment_jalaali_1.default)(value, FULL_DATE_FORMAT));
-      setSelectedDate((0, moment_jalaali_1.default)(value, FULL_DATE_FORMAT));
-      return;
-    }
-    setCurrentDate((0, moment_jalaali_1.default)());
-    setSelectedDate(null);
+  var handleSetSelectedDateFromInputs = function (value) {
+    setSelectedDate(value);
+  };
+  var onConfirmDate = function (confirm) {
+    setConfirm(confirm);
+  };
+  var handleOnEditAgain = function () {
+    onEditAgain === null || onEditAgain === void 0 ? void 0 : onEditAgain();
+    setConfirm(false);
   };
   return (0, jsx_dev_runtime_1.jsxDEV)(
     context_1.DatePickerContext.Provider,
     __assign(
       {
         value: {
-          onChange: onChange,
+          onConfirmDate: onConfirmDate,
+          isDisable: isDisable,
           currentDate: currentDate,
           onAddMonth: onAddMonth,
           onSubtractMonth: onSubtractMonth,
           onAddYear: onAddYear,
           onSubtractYear: onSubtractYear,
           onSetCurrentDate: onSetCurrentDate,
-          onSelectDate: onSelectDate,
+          handleSelectDateFromMatrix: handleSelectDateFromMatrix,
+          handleSetSelectedDateFromInputs: handleSetSelectedDateFromInputs,
           selectedDate: selectedDate,
           isCalendarExtended: isCalendarExtended,
           monthMatrix: monthMatrix,
-          onCollapseMatrix: onCollapseMatrix,
           isMatrixOpen: isMatrixOpen,
           calendarMode: calendarMode,
+          onOkDate: onOkDate,
+          disableDateFrom: disableDateFrom,
+          onEditAgain: handleOnEditAgain,
+          isConfirmed: isConfirmed,
+          onExtendMatrix: onExtendMatrix,
+          onShrinkMatrix: onShrinkMatrix,
           formats: {
             DAY_FORMAT: DAY_FORMAT,
             FULL_DATE_FORMAT: FULL_DATE_FORMAT,
@@ -236,19 +227,11 @@ var DatePickerProvider = function (_a) {
           },
         },
       },
-      {
-        children:
-          typeof children === "function"
-            ? children({
-                value: inputValue,
-                onChangeDateInputText: onChangeDateInputText,
-              })
-            : children,
-      },
+      { children: children({ value: selectedDate, disable: !isConfirmed }) },
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 161, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 165, columnNumber: 11 },
     _this,
   );
 };
@@ -263,14 +246,14 @@ var DatePickerProviderWrapper = function (props) {
           __assign({}, props),
           void 0,
           false,
-          { fileName: _jsxFileName, lineNumber: 203, columnNumber: 7 },
+          { fileName: _jsxFileName, lineNumber: 209, columnNumber: 7 },
           _this,
         ),
       },
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 201, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 207, columnNumber: 11 },
     _this,
   );
 };

@@ -68,6 +68,10 @@ var Header = function (_a) {
                                 children: (0, jsx_dev_runtime_1.jsxDEV)(
                                   checkbox_1.CheckBox,
                                   {
+                                    "data-testid":
+                                      testid === null || testid === void 0
+                                        ? void 0
+                                        : testid.selectAll,
                                     checked: isAllRowsChecked,
                                     onChange: onCheckAllRows,
                                     indeterminate: isIndeterminate,
@@ -118,7 +122,7 @@ var Header = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 48,
+                                    lineNumber: 49,
                                     columnNumber: 18,
                                   },
                                   _this,
@@ -129,7 +133,7 @@ var Header = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 45,
+                          lineNumber: 46,
                           columnNumber: 11,
                         },
                         _this,
@@ -154,7 +158,7 @@ var Header = function (_a) {
               sorter = _a.sorter,
               style = _a.style;
             return (0,
-            jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 17 }, _this);
+            jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 61, columnNumber: 17 }, _this);
           }),
           isOverflowed
             ? (0, jsx_dev_runtime_1.jsxDEV)(
@@ -162,7 +166,7 @@ var Header = function (_a) {
                 {},
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 70, columnNumber: 22 },
+                { fileName: _jsxFileName, lineNumber: 71, columnNumber: 22 },
                 _this,
               )
             : null,

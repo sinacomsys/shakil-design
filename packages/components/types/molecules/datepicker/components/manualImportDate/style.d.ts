@@ -4,7 +4,5 @@ declare const useStyles: (
         theme?: import("../../../../theme/context").ColorsType | undefined;
       }
     | undefined,
-) => import("jss").Classes<
-  "input" | "title" | "overlay" | "wrapper" | "minute"
->;
+) => import("jss").Classes<"input" | "title" | "wrapper" | "minute">;
 export { useStyles };

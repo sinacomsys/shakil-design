@@ -19,6 +19,7 @@ export interface TableContextProps<T> {
     filterBar?: string;
     header?: string;
     body?: string;
+    selectAll?: string;
   };
   onRow?: (
     data: T,

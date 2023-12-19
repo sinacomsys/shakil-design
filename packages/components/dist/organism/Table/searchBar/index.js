@@ -85,6 +85,10 @@ var SearchBar = function (_a) {
                                 children: (0, jsx_dev_runtime_1.jsxDEV)(
                                   molecules_1.CheckBox,
                                   {
+                                    "data-testid":
+                                      testid === null || testid === void 0
+                                        ? void 0
+                                        : testid.selectAll,
                                     checked: isAllRowsChecked,
                                     onChange: onCheckAllRows,
                                     indeterminate: isIndeterminate,
@@ -134,7 +138,7 @@ var SearchBar = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 66,
+                                    lineNumber: 67,
                                     columnNumber: 18,
                                   },
                                   _this,
@@ -145,7 +149,7 @@ var SearchBar = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 63,
+                          lineNumber: 64,
                           columnNumber: 11,
                         },
                         _this,
@@ -168,7 +172,7 @@ var SearchBar = function (_a) {
             var renderFilter = _a.renderFilter,
               align = _a.align;
             return (0,
-            jsx_dev_runtime_1.jsxDEV)("th", __assign({ style: { textAlign: align ? align : __1.DEFAULT_ALIGN } }, { children: renderFilter ? renderFilter({ data: data }) : null }), index, false, { fileName: _jsxFileName, lineNumber: 80, columnNumber: 17 }, _this);
+            jsx_dev_runtime_1.jsxDEV)("th", __assign({ style: { textAlign: align ? align : __1.DEFAULT_ALIGN } }, { children: renderFilter ? renderFilter({ data: data }) : null }), index, false, { fileName: _jsxFileName, lineNumber: 81, columnNumber: 17 }, _this);
           }),
           isOverflowed
             ? (0, jsx_dev_runtime_1.jsxDEV)(
@@ -176,7 +180,7 @@ var SearchBar = function (_a) {
                 {},
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 86, columnNumber: 22 },
+                { fileName: _jsxFileName, lineNumber: 87, columnNumber: 22 },
                 _this,
               )
             : null,

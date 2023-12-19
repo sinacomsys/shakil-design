@@ -16,11 +16,11 @@ exports.DatePickerContext = (0, react_1.createContext)({
   onAddYear: function () {},
   onSubtractYear: function () {},
   onSetCurrentDate: function () {},
-  onSelectDate: function () {},
+  handleSelectDateFromMatrix: function () {},
+  handleSetSelectedDateFromInputs: function () {},
   selectedDate: null,
   isCalendarExtended: false,
   monthMatrix: [],
-  onCollapseMatrix: function () {},
   isMatrixOpen: false,
   calendarMode: "persian",
   formats: {
@@ -33,6 +33,10 @@ exports.DatePickerContext = (0, react_1.createContext)({
     MONTH: calendarMode_1.PERSIAN_MONTH,
     MONTH_NUMBER_FORMAT: calendarMode_1.PERSIAN_MONTH_NUMBER_FORMAT,
   },
-  onChange: function () {},
+  onEditAgain: function () {},
+  isConfirmed: false,
+  onConfirmDate: function () {},
+  onExtendMatrix: function () {},
+  onShrinkMatrix: function () {},
 });
 //# sourceMappingURL=context.js.map

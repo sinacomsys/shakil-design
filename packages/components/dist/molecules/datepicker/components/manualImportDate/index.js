@@ -34,23 +34,29 @@ var classnames_1 = __importDefault(require("classnames"));
 var context_1 = require("./context");
 var react_1 = require("react");
 var context_2 = require("../../context");
+var moment_jalaali_1 = __importDefault(require("moment-jalaali"));
 var ManualImportDate = function (_a) {
   var onConfirmDate = _a.onConfirmDate,
-    isConfirmed = _a.isConfirmed,
-    onDisproveDate = _a.onDisproveDate;
+    isConfirmed = _a.isConfirmed;
   var _b = context_1.ManualImportDateContext.useFormContext(),
     getValues = _b.getValues,
     handleSubmit = _b.handleSubmit,
     setError = _b.setError;
   var errors = context_1.ManualImportDateContext.useFormState().errors;
-  var onCollapseMatrix = (0, react_1.useContext)(
-    context_2.DatePickerContext,
-  ).onCollapseMatrix;
+  var _c = (0, react_1.useContext)(context_2.DatePickerContext),
+    selectedDate = _c.selectedDate,
+    onShrinkMatrix = _c.onShrinkMatrix,
+    onSetCurrentDate = _c.onSetCurrentDate,
+    handleSetSelectedDateFromInputs = _c.handleSetSelectedDateFromInputs,
+    FULL_DATE_FORMAT = _c.formats.FULL_DATE_FORMAT,
+    onOkDate = _c.onOkDate;
   var onConfirm = function () {
     var _a = getValues(),
       year = _a.year,
       month = _a.month,
-      day = _a.day;
+      day = _a.day,
+      hour = _a.hour,
+      minute = _a.minute;
     var date =
       year && day && month
         ? "".concat(year, "/").concat(month, "/").concat(day)
@@ -58,7 +64,22 @@ var ManualImportDate = function (_a) {
     var isDateValid = date && (0, checkDateIsValid_1.checkIsDateValid)(date);
     if (isDateValid) {
       onConfirmDate();
-      onCollapseMatrix();
+      var date_1 =
+        year && day && month
+          ? (0, moment_jalaali_1.default)(
+              ""
+                .concat(year, "/")
+                .concat(month, "/")
+                .concat(day, " ")
+                .concat(hour, ":")
+                .concat(minute),
+              FULL_DATE_FORMAT,
+            )
+          : null;
+      date_1 && onSetCurrentDate(date_1);
+      date_1 && handleSetSelectedDateFromInputs(date_1);
+      onOkDate === null || onOkDate === void 0 ? void 0 : onOkDate(date_1);
+      onShrinkMatrix();
     } else {
       setError("day", { message: "invalid" });
       setError("month", { message: "invalid" });
@@ -69,7 +90,7 @@ var ManualImportDate = function (_a) {
   return (0, jsx_dev_runtime_1.jsxDEV)(
     "div",
     __assign(
-      { style: { position: "relative", opacity: isConfirmed ? 0.4 : 1 } },
+      { style: { position: "relative" } },
       {
         children: [
           (0, jsx_dev_runtime_1.jsxDEV)(
@@ -86,7 +107,7 @@ var ManualImportDate = function (_a) {
                     ),
                     void 0,
                     false,
-                    { fileName: _jsxFileName, lineNumber: 46, columnNumber: 9 },
+                    { fileName: _jsxFileName, lineNumber: 62, columnNumber: 9 },
                     _this,
                   ),
                   (0, jsx_dev_runtime_1.jsxDEV)(
@@ -112,6 +133,7 @@ var ManualImportDate = function (_a) {
                                       return (0, jsx_dev_runtime_1.jsxDEV)(
                                         __1.TextInput,
                                         {
+                                          placeholder: "Year",
                                           disabled: isConfirmed,
                                           hasError: Boolean(errors.year),
                                           value: value,
@@ -125,7 +147,7 @@ var ManualImportDate = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 55,
+                                          lineNumber: 71,
                                           columnNumber: 25,
                                         },
                                         _this,
@@ -136,7 +158,7 @@ var ManualImportDate = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 51,
+                                    lineNumber: 67,
                                     columnNumber: 13,
                                   },
                                   _this,
@@ -147,7 +169,7 @@ var ManualImportDate = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 50,
+                              lineNumber: 66,
                               columnNumber: 11,
                             },
                             _this,
@@ -174,6 +196,7 @@ var ManualImportDate = function (_a) {
                                       return (0, jsx_dev_runtime_1.jsxDEV)(
                                         __1.TextInput,
                                         {
+                                          placeholder: "Month",
                                           disabled: isConfirmed,
                                           hasError: Boolean(errors.month),
                                           value: value,
@@ -187,7 +210,7 @@ var ManualImportDate = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 75,
+                                          lineNumber: 92,
                                           columnNumber: 25,
                                         },
                                         _this,
@@ -198,7 +221,7 @@ var ManualImportDate = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 71,
+                                    lineNumber: 88,
                                     columnNumber: 13,
                                   },
                                   _this,
@@ -209,7 +232,7 @@ var ManualImportDate = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 70,
+                              lineNumber: 87,
                               columnNumber: 11,
                             },
                             _this,
@@ -231,6 +254,7 @@ var ManualImportDate = function (_a) {
                                       return (0, jsx_dev_runtime_1.jsxDEV)(
                                         __1.TextInput,
                                         {
+                                          placeholder: "Day",
                                           disabled: isConfirmed,
                                           hasError: Boolean(errors.day),
                                           value: value,
@@ -244,7 +268,7 @@ var ManualImportDate = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 95,
+                                          lineNumber: 113,
                                           columnNumber: 25,
                                         },
                                         _this,
@@ -255,7 +279,7 @@ var ManualImportDate = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 91,
+                                    lineNumber: 109,
                                     columnNumber: 13,
                                   },
                                   _this,
@@ -266,7 +290,7 @@ var ManualImportDate = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 90,
+                              lineNumber: 108,
                               columnNumber: 11,
                             },
                             _this,
@@ -276,7 +300,7 @@ var ManualImportDate = function (_a) {
                     ),
                     void 0,
                     true,
-                    { fileName: _jsxFileName, lineNumber: 49, columnNumber: 9 },
+                    { fileName: _jsxFileName, lineNumber: 65, columnNumber: 9 },
                     _this,
                   ),
                 ],
@@ -284,7 +308,7 @@ var ManualImportDate = function (_a) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 45, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 61, columnNumber: 7 },
             _this,
           ),
           (0, jsx_dev_runtime_1.jsxDEV)(
@@ -303,7 +327,7 @@ var ManualImportDate = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 113,
+                      lineNumber: 132,
                       columnNumber: 9,
                     },
                     _this,
@@ -334,6 +358,7 @@ var ManualImportDate = function (_a) {
                                       return (0, jsx_dev_runtime_1.jsxDEV)(
                                         __1.TextInput,
                                         {
+                                          placeholder: "Hour",
                                           disabled: isConfirmed,
                                           hasError: Boolean(errors.hour),
                                           onChangeText: function (value) {
@@ -346,7 +371,7 @@ var ManualImportDate = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 125,
+                                          lineNumber: 144,
                                           columnNumber: 25,
                                         },
                                         _this,
@@ -357,7 +382,7 @@ var ManualImportDate = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 118,
+                                    lineNumber: 137,
                                     columnNumber: 13,
                                   },
                                   _this,
@@ -368,7 +393,7 @@ var ManualImportDate = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 117,
+                              lineNumber: 136,
                               columnNumber: 11,
                             },
                             _this,
@@ -398,6 +423,7 @@ var ManualImportDate = function (_a) {
                                       return (0, jsx_dev_runtime_1.jsxDEV)(
                                         __1.TextInput,
                                         {
+                                          placeholder: "Min",
                                           disabled: isConfirmed,
                                           hasError: Boolean(errors.minute),
                                           onChangeText: function (value) {
@@ -410,7 +436,7 @@ var ManualImportDate = function (_a) {
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 147,
+                                          lineNumber: 167,
                                           columnNumber: 25,
                                         },
                                         _this,
@@ -421,7 +447,7 @@ var ManualImportDate = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 140,
+                                    lineNumber: 160,
                                     columnNumber: 13,
                                   },
                                   _this,
@@ -432,7 +458,7 @@ var ManualImportDate = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 139,
+                              lineNumber: 159,
                               columnNumber: 11,
                             },
                             _this,
@@ -446,30 +472,31 @@ var ManualImportDate = function (_a) {
                                 onClick: handleSubmit(onConfirm),
                               },
                               {
-                                children: isConfirmed
-                                  ? (0, jsx_dev_runtime_1.jsxDEV)(
-                                      atoms_1.BaseIcon,
-                                      {
-                                        name: "Create-Project_Checked-Icon",
-                                        size: { width: 13, height: 9 },
-                                      },
-                                      void 0,
-                                      false,
-                                      {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 166,
-                                        columnNumber: 29,
-                                      },
-                                      _this,
-                                    )
-                                  : "ok",
+                                children:
+                                  isConfirmed && selectedDate
+                                    ? (0, jsx_dev_runtime_1.jsxDEV)(
+                                        atoms_1.BaseIcon,
+                                        {
+                                          name: "Create-Project_Checked-Icon",
+                                          size: { width: 13, height: 9 },
+                                        },
+                                        void 0,
+                                        false,
+                                        {
+                                          fileName: _jsxFileName,
+                                          lineNumber: 187,
+                                          columnNumber: 45,
+                                        },
+                                        _this,
+                                      )
+                                    : "ok",
                               },
                             ),
                             void 0,
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 161,
+                              lineNumber: 182,
                               columnNumber: 11,
                             },
                             _this,
@@ -481,7 +508,7 @@ var ManualImportDate = function (_a) {
                     true,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 116,
+                      lineNumber: 135,
                       columnNumber: 9,
                     },
                     _this,
@@ -491,25 +518,15 @@ var ManualImportDate = function (_a) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 112, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 131, columnNumber: 7 },
             _this,
           ),
-          isConfirmed
-            ? (0, jsx_dev_runtime_1.jsxDEV)(
-                "div",
-                { onClick: onDisproveDate, className: classes["overlay"] },
-                void 0,
-                false,
-                { fileName: _jsxFileName, lineNumber: 178, columnNumber: 23 },
-                _this,
-              )
-            : null,
         ],
       },
     ),
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 59, columnNumber: 11 },
     _this,
   );
 };

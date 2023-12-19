@@ -1,7 +1,16 @@
 import { DatePickerProviderProps } from "../types";
-interface InputDatePickerProps extends DatePickerProviderProps {
-    allowClear?: boolean;
-    onClear?: () => void;
+import { Moment } from "moment-jalaali";
+interface InputDatePickerProps
+  extends Omit<
+    DatePickerProviderProps,
+    "children" | "onOkDate" | "isDisable" | "onEditAgain" | "disableDateFrom"
+  > {
+  onChange?: (arg: { value: Moment | undefined | null }) => void;
+  allowClear?: boolean;
+  onClear?: () => void;
 }
-declare const InputDatePicker: (props: InputDatePickerProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const InputDatePicker: ({
+  onChange,
+  ...props
+}: InputDatePickerProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { InputDatePicker };

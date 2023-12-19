@@ -1,19 +1,26 @@
 /// <reference types="react" />
 import { Moment } from "moment-jalaali";
-import { DatePickerProps } from "./components/types";
+import { DatePickerProviderProps } from "./components/types";
 interface DatePickerContext
-  extends Pick<DatePickerProps, "calendarMode" | "onChange"> {
-  currentDate: DatePickerProps["value"];
+  extends Pick<
+    DatePickerProviderProps,
+    | "calendarMode"
+    | "isDisable"
+    | "onOkDate"
+    | "disableDateFrom"
+    | "onEditAgain"
+  > {
+  currentDate: DatePickerProviderProps["value"];
   onAddMonth: () => void;
   onSubtractMonth: () => void;
   onAddYear: () => void;
   onSubtractYear: () => void;
   onSetCurrentDate: (value: Moment) => void;
-  onSelectDate: (value: Moment) => void;
-  selectedDate: DatePickerProps["value"];
+  handleSelectDateFromMatrix: (value: Moment) => void;
+  handleSetSelectedDateFromInputs: (value: Moment) => void;
+  selectedDate: DatePickerProviderProps["value"];
   isCalendarExtended?: boolean;
   monthMatrix: Moment[][];
-  onCollapseMatrix: () => void;
   isMatrixOpen: boolean;
   formats: {
     YEAR_FORMAT: string;
@@ -25,6 +32,10 @@ interface DatePickerContext
     SHORT_DAY_FORMAT: string;
     MONTH: string;
   };
+  isConfirmed: boolean;
+  onConfirmDate: (value: boolean) => void;
+  onExtendMatrix: () => void;
+  onShrinkMatrix: () => void;
 }
 export declare const DatePickerContext: import("react").Context<DatePickerContext>;
 export {};

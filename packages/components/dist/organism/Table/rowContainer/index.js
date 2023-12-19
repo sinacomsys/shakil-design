@@ -106,6 +106,9 @@ var Rows = function (_a) {
                             children: (0, jsx_dev_runtime_1.jsxDEV)(
                               checkbox_1.CheckBox,
                               {
+                                "data-testid": rowKey
+                                  ? "row-".concat(String(rowData[rowKey]))
+                                  : rowIndex,
                                 onChange: function () {
                                   rowKey &&
                                     handleCheckRow({ rowId: rowData[rowKey] });
@@ -167,7 +170,7 @@ var Rows = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 85,
+                      lineNumber: 86,
                       columnNumber: 13,
                     },
                     _this,
@@ -176,7 +179,7 @@ var Rows = function (_a) {
               ),
               index,
               false,
-              { fileName: _jsxFileName, lineNumber: 83, columnNumber: 17 },
+              { fileName: _jsxFileName, lineNumber: 84, columnNumber: 17 },
               _this,
             );
           }),

@@ -27,12 +27,17 @@ var context_1 = require("../../context");
 var ExpandIcon = function (_a) {
   var handleOndisproveDate = _a.handleOndisproveDate;
   var classes = (0, style_1.useStyles)();
-  var onCollapseMatrix = (0, react_1.useContext)(
-    context_1.DatePickerContext,
-  ).onCollapseMatrix;
+  var _b = (0, react_1.useContext)(context_1.DatePickerContext),
+    onExtendMatrix = _b.onExtendMatrix,
+    onShrinkMatrix = _b.onShrinkMatrix,
+    isMatrixOpen = _b.isMatrixOpen;
   var handleOnClick = function () {
     handleOndisproveDate();
-    onCollapseMatrix();
+    if (isMatrixOpen) {
+      onShrinkMatrix();
+    } else {
+      onExtendMatrix();
+    }
   };
   return (0, jsx_dev_runtime_1.jsxDEV)(
     "div",
@@ -50,7 +55,7 @@ var ExpandIcon = function (_a) {
             },
             void 0,
             false,
-            { fileName: _jsxFileName, lineNumber: 21, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 26, columnNumber: 7 },
             _this,
           ),
           (0, jsx_dev_runtime_1.jsxDEV)(
@@ -67,7 +72,7 @@ var ExpandIcon = function (_a) {
             },
             void 0,
             false,
-            { fileName: _jsxFileName, lineNumber: 27, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 32, columnNumber: 7 },
             _this,
           ),
         ],
@@ -75,7 +80,7 @@ var ExpandIcon = function (_a) {
     ),
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 19, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 },
     _this,
   );
 };

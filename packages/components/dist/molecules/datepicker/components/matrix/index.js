@@ -36,14 +36,15 @@ var Matrix = function () {
   var today = (0, moment_jalaali_1.default)();
   var _a = (0, react_1.useContext)(context_1.DatePickerContext),
     currentDate = _a.currentDate,
-    onSelectDate = _a.onSelectDate,
+    handleSelectDateFromMatrix = _a.handleSelectDateFromMatrix,
     selectedDate = _a.selectedDate,
     monthMatrix = _a.monthMatrix,
     _b = _a.formats,
     FULL_DATE_FORMAT = _b.FULL_DATE_FORMAT,
     MONTH_NUMBER_FORMAT = _b.MONTH_NUMBER_FORMAT,
     SHORT_DAY_FORMAT = _b.SHORT_DAY_FORMAT,
-    calendarMode = _a.calendarMode;
+    calendarMode = _a.calendarMode,
+    disableDateFrom = _a.disableDateFrom;
   return (0, jsx_dev_runtime_1.jsxDEV)(
     "div",
     __assign(
@@ -79,6 +80,12 @@ var Matrix = function () {
                           (currentDate === null || currentDate === void 0
                             ? void 0
                             : currentDate.local().format(MONTH_NUMBER_FORMAT));
+                        var isDayBeforeStartDate =
+                          disableDateFrom &&
+                          day.isBefore(disableDateFrom, "day");
+                        var isUnselectable = Boolean(
+                          !isCurrentMonth || isDayBeforeStartDate,
+                        );
                         return (0, jsx_dev_runtime_1.jsxDEV)(
                           "div",
                           __assign(
@@ -89,7 +96,8 @@ var Matrix = function () {
                                 __assign(
                                   {
                                     onClick: function () {
-                                      onSelectDate(day);
+                                      !isUnselectable &&
+                                        handleSelectDateFromMatrix(day);
                                     },
                                     className: classes["day"],
                                     style: __assign(
@@ -118,7 +126,7 @@ var Matrix = function () {
                                           size: 14,
                                           color: isSelected
                                             ? "#575757"
-                                            : !isCurrentMonth
+                                            : isUnselectable
                                             ? "#828282"
                                             : "white",
                                         },
@@ -131,7 +139,7 @@ var Matrix = function () {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 63,
+                                        lineNumber: 72,
                                         columnNumber: 21,
                                       },
                                       _this,
@@ -142,7 +150,7 @@ var Matrix = function () {
                                 false,
                                 {
                                   fileName: _jsxFileName,
-                                  lineNumber: 46,
+                                  lineNumber: 55,
                                   columnNumber: 19,
                                 },
                                 _this,
@@ -153,7 +161,7 @@ var Matrix = function () {
                           false,
                           {
                             fileName: _jsxFileName,
-                            lineNumber: 44,
+                            lineNumber: 53,
                             columnNumber: 23,
                           },
                           _this,
@@ -163,7 +171,7 @@ var Matrix = function () {
                   ),
                   index2,
                   false,
-                  { fileName: _jsxFileName, lineNumber: 23, columnNumber: 17 },
+                  { fileName: _jsxFileName, lineNumber: 24, columnNumber: 17 },
                   _this,
                 );
               }),
@@ -171,7 +179,7 @@ var Matrix = function () {
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 20, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 21, columnNumber: 11 },
     _this,
   );
 };
