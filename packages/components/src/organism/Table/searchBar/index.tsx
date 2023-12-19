@@ -54,6 +54,7 @@ const SearchBar = <T extends Record<string, unknown>>({
           {isOnCheckedRowsAvailable ? (
             <div className={classes["checkbox"]}>
               <CheckBox
+                data-testid={testid?.selectAll}
                 checked={isAllRowsChecked}
                 onChange={onCheckAllRows}
                 indeterminate={isIndeterminate}

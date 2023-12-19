@@ -70,6 +70,7 @@ const Rows = <T extends Record<string, unknown>>({
         {isOnCheckedRowsAvailable ? (
           <div className={classes["check-box"]}>
             <CheckBox
+              data-testid={rowKey ? `row-${String(rowData[rowKey])}` : rowIndex}
               onChange={() => {
                 rowKey && handleCheckRow({ rowId: rowData[rowKey] });
               }}
