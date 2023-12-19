@@ -20,7 +20,7 @@ const Text = React.memo(
         className,
         color,
         style,
-        size,
+        size = 16,
         weight,
         variant,
         lineHeight,
@@ -32,7 +32,10 @@ const Text = React.memo(
       const classes = useStyles();
       const { unit } = React.useContext(UnitContext);
 
-      const fontSize = unit === "viewport" ? pxToVhString(16) : 16;
+      const fontSize =
+        unit === "viewport" && typeof size === "number"
+          ? pxToVhString(size)
+          : size;
 
       const fontWeight =
         typeof weight === "string" ? fontWeights[weight] : weight;

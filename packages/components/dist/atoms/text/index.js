@@ -105,7 +105,8 @@ var Text = React.memo(
       className = _a.className,
       color = _a.color,
       style = _a.style,
-      size = _a.size,
+      _c = _a.size,
+      size = _c === void 0 ? 16 : _c,
       weight = _a.weight,
       variant = _a.variant,
       lineHeight = _a.lineHeight,
@@ -122,7 +123,10 @@ var Text = React.memo(
     var fonts = (0, style_1.useFonts)();
     var classes = (0, style_1.useStyles)();
     var unit = React.useContext(context_1.UnitContext).unit;
-    var fontSize = unit === "viewport" ? (0, utils_1.pxToVhString)(16) : 16;
+    var fontSize =
+      unit === "viewport" && typeof size === "number"
+        ? (0, utils_1.pxToVhString)(size)
+        : size;
     var fontWeight =
       typeof weight === "string" ? style_1.fontWeights[weight] : weight;
     var setVariant = function () {
@@ -137,7 +141,7 @@ var Text = React.memo(
       return "p";
     };
     return (0,
-    jsx_dev_runtime_1.jsxDEV)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className, classes.text), style: __assign({ color: color, fontWeight: fontWeight, lineHeight: lineHeight, fontSize: fontSize }, style) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 15 }, _this);
+    jsx_dev_runtime_1.jsxDEV)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className, classes.text), style: __assign({ color: color, fontWeight: fontWeight, lineHeight: lineHeight, fontSize: fontSize }, style) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 15 }, _this);
   }),
 );
 exports.Text = Text;
