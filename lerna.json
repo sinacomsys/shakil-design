@@ -14,7 +14,7 @@
       "remote": "upstream"
     }
   },
-  "version": "0.0.58",
+  "version": "0.0.59",
   "packages": ["packages/*"],
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
