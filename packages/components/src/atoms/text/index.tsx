@@ -46,8 +46,6 @@ const Text = React.memo(
         return "p";
       };
 
-      //test-comment
-
       return (
         <BaseText
           ref={ref}
