@@ -79,9 +79,9 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        onCheckedRows={() => {}}
-        onRow={() => {
-          return { onClick: () => {} };
+        mode="multiple"
+        onSelectRow={(value) => {
+          console.log({ value });
         }}
         rowKey="id"
         height={400}

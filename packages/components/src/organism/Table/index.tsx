@@ -12,6 +12,7 @@ import { useStyles } from "./style";
 import classNames from "classnames";
 import { pxToVw, pxToVwString, useWindowSize } from "@shakil-design/utils";
 import { TableBody } from "./body";
+import React from "react";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
@@ -19,11 +20,10 @@ export const SCROLL_BAR = 8;
 export const DEFAULT_ALIGN = "center";
 const ROW_HEIGHT = 32;
 
-export interface TableProps<T>
+export interface TableCommonType<T>
   extends Pick<TableContextProps<T>, "testid" | "onRow"> {
   data?: T[];
   rowKey?: keyof T;
-  onCheckedRows?: (value: T[]) => void;
   headerStyle?: React.CSSProperties;
   headerClassName?: string;
   searchBarClassName?: string;
@@ -32,33 +32,57 @@ export interface TableProps<T>
   filterIcon?: React.ReactNode;
   clearFilterIcon?: React.ReactNode;
   isLoading?: boolean;
-  onSelectRow?: (value: T) => void;
   height: number;
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
   overScan?: number;
 }
 
-const Table = <T extends Record<string, any>>({
-  data,
-  onCheckedRows,
-  rowKey,
-  headerStyle,
-  headerClassName,
-  searchBarClassName,
-  searchBarToggle,
-  searchBarStyle,
-  filterIcon,
-  clearFilterIcon,
-  isLoading,
-  onSelectRow,
-  height,
-  coloums,
-  noContent,
-  overScan,
-  testid,
-  onRow,
-}: TableProps<T>) => {
+export interface TablePropsWithMultipleSelectRows<T>
+  extends TableCommonType<T> {
+  selectedRows?: T[];
+  onSelectRow?: (value: T[]) => void;
+  mode: "multiple";
+}
+
+export interface TablePropsWithSingleSelectRow<T> extends TableCommonType<T> {
+  selectedRows?: T;
+  onSelectRow?: (value: T) => void;
+  mode: "single";
+}
+
+type TableProps<T> =
+  | TablePropsWithSingleSelectRow<T>
+  | TablePropsWithMultipleSelectRows<T>;
+
+function Table<T extends Record<string, any>>(
+  props: TablePropsWithSingleSelectRow<T>,
+): JSX.Element;
+function Table<T extends Record<string, any>>(
+  props: TablePropsWithMultipleSelectRows<T>,
+): JSX.Element;
+function Table<T extends Record<string, any>>(props: TableProps<T>) {
+  const {
+    data,
+    rowKey,
+    headerStyle,
+    headerClassName,
+    searchBarClassName,
+    searchBarToggle,
+    searchBarStyle,
+    filterIcon,
+    clearFilterIcon,
+    isLoading,
+    onSelectRow,
+    height,
+    coloums,
+    noContent,
+    overScan,
+    testid,
+    onRow,
+    mode,
+  } = props;
+
   const { table: { header } = {} } = useTheme();
   const classes = useStyles({ height });
   const [order, setOrder] = useState<Order>(undefined);
@@ -88,7 +112,6 @@ const Table = <T extends Record<string, any>>({
           (order === "ascending" ? sorter?.(a, b) : sorter?.(b, a)) || 0,
       );
     }
-
     return result;
   }, [orderBy, data, order, coloums]);
 
@@ -126,7 +149,8 @@ const Table = <T extends Record<string, any>>({
 
   const searchIconWidth = pxToVwString(SEARCH_ICON);
 
-  const _searchIconWidth = onCheckedRows ? rowSelectionWidth : searchIconWidth;
+  const _searchIconWidth =
+    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
 
   const isSearchAvailable = coloums.find(({ renderFilter }) => renderFilter);
 
@@ -146,11 +170,11 @@ const Table = <T extends Record<string, any>>({
   };
 
   const handleCheckRow = ({ rowId }: { rowId: T[keyof T] }) => {
-    const currentRow = checkedRows.find((item) => {
+    const isCurrentRowAlreadySelected = checkedRows.find((item) => {
       return rowKey && item[rowKey] === rowId;
     });
 
-    if (currentRow) {
+    if (isCurrentRowAlreadySelected) {
       const filtered = checkedRows.filter((item) => {
         return rowKey && item[rowKey] !== rowId;
       });
@@ -169,9 +193,11 @@ const Table = <T extends Record<string, any>>({
     }
   };
 
-  const handleOnSelectRow = (value: unknown) => {
-    setSelectedRow(value as T);
-    onSelectRow?.(value as T);
+  const handleOnSelectRow = (value: T) => {
+    if (mode === "single") {
+      setSelectedRow(value);
+      onSelectRow?.(value);
+    }
   };
 
   const onCheckAllRows = () => {
@@ -186,7 +212,9 @@ const Table = <T extends Record<string, any>>({
   };
 
   useEffect(() => {
-    onCheckedRows?.(checkedRows);
+    if (mode === "multiple") {
+      onSelectRow?.(checkedRows);
+    }
     if (checkedRows.length === 0) {
       setAllRowsChecked(false);
       return;
@@ -194,8 +222,7 @@ const Table = <T extends Record<string, any>>({
     if (checkedRows.length === data?.length) {
       setAllRowsChecked(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, checkedRows]);
+  }, [data, checkedRows, mode, onSelectRow]);
 
   const estimateSize = useMemo(() => {
     return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
@@ -229,6 +256,13 @@ const Table = <T extends Record<string, any>>({
     setBodyHeight(body?.clientHeight || 0);
   };
 
+  const onDeselectCheckedRows = (row: T) => {
+    if (mode === "multiple") {
+      setCheckRows([row]);
+      onSelectRow?.([row]);
+    }
+  };
+
   return (
     <Measure bounds>
       {({ contentRect, measureRef }) => {
@@ -256,13 +290,16 @@ const Table = <T extends Record<string, any>>({
                 orderBy,
                 selectedRow: selectedRow,
                 onSelectRow: handleOnSelectRow,
-                isOnCheckedRowsAvailable: Boolean(onCheckedRows),
-                isSelectSingleRowAvailable: Boolean(onSelectRow),
                 isOverflowed: isOverFlowed,
                 testid,
                 onRow,
                 virtualizer: rowVirtualizer,
                 handleCheckRow,
+                checkedRows,
+                rowKey,
+                data: data || [],
+                mode,
+                onDeselectCheckedRows,
               }}
             >
               <div className={classes["wrapper"]}>
@@ -325,12 +362,9 @@ const Table = <T extends Record<string, any>>({
                     noContent={_noContent}
                     searchIconWidth={_searchIconWidth}
                     virtualRows={getVirtualItems()}
-                    checkedRows={checkedRows}
                     colWidth={colWidth}
                     coloums={coloums}
                     dataList={list}
-                    data={data}
-                    rowKey={rowKey}
                   />
                 </ScrollView>
               </div>
@@ -340,7 +374,7 @@ const Table = <T extends Record<string, any>>({
       }}
     </Measure>
   );
-};
+}
 
 export type { ColumnType };
 export { Table };

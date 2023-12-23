@@ -15,7 +15,10 @@ const Template: Story<any> = () => {
   const [range, setRange] = useState<{
     from: Moment | null | undefined;
     to: Moment | null | undefined;
-  }>({ from: undefined, to: undefined });
+  }>({
+    from: moment("1402/9/22", "jYYYY/jMM/jDD"),
+    to: moment("1403/10/30", "jYYYY/jMM/jDD"),
+  });
 
   return (
     <StoryContainer>

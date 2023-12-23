@@ -8,29 +8,25 @@ import { useStyles } from "./style";
 
 export interface RowsProps<T> {
   rowData: T;
-  data: T[];
   columns: ColumnType<T>[];
   index: number;
-  rowKey?: keyof T;
-  checkedRows: T[];
   virtualItem: VirtualItem;
 }
 
 const Rows = <T extends Record<string, unknown>>({
   rowData,
   columns,
-  data,
   index: rowIndex,
-  rowKey,
-  checkedRows,
   virtualItem,
 }: RowsProps<T>) => {
   const {
     selectedRow,
-    onSelectRow,
-    isOnCheckedRowsAvailable,
-    isSelectSingleRowAvailable,
+
     handleCheckRow,
+    checkedRows,
+    rowKey,
+    data,
+    mode,
   } = useMyTableContext<T>();
 
   const classes = useStyles();
@@ -41,39 +37,30 @@ const Rows = <T extends Record<string, unknown>>({
     (item) => rowKey && item?.[rowKey] === rowData[rowKey],
   );
 
-  const onClickRow = () => {
-    if (!isOnCheckedRowsAvailable && isSelectSingleRowAvailable) {
-      onSelectRow?.(rowData);
-    }
-    if (isOnCheckedRowsAvailable && rowKey) {
-      handleCheckRow({ rowId: rowData[rowKey] });
-    }
-  };
-
   return (
     <Row
       virtualItem={virtualItem}
       rowData={rowData}
-      rowKey={rowKey}
       rowIndex={rowIndex}
-      isOnCheckedRowsAvailable={isOnCheckedRowsAvailable}
       isSelected={Boolean(
         rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey],
       )}
-      onClick={onClickRow}
       isChecked={Boolean(isChecked)}
     >
       <td style={{ height: "inherit" }}>
         {rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? (
           <div className={classes["selected"]} />
         ) : null}
-        {isOnCheckedRowsAvailable ? (
-          <div className={classes["check-box"]}>
+        {mode === "multiple" ? (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              rowKey && handleCheckRow({ rowId: rowData[rowKey] });
+            }}
+            className={classes["check-box"]}
+          >
             <CheckBox
               data-testid={rowKey ? `row-${String(rowData[rowKey])}` : rowIndex}
-              onChange={() => {
-                rowKey && handleCheckRow({ rowId: rowData[rowKey] });
-              }}
               checked={Boolean(isChecked)}
             />
           </div>

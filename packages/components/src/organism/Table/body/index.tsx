@@ -2,19 +2,18 @@ import { VirtualItem } from "@tanstack/react-virtual";
 import { useStyles } from "./style";
 import { pxToVwString } from "@shakil-design/utils";
 import { Rows } from "../rowContainer";
-import { TableProps } from "..";
+import { TableCommonType } from "..";
 import { UnitContext } from "../../../theme/context";
 import { ReactElement, Ref, useContext } from "react";
 import { useMyTableContext } from "../context";
 import React from "react";
 
 interface TableBodyProps<T extends Record<string, any>>
-  extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
+  extends Pick<TableCommonType<T>, "coloums"> {
   virtualRows: VirtualItem[];
   noContent: React.ReactNode;
   searchIconWidth: number | string;
   dataList: T[];
-  checkedRows: T[];
   colWidth: number | string | undefined;
   paddingTop: number;
   paddingBottom: number;
@@ -27,9 +26,6 @@ const TableBody = <T extends Record<string, any>>(
     searchIconWidth,
     dataList,
     coloums,
-    rowKey,
-    data,
-    checkedRows,
     colWidth,
     paddingBottom,
     paddingTop,
@@ -38,7 +34,7 @@ const TableBody = <T extends Record<string, any>>(
 ) => {
   const classes = useStyles();
   const { unit } = useContext(UnitContext);
-  const { testid, virtualizer } = useMyTableContext<T>();
+  const { testid, virtualizer, rowKey } = useMyTableContext<T>();
 
   return (
     <>
@@ -59,20 +55,15 @@ const TableBody = <T extends Record<string, any>>(
               })}
             </colgroup>
             <tbody data-testid={testid?.body}>
-              {paddingTop > 0 && (
-                <tr style={{ height: `${paddingTop}px` }}>{/* <td /> */}</tr>
-              )}
+              {paddingTop > 0 && <tr style={{ height: `${paddingTop}px` }} />}
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
                 return (
                   <Rows
                     key={rowKey ? row[rowKey] : index}
-                    rowKey={rowKey}
                     rowData={row}
-                    data={data || []}
                     index={index}
                     columns={coloums}
-                    checkedRows={checkedRows}
                     virtualItem={virtualRow}
                   />
                 );

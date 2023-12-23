@@ -29,13 +29,8 @@ const SearchBar = <T extends Record<string, unknown>>({
   isIndeterminate,
 }: SearchBarProps<T>) => {
   const { table: { clearFilterIcon: clearFilterIconColor } = {} } = useTheme();
-  const {
-    onCheckAllRows,
-    isAllRowsChecked,
-    isOnCheckedRowsAvailable,
-    isOverflowed,
-    testid,
-  } = useMyTableContext();
+  const { onCheckAllRows, isAllRowsChecked, isOverflowed, testid, mode } =
+    useMyTableContext();
   const classes = useStyles({ isSearchVisible });
 
   return (
@@ -51,7 +46,7 @@ const SearchBar = <T extends Record<string, unknown>>({
     >
       <th>
         <div className={`${classes["clear-filter"]}--wrapper`}>
-          {isOnCheckedRowsAvailable ? (
+          {mode === "multiple" ? (
             <div className={classes["checkbox"]}>
               <CheckBox
                 data-testid={testid?.selectAll}

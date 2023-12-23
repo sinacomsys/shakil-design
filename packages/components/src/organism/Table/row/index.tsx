@@ -6,33 +6,31 @@ import { VirtualItem } from "@tanstack/react-virtual";
 
 interface RowProps<T>
   extends React.HTMLAttributes<HTMLTableRowElement>,
-    Pick<RowsProps<T>, "rowKey" | "rowData"> {
+    Pick<RowsProps<T>, "rowData"> {
   children?: React.ReactNode;
   isExpanded?: boolean;
   isChecked: boolean;
   isSelected: boolean;
-  isOnCheckedRowsAvailable: boolean;
   rowIndex: number;
   virtualItem: VirtualItem;
 }
 
 const Row = <T extends Record<string, unknown>>({
   isChecked,
-  isOnCheckedRowsAvailable,
   isSelected,
-  rowKey,
   rowIndex,
   rowData,
   virtualItem,
   onClick,
   ...rest
 }: RowProps<T>) => {
-  const { onRow } = useMyTableContext<T>();
+  const { onRow, rowKey, mode, onSelectRow, onDeselectCheckedRows } =
+    useMyTableContext<T>();
   const [isHoverd, setIsHovered] = useState(false);
   const classes = useStyles({
     isChecked,
     isHoverd,
-    isOnCheckedRowsAvailable,
+    isOnCheckedRowsAvailable: mode === "multiple",
     isSelected,
   });
 
@@ -51,7 +49,8 @@ const Row = <T extends Record<string, unknown>>({
       }}
       onClick={(e) => {
         onRow?.(rowData, rowIndex).onClick?.(e);
-        onClick?.(e);
+        onSelectRow?.(rowData);
+        onDeselectCheckedRows(rowData);
       }}
       className={classes["row"]}
     />

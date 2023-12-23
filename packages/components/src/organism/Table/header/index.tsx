@@ -21,18 +21,13 @@ const Header = <T extends object>({
 }: HeaderProps<T>) => {
   const { table: { filterIcon: filterIconColor } = {} } = useTheme();
   const classes = useStyles();
-  const {
-    onCheckAllRows,
-    isAllRowsChecked,
-    isOnCheckedRowsAvailable,
-    isOverflowed,
-    testid,
-  } = useMyTableContext();
+  const { onCheckAllRows, isAllRowsChecked, mode, isOverflowed, testid } =
+    useMyTableContext();
   return (
     <tr data-testid={testid?.header}>
       <th>
         <div className={classes["filter-icon-wrapper"]}>
-          {isOnCheckedRowsAvailable ? (
+          {mode === "multiple" ? (
             <div className={classes["selectAll"]}>
               <CheckBox
                 data-testid={testid?.selectAll}
