@@ -42,31 +42,32 @@ var style_1 = require("./style");
 var context_1 = require("../context");
 var Row = function (_a) {
   var isChecked = _a.isChecked,
-    isOnCheckedRowsAvailable = _a.isOnCheckedRowsAvailable,
     isSelected = _a.isSelected,
-    rowKey = _a.rowKey,
     rowIndex = _a.rowIndex,
     rowData = _a.rowData,
     virtualItem = _a.virtualItem,
     onClick = _a.onClick,
     rest = __rest(_a, [
       "isChecked",
-      "isOnCheckedRowsAvailable",
       "isSelected",
-      "rowKey",
       "rowIndex",
       "rowData",
       "virtualItem",
       "onClick",
     ]);
-  var onRow = (0, context_1.useMyTableContext)().onRow;
-  var _b = (0, react_1.useState)(false),
-    isHoverd = _b[0],
-    setIsHovered = _b[1];
+  var _b = (0, context_1.useMyTableContext)(),
+    onRow = _b.onRow,
+    rowKey = _b.rowKey,
+    mode = _b.mode,
+    onSelectRow = _b.onSelectRow,
+    onDeselectCheckedRows = _b.onDeselectCheckedRows;
+  var _c = (0, react_1.useState)(false),
+    isHoverd = _c[0],
+    setIsHovered = _c[1];
   var classes = (0, style_1.useStyles)({
     isChecked: isChecked,
     isHoverd: isHoverd,
-    isOnCheckedRowsAvailable: isOnCheckedRowsAvailable,
+    isOnCheckedRowsAvailable: mode === "multiple",
     isSelected: isSelected,
   });
   return (0, jsx_dev_runtime_1.jsxDEV)(
@@ -110,14 +111,17 @@ var Row = function (_a) {
           _b === void 0
             ? void 0
             : _b.call(_a, e);
-          onClick === null || onClick === void 0 ? void 0 : onClick(e);
+          onSelectRow === null || onSelectRow === void 0
+            ? void 0
+            : onSelectRow(rowData);
+          onDeselectCheckedRows(rowData);
         },
         className: classes["row"],
       },
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 37, columnNumber: 11 },
     _this,
   );
 };

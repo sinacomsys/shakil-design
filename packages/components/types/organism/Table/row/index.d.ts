@@ -3,20 +3,17 @@ import { RowsProps } from "../rowContainer";
 import { VirtualItem } from "@tanstack/react-virtual";
 interface RowProps<T>
   extends React.HTMLAttributes<HTMLTableRowElement>,
-    Pick<RowsProps<T>, "rowKey" | "rowData"> {
+    Pick<RowsProps<T>, "rowData"> {
   children?: React.ReactNode;
   isExpanded?: boolean;
   isChecked: boolean;
   isSelected: boolean;
-  isOnCheckedRowsAvailable: boolean;
   rowIndex: number;
   virtualItem: VirtualItem;
 }
 declare const Row: <T extends Record<string, unknown>>({
   isChecked,
-  isOnCheckedRowsAvailable,
   isSelected,
-  rowKey,
   rowIndex,
   rowData,
   virtualItem,

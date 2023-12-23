@@ -31,7 +31,6 @@ var __importDefault =
   function (mod) {
     return mod && mod.__esModule ? mod : { default: mod };
   };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Table =
   exports.DEFAULT_ALIGN =
@@ -60,55 +59,56 @@ exports.ROW_SELECTION = 62;
 exports.SCROLL_BAR = 8;
 exports.DEFAULT_ALIGN = "center";
 var ROW_HEIGHT = 32;
-var Table = function (_a) {
-  var _b, _c, _d;
-  var data = _a.data,
-    onCheckedRows = _a.onCheckedRows,
-    rowKey = _a.rowKey,
-    headerStyle = _a.headerStyle,
-    headerClassName = _a.headerClassName,
-    searchBarClassName = _a.searchBarClassName,
-    searchBarToggle = _a.searchBarToggle,
-    searchBarStyle = _a.searchBarStyle,
-    filterIcon = _a.filterIcon,
-    clearFilterIcon = _a.clearFilterIcon,
-    isLoading = _a.isLoading,
-    onSelectRow = _a.onSelectRow,
-    height = _a.height,
-    coloums = _a.coloums,
-    noContent = _a.noContent,
-    overScan = _a.overScan,
-    testid = _a.testid,
-    onRow = _a.onRow;
-  var _e = (0, theme_1.useTheme)().table,
-    _f = _e === void 0 ? {} : _e,
-    header = _f.header;
+function Table(props) {
+  var _this = this;
+  var _a, _b, _c;
+  var data = props.data,
+    rowKey = props.rowKey,
+    headerStyle = props.headerStyle,
+    headerClassName = props.headerClassName,
+    searchBarClassName = props.searchBarClassName,
+    searchBarToggle = props.searchBarToggle,
+    searchBarStyle = props.searchBarStyle,
+    filterIcon = props.filterIcon,
+    clearFilterIcon = props.clearFilterIcon,
+    isLoading = props.isLoading,
+    onSelectRow = props.onSelectRow,
+    height = props.height,
+    coloums = props.coloums,
+    noContent = props.noContent,
+    overScan = props.overScan,
+    testid = props.testid,
+    onRow = props.onRow,
+    mode = props.mode;
+  var _d = (0, theme_1.useTheme)().table,
+    _e = _d === void 0 ? {} : _d,
+    header = _e.header;
   var classes = (0, style_1.useStyles)({ height: height });
-  var _g = (0, react_1.useState)(undefined),
-    order = _g[0],
-    setOrder = _g[1];
-  var _h = (0, react_1.useState)(false),
-    isSearchVisible = _h[0],
-    setShowSearchBar = _h[1];
+  var _f = (0, react_1.useState)(undefined),
+    order = _f[0],
+    setOrder = _f[1];
+  var _g = (0, react_1.useState)(false),
+    isSearchVisible = _g[0],
+    setShowSearchBar = _g[1];
+  var _h = (0, react_1.useState)(undefined),
+    orderBy = _h[0],
+    setOrderBy = _h[1];
   var _j = (0, react_1.useState)(undefined),
-    orderBy = _j[0],
-    setOrderBy = _j[1];
-  var _k = (0, react_1.useState)(undefined),
-    selectedRow = _k[0],
-    setSelectedRow = _k[1];
-  var _l = (0, react_1.useState)([]),
-    checkedRows = _l[0],
-    setCheckRows = _l[1];
-  var _m = (0, react_1.useState)(false),
-    isAllRowsChecked = _m[0],
-    setAllRowsChecked = _m[1];
+    selectedRow = _j[0],
+    setSelectedRow = _j[1];
+  var _k = (0, react_1.useState)([]),
+    checkedRows = _k[0],
+    setCheckRows = _k[1];
+  var _l = (0, react_1.useState)(false),
+    isAllRowsChecked = _l[0],
+    setAllRowsChecked = _l[1];
   var tableContainerRef = (0, react_1.useRef)(null);
-  var _o = (0, react_1.useState)(0),
-    bodyHeight = _o[0],
-    setBodyHeight = _o[1];
-  var _p = (0, react_1.useState)(false),
-    isOverFlowed = _p[0],
-    setIsOverflowed = _p[1];
+  var _m = (0, react_1.useState)(0),
+    bodyHeight = _m[0],
+    setBodyHeight = _m[1];
+  var _o = (0, react_1.useState)(false),
+    isOverFlowed = _o[0],
+    setIsOverflowed = _o[1];
   var windowHeight = (0, utils_1.useWindowSize)().height;
   (0, react_1.useEffect)(
     function () {
@@ -179,7 +179,8 @@ var Table = function (_a) {
   };
   var rowSelectionWidth = (0, utils_1.pxToVwString)(exports.ROW_SELECTION);
   var searchIconWidth = (0, utils_1.pxToVwString)(exports.SEARCH_ICON);
-  var _searchIconWidth = onCheckedRows ? rowSelectionWidth : searchIconWidth;
+  var _searchIconWidth =
+    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
   var isSearchAvailable = coloums.find(function (_a) {
     var renderFilter = _a.renderFilter;
     return renderFilter;
@@ -201,10 +202,10 @@ var Table = function (_a) {
   };
   var handleCheckRow = function (_a) {
     var rowId = _a.rowId;
-    var currentRow = checkedRows.find(function (item) {
+    var isCurrentRowAlreadySelected = checkedRows.find(function (item) {
       return rowKey && item[rowKey] === rowId;
     });
-    if (currentRow) {
+    if (isCurrentRowAlreadySelected) {
       var filtered = checkedRows.filter(function (item) {
         return rowKey && item[rowKey] !== rowId;
       });
@@ -225,10 +226,12 @@ var Table = function (_a) {
     }
   };
   var handleOnSelectRow = function (value) {
-    setSelectedRow(value);
-    onSelectRow === null || onSelectRow === void 0
-      ? void 0
-      : onSelectRow(value);
+    if (mode === "single") {
+      setSelectedRow(value);
+      onSelectRow === null || onSelectRow === void 0
+        ? void 0
+        : onSelectRow(value);
+    }
   };
   var onCheckAllRows = function () {
     if (!rowKey) return;
@@ -244,9 +247,11 @@ var Table = function (_a) {
   };
   (0, react_1.useEffect)(
     function () {
-      onCheckedRows === null || onCheckedRows === void 0
-        ? void 0
-        : onCheckedRows(checkedRows);
+      if (mode === "multiple") {
+        onSelectRow === null || onSelectRow === void 0
+          ? void 0
+          : onSelectRow(checkedRows);
+      }
       if (checkedRows.length === 0) {
         setAllRowsChecked(false);
         return;
@@ -257,9 +262,8 @@ var Table = function (_a) {
       ) {
         setAllRowsChecked(true);
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [data, checkedRows],
+    [data, checkedRows, mode, onSelectRow],
   );
   var estimateSize = (0, react_1.useMemo)(
     function () {
@@ -281,20 +285,20 @@ var Table = function (_a) {
     getTotalSize = rowVirtualizer.getTotalSize;
   var paddingTop =
     getVirtualItems().length > 0
-      ? ((_c =
-          (_b = getVirtualItems()) === null || _b === void 0
+      ? ((_b =
+          (_a = getVirtualItems()) === null || _a === void 0
             ? void 0
-            : _b[0]) === null || _c === void 0
+            : _a[0]) === null || _b === void 0
           ? void 0
-          : _c.start) || 0
+          : _b.start) || 0
       : 0;
   var paddingBottom =
     getVirtualItems().length > 0
       ? getTotalSize() -
-        (((_d = getVirtualItems()[getVirtualItems().length - 1]) === null ||
-        _d === void 0
+        (((_c = getVirtualItems()[getVirtualItems().length - 1]) === null ||
+        _c === void 0
           ? void 0
-          : _d.end) || 0)
+          : _c.end) || 0)
       : 0;
   var isIndeterminate =
     checkedRows.length > 0 && checkedRows.length !== (data || []).length;
@@ -305,13 +309,21 @@ var Table = function (_a) {
         { text: "No Data!" },
         void 0,
         false,
-        { fileName: _jsxFileName, lineNumber: 226, columnNumber: 45 },
-        _this,
+        { fileName: _jsxFileName, lineNumber: 253, columnNumber: 45 },
+        this,
       );
   var getBodyHeight = function (body) {
     setBodyHeight(
       (body === null || body === void 0 ? void 0 : body.clientHeight) || 0,
     );
+  };
+  var onDeselectCheckedRows = function (row) {
+    if (mode === "multiple") {
+      setCheckRows([row]);
+      onSelectRow === null || onSelectRow === void 0
+        ? void 0
+        : onSelectRow([row]);
+    }
   };
   return (0, jsx_dev_runtime_1.jsxDEV)(
     react_measure_1.default,
@@ -354,7 +366,7 @@ var Table = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 247,
+                              lineNumber: 281,
                               columnNumber: 17,
                             },
                             _this,
@@ -365,7 +377,7 @@ var Table = function (_a) {
                       false,
                       {
                         fileName: _jsxFileName,
-                        lineNumber: 245,
+                        lineNumber: 279,
                         columnNumber: 28,
                       },
                       _this,
@@ -382,13 +394,16 @@ var Table = function (_a) {
                           orderBy: orderBy,
                           selectedRow: selectedRow,
                           onSelectRow: handleOnSelectRow,
-                          isOnCheckedRowsAvailable: Boolean(onCheckedRows),
-                          isSelectSingleRowAvailable: Boolean(onSelectRow),
                           isOverflowed: isOverFlowed,
                           testid: testid,
                           onRow: onRow,
                           virtualizer: rowVirtualizer,
                           handleCheckRow: handleCheckRow,
+                          checkedRows: checkedRows,
+                          rowKey: rowKey,
+                          data: data || [],
+                          mode: mode,
+                          onDeselectCheckedRows: onDeselectCheckedRows,
                         },
                       },
                       {
@@ -422,7 +437,7 @@ var Table = function (_a) {
                                                 false,
                                                 {
                                                   fileName: _jsxFileName,
-                                                  lineNumber: 271,
+                                                  lineNumber: 308,
                                                   columnNumber: 21,
                                                 },
                                                 _this,
@@ -436,7 +451,7 @@ var Table = function (_a) {
                                                     width,
                                                   );
                                                 return (0,
-                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 278, columnNumber: 31 }, _this);
+                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 315, columnNumber: 31 }, _this);
                                               }),
                                               isOverFlowed
                                                 ? (0, jsx_dev_runtime_1.jsxDEV)(
@@ -453,7 +468,7 @@ var Table = function (_a) {
                                                     false,
                                                     {
                                                       fileName: _jsxFileName,
-                                                      lineNumber: 285,
+                                                      lineNumber: 322,
                                                       columnNumber: 38,
                                                     },
                                                     _this,
@@ -465,7 +480,7 @@ var Table = function (_a) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 270,
+                                            lineNumber: 307,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -499,7 +514,7 @@ var Table = function (_a) {
                                                   false,
                                                   {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 296,
+                                                    lineNumber: 333,
                                                     columnNumber: 21,
                                                   },
                                                   _this,
@@ -526,7 +541,7 @@ var Table = function (_a) {
                                                       false,
                                                       {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 304,
+                                                        lineNumber: 341,
                                                         columnNumber: 43,
                                                       },
                                                       _this,
@@ -539,7 +554,7 @@ var Table = function (_a) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 289,
+                                            lineNumber: 326,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -551,7 +566,7 @@ var Table = function (_a) {
                                   true,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 269,
+                                    lineNumber: 306,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -573,18 +588,15 @@ var Table = function (_a) {
                                           noContent: _noContent,
                                           searchIconWidth: _searchIconWidth,
                                           virtualRows: getVirtualItems(),
-                                          checkedRows: checkedRows,
                                           colWidth: colWidth,
                                           coloums: coloums,
                                           dataList: list,
-                                          data: data,
-                                          rowKey: rowKey,
                                         },
                                         void 0,
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 321,
+                                          lineNumber: 358,
                                           columnNumber: 19,
                                         },
                                         _this,
@@ -595,7 +607,7 @@ var Table = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 317,
+                                    lineNumber: 354,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -607,7 +619,7 @@ var Table = function (_a) {
                           true,
                           {
                             fileName: _jsxFileName,
-                            lineNumber: 268,
+                            lineNumber: 305,
                             columnNumber: 15,
                           },
                           _this,
@@ -618,7 +630,7 @@ var Table = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 250,
+                      lineNumber: 284,
                       columnNumber: 13,
                     },
                     _this,
@@ -628,7 +640,7 @@ var Table = function (_a) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 237, columnNumber: 17 },
+            { fileName: _jsxFileName, lineNumber: 271, columnNumber: 17 },
             _this,
           );
         },
@@ -636,9 +648,9 @@ var Table = function (_a) {
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 232, columnNumber: 11 },
-    _this,
+    { fileName: _jsxFileName, lineNumber: 266, columnNumber: 11 },
+    this,
   );
-};
+}
 exports.Table = Table;
 //# sourceMappingURL=index.js.map

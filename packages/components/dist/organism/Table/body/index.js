@@ -38,9 +38,6 @@ var TableBody = function (_a, ref) {
     searchIconWidth = _a.searchIconWidth,
     dataList = _a.dataList,
     coloums = _a.coloums,
-    rowKey = _a.rowKey,
-    data = _a.data,
-    checkedRows = _a.checkedRows,
     colWidth = _a.colWidth,
     paddingBottom = _a.paddingBottom,
     paddingTop = _a.paddingTop;
@@ -48,7 +45,8 @@ var TableBody = function (_a, ref) {
   var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
   var _b = (0, context_2.useMyTableContext)(),
     testid = _b.testid,
-    virtualizer = _b.virtualizer;
+    virtualizer = _b.virtualizer,
+    rowKey = _b.rowKey;
   return (0, jsx_dev_runtime_1.jsxDEV)(
     jsx_dev_runtime_1.Fragment,
     {
@@ -86,7 +84,7 @@ var TableBody = function (_a, ref) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 49,
+                                    lineNumber: 45,
                                     columnNumber: 15,
                                   },
                                   _this,
@@ -99,7 +97,7 @@ var TableBody = function (_a, ref) {
                                       ? (0, utils_1.pxToVwString)(width)
                                       : width;
                                   return (0,
-                                  jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 25 }, _this);
+                                  jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 25 }, _this);
                                 }),
                               ],
                             },
@@ -107,7 +105,7 @@ var TableBody = function (_a, ref) {
                             true,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 48,
+                              lineNumber: 44,
                               columnNumber: 13,
                             },
                             _this,
@@ -135,15 +133,15 @@ var TableBody = function (_a, ref) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 62,
-                                        columnNumber: 35,
+                                        lineNumber: 58,
+                                        columnNumber: 33,
                                       },
                                       _this,
                                     ),
                                   virtualRows.map(function (virtualRow, index) {
                                     var row = dataList[virtualRow.index];
                                     return (0,
-                                    jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { rowKey: rowKey, rowData: row, data: data || [], index: index, columns: coloums, checkedRows: checkedRows, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 67, columnNumber: 25 }, _this);
+                                    jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 61, columnNumber: 25 }, _this);
                                   }),
                                   paddingBottom > 0 &&
                                     (0, jsx_dev_runtime_1.jsxDEV)(
@@ -160,7 +158,7 @@ var TableBody = function (_a, ref) {
                                       false,
                                       {
                                         fileName: _jsxFileName,
-                                        lineNumber: 80,
+                                        lineNumber: 71,
                                         columnNumber: 38,
                                       },
                                       _this,
@@ -172,7 +170,7 @@ var TableBody = function (_a, ref) {
                             true,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 61,
+                              lineNumber: 57,
                               columnNumber: 13,
                             },
                             _this,
@@ -184,7 +182,7 @@ var TableBody = function (_a, ref) {
                     true,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 47,
+                      lineNumber: 43,
                       columnNumber: 11,
                     },
                     _this,
@@ -193,14 +191,14 @@ var TableBody = function (_a, ref) {
               ),
               void 0,
               false,
-              { fileName: _jsxFileName, lineNumber: 45, columnNumber: 34 },
+              { fileName: _jsxFileName, lineNumber: 41, columnNumber: 34 },
               _this,
             )
           : noContent,
     },
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 },
     _this,
   );
 };

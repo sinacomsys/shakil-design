@@ -16,8 +16,6 @@ exports.TableContext = (0, react_1.createContext)({
     return {};
   },
   selectedRow: undefined,
-  isOnCheckedRowsAvailable: false,
-  isSelectSingleRowAvailable: false,
   isOverflowed: false,
   testid: undefined,
   onRow: function () {
@@ -25,6 +23,11 @@ exports.TableContext = (0, react_1.createContext)({
   },
   virtualizer: undefined,
   handleCheckRow: function () {},
+  checkedRows: [],
+  rowKey: undefined,
+  data: [],
+  mode: "single",
+  onDeselectCheckedRows: function () {},
 });
 function useMyTableContext() {
   return (0, react_1.useContext)(exports.TableContext);

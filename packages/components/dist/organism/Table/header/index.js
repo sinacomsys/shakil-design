@@ -38,7 +38,7 @@ var Header = function (_a) {
   var _d = (0, context_1.useMyTableContext)(),
     onCheckAllRows = _d.onCheckAllRows,
     isAllRowsChecked = _d.isAllRowsChecked,
-    isOnCheckedRowsAvailable = _d.isOnCheckedRowsAvailable,
+    mode = _d.mode,
     isOverflowed = _d.isOverflowed,
     testid = _d.testid;
   return (0, jsx_dev_runtime_1.jsxDEV)(
@@ -59,7 +59,7 @@ var Header = function (_a) {
                   { className: classes["filter-icon-wrapper"] },
                   {
                     children: [
-                      isOnCheckedRowsAvailable
+                      mode === "multiple"
                         ? (0, jsx_dev_runtime_1.jsxDEV)(
                             "div",
                             __assign(
@@ -80,7 +80,7 @@ var Header = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 37,
+                                    lineNumber: 32,
                                     columnNumber: 15,
                                   },
                                   _this,
@@ -91,8 +91,8 @@ var Header = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 35,
-                              columnNumber: 40,
+                              lineNumber: 30,
+                              columnNumber: 35,
                             },
                             _this,
                           )
@@ -122,7 +122,7 @@ var Header = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 49,
+                                    lineNumber: 44,
                                     columnNumber: 18,
                                   },
                                   _this,
@@ -133,7 +133,7 @@ var Header = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 46,
+                          lineNumber: 41,
                           columnNumber: 11,
                         },
                         _this,
@@ -143,13 +143,13 @@ var Header = function (_a) {
                 ),
                 void 0,
                 true,
-                { fileName: _jsxFileName, lineNumber: 34, columnNumber: 9 },
+                { fileName: _jsxFileName, lineNumber: 29, columnNumber: 9 },
                 _this,
               ),
             },
             void 0,
             false,
-            { fileName: _jsxFileName, lineNumber: 33, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 },
             _this,
           ),
           columns.map(function (_a) {
@@ -158,7 +158,7 @@ var Header = function (_a) {
               sorter = _a.sorter,
               style = _a.style;
             return (0,
-            jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 61, columnNumber: 17 }, _this);
+            jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 17 }, _this);
           }),
           isOverflowed
             ? (0, jsx_dev_runtime_1.jsxDEV)(
@@ -166,7 +166,7 @@ var Header = function (_a) {
                 {},
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 71, columnNumber: 22 },
+                { fileName: _jsxFileName, lineNumber: 66, columnNumber: 22 },
                 _this,
               )
             : null,
@@ -175,7 +175,7 @@ var Header = function (_a) {
     ),
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 31, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 26, columnNumber: 11 },
     _this,
   );
 };

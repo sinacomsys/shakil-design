@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { Virtualizer } from "@tanstack/react-virtual";
 export type Order = undefined | "ascending" | "descending";
+type TableRowSelectionMode = "single" | "multiple";
 export type OrderBy = undefined | string | number | symbol;
 export interface TableContextProps<T> {
   order: Order;
@@ -8,10 +9,8 @@ export interface TableContextProps<T> {
   onOrderChange: (data: { dataIndex: OrderBy }) => void;
   isAllRowsChecked: boolean;
   onCheckAllRows: () => void;
-  onSelectRow: (value: unknown) => void;
-  selectedRow: unknown;
-  isOnCheckedRowsAvailable: boolean;
-  isSelectSingleRowAvailable: boolean;
+  onSelectRow: (value: T) => void;
+  selectedRow: T;
   isOverflowed: boolean;
   testid?: {
     filterBarIcon?: string;
@@ -27,8 +26,14 @@ export interface TableContextProps<T> {
   ) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
   virtualizer: Virtualizer<HTMLDivElement, Element> | undefined;
   handleCheckRow: (arg: { rowId: T[keyof T] }) => void;
+  checkedRows: T[];
+  rowKey: keyof T | undefined;
+  data: T[];
+  mode?: TableRowSelectionMode;
+  onDeselectCheckedRows: (arg: T) => void;
 }
 export declare const TableContext: import("react").Context<
   TableContextProps<any>
 >;
 export declare function useMyTableContext<T>(): TableContextProps<T>;
+export {};

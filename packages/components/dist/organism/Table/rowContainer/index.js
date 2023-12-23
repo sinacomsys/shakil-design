@@ -28,17 +28,15 @@ var style_1 = require("./style");
 var Rows = function (_a) {
   var rowData = _a.rowData,
     columns = _a.columns,
-    data = _a.data,
     rowIndex = _a.index,
-    rowKey = _a.rowKey,
-    checkedRows = _a.checkedRows,
     virtualItem = _a.virtualItem;
   var _b = (0, context_1.useMyTableContext)(),
     selectedRow = _b.selectedRow,
-    onSelectRow = _b.onSelectRow,
-    isOnCheckedRowsAvailable = _b.isOnCheckedRowsAvailable,
-    isSelectSingleRowAvailable = _b.isSelectSingleRowAvailable,
-    handleCheckRow = _b.handleCheckRow;
+    handleCheckRow = _b.handleCheckRow,
+    checkedRows = _b.checkedRows,
+    rowKey = _b.rowKey,
+    data = _b.data,
+    mode = _b.mode;
   var classes = (0, style_1.useStyles)();
   var _selectedRow = selectedRow;
   var isChecked = checkedRows.find(function (item) {
@@ -48,29 +46,16 @@ var Rows = function (_a) {
         rowData[rowKey]
     );
   });
-  var onClickRow = function () {
-    if (!isOnCheckedRowsAvailable && isSelectSingleRowAvailable) {
-      onSelectRow === null || onSelectRow === void 0
-        ? void 0
-        : onSelectRow(rowData);
-    }
-    if (isOnCheckedRowsAvailable && rowKey) {
-      handleCheckRow({ rowId: rowData[rowKey] });
-    }
-  };
   return (0, jsx_dev_runtime_1.jsxDEV)(
     row_1.Row,
     __assign(
       {
         virtualItem: virtualItem,
         rowData: rowData,
-        rowKey: rowKey,
         rowIndex: rowIndex,
-        isOnCheckedRowsAvailable: isOnCheckedRowsAvailable,
         isSelected: Boolean(
           rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey],
         ),
-        onClick: onClickRow,
         isChecked: Boolean(isChecked),
       },
       {
@@ -91,17 +76,24 @@ var Rows = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 67,
+                          lineNumber: 51,
                           columnNumber: 79,
                         },
                         _this,
                       )
                     : null,
-                  isOnCheckedRowsAvailable
+                  mode === "multiple"
                     ? (0, jsx_dev_runtime_1.jsxDEV)(
                         "div",
                         __assign(
-                          { className: classes["check-box"] },
+                          {
+                            onClick: function (e) {
+                              e.stopPropagation();
+                              rowKey &&
+                                handleCheckRow({ rowId: rowData[rowKey] });
+                            },
+                            className: classes["check-box"],
+                          },
                           {
                             children: (0, jsx_dev_runtime_1.jsxDEV)(
                               checkbox_1.CheckBox,
@@ -109,17 +101,13 @@ var Rows = function (_a) {
                                 "data-testid": rowKey
                                   ? "row-".concat(String(rowData[rowKey]))
                                   : rowIndex,
-                                onChange: function () {
-                                  rowKey &&
-                                    handleCheckRow({ rowId: rowData[rowKey] });
-                                },
                                 checked: Boolean(isChecked),
                               },
                               void 0,
                               false,
                               {
                                 fileName: _jsxFileName,
-                                lineNumber: 72,
+                                lineNumber: 62,
                                 columnNumber: 13,
                               },
                               _this,
@@ -130,8 +118,8 @@ var Rows = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 70,
-                          columnNumber: 38,
+                          lineNumber: 54,
+                          columnNumber: 33,
                         },
                         _this,
                       )
@@ -141,7 +129,7 @@ var Rows = function (_a) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 66, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 50, columnNumber: 7 },
             _this,
           ),
           columns.map(function (_a, index) {
@@ -170,7 +158,7 @@ var Rows = function (_a) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 86,
+                      lineNumber: 73,
                       columnNumber: 13,
                     },
                     _this,
@@ -179,7 +167,7 @@ var Rows = function (_a) {
               ),
               index,
               false,
-              { fileName: _jsxFileName, lineNumber: 84, columnNumber: 17 },
+              { fileName: _jsxFileName, lineNumber: 71, columnNumber: 17 },
               _this,
             );
           }),
@@ -188,7 +176,7 @@ var Rows = function (_a) {
     ),
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 53, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 40, columnNumber: 11 },
     _this,
   );
 };

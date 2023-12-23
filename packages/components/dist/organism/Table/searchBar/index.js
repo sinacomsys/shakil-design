@@ -47,9 +47,9 @@ var SearchBar = function (_a) {
   var _d = (0, context_1.useMyTableContext)(),
     onCheckAllRows = _d.onCheckAllRows,
     isAllRowsChecked = _d.isAllRowsChecked,
-    isOnCheckedRowsAvailable = _d.isOnCheckedRowsAvailable,
     isOverflowed = _d.isOverflowed,
-    testid = _d.testid;
+    testid = _d.testid,
+    mode = _d.mode;
   var classes = (0, style_1.useStyles)({ isSearchVisible: isSearchVisible });
   return (0, jsx_dev_runtime_1.jsxDEV)(
     "tr",
@@ -76,7 +76,7 @@ var SearchBar = function (_a) {
                   },
                   {
                     children: [
-                      isOnCheckedRowsAvailable
+                      mode === "multiple"
                         ? (0, jsx_dev_runtime_1.jsxDEV)(
                             "div",
                             __assign(
@@ -97,7 +97,7 @@ var SearchBar = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 56,
+                                    lineNumber: 51,
                                     columnNumber: 15,
                                   },
                                   _this,
@@ -108,8 +108,8 @@ var SearchBar = function (_a) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 54,
-                              columnNumber: 40,
+                              lineNumber: 49,
+                              columnNumber: 35,
                             },
                             _this,
                           )
@@ -138,7 +138,7 @@ var SearchBar = function (_a) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 67,
+                                    lineNumber: 62,
                                     columnNumber: 18,
                                   },
                                   _this,
@@ -149,7 +149,7 @@ var SearchBar = function (_a) {
                         false,
                         {
                           fileName: _jsxFileName,
-                          lineNumber: 64,
+                          lineNumber: 59,
                           columnNumber: 11,
                         },
                         _this,
@@ -159,20 +159,20 @@ var SearchBar = function (_a) {
                 ),
                 void 0,
                 true,
-                { fileName: _jsxFileName, lineNumber: 53, columnNumber: 9 },
+                { fileName: _jsxFileName, lineNumber: 48, columnNumber: 9 },
                 _this,
               ),
             },
             void 0,
             false,
-            { fileName: _jsxFileName, lineNumber: 52, columnNumber: 7 },
+            { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 },
             _this,
           ),
           columns.map(function (_a, index) {
             var renderFilter = _a.renderFilter,
               align = _a.align;
             return (0,
-            jsx_dev_runtime_1.jsxDEV)("th", __assign({ style: { textAlign: align ? align : __1.DEFAULT_ALIGN } }, { children: renderFilter ? renderFilter({ data: data }) : null }), index, false, { fileName: _jsxFileName, lineNumber: 81, columnNumber: 17 }, _this);
+            jsx_dev_runtime_1.jsxDEV)("th", __assign({ style: { textAlign: align ? align : __1.DEFAULT_ALIGN } }, { children: renderFilter ? renderFilter({ data: data }) : null }), index, false, { fileName: _jsxFileName, lineNumber: 76, columnNumber: 17 }, _this);
           }),
           isOverflowed
             ? (0, jsx_dev_runtime_1.jsxDEV)(
@@ -180,7 +180,7 @@ var SearchBar = function (_a) {
                 {},
                 void 0,
                 false,
-                { fileName: _jsxFileName, lineNumber: 87, columnNumber: 22 },
+                { fileName: _jsxFileName, lineNumber: 82, columnNumber: 22 },
                 _this,
               )
             : null,
@@ -189,7 +189,7 @@ var SearchBar = function (_a) {
     ),
     void 0,
     true,
-    { fileName: _jsxFileName, lineNumber: 41, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 36, columnNumber: 11 },
     _this,
   );
 };

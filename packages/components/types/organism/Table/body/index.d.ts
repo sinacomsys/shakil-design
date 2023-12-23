@@ -1,14 +1,13 @@
 import { VirtualItem } from "@tanstack/react-virtual";
-import { TableProps } from "..";
+import { TableCommonType } from "..";
 import { ReactElement, Ref } from "react";
 import React from "react";
 interface TableBodyProps<T extends Record<string, any>>
-  extends Pick<TableProps<T>, "coloums" | "rowKey" | "data"> {
+  extends Pick<TableCommonType<T>, "coloums"> {
   virtualRows: VirtualItem[];
   noContent: React.ReactNode;
   searchIconWidth: number | string;
   dataList: T[];
-  checkedRows: T[];
   colWidth: number | string | undefined;
   paddingTop: number;
   paddingBottom: number;
