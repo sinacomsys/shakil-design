@@ -109,7 +109,14 @@ function Table(props) {
   var _o = (0, react_1.useState)(false),
     isOverFlowed = _o[0],
     setIsOverflowed = _o[1];
-  var windowHeight = (0, utils_1.useWindowSize)().height;
+  var _p = (0, utils_1.useWindowSize)(),
+    windowHeight = _p.height,
+    windowWidth = _p.width;
+  var vw = windowWidth / 100;
+  var rowSelectionWidth = (0, utils_1.pxToVw)(exports.ROW_SELECTION) * vw;
+  var searchIconWidth = (0, utils_1.pxToVw)(exports.SEARCH_ICON) * vw;
+  var _searchIconWidth =
+    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
   (0, react_1.useEffect)(
     function () {
       var isOver = bodyHeight > height;
@@ -161,12 +168,11 @@ function Table(props) {
     }, 0);
     var scrollBarWidth = isOverFlowed
       ? 0
-      : (0, utils_1.pxToVw)(exports.SCROLL_BAR);
-    var _columnsWidth = (0, utils_1.pxToVw)(columnsWidth);
-    var searchIconWidth = (0, utils_1.pxToVw)(exports.SEARCH_ICON);
-    var _totalWidth = (0, utils_1.pxToVw)(totalWidth);
+      : (0, utils_1.pxToVw)(exports.SCROLL_BAR) * vw;
+    var _columnsWidth = (0, utils_1.pxToVw)(columnsWidth) * vw;
+    var searchIconWidth = _searchIconWidth;
     var remainWidth =
-      _totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
+      totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
     coloums.forEach(function (_a) {
       var width = _a.width;
       if (!width) {
@@ -174,13 +180,9 @@ function Table(props) {
       }
     });
     if (withOutDeclaredWidth) {
-      return "".concat(remainWidth / withOutDeclaredWidth, "vw");
+      return remainWidth / withOutDeclaredWidth;
     }
   };
-  var rowSelectionWidth = (0, utils_1.pxToVwString)(exports.ROW_SELECTION);
-  var searchIconWidth = (0, utils_1.pxToVwString)(exports.SEARCH_ICON);
-  var _searchIconWidth =
-    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
   var isSearchAvailable = coloums.find(function (_a) {
     var renderFilter = _a.renderFilter;
     return renderFilter;
@@ -309,7 +311,7 @@ function Table(props) {
         { text: "No Data!" },
         void 0,
         false,
-        { fileName: _jsxFileName, lineNumber: 253, columnNumber: 45 },
+        { fileName: _jsxFileName, lineNumber: 254, columnNumber: 45 },
         this,
       );
   var getBodyHeight = function (body) {
@@ -335,9 +337,9 @@ function Table(props) {
           var contentRect = _a.contentRect,
             measureRef = _a.measureRef;
           var boundsWidth =
-            (_b = contentRect.bounds) === null || _b === void 0
+            (((_b = contentRect.bounds) === null || _b === void 0
               ? void 0
-              : _b.width;
+              : _b.width) || 0) - (isOverFlowed ? exports.SCROLL_BAR : 0);
           var colWidth = calculateWidth(
             boundsWidth !== null && boundsWidth !== void 0 ? boundsWidth : 0,
           );
@@ -366,7 +368,7 @@ function Table(props) {
                             false,
                             {
                               fileName: _jsxFileName,
-                              lineNumber: 281,
+                              lineNumber: 284,
                               columnNumber: 17,
                             },
                             _this,
@@ -377,7 +379,7 @@ function Table(props) {
                       false,
                       {
                         fileName: _jsxFileName,
-                        lineNumber: 279,
+                        lineNumber: 282,
                         columnNumber: 28,
                       },
                       _this,
@@ -437,7 +439,7 @@ function Table(props) {
                                                 false,
                                                 {
                                                   fileName: _jsxFileName,
-                                                  lineNumber: 308,
+                                                  lineNumber: 311,
                                                   columnNumber: 21,
                                                 },
                                                 _this,
@@ -447,28 +449,27 @@ function Table(props) {
                                                   dataIndex = _a.dataIndex;
                                                 var _width =
                                                   width &&
-                                                  (0, utils_1.pxToVwString)(
-                                                    width,
-                                                  );
+                                                  (0, utils_1.pxToVw)(width) *
+                                                    vw;
                                                 return (0,
-                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 315, columnNumber: 31 }, _this);
+                                                jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 318, columnNumber: 31 }, _this);
                                               }),
                                               isOverFlowed
                                                 ? (0, jsx_dev_runtime_1.jsxDEV)(
                                                     "col",
                                                     {
                                                       style: {
-                                                        width: (0,
-                                                        utils_1.pxToVwString)(
-                                                          exports.SCROLL_BAR,
-                                                        ),
+                                                        width:
+                                                          (0, utils_1.pxToVw)(
+                                                            exports.SCROLL_BAR,
+                                                          ) * vw,
                                                       },
                                                     },
                                                     void 0,
                                                     false,
                                                     {
                                                       fileName: _jsxFileName,
-                                                      lineNumber: 322,
+                                                      lineNumber: 325,
                                                       columnNumber: 38,
                                                     },
                                                     _this,
@@ -480,7 +481,7 @@ function Table(props) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 307,
+                                            lineNumber: 310,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -514,7 +515,7 @@ function Table(props) {
                                                   false,
                                                   {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 333,
+                                                    lineNumber: 336,
                                                     columnNumber: 21,
                                                   },
                                                   _this,
@@ -541,7 +542,7 @@ function Table(props) {
                                                       false,
                                                       {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 341,
+                                                        lineNumber: 344,
                                                         columnNumber: 43,
                                                       },
                                                       _this,
@@ -554,7 +555,7 @@ function Table(props) {
                                           true,
                                           {
                                             fileName: _jsxFileName,
-                                            lineNumber: 326,
+                                            lineNumber: 329,
                                             columnNumber: 19,
                                           },
                                           _this,
@@ -566,7 +567,7 @@ function Table(props) {
                                   true,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 306,
+                                    lineNumber: 309,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -591,12 +592,13 @@ function Table(props) {
                                           colWidth: colWidth,
                                           coloums: coloums,
                                           dataList: list,
+                                          width: boundsWidth || 0,
                                         },
                                         void 0,
                                         false,
                                         {
                                           fileName: _jsxFileName,
-                                          lineNumber: 358,
+                                          lineNumber: 361,
                                           columnNumber: 19,
                                         },
                                         _this,
@@ -607,7 +609,7 @@ function Table(props) {
                                   false,
                                   {
                                     fileName: _jsxFileName,
-                                    lineNumber: 354,
+                                    lineNumber: 357,
                                     columnNumber: 17,
                                   },
                                   _this,
@@ -619,7 +621,7 @@ function Table(props) {
                           true,
                           {
                             fileName: _jsxFileName,
-                            lineNumber: 305,
+                            lineNumber: 308,
                             columnNumber: 15,
                           },
                           _this,
@@ -630,7 +632,7 @@ function Table(props) {
                     false,
                     {
                       fileName: _jsxFileName,
-                      lineNumber: 284,
+                      lineNumber: 287,
                       columnNumber: 13,
                     },
                     _this,
@@ -640,7 +642,7 @@ function Table(props) {
             ),
             void 0,
             true,
-            { fileName: _jsxFileName, lineNumber: 271, columnNumber: 17 },
+            { fileName: _jsxFileName, lineNumber: 274, columnNumber: 17 },
             _this,
           );
         },
@@ -648,7 +650,7 @@ function Table(props) {
     ),
     void 0,
     false,
-    { fileName: _jsxFileName, lineNumber: 266, columnNumber: 11 },
+    { fileName: _jsxFileName, lineNumber: 267, columnNumber: 11 },
     this,
   );
 }

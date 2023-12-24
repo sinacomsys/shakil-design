@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(100)].map((_, index) => {
+const mockData = [...new Array(200)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),
@@ -60,7 +60,7 @@ const Template: Story<any> = () => {
         render() {
           return (
             <Text ellipsis>
-              sdfsdfsdfiuhfuhfuhfhfiuddddddddddddddddddddddddddddddddddd
+              dsfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
             </Text>
           );
         },
@@ -84,7 +84,13 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table rowKey="id" height={400} coloums={columns} data={mockData} />
+      <Table
+        rowKey="id"
+        // mode="multiple"
+        height={400}
+        coloums={columns}
+        data={mockData}
+      />
     </StoryContainer>
   );
 };

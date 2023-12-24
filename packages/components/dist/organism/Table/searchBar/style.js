@@ -8,7 +8,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(
     var table = _a.table;
     return {
       checkbox: {
-        flex: 1,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -16,10 +15,11 @@ var useStyles = (0, react_jss_1.createUseStyles)(
         borderRight: "1px solid ".concat(
           table === null || table === void 0 ? void 0 : table.divider,
         ),
+        paddingInline: 8,
       },
       "clear-filter": {
+        paddingInline: 8,
         height: 24,
-        flex: 1,
         borderRight: "1px solid ".concat(
           table === null || table === void 0 ? void 0 : table.divider,
         ),

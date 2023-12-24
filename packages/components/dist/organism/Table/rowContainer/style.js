@@ -18,7 +18,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(
         ),
       },
       "check-box": {
-        paddingInlineStart: 9,
+        paddingInlineStart: 8,
         height: "100%",
         display: "flex",
         alignItems: "center",

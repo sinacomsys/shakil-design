@@ -10,7 +10,6 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(
       "filter-icon-wrapper": {
         display: "flex",
         alignItems: "center",
-        width: "100%",
       },
       search: {
         borderRight: "1px solid ".concat(
@@ -21,17 +20,17 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(
         alignItems: "center",
         cursor: "pointer",
         height: 24,
-        flex: 1,
+        paddingInline: 8,
       },
       selectAll: {
-        flex: 1,
-        borderRight: "2px solid ".concat(
+        borderRight: "1px solid ".concat(
           (_b = theme.table) === null || _b === void 0 ? void 0 : _b.divider,
         ),
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: 24,
+        paddingInline: 8,
       },
     };
   },

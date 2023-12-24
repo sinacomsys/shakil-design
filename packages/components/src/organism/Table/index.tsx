@@ -10,7 +10,7 @@ import { Header } from "./header";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
-import { pxToVw, pxToVwString, useWindowSize } from "@shakil-design/utils";
+import { pxToVw, useWindowSize } from "@shakil-design/utils";
 import { TableBody } from "./body";
 import React from "react";
 
@@ -94,7 +94,15 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const tableContainerRef = useRef<HTMLDivElement>(null);
   const [bodyHeight, setBodyHeight] = useState(0);
   const [isOverFlowed, setIsOverflowed] = useState(false);
-  const { height: windowHeight } = useWindowSize();
+  const { height: windowHeight, width: windowWidth } = useWindowSize();
+
+  const vw = windowWidth / 100;
+
+  const rowSelectionWidth = pxToVw(ROW_SELECTION) * vw;
+  const searchIconWidth = pxToVw(SEARCH_ICON) * vw;
+
+  const _searchIconWidth =
+    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
 
   useEffect(() => {
     const isOver = bodyHeight > height;
@@ -128,13 +136,12 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
       return prev + (width || 0);
     }, 0);
 
-    const scrollBarWidth = isOverFlowed ? 0 : pxToVw(SCROLL_BAR);
-    const _columnsWidth = pxToVw(columnsWidth);
-    const searchIconWidth = pxToVw(SEARCH_ICON);
-    const _totalWidth = pxToVw(totalWidth);
+    const scrollBarWidth = isOverFlowed ? 0 : pxToVw(SCROLL_BAR) * vw;
+    const _columnsWidth = pxToVw(columnsWidth) * vw;
+    const searchIconWidth = _searchIconWidth;
 
     const remainWidth =
-      _totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
+      totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
 
     coloums.forEach(({ width }) => {
       if (!width) {
@@ -142,15 +149,9 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
       }
     });
     if (withOutDeclaredWidth) {
-      return `${remainWidth / withOutDeclaredWidth}vw`;
+      return remainWidth / withOutDeclaredWidth;
     }
   };
-  const rowSelectionWidth = pxToVwString(ROW_SELECTION);
-
-  const searchIconWidth = pxToVwString(SEARCH_ICON);
-
-  const _searchIconWidth =
-    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
 
   const isSearchAvailable = coloums.find(({ renderFilter }) => renderFilter);
 
@@ -266,8 +267,10 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   return (
     <Measure bounds>
       {({ contentRect, measureRef }) => {
-        const boundsWidth = contentRect.bounds?.width;
+        const boundsWidth =
+          (contentRect.bounds?.width || 0) - (isOverFlowed ? SCROLL_BAR : 0);
         const colWidth = calculateWidth(boundsWidth ?? 0);
+
         return (
           <div
             ref={measureRef}
@@ -311,7 +314,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       }}
                     />
                     {coloums.map(({ width, dataIndex }) => {
-                      const _width = width && pxToVwString(width);
+                      const _width = width && pxToVw(width) * vw;
                       return (
                         <col
                           key={dataIndex as string}
@@ -320,7 +323,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       );
                     })}
                     {isOverFlowed ? (
-                      <col style={{ width: pxToVwString(SCROLL_BAR) }} />
+                      <col style={{ width: pxToVw(SCROLL_BAR) * vw }} />
                     ) : null}
                   </colgroup>
                   <thead
@@ -365,6 +368,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                     colWidth={colWidth}
                     coloums={coloums}
                     dataList={list}
+                    width={boundsWidth || 0}
                   />
                 </ScrollView>
               </div>

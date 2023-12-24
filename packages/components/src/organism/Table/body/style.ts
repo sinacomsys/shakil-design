@@ -3,8 +3,7 @@ import { theming } from "../../../theme";
 
 export const useStyles = createUseStyles(
   {
-    table: {
-      width: "100%",
+    wrapper: {
       tableLayout: "fixed",
       borderCollapse: "collapse",
       "& tr,td,th": {

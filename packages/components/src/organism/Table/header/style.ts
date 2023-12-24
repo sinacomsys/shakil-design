@@ -7,7 +7,6 @@ export const useStyles = createUseStyles(
       "filter-icon-wrapper": {
         display: "flex",
         alignItems: "center",
-        width: "100%",
       },
       search: {
         borderRight: `1px solid ${theme.table?.divider}`,
@@ -16,16 +15,16 @@ export const useStyles = createUseStyles(
         alignItems: "center",
         cursor: "pointer",
         height: 24,
-        flex: 1,
+        paddingInline: 8,
       },
 
       selectAll: {
-        flex: 1,
-        borderRight: `2px solid ${theme.table?.divider}`,
+        borderRight: `1px solid ${theme.table?.divider}`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: 24,
+        paddingInline: 8,
       },
     };
   },

@@ -5,16 +5,16 @@ const useStyles = createUseStyles(
   ({ table }) => {
     return {
       checkbox: {
-        flex: 1,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: 24,
         borderRight: `1px solid ${table?.divider}`,
+        paddingInline: 8,
       },
       "clear-filter": {
+        paddingInline: 8,
         height: 24,
-        flex: 1,
         borderRight: `1px solid ${table?.divider}`,
         display: "flex",
         justifyContent: "center",

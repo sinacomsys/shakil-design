@@ -17,6 +17,7 @@ interface TableBodyProps<T extends Record<string, any>>
   colWidth: number | string | undefined;
   paddingTop: number;
   paddingBottom: number;
+  width: number;
 }
 
 const TableBody = <T extends Record<string, any>>(
@@ -29,6 +30,7 @@ const TableBody = <T extends Record<string, any>>(
     colWidth,
     paddingBottom,
     paddingTop,
+    width,
   }: TableBodyProps<T>,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -40,7 +42,11 @@ const TableBody = <T extends Record<string, any>>(
     <>
       {virtualRows.length > 0 ? (
         <div ref={ref} style={{ height: `${virtualizer?.getTotalSize()}px` }}>
-          <table className={classes["table"]} role={"table"}>
+          <table
+            style={{ width: width }}
+            className={classes["wrapper"]}
+            role={"table"}
+          >
             <colgroup>
               <col style={{ width: searchIconWidth }} />
               {coloums.map(({ width, dataIndex }) => {
