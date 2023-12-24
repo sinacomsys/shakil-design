@@ -6,6 +6,7 @@ var theme_1 = require("../../../theme");
 exports.useStyles = (0, react_jss_1.createUseStyles)(
   {
     table: {
+      width: "100%",
       tableLayout: "fixed",
       borderCollapse: "collapse",
       "& tr,td,th": {
@@ -13,6 +14,6 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(
       },
     },
   },
-  { theming: theme_1.theming, name: "table" },
+  { theming: theme_1.theming, name: "body" },
 );
 //# sourceMappingURL=style.js.map

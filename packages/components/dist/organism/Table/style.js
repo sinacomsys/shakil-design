@@ -6,7 +6,6 @@ var theme_1 = require("../../theme");
 exports.useStyles = (0, react_jss_1.createUseStyles)(
   {
     table: {
-      width: "100%",
       borderCollapse: "collapse",
       "& tr,td,th": {
         padding: 0,

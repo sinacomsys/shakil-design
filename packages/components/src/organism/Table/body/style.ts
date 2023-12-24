@@ -4,6 +4,7 @@ import { theming } from "../../../theme";
 export const useStyles = createUseStyles(
   {
     table: {
+      width: "100%",
       tableLayout: "fixed",
       borderCollapse: "collapse",
       "& tr,td,th": {
@@ -11,5 +12,5 @@ export const useStyles = createUseStyles(
       },
     },
   },
-  { theming, name: "table" },
+  { theming, name: "body" },
 );
