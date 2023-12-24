@@ -84,17 +84,7 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <div style={{ width: 500 }}>
-        <Table
-          onSelectRow={(value) => {
-            console.log({ value });
-          }}
-          rowKey="id"
-          height={400}
-          coloums={columns}
-          data={mockData}
-        />
-      </div>
+      <Table rowKey="id" height={400} coloums={columns} data={mockData} />
     </StoryContainer>
   );
 };
