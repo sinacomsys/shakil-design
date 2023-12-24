@@ -135,12 +135,13 @@ var Rows = function (_a) {
           columns.map(function (_a, index) {
             var dataIndex = _a.dataIndex,
               render = _a.render,
-              align = _a.align;
+              align = _a.align,
+              ellipsis = _a.ellipsis;
             var cell = rowData[dataIndex];
             return (0, jsx_dev_runtime_1.jsxDEV)(
               cell_1.Cell,
               __assign(
-                { align: align },
+                { ellipsis: ellipsis, align: align },
                 {
                   children: (0, jsx_dev_runtime_1.jsxDEV)(
                     jsx_dev_runtime_1.Fragment,

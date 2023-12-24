@@ -66,10 +66,10 @@ const Rows = <T extends Record<string, unknown>>({
           </div>
         ) : null}
       </td>
-      {columns.map(({ dataIndex, render, align }, index) => {
+      {columns.map(({ dataIndex, render, align, ellipsis }, index) => {
         const cell = rowData[dataIndex as keyof typeof rowData];
         return (
-          <Cell key={index} align={align}>
+          <Cell ellipsis={ellipsis} key={index} align={align}>
             <>
               {render
                 ? render({

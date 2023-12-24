@@ -26,12 +26,12 @@ export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {
   selectedRows?: T[];
   onSelectRow?: (value: T[]) => void;
-  mode: "multiple";
+  mode?: "multiple";
 }
 export interface TablePropsWithSingleSelectRow<T> extends TableCommonType<T> {
   selectedRows?: T;
   onSelectRow?: (value: T) => void;
-  mode: "single";
+  mode?: "single";
 }
 declare function Table<T extends Record<string, any>>(
   props: TablePropsWithSingleSelectRow<T>,

@@ -11,6 +11,13 @@ export const useStyles = createUseStyles(
     center: {
       textAlign: "center",
     },
+    ellipsis: {
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
+      wordBreak: "keep-all",
+      overflowWrap: "break-word",
+    },
   },
   { name: "table-cell" },
 );

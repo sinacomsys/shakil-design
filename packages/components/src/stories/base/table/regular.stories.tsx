@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(500)].map((_, index) => {
+const mockData = [...new Array(100)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),
@@ -38,11 +38,7 @@ const Template: Story<any> = () => {
         dataIndex: "address",
         title: "Acknowledge Status",
         render({ row: { address } }) {
-          return (
-            <div style={{ width: 50, height: 10, backgroundColor: "red" }}>
-              <Text size={13}>{address}</Text>
-            </div>
-          );
+          return <Text size={13}>{address}</Text>;
         },
       },
       {
@@ -55,19 +51,29 @@ const Template: Story<any> = () => {
       {
         dataIndex: "city",
         title: "Time",
+        ellipsis: true,
       },
       {
         dataIndex: "country",
         title: "Alarm Severity",
-        render({ row: { country } }) {
-          return <Text size={13}>{country}</Text>;
+        ellipsis: true,
+        render() {
+          return (
+            <Text ellipsis>
+              sdfsdfsdfiuhfuhfuhfhfiuddddddddddddddddddddddddddddddddddd
+            </Text>
+          );
         },
       },
       {
         dataIndex: "family",
         title: "alarm type",
         render({ row: { family } }) {
-          return <Text size={14}>{family}</Text>;
+          return (
+            <Text ellipsis size={14}>
+              {family}
+            </Text>
+          );
         },
         renderFilter() {
           return <Switch />;
@@ -78,16 +84,17 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table
-        mode="multiple"
-        onSelectRow={(value) => {
-          console.log({ value });
-        }}
-        rowKey="id"
-        height={400}
-        coloums={columns}
-        data={mockData}
-      />
+      <div style={{ width: 500 }}>
+        <Table
+          onSelectRow={(value) => {
+            console.log({ value });
+          }}
+          rowKey="id"
+          height={400}
+          coloums={columns}
+          data={mockData}
+        />
+      </div>
     </StoryContainer>
   );
 };

@@ -9,24 +9,29 @@ export interface CellProps
   children?: ReactNode;
   align?: "start" | "center" | "end";
   onPress?: () => void;
+  ellipsis?: boolean;
 }
 
 const Cell = ({
   children,
   onPress,
   align = DEFAULT_ALIGN,
+  ellipsis,
   ...rest
 }: CellProps) => {
   const classes = useStyles();
   return (
     <td
       {...rest}
-      style={{ height: "inherit" }}
+      style={{
+        height: "inherit",
+      }}
       onClick={onPress}
       className={classNames(
         align === "start" && classes["start"],
         align === "center" && classes["center"],
         align === "end" && classes["end"],
+        ellipsis && classes["ellipsis"],
       )}
     >
       {typeof children !== "object" ? (

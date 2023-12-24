@@ -23,6 +23,7 @@ export interface ColumnType<T, TIndex extends keyof T = keyof T> {
     index: number;
     data: T[];
   }) => ReactNode;
+  ellipsis?: boolean;
 }
 
 type ColumnProps<T> = Pick<
