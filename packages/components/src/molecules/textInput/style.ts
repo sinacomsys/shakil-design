@@ -17,9 +17,8 @@ const textInputSharedStyle = (theme: ColorsType) => ({
   color: theme.primary,
   border: "none",
   outline: "none",
-  paddingBlock: 8,
-  paddingInline: 10,
   fontSize: 14,
+  padding: 0,
 });
 
 const useStyles = createUseStyles(
@@ -28,12 +27,14 @@ const useStyles = createUseStyles(
       "clear-icon": {
         cursor: "pointer",
       },
-      textInput: {
+      "text-input": {
         ...textInputSharedStyle(theme),
-        height: 32,
+        height: "100%",
       },
       "text-area": {
         ...textInputSharedStyle(theme),
+        backgroundColor: theme.textInput?.fieldColor,
+        borderRadius: 7,
       },
       "input-with-error": {
         border: `1px solid ${theme.textInput?.errorMessage}`,
@@ -43,12 +44,19 @@ const useStyles = createUseStyles(
         cursor: "not-allowed",
         color: theme.disableText,
       },
-      inputWrapper: {
+      "input-wrapper": {
         position: "relative",
         display: "flex",
         flexDirection: "column",
         backgroundColor: theme.textInput?.fieldColor,
         borderRadius: 7,
+        height: 32,
+        paddingBlock: 8,
+        paddingInline: 10,
+        overflow: "hidden",
+        "&--input-with-addon-after": {
+          paddingInlineEnd: 24,
+        },
       },
       addonBefore: {
         ...addonStyle,
@@ -63,9 +71,6 @@ const useStyles = createUseStyles(
         top: "100%",
         insetInlineStart: 0,
         insetBlockStart: "100%",
-      },
-      "input-with-addon-after": {
-        paddingInlineEnd: 15,
       },
     };
   },
