@@ -31,6 +31,8 @@ interface TextInputCommon
     | "errorMessage"
     | "errorMessageClassName"
     | "hasError"
+    | "clearIconColor"
+    | "isLoading"
   > {}
 export interface SelectProps<T extends Record<string, unknown> = Default>
   extends Omit<TextInputCommon, "value"> {

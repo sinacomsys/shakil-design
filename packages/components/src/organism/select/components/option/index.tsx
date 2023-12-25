@@ -22,7 +22,7 @@ const Option = ({
           <CheckBox checked={isSelected} />
         </div>
       ) : null}
-      <Text size={16} theme={"Regular"} color={"#575757"}>
+      <Text ellipsis size={16} theme={"Regular"} color={"#575757"}>
         {children}
       </Text>
     </div>

@@ -43,10 +43,13 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function () {
             transform: "translateY(-50%)",
             cursor: "pointer",
         },
-        textInput: {
+        "text-input": {
             textAlign: "center",
             caretColor: "transparent",
             cursor: "pointer",
+            "&--loading": {
+                cursor: "not-allowed",
+            },
         },
     };
 }, { theming: theme_1.theming, name: "select" });

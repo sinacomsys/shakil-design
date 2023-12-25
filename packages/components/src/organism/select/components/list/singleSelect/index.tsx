@@ -24,11 +24,10 @@ export const SingleSelectList = <T extends Default>({
     <ScrollView style={{ flex: 1 }}>
       {internalValue ? (
         <div className={classes["radio"]}>
-          <Radio value="test" checked>
-            <Text size={16} theme={"Regular"} color={"#575757"}>
-              {selectedItem && labelExtractor?.(selectedItem)}
-            </Text>
-          </Radio>
+          <Radio value="selected" checked />
+          <Text ellipsis size={16} theme={"Regular"} color={"#575757"}>
+            {selectedItem && labelExtractor?.(selectedItem)}
+          </Text>
         </div>
       ) : null}
       {internalValue ? (
@@ -60,7 +59,9 @@ export const SingleSelectList = <T extends Default>({
 const useStyles = createUseStyles(
   {
     radio: {
-      marginInlineStart: 20,
+      marginInline: 20,
+      display: "flex",
+      paddingBlock: 10,
     },
   },
   { theming, name: "singe-select" },

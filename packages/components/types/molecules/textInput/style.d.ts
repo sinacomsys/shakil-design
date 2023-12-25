@@ -7,8 +7,7 @@ declare const useStyles: (
     | undefined,
 ) => import("jss").Classes<
   | "disabled"
-  | "clear--visible"
-  | "clear--hidden"
+  | "clear-icon"
   | "textInput"
   | "text-area"
   | "input-with-error"
@@ -16,5 +15,6 @@ declare const useStyles: (
   | "addonBefore"
   | "addonAfter"
   | "error-message"
+  | "input-with-addon-after"
 >;
 export { useStyles };

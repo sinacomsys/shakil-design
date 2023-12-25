@@ -24,7 +24,7 @@ var Option = function (_a) {
     var handleOnClick = function () {
         onClick(value.value);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ ellipsis: true, size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
 };
 exports.Option = Option;
 //# sourceMappingURL=index.js.map

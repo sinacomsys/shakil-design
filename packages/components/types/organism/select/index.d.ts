@@ -32,5 +32,7 @@ declare const Select: <T extends Record<string, unknown> = Default>({
   errorMessage,
   errorMessageClassName,
   hasError,
+  clearIconColor,
+  isLoading,
 }: SelectProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Select };

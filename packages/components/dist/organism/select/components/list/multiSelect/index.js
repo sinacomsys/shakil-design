@@ -34,15 +34,15 @@ var MultiSelectList = function (_a) {
                 return ((0, jsx_dev_runtime_1.jsxDEV)(option_1.Option, __assign({ multiple: true, isSelected: true, value: {
                         label: item,
                         value: item,
-                    }, onClick: onClick }, { children: selectedItem && (labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(selectedItem)) }), item, false, { fileName: _jsxFileName, lineNumber: 30, columnNumber: 17 }, _this));
-            }), (internalValue || []).length ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: { height: 1, backgroundColor: disableText } }, void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 53 }, _this)) : null, isNotSelectedItems.map(function (item) {
+                    }, onClick: onClick }, { children: selectedItem && (labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(selectedItem)) }), item, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 17 }, _this));
+            }), (internalValue || []).length ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: { height: 1, backgroundColor: disableText } }, void 0, false, { fileName: _jsxFileName, lineNumber: 45, columnNumber: 53 }, _this)) : null, isNotSelectedItems.map(function (item) {
                 var isSelected = Array.isArray(internalValue) &&
                     Boolean(internalValue.find(function (_item) { return _item === (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)); }));
                 return ((0, jsx_dev_runtime_1.jsxDEV)(option_1.Option, __assign({ multiple: true, isSelected: isSelected, value: {
                         label: (labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(item)) || "",
                         value: valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item),
-                    }, onClick: onClick }, { children: labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(item) }), valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item), false, { fileName: _jsxFileName, lineNumber: 57, columnNumber: 17 }, _this));
-            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 }, _this));
+                    }, onClick: onClick }, { children: labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(item) }), valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item), false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 17 }, _this));
+            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 23, columnNumber: 11 }, _this));
 };
 exports.MultiSelectList = MultiSelectList;
 //# sourceMappingURL=index.js.map

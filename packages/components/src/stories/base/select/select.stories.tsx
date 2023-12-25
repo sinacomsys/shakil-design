@@ -2,7 +2,9 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { Select } from "../../../organism/select";
 import { SelectProps } from "../../../organism/select/types";
 import { StoryContainer } from "../../container";
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "../../../molecules";
+
 export default {
   title: "select",
   component: Select,
@@ -11,16 +13,26 @@ export default {
 const fakeData = [...new Array(35)].map((_, index) => {
   return {
     test: `TestValue${index}`,
-    test1: `Test Label${index}`,
+    test1: `Test Labelwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww${index}`,
   };
 });
 
 const Template: Story<SelectProps> = (args) => {
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <StoryContainer>
-      <div style={{ width: 350 }}>
-        <Select {...args} />
+      <div style={{ width: 300 }}>
+        <Select {...args} isLoading={isLoading} />
       </div>
+
+      <Button
+        style={{ marginTop: 30 }}
+        onClick={() => {
+          setIsLoading(true);
+        }}
+      >
+        loading
+      </Button>
     </StoryContainer>
   );
 };

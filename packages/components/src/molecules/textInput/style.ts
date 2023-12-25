@@ -13,11 +13,10 @@ const addonStyle: React.CSSProperties = {
 
 const textInputSharedStyle = (theme: ColorsType) => ({
   width: "100%",
-  backgroundColor: theme.textInput?.fieldColor,
+  backgroundColor: "transparent",
   color: theme.primary,
   border: "none",
   outline: "none",
-  borderRadius: 7,
   paddingBlock: 8,
   paddingInline: 10,
   fontSize: 14,
@@ -26,13 +25,8 @@ const textInputSharedStyle = (theme: ColorsType) => ({
 const useStyles = createUseStyles(
   (theme) => {
     return {
-      "clear--visible": {
+      "clear-icon": {
         cursor: "pointer",
-        visibility: "visible",
-      },
-      "clear--hidden": {
-        cursor: "pointer",
-        visibility: "hidden",
       },
       textInput: {
         ...textInputSharedStyle(theme),
@@ -53,6 +47,8 @@ const useStyles = createUseStyles(
         position: "relative",
         display: "flex",
         flexDirection: "column",
+        backgroundColor: theme.textInput?.fieldColor,
+        borderRadius: 7,
       },
       addonBefore: {
         ...addonStyle,
@@ -67,6 +63,9 @@ const useStyles = createUseStyles(
         top: "100%",
         insetInlineStart: 0,
         insetBlockStart: "100%",
+      },
+      "input-with-addon-after": {
+        paddingInlineEnd: 15,
       },
     };
   },

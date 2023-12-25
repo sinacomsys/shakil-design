@@ -2,6 +2,8 @@ import { pxToVh } from "@shakil-design/utils";
 import { Unit } from "../../types";
 import { useTheme, Colors } from "../../theme";
 import { useStyle } from "./style";
+import { UnitContext } from "../../theme/context";
+import { useContext } from "react";
 
 const SMALL_BORDER = 1;
 const MEDIUM_BORDER = 2;
@@ -16,12 +18,9 @@ export interface SpinnerProps {
   unit?: Unit;
 }
 
-const Spinner = ({
-  spinerColor = Colors.primary,
-  size,
-  unit = "viewport",
-}: SpinnerProps) => {
+const Spinner = ({ spinerColor = Colors.primary, size }: SpinnerProps) => {
   const { primary } = useTheme();
+  const { unit } = useContext(UnitContext);
   const classes = useStyle();
   const borderStyle = spinerColor
     ? `${spinerColor} transparent transparent transparent`

@@ -84,13 +84,7 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table
-        rowKey="id"
-        // mode="multiple"
-        height={400}
-        coloums={columns}
-        data={mockData}
-      />
+      <Table rowKey="id" height={400} coloums={columns} data={mockData} />
     </StoryContainer>
   );
 };

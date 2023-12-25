@@ -21,6 +21,7 @@ export interface TableCommonType<T>
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
   overScan?: number;
+  onResetFilters?: () => void;
 }
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {

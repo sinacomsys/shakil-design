@@ -10,6 +10,7 @@ import classnames from "classnames";
 import { FleshIcon } from "./components/fleshIcon";
 import { MultiSelectList } from "./components/list/multiSelect";
 import { SingleSelectList } from "./components/list/singleSelect";
+import classNames from "classnames";
 
 const Select = <T extends Record<string, unknown> = Default>({
   data,
@@ -44,6 +45,8 @@ const Select = <T extends Record<string, unknown> = Default>({
   errorMessage,
   errorMessageClassName,
   hasError,
+  clearIconColor,
+  isLoading,
 }: SelectProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<InternalValue>(null);
@@ -77,7 +80,7 @@ const Select = <T extends Record<string, unknown> = Default>({
   }, [propValue]);
 
   const handleOnClick = () => {
-    if (disabled) return;
+    if (disabled || isLoading) return;
     setVisible((prev) => !prev);
   };
 
@@ -139,38 +142,44 @@ const Select = <T extends Record<string, unknown> = Default>({
 
   return (
     <>
-      <TextInput
-        {...{
-          AddonAfter,
-          addonAfterClassName,
-          addonAfterStyle,
-          addonBefore,
-          addonBeforeClassName,
-          addonBeforeStyle,
-          className,
-          onBlur,
-          onFocus,
-          wrapperClassName,
-          wrapperStyle,
-          onMouseEnter,
-          onMouseLeave,
-          errorMessage,
-          errorMessageClassName,
-          hasError,
-          testID: testid?.input,
-        }}
-        onClear={handleOnClear}
-        ref={handleRefOfRefrenceElement}
-        onClick={handleOnClick}
-        value={displayValue}
-        style={{
-          ...style,
-        }}
-        className={classes["textInput"]}
-        placeholder={placeholder}
-        allowClear={allowClear}
-        AddonAfter={<FleshIcon isVisible={isVisible} />}
-      />
+      <div ref={handleRefOfRefrenceElement}>
+        <TextInput
+          {...{
+            AddonAfter,
+            addonAfterClassName,
+            addonAfterStyle,
+            addonBefore,
+            addonBeforeClassName,
+            addonBeforeStyle,
+            className,
+            onBlur,
+            onFocus,
+            wrapperClassName,
+            wrapperStyle,
+            onMouseEnter,
+            onMouseLeave,
+            errorMessage,
+            errorMessageClassName,
+            hasError,
+            testID: testid?.input,
+            clearIconColor,
+            isLoading,
+          }}
+          onClear={handleOnClear}
+          onClick={handleOnClick}
+          value={displayValue}
+          style={{
+            ...style,
+          }}
+          className={classNames(
+            classes["text-input"],
+            isLoading && `${classes["text-input"]}--loading`,
+          )}
+          placeholder={placeholder}
+          allowClear={allowClear}
+          AddonAfter={<FleshIcon isVisible={isVisible} />}
+        />
+      </div>
 
       {body.current && isVisible
         ? ReactDOM.createPortal(

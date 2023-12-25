@@ -21,7 +21,9 @@ interface InputElement
 
 export interface TextInputProps
   extends Omit<InputElement, "autoCorrect" | "value"> {
+  isLoading?: boolean;
   allowClear?: boolean;
+  clearIconColor?: string;
   wrapperClassName?: string;
   wrapperStyle?: React.CSSProperties;
   onClear?: () => void;

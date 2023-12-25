@@ -5,7 +5,7 @@ import { useStyles } from "./style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useFonts } from "../../atoms/text/style";
-import { BaseIcon, Text } from "../../atoms";
+import { BaseIcon, Spinner, Text } from "../../atoms";
 import { useState } from "react";
 import { theming } from "../../theme";
 const { useTheme } = theming;
@@ -94,14 +94,14 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       errorMessage,
       errorMessageClassName,
       hasError,
+      clearIconColor,
+      isLoading,
       ...rest
     },
     forwardedRef,
   ) => {
     const classes = useStyles();
-    const [isHover, setIsHover] = useState<boolean>(false);
     const Colors = useTheme();
-
     let type: React.InputHTMLAttributes<HTMLInputElement>["type"];
     let inputMode: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 
@@ -312,13 +312,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       }
     };
 
-    const onMouseEnter = () => {
-      setIsHover(true);
-    };
-    const onMouseLeave = () => {
-      setIsHover(false);
-    };
-
     React.useEffect(() => {
       const node = hostRef.current;
       if (node && selection) {
@@ -356,28 +349,23 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
 
     const themes = useFonts();
     const _value = value === null || value === undefined ? "" : value;
-    const _clearIcon =
-      typeof allowClear === "object"
-        ? allowClear
-        : typeof allowClear === "boolean" && (
-            <BaseIcon
-              wrapperClassName={
-                isHover && _value
-                  ? classes["clear--visible"]
-                  : classes["clear--hidden"]
-              }
-              onClick={onClear}
-              name="Every-Boxes-_-Cross-Icon"
-              size={{ height: 12, width: 12 }}
-            />
-          );
+    const clearIcon = allowClear ? (
+      <BaseIcon
+        wrapperClassName={classes["clear-icon"]}
+        onClick={onClear}
+        name="Every-Boxes-_-Cross-Icon"
+        size={{ height: 12, width: 12 }}
+        color={clearIconColor}
+      />
+    ) : null;
 
-    const addOnAfterIcon =
-      isHover && _value && allowClear
-        ? _clearIcon
-        : AddonAfter
-        ? AddonAfter
-        : null;
+    const addOnAfterIcon = isLoading ? (
+      <Spinner size="small" />
+    ) : _value && allowClear ? (
+      clearIcon
+    ) : AddonAfter ? (
+      AddonAfter
+    ) : null;
 
     return multiline ? (
       <textarea
@@ -393,11 +381,11 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       />
     ) : (
       <div
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
         className={classNames(
           classes["inputWrapper"],
           wrapperClassName && wrapperClassName,
+          addOnAfterIcon && classes["input-with-addon-after"],
+          (hasError || errorMessage) && classes["input-with-error"],
         )}
         style={wrapperStyle}
       >
@@ -406,14 +394,13 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           value={_value}
           className={classNames(
             classes["textInput"],
-            disabled && classes.disabled,
-            (hasError || errorMessage) && classes["input-with-error"],
+            (disabled || isLoading) && classes.disabled,
             themes[theme || "Regular"],
             className,
           )}
           ref={setRef}
           type={rest.type}
-          disabled={disabled}
+          disabled={disabled || isLoading}
           //@ts-ignore
           data-testid={supportedProps["data-testid"] || testID}
           style={{

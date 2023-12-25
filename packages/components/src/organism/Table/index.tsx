@@ -36,6 +36,7 @@ export interface TableCommonType<T>
   coloums: ColumnType<T>[];
   noContent?: React.ReactNode;
   overScan?: number;
+  onResetFilters?: () => void;
 }
 
 export interface TablePropsWithMultipleSelectRows<T>
@@ -81,6 +82,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     testid,
     onRow,
     mode,
+    onResetFilters,
   } = props;
 
   const { table: { header } = {} } = useTheme();
@@ -350,6 +352,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                         columns={coloums}
                         data={data || []}
                         isSearchVisible={isSearchVisible}
+                        onResetFilters={onResetFilters}
                       />
                     ) : null}
                   </thead>

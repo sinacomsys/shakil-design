@@ -14,7 +14,6 @@ const MultiSelectList = <T extends Default>({
   internalValue,
 }: ListPorps<T>) => {
   const { disableText } = useTheme();
-
   const isNotSelectedItems = data.filter((item) => {
     return !((internalValue as Value[]) || [])?.find((_item) => {
       return valueExtractor?.(item) === _item;
