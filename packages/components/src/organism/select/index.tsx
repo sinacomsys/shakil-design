@@ -7,10 +7,10 @@ type Sag<T extends Record<string, any>> =
 
 function Select<T extends Record<string, any>>(
   props: SingleSelectProps<T>,
-): React.ReactNode;
+): JSX.Element;
 function Select<T extends Record<string, any>>(
   props: MultiSelectProps<T>,
-): React.ReactNode;
+): JSX.Element;
 function Select<T extends Record<string, any>>(props: Sag<T>) {
   return (
     <>
