@@ -1,38 +1,10 @@
-import { Default, SelectProps } from "./types";
-declare const Select: <T extends Record<string, unknown> = Default>({
-  data,
-  value: propValue,
-  labelExtractor,
-  valueExtractor,
-  onChange,
-  onClear,
-  disabled,
-  allowClear,
-  AddonAfter,
-  addonAfterClassName,
-  addonAfterStyle,
-  addonBefore,
-  addonBeforeClassName,
-  addonBeforeStyle,
-  className,
-  onBlur,
-  onFocus,
-  placeholder,
-  style,
-  wrapperClassName,
-  wrapperStyle,
-  popupClassName,
-  popupStyles,
-  multiple,
-  onSearch,
-  hasSearch,
-  onMouseEnter,
-  onMouseLeave,
-  testid,
-  errorMessage,
-  errorMessageClassName,
-  hasError,
-  clearIconColor,
-  isLoading,
-}: SelectProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+/// <reference types="react" />
+import { MultiSelectProps } from "./components/multiSelect";
+import { SingleSelectProps } from "./components/singleSelect";
+declare function Select<T extends Record<string, any>>(
+  props: SingleSelectProps<T>,
+): React.ReactNode;
+declare function Select<T extends Record<string, any>>(
+  props: MultiSelectProps<T>,
+): React.ReactNode;
 export { Select };

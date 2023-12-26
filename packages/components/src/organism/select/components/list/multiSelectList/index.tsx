@@ -1,68 +1,68 @@
 import { ScrollView } from "../../../../../atoms";
 import { Option } from "../../option";
-import { Default, Value } from "../../../types";
 import { theming } from "../../../../../theme";
-import { ListPorps } from "../types";
+import { InternalValue, MultiSelectProps } from "../../multiSelect";
 
 const { useTheme } = theming;
 
-const MultiSelectList = <T extends Default>({
+export interface MultiSelectList<T extends Record<string, any>>
+  extends Pick<MultiSelectProps<T>, "valueExtractor" | "labelExtractor"> {
+  onClick: (value: T[keyof T]) => void;
+  value: T[keyof T][];
+  data: T[];
+}
+
+const MultiSelectList = <T extends Record<string, any>>({
   data,
   labelExtractor,
   valueExtractor,
   onClick,
-  internalValue,
-}: ListPorps<T>) => {
+  value,
+}: MultiSelectList<T>) => {
   const { disableText } = useTheme();
   const isNotSelectedItems = data.filter((item) => {
-    return !((internalValue as Value[]) || [])?.find((_item) => {
+    return !value?.find((_item) => {
       return valueExtractor?.(item) === _item;
     });
   });
 
   return (
     <ScrollView style={{ flex: 1 }}>
-      {((internalValue as Value[]) || [])?.map((item) => {
+      {(value || [])?.map((item, index) => {
         const selectedItem = data.find(
           (_item) => valueExtractor?.(_item) === item,
         );
         return (
           <Option
+            key={index}
             multiple={true}
             isSelected
-            value={{
-              label: item as any,
-              value: item,
+            onClick={() => {
+              onClick(item);
             }}
-            onClick={onClick}
-            key={item}
           >
             {selectedItem && labelExtractor?.(selectedItem)}
           </Option>
         );
       })}
 
-      {((internalValue as Value[]) || []).length ? (
+      {(value || []).length ? (
         <div style={{ height: 1, backgroundColor: disableText }} />
       ) : null}
 
-      {isNotSelectedItems.map((item) => {
+      {isNotSelectedItems.map((item, index) => {
         const isSelected =
-          Array.isArray(internalValue) &&
-          Boolean(
-            internalValue.find((_item) => _item === valueExtractor?.(item)),
-          );
+          Array.isArray(value) &&
+          Boolean(value.find((_item) => _item === valueExtractor?.(item)));
 
         return (
           <Option
             multiple={true}
             isSelected={isSelected}
-            value={{
-              label: labelExtractor?.(item) || "",
-              value: valueExtractor?.(item),
+            onClick={() => {
+              valueExtractor && onClick(valueExtractor?.(item));
             }}
-            onClick={onClick}
-            key={valueExtractor?.(item)}
+            key={index}
           >
             {labelExtractor?.(item)}
           </Option>

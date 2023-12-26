@@ -28,32 +28,38 @@ var textInputSharedStyle = function (theme) { return ({
     color: theme.primary,
     border: "none",
     outline: "none",
-    paddingBlock: 8,
-    paddingInline: 10,
     fontSize: 14,
+    padding: 0,
 }); };
 var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
-    var _a, _b;
+    var _a, _b, _c;
     return {
         "clear-icon": {
             cursor: "pointer",
         },
-        textInput: __assign(__assign({}, textInputSharedStyle(theme)), { height: 32 }),
-        "text-area": __assign({}, textInputSharedStyle(theme)),
+        "text-input": __assign(__assign({}, textInputSharedStyle(theme)), { height: "100%" }),
+        "text-area": __assign(__assign({}, textInputSharedStyle(theme)), { backgroundColor: (_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.fieldColor, borderRadius: 7 }),
         "input-with-error": {
-            border: "1px solid ".concat((_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.errorMessage),
+            border: "1px solid ".concat((_b = theme.textInput) === null || _b === void 0 ? void 0 : _b.errorMessage),
         },
         disabled: {
             backgroundColor: theme.disableField,
             cursor: "not-allowed",
             color: theme.disableText,
         },
-        inputWrapper: {
+        "input-wrapper": {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            backgroundColor: (_b = theme.textInput) === null || _b === void 0 ? void 0 : _b.fieldColor,
+            backgroundColor: (_c = theme.textInput) === null || _c === void 0 ? void 0 : _c.fieldColor,
             borderRadius: 7,
+            height: 32,
+            paddingBlock: 8,
+            paddingInline: 10,
+            overflow: "hidden",
+            "&--input-with-addon-after": {
+                paddingInlineEnd: 24,
+            },
         },
         addonBefore: __assign(__assign({}, addonStyle), { insetInlineStart: 10 }),
         addonAfter: __assign(__assign({}, addonStyle), { insetInlineEnd: 10 }),
@@ -62,9 +68,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             top: "100%",
             insetInlineStart: 0,
             insetBlockStart: "100%",
-        },
-        "input-with-addon-after": {
-            paddingInlineEnd: 15,
         },
     };
 }, { theming: theme_1.theming, name: "text-input" });

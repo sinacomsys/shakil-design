@@ -1,20 +1,28 @@
 import { Option } from "../../option";
 import { ScrollView, Text } from "../../../../../atoms";
-import { ListPorps } from "../types";
-import { Default } from "../../../types";
 import { Radio } from "../../../../../molecules";
 import { theming } from "../../../../../theme";
 import { createUseStyles } from "react-jss";
+import { SingleSelectProps } from "../../singleSelect";
 
 const { useTheme } = theming;
 
-export const SingleSelectList = <T extends Default>({
+export interface SingleSelectList<T extends Record<string, any>>
+  extends Pick<
+    SingleSelectProps<T>,
+    "data" | "valueExtractor" | "labelExtractor"
+  > {
+  onClick: (value: T[keyof T]) => void;
+  internalValue: T | undefined;
+}
+
+export const SingleSelectList = <T extends Record<string, any>>({
   data,
   onClick,
   labelExtractor,
   internalValue,
   valueExtractor,
-}: Omit<ListPorps<T>, "multiple">) => {
+}: SingleSelectList<T>) => {
   const { disableText } = useTheme();
   const selectedItem = data.find((item) => {
     return valueExtractor?.(item) === internalValue;
@@ -35,18 +43,16 @@ export const SingleSelectList = <T extends Default>({
       ) : null}
       {data
         .filter((item) => valueExtractor?.(item) !== internalValue)
-        .map((item) => {
+        .map((item, index) => {
           const isSelected = internalValue === valueExtractor?.(item);
           return (
             <Option
               multiple={false}
               isSelected={isSelected}
-              value={{
-                label: labelExtractor?.(item) || "",
-                value: valueExtractor?.(item),
+              onClick={() => {
+                valueExtractor && onClick(valueExtractor?.(item));
               }}
-              onClick={onClick}
-              key={valueExtractor?.(item)}
+              key={index}
             >
               {labelExtractor?.(item)}
             </Option>

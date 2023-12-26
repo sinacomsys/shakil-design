@@ -19,12 +19,9 @@ var text_1 = require("../../../../atoms/text");
 var style_1 = require("./style");
 var molecules_1 = require("../../../../molecules");
 var Option = function (_a) {
-    var children = _a.children, value = _a.value, onClick = _a.onClick, isSelected = _a.isSelected, multiple = _a.multiple;
+    var children = _a.children, onClick = _a.onClick, isSelected = _a.isSelected, multiple = _a.multiple;
     var classes = (0, style_1.useStyles)();
-    var handleOnClick = function () {
-        onClick(value.value);
-    };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: handleOnClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ ellipsis: true, size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: onClick, className: classes["item"] }, { children: [multiple ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginInlineEnd: 5 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.CheckBox, { checked: isSelected }, void 0, false, { fileName: _jsxFileName, lineNumber: 19, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 17, columnNumber: 20 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ ellipsis: true, size: 16, theme: "Regular", color: "#575757" }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 22, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 15, columnNumber: 11 }, _this));
 };
 exports.Option = Option;
 //# sourceMappingURL=index.js.map

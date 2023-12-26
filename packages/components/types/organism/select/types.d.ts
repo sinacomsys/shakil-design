@@ -2,10 +2,6 @@ import { Unit } from "../../types";
 import { TextInputProps } from "../../molecules/textInput";
 import React from "react";
 export type Value = string | number | null | undefined;
-export type Default = {
-  value?: Value;
-  label?: React.ReactNode;
-};
 interface TextInputCommon
   extends Pick<
     TextInputProps,
@@ -33,13 +29,9 @@ interface TextInputCommon
     | "clearIconColor"
     | "isLoading"
   > {}
-export interface SelectProps<T extends Record<string, unknown> = Default>
+export interface SelectProps<T extends Record<string, any>>
   extends Omit<TextInputCommon, "value"> {
   data: T[];
-  value?: Value | Value[];
-  valueExtractor?: (item: T) => Value;
-  labelExtractor?: (item: T) => string;
-  onChange?: (item: Value | Value[]) => void;
   onClear?: () => void;
   disabled?: boolean;
   unit?: Unit;
@@ -53,15 +45,7 @@ export interface SelectProps<T extends Record<string, unknown> = Default>
     overlay?: string;
     input?: string;
   };
+  valueExtractor?: (item: T) => T[keyof T];
+  labelExtractor?: (item: T) => string;
 }
-export interface OptionProps extends Pick<SelectProps, "multiple"> {
-  isSelected: boolean;
-  children: React.ReactNode;
-  value: {
-    value: Value;
-    label: string;
-  };
-  onClick: (value: Value) => void;
-}
-export type InternalValue = Value | Value[] | null;
 export {};

@@ -1,22 +1,19 @@
 import { Text } from "../../../../atoms/text";
-import { OptionProps } from "../../types";
 import { useStyles } from "./style";
 import { CheckBox } from "../../../../molecules";
 
-const Option = ({
-  children,
-  value,
-  onClick,
-  isSelected,
-  multiple,
-}: OptionProps) => {
+export interface OptionProps {
+  isSelected: boolean;
+  children: React.ReactNode;
+  onClick: () => void;
+  multiple: boolean;
+}
+
+const Option = ({ children, onClick, isSelected, multiple }: OptionProps) => {
   const classes = useStyles();
-  const handleOnClick = () => {
-    onClick(value.value);
-  };
 
   return (
-    <div onClick={handleOnClick} className={classes["item"]}>
+    <div onClick={onClick} className={classes["item"]}>
       {multiple ? (
         <div style={{ marginInlineEnd: 5 }}>
           <CheckBox checked={isSelected} />
