@@ -22,5 +22,6 @@ function Select<T extends Record<string, any>>(props: Sag<T>) {
     </>
   );
 }
-
+export type { MultiSelectProps };
+export type { SingleSelectProps };
 export { Select };

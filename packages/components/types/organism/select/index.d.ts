@@ -7,4 +7,6 @@ declare function Select<T extends Record<string, any>>(
 declare function Select<T extends Record<string, any>>(
   props: MultiSelectProps<T>,
 ): React.ReactNode;
+export type { MultiSelectProps };
+export type { SingleSelectProps };
 export { Select };
