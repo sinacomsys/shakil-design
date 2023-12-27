@@ -1,6 +1,6 @@
 {
   "name": "@shakil-design/component",
-  "version": "0.0.72",
+  "version": "0.0.73",
   "private": false,
   "types": "types/index.d.ts",
   "main": "src/index.ts",
@@ -42,8 +42,8 @@
     ]
   },
   "dependencies": {
-    "@shakil-design/asset": "^0.0.72",
-    "@shakil-design/utils": "^0.0.72"
+    "@shakil-design/asset": "^0.0.73",
+    "@shakil-design/utils": "^0.0.73"
   },
   "publishConfig": {
     "access": "public",
