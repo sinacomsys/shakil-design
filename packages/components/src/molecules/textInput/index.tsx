@@ -382,11 +382,8 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     ) : (
       <div
         className={classNames(
-          classes["input-wrapper"],
+          classes["inputWrapper"],
           wrapperClassName && wrapperClassName,
-          addOnAfterIcon &&
-            `${classes["input-wrapper"]}--input-with-addon-after`,
-          (hasError || errorMessage) && classes["input-with-error"],
         )}
         style={wrapperStyle}
       >
@@ -394,7 +391,9 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
           value={_value}
           className={classNames(
-            classes["text-input"],
+            classes["textInput"],
+            (hasError || errorMessage) && classes["input-with-error"],
+            addOnAfterIcon && `${classes["textInput"]}--input-with-addon-after`,
             (disabled || isLoading) && classes.disabled,
             themes[theme || "Regular"],
             className,

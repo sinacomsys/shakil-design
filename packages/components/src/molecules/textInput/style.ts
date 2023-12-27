@@ -13,12 +13,14 @@ const addonStyle: React.CSSProperties = {
 
 const textInputSharedStyle = (theme: ColorsType) => ({
   width: "100%",
-  backgroundColor: "transparent",
   color: theme.primary,
   border: "none",
   outline: "none",
+  paddingBlock: 8,
+  paddingInline: 10,
   fontSize: 14,
-  padding: 0,
+  backgroundColor: theme.textInput?.fieldColor,
+  borderRadius: 7,
 });
 
 const useStyles = createUseStyles(
@@ -27,36 +29,28 @@ const useStyles = createUseStyles(
       "clear-icon": {
         cursor: "pointer",
       },
-      "text-input": {
+      textInput: {
         ...textInputSharedStyle(theme),
-        height: "100%",
+        height: 32,
+        "&--input-with-addon-after": {
+          paddingInlineEnd: 25,
+        },
       },
       "text-area": {
         ...textInputSharedStyle(theme),
-        backgroundColor: theme.textInput?.fieldColor,
-        borderRadius: 7,
       },
       "input-with-error": {
-        border: `1px solid ${theme.textInput?.errorMessage}`,
+        boxShadow: `0px 0px 0px 2px ${theme.textInput?.errorMessage}`,
       },
       disabled: {
         backgroundColor: theme.disableField,
         cursor: "not-allowed",
         color: theme.disableText,
       },
-      "input-wrapper": {
+      inputWrapper: {
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: theme.textInput?.fieldColor,
-        borderRadius: 7,
-        height: 32,
-        paddingBlock: 8,
-        paddingInline: 10,
-        overflow: "hidden",
-        "&--input-with-addon-after": {
-          paddingInlineEnd: 24,
-        },
       },
       addonBefore: {
         ...addonStyle,

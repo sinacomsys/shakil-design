@@ -40,6 +40,7 @@ const Template: Story<TextInputProps> = () => {
           />
         }
         clearIconColor="red"
+        errorMessage="sag"
       />
       <Button
         style={{ marginTop: 30 }}
