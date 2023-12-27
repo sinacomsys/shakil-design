@@ -1,9 +1,9 @@
-import { DefaultValue, SelectProps } from "../../types";
+import { SelectProps } from "../../types";
 import { MultiSelectList } from "../list/multiSelectList";
 import { Template } from "../selectTemplate";
 import { isNullish } from "@shakil-design/utils/src";
 
-export interface MultiSelectProps<T extends Record<string, any> = DefaultValue>
+export interface MultiSelectProps<T extends Record<string, any>>
   extends Omit<SelectProps<T>, "data"> {
   value?: T[keyof T][];
   onChange?: (item: T[keyof T][] | null) => void;

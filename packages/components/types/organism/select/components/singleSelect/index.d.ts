@@ -1,5 +1,5 @@
-import { DefaultValue, SelectProps } from "../../types";
-export interface SingleSelectProps<T extends Record<string, any> = DefaultValue>
+import { SelectProps } from "../../types";
+export interface SingleSelectProps<T extends Record<string, any>>
   extends SelectProps<T> {
   value?: T[keyof T];
   onChange?: (item: T | null) => void;

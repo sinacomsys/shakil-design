@@ -1,5 +1,5 @@
-import { DefaultValue, SelectProps } from "../../types";
-export interface MultiSelectProps<T extends Record<string, any> = DefaultValue>
+import { SelectProps } from "../../types";
+export interface MultiSelectProps<T extends Record<string, any>>
   extends Omit<SelectProps<T>, "data"> {
   value?: T[keyof T][];
   onChange?: (item: T[keyof T][] | null) => void;

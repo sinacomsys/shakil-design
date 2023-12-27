@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { DefaultValue, SelectProps } from "../../types";
+import { SelectProps } from "../../types";
 import { SingleSelectList } from "../list/singleSelectList";
 import { Template } from "../selectTemplate";
 
-export interface SingleSelectProps<T extends Record<string, any> = DefaultValue>
+export interface SingleSelectProps<T extends Record<string, any>>
   extends SelectProps<T> {
   value?: T[keyof T];
   onChange?: (item: T | null) => void;
