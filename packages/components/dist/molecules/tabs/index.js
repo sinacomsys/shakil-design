@@ -30,7 +30,7 @@ var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/mol
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = require("react");
 var text_1 = require("../../atoms/text");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var internalTabPane_1 = require("./internalTabPane");
 var style_1 = require("./style");
 var theme_1 = require("../../theme");
@@ -40,7 +40,7 @@ var Tabs = function (_a) {
     var _b = (0, theme_1.useTheme)().tab, _c = _b === void 0 ? {} : _b, textColor = _c.textColor;
     var _d = (0, react_1.useState)(null), activeTab = _d[0], setActiveTab = _d[1];
     var _e = (0, react_1.useState)([]), openedTabs = _e[0], setOpenedTabs = _e[1];
-    var tabListRef = (0, utils_1.useHorizontalScroll)();
+    var tabListRef = (0, src_1.useHorizontalScroll)();
     var handleOnChange = function (id) {
         onChange === null || onChange === void 0 ? void 0 : onChange(id);
         if (activeTabProp)

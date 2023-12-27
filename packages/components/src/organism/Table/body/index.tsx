@@ -1,6 +1,6 @@
 import { VirtualItem } from "@tanstack/react-virtual";
 import { useStyles } from "./style";
-import { pxToVwString } from "@shakil-design/utils";
+import { pxToVwString } from "@shakil-design/utils/src";
 import { Rows } from "../rowContainer";
 import { TableCommonType } from "..";
 import { UnitContext } from "../../../theme/context";

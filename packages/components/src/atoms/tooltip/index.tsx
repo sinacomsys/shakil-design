@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { HTMLAttributes, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { PopperProps, usePopper } from "react-popper";
-import { useOnClickOutSide } from "@shakil-design/utils";
+import { useOnClickOutSide } from "@shakil-design/utils/src";
 import { useStyles } from "./style";
 
 export interface TooltipProps {

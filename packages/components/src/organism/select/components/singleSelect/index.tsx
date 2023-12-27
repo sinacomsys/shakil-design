@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { SelectProps } from "../../types";
+import { DefaultValue, SelectProps } from "../../types";
 import { SingleSelectList } from "../list/singleSelectList";
 import { Template } from "../selectTemplate";
 
-export interface SingleSelectProps<T extends Record<string, any>>
+export interface SingleSelectProps<T extends Record<string, any> = DefaultValue>
   extends SelectProps<T> {
   value?: T[keyof T];
-  onChange?: (item: T) => void;
+  onChange?: (item: T | null) => void;
   mode?: "single";
 }
 
@@ -16,6 +16,7 @@ const SingleSelect = <T extends Record<string, any>>({
   data,
   value,
   onChange,
+  onClear,
   ...props
 }: SingleSelectProps<T>) => {
   const [internalValue, setInternalValue] = useState<T[keyof T] | undefined>(
@@ -34,11 +35,17 @@ const SingleSelect = <T extends Record<string, any>>({
   const _value = data.find((item) => valueExtractor?.(item) === internalValue);
   const displayValue = _value ? labelExtractor?.(_value) : "";
 
+  const handleOnClear = () => {
+    onClear?.();
+    onChange?.(null);
+  };
+
   return (
     <Template
       {...props}
       displayValue={displayValue || ""}
       data={data}
+      onClear={handleOnClear}
       renderOverlay={() => {
         return (
           <SingleSelectList

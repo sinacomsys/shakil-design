@@ -7,7 +7,7 @@ import { FleshIcon } from "../fleshIcon";
 import { BaseIcon } from "../../../../atoms";
 import classNames from "classnames";
 import { useStyles } from "../../style";
-import { useOnClickOutSide } from "@shakil-design/utils";
+import { useOnClickOutSide } from "@shakil-design/utils/src";
 
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;

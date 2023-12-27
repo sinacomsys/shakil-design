@@ -2,7 +2,7 @@
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStyle = void 0;
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var react_jss_1 = require("react-jss");
 var types_1 = require("../../types");
 var useStyle = (0, react_jss_1.createUseStyles)({
@@ -11,7 +11,7 @@ var useStyle = (0, react_jss_1.createUseStyles)({
             paddingInlineStart: 30,
         },
         _a["&".concat(types_1.VIEW_PORT_UNIT)] = {
-            paddingInlineStart: (0, utils_1.pxToVwString)(30),
+            paddingInlineStart: (0, src_1.pxToVwString)(30),
         },
         _a),
 }, { name: "tree" });

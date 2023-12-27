@@ -45,7 +45,7 @@ var classnames_1 = __importDefault(require("classnames"));
 var react_1 = __importStar(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
 var react_popper_1 = require("react-popper");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var style_1 = require("./style");
 var Tooltip = function (_a) {
     var _b;
@@ -109,7 +109,7 @@ var Tooltip = function (_a) {
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
     var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_dev_runtime_1.jsxDEV)("span", __assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 111, columnNumber: 8 }, _this));
-    (0, utils_1.useOnClickOutSide)({
+    (0, src_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
         handler: function () {

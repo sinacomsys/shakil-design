@@ -1,4 +1,4 @@
-import { pxToVh } from "@shakil-design/utils";
+import { pxToVh } from "@shakil-design/utils/src";
 import { Unit } from "../../types";
 import { useTheme, Colors } from "../../theme";
 import { useStyle } from "./style";

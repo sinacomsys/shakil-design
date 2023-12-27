@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { theming } from "../../../theme";
 import { VIEW_PORT_UNIT } from "../../../types";
-import { pxToVhString } from "@shakil-design/utils";
+import { pxToVhString } from "@shakil-design/utils/src";
 
 export const useStyles = createUseStyles(
   (theme) => {

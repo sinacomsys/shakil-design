@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStyles = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../theme");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     return {
         container: {
@@ -12,7 +12,7 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             overflow: "auto",
             "&::-webkit-scrollbar": {
                 width: 7,
-                height: "".concat((0, utils_1.pxToVh)(7), "vh"),
+                height: "".concat((0, src_1.pxToVh)(7), "vh"),
             },
             /* Track */
             "&::-webkit-scrollbar-track": {

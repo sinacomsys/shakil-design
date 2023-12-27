@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useContext, useState } from "react";
 import { Text } from "../../../atoms/text";
 import { useTheme } from "../../../theme";
-import { pxToVhString } from "@shakil-design/utils";
+import { pxToVhString } from "@shakil-design/utils/src";
 import { RadioContext, ValueType } from "../context";
 import { CustomCircle } from "./customCircle";
 import { useStyles } from "./style";

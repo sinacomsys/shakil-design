@@ -16,7 +16,7 @@ var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/baseIcon/createIconSet.tsx";
 var react_1 = require("react");
 var usehooks_ts_1 = require("usehooks-ts");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var context_1 = require("../../theme/context");
 function createIcomoonIconSet(glyphMap) {
     var _this = this;
@@ -34,8 +34,8 @@ function createIcomoonIconSet(glyphMap) {
             realHeight = height;
         }
         else if (_unit === "viewport") {
-            realWidth = (0, utils_1.pxToVh)(width) * vh;
-            realHeight = (0, utils_1.pxToVh)(height) * vh;
+            realWidth = (0, src_1.pxToVh)(width) * vh;
+            realHeight = (0, src_1.pxToVh)(height) * vh;
         }
         var viewBox = "0 0 1024 1024";
         if (realWidth && realHeight && realWidth > realHeight) {

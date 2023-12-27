@@ -3,7 +3,7 @@ import * as React from "react";
 import { BaseText, BaseTextProps, Variant } from "./baseText/baseText";
 import { fonts, fontWeights, useFonts, useStyles } from "./style";
 import { UnitContext } from "../../theme/context";
-import { pxToVhString } from "@shakil-design/utils";
+import { pxToVhString } from "@shakil-design/utils/src";
 
 interface TextProps extends BaseTextProps {
   theme?: keyof typeof fonts;

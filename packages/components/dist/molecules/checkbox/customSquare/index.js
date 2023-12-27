@@ -16,11 +16,11 @@ exports.CustomSquare = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/checkbox/customSquare/index.tsx";
 var style_1 = require("./style");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var CustomSquare = function (_a) {
     var checked = _a.checked;
     var classes = (0, style_1.useStyles)({ checked: checked });
-    var roundToNearestEven = (0, utils_1.useRoundToNearestEven)().roundToNearestEven;
+    var roundToNearestEven = (0, src_1.useRoundToNearestEven)().roundToNearestEven;
     return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: {
             height: roundToNearestEven(16),
             width: roundToNearestEven(16),

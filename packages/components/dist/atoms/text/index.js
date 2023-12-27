@@ -58,14 +58,14 @@ var baseText_1 = require("./baseText/baseText");
 var style_1 = require("./style");
 Object.defineProperty(exports, "fonts", { enumerable: true, get: function () { return style_1.fonts; } });
 var context_1 = require("../../theme/context");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var Text = React.memo(React.forwardRef(function (_a, ref) {
     var _b = _a.theme, theme = _b === void 0 ? "Regular" : _b, className = _a.className, color = _a.color, style = _a.style, _c = _a.size, size = _c === void 0 ? 16 : _c, weight = _a.weight, variant = _a.variant, lineHeight = _a.lineHeight, rest = __rest(_a, ["theme", "className", "color", "style", "size", "weight", "variant", "lineHeight"]);
     var fonts = (0, style_1.useFonts)();
     var classes = (0, style_1.useStyles)();
     var unit = React.useContext(context_1.UnitContext).unit;
     var fontSize = unit === "viewport" && typeof size === "number"
-        ? (0, utils_1.pxToVhString)(size)
+        ? (0, src_1.pxToVhString)(size)
         : size;
     var fontWeight = typeof weight === "string" ? style_1.fontWeights[weight] : weight;
     var setVariant = function () {

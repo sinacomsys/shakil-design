@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Spinner = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/spinner/index.tsx";
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var theme_1 = require("../../theme");
 var style_1 = require("./style");
 var context_1 = require("../../theme/context");
@@ -48,7 +48,7 @@ var Spinner = function (_a) {
             : size === "large"
                 ? LARGE
                 : MEDIUM;
-    var _width = unit === "viewport" ? "".concat((0, utils_1.pxToVh)(width), "vh") : width;
+    var _width = unit === "viewport" ? "".concat((0, src_1.pxToVh)(width), "vh") : width;
     return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { width: _width, height: _width }, className: classes.ldsRing }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
                     borderColor: borderStyle,
                     borderWidth: borderWidth,

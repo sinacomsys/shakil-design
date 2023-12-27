@@ -1,4 +1,4 @@
-import { pxToVwString } from "@shakil-design/utils";
+import { pxToVwString } from "@shakil-design/utils/src";
 import { createUseStyles } from "react-jss";
 import { PX_UNIT, VIEW_PORT_UNIT } from "../../types";
 

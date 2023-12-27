@@ -1,4 +1,5 @@
-import { pxToVh, useWindowSize } from "@shakil-design/utils";
+import { pxToVh } from "./convertUnit";
+import { useWindowSize } from "./useWindowSize";
 
 export function useRoundToNearestEven() {
   const { height } = useWindowSize();

@@ -1,4 +1,4 @@
-import { findGrandParents, flatData } from "@shakil-design/utils";
+import { findGrandParents, flatData } from "@shakil-design/utils/src";
 import { useContext } from "react";
 import { Collapse } from "./collapse";
 import { LevelContext } from "./context/levelProvider";

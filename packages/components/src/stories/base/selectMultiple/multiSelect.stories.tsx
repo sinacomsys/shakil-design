@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Select, SingleSelectProps } from "../../../organism/select";
+import { Select } from "../../../organism/select";
 import { StoryContainer } from "../../container";
 import React, { useState } from "react";
 
@@ -17,7 +17,6 @@ const fakeData = [...new Array(35)].map((_, index) => {
 
 const Template: Story<any> = () => {
   const [value, setValue] = useState<string[]>([]);
-  console.log({ value });
 
   return (
     <StoryContainer>

@@ -30,7 +30,7 @@ var react_1 = require("react");
 var singleSelectList_1 = require("../list/singleSelectList");
 var selectTemplate_1 = require("../selectTemplate");
 var SingleSelect = function (_a) {
-    var _b = _a.valueExtractor, valueExtractor = _b === void 0 ? function (item) { return item.value; } : _b, _c = _a.labelExtractor, labelExtractor = _c === void 0 ? function (item) { return item.label; } : _c, data = _a.data, value = _a.value, onChange = _a.onChange, props = __rest(_a, ["valueExtractor", "labelExtractor", "data", "value", "onChange"]);
+    var _b = _a.valueExtractor, valueExtractor = _b === void 0 ? function (item) { return item.value; } : _b, _c = _a.labelExtractor, labelExtractor = _c === void 0 ? function (item) { return item.label; } : _c, data = _a.data, value = _a.value, onChange = _a.onChange, onClear = _a.onClear, props = __rest(_a, ["valueExtractor", "labelExtractor", "data", "value", "onChange", "onClear"]);
     var _d = (0, react_1.useState)(undefined), internalValue = _d[0], setInternalValue = _d[1];
     (0, react_1.useEffect)(function () {
         setInternalValue(value);
@@ -41,9 +41,13 @@ var SingleSelect = function (_a) {
     };
     var _value = data.find(function (item) { return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) === internalValue; });
     var displayValue = _value ? labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_value) : "";
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, renderOverlay: function () {
-            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, labelExtractor: labelExtractor, valueExtractor: valueExtractor, internalValue: internalValue, onClick: handleOnChange }, void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 11 }, _this));
+    var handleOnClear = function () {
+        onClear === null || onClear === void 0 ? void 0 : onClear();
+        onChange === null || onChange === void 0 ? void 0 : onChange(null);
+    };
+    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, renderOverlay: function () {
+            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, labelExtractor: labelExtractor, valueExtractor: valueExtractor, internalValue: internalValue, onClick: handleOnChange }, void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 17 }, _this));
+        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 }, _this));
 };
 exports.SingleSelect = SingleSelect;
 //# sourceMappingURL=index.js.map

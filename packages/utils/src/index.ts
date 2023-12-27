@@ -6,4 +6,5 @@ export * from "./useOnclickOutsiede";
 export * from "./useHover";
 export * from "./createTreeFromFlatArray";
 export * from "./useWindowSize";
+export * from "./isNullish";
 export * from "./roundToNearsetEven";

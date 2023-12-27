@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useTheme } from "../../theme";
 import { useStyles } from "./style";
 import { Unit } from "../../types";
-import { pxToVhString } from "@shakil-design/utils";
+import { pxToVhString } from "@shakil-design/utils/src";
 
 interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {

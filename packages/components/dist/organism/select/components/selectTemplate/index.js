@@ -26,7 +26,7 @@ var fleshIcon_1 = require("../fleshIcon");
 var atoms_1 = require("../../../../atoms");
 var classnames_1 = __importDefault(require("classnames"));
 var style_1 = require("../../style");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var Template = function (_a) {
     var onClear = _a.onClear, disabled = _a.disabled, allowClear = _a.allowClear, AddonAfter = _a.AddonAfter, addonAfterClassName = _a.addonAfterClassName, addonAfterStyle = _a.addonAfterStyle, addonBefore = _a.addonBefore, addonBeforeClassName = _a.addonBeforeClassName, addonBeforeStyle = _a.addonBeforeStyle, className = _a.className, onBlur = _a.onBlur, onFocus = _a.onFocus, placeholder = _a.placeholder, style = _a.style, wrapperClassName = _a.wrapperClassName, wrapperStyle = _a.wrapperStyle, popupClassName = _a.popupClassName, popupStyles = _a.popupStyles, _b = _a.hasSearch, hasSearch = _b === void 0 ? true : _b, onMouseEnter = _a.onMouseEnter, onMouseLeave = _a.onMouseLeave, testid = _a.testid, errorMessage = _a.errorMessage, errorMessageClassName = _a.errorMessageClassName, hasError = _a.hasError, clearIconColor = _a.clearIconColor, isLoading = _a.isLoading, displayValue = _a.displayValue, renderOverlay = _a.renderOverlay;
     var classes = (0, style_1.useStyles)();
@@ -53,7 +53,7 @@ var Template = function (_a) {
         setWidth(node === null || node === void 0 ? void 0 : node.getBoundingClientRect().width);
         setReferenceElement(node);
     };
-    (0, utils_1.useOnClickOutSide)({
+    (0, src_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
         handler: function () {

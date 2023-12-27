@@ -4,7 +4,7 @@ exports.useStyles = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../../theme");
 var types_1 = require("../../../types");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     var _a;
     var _b;
@@ -25,7 +25,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
                 paddingTop: 20
             },
             _a["".concat(types_1.VIEW_PORT_UNIT)] = {
-                paddingTop: (0, utils_1.pxToVhString)(20),
+                paddingTop: (0, src_1.pxToVhString)(20),
             },
             _a["&--first-item"] = {
                 paddingTop: 0,

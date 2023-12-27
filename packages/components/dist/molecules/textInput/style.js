@@ -22,44 +22,42 @@ var addonStyle = {
     display: "flex",
     insetBlockStart: "50%",
 };
-var textInputSharedStyle = function (theme) { return ({
-    width: "100%",
-    backgroundColor: "transparent",
-    color: theme.primary,
-    border: "none",
-    outline: "none",
-    fontSize: 14,
-    padding: 0,
-}); };
+var textInputSharedStyle = function (theme) {
+    var _a;
+    return ({
+        width: "100%",
+        color: theme.primary,
+        border: "none",
+        outline: "none",
+        paddingBlock: 8,
+        paddingInline: 10,
+        fontSize: 14,
+        backgroundColor: (_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.fieldColor,
+        borderRadius: 7,
+    });
+};
 var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
-    var _a, _b, _c;
+    var _a;
     return {
         "clear-icon": {
             cursor: "pointer",
         },
-        "text-input": __assign(__assign({}, textInputSharedStyle(theme)), { height: "100%" }),
-        "text-area": __assign(__assign({}, textInputSharedStyle(theme)), { backgroundColor: (_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.fieldColor, borderRadius: 7 }),
+        textInput: __assign(__assign({}, textInputSharedStyle(theme)), { height: 32, "&--input-with-addon-after": {
+                paddingInlineEnd: 25,
+            } }),
+        "text-area": __assign({}, textInputSharedStyle(theme)),
         "input-with-error": {
-            border: "1px solid ".concat((_b = theme.textInput) === null || _b === void 0 ? void 0 : _b.errorMessage),
+            boxShadow: "0px 0px 0px 2px ".concat((_a = theme.textInput) === null || _a === void 0 ? void 0 : _a.errorMessage),
         },
         disabled: {
             backgroundColor: theme.disableField,
             cursor: "not-allowed",
             color: theme.disableText,
         },
-        "input-wrapper": {
+        inputWrapper: {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            backgroundColor: (_c = theme.textInput) === null || _c === void 0 ? void 0 : _c.fieldColor,
-            borderRadius: 7,
-            height: 32,
-            paddingBlock: 8,
-            paddingInline: 10,
-            overflow: "hidden",
-            "&--input-with-addon-after": {
-                paddingInlineEnd: 24,
-            },
         },
         addonBefore: __assign(__assign({}, addonStyle), { insetInlineStart: 10 }),
         addonAfter: __assign(__assign({}, addonStyle), { insetInlineEnd: 10 }),

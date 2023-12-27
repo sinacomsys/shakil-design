@@ -1,4 +1,4 @@
-import { pxToVhString, pxToVwString } from "@shakil-design/utils";
+import { pxToVhString, pxToVwString } from "@shakil-design/utils/src";
 
 const isInclude = (a?: string, b?: string) => {
   return a?.toLowerCase().includes((b || "")?.toLowerCase() || "");

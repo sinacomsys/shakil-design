@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.convertPxToVp = void 0;
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var isInclude = function (a, b) {
     var _a;
     return a === null || a === void 0 ? void 0 : a.toLowerCase().includes(((_a = (b || "")) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || "");
@@ -11,10 +11,10 @@ var convertCornerRadius = function (value) {
     return splitedValue
         .map(function (item, index) {
         if ((index === 0 || index === 2) && isInclude(item, "px")) {
-            return (0, utils_1.pxToVwString)(parseInt(item, 10));
+            return (0, src_1.pxToVwString)(parseInt(item, 10));
         }
         else if ((index === 1 || index === 3) && isInclude(item, "px")) {
-            return (0, utils_1.pxToVhString)(parseInt(item, 10));
+            return (0, src_1.pxToVhString)(parseInt(item, 10));
         }
         else
             return item;
@@ -26,7 +26,7 @@ var yAxisSpacing = function (value) {
     return splitedValue
         .map(function (item) {
         if (isInclude(item, "px")) {
-            return (0, utils_1.pxToVhString)(parseInt(item, 10));
+            return (0, src_1.pxToVhString)(parseInt(item, 10));
         }
         return item;
     })
@@ -37,7 +37,7 @@ var xAxisSpacing = function (value) {
     return splitedValue
         .map(function (item) {
         if (isInclude(item, "px")) {
-            return (0, utils_1.pxToVwString)(parseInt(item, 10));
+            return (0, src_1.pxToVwString)(parseInt(item, 10));
         }
         return item;
     })
@@ -48,10 +48,10 @@ var convertBothAxis = function (value) {
     return splitedValue
         .map(function (item, index) {
         if ((index === 0 || index === 2) && isInclude(item, "px")) {
-            return (0, utils_1.pxToVhString)(parseInt(item, 10));
+            return (0, src_1.pxToVhString)(parseInt(item, 10));
         }
         else if ((index === 1 || index === 3) && isInclude(item, "px")) {
-            return (0, utils_1.pxToVwString)(parseInt(item, 10));
+            return (0, src_1.pxToVwString)(parseInt(item, 10));
         }
         else
             return item;

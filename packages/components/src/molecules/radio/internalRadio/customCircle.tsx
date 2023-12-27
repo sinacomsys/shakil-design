@@ -1,5 +1,5 @@
 import { useStyles } from "./style";
-import { useRoundToNearestEven } from "@shakil-design/utils";
+import { useRoundToNearestEven } from "@shakil-design/utils/src";
 export interface CustomCircleProps {
   borderColor: string | undefined;
   backgroundColor: string | undefined;

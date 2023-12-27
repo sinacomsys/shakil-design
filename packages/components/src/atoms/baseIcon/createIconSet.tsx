@@ -1,7 +1,7 @@
 import { CSSProperties, useContext } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { Unit } from "../../types";
-import { pxToVh } from "@shakil-design/utils";
+import { pxToVh } from "@shakil-design/utils/src";
 import { UnitContext } from "../../theme/context";
 
 export interface CreateIcomoonIconSetProps {

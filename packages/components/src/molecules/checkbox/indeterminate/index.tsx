@@ -1,5 +1,5 @@
 import { useStyles } from "./style";
-import { useRoundToNearestEven } from "@shakil-design/utils";
+import { useRoundToNearestEven } from "@shakil-design/utils/src";
 
 const Indeterminate = () => {
   const classes = useStyles();

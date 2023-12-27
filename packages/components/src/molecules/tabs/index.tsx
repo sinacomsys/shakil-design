@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactNode, useEffect, useState } from "react";
 import { Text } from "../../atoms/text";
-import { useHorizontalScroll } from "@shakil-design/utils";
+import { useHorizontalScroll } from "@shakil-design/utils/src";
 import { InternalTabPane } from "./internalTabPane";
 import { useStyles } from "./style";
 import { useTheme } from "../../theme";

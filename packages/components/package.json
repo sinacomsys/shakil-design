@@ -41,6 +41,10 @@
       }
     ]
   },
+  "dependencies": {
+    "@shakil-design/asset": "^0.0.72",
+    "@shakil-design/utils": "^0.0.72"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

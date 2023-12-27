@@ -1,7 +1,8 @@
 import { ScrollView } from "../../../../../atoms";
 import { Option } from "../../option";
 import { theming } from "../../../../../theme";
-import { InternalValue, MultiSelectProps } from "../../multiSelect";
+import { MultiSelectProps } from "../../multiSelect";
+import { isNullish } from "@shakil-design/utils/src";
 
 const { useTheme } = theming;
 
@@ -21,9 +22,10 @@ const MultiSelectList = <T extends Record<string, any>>({
 }: MultiSelectList<T>) => {
   const { disableText } = useTheme();
   const isNotSelectedItems = data.filter((item) => {
-    return !value?.find((_item) => {
+    const isSelected = value?.find((_item) => {
       return valueExtractor?.(item) === _item;
     });
+    return isNullish(isSelected);
   });
 
   return (

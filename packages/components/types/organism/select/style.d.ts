@@ -5,10 +5,10 @@ export declare const useStyles: (
       }
     | undefined,
 ) => import("jss").Classes<
-  | "clearIcon"
-  | "mask"
   | "select"
+  | "clearIcon"
   | "overlay"
+  | "mask"
   | "text-input"
   | "inputWrapper"
   | "selectWrapper"

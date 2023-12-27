@@ -1,5 +1,5 @@
 import { useStyles } from "./style";
-import { useRoundToNearestEven } from "@shakil-design/utils";
+import { useRoundToNearestEven } from "@shakil-design/utils/src";
 interface CustomRectangleProps {
   checked?: boolean;
 }

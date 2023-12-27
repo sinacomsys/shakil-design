@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tree = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
 var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/index.tsx";
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var react_1 = require("react");
 var collapse_1 = require("./collapse");
 var levelProvider_1 = require("./context/levelProvider");
@@ -41,8 +41,8 @@ var Tree = function (_a) {
     var data = _a.data, onSelectItem = _a.onSelectItem, onLoadData = _a.onLoadData, activeItemId = _a.activeItemId, defaultSeletedItem = _a.defaultSeletedItem;
     var level = (0, react_1.useContext)(levelProvider_1.LevelContext);
     var unit = (0, react_1.useContext)(treeProvider_1.TreeContext).unit;
-    var flat = (0, utils_1.flatData)(data);
-    var grandPrents = (0, utils_1.findGrandParents)(defaultSeletedItem, flat);
+    var flat = (0, src_1.flatData)(data);
+    var grandPrents = (0, src_1.findGrandParents)(defaultSeletedItem, flat);
     var classes = (0, style_1.useStyle)();
     return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["wrapper"], level > 1 && unit === "pixel"
             ? "".concat(classes["wrapper"]).concat(types_1.PX_UNIT)

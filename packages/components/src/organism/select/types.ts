@@ -1,8 +1,10 @@
 import { Unit } from "../../types";
 import { TextInputProps } from "../../molecules/textInput";
 import React from "react";
-export type Value = string | number | null | undefined;
-
+export interface DefaultValue {
+  value?: string;
+  label?: string;
+}
 interface TextInputCommon
   extends Pick<
     TextInputProps,
@@ -30,7 +32,7 @@ interface TextInputCommon
     | "clearIconColor"
     | "isLoading"
   > {}
-export interface SelectProps<T extends Record<string, any>>
+export interface SelectProps<T extends Record<string, any> = DefaultValue>
   extends Omit<TextInputCommon, "value"> {
   data: T[];
   onClear?: () => void;

@@ -46,7 +46,7 @@ var react_1 = __importStar(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
 var react_popper_1 = require("react-popper");
 var text_1 = require("../../atoms/text");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var style_1 = require("./style");
 var DropDown = function (_a) {
     var children = _a.children, _b = _a.trigger, trigger = _b === void 0 ? "hover" : _b, _c = _a.placement, placement = _c === void 0 ? "bottom" : _c, isVisibleProp = _a.isVisible, items = _a.items, onChange = _a.onChange, propValue = _a.value;
@@ -90,7 +90,7 @@ var DropDown = function (_a) {
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
     var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_dev_runtime_1.jsxDEV)("span", __assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 90, columnNumber: 8 }, _this));
-    (0, utils_1.useOnClickOutSide)({
+    (0, src_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
         handler: function () {
@@ -127,7 +127,7 @@ var DropDown = function (_a) {
             return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": item.value, onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 150, columnNumber: 13 }, _this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, _this));
         }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 137, columnNumber: 17 }, _this));
     return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
-                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 165, columnNumber: 13 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 163, columnNumber: 33 }, _this), body.current)
+                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 165, columnNumber: 15 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 163, columnNumber: 33 }, _this), body.current)
                 : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 159, columnNumber: 11 }, _this));
 };
 exports.DropDown = DropDown;

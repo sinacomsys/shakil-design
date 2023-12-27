@@ -53,7 +53,7 @@ var framer_motion_1 = require("framer-motion");
 var react_1 = __importStar(require("react"));
 var theme_1 = require("../../theme");
 var style_1 = require("./style");
-var utils_1 = require("@shakil-design/utils");
+var src_1 = require("@shakil-design/utils/src");
 var CIRCLE_WIDTH = 12;
 var SWITCH_WIDTH = 30;
 var SWITCH_HEIGHT = 16;
@@ -74,9 +74,9 @@ var Switch = react_1.default.forwardRef(function (_a, ref) {
         setFocus(false);
         onBlur === null || onBlur === void 0 ? void 0 : onBlur(e);
     };
-    var _width = unit === "viewport" ? (0, utils_1.pxToVhString)(SWITCH_WIDTH) : SWITCH_WIDTH;
-    var _height = unit === "viewport" ? (0, utils_1.pxToVhString)(SWITCH_HEIGHT) : SWITCH_HEIGHT;
-    var _circle = unit === "viewport" ? (0, utils_1.pxToVhString)(CIRCLE_WIDTH) : "".concat(CIRCLE_WIDTH, "px");
+    var _width = unit === "viewport" ? (0, src_1.pxToVhString)(SWITCH_WIDTH) : SWITCH_WIDTH;
+    var _height = unit === "viewport" ? (0, src_1.pxToVhString)(SWITCH_HEIGHT) : SWITCH_HEIGHT;
+    var _circle = unit === "viewport" ? (0, src_1.pxToVhString)(CIRCLE_WIDTH) : "".concat(CIRCLE_WIDTH, "px");
     return ((0, jsx_dev_runtime_1.jsxDEV)("label", __assign({ style: { display: "inline-block", position: "relative" } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": testId, role: "switch", className: classes["wrapper"], style: {
                     backgroundColor: checked ? checkedColor : unchecked,
                     width: _width,

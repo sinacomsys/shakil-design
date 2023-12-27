@@ -10,7 +10,7 @@ import { Header } from "./header";
 import { SearchBar } from "./searchBar";
 import { useStyles } from "./style";
 import classNames from "classnames";
-import { pxToVw, useWindowSize } from "@shakil-design/utils";
+import { pxToVw, useWindowSize } from "@shakil-design/utils/src";
 import { TableBody } from "./body";
 import React from "react";
 

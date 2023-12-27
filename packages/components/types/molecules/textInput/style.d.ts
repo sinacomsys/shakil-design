@@ -7,11 +7,11 @@ declare const useStyles: (
     | undefined,
 ) => import("jss").Classes<
   | "disabled"
-  | "text-input"
   | "clear-icon"
+  | "textInput"
   | "text-area"
   | "input-with-error"
-  | "input-wrapper"
+  | "inputWrapper"
   | "addonBefore"
   | "addonAfter"
   | "error-message"
