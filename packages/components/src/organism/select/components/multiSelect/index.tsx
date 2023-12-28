@@ -24,7 +24,6 @@ const MultiSelect = <T extends Record<string, any>>({
 }: MultiSelectProps<T>) => {
   const handleOnChange = (selectedItemValue: T[keyof T]) => {
     const alreadyExist = value?.find((item) => item === selectedItemValue);
-    console.log({ alreadyExist });
     if (!isNullish(alreadyExist)) {
       const items = (value || []).filter((item) => {
         return item !== selectedItemValue;

@@ -34,5 +34,6 @@ declare const Template: <T extends Record<string, any>>({
   isLoading,
   displayValue,
   renderOverlay,
+  onSearch,
 }: TemplateProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Template };

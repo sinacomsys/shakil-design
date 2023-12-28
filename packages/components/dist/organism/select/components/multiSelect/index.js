@@ -42,7 +42,6 @@ var MultiSelect = function (_a) {
     var onChange = _a.onChange, value = _a.value, data = _a.data, _b = _a.valueExtractor, valueExtractor = _b === void 0 ? function (item) { return item.value; } : _b, _c = _a.labelExtractor, labelExtractor = _c === void 0 ? function (item) { return item.label; } : _c, onClear = _a.onClear, props = __rest(_a, ["onChange", "value", "data", "valueExtractor", "labelExtractor", "onClear"]);
     var handleOnChange = function (selectedItemValue) {
         var alreadyExist = value === null || value === void 0 ? void 0 : value.find(function (item) { return item === selectedItemValue; });
-        console.log({ alreadyExist: alreadyExist });
         if (!(0, src_1.isNullish)(alreadyExist)) {
             var items = (value || []).filter(function (item) {
                 return item !== selectedItemValue;
@@ -61,8 +60,8 @@ var MultiSelect = function (_a) {
         onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
     return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, renderOverlay: function () {
-            return ((0, jsx_dev_runtime_1.jsxDEV)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, data: data }, void 0, false, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 11 }, _this));
+            return ((0, jsx_dev_runtime_1.jsxDEV)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, data: data }, void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 17 }, _this));
+        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 11 }, _this));
 };
 exports.MultiSelect = MultiSelect;
 //# sourceMappingURL=index.js.map

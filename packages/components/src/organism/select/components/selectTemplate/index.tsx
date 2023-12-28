@@ -44,6 +44,7 @@ const Template = <T extends Record<string, any>>({
   isLoading,
   displayValue,
   renderOverlay,
+  onSearch,
 }: TemplateProps<T>) => {
   const classes = useStyles();
   const [isVisible, setVisible] = useState(false);
@@ -87,6 +88,11 @@ const Template = <T extends Record<string, any>>({
       setVisible(false);
     },
   });
+
+  const handleOnSearch = (value: string) => {
+    onSearch?.(value);
+    setSearchValue(value);
+  };
 
   return (
     <>
@@ -154,9 +160,7 @@ const Template = <T extends Record<string, any>>({
                             size={{ height: 15, width: 15 }}
                           />
                         }
-                        onChangeText={(value) => {
-                          setSearchValue(value);
-                        }}
+                        onChangeText={handleOnSearch}
                       />
                     </div>
                   ) : null}

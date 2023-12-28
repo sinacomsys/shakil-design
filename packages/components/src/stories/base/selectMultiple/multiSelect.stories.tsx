@@ -31,7 +31,7 @@ const Template: Story<any> = () => {
           valueExtractor={({ test }) => test}
           labelExtractor={({ test1 }) => test1}
           onChange={(value) => {
-            setValue(value.map((value) => value) as string[]);
+            setValue(value?.map((value) => value) as string[]);
           }}
         />
       </div>
