@@ -5,6 +5,6 @@ declare const useStyle: (
       }
     | undefined,
 ) => import("jss").Classes<
-  "wrapper" | "month" | "year" | "nextMonth" | "prevMonth"
+  "wrapper" | "month" | "year" | "nextMonth" | "prevMonth" | "change-year"
 >;
 export { useStyle };

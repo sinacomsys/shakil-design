@@ -4,6 +4,7 @@ import { WrapperTemplate } from "../wrapperTemplate";
 import { Moment } from "moment-jalaali";
 import { DatePickerPanel } from "../datePickerPanel";
 import { DatePickerProviderProps } from "../types";
+import moment from "moment-jalaali";
 
 type Value = Moment | null | undefined;
 interface RangePickerPanelProps
@@ -15,7 +16,11 @@ interface RangePickerPanelProps
   onChange?: (value: { from: Value; to: Value }) => void;
 }
 
-const RangePickerPanel = ({ value, onChange }: RangePickerPanelProps) => {
+const RangePickerPanel = ({
+  value,
+  onChange,
+  calendarMode,
+}: RangePickerPanelProps) => {
   const [startDate, setStartDate] = useState<Moment | null | undefined>(
     undefined,
   );
@@ -67,21 +72,42 @@ const RangePickerPanel = ({ value, onChange }: RangePickerPanelProps) => {
     setEndDate(value?.to);
   }, [value?.from, value?.to]);
 
-  const handleExtendStartDate = () => {
-    setStartDateExtend((prev) => !prev);
+  const handleExtendStartDate = ({
+    status,
+  }: {
+    status: "extend" | "shrink";
+  }) => {
+    if (status === "extend") {
+      setStartDateExtend(true);
+    } else if (status === "shrink") {
+      setStartDateExtend(false);
+    }
   };
 
-  const handleExtendEndDate = () => {
-    setEndDateExtend((prev) => !prev);
+  const handleExtendEndDate = ({ status }: { status: "extend" | "shrink" }) => {
+    if (status === "extend") {
+      setEndDateExtend(true);
+    } else if (status === "shrink") {
+      setEndDateExtend(false);
+    }
   };
 
   const isConfirmDisable =
     !isStartDateDisable || !isEndDateDisable || !startDate || !endDate;
 
+  const handleOnGoToday = () => {
+    if (!isStartDateDisable) {
+      setStartDate(moment());
+    } else if (isStartDateDisable && !isEndDateDisable) {
+      setEndDate(moment());
+    }
+  };
+
   return (
     <WrapperTemplate
       disable={isConfirmDisable}
       onFinalConfirm={handleFinalConfirm}
+      onGoToday={handleOnGoToday}
     >
       <DatePickerProvider
         isDisable={isStartDateDisable}
@@ -90,6 +116,7 @@ const RangePickerPanel = ({ value, onChange }: RangePickerPanelProps) => {
         value={startDate}
         isCalendarExtended={isStartDateExtended}
         handleExtendCalendar={handleExtendStartDate}
+        calendarMode={calendarMode}
       >
         {() => {
           return <DatePickerPanel />;
@@ -103,6 +130,7 @@ const RangePickerPanel = ({ value, onChange }: RangePickerPanelProps) => {
         value={endDate}
         isCalendarExtended={isEndDateExtended}
         handleExtendCalendar={handleExtendEndDate}
+        calendarMode={calendarMode}
       >
         {() => {
           return <DatePickerPanel />;

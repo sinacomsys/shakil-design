@@ -52,9 +52,11 @@ var InputDatePicker = function (_a) {
     var _value = props.value ? props.value : value;
     var inputValue = _value ? _value === null || _value === void 0 ? void 0 : _value.format(calendarMode_1.PERSIAN_FULL_TIME_FORMAT) : "";
     return ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Tooltip, __assign({ trigger: "click", content: (0, jsx_dev_runtime_1.jsxDEV)(datePickerProvider_1.DatePickerProvider, __assign({}, props, { children: function (_a) {
-                var value = _a.value, disable = _a.disable;
-                return ((0, jsx_dev_runtime_1.jsxDEV)(wrapperTemplate_1.WrapperTemplate, __assign({ value: value, disable: disable, onFinalConfirm: handleOnConfirmDate }, { children: (0, jsx_dev_runtime_1.jsxDEV)(datePickerPanel_1.DatePickerPanel, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 21 }, _this));
-            } }), void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 16 }, _this) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(textInput_1.TextInput, { AddonAfter: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { color: Colors.disableText, name: "Table-_-Clock", size: { height: 18, width: 18 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 64, columnNumber: 21 }, _this), onClear: handleOnClearValue, allowClear: props.allowClear, value: inputValue }, void 0, false, { fileName: _jsxFileName, lineNumber: 63, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, _this));
+                var value = _a.value, disable = _a.disable, onGoToday = _a.onGoToday;
+                return ((0, jsx_dev_runtime_1.jsxDEV)(wrapperTemplate_1.WrapperTemplate, __assign({ disable: disable, onFinalConfirm: function () {
+                        handleOnConfirmDate({ value: value });
+                    }, onGoToday: onGoToday }, { children: (0, jsx_dev_runtime_1.jsxDEV)(datePickerPanel_1.DatePickerPanel, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 58, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 21 }, _this));
+            } }), void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 16 }, _this) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(textInput_1.TextInput, { AddonAfter: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { color: Colors.disableText, name: "Table-_-Clock", size: { height: 18, width: 18 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 21 }, _this), onClear: handleOnClearValue, allowClear: props.allowClear, value: inputValue }, void 0, false, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, _this));
 };
 exports.InputDatePicker = InputDatePicker;
 //# sourceMappingURL=index.js.map

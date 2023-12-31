@@ -4,11 +4,7 @@ import { DatePickerProviderProps } from "./components/types";
 interface DatePickerContext
   extends Pick<
     DatePickerProviderProps,
-    | "calendarMode"
-    | "isDisable"
-    | "onOkDate"
-    | "disableDateFrom"
-    | "onEditAgain"
+    "calendarMode" | "onOkDate" | "disableDateFrom"
   > {
   currentDate: DatePickerProviderProps["value"];
   onAddMonth: () => void;
@@ -19,7 +15,6 @@ interface DatePickerContext
   handleSelectDateFromMatrix: (value: Moment) => void;
   handleSetSelectedDateFromInputs: (value: Moment) => void;
   selectedDate: DatePickerProviderProps["value"];
-  isCalendarExtended?: boolean;
   monthMatrix: Moment[][];
   isMatrixOpen: boolean;
   formats: {
@@ -32,10 +27,11 @@ interface DatePickerContext
     SHORT_DAY_FORMAT: string;
     MONTH: string;
   };
-  isConfirmed: boolean;
-  onConfirmDate: (value: boolean) => void;
+  onConfirmDate: () => void;
   onExtendMatrix: () => void;
   onShrinkMatrix: () => void;
+  isConfirmed: boolean;
+  onEditAgain: () => void;
 }
 export declare const DatePickerContext: import("react").Context<DatePickerContext>;
 export {};

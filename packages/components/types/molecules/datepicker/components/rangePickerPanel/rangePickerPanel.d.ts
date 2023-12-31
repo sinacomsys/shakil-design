@@ -12,5 +12,6 @@ interface RangePickerPanelProps
 declare const RangePickerPanel: ({
   value,
   onChange,
+  calendarMode,
 }: RangePickerPanelProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { RangePickerPanel };

@@ -15,11 +15,7 @@ import {
 interface DatePickerContext
   extends Pick<
     DatePickerProviderProps,
-    | "calendarMode"
-    | "isDisable"
-    | "onOkDate"
-    | "disableDateFrom"
-    | "onEditAgain"
+    "calendarMode" | "onOkDate" | "disableDateFrom"
   > {
   currentDate: DatePickerProviderProps["value"];
   onAddMonth: () => void;
@@ -30,7 +26,6 @@ interface DatePickerContext
   handleSelectDateFromMatrix: (value: Moment) => void;
   handleSetSelectedDateFromInputs: (value: Moment) => void;
   selectedDate: DatePickerProviderProps["value"];
-  isCalendarExtended?: boolean;
   monthMatrix: Moment[][];
   isMatrixOpen: boolean;
   formats: {
@@ -43,10 +38,11 @@ interface DatePickerContext
     SHORT_DAY_FORMAT: string;
     MONTH: string;
   };
-  isConfirmed: boolean;
-  onConfirmDate: (value: boolean) => void;
+  onConfirmDate: () => void;
   onExtendMatrix: () => void;
   onShrinkMatrix: () => void;
+  isConfirmed: boolean;
+  onEditAgain: () => void;
 }
 
 export const DatePickerContext = createContext<DatePickerContext>({
@@ -59,7 +55,6 @@ export const DatePickerContext = createContext<DatePickerContext>({
   handleSelectDateFromMatrix() {},
   handleSetSelectedDateFromInputs() {},
   selectedDate: null,
-  isCalendarExtended: false,
   monthMatrix: [],
   isMatrixOpen: false,
   calendarMode: "persian",
@@ -73,9 +68,9 @@ export const DatePickerContext = createContext<DatePickerContext>({
     MONTH: PERSIAN_MONTH,
     MONTH_NUMBER_FORMAT: PERSIAN_MONTH_NUMBER_FORMAT,
   },
-  onEditAgain() {},
   isConfirmed: false,
   onConfirmDate() {},
   onExtendMatrix() {},
   onShrinkMatrix() {},
+  onEditAgain() {},
 });

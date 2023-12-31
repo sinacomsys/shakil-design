@@ -16,11 +16,23 @@ var useStyle = (0, react_jss_1.createUseStyles)({
         right: 0,
         cursor: "pointer",
         top: 20,
+        width: 20,
+        height: 20,
     },
     prevMonth: {
         position: "absolute",
         left: 0,
         top: 20,
+        cursor: "pointer",
+        width: 20,
+        height: 20,
+    },
+    "change-year": {
+        width: 15,
+        height: 15,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         cursor: "pointer",
     },
     wrapper: {

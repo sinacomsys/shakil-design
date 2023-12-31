@@ -37,48 +37,55 @@ export const Header = () => {
 
   return (
     <div className={classes["wrapper"]}>
-      <BaseIcon
-        onClick={onSubtractMonth}
-        wrapperClassName={classes["prevMonth"]}
-        name="Calendar-_-Month-_-Previous-Month"
-        size={{
-          width: 16,
-          height: 9,
-        }}
-        color={["white"]}
-      />
-      <BaseIcon
-        onClick={onAddMonth}
-        wrapperClassName={classes["nextMonth"]}
-        name="Calendar-_-Month-_-Next-Month"
-        size={{
-          width: 16,
-          height: 9,
-        }}
-        color={["white"]}
-      />
+      <div className={classes["prevMonth"]} onClick={onSubtractMonth}>
+        <BaseIcon
+          name="Calendar-_-Month-_-Previous-Month"
+          size={{
+            width: 19,
+            height: 13,
+          }}
+          color={["white"]}
+        />
+      </div>
+      <div className={classes["nextMonth"]} onClick={onAddMonth}>
+        <BaseIcon
+          onClick={onAddMonth}
+          name="Calendar-_-Month-_-Next-Month"
+          size={{
+            width: 19,
+            height: 13,
+          }}
+          color={["white"]}
+        />
+      </div>
+
       <div className={classes["month"]}>
         <Text size={14} color={"white"} theme="Regular">
           {month ?? ""}
         </Text>
-        <div style={{ display: "flex", alignItems: "center", marginTop: 5 }}>
-          <BaseIcon
-            name="Calendar-_-Year-_-Previous-Year"
-            size={{ width: 9, height: 5 }}
-            color={["white"]}
-            onClick={onSubtractYear}
-            wrapperStyle={{ cursor: "pointer" }}
-          />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div className={classes["change-year"]}>
+            <BaseIcon
+              name="Calendar-_-Year-_-Previous-Year"
+              size={{ width: 13, height: 8 }}
+              color={["white"]}
+              onClick={onSubtractYear}
+              wrapperStyle={{ cursor: "pointer" }}
+            />
+          </div>
+
           <Text className={classes["year"]} color={"white"} size={14}>
             {year ?? ""}
           </Text>
-          <BaseIcon
-            name="Calendar-_-Year-_-Next-Year"
-            size={{ width: 9, height: 5 }}
-            color={["white"]}
-            onClick={onAddYear}
-            wrapperStyle={{ cursor: "pointer" }}
-          />
+          <div className={classes["change-year"]}>
+            <BaseIcon
+              name="Calendar-_-Year-_-Next-Year"
+              size={{ width: 13, height: 8 }}
+              color={["white"]}
+              onClick={onAddYear}
+              wrapperStyle={{ cursor: "pointer" }}
+            />
+          </div>
         </div>
       </div>
     </div>

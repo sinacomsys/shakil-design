@@ -9,15 +9,7 @@ import { useContext } from "react";
 import { DatePickerContext } from "../../context";
 import moment from "moment-jalaali";
 
-interface ManualImportDateProps {
-  onConfirmDate: () => void;
-  isConfirmed: boolean;
-}
-
-const ManualImportDate = ({
-  onConfirmDate,
-  isConfirmed,
-}: ManualImportDateProps) => {
+const ManualImportDate = () => {
   const { getValues, handleSubmit, setError } =
     ManualImportDateContext.useFormContext();
   const { errors } = ManualImportDateContext.useFormState();
@@ -27,8 +19,10 @@ const ManualImportDate = ({
     onShrinkMatrix,
     onSetCurrentDate,
     handleSetSelectedDateFromInputs,
-    formats: { FULL_DATE_FORMAT },
+    formats: { FULL_TIME_FORMAT },
     onOkDate,
+    isConfirmed,
+    onConfirmDate,
   } = useContext(DatePickerContext);
 
   const onConfirm = () => {
@@ -36,18 +30,18 @@ const ManualImportDate = ({
     const date = year && day && month ? `${year}/${month}/${day}` : undefined;
     const isDateValid = date && checkIsDateValid(date);
     if (isDateValid) {
-      onConfirmDate();
       const date =
         year && day && month
           ? moment(
               `${year}/${month}/${day} ${hour}:${minute}`,
-              FULL_DATE_FORMAT,
+              FULL_TIME_FORMAT,
             )
           : null;
       date && onSetCurrentDate(date);
       date && handleSetSelectedDateFromInputs(date);
       onOkDate?.(date);
       onShrinkMatrix();
+      onConfirmDate();
     } else {
       setError("day", { message: "invalid" });
       setError("month", { message: "invalid" });

@@ -15,6 +15,7 @@ export interface DatePickerProviderProps {
   }: {
     value: DatePickerProviderProps["value"];
     disable: boolean;
+    onGoToday: () => void;
   }) => React.ReactNode;
 }
 export {};

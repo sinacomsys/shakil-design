@@ -19,12 +19,10 @@ var react_1 = require("react");
 var atoms_1 = require("../../../../atoms");
 var style_1 = require("./style");
 var context_1 = require("../../context");
-var ExpandIcon = function (_a) {
-    var handleOndisproveDate = _a.handleOndisproveDate;
+var ExpandIcon = function () {
     var classes = (0, style_1.useStyles)();
-    var _b = (0, react_1.useContext)(context_1.DatePickerContext), onExtendMatrix = _b.onExtendMatrix, onShrinkMatrix = _b.onShrinkMatrix, isMatrixOpen = _b.isMatrixOpen;
+    var _a = (0, react_1.useContext)(context_1.DatePickerContext), onExtendMatrix = _a.onExtendMatrix, onShrinkMatrix = _a.onShrinkMatrix, isMatrixOpen = _a.isMatrixOpen;
     var handleOnClick = function () {
-        handleOndisproveDate();
         if (isMatrixOpen) {
             onShrinkMatrix();
         }
@@ -32,10 +30,10 @@ var ExpandIcon = function (_a) {
             onExtendMatrix();
         }
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: "".concat(classes["wrapper"], "--more-choices"), color: "#eeeeee", name: "Every-Boxes-_-Flesh-Icon-for-more-choices", size: { height: 5, width: 9 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 26, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, onClick: handleOnClick, color: "#eeeeee", name: "Calendar-_-Calendar-Icon", size: {
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: "".concat(classes["wrapper"], "--more-choices"), color: "#eeeeee", name: "Every-Boxes-_-Flesh-Icon-for-more-choices", size: { height: 5, width: 9 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 21, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, onClick: handleOnClick, color: "#eeeeee", name: "Calendar-_-Calendar-Icon", size: {
                     width: 18,
                     height: 18,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 32, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 }, _this));
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 27, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 19, columnNumber: 11 }, _this));
 };
 exports.ExpandIcon = ExpandIcon;
 //# sourceMappingURL=index.js.map

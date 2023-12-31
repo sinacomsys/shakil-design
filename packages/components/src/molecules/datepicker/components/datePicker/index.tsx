@@ -15,12 +15,14 @@ interface DatePickerProps
 const DatePicker = ({ onChange, ...rest }: DatePickerProps) => {
   return (
     <DatePickerProvider {...rest}>
-      {({ value, disable }) => {
+      {({ value, disable, onGoToday }) => {
         return (
           <WrapperTemplate
             disable={disable}
-            value={value}
-            onFinalConfirm={onChange}
+            onFinalConfirm={() => {
+              onChange?.({ value });
+            }}
+            onGoToday={onGoToday}
           >
             <DatePickerPanel />
           </WrapperTemplate>

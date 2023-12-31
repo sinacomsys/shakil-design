@@ -1,45 +1,31 @@
-import { Moment } from "moment-jalaali";
 import { BaseIcon, Text } from "../../../../atoms";
 import { useStyles } from "./style";
 import { Button } from "../../../button";
 
 const WrapperTemplate = ({
   children,
-  value,
+
   onFinalConfirm,
   disable,
+  onGoToday,
 }: {
   children: React.ReactNode;
-  value?: Moment | null;
-  onFinalConfirm?: (arg: { value: Moment | null | undefined }) => void;
+
+  onFinalConfirm?: () => void;
   disable: boolean;
+  onGoToday: () => void;
 }) => {
   const classes = useStyles();
 
   const handleConfirm = () => {
     if (disable) return;
-    onFinalConfirm?.({ value });
+    onFinalConfirm?.();
   };
-
-  // const onGoToDay = () => {
-  //   const current = moment();
-  //   const isPersian = calendarMode === "persian";
-  //   const year = isPersian ? current.jYear() : current.year();
-  //   const month = isPersian ? current.jMonth() : current.month();
-  //   const date = isPersian ? current.jDate() : current.date();
-  //   const hour = current.hour();
-  //   const minute = current.minute();
-  //   setValue("day", date as unknown as string);
-  //   setValue("hour", hour as unknown as string);
-  //   setValue("minute", minute as unknown as string);
-  //   setValue("month", (month + 1) as unknown as string);
-  //   setValue("year", year as unknown as string);
-  // };
 
   return (
     <div className={classes["wrapper"]}>
       {children}
-      <Button className={classes["go-today"]} size="small">
+      <Button onClick={onGoToday} className={classes["go-today"]} size="small">
         <Text size={14} color={"#FFFFFF"}>
           Go Today!
         </Text>

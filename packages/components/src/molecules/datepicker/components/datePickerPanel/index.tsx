@@ -7,34 +7,18 @@ import { ExpandIcon } from "../expandIcon";
 
 export const DatePickerPanel = () => {
   const classes = useStyle();
-  const { isDisable, onEditAgain, isConfirmed, onConfirmDate } =
-    useContext(DatePickerContext);
-
-  const handleOnOkDate = () => {
-    onConfirmDate(true);
-  };
-
-  const handleOndisproveDate = () => {
-    onConfirmDate(false);
-    onEditAgain?.();
-  };
-
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const _isDisable = isDisable || isConfirmed;
+  const { isConfirmed, onEditAgain } = useContext(DatePickerContext);
 
   return (
     <>
       <Calendar />
       <div className={classes["manualInput"]}>
-        <ManualImportDate
-          onConfirmDate={handleOnOkDate}
-          isConfirmed={_isDisable}
-        />
+        <ManualImportDate />
         <div className={classes["expand"]}>
-          <ExpandIcon handleOndisproveDate={handleOndisproveDate} />
+          <ExpandIcon />
         </div>
-        {_isDisable ? (
-          <div onClick={handleOndisproveDate} className={classes["overlay"]} />
+        {isConfirmed ? (
+          <div onClick={onEditAgain} className={classes["overlay"]} />
         ) : null}
       </div>
     </>

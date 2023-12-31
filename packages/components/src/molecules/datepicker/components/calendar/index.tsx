@@ -7,15 +7,13 @@ import { Matrix } from "../matrix";
 
 const Calendar = () => {
   const classes = useStyles();
-  const { isCalendarExtended, isMatrixOpen } = useContext(DatePickerContext);
-  const isExtended =
-    isCalendarExtended !== undefined ? isCalendarExtended : isMatrixOpen;
+  const { isMatrixOpen } = useContext(DatePickerContext);
 
   return (
     <div
       className={classes["calendar-wrapper"]}
       style={{
-        height: isExtended ? "auto" : 0,
+        height: isMatrixOpen ? "auto" : 0,
       }}
     >
       <Header />

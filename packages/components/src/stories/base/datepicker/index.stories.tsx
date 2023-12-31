@@ -16,7 +16,7 @@ const Template: Story<any> = () => {
     from: Moment | null | undefined;
     to: Moment | null | undefined;
   }>({
-    from: moment("1402/9/22", "jYYYY/jMM/jDD"),
+    from: null,
     to: moment("1403/10/30", "jYYYY/jMM/jDD"),
   });
 
@@ -39,7 +39,7 @@ const Template: Story<any> = () => {
               onChange={({ value }) => {
                 setDate(value);
               }}
-              calendarMode="persian"
+              calendarMode="gregorian"
             />
           }
           trigger="click"
@@ -52,8 +52,10 @@ const Template: Story<any> = () => {
           arrowColor="#575757"
           content={
             <RangePickerPanel
+              calendarMode="gregorian"
               value={{ from: range.from, to: range.to }}
               onChange={({ from, to }) => {
+                console.log(from?.format("jYYYY/jMM/jDD HH:mm"));
                 setRange({ from, to });
               }}
             />

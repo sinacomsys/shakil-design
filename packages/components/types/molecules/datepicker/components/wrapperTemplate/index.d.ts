@@ -1,15 +1,12 @@
-import { Moment } from "moment-jalaali";
 declare const WrapperTemplate: ({
   children,
-  value,
   onFinalConfirm,
   disable,
+  onGoToday,
 }: {
   children: React.ReactNode;
-  value?: Moment | null | undefined;
-  onFinalConfirm?:
-    | ((arg: { value: Moment | null | undefined }) => void)
-    | undefined;
+  onFinalConfirm?: (() => void) | undefined;
   disable: boolean;
+  onGoToday: () => void;
 }) => import("react/jsx-dev-runtime").JSX.Element;
 export { WrapperTemplate };

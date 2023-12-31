@@ -19,28 +19,14 @@ var atoms_1 = require("../../../../atoms");
 var style_1 = require("./style");
 var button_1 = require("../../../button");
 var WrapperTemplate = function (_a) {
-    var children = _a.children, value = _a.value, onFinalConfirm = _a.onFinalConfirm, disable = _a.disable;
+    var children = _a.children, onFinalConfirm = _a.onFinalConfirm, disable = _a.disable, onGoToday = _a.onGoToday;
     var classes = (0, style_1.useStyles)();
     var handleConfirm = function () {
         if (disable)
             return;
-        onFinalConfirm === null || onFinalConfirm === void 0 ? void 0 : onFinalConfirm({ value: value });
+        onFinalConfirm === null || onFinalConfirm === void 0 ? void 0 : onFinalConfirm();
     };
-    // const onGoToDay = () => {
-    //   const current = moment();
-    //   const isPersian = calendarMode === "persian";
-    //   const year = isPersian ? current.jYear() : current.year();
-    //   const month = isPersian ? current.jMonth() : current.month();
-    //   const date = isPersian ? current.jDate() : current.date();
-    //   const hour = current.hour();
-    //   const minute = current.minute();
-    //   setValue("day", date as unknown as string);
-    //   setValue("hour", hour as unknown as string);
-    //   setValue("minute", minute as unknown as string);
-    //   setValue("month", (month + 1) as unknown as string);
-    //   setValue("year", year as unknown as string);
-    // };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)(button_1.Button, __assign({ className: classes["go-today"], size: "small" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, color: "#FFFFFF" }, { children: "Go Today!" }), void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 42, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["footer-icons"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, name: "Calendar-_-Close", size: { height: 24, width: 24 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 48, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: handleConfirm, name: "Calendar-_-Apply-Changes", size: { height: 24, width: 24 }, wrapperStyle: { cursor: disable ? "not-allowed" : "pointer" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)(button_1.Button, __assign({ onClick: onGoToday, className: classes["go-today"], size: "small" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, color: "#FFFFFF" }, { children: "Go Today!" }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["footer-icons"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, name: "Calendar-_-Close", size: { height: 24, width: 24 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: handleConfirm, name: "Calendar-_-Apply-Changes", size: { height: 24, width: 24 }, wrapperStyle: { cursor: disable ? "not-allowed" : "pointer" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 11 }, _this));
 };
 exports.WrapperTemplate = WrapperTemplate;
 //# sourceMappingURL=index.js.map

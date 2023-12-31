@@ -23,17 +23,8 @@ var calendar_1 = require("../calendar");
 var expandIcon_1 = require("../expandIcon");
 var DatePickerPanel = function () {
     var classes = (0, style_1.useStyle)();
-    var _a = (0, react_1.useContext)(context_1.DatePickerContext), isDisable = _a.isDisable, onEditAgain = _a.onEditAgain, isConfirmed = _a.isConfirmed, onConfirmDate = _a.onConfirmDate;
-    var handleOnOkDate = function () {
-        onConfirmDate(true);
-    };
-    var handleOndisproveDate = function () {
-        onConfirmDate(false);
-        onEditAgain === null || onEditAgain === void 0 ? void 0 : onEditAgain();
-    };
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    var _isDisable = isDisable || isConfirmed;
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [(0, jsx_dev_runtime_1.jsxDEV)(calendar_1.Calendar, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 27, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["manualInput"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(manualImportDate_1.ManualImportDate, { onConfirmDate: handleOnOkDate, isConfirmed: _isDisable }, void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["expand"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(expandIcon_1.ExpandIcon, { handleOndisproveDate: handleOndisproveDate }, void 0, false, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 9 }, _this), _isDisable ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: handleOndisproveDate, className: classes["overlay"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 24 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 11 }, _this));
+    var _a = (0, react_1.useContext)(context_1.DatePickerContext), isConfirmed = _a.isConfirmed, onEditAgain = _a.onEditAgain;
+    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [(0, jsx_dev_runtime_1.jsxDEV)(calendar_1.Calendar, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 14, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["manualInput"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(manualImportDate_1.ManualImportDate, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 16, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["expand"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(expandIcon_1.ExpandIcon, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 18, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 17, columnNumber: 9 }, _this), isConfirmed ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: onEditAgain, className: classes["overlay"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 20, columnNumber: 25 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 15, columnNumber: 7 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 12, columnNumber: 11 }, _this));
 };
 exports.DatePickerPanel = DatePickerPanel;
 //# sourceMappingURL=index.js.map

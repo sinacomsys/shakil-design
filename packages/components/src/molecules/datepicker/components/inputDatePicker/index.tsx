@@ -46,12 +46,14 @@ const InputDatePicker = ({ onChange, ...props }: InputDatePickerProps) => {
       trigger="click"
       content={
         <DatePickerProvider {...props}>
-          {({ value, disable }) => {
+          {({ value, disable, onGoToday }) => {
             return (
               <WrapperTemplate
-                value={value}
                 disable={disable}
-                onFinalConfirm={handleOnConfirmDate}
+                onFinalConfirm={() => {
+                  handleOnConfirmDate({ value });
+                }}
+                onGoToday={onGoToday}
               >
                 <DatePickerPanel />
               </WrapperTemplate>

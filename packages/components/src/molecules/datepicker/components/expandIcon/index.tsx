@@ -3,17 +3,12 @@ import { BaseIcon } from "../../../../atoms";
 import { useStyles } from "./style";
 import { DatePickerContext } from "../../context";
 
-export const ExpandIcon = ({
-  handleOndisproveDate,
-}: {
-  handleOndisproveDate: () => void;
-}) => {
+export const ExpandIcon = () => {
   const classes = useStyles();
   const { onExtendMatrix, onShrinkMatrix, isMatrixOpen } =
     useContext(DatePickerContext);
 
   const handleOnClick = () => {
-    handleOndisproveDate();
     if (isMatrixOpen) {
       onShrinkMatrix();
     } else {

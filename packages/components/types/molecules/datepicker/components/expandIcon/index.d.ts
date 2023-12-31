@@ -1,5 +1,1 @@
-export declare const ExpandIcon: ({
-  handleOndisproveDate,
-}: {
-  handleOndisproveDate: () => void;
-}) => import("react/jsx-dev-runtime").JSX.Element;
+export declare const ExpandIcon: () => import("react/jsx-dev-runtime").JSX.Element;
