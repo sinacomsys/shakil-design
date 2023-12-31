@@ -37,6 +37,8 @@ export interface TableCommonType<T>
   noContent?: React.ReactNode;
   overScan?: number;
   onResetFilters?: () => void;
+  onLoadNextPage?: () => void;
+  isLoadingMore?: boolean;
 }
 
 export interface TablePropsWithMultipleSelectRows<T>
@@ -83,6 +85,8 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     onRow,
     mode,
     onResetFilters,
+    onLoadNextPage,
+    isLoadingMore,
   } = props;
 
   const { table: { header } = {} } = useTheme();
@@ -97,6 +101,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const [bodyHeight, setBodyHeight] = useState(0);
   const [isOverFlowed, setIsOverflowed] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
+  const lastItem = useRef<HTMLTableRowElement>(null);
 
   const vw = windowWidth / 100;
 
@@ -240,6 +245,29 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     estimateSize: () => estimateSize,
   });
 
+  useEffect(() => {
+    const item = lastItem.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          console.log("sag");
+          onLoadNextPage?.();
+        }
+      },
+      { threshold: 1 },
+    );
+
+    if (lastItem.current) {
+      observer.observe(lastItem.current);
+    }
+
+    return () => {
+      if (item) {
+        observer.unobserve(item);
+      }
+    };
+  }, [onLoadNextPage]);
+
   const { getVirtualItems, getTotalSize } = rowVirtualizer;
 
   const paddingTop =
@@ -372,7 +400,10 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                     coloums={coloums}
                     dataList={list}
                     width={boundsWidth || 0}
+                    loadingMore={isLoadingMore || false}
                   />
+
+                  <div ref={lastItem} />
                 </ScrollView>
               </div>
             </TableContext.Provider>

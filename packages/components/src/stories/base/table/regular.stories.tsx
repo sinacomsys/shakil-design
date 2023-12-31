@@ -11,7 +11,7 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(200)].map((_, index) => {
+const mockData = [...new Array(50)].map((_, index) => {
   return {
     name: faker.name.firstName(),
     family: faker.name.lastName(),
@@ -84,7 +84,15 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table rowKey="id" height={400} coloums={columns} data={mockData} />
+      <Table
+        rowKey="id"
+        height={400}
+        coloums={columns}
+        data={mockData}
+        onLoadNextPage={() => {
+          console.log("test");
+        }}
+      />
     </StoryContainer>
   );
 };

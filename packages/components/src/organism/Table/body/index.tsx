@@ -7,6 +7,7 @@ import { UnitContext } from "../../../theme/context";
 import { ReactElement, Ref, useContext } from "react";
 import { useMyTableContext } from "../context";
 import React from "react";
+import { Text } from "../../../atoms";
 
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableCommonType<T>, "coloums"> {
@@ -18,6 +19,7 @@ interface TableBodyProps<T extends Record<string, any>>
   paddingTop: number;
   paddingBottom: number;
   width: number;
+  loadingMore: boolean;
 }
 
 const TableBody = <T extends Record<string, any>>(
@@ -31,6 +33,7 @@ const TableBody = <T extends Record<string, any>>(
     paddingBottom,
     paddingTop,
     width,
+    loadingMore,
   }: TableBodyProps<T>,
   ref: Ref<HTMLDivElement>,
 ) => {
@@ -74,6 +77,22 @@ const TableBody = <T extends Record<string, any>>(
                   />
                 );
               })}
+              {loadingMore ? (
+                <tr>
+                  <td colSpan={6}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        width: "100%",
+                      }}
+                    >
+                      <Text size={20}>loading...</Text>
+                    </div>
+                  </td>
+                </tr>
+              ) : null}
+
               {paddingBottom > 0 && (
                 <tr style={{ height: `${paddingBottom}px` }}></tr>
               )}

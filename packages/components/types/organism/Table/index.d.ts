@@ -22,6 +22,8 @@ export interface TableCommonType<T>
   noContent?: React.ReactNode;
   overScan?: number;
   onResetFilters?: () => void;
+  onLoadNextPage?: () => void;
+  isLoadingMore?: boolean;
 }
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {

@@ -12,6 +12,7 @@ interface TableBodyProps<T extends Record<string, any>>
   paddingTop: number;
   paddingBottom: number;
   width: number;
+  loadingMore: boolean;
 }
 declare const TableBodyWrapper: <T extends Record<string, any>>(
   p: TableBodyProps<T> & {
