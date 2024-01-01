@@ -46,14 +46,17 @@ const SingleSelect = <T extends Record<string, any>>({
       displayValue={displayValue || ""}
       data={data}
       onClear={handleOnClear}
-      renderOverlay={() => {
+      renderOverlay={({ onClose }) => {
         return (
           <SingleSelectList
             data={data}
             labelExtractor={labelExtractor}
             valueExtractor={valueExtractor}
             internalValue={internalValue}
-            onClick={handleOnChange}
+            onClick={(value) => {
+              handleOnChange(value);
+              onClose();
+            }}
           />
         );
       }}

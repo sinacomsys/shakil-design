@@ -2,7 +2,7 @@
 import { SelectProps } from "../../types";
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;
-  renderOverlay: () => React.ReactNode;
+  renderOverlay: ({ onClose }: { onClose: () => void }) => React.ReactNode;
 }
 declare const Template: <T extends Record<string, any>>({
   onClear,

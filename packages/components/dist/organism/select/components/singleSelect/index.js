@@ -45,8 +45,12 @@ var SingleSelect = function (_a) {
         onClear === null || onClear === void 0 ? void 0 : onClear();
         onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, renderOverlay: function () {
-            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, labelExtractor: labelExtractor, valueExtractor: valueExtractor, internalValue: internalValue, onClick: handleOnChange }, void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 17 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, renderOverlay: function (_a) {
+            var onClose = _a.onClose;
+            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, labelExtractor: labelExtractor, valueExtractor: valueExtractor, internalValue: internalValue, onClick: function (value) {
+                    handleOnChange(value);
+                    onClose();
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 17 }, _this));
         } }), void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 }, _this));
 };
 exports.SingleSelect = SingleSelect;

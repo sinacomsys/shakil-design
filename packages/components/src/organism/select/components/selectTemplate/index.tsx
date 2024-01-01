@@ -11,7 +11,7 @@ import { useOnClickOutSide } from "@shakil-design/utils/src";
 
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;
-  renderOverlay: () => React.ReactNode;
+  renderOverlay: ({ onClose }: { onClose: () => void }) => React.ReactNode;
 }
 
 const Template = <T extends Record<string, any>>({
@@ -94,6 +94,10 @@ const Template = <T extends Record<string, any>>({
     setSearchValue(value);
   };
 
+  const onCloseOverlay = () => {
+    setVisible(false);
+  };
+
   return (
     <>
       <div ref={handleRefOfRefrenceElement}>
@@ -164,7 +168,7 @@ const Template = <T extends Record<string, any>>({
                       />
                     </div>
                   ) : null}
-                  {renderOverlay()}
+                  {renderOverlay({ onClose: onCloseOverlay })}
                 </div>
               </div>
             </>,
