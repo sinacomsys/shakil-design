@@ -9,6 +9,7 @@ interface DatePickerProps
 }
 declare const DatePicker: ({
   onChange,
+  testid,
   ...rest
 }: DatePickerProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { DatePicker };

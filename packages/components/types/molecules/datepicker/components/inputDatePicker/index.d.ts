@@ -11,6 +11,7 @@ interface InputDatePickerProps
 }
 declare const InputDatePicker: ({
   onChange,
+  testid,
   ...props
 }: InputDatePickerProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { InputDatePicker };

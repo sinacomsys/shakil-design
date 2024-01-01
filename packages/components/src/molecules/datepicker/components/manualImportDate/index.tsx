@@ -23,7 +23,10 @@ const ManualImportDate = () => {
     onOkDate,
     isConfirmed,
     onConfirmDate,
+    testid,
   } = useContext(DatePickerContext);
+
+  const { day, hour, minute, month, year, onOk } = testid || {};
 
   const onConfirm = () => {
     const { year, month, day, hour, minute } = getValues();
@@ -64,6 +67,7 @@ const ManualImportDate = () => {
               render={({ field: { value, onChange } }) => {
                 return (
                   <TextInput
+                    data-testid={year}
                     placeholder="Year"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.year)}
@@ -85,6 +89,7 @@ const ManualImportDate = () => {
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    data-testid={month}
                     placeholder="Month"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.month)}
@@ -106,6 +111,7 @@ const ManualImportDate = () => {
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    data-testid={day}
                     placeholder="Day"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.day)}
@@ -137,6 +143,7 @@ const ManualImportDate = () => {
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    data-testid={hour}
                     placeholder="Hour"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.hour)}
@@ -160,6 +167,7 @@ const ManualImportDate = () => {
               render={({ field: { onChange, value } }) => {
                 return (
                   <TextInput
+                    data-testid={minute}
                     placeholder="Min"
                     disabled={isConfirmed}
                     hasError={Boolean(errors.minute)}
@@ -174,6 +182,7 @@ const ManualImportDate = () => {
             />
           </div>
           <Button
+            data-testid={onOk}
             className={classes["input"]}
             size="small"
             onClick={handleSubmit(onConfirm)}

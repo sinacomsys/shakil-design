@@ -2,7 +2,7 @@ import { Moment } from "moment-jalaali";
 import { DatePickerProviderProps } from "../types";
 type Value = Moment | null | undefined;
 interface RangePickerPanelProps
-  extends Pick<DatePickerProviderProps, "calendarMode"> {
+  extends Pick<DatePickerProviderProps, "calendarMode" | "testid"> {
   value?: {
     from: Value;
     to: Value;
@@ -13,5 +13,6 @@ declare const RangePickerPanel: ({
   value,
   onChange,
   calendarMode,
+  testid,
 }: RangePickerPanelProps) => import("react/jsx-dev-runtime").JSX.Element;
 export { RangePickerPanel };

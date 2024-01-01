@@ -8,7 +8,7 @@ import moment from "moment-jalaali";
 
 type Value = Moment | null | undefined;
 interface RangePickerPanelProps
-  extends Pick<DatePickerProviderProps, "calendarMode"> {
+  extends Pick<DatePickerProviderProps, "calendarMode" | "testid"> {
   value?: {
     from: Value;
     to: Value;
@@ -20,6 +20,7 @@ const RangePickerPanel = ({
   value,
   onChange,
   calendarMode,
+  testid,
 }: RangePickerPanelProps) => {
   const [startDate, setStartDate] = useState<Moment | null | undefined>(
     undefined,
@@ -52,12 +53,13 @@ const RangePickerPanel = ({
   };
 
   const onEditAgainFromDate = () => {
+    if (!isEndDateDisable) return;
     setStartDateDisable(false);
     setEndDateDisable(true);
     setEndDateExtend(false);
   };
   const onEditAgainEndDate = () => {
-    if (!startDate) return;
+    if (!startDate || !isStartDateDisable) return;
     setEndDateDisable(false);
     setStartDateDisable(true);
     setStartDateExtend(false);
@@ -108,8 +110,10 @@ const RangePickerPanel = ({
       disable={isConfirmDisable}
       onFinalConfirm={handleFinalConfirm}
       onGoToday={handleOnGoToday}
+      testid={testid}
     >
       <DatePickerProvider
+        testid={testid}
         isDisable={isStartDateDisable}
         onOkDate={handleSetFromDate}
         onEditAgain={onEditAgainFromDate}
@@ -123,6 +127,7 @@ const RangePickerPanel = ({
         }}
       </DatePickerProvider>
       <DatePickerProvider
+        testid={testid}
         disableDateFrom={startDate}
         isDisable={isEndDateDisable}
         onOkDate={handleSetEndDate}

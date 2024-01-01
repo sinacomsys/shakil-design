@@ -12,12 +12,13 @@ interface DatePickerProps
   onChange?: (arg: { value: Moment | undefined | null }) => void;
 }
 
-const DatePicker = ({ onChange, ...rest }: DatePickerProps) => {
+const DatePicker = ({ onChange, testid, ...rest }: DatePickerProps) => {
   return (
     <DatePickerProvider {...rest}>
       {({ value, disable, onGoToday }) => {
         return (
           <WrapperTemplate
+            testid={testid}
             disable={disable}
             onFinalConfirm={() => {
               onChange?.({ value });

@@ -4,7 +4,7 @@ import { DatePickerProviderProps } from "./components/types";
 interface DatePickerContext
   extends Pick<
     DatePickerProviderProps,
-    "calendarMode" | "onOkDate" | "disableDateFrom"
+    "calendarMode" | "onOkDate" | "disableDateFrom" | "testid"
   > {
   currentDate: DatePickerProviderProps["value"];
   onAddMonth: () => void;

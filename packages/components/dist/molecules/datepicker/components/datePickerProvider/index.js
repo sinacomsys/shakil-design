@@ -25,7 +25,7 @@ var chuckDaysOfMonth_1 = require("../../utils/chuckDaysOfMonth");
 var context_2 = require("../manualImportDate/context");
 var generateMods_1 = require("../../utils/generateMods");
 var DatePickerProvider = function (_a) {
-    var handleExtendCalendar = _a.handleExtendCalendar, isMatrixOpenPorps = _a.isCalendarExtended, valueProps = _a.value, _b = _a.calendarMode, calendarMode = _b === void 0 ? "persian" : _b, onOkDate = _a.onOkDate, disableDateFrom = _a.disableDateFrom, children = _a.children, isDisableProps = _a.isDisable, onEditAgainProps = _a.onEditAgain;
+    var handleExtendCalendar = _a.handleExtendCalendar, isMatrixOpenPorps = _a.isCalendarExtended, valueProps = _a.value, _b = _a.calendarMode, calendarMode = _b === void 0 ? "persian" : _b, onOkDate = _a.onOkDate, disableDateFrom = _a.disableDateFrom, children = _a.children, isDisableProps = _a.isDisable, onEditAgainProps = _a.onEditAgain, testid = _a.testid;
     var isPersian = calendarMode === "persian";
     var setValue = context_2.ManualImportDateContext.useFormContext().setValue;
     var _c = (0, react_1.useState)(false), isConfirmed = _c[0], setConfirm = _c[1];
@@ -160,6 +160,7 @@ var DatePickerProvider = function (_a) {
         setValue("minute", minute === "00" ? "" : minute);
     };
     return ((0, jsx_dev_runtime_1.jsxDEV)(context_1.DatePickerContext.Provider, __assign({ value: {
+            testid: testid,
             onEditAgain: onEditAgain,
             onConfirmDate: onConfirmDate,
             isConfirmed: _isConfirm,
@@ -193,10 +194,10 @@ var DatePickerProvider = function (_a) {
             value: selectedDate,
             disable: !_isConfirm,
             onGoToday: handleOnGoToday,
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 179, columnNumber: 11 }, _this));
+        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 180, columnNumber: 11 }, _this));
 };
 var DatePickerProviderWrapper = function (props) {
-    return ((0, jsx_dev_runtime_1.jsxDEV)(context_2.ManualImportDateContext.Provider, __assign({ mode: "onChange" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(DatePickerProvider, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 225, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 223, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(context_2.ManualImportDateContext.Provider, __assign({ mode: "onChange" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(DatePickerProvider, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 227, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 225, columnNumber: 11 }, _this));
 };
 exports.DatePickerProvider = DatePickerProviderWrapper;
 //# sourceMappingURL=index.js.map

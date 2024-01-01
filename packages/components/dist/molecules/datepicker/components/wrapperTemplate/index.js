@@ -19,14 +19,15 @@ var atoms_1 = require("../../../../atoms");
 var style_1 = require("./style");
 var button_1 = require("../../../button");
 var WrapperTemplate = function (_a) {
-    var children = _a.children, onFinalConfirm = _a.onFinalConfirm, disable = _a.disable, onGoToday = _a.onGoToday;
+    var children = _a.children, onFinalConfirm = _a.onFinalConfirm, disable = _a.disable, onGoToday = _a.onGoToday, testid = _a.testid;
+    var _b = testid || {}, goToday = _b.goToday, confirm = _b.confirm;
     var classes = (0, style_1.useStyles)();
     var handleConfirm = function () {
         if (disable)
             return;
         onFinalConfirm === null || onFinalConfirm === void 0 ? void 0 : onFinalConfirm();
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)(button_1.Button, __assign({ onClick: onGoToday, className: classes["go-today"], size: "small" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, color: "#FFFFFF" }, { children: "Go Today!" }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["footer-icons"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, name: "Calendar-_-Close", size: { height: 24, width: 24 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: handleConfirm, name: "Calendar-_-Apply-Changes", size: { height: 24, width: 24 }, wrapperStyle: { cursor: disable ? "not-allowed" : "pointer" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 25, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)(button_1.Button, __assign({ "data-testid": goToday, onClick: onGoToday, className: classes["go-today"], size: "small" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 14, color: "#FFFFFF" }, { children: "Go Today!" }), void 0, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 31, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["footer-icons"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperStyle: { cursor: "pointer" }, name: "Calendar-_-Close", size: { height: 24, width: 24 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 42, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { "data-testid": confirm, onClick: handleConfirm, name: "Calendar-_-Apply-Changes", size: { height: 24, width: 24 }, wrapperStyle: { cursor: disable ? "not-allowed" : "pointer" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 11 }, _this));
 };
 exports.WrapperTemplate = WrapperTemplate;
 //# sourceMappingURL=index.js.map

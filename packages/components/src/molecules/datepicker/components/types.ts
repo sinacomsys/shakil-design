@@ -18,4 +18,14 @@ export interface DatePickerProviderProps {
     disable: boolean;
     onGoToday: () => void;
   }) => React.ReactNode;
+  testid?: {
+    year?: string;
+    month?: string;
+    day?: string;
+    hour?: string;
+    minute?: string;
+    onOk?: string;
+    goToday?: string;
+    confirm?: string;
+  };
 }

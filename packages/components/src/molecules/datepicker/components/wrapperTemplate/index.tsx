@@ -1,22 +1,25 @@
 import { BaseIcon, Text } from "../../../../atoms";
 import { useStyles } from "./style";
 import { Button } from "../../../button";
+import { DatePickerProviderProps } from "../types";
 
-const WrapperTemplate = ({
-  children,
-
-  onFinalConfirm,
-  disable,
-  onGoToday,
-}: {
+interface WrapperTemplateProps extends Pick<DatePickerProviderProps, "testid"> {
   children: React.ReactNode;
-
   onFinalConfirm?: () => void;
   disable: boolean;
   onGoToday: () => void;
-}) => {
-  const classes = useStyles();
+}
 
+const WrapperTemplate = ({
+  children,
+  onFinalConfirm,
+  disable,
+  onGoToday,
+  testid,
+}: WrapperTemplateProps) => {
+  const { goToday, confirm } = testid || {};
+
+  const classes = useStyles();
   const handleConfirm = () => {
     if (disable) return;
     onFinalConfirm?.();
@@ -25,7 +28,12 @@ const WrapperTemplate = ({
   return (
     <div className={classes["wrapper"]}>
       {children}
-      <Button onClick={onGoToday} className={classes["go-today"]} size="small">
+      <Button
+        data-testid={goToday}
+        onClick={onGoToday}
+        className={classes["go-today"]}
+        size="small"
+      >
         <Text size={14} color={"#FFFFFF"}>
           Go Today!
         </Text>
@@ -37,6 +45,7 @@ const WrapperTemplate = ({
           size={{ height: 24, width: 24 }}
         />
         <BaseIcon
+          data-testid={confirm}
           onClick={handleConfirm}
           name="Calendar-_-Apply-Changes"
           size={{ height: 24, width: 24 }}

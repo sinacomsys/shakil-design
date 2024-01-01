@@ -16,6 +16,7 @@ const DatePickerProvider = ({
   children,
   isDisable: isDisableProps,
   onEditAgain: onEditAgainProps,
+  testid,
 }: DatePickerProviderProps) => {
   const isPersian = calendarMode === "persian";
   const { setValue } = ManualImportDateContext.useFormContext();
@@ -179,6 +180,7 @@ const DatePickerProvider = ({
   return (
     <DatePickerContext.Provider
       value={{
+        testid,
         onEditAgain,
         onConfirmDate,
         isConfirmed: _isConfirm,

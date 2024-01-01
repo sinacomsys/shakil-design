@@ -20,7 +20,11 @@ interface InputDatePickerProps
   onClear?: () => void;
 }
 
-const InputDatePicker = ({ onChange, ...props }: InputDatePickerProps) => {
+const InputDatePicker = ({
+  onChange,
+  testid,
+  ...props
+}: InputDatePickerProps) => {
   const [value, setValue] = useState<Moment | null | undefined>(undefined);
   const Colors = useTheme();
   const handleOnConfirmDate = ({
@@ -54,6 +58,7 @@ const InputDatePicker = ({ onChange, ...props }: InputDatePickerProps) => {
                   handleOnConfirmDate({ value });
                 }}
                 onGoToday={onGoToday}
+                testid={testid}
               >
                 <DatePickerPanel />
               </WrapperTemplate>
