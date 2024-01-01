@@ -20,6 +20,7 @@ exports.TableContext = (0, react_1.createContext)({
     data: [],
     mode: "single",
     onDeselectCheckedRows: function () { },
+    onLoadNextPage: function () { },
 });
 function useMyTableContext() {
     return (0, react_1.useContext)(exports.TableContext);

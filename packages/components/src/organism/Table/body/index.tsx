@@ -4,7 +4,7 @@ import { pxToVwString } from "@shakil-design/utils/src";
 import { Rows } from "../rowContainer";
 import { TableCommonType } from "..";
 import { UnitContext } from "../../../theme/context";
-import { ReactElement, Ref, useContext } from "react";
+import { ReactElement, Ref, useCallback, useContext, useRef } from "react";
 import { useMyTableContext } from "../context";
 import React from "react";
 import { Text } from "../../../atoms";
@@ -38,8 +38,23 @@ const TableBody = <T extends Record<string, any>>(
   ref: Ref<HTMLDivElement>,
 ) => {
   const classes = useStyles();
+  const observer = useRef<any>(null);
   const { unit } = useContext(UnitContext);
-  const { testid, virtualizer, rowKey } = useMyTableContext<T>();
+  const { testid, virtualizer, rowKey, onLoadNextPage } =
+    useMyTableContext<T>();
+
+  const lastItemRef = useCallback(
+    (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          onLoadNextPage?.();
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [onLoadNextPage],
+  );
 
   return (
     <>
@@ -67,6 +82,18 @@ const TableBody = <T extends Record<string, any>>(
               {paddingTop > 0 && <tr style={{ height: `${paddingTop}px` }} />}
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
+                if (virtualRows.length === index + 1) {
+                  return (
+                    <Rows
+                      lastItem={lastItemRef}
+                      key={rowKey ? row[rowKey] : index}
+                      rowData={row}
+                      index={index}
+                      columns={coloums}
+                      virtualItem={virtualRow}
+                    />
+                  );
+                }
                 return (
                   <Rows
                     key={rowKey ? row[rowKey] : index}

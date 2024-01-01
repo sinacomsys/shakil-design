@@ -1,6 +1,5 @@
 import { Virtualizer } from "@tanstack/react-virtual";
 import { createContext, useContext } from "react";
-import { ColumnType } from "../column";
 
 export type Order = undefined | "ascending" | "descending";
 type TableRowSelectionMode = "single" | "multiple";
@@ -33,6 +32,7 @@ export interface TableContextProps<T> {
   data: T[];
   mode?: TableRowSelectionMode;
   onDeselectCheckedRows: (arg: T) => void;
+  onLoadNextPage?: () => void;
 }
 
 export const TableContext = createContext<TableContextProps<any>>({
@@ -53,6 +53,7 @@ export const TableContext = createContext<TableContextProps<any>>({
   data: [],
   mode: "single",
   onDeselectCheckedRows() {},
+  onLoadNextPage() {},
 });
 
 export function useMyTableContext<T>() {

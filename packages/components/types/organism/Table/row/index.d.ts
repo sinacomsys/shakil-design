@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { LegacyRef } from "react";
 import { RowsProps } from "../rowContainer";
 import { VirtualItem } from "@tanstack/react-virtual";
 interface RowProps<T>
@@ -10,6 +10,7 @@ interface RowProps<T>
   isSelected: boolean;
   rowIndex: number;
   virtualItem: VirtualItem;
+  lastItem?: LegacyRef<HTMLTableRowElement>;
 }
 declare const Row: <T extends Record<string, unknown>>({
   isChecked,
@@ -18,6 +19,7 @@ declare const Row: <T extends Record<string, unknown>>({
   rowData,
   virtualItem,
   onClick,
+  lastItem,
   ...rest
 }: RowProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Row };

@@ -31,6 +31,7 @@ export interface TableContextProps<T> {
   data: T[];
   mode?: TableRowSelectionMode;
   onDeselectCheckedRows: (arg: T) => void;
+  onLoadNextPage?: () => void;
 }
 export declare const TableContext: import("react").Context<
   TableContextProps<any>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { LegacyRef, useCallback, useRef, useState } from "react";
 import { useStyles } from "./style";
 import { RowsProps } from "../rowContainer";
 import { useMyTableContext } from "../context";
@@ -13,6 +13,7 @@ interface RowProps<T>
   isSelected: boolean;
   rowIndex: number;
   virtualItem: VirtualItem;
+  lastItem?: LegacyRef<HTMLTableRowElement>;
 }
 
 const Row = <T extends Record<string, unknown>>({
@@ -22,6 +23,7 @@ const Row = <T extends Record<string, unknown>>({
   rowData,
   virtualItem,
   onClick,
+  lastItem,
   ...rest
 }: RowProps<T>) => {
   const { onRow, rowKey, mode, onSelectRow, onDeselectCheckedRows } =
@@ -38,6 +40,7 @@ const Row = <T extends Record<string, unknown>>({
     <tr
       {...rest}
       {...onRow?.(rowData, rowIndex)}
+      ref={lastItem}
       data-testid={rowKey ? `row-${String(rowData[rowKey])}` : rowIndex}
       onMouseEnter={(e) => {
         onRow?.(rowData, rowIndex).onMouseEnter?.(e);

@@ -30,7 +30,7 @@ var react_1 = require("react");
 var style_1 = require("./style");
 var context_1 = require("../context");
 var Row = function (_a) {
-    var isChecked = _a.isChecked, isSelected = _a.isSelected, rowIndex = _a.rowIndex, rowData = _a.rowData, virtualItem = _a.virtualItem, onClick = _a.onClick, rest = __rest(_a, ["isChecked", "isSelected", "rowIndex", "rowData", "virtualItem", "onClick"]);
+    var isChecked = _a.isChecked, isSelected = _a.isSelected, rowIndex = _a.rowIndex, rowData = _a.rowData, virtualItem = _a.virtualItem, onClick = _a.onClick, lastItem = _a.lastItem, rest = __rest(_a, ["isChecked", "isSelected", "rowIndex", "rowData", "virtualItem", "onClick", "lastItem"]);
     var _b = (0, context_1.useMyTableContext)(), onRow = _b.onRow, rowKey = _b.rowKey, mode = _b.mode, onSelectRow = _b.onSelectRow, onDeselectCheckedRows = _b.onDeselectCheckedRows;
     var _c = (0, react_1.useState)(false), isHoverd = _c[0], setIsHovered = _c[1];
     var classes = (0, style_1.useStyles)({
@@ -39,7 +39,7 @@ var Row = function (_a) {
         isOnCheckedRowsAvailable: mode === "multiple",
         isSelected: isSelected,
     });
-    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({}, rest, onRow === null || onRow === void 0 ? void 0 : onRow(rowData, rowIndex), { "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function (e) {
+    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({}, rest, onRow === null || onRow === void 0 ? void 0 : onRow(rowData, rowIndex), { ref: lastItem, "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function (e) {
             var _a, _b;
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseEnter) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(true);
@@ -52,7 +52,7 @@ var Row = function (_a) {
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             onSelectRow === null || onSelectRow === void 0 ? void 0 : onSelectRow(rowData);
             onDeselectCheckedRows(rowData);
-        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 11 }, _this));
+        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 }, _this));
 };
 exports.Row = Row;
 //# sourceMappingURL=index.js.map

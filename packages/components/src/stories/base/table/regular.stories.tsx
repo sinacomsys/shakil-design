@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Table } from "../../../organism/Table";
 import { StoryContainer } from "../../container";
 import React from "react";
@@ -11,19 +11,37 @@ export default {
   component: Table,
 } as Meta<any>;
 
-const mockData = [...new Array(50)].map((_, index) => {
-  return {
-    name: faker.name.firstName(),
-    family: faker.name.lastName(),
-    age: index,
-    city: faker.address.cityName(),
-    country: faker.address.country(),
-    address: "test address",
-    id: `${index}`,
-  };
-});
+interface DataType {
+  name: string;
+  family: string;
+  age: number;
+  city: string;
+  country: string;
+  address: string;
+  id: string;
+}
 
 const Template: Story<any> = () => {
+  const mockData = useMemo(() => {
+    return [...new Array(50)].map((_, index) => {
+      return {
+        name: faker.name.firstName(),
+        family: faker.name.lastName(),
+        age: index,
+        city: faker.address.cityName(),
+        country: faker.address.country(),
+        address: "test address",
+        id: `${index}`,
+      };
+    });
+  }, []);
+
+  const [data, setData] = useState<DataType[]>([]);
+
+  useEffect(() => {
+    setData(mockData);
+  }, [mockData]);
+
   const columns = useMemo((): ColumnType<{
     name: string;
     family: string;
@@ -84,15 +102,7 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table
-        rowKey="id"
-        height={400}
-        coloums={columns}
-        data={mockData}
-        onLoadNextPage={() => {
-          console.log("test");
-        }}
-      />
+      <Table rowKey="id" height={400} coloums={columns} data={data} />
     </StoryContainer>
   );
 };

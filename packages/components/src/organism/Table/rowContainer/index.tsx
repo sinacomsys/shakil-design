@@ -5,12 +5,14 @@ import { ColumnType } from "../column";
 import { useMyTableContext } from "../context";
 import { Row } from "../row";
 import { useStyles } from "./style";
+import { LegacyRef } from "react";
 
 export interface RowsProps<T> {
   rowData: T;
   columns: ColumnType<T>[];
   index: number;
   virtualItem: VirtualItem;
+  lastItem?: LegacyRef<HTMLTableRowElement>;
 }
 
 const Rows = <T extends Record<string, unknown>>({
@@ -18,16 +20,10 @@ const Rows = <T extends Record<string, unknown>>({
   columns,
   index: rowIndex,
   virtualItem,
+  lastItem,
 }: RowsProps<T>) => {
-  const {
-    selectedRow,
-
-    handleCheckRow,
-    checkedRows,
-    rowKey,
-    data,
-    mode,
-  } = useMyTableContext<T>();
+  const { selectedRow, handleCheckRow, checkedRows, rowKey, data, mode } =
+    useMyTableContext<T>();
 
   const classes = useStyles();
 
@@ -39,6 +35,7 @@ const Rows = <T extends Record<string, unknown>>({
 
   return (
     <Row
+      lastItem={lastItem}
       virtualItem={virtualItem}
       rowData={rowData}
       rowIndex={rowIndex}
