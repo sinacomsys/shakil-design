@@ -22,6 +22,10 @@ interface DataType {
 }
 
 const Template: Story<any> = () => {
+  const [selectedRow, setSelectedRow] = useState<DataType | undefined>(
+    undefined,
+  );
+
   const mockData = useMemo(() => {
     return [...new Array(50)].map((_, index) => {
       return {
@@ -102,7 +106,17 @@ const Template: Story<any> = () => {
 
   return (
     <StoryContainer>
-      <Table rowKey="id" height={400} coloums={columns} data={data} />
+      <Table
+        mode="single"
+        selectedRows={selectedRow}
+        rowKey="id"
+        height={400}
+        coloums={columns}
+        data={data}
+        onSelectRow={(value) => {
+          setSelectedRow(value);
+        }}
+      />
     </StoryContainer>
   );
 };

@@ -1,4 +1,4 @@
-import { LegacyRef, useCallback, useRef, useState } from "react";
+import { LegacyRef, useState } from "react";
 import { useStyles } from "./style";
 import { RowsProps } from "../rowContainer";
 import { useMyTableContext } from "../context";
@@ -52,8 +52,8 @@ const Row = <T extends Record<string, unknown>>({
       }}
       onClick={(e) => {
         onRow?.(rowData, rowIndex).onClick?.(e);
-        onSelectRow?.(rowData);
-        onDeselectCheckedRows(rowData);
+        mode === "single" && onSelectRow?.(rowData);
+        mode === "multiple" && onDeselectCheckedRows(rowData);
       }}
       className={classes["row"]}
     />

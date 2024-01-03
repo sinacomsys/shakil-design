@@ -24,11 +24,7 @@ const Rows = <T extends Record<string, unknown>>({
 }: RowsProps<T>) => {
   const { selectedRow, handleCheckRow, checkedRows, rowKey, data, mode } =
     useMyTableContext<T>();
-
   const classes = useStyles();
-
-  const _selectedRow = selectedRow as T;
-
   const isChecked = checkedRows.find(
     (item) => rowKey && item?.[rowKey] === rowData[rowKey],
   );
@@ -40,12 +36,12 @@ const Rows = <T extends Record<string, unknown>>({
       rowData={rowData}
       rowIndex={rowIndex}
       isSelected={Boolean(
-        rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey],
+        rowKey && selectedRow && selectedRow[rowKey] === rowData[rowKey],
       )}
       isChecked={Boolean(isChecked)}
     >
       <td style={{ height: "inherit" }}>
-        {rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? (
+        {rowKey && selectedRow && selectedRow[rowKey] === rowData[rowKey] ? (
           <div className={classes["selected"]} />
         ) : null}
         {mode === "multiple" ? (

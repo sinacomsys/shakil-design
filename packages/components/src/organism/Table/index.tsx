@@ -76,7 +76,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     filterIcon,
     clearFilterIcon,
     isLoading,
-    onSelectRow,
+    onSelectRow: onSelectRowProps,
     height,
     coloums,
     noContent,
@@ -87,6 +87,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     onResetFilters,
     onLoadNextPage,
     isLoadingMore,
+    selectedRows: selectedRowsProps,
   } = props;
 
   const { table: { header } = {} } = useTheme();
@@ -203,33 +204,39 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const handleOnSelectRow = (value: T) => {
     if (mode === "single") {
       setSelectedRow(value);
-      onSelectRow?.(value);
+      onSelectRowProps?.(value);
     }
   };
 
   const onCheckAllRows = () => {
-    if (!rowKey) return;
     setAllRowsChecked((prev) => !prev);
-    if (data) {
+    if (data && mode === "multiple") {
       setCheckRows(data);
+      onSelectRowProps?.(data);
     }
-    if (isAllRowsChecked) {
+    if (isAllRowsChecked && mode === "multiple") {
       setCheckRows([]);
+      onSelectRowProps?.([]);
     }
   };
 
   useEffect(() => {
-    if (mode === "multiple") {
-      onSelectRow?.(checkedRows);
-    }
     if (checkedRows.length === 0) {
       setAllRowsChecked(false);
-      return;
-    }
-    if (checkedRows.length === data?.length) {
+    } else if (checkedRows.length === data?.length) {
       setAllRowsChecked(true);
     }
-  }, [data, checkedRows, mode, onSelectRow]);
+  }, [data, checkedRows, mode]);
+
+  useEffect(() => {
+    if (mode === "single") {
+      setSelectedRow(selectedRowsProps);
+      setCheckRows([]);
+    } else if (mode === "multiple") {
+      setCheckRows(selectedRowsProps || []);
+      setSelectedRow(undefined);
+    }
+  }, [selectedRowsProps, mode]);
 
   const estimateSize = useMemo(() => {
     return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
@@ -266,7 +273,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const onDeselectCheckedRows = (row: T) => {
     if (mode === "multiple") {
       setCheckRows([row]);
-      onSelectRow?.([row]);
+      onSelectRowProps?.([row]);
     }
   };
 

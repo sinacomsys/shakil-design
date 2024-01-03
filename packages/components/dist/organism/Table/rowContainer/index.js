@@ -24,12 +24,11 @@ var Rows = function (_a) {
     var rowData = _a.rowData, columns = _a.columns, rowIndex = _a.index, virtualItem = _a.virtualItem, lastItem = _a.lastItem;
     var _b = (0, context_1.useMyTableContext)(), selectedRow = _b.selectedRow, handleCheckRow = _b.handleCheckRow, checkedRows = _b.checkedRows, rowKey = _b.rowKey, data = _b.data, mode = _b.mode;
     var classes = (0, style_1.useStyles)();
-    var _selectedRow = selectedRow;
     var isChecked = checkedRows.find(function (item) { return rowKey && (item === null || item === void 0 ? void 0 : item[rowKey]) === rowData[rowKey]; });
-    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ lastItem: lastItem, virtualItem: virtualItem, rowData: rowData, rowIndex: rowIndex, isSelected: Boolean(rowKey && _selectedRow && _selectedRow[rowKey] === rowData[rowKey]), isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && _selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["selected"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 48, columnNumber: 79 }, _this)) : null, mode === "multiple" ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: function (e) {
+    return ((0, jsx_dev_runtime_1.jsxDEV)(row_1.Row, __assign({ lastItem: lastItem, virtualItem: virtualItem, rowData: rowData, rowIndex: rowIndex, isSelected: Boolean(rowKey && selectedRow && selectedRow[rowKey] === rowData[rowKey]), isChecked: Boolean(isChecked) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ style: { height: "inherit" } }, { children: [rowKey && selectedRow && selectedRow[rowKey] === rowData[rowKey] ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["selected"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 78 }, _this)) : null, mode === "multiple" ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: function (e) {
                             e.stopPropagation();
                             rowKey && handleCheckRow({ rowId: rowData[rowKey] });
-                        }, className: classes["check-box"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 59, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 51, columnNumber: 33 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 7 }, _this), columns.map(function (_a, index) {
+                        }, className: classes["check-box"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, checked: Boolean(isChecked) }, void 0, false, { fileName: _jsxFileName, lineNumber: 55, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 33 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 7 }, _this), columns.map(function (_a, index) {
                 var dataIndex = _a.dataIndex, render = _a.render, align = _a.align, ellipsis = _a.ellipsis;
                 var cell = rowData[dataIndex];
                 return ((0, jsx_dev_runtime_1.jsxDEV)(cell_1.Cell, __assign({ ellipsis: ellipsis, align: align }, { children: (0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: render
@@ -39,8 +38,8 @@ var Rows = function (_a) {
                                 row: rowData,
                                 data: data,
                             })
-                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 70, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 68, columnNumber: 17 }, _this));
-            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 11 }, _this));
+                            : cell }, void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 13 }, _this) }), index, false, { fileName: _jsxFileName, lineNumber: 64, columnNumber: 17 }, _this));
+            })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 32, columnNumber: 11 }, _this));
 };
 exports.Rows = Rows;
 //# sourceMappingURL=index.js.map
