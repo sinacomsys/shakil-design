@@ -98,7 +98,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
   const [checkedRows, setCheckRows] = useState<T[]>([]);
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
-  const tableContainerRef = useRef<HTMLDivElement>(null);
+  const tableContainerRef = useRef<HTMLDivElement | null>(null);
   const [bodyHeight, setBodyHeight] = useState(0);
   const [isOverFlowed, setIsOverflowed] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
@@ -282,19 +282,16 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
       {({ contentRect, measureRef }) => {
         const boundsWidth =
           (contentRect.bounds?.width || 0) - (isOverFlowed ? SCROLL_BAR : 0);
+
         const colWidth = calculateWidth(boundsWidth ?? 0);
 
         return (
-          <div
-            ref={measureRef}
-            className={classNames(
-              isLoading && classes["backDrop"],
-              classes["container"],
-            )}
-          >
+          <div ref={measureRef} className={classNames(classes["container"])}>
             {isLoading && (
-              <div className={classes["spinner"]}>
-                <Spinner size={"large"} />
+              <div className={`${classes["spinner"]}--overlay`}>
+                <div className={classes["spinner"]}>
+                  <Spinner size={"large"} />
+                </div>
               </div>
             )}
             <TableContext.Provider
@@ -304,7 +301,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                 onOrderChange,
                 order,
                 orderBy,
-                selectedRow: selectedRow,
+                selectedRow,
                 onSelectRow: handleOnSelectRow,
                 isOverflowed: isOverFlowed,
                 testid,
@@ -320,72 +317,79 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
               }}
             >
               <div className={classes["wrapper"]}>
-                <table className={classes["table"]} role={"table"}>
-                  <colgroup>
-                    <col
-                      style={{
-                        width: _searchIconWidth,
-                      }}
-                    />
-                    {coloums.map(({ width, dataIndex }) => {
-                      const _width = width && pxToVw(width) * vw;
-                      return (
-                        <col
-                          key={dataIndex as string}
-                          style={{ width: _width ? _width : colWidth }}
-                        />
-                      );
-                    })}
-                    {isOverFlowed ? (
-                      <col style={{ width: pxToVw(SCROLL_BAR) * vw }} />
-                    ) : null}
-                  </colgroup>
-                  <thead
-                    className={headerClassName}
-                    style={{
-                      backgroundColor: header,
-                      ...headerStyle,
-                    }}
-                  >
-                    <Header
-                      filterIcon={filterIcon}
-                      isSearchVisible={isSearchVisible}
-                      onToggleSearchBar={isSearchAvailable && onToggleSearchBar}
-                      columns={coloums}
-                      isIndeterminate={isIndeterminate}
-                    />
-
-                    {isSearchAvailable ? (
-                      <SearchBar
-                        isIndeterminate={isIndeterminate}
-                        clearFilterIcon={clearFilterIcon}
-                        searchBarStyle={searchBarStyle}
-                        searchBarClassName={searchBarClassName}
-                        columns={coloums}
-                        data={data || []}
-                        isSearchVisible={isSearchVisible}
-                        onResetFilters={onResetFilters}
+                {boundsWidth > 0 ? (
+                  <table className={classes["table"]} role={"table"}>
+                    <colgroup>
+                      <col
+                        style={{
+                          width: _searchIconWidth,
+                        }}
                       />
-                    ) : null}
-                  </thead>
-                </table>
+                      {coloums.map(({ width, dataIndex }) => {
+                        const _width = width && pxToVw(width) * vw;
+                        return (
+                          <col
+                            key={dataIndex as string}
+                            style={{ width: _width ? _width : colWidth }}
+                          />
+                        );
+                      })}
+                      {isOverFlowed ? (
+                        <col style={{ width: pxToVw(SCROLL_BAR) * vw }} />
+                      ) : null}
+                    </colgroup>
+                    <thead
+                      className={headerClassName}
+                      style={{
+                        backgroundColor: header,
+                        ...headerStyle,
+                      }}
+                    >
+                      <Header
+                        filterIcon={filterIcon}
+                        isSearchVisible={isSearchVisible}
+                        onToggleSearchBar={
+                          isSearchAvailable && onToggleSearchBar
+                        }
+                        columns={coloums}
+                        isIndeterminate={isIndeterminate}
+                      />
+
+                      {isSearchAvailable ? (
+                        <SearchBar
+                          isIndeterminate={isIndeterminate}
+                          clearFilterIcon={clearFilterIcon}
+                          searchBarStyle={searchBarStyle}
+                          searchBarClassName={searchBarClassName}
+                          columns={coloums}
+                          data={data || []}
+                          isSearchVisible={isSearchVisible}
+                          onResetFilters={onResetFilters}
+                        />
+                      ) : null}
+                    </thead>
+                  </table>
+                ) : null}
+
                 <ScrollView
                   ref={tableContainerRef}
                   className={classes["table-body"]}
                 >
-                  <TableBody
-                    ref={getBodyHeight}
-                    paddingTop={paddingTop}
-                    paddingBottom={paddingBottom}
-                    noContent={_noContent}
-                    searchIconWidth={_searchIconWidth}
-                    virtualRows={getVirtualItems()}
-                    colWidth={colWidth}
-                    coloums={coloums}
-                    dataList={list}
-                    width={boundsWidth || 0}
-                    loadingMore={isLoadingMore || false}
-                  />
+                  {boundsWidth > 0 ? (
+                    <TableBody
+                      ref={getBodyHeight}
+                      paddingTop={paddingTop}
+                      paddingBottom={paddingBottom}
+                      noContent={_noContent}
+                      searchIconWidth={_searchIconWidth}
+                      virtualRows={getVirtualItems()}
+                      colWidth={colWidth}
+                      coloums={coloums}
+                      dataList={list}
+                      width={boundsWidth || 0}
+                      loadingMore={isLoadingMore || false}
+                    />
+                  ) : null}
                 </ScrollView>
               </div>
             </TableContext.Provider>

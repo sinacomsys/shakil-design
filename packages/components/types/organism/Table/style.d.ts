@@ -7,5 +7,5 @@ export declare const useStyles: (
       })
     | undefined,
 ) => import("jss").Classes<
-  "container" | "table" | "spinner" | "wrapper" | "backDrop" | "table-body"
+  "container" | "table" | "spinner" | "wrapper" | "table-body"
 >;
