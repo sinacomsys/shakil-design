@@ -107,13 +107,14 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        mode="single"
+        mode="multiple"
         selectedRows={selectedRow}
         rowKey="id"
         height={400}
         coloums={columns}
         data={data}
         onSelectRow={(value) => {
+          console.log({ value });
           setSelectedRow(value);
         }}
       />

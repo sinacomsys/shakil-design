@@ -187,17 +187,22 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
         return rowKey && item[rowKey] !== rowId;
       });
       setCheckRows(filtered);
+      if (mode === "multiple") {
+        onSelectRowProps?.(filtered);
+      }
       return;
-    }
-
-    const selectedRow = (data || []).find((item) => {
-      return rowKey && item[rowKey] === rowId;
-    });
-
-    if (selectedRow) {
-      setCheckRows((prev) => {
-        return [...prev, selectedRow];
+    } else {
+      const selectedRow = (data || []).find((item) => {
+        return rowKey && item[rowKey] === rowId;
       });
+      if (selectedRow) {
+        setCheckRows((prev) => {
+          if (mode === "multiple") {
+            onSelectRowProps?.([...prev, selectedRow]);
+          }
+          return [...prev, selectedRow];
+        });
+      }
     }
   };
 
