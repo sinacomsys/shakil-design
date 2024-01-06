@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.6" height="29.479" viewBox="0 0 22.6 29.479">
+    <g data-name="Group 9748">
+        <g data-name="Title Bar Icon _ Lock">
+            <path data-name="Path 6232" d="M21.7 10.2h-3c-2.914-.008.26-.008-1.4 0H.8a.789.789 0 0 0-.8.8v17.8a.789.789 0 0 0 .8.8h21a.789.789 0 0 0 .8-.8V10.9a.961.961 0 0 0-.9-.7zM21 28H1.5V11.7h19.4V28z" style="fill:#575757" transform="translate(0 -.121)"/>
+            <g data-name="Group 9731">
+                <g data-name="Rectangle 50" transform="translate(7.338 14.272)" style="stroke:#575757;stroke-width:1.5px;fill:none">
+                    <rect width="8.39" height="8.39" rx="4.195" style="stroke:none"/>
+                    <rect x=".75" y=".75" width="6.89" height="6.89" rx="3.445" style="fill:none"/>
+                </g>
+                <path data-name="Line 39" transform="translate(6.871 21.297)" style="stroke-linecap:round;stroke:#575757;stroke-width:1.5px;fill:none" d="M0 1.881 1.831 0"/>
+            </g>
+        </g>
+        <g data-name="Group 9728">
+            <g data-name="Group 9729">
+                <path data-name="Path 6658" d="M.5 6.047a5.547 5.547 0 0 1 11.094 0v3.6" transform="translate(5.199 .25)" style="stroke-linejoin:round;stroke-miterlimit:10;stroke-linecap:round;stroke:#575757;stroke-width:1.5px;fill:none"/>
+            </g>
+        </g>
+    </g>
+</svg>
