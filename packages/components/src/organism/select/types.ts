@@ -1,4 +1,3 @@
-import { Unit } from "../../types";
 import { TextInputProps } from "../../molecules/textInput";
 import React from "react";
 
@@ -34,12 +33,10 @@ export interface SelectProps<T extends Record<string, any>>
   data: T[];
   onClear?: () => void;
   disabled?: boolean;
-  unit?: Unit;
   allowClear?: boolean;
   popupClassName?: string;
   popupStyles?: React.CSSProperties;
   multiple?: boolean;
-  onSearch?: (args: string) => void;
   hasSearch?: boolean;
   testid?: {
     overlay?: string;
@@ -47,4 +44,7 @@ export interface SelectProps<T extends Record<string, any>>
   };
   valueExtractor?: (item: T) => T[keyof T];
   labelExtractor?: (item: T) => string;
+  onFilter?: (args: { data: T[]; searchedValue: string }) => {
+    filterdData: T[];
+  };
 }

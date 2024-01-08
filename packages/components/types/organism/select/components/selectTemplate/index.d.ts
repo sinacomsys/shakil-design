@@ -2,7 +2,13 @@
 import { SelectProps } from "../../types";
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;
-  renderOverlay: ({ onClose }: { onClose: () => void }) => React.ReactNode;
+  renderOverlay: ({
+    onClose,
+    filteredData,
+  }: {
+    onClose: () => void;
+    filteredData: T[];
+  }) => React.ReactNode;
 }
 declare const Template: <T extends Record<string, any>>({
   onClear,
@@ -34,6 +40,8 @@ declare const Template: <T extends Record<string, any>>({
   isLoading,
   displayValue,
   renderOverlay,
-  onSearch,
+  data,
+  labelExtractor,
+  onFilter,
 }: TemplateProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { Template };

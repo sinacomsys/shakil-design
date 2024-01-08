@@ -4,6 +4,7 @@ import { Radio } from "../../../../../molecules";
 import { theming } from "../../../../../theme";
 import { createUseStyles } from "react-jss";
 import { SingleSelectProps } from "../../singleSelect";
+import { NoData } from "../noData";
 
 const { useTheme } = theming;
 
@@ -13,51 +14,57 @@ export interface SingleSelectList<T extends Record<string, any>>
     "data" | "valueExtractor" | "labelExtractor"
   > {
   onClick: (value: T[keyof T]) => void;
-  internalValue: T | undefined;
+  selectedItem: T | undefined;
+  filteredData: T[];
 }
 
 export const SingleSelectList = <T extends Record<string, any>>({
   data,
   onClick,
   labelExtractor,
-  internalValue,
+  selectedItem,
   valueExtractor,
+  filteredData,
 }: SingleSelectList<T>) => {
   const { disableText } = useTheme();
-  const selectedItem = data.find((item) => {
-    return valueExtractor?.(item) === internalValue;
+  const _selectedItem = data.find((item) => {
+    return valueExtractor?.(item) === selectedItem;
   });
   const classes = useStyles();
   return (
     <ScrollView style={{ flex: 1 }}>
-      {internalValue ? (
+      {selectedItem ? (
         <div className={classes["radio"]}>
           <Radio value="selected" checked />
           <Text ellipsis size={16} theme={"Regular"} color={"#575757"}>
-            {selectedItem && labelExtractor?.(selectedItem)}
+            {_selectedItem && labelExtractor?.(_selectedItem)}
           </Text>
         </div>
       ) : null}
-      {internalValue ? (
+      {selectedItem ? (
         <div style={{ height: 1, backgroundColor: disableText }} />
       ) : null}
-      {data
-        .filter((item) => valueExtractor?.(item) !== internalValue)
-        .map((item, index) => {
-          const isSelected = internalValue === valueExtractor?.(item);
-          return (
-            <Option
-              multiple={false}
-              isSelected={isSelected}
-              onClick={() => {
-                valueExtractor && onClick(valueExtractor?.(item));
-              }}
-              key={index}
-            >
-              {labelExtractor?.(item)}
-            </Option>
-          );
-        })}
+      {!filteredData || filteredData.length === 0 ? (
+        <NoData />
+      ) : (
+        filteredData
+          .filter((item) => valueExtractor?.(item) !== selectedItem)
+          .map((item, index) => {
+            const isSelected = selectedItem === valueExtractor?.(item);
+            return (
+              <Option
+                multiple={false}
+                isSelected={isSelected}
+                onClick={() => {
+                  valueExtractor && onClick(valueExtractor?.(item));
+                }}
+                key={index}
+              >
+                {labelExtractor?.(item)}
+              </Option>
+            );
+          })
+      )}
     </ScrollView>
   );
 };

@@ -59,8 +59,9 @@ var MultiSelect = function (_a) {
         onClear === null || onClear === void 0 ? void 0 : onClear();
         onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, renderOverlay: function () {
-            return ((0, jsx_dev_runtime_1.jsxDEV)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, data: data }, void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 17 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+            var filteredData = _a.filteredData;
+            return ((0, jsx_dev_runtime_1.jsxDEV)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, rawData: data, filteredData: filteredData }, void 0, false, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 17 }, _this));
         } }), void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 11 }, _this));
 };
 exports.MultiSelect = MultiSelect;

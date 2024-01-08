@@ -12,6 +12,7 @@ declare const SingleSelect: <T extends Record<string, any>>({
   value,
   onChange,
   onClear,
+  onFilter,
   ...props
 }: SingleSelectProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
 export { SingleSelect };

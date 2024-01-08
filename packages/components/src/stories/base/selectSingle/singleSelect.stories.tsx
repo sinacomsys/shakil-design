@@ -17,13 +17,11 @@ const fakeData = [...new Array(35)].map((_, index) => {
   };
 });
 
-const Template: Story<any> = (args) => {
-  const [isLoading, setIsLoading] = useState(false);
+const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <div style={{ width: 300 }}>
         <Select
-          unit="pixel"
           valueExtractor={({ test }) => test}
           labelExtractor={({ test1 }) => test1}
           data={fakeData}
@@ -33,15 +31,6 @@ const Template: Story<any> = (args) => {
           mode="single"
         />
       </div>
-
-      <Button
-        style={{ marginTop: 30 }}
-        onClick={() => {
-          setIsLoading(true);
-        }}
-      >
-        loading
-      </Button>
     </StoryContainer>
   );
 };

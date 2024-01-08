@@ -5,12 +5,14 @@ export interface SingleSelectList<T extends Record<string, any>>
     "data" | "valueExtractor" | "labelExtractor"
   > {
   onClick: (value: T[keyof T]) => void;
-  internalValue: T | undefined;
+  selectedItem: T | undefined;
+  filteredData: T[];
 }
 export declare const SingleSelectList: <T extends Record<string, any>>({
   data,
   onClick,
   labelExtractor,
-  internalValue,
+  selectedItem,
   valueExtractor,
+  filteredData,
 }: SingleSelectList<T>) => import("react/jsx-dev-runtime").JSX.Element;

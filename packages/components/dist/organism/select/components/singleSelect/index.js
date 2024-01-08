@@ -30,28 +30,28 @@ var react_1 = require("react");
 var singleSelectList_1 = require("../list/singleSelectList");
 var selectTemplate_1 = require("../selectTemplate");
 var SingleSelect = function (_a) {
-    var _b = _a.valueExtractor, valueExtractor = _b === void 0 ? function (item) { return item.value; } : _b, _c = _a.labelExtractor, labelExtractor = _c === void 0 ? function (item) { return item.label; } : _c, data = _a.data, value = _a.value, onChange = _a.onChange, onClear = _a.onClear, props = __rest(_a, ["valueExtractor", "labelExtractor", "data", "value", "onChange", "onClear"]);
-    var _d = (0, react_1.useState)(undefined), internalValue = _d[0], setInternalValue = _d[1];
+    var _b = _a.valueExtractor, valueExtractor = _b === void 0 ? function (item) { return item.value; } : _b, _c = _a.labelExtractor, labelExtractor = _c === void 0 ? function (item) { return item.label; } : _c, data = _a.data, value = _a.value, onChange = _a.onChange, onClear = _a.onClear, onFilter = _a.onFilter, props = __rest(_a, ["valueExtractor", "labelExtractor", "data", "value", "onChange", "onClear", "onFilter"]);
+    var _d = (0, react_1.useState)(undefined), selectedItem = _d[0], setSelectedItem = _d[1];
     (0, react_1.useEffect)(function () {
-        setInternalValue(value);
+        setSelectedItem(value);
     }, [value]);
     var handleOnChange = function (selectedItemValue) {
-        !value && setInternalValue(selectedItemValue);
+        !value && setSelectedItem(selectedItemValue);
         onChange === null || onChange === void 0 ? void 0 : onChange(selectedItemValue);
     };
-    var _value = data.find(function (item) { return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) === internalValue; });
+    var _value = data.find(function (item) { return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) === selectedItem; });
     var displayValue = _value ? labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_value) : "";
     var handleOnClear = function () {
         onClear === null || onClear === void 0 ? void 0 : onClear();
         onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, renderOverlay: function (_a) {
-            var onClose = _a.onClose;
-            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, labelExtractor: labelExtractor, valueExtractor: valueExtractor, internalValue: internalValue, onClick: function (value) {
+    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+            var onClose = _a.onClose, filteredData = _a.filteredData;
+            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, filteredData: filteredData, labelExtractor: labelExtractor, valueExtractor: valueExtractor, selectedItem: selectedItem, onClick: function (value) {
                     handleOnChange(value);
                     onClose();
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 11 }, _this));
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 17 }, _this));
+        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, _this));
 };
 exports.SingleSelect = SingleSelect;
 //# sourceMappingURL=index.js.map

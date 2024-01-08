@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TextInput } from "../../../../molecules";
 import { SelectProps } from "../../types";
 import ReactDOM from "react-dom";
@@ -8,10 +8,17 @@ import { BaseIcon } from "../../../../atoms";
 import classNames from "classnames";
 import { useStyles } from "../../style";
 import { useOnClickOutSide } from "@shakil-design/utils/src";
+import { isInclude } from "@shakil-design/utils";
 
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;
-  renderOverlay: ({ onClose }: { onClose: () => void }) => React.ReactNode;
+  renderOverlay: ({
+    onClose,
+    filteredData,
+  }: {
+    onClose: () => void;
+    filteredData: T[];
+  }) => React.ReactNode;
 }
 
 const Template = <T extends Record<string, any>>({
@@ -44,7 +51,9 @@ const Template = <T extends Record<string, any>>({
   isLoading,
   displayValue,
   renderOverlay,
-  onSearch,
+  data,
+  labelExtractor,
+  onFilter,
 }: TemplateProps<T>) => {
   const classes = useStyles();
   const [isVisible, setVisible] = useState(false);
@@ -90,12 +99,25 @@ const Template = <T extends Record<string, any>>({
   });
 
   const handleOnSearch = (value: string) => {
-    onSearch?.(value);
     setSearchValue(value);
   };
 
   const onCloseOverlay = () => {
     setVisible(false);
+  };
+
+  const filteredData = useMemo(() => {
+    if (onFilter && typeof onFilter === "function") {
+      return onFilter({ data: data, searchedValue: searchValue }).filterdData;
+    } else {
+      return data?.filter((item) => {
+        return isInclude(labelExtractor?.(item), searchValue);
+      });
+    }
+  }, [data, labelExtractor, onFilter, searchValue]);
+
+  const onClearSearchInput = () => {
+    setSearchValue("");
   };
 
   return (
@@ -155,6 +177,7 @@ const Template = <T extends Record<string, any>>({
                   {hasSearch ? (
                     <div className={classes["inputWrapper"]}>
                       <TextInput
+                        allowClear
                         value={searchValue}
                         placeholder="Search"
                         AddonAfter={
@@ -164,11 +187,12 @@ const Template = <T extends Record<string, any>>({
                             size={{ height: 15, width: 15 }}
                           />
                         }
+                        onClear={onClearSearchInput}
                         onChangeText={handleOnSearch}
                       />
                     </div>
                   ) : null}
-                  {renderOverlay({ onClose: onCloseOverlay })}
+                  {renderOverlay({ onClose: onCloseOverlay, filteredData })}
                 </div>
               </div>
             </>,

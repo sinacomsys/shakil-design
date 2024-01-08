@@ -49,14 +49,16 @@ const MultiSelect = <T extends Record<string, any>>({
       onClear={handleOnClear}
       displayValue={displayValue}
       data={data}
-      renderOverlay={() => {
+      labelExtractor={labelExtractor}
+      renderOverlay={({ filteredData }) => {
         return (
           <MultiSelectList
             labelExtractor={labelExtractor}
             valueExtractor={valueExtractor}
             value={value || []}
             onClick={handleOnChange}
-            data={data}
+            rawData={data}
+            filteredData={filteredData}
           />
         );
       }}

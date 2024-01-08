@@ -24,4 +24,5 @@ __exportStar(require("./createTreeFromFlatArray"), exports);
 __exportStar(require("./useWindowSize"), exports);
 __exportStar(require("./isNullish"), exports);
 __exportStar(require("./roundToNearsetEven"), exports);
+__exportStar(require("./isInclude"), exports);
 //# sourceMappingURL=index.js.map

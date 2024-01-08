@@ -17,22 +17,23 @@ const SingleSelect = <T extends Record<string, any>>({
   value,
   onChange,
   onClear,
+  onFilter,
   ...props
 }: SingleSelectProps<T>) => {
-  const [internalValue, setInternalValue] = useState<T[keyof T] | undefined>(
+  const [selectedItem, setSelectedItem] = useState<T[keyof T] | undefined>(
     undefined,
   );
 
   useEffect(() => {
-    setInternalValue(value);
+    setSelectedItem(value);
   }, [value]);
 
   const handleOnChange = (selectedItemValue: T[keyof T]) => {
-    !value && setInternalValue(selectedItemValue);
+    !value && setSelectedItem(selectedItemValue);
     onChange?.(selectedItemValue);
   };
 
-  const _value = data.find((item) => valueExtractor?.(item) === internalValue);
+  const _value = data.find((item) => valueExtractor?.(item) === selectedItem);
   const displayValue = _value ? labelExtractor?.(_value) : "";
 
   const handleOnClear = () => {
@@ -46,13 +47,15 @@ const SingleSelect = <T extends Record<string, any>>({
       displayValue={displayValue || ""}
       data={data}
       onClear={handleOnClear}
-      renderOverlay={({ onClose }) => {
+      labelExtractor={labelExtractor}
+      renderOverlay={({ onClose, filteredData }) => {
         return (
           <SingleSelectList
             data={data}
+            filteredData={filteredData}
             labelExtractor={labelExtractor}
             valueExtractor={valueExtractor}
-            internalValue={internalValue}
+            selectedItem={selectedItem}
             onClick={(value) => {
               handleOnChange(value);
               onClose();
