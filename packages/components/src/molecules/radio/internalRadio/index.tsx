@@ -75,6 +75,13 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
           ref={ref}
           className={classes["container"]}
         >
+          <motion.div
+            className={classes["ripple"]}
+            animate={{
+              width: isFocused ? rippleSize : 0,
+              height: isFocused ? rippleSize : 0,
+            }}
+          />
           <CustomCircle
             {...{ borderColor, backgroundColor: circleColor as string }}
           />
@@ -89,13 +96,6 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
             checked={isChecked}
             data-is-checked={isChecked}
             {...rest}
-          />
-          <motion.div
-            className={classes["ripple"]}
-            animate={{
-              width: isFocused ? rippleSize : 0,
-              height: isFocused ? rippleSize : 0,
-            }}
           />
         </div>
 

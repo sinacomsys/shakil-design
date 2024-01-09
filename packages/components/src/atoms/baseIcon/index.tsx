@@ -2,33 +2,24 @@ import classNames from "classnames";
 import React from "react";
 import icomoonJson from "@shakil-design/asset/src/icomoon/selection.json";
 import {
-  createIcomoonIconSet,
-  CreateIcomoonIconSetProps,
+  IconTemplate,
+  IcomoonIconSetProps,
+  IconTemplateProps,
 } from "./createIconSet";
-import { Unit } from "../../types";
 import { IconsNames } from "./iconNames";
-const IconMoon = createIcomoonIconSet(
-  icomoonJson as unknown as CreateIcomoonIconSetProps,
-);
 
 interface BaseIconProps
   extends Omit<
-    React.HTMLAttributes<HTMLElement>,
-    "className" | "style" | "children" | "color"
-  > {
-  name?: IconsNames;
-  size: { width: number; height: number };
-  color?: string | string[];
+      React.HTMLAttributes<HTMLElement>,
+      "className" | "style" | "children" | "color"
+    >,
+    Pick<IconTemplateProps, "name" | "size" | "color"> {
   wrapperStyle?: React.CSSProperties;
   wrapperClassName?: string;
-  unit?: Unit;
 }
 
 const BaseIcon = React.forwardRef<HTMLDivElement, BaseIconProps>(
-  (
-    { name, color, size, wrapperStyle, wrapperClassName, unit, ...rest },
-    ref,
-  ) => {
+  ({ name, color, size, wrapperStyle, wrapperClassName, ...rest }, ref) => {
     return (
       <div
         ref={ref}
@@ -36,11 +27,11 @@ const BaseIcon = React.forwardRef<HTMLDivElement, BaseIconProps>(
         style={{ display: "inline-flex", ...wrapperStyle }}
         {...rest}
       >
-        <IconMoon
+        <IconTemplate
           name={name}
           color={color}
-          size={{ height: size.height, width: size.width }}
-          unit={unit}
+          size={size}
+          iconsJson={icomoonJson as unknown as IcomoonIconSetProps}
         />
       </div>
     );

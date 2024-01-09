@@ -13,7 +13,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            zIndex: 1,
+            // zIndex: 1,
             position: "absolute",
             transformOrigin: "center",
             borderRadius: "50%",
@@ -40,7 +40,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         "outter-circle": {
             borderRadius: "50%",
             backgroundColor: "white",
-            zIndex: 2,
+            // zIndex: 2,
             position: "relative",
             border: function (props) {
                 return "1px solid ".concat(props === null || props === void 0 ? void 0 : props.borderColor);

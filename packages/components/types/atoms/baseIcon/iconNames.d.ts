@@ -180,6 +180,7 @@ export type IconsNames =
   | "Tree-View-_-Search-Icon"
   | "Tree-View_Flesh-Icon-for-next-level"
   | "Tree-View_Flesh-Icon-for-previous-level"
+  | "triple_location"
   | "User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon"
   | "User-Management-_-NMS-Tree-Structure-_-Discovery-Icon"
   | "User-Management-_-NMS-Tree-Structure-_-Faults-Icon"

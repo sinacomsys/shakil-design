@@ -180,6 +180,7 @@ export declare const iconsContent: {
   "Tree-View-_-Search-Icon": string;
   "Tree-View_Flesh-Icon-for-next-level": string;
   "Tree-View_Flesh-Icon-for-previous-level": string;
+  triple_location: string;
   "User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon": string;
   "User-Management-_-NMS-Tree-Structure-_-Discovery-Icon": string;
   "User-Management-_-NMS-Tree-Structure-_-Faults-Icon": string;

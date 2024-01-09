@@ -13,7 +13,7 @@ export const useStyles = createUseStyles(
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        zIndex: 1,
+        // zIndex: 1,
         position: "absolute",
         transformOrigin: "center",
         borderRadius: "50%",
@@ -43,7 +43,7 @@ export const useStyles = createUseStyles(
       "outter-circle": {
         borderRadius: "50%",
         backgroundColor: "white",
-        zIndex: 2,
+        // zIndex: 2,
         position: "relative",
         border: (props: CustomCircleProps) => {
           return `1px solid ${props?.borderColor}`;
