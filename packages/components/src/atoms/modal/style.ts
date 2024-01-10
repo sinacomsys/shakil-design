@@ -21,8 +21,6 @@ const useStyles = createUseStyles(
         backgroundColor: "white",
         borderRadius: 20,
         overflow: "hidden",
-        maxWidth: "calc(100% - 32px)",
-        maxHeight: "calc(100% - 32px)",
       },
       centerd: {
         top: "50%",

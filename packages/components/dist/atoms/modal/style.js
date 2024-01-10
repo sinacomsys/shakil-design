@@ -22,8 +22,6 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             backgroundColor: "white",
             borderRadius: 20,
             overflow: "hidden",
-            maxWidth: "calc(100% - 32px)",
-            maxHeight: "calc(100% - 32px)",
         },
         centerd: {
             top: "50%",

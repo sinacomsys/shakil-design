@@ -37,6 +37,7 @@ const Template: Story<ModalProps> = (args) => {
         onClose={onToggleDrawer}
         destroyOnClose={true}
         getContainer={ref.current}
+        centered
       >
         <div
           style={{

@@ -1,7 +1,9 @@
 import classNames from "classnames";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import { useStyles } from "./style";
+import { UnitContext } from "../../theme/context";
+import { pxToVw, useWindowSize } from "@shakil-design/utils";
 
 export interface ModalProps {
   getContainer?: HTMLElement | null;
@@ -13,6 +15,7 @@ export interface ModalProps {
   centered?: boolean;
   destroyOnClose?: boolean;
   maskCloseable?: boolean;
+  maskClassName?: string;
 }
 
 const Modal = ({
@@ -25,9 +28,15 @@ const Modal = ({
   centered,
   destroyOnClose,
   maskCloseable = true,
+  maskClassName,
 }: ModalProps) => {
   const classes = useStyles();
   const [bodyRef, setBodyRef] = useState<HTMLElement | null>(null);
+
+  const { height } = useWindowSize();
+  const vh = height / 100;
+
+  const widthGutter = pxToVw(32) * vh;
 
   useEffect(() => {
     setBodyRef(document.body);
@@ -51,7 +60,7 @@ const Modal = ({
       onClick={() => {
         isVisible && maskCloseable && onClose?.();
       }}
-      className={classes.mask}
+      className={classNames(maskClassName, classes.mask)}
     />
   );
   const content = (
@@ -64,6 +73,8 @@ const Modal = ({
       style={{
         position: drawerPositionStrategy,
         display: isVisible ? "block" : "none",
+        maxWidth: `calc(100% - ${widthGutter}px)`,
+        maxHeight: `calc(100% - ${widthGutter}px)`,
         ...style,
       }}
     >

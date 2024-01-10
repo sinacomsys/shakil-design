@@ -22,10 +22,14 @@ var classnames_1 = __importDefault(require("classnames"));
 var react_1 = require("react");
 var react_dom_1 = __importDefault(require("react-dom"));
 var style_1 = require("./style");
+var utils_1 = require("@shakil-design/utils");
 var Modal = function (_a) {
-    var getContainer = _a.getContainer, isVisible = _a.isVisible, onClose = _a.onClose, children = _a.children, style = _a.style, className = _a.className, centered = _a.centered, destroyOnClose = _a.destroyOnClose, _b = _a.maskCloseable, maskCloseable = _b === void 0 ? true : _b;
+    var getContainer = _a.getContainer, isVisible = _a.isVisible, onClose = _a.onClose, children = _a.children, style = _a.style, className = _a.className, centered = _a.centered, destroyOnClose = _a.destroyOnClose, _b = _a.maskCloseable, maskCloseable = _b === void 0 ? true : _b, maskClassName = _a.maskClassName;
     var classes = (0, style_1.useStyles)();
     var _c = (0, react_1.useState)(null), bodyRef = _c[0], setBodyRef = _c[1];
+    var height = (0, utils_1.useWindowSize)().height;
+    var vh = height / 100;
+    var widthGutter = (0, utils_1.pxToVw)(32) * vh;
     (0, react_1.useEffect)(function () {
         setBodyRef(document.body);
     }, []);
@@ -41,9 +45,9 @@ var Modal = function (_a) {
     var drawerPositionStrategy = (modalContainerElement === null || modalContainerElement === void 0 ? void 0 : modalContainerElement.localName) === "body" ? "fixed" : "absolute";
     var mask = ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: function () {
             isVisible && maskCloseable && (onClose === null || onClose === void 0 ? void 0 : onClose());
-        }, className: classes.mask }, void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 17 }, _this));
-    var content = ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes.modalContainer, centered && classes.centerd, className), style: __assign({ position: drawerPositionStrategy, display: isVisible ? "block" : "none" }, style) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 57, columnNumber: 20 }, _this));
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: modalContainerElement ? ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, !isVisible && destroyOnClose ? null : content] }, void 0, true, { fileName: _jsxFileName, lineNumber: 78, columnNumber: 34 }, _this), modalContainerElement) }, void 0, false, { fileName: _jsxFileName, lineNumber: 76, columnNumber: 33 }, _this)) : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 74, columnNumber: 11 }, _this));
+        }, className: (0, classnames_1.default)(maskClassName, classes.mask) }, void 0, false, { fileName: _jsxFileName, lineNumber: 58, columnNumber: 17 }, _this));
+    var content = ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes.modalContainer, centered && classes.centerd, className), style: __assign({ position: drawerPositionStrategy, display: isVisible ? "block" : "none", maxWidth: "calc(100% - ".concat(widthGutter, "px)"), maxHeight: "calc(100% - ".concat(widthGutter, "px)") }, style) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 66, columnNumber: 20 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: modalContainerElement ? ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, !isVisible && destroyOnClose ? null : content] }, void 0, true, { fileName: _jsxFileName, lineNumber: 89, columnNumber: 34 }, _this), modalContainerElement) }, void 0, false, { fileName: _jsxFileName, lineNumber: 87, columnNumber: 33 }, _this)) : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 11 }, _this));
 };
 exports.Modal = Modal;
 //# sourceMappingURL=index.js.map
