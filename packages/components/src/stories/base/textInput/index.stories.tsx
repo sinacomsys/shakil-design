@@ -9,7 +9,7 @@ export default {
 } as Meta<TextInputProps>;
 
 const Template: Story<TextInputProps> = () => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>("sdfsdf");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -39,8 +39,7 @@ const Template: Story<TextInputProps> = () => {
             size={{ height: 15, width: 15 }}
           />
         }
-        clearIconColor="red"
-        errorMessage="sag"
+        // disabled
       />
       <Button
         style={{ marginTop: 30 }}

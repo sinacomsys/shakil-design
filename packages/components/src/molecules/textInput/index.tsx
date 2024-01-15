@@ -361,7 +361,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
 
     const addOnAfterIcon = isLoading ? (
       <Spinner size="small" />
-    ) : _value && allowClear ? (
+    ) : _value && allowClear && !disabled ? (
       clearIcon
     ) : AddonAfter ? (
       AddonAfter
