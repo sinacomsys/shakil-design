@@ -377,6 +377,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
           className,
         )}
         ref={setRef}
+        value={_value}
         {...(supportedProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     ) : (
