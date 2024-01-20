@@ -35,7 +35,7 @@ const NumberInput = ({
       />
       <BaseIcon
         name={"Amount-Boxes_Decrease"}
-        size={{ height: 7, width: 7 }}
+        size={{ height: 7, width: 12.5 }}
         wrapperClassName={classes["arrowDown"]}
         color={rest.disabled ? disableField : "#575757"}
         onClick={onDecrease}
@@ -44,7 +44,7 @@ const NumberInput = ({
         onClick={onIncrease}
         color={rest.disabled ? disableField : "#575757"}
         name={"Amount-Boxes_Increase"}
-        size={{ height: 7, width: 7 }}
+        size={{ height: 7, width: 12.5 }}
         wrapperClassName={classes["arrowUp"]}
       />
     </div>

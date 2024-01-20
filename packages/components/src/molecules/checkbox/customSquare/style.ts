@@ -19,10 +19,11 @@ export const useStyles = createUseStyles(
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        backgroundColor: ({ checked }: { checked?: boolean }) => {
-          return checked
-            ? checkbox?.squareSelected
-            : checkbox?.unselectedSquare;
+        "&--checked": {
+          backgroundColor: checkbox?.squareSelected,
+        },
+        "&--unchecked": {
+          backgroundColor: checkbox?.unselectedSquare,
         },
       },
     };

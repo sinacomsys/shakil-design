@@ -22,11 +22,11 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            backgroundColor: function (_a) {
-                var checked = _a.checked;
-                return checked
-                    ? checkbox === null || checkbox === void 0 ? void 0 : checkbox.squareSelected
-                    : checkbox === null || checkbox === void 0 ? void 0 : checkbox.unselectedSquare;
+            "&--checked": {
+                backgroundColor: checkbox === null || checkbox === void 0 ? void 0 : checkbox.squareSelected,
+            },
+            "&--unchecked": {
+                backgroundColor: checkbox === null || checkbox === void 0 ? void 0 : checkbox.unselectedSquare,
             },
         },
     };

@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Measure from "react-measure";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { ScrollView, Spinner } from "../../atoms";
@@ -13,12 +20,15 @@ import classNames from "classnames";
 import { pxToVw, useWindowSize } from "@shakil-design/utils/src";
 import { TableBody } from "./body";
 import React from "react";
+import { UnitContext } from "../../theme/context";
+import { pxToVh } from "@shakil-design/utils";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
 export const SCROLL_BAR = 8;
 export const DEFAULT_ALIGN = "center";
 const ROW_HEIGHT = 32;
+const HEADER_HEIGHT = 45;
 
 export interface TableCommonType<T>
   extends Pick<TableContextProps<T>, "testid" | "onRow"> {
@@ -39,6 +49,7 @@ export interface TableCommonType<T>
   onResetFilters?: () => void;
   onLoadNextPage?: () => void;
   isLoadingMore?: boolean;
+  isSearchBarOpen?: boolean;
 }
 
 export interface TablePropsWithMultipleSelectRows<T>
@@ -88,11 +99,13 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     onLoadNextPage,
     isLoadingMore,
     selectedRows: selectedRowsProps,
+    isSearchBarOpen: isSearchBarOpenProps,
   } = props;
 
   const { table: { header } = {} } = useTheme();
   const classes = useStyles({ height });
   const [order, setOrder] = useState<Order>(undefined);
+  const { unit } = useContext(UnitContext);
   const [isSearchVisible, setShowSearchBar] = useState(false);
   const [orderBy, setOrderBy] = useState<OrderBy>(undefined);
   const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
@@ -104,17 +117,17 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const { height: windowHeight, width: windowWidth } = useWindowSize();
 
   const vw = windowWidth / 100;
-
+  const vh = windowHeight / 100;
   const rowSelectionWidth = pxToVw(ROW_SELECTION) * vw;
   const searchIconWidth = pxToVw(SEARCH_ICON) * vw;
-
-  const _searchIconWidth =
-    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
+  const headerHeight =
+    unit === "viewport" ? pxToVh(HEADER_HEIGHT) * vh : HEADER_HEIGHT;
+  const tableHeight = unit === "viewport" ? pxToVh(height) * vh : height;
 
   useEffect(() => {
-    const isOver = bodyHeight > height;
+    const isOver = bodyHeight > tableHeight - headerHeight;
     setIsOverflowed(isOver);
-  }, [bodyHeight, height]);
+  }, [bodyHeight, headerHeight, tableHeight]);
 
   const list = useMemo(() => {
     let result = data || [];
@@ -145,10 +158,13 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
 
     const scrollBarWidth = isOverFlowed ? 0 : pxToVw(SCROLL_BAR) * vw;
     const _columnsWidth = pxToVw(columnsWidth) * vw;
-    const searchIconWidth = _searchIconWidth;
 
     const remainWidth =
-      totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
+      totalWidth -
+      (_columnsWidth +
+        scrollBarWidth +
+        (mode === "multiple" ? rowSelectionWidth : 0) +
+        (isSearchAvailable ? searchIconWidth : 0));
 
     coloums.forEach(({ width }) => {
       if (!width) {
@@ -244,8 +260,8 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   }, [selectedRowsProps, mode]);
 
   const estimateSize = useMemo(() => {
-    return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
-  }, [windowHeight]);
+    return (ROW_HEIGHT / 10.8) * vh;
+  }, [vh]);
 
   const rowVirtualizer = useVirtualizer({
     getScrollElement() {
@@ -281,6 +297,14 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
       onSelectRowProps?.([row]);
     }
   };
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  let _isSearchVisible: boolean = false;
+  if (isSearchBarOpenProps !== undefined) {
+    _isSearchVisible = isSearchBarOpenProps;
+  } else if (isSearchBarOpenProps === undefined) {
+    _isSearchVisible = isSearchVisible;
+  }
 
   return (
     <Measure bounds>
@@ -325,11 +349,20 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                 {boundsWidth > 0 ? (
                   <table className={classes["table"]} role={"table"}>
                     <colgroup>
-                      <col
-                        style={{
-                          width: _searchIconWidth,
-                        }}
-                      />
+                      {mode === "multiple" ? (
+                        <col
+                          style={{
+                            width: rowSelectionWidth,
+                          }}
+                        />
+                      ) : null}
+                      {Boolean(isSearchAvailable) ? (
+                        <col
+                          style={{
+                            width: searchIconWidth,
+                          }}
+                        />
+                      ) : null}
                       {coloums.map(({ width, dataIndex }) => {
                         const _width = width && pxToVw(width) * vw;
                         return (
@@ -352,7 +385,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                     >
                       <Header
                         filterIcon={filterIcon}
-                        isSearchVisible={isSearchVisible}
+                        isSearchVisible={_isSearchVisible}
                         onToggleSearchBar={
                           isSearchAvailable && onToggleSearchBar
                         }
@@ -360,7 +393,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                         isIndeterminate={isIndeterminate}
                       />
 
-                      {isSearchAvailable ? (
+                      {Boolean(isSearchAvailable) ? (
                         <SearchBar
                           isIndeterminate={isIndeterminate}
                           clearFilterIcon={clearFilterIcon}
@@ -368,7 +401,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                           searchBarClassName={searchBarClassName}
                           columns={coloums}
                           data={data || []}
-                          isSearchVisible={isSearchVisible}
+                          isSearchVisible={_isSearchVisible}
                           onResetFilters={onResetFilters}
                         />
                       ) : null}
@@ -386,7 +419,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       paddingTop={paddingTop}
                       paddingBottom={paddingBottom}
                       noContent={_noContent}
-                      searchIconWidth={_searchIconWidth}
+                      searchIconWidth={searchIconWidth}
                       virtualRows={getVirtualItems()}
                       colWidth={colWidth}
                       coloums={coloums}

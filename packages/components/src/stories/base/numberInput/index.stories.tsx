@@ -10,8 +10,8 @@ export default {
 const Template: Story<any> = () => (
   <StoryContainer>
     <div style={{ width: 200 }}>
-      <NumberInput unit="viewport" wrapperStyle={{ marginBottom: 40 }} />
-      <NumberInput keyboardType="numeric" unit="pixel" />
+      <NumberInput wrapperStyle={{ marginBottom: 40 }} />
+      <NumberInput keyboardType="numeric" />
     </div>
   </StoryContainer>
 );

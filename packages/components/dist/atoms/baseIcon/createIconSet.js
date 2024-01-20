@@ -60,8 +60,8 @@ function IconTemplate(_a) {
         realHeight = height;
     }
     else if (unit === "viewport") {
-        realWidth = (0, src_1.pxToVh)(width) * vh;
-        realHeight = (0, src_1.pxToVh)(height) * vh;
+        realWidth = Math.ceil((0, src_1.pxToVh)(width) * vh);
+        realHeight = Math.ceil((0, src_1.pxToVh)(height) * vh);
     }
     var viewBox = "0 0 1024 1024";
     if (realWidth && realHeight && realWidth > realHeight) {

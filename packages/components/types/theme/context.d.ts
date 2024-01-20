@@ -44,6 +44,12 @@ type ColorsType = {
     selectedRowBookmark: string;
     clearFilterIcon: string;
     rowBorder: string;
+    headerCheckBox: {
+      borderSelected: string;
+      squareSelected: string;
+      unselectedBorder: string;
+      unselectedSquare: string;
+    };
   };
   select?: {
     hover: string;

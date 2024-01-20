@@ -22,7 +22,7 @@ interface DataType {
 }
 
 const Template: Story<any> = () => {
-  const [selectedRow, setSelectedRow] = useState<DataType | undefined>(
+  const [selectedRow, setSelectedRow] = useState<DataType[] | undefined>(
     undefined,
   );
 
@@ -107,16 +107,15 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        mode="multiple"
-        selectedRows={selectedRow}
+        mode="single"
+        // selectedRows={selectedRow}
         rowKey="id"
-        height={400}
+        height={350}
         coloums={columns}
         data={data}
-        onSelectRow={(value) => {
-          console.log({ value });
-          setSelectedRow(value);
-        }}
+        // onSelectRow={(value) => {
+        //   setSelectedRow(value);
+        // }}
       />
     </StoryContainer>
   );

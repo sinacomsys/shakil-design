@@ -115,8 +115,8 @@ export function IconTemplate({
     realWidth = width;
     realHeight = height;
   } else if (unit === "viewport") {
-    realWidth = pxToVh(width) * vh;
-    realHeight = pxToVh(height) * vh;
+    realWidth = Math.ceil(pxToVh(width) * vh);
+    realHeight = Math.ceil(pxToVh(height) * vh);
   }
 
   let viewBox = "0 0 1024 1024";

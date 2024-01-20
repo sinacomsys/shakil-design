@@ -39,18 +39,22 @@ var style_1 = require("./style");
 var classnames_1 = __importDefault(require("classnames"));
 var src_1 = require("@shakil-design/utils/src");
 var body_1 = require("./body");
+var context_2 = require("../../theme/context");
+var utils_1 = require("@shakil-design/utils");
 exports.SEARCH_ICON = 32;
 exports.ROW_SELECTION = 62;
 exports.SCROLL_BAR = 8;
 exports.DEFAULT_ALIGN = "center";
 var ROW_HEIGHT = 32;
+var HEADER_HEIGHT = 45;
 function Table(props) {
     var _this = this;
     var _a, _b, _c;
-    var data = props.data, rowKey = props.rowKey, headerStyle = props.headerStyle, headerClassName = props.headerClassName, searchBarClassName = props.searchBarClassName, searchBarToggle = props.searchBarToggle, searchBarStyle = props.searchBarStyle, filterIcon = props.filterIcon, clearFilterIcon = props.clearFilterIcon, isLoading = props.isLoading, onSelectRowProps = props.onSelectRow, height = props.height, coloums = props.coloums, noContent = props.noContent, overScan = props.overScan, testid = props.testid, onRow = props.onRow, mode = props.mode, onResetFilters = props.onResetFilters, onLoadNextPage = props.onLoadNextPage, isLoadingMore = props.isLoadingMore, selectedRowsProps = props.selectedRows;
+    var data = props.data, rowKey = props.rowKey, headerStyle = props.headerStyle, headerClassName = props.headerClassName, searchBarClassName = props.searchBarClassName, searchBarToggle = props.searchBarToggle, searchBarStyle = props.searchBarStyle, filterIcon = props.filterIcon, clearFilterIcon = props.clearFilterIcon, isLoading = props.isLoading, onSelectRowProps = props.onSelectRow, height = props.height, coloums = props.coloums, noContent = props.noContent, overScan = props.overScan, testid = props.testid, onRow = props.onRow, mode = props.mode, onResetFilters = props.onResetFilters, onLoadNextPage = props.onLoadNextPage, isLoadingMore = props.isLoadingMore, selectedRowsProps = props.selectedRows, isSearchBarOpenProps = props.isSearchBarOpen;
     var _d = (0, theme_1.useTheme)().table, _e = _d === void 0 ? {} : _d, header = _e.header;
     var classes = (0, style_1.useStyles)({ height: height });
     var _f = (0, react_1.useState)(undefined), order = _f[0], setOrder = _f[1];
+    var unit = (0, react_1.useContext)(context_2.UnitContext).unit;
     var _g = (0, react_1.useState)(false), isSearchVisible = _g[0], setShowSearchBar = _g[1];
     var _h = (0, react_1.useState)(undefined), orderBy = _h[0], setOrderBy = _h[1];
     var _j = (0, react_1.useState)(undefined), selectedRow = _j[0], setSelectedRow = _j[1];
@@ -61,13 +65,15 @@ function Table(props) {
     var _o = (0, react_1.useState)(false), isOverFlowed = _o[0], setIsOverflowed = _o[1];
     var _p = (0, src_1.useWindowSize)(), windowHeight = _p.height, windowWidth = _p.width;
     var vw = windowWidth / 100;
+    var vh = windowHeight / 100;
     var rowSelectionWidth = (0, src_1.pxToVw)(exports.ROW_SELECTION) * vw;
     var searchIconWidth = (0, src_1.pxToVw)(exports.SEARCH_ICON) * vw;
-    var _searchIconWidth = mode === "multiple" ? rowSelectionWidth : searchIconWidth;
+    var headerHeight = unit === "viewport" ? (0, utils_1.pxToVh)(HEADER_HEIGHT) * vh : HEADER_HEIGHT;
+    var tableHeight = unit === "viewport" ? (0, utils_1.pxToVh)(height) * vh : height;
     (0, react_1.useEffect)(function () {
-        var isOver = bodyHeight > height;
+        var isOver = bodyHeight > tableHeight - headerHeight;
         setIsOverflowed(isOver);
-    }, [bodyHeight, height]);
+    }, [bodyHeight, headerHeight, tableHeight]);
     var list = (0, react_1.useMemo)(function () {
         var _a;
         var result = data || [];
@@ -96,8 +102,11 @@ function Table(props) {
         }, 0);
         var scrollBarWidth = isOverFlowed ? 0 : (0, src_1.pxToVw)(exports.SCROLL_BAR) * vw;
         var _columnsWidth = (0, src_1.pxToVw)(columnsWidth) * vw;
-        var searchIconWidth = _searchIconWidth;
-        var remainWidth = totalWidth - (_columnsWidth + scrollBarWidth + searchIconWidth);
+        var remainWidth = totalWidth -
+            (_columnsWidth +
+                scrollBarWidth +
+                (mode === "multiple" ? rowSelectionWidth : 0) +
+                (isSearchAvailable ? searchIconWidth : 0));
         coloums.forEach(function (_a) {
             var width = _a.width;
             if (!width) {
@@ -188,8 +197,8 @@ function Table(props) {
         }
     }, [selectedRowsProps, mode]);
     var estimateSize = (0, react_1.useMemo)(function () {
-        return (ROW_HEIGHT / 10.8) * (windowHeight / 100);
-    }, [windowHeight]);
+        return (ROW_HEIGHT / 10.8) * vh;
+    }, [vh]);
     var rowVirtualizer = (0, react_virtual_1.useVirtualizer)({
         getScrollElement: function () {
             return tableContainerRef.current;
@@ -205,7 +214,7 @@ function Table(props) {
             (((_c = getVirtualItems()[getVirtualItems().length - 1]) === null || _c === void 0 ? void 0 : _c.end) || 0)
         : 0;
     var isIndeterminate = checkedRows.length > 0 && checkedRows.length !== (data || []).length;
-    var _noContent = noContent ? noContent : (0, jsx_dev_runtime_1.jsxDEV)(noContent_1.NoContent, { text: "No Data!" }, void 0, false, { fileName: _jsxFileName, lineNumber: 272, columnNumber: 45 }, this);
+    var _noContent = noContent ? noContent : (0, jsx_dev_runtime_1.jsxDEV)(noContent_1.NoContent, { text: "No Data!" }, void 0, false, { fileName: _jsxFileName, lineNumber: 288, columnNumber: 45 }, this);
     var getBodyHeight = (0, react_1.useCallback)(function (body) {
         setBodyHeight((body === null || body === void 0 ? void 0 : body.clientHeight) || 0);
     }, []);
@@ -215,12 +224,20 @@ function Table(props) {
             onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps([row]);
         }
     };
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    var _isSearchVisible = false;
+    if (isSearchBarOpenProps !== undefined) {
+        _isSearchVisible = isSearchBarOpenProps;
+    }
+    else if (isSearchBarOpenProps === undefined) {
+        _isSearchVisible = isSearchVisible;
+    }
     return ((0, jsx_dev_runtime_1.jsxDEV)(react_measure_1.default, __assign({ bounds: true }, { children: function (_a) {
             var _b;
             var contentRect = _a.contentRect, measureRef = _a.measureRef;
             var boundsWidth = (((_b = contentRect.bounds) === null || _b === void 0 ? void 0 : _b.width) || 0) - (isOverFlowed ? exports.SCROLL_BAR : 0);
             var colWidth = calculateWidth(boundsWidth !== null && boundsWidth !== void 0 ? boundsWidth : 0);
-            return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: measureRef, className: (0, classnames_1.default)(classes["container"]) }, { children: [isLoading && ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: "".concat(classes["spinner"], "--overlay") }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["spinner"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { size: "large" }, void 0, false, { fileName: _jsxFileName, lineNumber: 298, columnNumber: 19 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 297, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 295, columnNumber: 28 }, _this)), (0, jsx_dev_runtime_1.jsxDEV)(context_1.TableContext.Provider, __assign({ value: {
+            return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: measureRef, className: (0, classnames_1.default)(classes["container"]) }, { children: [isLoading && ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: "".concat(classes["spinner"], "--overlay") }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["spinner"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { size: "large" }, void 0, false, { fileName: _jsxFileName, lineNumber: 322, columnNumber: 19 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 321, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 319, columnNumber: 28 }, _this)), (0, jsx_dev_runtime_1.jsxDEV)(context_1.TableContext.Provider, __assign({ value: {
                             isAllRowsChecked: isAllRowsChecked,
                             onCheckAllRows: onCheckAllRows,
                             onOrderChange: onOrderChange,
@@ -239,14 +256,16 @@ function Table(props) {
                             mode: mode,
                             onDeselectCheckedRows: onDeselectCheckedRows,
                             onLoadNextPage: onLoadNextPage,
-                        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [boundsWidth > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)("table", __assign({ className: classes["table"], role: "table" }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("colgroup", { children: [(0, jsx_dev_runtime_1.jsxDEV)("col", { style: {
-                                                        width: _searchIconWidth,
-                                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 328, columnNumber: 23 }, _this), coloums.map(function (_a) {
+                        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: [boundsWidth > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)("table", __assign({ className: classes["table"], role: "table" }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("colgroup", { children: [mode === "multiple" ? ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: {
+                                                        width: rowSelectionWidth,
+                                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 352, columnNumber: 47 }, _this)) : null, Boolean(isSearchAvailable) ? ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: {
+                                                        width: searchIconWidth,
+                                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 359, columnNumber: 54 }, _this)) : null, coloums.map(function (_a) {
                                                     var width = _a.width, dataIndex = _a.dataIndex;
                                                     var _width = width && (0, src_1.pxToVw)(width) * vw;
-                                                    return ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 335, columnNumber: 33 }, _this));
-                                                }), isOverFlowed ? ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: (0, src_1.pxToVw)(exports.SCROLL_BAR) * vw } }, void 0, false, { fileName: _jsxFileName, lineNumber: 342, columnNumber: 40 }, _this)) : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 327, columnNumber: 21 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("thead", __assign({ className: headerClassName, style: __assign({ backgroundColor: header }, headerStyle) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(header_1.Header, { filterIcon: filterIcon, isSearchVisible: isSearchVisible, onToggleSearchBar: isSearchAvailable && onToggleSearchBar, columns: coloums, isIndeterminate: isIndeterminate }, void 0, false, { fileName: _jsxFileName, lineNumber: 353, columnNumber: 23 }, _this), isSearchAvailable ? ((0, jsx_dev_runtime_1.jsxDEV)(searchBar_1.SearchBar, { isIndeterminate: isIndeterminate, clearFilterIcon: clearFilterIcon, searchBarStyle: searchBarStyle, searchBarClassName: searchBarClassName, columns: coloums, data: data || [], isSearchVisible: isSearchVisible, onResetFilters: onResetFilters }, void 0, false, { fileName: _jsxFileName, lineNumber: 363, columnNumber: 45 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 346, columnNumber: 21 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 325, columnNumber: 37 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.ScrollView, __assign({ ref: tableContainerRef, className: classes["table-body"] }, { children: boundsWidth > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)(body_1.TableBody, { ref: getBodyHeight, paddingTop: paddingTop, paddingBottom: paddingBottom, noContent: _noContent, searchIconWidth: _searchIconWidth, virtualRows: getVirtualItems(), colWidth: colWidth, coloums: coloums, dataList: list, width: boundsWidth || 0, loadingMore: isLoadingMore || false }, void 0, false, { fileName: _jsxFileName, lineNumber: 383, columnNumber: 39 }, _this)) : null }), void 0, false, { fileName: _jsxFileName, lineNumber: 379, columnNumber: 17 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 324, columnNumber: 15 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 302, columnNumber: 13 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 293, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 285, columnNumber: 11 }, this));
+                                                    return ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 368, columnNumber: 33 }, _this));
+                                                }), isOverFlowed ? ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: (0, src_1.pxToVw)(exports.SCROLL_BAR) * vw } }, void 0, false, { fileName: _jsxFileName, lineNumber: 375, columnNumber: 40 }, _this)) : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 351, columnNumber: 21 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("thead", __assign({ className: headerClassName, style: __assign({ backgroundColor: header }, headerStyle) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(header_1.Header, { filterIcon: filterIcon, isSearchVisible: _isSearchVisible, onToggleSearchBar: isSearchAvailable && onToggleSearchBar, columns: coloums, isIndeterminate: isIndeterminate }, void 0, false, { fileName: _jsxFileName, lineNumber: 386, columnNumber: 23 }, _this), Boolean(isSearchAvailable) ? ((0, jsx_dev_runtime_1.jsxDEV)(searchBar_1.SearchBar, { isIndeterminate: isIndeterminate, clearFilterIcon: clearFilterIcon, searchBarStyle: searchBarStyle, searchBarClassName: searchBarClassName, columns: coloums, data: data || [], isSearchVisible: _isSearchVisible, onResetFilters: onResetFilters }, void 0, false, { fileName: _jsxFileName, lineNumber: 396, columnNumber: 54 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 379, columnNumber: 21 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 349, columnNumber: 37 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.ScrollView, __assign({ ref: tableContainerRef, className: classes["table-body"] }, { children: boundsWidth > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)(body_1.TableBody, { ref: getBodyHeight, paddingTop: paddingTop, paddingBottom: paddingBottom, noContent: _noContent, searchIconWidth: searchIconWidth, virtualRows: getVirtualItems(), colWidth: colWidth, coloums: coloums, dataList: list, width: boundsWidth || 0, loadingMore: isLoadingMore || false }, void 0, false, { fileName: _jsxFileName, lineNumber: 416, columnNumber: 39 }, _this)) : null }), void 0, false, { fileName: _jsxFileName, lineNumber: 412, columnNumber: 17 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 348, columnNumber: 15 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 326, columnNumber: 13 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 317, columnNumber: 17 }, _this));
+        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 309, columnNumber: 11 }, this));
 }
 exports.Table = Table;
 //# sourceMappingURL=index.js.map

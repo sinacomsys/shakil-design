@@ -46,6 +46,12 @@ export const Colors: ColorsType = {
     sortArrow: "#48e580",
     clearFilterIcon: "#ffffff",
     rowBorder: "#eeeeee",
+    headerCheckBox: {
+      borderSelected: "#ffffff",
+      squareSelected: "#48e580",
+      unselectedBorder: "#ffffff",
+      unselectedSquare: "#959db8",
+    },
   },
   select: {
     hover: "#ebedf2",
@@ -115,6 +121,12 @@ type ColorsType = {
     selectedRowBookmark: string;
     clearFilterIcon: string;
     rowBorder: string;
+    headerCheckBox: {
+      borderSelected: string;
+      squareSelected: string;
+      unselectedBorder: string;
+      unselectedSquare: string;
+    };
   };
   select?: {
     hover: string;

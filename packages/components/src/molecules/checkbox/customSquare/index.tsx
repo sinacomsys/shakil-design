@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useStyles } from "./style";
 import { useRoundToNearestEven } from "@shakil-design/utils/src";
 interface CustomRectangleProps {
@@ -23,7 +24,11 @@ const CustomSquare = ({ checked }: CustomRectangleProps) => {
           height: roundToNearestEven(10),
           width: roundToNearestEven(10),
         }}
-        className={classes["square"]}
+        className={classNames(
+          classes["square"],
+          checked && `${classes["square"]}--checked`,
+          !checked && `${classes["square"]}--unchecked`,
+        )}
       />
     </div>
   );

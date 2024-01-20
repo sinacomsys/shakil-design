@@ -24,6 +24,7 @@ export interface TableCommonType<T>
   onResetFilters?: () => void;
   onLoadNextPage?: () => void;
   isLoadingMore?: boolean;
+  isSearchBarOpen?: boolean;
 }
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {

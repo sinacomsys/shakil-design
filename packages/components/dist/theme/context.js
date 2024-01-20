@@ -75,6 +75,12 @@ exports.Colors = {
         sortArrow: "#48e580",
         clearFilterIcon: "#ffffff",
         rowBorder: "#eeeeee",
+        headerCheckBox: {
+            borderSelected: "#ffffff",
+            squareSelected: "#48e580",
+            unselectedBorder: "#ffffff",
+            unselectedSquare: "#959db8",
+        },
     },
     select: {
         hover: "#ebedf2",
@@ -114,7 +120,7 @@ var ShakilDesignThemeProvider = function (_a) {
             onProcessStyle: converPxToVp_1.convertPxToVp,
         });
     }
-    return ((0, jsx_dev_runtime_1.jsxDEV)(react_jss_1.JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(exports.UnitContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(ThemeProvider, __assign({ theme: colors }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 171, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 170, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 164, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(react_jss_1.JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(exports.UnitContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(ThemeProvider, __assign({ theme: colors }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 183, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 182, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 176, columnNumber: 11 }, _this));
 };
 exports.ShakilDesignThemeProvider = ShakilDesignThemeProvider;
 //# sourceMappingURL=context.js.map

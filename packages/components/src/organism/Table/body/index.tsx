@@ -4,7 +4,14 @@ import { pxToVwString } from "@shakil-design/utils/src";
 import { Rows } from "../rowContainer";
 import { TableCommonType } from "..";
 import { UnitContext } from "../../../theme/context";
-import { ReactElement, Ref, useCallback, useContext, useRef } from "react";
+import {
+  ReactElement,
+  Ref,
+  useCallback,
+  useContext,
+  useRef,
+  ElementRef,
+} from "react";
 import { useMyTableContext } from "../context";
 import React from "react";
 import { Text } from "../../../atoms";
@@ -35,7 +42,7 @@ const TableBody = <T extends Record<string, any>>(
     width,
     loadingMore,
   }: TableBodyProps<T>,
-  ref: Ref<HTMLDivElement>,
+  ref: Ref<ElementRef<"table">>,
 ) => {
   const classes = useStyles();
   const observer = useRef<any>(null);
@@ -59,8 +66,9 @@ const TableBody = <T extends Record<string, any>>(
   return (
     <>
       {virtualRows.length > 0 ? (
-        <div ref={ref} style={{ height: `${virtualizer?.getTotalSize()}px` }}>
+        <div style={{ height: `${virtualizer?.getTotalSize()}px` }}>
           <table
+            ref={ref}
             style={{ width: width }}
             className={classes["wrapper"]}
             role={"table"}
