@@ -4,7 +4,7 @@ exports.useStyles = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../../theme");
 exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
-    var _a, _b;
+    var _a, _b, _c, _d;
     return {
         "filter-icon-wrapper": {
             display: "flex",
@@ -26,6 +26,18 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             alignItems: "center",
             height: 24,
             paddingInline: 8,
+            "& .shakil-custom-square-wrapper": {
+                border: "1px solid #ffffff",
+            },
+            "& .shakil-indeterminate-checkbox-wrapper": {
+                border: "1px solid #ffffff",
+            },
+            "& .shakil-custom-square-square--unchecked": {
+                backgroundColor: (_c = theme.table) === null || _c === void 0 ? void 0 : _c.headerCheckBox.unselectedSquare,
+            },
+            "& .shakil-custom-square-square--checked": {
+                backgroundColor: (_d = theme.table) === null || _d === void 0 ? void 0 : _d.headerCheckBox.squareSelected,
+            },
         },
     };
 }, { theming: theme_1.theming, name: "table-header" });

@@ -23,6 +23,18 @@ const useStyles = createUseStyles(
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-end",
+          "& .shakil-custom-square-wrapper": {
+            border: "1px solid #ffffff",
+          },
+          "& .shakil-indeterminate-checkbox-wrapper": {
+            border: "1px solid #ffffff",
+          },
+          "& .shakil-custom-square-square--unchecked": {
+            backgroundColor: table?.headerCheckBox.unselectedSquare,
+          },
+          "& .shakil-custom-square-square--checked": {
+            backgroundColor: table?.headerCheckBox.squareSelected,
+          },
         },
       },
       wrapper: {

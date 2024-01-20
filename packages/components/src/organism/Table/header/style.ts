@@ -25,6 +25,18 @@ export const useStyles = createUseStyles(
         alignItems: "center",
         height: 24,
         paddingInline: 8,
+        "& .shakil-custom-square-wrapper": {
+          border: "1px solid #ffffff",
+        },
+        "& .shakil-indeterminate-checkbox-wrapper": {
+          border: "1px solid #ffffff",
+        },
+        "& .shakil-custom-square-square--unchecked": {
+          backgroundColor: theme.table?.headerCheckBox.unselectedSquare,
+        },
+        "& .shakil-custom-square-square--checked": {
+          backgroundColor: theme.table?.headerCheckBox.squareSelected,
+        },
       },
     };
   },

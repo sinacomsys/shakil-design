@@ -349,20 +349,11 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                 {boundsWidth > 0 ? (
                   <table className={classes["table"]} role={"table"}>
                     <colgroup>
-                      {mode === "multiple" ? (
-                        <col
-                          style={{
-                            width: rowSelectionWidth,
-                          }}
-                        />
-                      ) : null}
-                      {Boolean(isSearchAvailable) ? (
-                        <col
-                          style={{
-                            width: searchIconWidth,
-                          }}
-                        />
-                      ) : null}
+                      <col
+                        style={{
+                          width: searchIconWidth,
+                        }}
+                      />
                       {coloums.map(({ width, dataIndex }) => {
                         const _width = width && pxToVw(width) * vw;
                         return (

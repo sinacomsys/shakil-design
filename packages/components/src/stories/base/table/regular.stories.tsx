@@ -107,7 +107,7 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        mode="single"
+        mode="multiple"
         // selectedRows={selectedRow}
         rowKey="id"
         height={350}
