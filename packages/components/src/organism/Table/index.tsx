@@ -123,6 +123,8 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const headerHeight =
     unit === "viewport" ? pxToVh(HEADER_HEIGHT) * vh : HEADER_HEIGHT;
   const tableHeight = unit === "viewport" ? pxToVh(height) * vh : height;
+  const _searchIconWidth =
+    mode === "multiple" ? rowSelectionWidth : searchIconWidth;
 
   useEffect(() => {
     const isOver = bodyHeight > tableHeight - headerHeight;
@@ -160,11 +162,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     const _columnsWidth = pxToVw(columnsWidth) * vw;
 
     const remainWidth =
-      totalWidth -
-      (_columnsWidth +
-        scrollBarWidth +
-        (mode === "multiple" ? rowSelectionWidth : 0) +
-        (isSearchAvailable ? searchIconWidth : 0));
+      totalWidth - (_columnsWidth + scrollBarWidth + _searchIconWidth);
 
     coloums.forEach(({ width }) => {
       if (!width) {
@@ -410,7 +408,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       paddingTop={paddingTop}
                       paddingBottom={paddingBottom}
                       noContent={_noContent}
-                      searchIconWidth={searchIconWidth}
+                      searchIconWidth={_searchIconWidth}
                       virtualRows={getVirtualItems()}
                       colWidth={colWidth}
                       coloums={coloums}
