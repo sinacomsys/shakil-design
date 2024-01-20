@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.92](https://github.com/sinacomsys/shakil-design/compare/@shakil-design/component@0.0.91...@shakil-design/component@0.0.92) (2024-01-20)
+
+**Note:** Version bump only for package @shakil-design/component
+
 ## [0.0.91](https://github.com/sinacomsys/shakil-design/compare/@shakil-design/component@0.0.90...@shakil-design/component@0.0.91) (2024-01-20)
 
 **Note:** Version bump only for package @shakil-design/component
