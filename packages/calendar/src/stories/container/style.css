@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+  /* direction: rtl; */
+}
+
+/* These styles disable body scrolling if you are using <ScrollView> */
+body {
+  overflow-y: scroll;
+}
+
+/* These styles make the root element full-height */
+#root {
+  display: flex;
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}

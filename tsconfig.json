@@ -16,9 +16,10 @@
     "esModuleInterop": true
   },
   "include": [
-    "packages/components/src",
+    // "packages/components/src",
     "packages/components/src/custom.d.ts",
-    "packages/asset/src/icomoon"
+    // "packages/asset/src/icomoon",
+    "packages/**/*"
   ],
   "exclude": [
     "node_modules",

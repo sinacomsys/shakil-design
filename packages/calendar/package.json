@@ -1,0 +1,32 @@
+{
+  "name": "@shakil-design/calendar",
+  "version": "1.0.0",
+  "description": "calendar of shakil design",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build": "rimraf lib && yarn compile && webpack --mode=production",
+    "compile": "tsc -b"
+  },
+  "dependencies": {
+    "@shakil-design/component": "^0.0.93",
+    "@shakil-design/asset": "^0.0.80",
+    "ts-loader": "^9.5.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "sina comsys",
+  "license": "ISC",
+  "devDependencies": {
+    "url-loader": "^4.1.1"
+  }
+}
