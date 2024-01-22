@@ -25,4 +25,5 @@ __exportStar(require("./useWindowSize"), exports);
 __exportStar(require("./isNullish"), exports);
 __exportStar(require("./roundToNearsetEven"), exports);
 __exportStar(require("./isInclude"), exports);
+__exportStar(require("./convertPxToVpPlugin"), exports);
 //# sourceMappingURL=index.js.map

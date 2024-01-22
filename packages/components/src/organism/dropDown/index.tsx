@@ -59,6 +59,7 @@ const DropDown = <T extends Default>({
 
   const handleOnMouseLeave = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     fireEvents("onMouseLeave", e);
+    //@ts-ignore
     timerDelay.current = setTimeout(() => {
       setVisible(false);
     }, 100);

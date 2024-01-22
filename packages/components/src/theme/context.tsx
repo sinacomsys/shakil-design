@@ -1,7 +1,8 @@
 import React from "react";
 import { JssProvider, createTheming, jss } from "react-jss";
-import { Unit } from "../types";
-import { convertPxToVp } from "./converPxToVp";
+import { convertPxToVp } from "@shakil-design/utils";
+
+type Unit = "pixel" | "viewport";
 
 export const Colors: ColorsType = {
   primary: "#374775",

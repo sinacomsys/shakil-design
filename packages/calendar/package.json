@@ -7,6 +7,13 @@
     "build": "rimraf lib && yarn compile && webpack --mode=production",
     "compile": "tsc -b"
   },
+  "main": "lib/main.js",
+  "module": "lib/main.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@shakil-design/component": "^0.0.93",
     "@shakil-design/asset": "^0.0.80",

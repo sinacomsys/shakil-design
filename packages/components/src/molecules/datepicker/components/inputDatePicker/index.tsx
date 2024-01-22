@@ -1,5 +1,5 @@
 import { BaseIcon, Tooltip } from "../../../../atoms";
-import { TextInput } from "../../../../molecules/textInput";
+import { TextInput } from "../../../textInput";
 import { DatePickerProvider } from "../datePickerProvider";
 import { DatePickerProviderProps } from "../types";
 import { theming } from "../../../../theme";

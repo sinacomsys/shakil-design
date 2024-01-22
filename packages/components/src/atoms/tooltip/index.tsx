@@ -80,6 +80,7 @@ const Tooltip = ({
 
   const handleOnMouseLeave = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     fireEvents("onMouseLeave", e);
+    //@ts-ignore
     timerDelay.current = setTimeout(() => {
       triggerOnClose();
     }, 100);
