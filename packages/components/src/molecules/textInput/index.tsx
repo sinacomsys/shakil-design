@@ -395,6 +395,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             classes["textInput"],
             (hasError || errorMessage) && classes["input-with-error"],
             addOnAfterIcon && `${classes["textInput"]}--input-with-addon-after`,
+            addonBefore && `${classes["textInput"]}--input-with-addon-before`,
             (disabled || isLoading) && classes.disabled,
             themes[theme || "Regular"],
             className,

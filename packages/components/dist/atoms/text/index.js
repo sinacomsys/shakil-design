@@ -51,7 +51,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fonts = exports.Text = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/text/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/amir-shakil-design/shakil-design/packages/components/src/atoms/text/index.tsx";
 var classnames_1 = __importDefault(require("classnames"));
 var React = __importStar(require("react"));
 var baseText_1 = require("./baseText/baseText");

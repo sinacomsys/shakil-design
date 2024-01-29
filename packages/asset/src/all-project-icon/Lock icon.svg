@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="27.717" viewBox="0 0 21 27.717">
+    <g data-name="Lock icon">
+        <g transform="translate(.5 10.217)">
+            <path data-name="Rectangle 7" style="fill:none;stroke:#abb6d6;stroke-linecap:square;stroke-miterlimit:10" d="M0 0h20v17H0z"/>
+            <circle data-name="Ellipse 4" cx="2.5" cy="2.5" r="2.5" transform="translate(8 4)" style="fill:none;stroke:#abb6d6;stroke-linecap:square;stroke-miterlimit:10"/>
+            <path data-name="Line 1" transform="translate(11 9)" style="fill:none;stroke:#abb6d6;stroke-linecap:square;stroke-miterlimit:10" d="M0 0v3"/>
+        </g>
+        <path data-name="Path 53" d="M20.306 2h0A6.211 6.211 0 0 0 14 8.073v3.644h12.612V8.073A6.211 6.211 0 0 0 20.306 2z" transform="translate(-9.716 -1.5)" style="fill:none;stroke:#abb6d6;stroke-linecap:square;stroke-miterlimit:10"/>
+    </g>
+</svg>
