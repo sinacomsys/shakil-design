@@ -1,3 +1,3 @@
 export declare function useRoundToNearestEven(): {
-  roundToNearestEven: (value: number) => number;
+    roundToNearestEven: (value: number) => number;
 };

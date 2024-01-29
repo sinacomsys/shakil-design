@@ -28,7 +28,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cell = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/cell/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/amir-shakil-design/shakil-design/packages/components/src/organism/Table/cell/index.tsx";
 /* eslint-disable react/jsx-key */
 var classnames_1 = __importDefault(require("classnames"));
 var __1 = require("..");

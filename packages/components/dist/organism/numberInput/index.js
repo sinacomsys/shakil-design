@@ -25,7 +25,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NumberInput = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/numberInput/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/amir-shakil-design/shakil-design/packages/components/src/organism/numberInput/index.tsx";
 var atoms_1 = require("../../atoms");
 var molecules_1 = require("../../molecules");
 var theme_1 = require("../../theme");

@@ -35,6 +35,9 @@ const useStyles = createUseStyles(
         "&--input-with-addon-after": {
           paddingInlineEnd: 25,
         },
+        "&--input-with-addon-before": {
+          paddingInlineStart: 40,
+        },
       },
       "text-area": {
         ...textInputSharedStyle(theme),

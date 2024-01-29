@@ -44,6 +44,8 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         },
         textInput: __assign(__assign({}, textInputSharedStyle(theme)), { height: 32, "&--input-with-addon-after": {
                 paddingInlineEnd: 25,
+            }, "&--input-with-addon-before": {
+                paddingInlineStart: 40,
             } }),
         "text-area": __assign({}, textInputSharedStyle(theme)),
         "input-with-error": {

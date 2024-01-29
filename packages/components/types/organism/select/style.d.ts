@@ -1,15 +1,3 @@
-export declare const useStyles: (
-  data?:
-    | {
-        theme?: import("../../theme/context").ColorsType | undefined;
-      }
-    | undefined,
-) => import("jss").Classes<
-  | "select"
-  | "clearIcon"
-  | "overlay"
-  | "mask"
-  | "text-input"
-  | "inputWrapper"
-  | "selectWrapper"
->;
+export declare const useStyles: (data?: {
+    theme?: import("../../theme/context").ColorsType | undefined;
+} | undefined) => import("jss").Classes<"select" | "clearIcon" | "overlay" | "mask" | "text-input" | "inputWrapper" | "selectWrapper">;
