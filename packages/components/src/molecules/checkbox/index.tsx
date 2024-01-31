@@ -9,6 +9,7 @@ export interface CheckBoxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   indeterminate?: boolean;
+  "data-testid"?: string | number;
 }
 
 const CheckBox = ({
@@ -18,6 +19,7 @@ const CheckBox = ({
   children,
   name,
   indeterminate,
+  "data-testid": testid,
   ...rest
 }: CheckBoxProps) => {
   const classes = useStyles();
@@ -28,6 +30,7 @@ const CheckBox = ({
   return (
     <label className={classes["label"]}>
       <div
+        data-testid={testid}
         data-is-checked={checked}
         className={classNames(
           classes["check-box-wrapper"],
@@ -36,7 +39,6 @@ const CheckBox = ({
         )}
       >
         {indeterminate ? <Indeterminate /> : <CustomSquare checked={checked} />}
-
         <input
           className={classes["hiddenInput"]}
           type={"checkbox"}
@@ -45,6 +47,7 @@ const CheckBox = ({
           data-is-checked={checked}
           checked={checked}
           onChange={onChangeHandler}
+          data-testid={testid}
           {...rest}
         />
       </div>

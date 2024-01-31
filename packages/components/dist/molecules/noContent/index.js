@@ -14,7 +14,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NoContent = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "/home/amir/project/TML/amir-shakil-design/shakil-design/packages/components/src/molecules/noContent/index.tsx";
+var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/noContent/index.tsx";
 var atoms_1 = require("../../atoms");
 var theme_1 = require("../../theme");
 var style_1 = require("./style");

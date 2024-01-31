@@ -11,9 +11,13 @@ export interface RadioProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "name"> {
   children?: React.ReactNode;
   value: ValueType;
+  "data-testid"?: string | number;
 }
 const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
-  ({ children, value, onFocus, onBlur, ...rest }, ref) => {
+  (
+    { children, value, onFocus, onBlur, "data-testid": testid, ...rest },
+    ref,
+  ) => {
     const classes = useStyles();
     const {
       radio: {
@@ -74,6 +78,7 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
           data-is-checked={isChecked}
           ref={ref}
           className={classes["container"]}
+          data-testid={testid}
         >
           <motion.div
             className={classes["ripple"]}

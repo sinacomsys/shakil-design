@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?xeik8u');
-  src:  url('fonts/icomoon.eot?xeik8u#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?xeik8u') format('truetype'),
-    url('fonts/icomoon.woff?xeik8u') format('woff'),
-    url('fonts/icomoon.svg?xeik8u#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?xeik8u");
+  src: url("fonts/icomoon.eot?xeik8u#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?xeik8u") format("truetype"),
+    url("fonts/icomoon.woff?xeik8u") format("woff"),
+    url("fonts/icomoon.svg?xeik8u#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -40,7 +41,7 @@
 .icon-Abstract-Service-Graph_Menu_Toggle-OFF .path2:before {
   content: "\e903";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path1:before {
   content: "\e904";
@@ -49,11 +50,11 @@
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path2:before {
   content: "\e905";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Abstract-Service-Graph_Narrow-Rectangle-Icon:before {
   content: "\e906";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Plus-Icon-for-next-level:before {
   content: "\e907";
@@ -61,15 +62,15 @@
 }
 .icon-Abstract-Service-Graph_Trapezius-Icon:before {
   content: "\e908";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Triangle-Icon:before {
   content: "\e909";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
   content: "\e90a";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Add-Box_Add-Icon:before {
   content: "\e90b";
@@ -77,11 +78,11 @@
 }
 .icon-Amount-Boxes_Decrease:before {
   content: "\e90c";
-  color: #fff;
+  color: red;
 }
 .icon-Amount-Boxes_Increase:before {
   content: "\e90d";
-  color: #fff;
+  color: red;
 }
 .icon-Avatar-icon:before {
   content: "\e90e";
@@ -112,11 +113,11 @@
 }
 .icon-Calendar-_-Calendar-Icon:before {
   content: "\e915";
-  color: #dbdbdb;
+  color: red;
 }
 .icon-Calendar-_-Close:before {
   content: "\e916";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Combo-Calendar:before {
   content: "\e917";
@@ -124,19 +125,19 @@
 }
 .icon-Calendar-_-Month-_-Next-Month:before {
   content: "\e918";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Month-_-Previous-Month:before {
   content: "\e919";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Next-Year:before {
   content: "\e91a";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Previous-Year:before {
   content: "\e91b";
-  color: #fff;
+  color: red;
 }
 .icon-Create-Project_Alert-Icon:before {
   content: "\e91c";
@@ -161,7 +162,7 @@
 .icon-Discovery-_-Map-_-Node-Icon .path2:before {
   content: "\e921";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Discovery-_-Table-_-Delete-Icon:before {
   content: "\e922";
@@ -189,7 +190,7 @@
 }
 .icon-Every-Boxes-_-Back:before {
   content: "\e928";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Every-Boxes-_-Cross-Icon:before {
   content: "\e929";
@@ -209,15 +210,15 @@
 }
 .icon-Every-Boxes-_-Full-Screen:before {
   content: "\e92d";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Every-Boxes-_-Full-Screen-Box:before {
   content: "\e92e";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Every-Boxes-_-Radio-Box .path1:before {
   content: "\e92f";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Boxes-_-Radio-Box .path2:before {
   content: "\e930";
@@ -227,7 +228,7 @@
 .icon-Every-Boxes-_-Radio-Box .path3:before {
   content: "\e931";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Every-Boxes-_-Toggle-OFF .path1:before {
   content: "\e932";
@@ -236,7 +237,7 @@
 .icon-Every-Boxes-_-Toggle-OFF .path2:before {
   content: "\e933";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Boxes-_-Toggle-ON .path1:before {
   content: "\e934";
@@ -245,7 +246,7 @@
 .icon-Every-Boxes-_-Toggle-ON .path2:before {
   content: "\e935";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path1:before {
   content: "\e936";
@@ -254,11 +255,11 @@
 .icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path2:before {
   content: "\e937";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path1:before {
   content: "\e938";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path2:before {
   content: "\e939";
@@ -271,7 +272,7 @@
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path1:before {
   content: "\e93b";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path2:before {
   content: "\e93c";
@@ -325,7 +326,7 @@
 .icon-Inventory-_-Card .path2:before {
   content: "\e948";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path3:before {
   content: "\e949";
@@ -350,7 +351,7 @@
 .icon-Inventory-_-Card .path7:before {
   content: "\e94d";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path8:before {
   content: "\e94e";
@@ -365,7 +366,7 @@
 .icon-Inventory-_-Card .path10:before {
   content: "\e950";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path11:before {
   content: "\e951";
@@ -380,7 +381,7 @@
 .icon-Inventory-_-Card .path13:before {
   content: "\e953";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path14:before {
   content: "\e954";
@@ -395,7 +396,7 @@
 .icon-Inventory-_-Card .path16:before {
   content: "\e956";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path17:before {
   content: "\e957";
@@ -410,7 +411,7 @@
 .icon-Inventory-_-Card .path19:before {
   content: "\e959";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path20:before {
   content: "\e95a";
@@ -425,7 +426,7 @@
 .icon-Inventory-_-Card .path22:before {
   content: "\e95c";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Card .path23:before {
   content: "\e95d";
@@ -779,12 +780,12 @@
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path1:before {
   content: "\e9a3";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path2:before {
   content: "\e9a4";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path3:before {
   content: "\e9a5";
@@ -794,7 +795,7 @@
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path4:before {
   content: "\e9a6";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Inventory-_-Module .path1:before {
   content: "\e9a7";
@@ -808,7 +809,7 @@
 .icon-Inventory-_-Module .path3:before {
   content: "\e9a9";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Module .path4:before {
   content: "\e9aa";
@@ -873,7 +874,7 @@
 .icon-Inventory-_-Module .path16:before {
   content: "\e9b6";
   margin-left: -1em;
-  color: rgb(186, 196, 198);
+  color: red;
 }
 .icon-Inventory-_-Module .path17:before {
   content: "\e9b7";
@@ -1068,7 +1069,7 @@
 .icon-Map-Box_Flag-Icon .path3:before {
   content: "\e9df";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path4:before {
   content: "\e9e0";
@@ -1078,7 +1079,7 @@
 .icon-Map-Box_Flag-Icon .path5:before {
   content: "\e9e1";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path6:before {
   content: "\e9e2";
@@ -1088,12 +1089,12 @@
 .icon-Map-Box_Flag-Icon .path7:before {
   content: "\e9e3";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path8:before {
   content: "\e9e4";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path9:before {
   content: "\e9e5";
@@ -1117,7 +1118,7 @@
 .icon-Map-Box_Flag-Icon_Hover .path3:before {
   content: "\e9e9";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path4:before {
   content: "\e9ea";
@@ -1127,7 +1128,7 @@
 .icon-Map-Box_Flag-Icon_Hover .path5:before {
   content: "\e9eb";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path6:before {
   content: "\e9ec";
@@ -1137,12 +1138,12 @@
 .icon-Map-Box_Flag-Icon_Hover .path7:before {
   content: "\e9ed";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path8:before {
   content: "\e9ee";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path9:before {
   content: "\e9ef";
@@ -1173,7 +1174,7 @@
 .icon-Map-Box-_-Node-Icon .path2:before {
   content: "\e9f5";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Map-Box-_-Node-Icon .path3:before {
   content: "\e9f6";
@@ -1187,7 +1188,7 @@
 .icon-Map-Box_Node-Icon .path2:before {
   content: "\e9f8";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Map-Box_Node-Icon .path3:before {
   content: "\e9f9";
@@ -1201,7 +1202,7 @@
 .icon-Map-Box-_-Node-Icon_Hover .path2:before {
   content: "\e9fb";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Map-Box-_-Node-Icon_Hover .path3:before {
   content: "\e9fc";
@@ -1215,7 +1216,7 @@
 .icon-Map-Box_Node-Icon_Hover .path2:before {
   content: "\e9fe";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Map-Box_Node-Icon_Hover .path3:before {
   content: "\e9ff";
@@ -1232,50 +1233,50 @@
 }
 .icon-Menu-Icon-_-Create:before {
   content: "\ea02";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Cross:before {
   content: "\ea03";
 }
 .icon-Menu-Icon-_-Dashboard:before {
   content: "\ea04";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Discovery:before {
   content: "\ea05";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Export:before {
   content: "\ea06";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Faults:before {
   content: "\ea07";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Import:before {
   content: "\ea08";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Inventory:before {
   content: "\ea09";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Load:before {
   content: "\ea0a";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Performance:before {
   content: "\ea0b";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Save:before {
   content: "\ea0c";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Services:before {
   content: "\ea0d";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Sina-Logo .path1:before {
   content: "\ea0e";
@@ -1323,15 +1324,15 @@
 }
 .icon-Menu-Icon-_-Topology:before {
   content: "\ea17";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-User-Management:before {
   content: "\ea18";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-Edit-Setting-of-Chart:before {
   content: "\ea19";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-No-Chart-Yet .path1:before {
   content: "\ea1a";
@@ -1369,7 +1370,7 @@
 }
 .icon-Performance-_-Print-of-Chart:before {
   content: "\ea21";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Bullet:before {
   content: "\ea22";
@@ -1377,15 +1378,15 @@
 }
 .icon-Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item:before {
   content: "\ea23";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Move:before {
   content: "\ea24";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Time-_-1-day .path1:before {
   content: "\ea25";
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Time-_-1-day .path2:before {
   content: "\ea26";
@@ -1498,7 +1499,7 @@
 }
 .icon-Performance-_-Table-Setting-_-Time-_-6-hours .path1:before {
   content: "\ea3c";
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Time-_-6-hours .path2:before {
   content: "\ea3d";
@@ -1522,7 +1523,7 @@
 .icon-Performance-_-Table-Setting-_-Time-_-7-days .path2:before {
   content: "\ea41";
   margin-left: -1em;
-  color: rgb(227, 230, 241);
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Time-_-7-days .path3:before {
   content: "\ea42";
@@ -1612,7 +1613,7 @@
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path1:before {
   content: "\ea54";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path2:before {
   content: "\ea55";
@@ -1857,11 +1858,11 @@
 }
 .icon-Shelf-View-_-Loopback:before {
   content: "\ea89";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-PRBS:before {
   content: "\ea8a";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-Refresh:before {
   content: "\ea8b";
@@ -1869,15 +1870,15 @@
 }
 .icon-Shelf-View-_-Tabs-_-Alarm-Summary:before {
   content: "\ea8c";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Shelf-View-_-Tabs-_-Cross:before {
   content: "\ea8d";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Shelf-View-_-Tabs-_-Fan:before {
   content: "\ea8e";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Shelf-View-_-Tabs-_-Fan-Alarm:before {
   content: "\ea8f";
@@ -1933,7 +1934,7 @@
 }
 .icon-Table-_-Info:before {
   content: "\ea9c";
-  color: #fff;
+  color: red;
 }
 .icon-Table-_-Search-Icon:before {
   content: "\ea9d";
@@ -1985,7 +1986,7 @@
 }
 .icon-Title-Bar-Icon-_-About:before {
   content: "\eaa9";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Cross:before {
   content: "\eaaa";
@@ -1993,15 +1994,15 @@
 }
 .icon-Title-Bar-Icon-_-Exit:before {
   content: "\eaab";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Help:before {
   content: "\eaac";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Lock:before {
   content: "\eaad";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Log-Out:before {
   content: "\eaae";
@@ -2009,7 +2010,7 @@
 }
 .icon-Title-Bar-Icon-_-Message:before {
   content: "\eaaf";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Profile:before {
   content: "\eab0";
@@ -2017,11 +2018,11 @@
 }
 .icon-Title-Bar-Icon-_-Sound-OFF:before {
   content: "\eab1";
-  color: #abb6d6;
+  color: red;
 }
 .icon-Title-Bar-Icon-_-Sound-ON:before {
   content: "\eab2";
-  color: #abb6d6;
+  color: red;
 }
 .icon-title_bar_info:before {
   content: "\eab3";
@@ -2052,15 +2053,15 @@
 }
 .icon-Tree-View_Flesh-Icon-for-next-level:before {
   content: "\eaba";
-  color: #fff;
+  color: red;
 }
 .icon-Tree-View_Flesh-Icon-for-previous-level:before {
   content: "\eabb";
-  color: #fff;
+  color: red;
 }
 .icon-Tree-View-_-Search-Icon:before {
   content: "\eabc";
-  color: #abb6d6;
+  color: red;
 }
 .icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
   content: "\eabd";

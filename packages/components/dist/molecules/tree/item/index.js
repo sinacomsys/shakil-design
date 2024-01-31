@@ -40,7 +40,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Item = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "/home/amir/project/TML/amir-shakil-design/shakil-design/packages/components/src/molecules/tree/item/index.tsx";
+var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/item/index.tsx";
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = __importStar(require("react"));
 var style_1 = require("./style");

@@ -30,7 +30,7 @@ const Template: Story<RadioProps> = () => {
         value="1"
       >
         <div style={{ display: "flex", flexDirection: "row", columnGap: 10 }}>
-          <Radio size={14} value={"1"}>
+          <Radio data-testid={"sag"} size={14} value={"1"}>
             <Text size={14}>Radio 1</Text>
           </Radio>
           <Radio size={14} value={"2"}>
