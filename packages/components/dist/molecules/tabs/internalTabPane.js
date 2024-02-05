@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InternalTabPane = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tabs/internalTabPane.tsx";
+var _jsxFileName = "/home/amir/project/TML/shakil-design/packages/components/src/molecules/tabs/internalTabPane.tsx";
 var classnames_1 = __importDefault(require("classnames"));
 var atoms_1 = require("../../atoms");
 var theme_1 = require("../../theme");

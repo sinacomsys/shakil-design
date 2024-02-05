@@ -47,7 +47,6 @@ const CheckBox = ({
           data-is-checked={checked}
           checked={checked}
           onChange={onChangeHandler}
-          data-testid={testid}
           {...rest}
         />
       </div>

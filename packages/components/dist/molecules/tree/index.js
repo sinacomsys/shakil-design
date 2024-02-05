@@ -28,7 +28,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tree = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/tree/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/shakil-design/packages/components/src/molecules/tree/index.tsx";
 var src_1 = require("@shakil-design/utils/src");
 var react_1 = require("react");
 var collapse_1 = require("./collapse");
