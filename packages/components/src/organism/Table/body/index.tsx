@@ -67,12 +67,7 @@ const TableBody = <T extends Record<string, any>>(
     <>
       {virtualRows.length > 0 ? (
         <div style={{ height: `${virtualizer?.getTotalSize()}px` }}>
-          <table
-            ref={ref}
-            style={{ width: width }}
-            className={classes["wrapper"]}
-            role={"table"}
-          >
+          <table ref={ref} className={classes["wrapper"]} role={"table"}>
             <colgroup>
               <col style={{ width: searchIconWidth }} />
               {coloums.map(({ width, dataIndex }) => {

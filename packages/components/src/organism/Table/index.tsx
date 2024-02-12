@@ -25,7 +25,7 @@ import { pxToVh } from "@shakil-design/utils";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
-export const SCROLL_BAR = 8;
+export const SCROLL_BAR = 11;
 export const DEFAULT_ALIGN = "center";
 const ROW_HEIGHT = 32;
 const HEADER_HEIGHT = 45;
@@ -123,7 +123,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const headerHeight =
     unit === "viewport" ? pxToVh(HEADER_HEIGHT) * vh : HEADER_HEIGHT;
   const tableHeight = unit === "viewport" ? pxToVh(height) * vh : height;
-  const _searchIconWidth =
+  const searchIconWidthAccordingToMode =
     mode === "multiple" ? rowSelectionWidth : searchIconWidth;
 
   useEffect(() => {
@@ -158,11 +158,12 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
       return prev + (width || 0);
     }, 0);
 
-    const scrollBarWidth = isOverFlowed ? 0 : pxToVw(SCROLL_BAR) * vw;
+    const scrollBarWidth = isOverFlowed ? 0 : SCROLL_BAR;
     const _columnsWidth = pxToVw(columnsWidth) * vw;
 
     const remainWidth =
-      totalWidth - (_columnsWidth + scrollBarWidth + _searchIconWidth);
+      totalWidth -
+      (_columnsWidth + scrollBarWidth + searchIconWidthAccordingToMode);
 
     coloums.forEach(({ width }) => {
       if (!width) {
@@ -349,7 +350,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                     <colgroup>
                       <col
                         style={{
-                          width: searchIconWidth,
+                          width: searchIconWidthAccordingToMode,
                         }}
                       />
                       {coloums.map(({ width, dataIndex }) => {
@@ -362,7 +363,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                         );
                       })}
                       {isOverFlowed ? (
-                        <col style={{ width: pxToVw(SCROLL_BAR) * vw }} />
+                        <col style={{ width: SCROLL_BAR }} />
                       ) : null}
                     </colgroup>
                     <thead
@@ -408,7 +409,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       paddingTop={paddingTop}
                       paddingBottom={paddingBottom}
                       noContent={_noContent}
-                      searchIconWidth={_searchIconWidth}
+                      searchIconWidth={searchIconWidthAccordingToMode}
                       virtualRows={getVirtualItems()}
                       colWidth={colWidth}
                       coloums={coloums}

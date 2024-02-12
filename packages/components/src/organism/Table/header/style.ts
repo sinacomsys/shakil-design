@@ -7,6 +7,7 @@ export const useStyles = createUseStyles(
       "filter-icon-wrapper": {
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
       },
       search: {
         borderRight: `1px solid ${theme.table?.divider}`,
@@ -15,7 +16,7 @@ export const useStyles = createUseStyles(
         alignItems: "center",
         cursor: "pointer",
         height: 24,
-        paddingInline: 8,
+        width: "50%",
       },
 
       selectAll: {
@@ -24,7 +25,7 @@ export const useStyles = createUseStyles(
         justifyContent: "center",
         alignItems: "center",
         height: 24,
-        paddingInline: 8,
+        width: "50%",
         "& .shakil-custom-square-wrapper": {
           border: "1px solid #ffffff",
         },

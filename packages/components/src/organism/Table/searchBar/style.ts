@@ -10,11 +10,11 @@ const useStyles = createUseStyles(
         alignItems: "center",
         height: 24,
         borderRight: `1px solid ${table?.divider}`,
-        paddingInline: 8,
+        width: "50%",
       },
       "clear-filter": {
-        paddingInline: 8,
         height: 24,
+        width: "50%",
         borderRight: `1px solid ${table?.divider}`,
         display: "flex",
         justifyContent: "center",

@@ -74,6 +74,9 @@ const Template: Story<any> = () => {
         dataIndex: "city",
         title: "Time",
         ellipsis: true,
+        render({ row: { city } }) {
+          return <Text size={14}>{city}</Text>;
+        },
       },
       {
         dataIndex: "country",

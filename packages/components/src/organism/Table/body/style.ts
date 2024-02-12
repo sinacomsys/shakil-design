@@ -5,6 +5,7 @@ export const useStyles = createUseStyles(
   {
     wrapper: {
       tableLayout: "fixed",
+      width: "100%",
       borderCollapse: "collapse",
       "& tr,td,th": {
         padding: 0,

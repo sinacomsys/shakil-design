@@ -9,6 +9,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         "filter-icon-wrapper": {
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
         },
         search: {
             borderRight: "1px solid ".concat((_a = theme.table) === null || _a === void 0 ? void 0 : _a.divider),
@@ -17,7 +18,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             alignItems: "center",
             cursor: "pointer",
             height: 24,
-            paddingInline: 8,
+            width: "50%",
         },
         selectAll: {
             borderRight: "1px solid ".concat((_b = theme.table) === null || _b === void 0 ? void 0 : _b.divider),
@@ -25,7 +26,7 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             justifyContent: "center",
             alignItems: "center",
             height: 24,
-            paddingInline: 8,
+            width: "50%",
             "& .shakil-custom-square-wrapper": {
                 border: "1px solid #ffffff",
             },

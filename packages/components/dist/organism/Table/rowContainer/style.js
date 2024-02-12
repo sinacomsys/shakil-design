@@ -12,10 +12,11 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             borderInlineStart: "5px solid ".concat((_a = theme === null || theme === void 0 ? void 0 : theme.table) === null || _a === void 0 ? void 0 : _a.selectedRowBookmark),
         },
         "check-box": {
-            paddingInlineStart: 8,
             height: "100%",
             display: "flex",
             alignItems: "center",
+            width: "50%",
+            justifyContent: "center",
         },
     };
 }, { name: "row-container", theming: theme_1.theming });

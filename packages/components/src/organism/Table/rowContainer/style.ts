@@ -10,10 +10,11 @@ export const useStyles = createUseStyles(
         borderInlineStart: `5px solid ${theme?.table?.selectedRowBookmark}`,
       },
       "check-box": {
-        paddingInlineStart: 8,
         height: "100%",
         display: "flex",
         alignItems: "center",
+        width: "50%",
+        justifyContent: "center",
       },
     };
   },

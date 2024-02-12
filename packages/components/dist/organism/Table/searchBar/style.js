@@ -12,11 +12,11 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
             alignItems: "center",
             height: 24,
             borderRight: "1px solid ".concat(table === null || table === void 0 ? void 0 : table.divider),
-            paddingInline: 8,
+            width: "50%",
         },
         "clear-filter": {
-            paddingInline: 8,
             height: 24,
+            width: "50%",
             borderRight: "1px solid ".concat(table === null || table === void 0 ? void 0 : table.divider),
             display: "flex",
             justifyContent: "center",
