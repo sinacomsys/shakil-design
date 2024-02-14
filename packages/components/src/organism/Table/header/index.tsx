@@ -5,6 +5,7 @@ import { useTheme } from "../../../theme";
 import { Column, ColumnType } from "../column";
 import { useMyTableContext } from "../context";
 import { useStyles } from "./style";
+import classNames from "classnames";
 interface HeaderProps<T extends object> {
   onToggleSearchBar?: () => void;
   isSearchVisible: boolean;
@@ -38,7 +39,13 @@ const Header = <T extends object>({
             </div>
           ) : null}
 
-          <div onClick={onToggleSearchBar} className={classes["search"]}>
+          <div
+            onClick={onToggleSearchBar}
+            className={classNames(
+              mode === "single" && `${classes["search"]}--full-width`,
+              classes["search"],
+            )}
+          >
             {filterIcon ? (
               filterIcon
             ) : (

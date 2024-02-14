@@ -56,7 +56,12 @@ const SearchBar = <T extends Record<string, unknown>>({
               />
             </div>
           ) : null}
-          <div className={classes["clear-filter"]}>
+          <div
+            className={classNames(
+              classes["clear-filter"],
+              mode === "single" && `${classes["clear-filter"]}--full-width`,
+            )}
+          >
             {clearFilterIcon ? (
               clearFilterIcon
             ) : (

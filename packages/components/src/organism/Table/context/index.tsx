@@ -33,6 +33,7 @@ export interface TableContextProps<T> {
   mode?: TableRowSelectionMode;
   onDeselectCheckedRows: (arg: T) => void;
   onLoadNextPage?: () => void;
+  expandedRows?: T[keyof T][];
 }
 
 export const TableContext = createContext<TableContextProps<any>>({

@@ -19,10 +19,12 @@ const useStyles = createUseStyles(
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        "&--full-width": {
+          width: "100%",
+        },
         "&--wrapper": {
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-end",
           "& .shakil-custom-square-wrapper": {
             border: "1px solid #ffffff",
           },

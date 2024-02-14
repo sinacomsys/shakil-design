@@ -17,6 +17,9 @@ export const useStyles = createUseStyles(
         cursor: "pointer",
         height: 24,
         width: "50%",
+        "&--full-width": {
+          width: "100%",
+        },
       },
 
       selectAll: {
