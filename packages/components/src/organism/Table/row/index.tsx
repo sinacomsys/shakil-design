@@ -1,12 +1,12 @@
 import { LegacyRef, useState } from "react";
 import { useStyles } from "./style";
-import { RowsProps } from "../rowContainer";
+import { RowContainerProps } from "../rowContainer";
 import { useMyTableContext } from "../context";
 import { VirtualItem } from "@tanstack/react-virtual";
 
 interface RowProps<T>
   extends React.HTMLAttributes<HTMLTableRowElement>,
-    Pick<RowsProps<T>, "rowData"> {
+    Pick<RowContainerProps<T>, "rowData"> {
   children?: React.ReactNode;
   isExpanded?: boolean;
   isChecked: boolean;

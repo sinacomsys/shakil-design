@@ -62,6 +62,10 @@ const Template: Story<any> = () => {
         render({ row: { address } }) {
           return <Text size={13}>{address}</Text>;
         },
+        renderExpandRow() {
+          return <div style={{ height: 200, border: "1px solid red" }}></div>;
+        },
+        align: "start",
       },
       {
         dataIndex: "age",
@@ -110,6 +114,7 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
+        expandedRows={["1"]}
         mode="multiple"
         // selectedRows={selectedRow}
         rowKey="id"

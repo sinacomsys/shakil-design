@@ -1,7 +1,7 @@
 import { VirtualItem } from "@tanstack/react-virtual";
 import { useStyles } from "./style";
 import { pxToVwString } from "@shakil-design/utils/src";
-import { Rows } from "../rowContainer";
+import { RowContainer } from "../rowContainer";
 import { TableCommonType } from "..";
 import { UnitContext } from "../../../theme/context";
 import {
@@ -87,7 +87,7 @@ const TableBody = <T extends Record<string, any>>(
                 const row = dataList[virtualRow.index];
                 if (virtualRows.length === index + 1) {
                   return (
-                    <Rows
+                    <RowContainer
                       lastItem={lastItemRef}
                       key={rowKey ? row[rowKey] : index}
                       rowData={row}
@@ -98,7 +98,7 @@ const TableBody = <T extends Record<string, any>>(
                   );
                 }
                 return (
-                  <Rows
+                  <RowContainer
                     key={rowKey ? row[rowKey] : index}
                     rowData={row}
                     index={index}

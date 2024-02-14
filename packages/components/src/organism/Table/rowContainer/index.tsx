@@ -6,8 +6,9 @@ import { useMyTableContext } from "../context";
 import { Row } from "../row";
 import { useStyles } from "./style";
 import { LegacyRef } from "react";
+import classNames from "classnames";
 
-export interface RowsProps<T> {
+export interface RowContainerProps<T> {
   rowData: T;
   columns: ColumnType<T>[];
   index: number;
@@ -15,19 +16,30 @@ export interface RowsProps<T> {
   lastItem?: LegacyRef<HTMLTableRowElement>;
 }
 
-const Rows = <T extends Record<string, unknown>>({
+const RowContainer = <T extends Record<string, unknown>>({
   rowData,
   columns,
   index: rowIndex,
   virtualItem,
   lastItem,
-}: RowsProps<T>) => {
-  const { selectedRow, handleCheckRow, checkedRows, rowKey, data, mode } =
-    useMyTableContext<T>();
+}: RowContainerProps<T>) => {
+  const {
+    selectedRow,
+    handleCheckRow,
+    checkedRows,
+    rowKey,
+    data,
+    mode,
+    expandedRows,
+  } = useMyTableContext<T>();
   const classes = useStyles();
   const isChecked = checkedRows.find(
     (item) => rowKey && item?.[rowKey] === rowData[rowKey],
   );
+  const isExpanded = expandedRows?.find((item) => {
+    if (!rowKey) return;
+    return item === rowData[rowKey];
+  });
 
   return (
     <Row
@@ -59,25 +71,43 @@ const Rows = <T extends Record<string, unknown>>({
           </div>
         ) : null}
       </td>
-      {columns.map(({ dataIndex, render, align, ellipsis }, index) => {
-        const cell = rowData[dataIndex as keyof typeof rowData];
-        return (
-          <Cell ellipsis={ellipsis} key={index} align={align}>
-            <>
-              {render
-                ? render({
+      {columns.map(
+        ({ dataIndex, render, align, ellipsis, renderExpandRow }, index) => {
+          const cell = rowData[dataIndex as keyof typeof rowData];
+          return (
+            <Cell key={index}>
+              <div
+                className={classNames(
+                  classes["cell"],
+                  align === "start" && classes["start"],
+                  align === "center" && classes["center"],
+                  align === "end" && classes["end"],
+                  ellipsis && classes["ellipsis"],
+                )}
+              >
+                {render
+                  ? render({
+                      value: cell,
+                      index: rowIndex,
+                      row: rowData,
+                      data: data,
+                    })
+                  : (cell as unknown as React.ReactNode)}
+              </div>
+              {isExpanded && renderExpandRow
+                ? renderExpandRow({
                     value: cell,
                     index: rowIndex,
                     row: rowData,
                     data: data,
                   })
-                : cell}
-            </>
-          </Cell>
-        );
-      })}
+                : null}
+            </Cell>
+          );
+        },
+      )}
     </Row>
   );
 };
 
-export { Rows };
+export { RowContainer };

@@ -21,7 +21,7 @@ import { pxToVw, useWindowSize } from "@shakil-design/utils/src";
 import { TableBody } from "./body";
 import React from "react";
 import { UnitContext } from "../../theme/context";
-import { pxToVh } from "@shakil-design/utils";
+import { pxToVh } from "@shakil-design/utils/src";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
@@ -31,7 +31,7 @@ const ROW_HEIGHT = 32;
 const HEADER_HEIGHT = 45;
 
 export interface TableCommonType<T>
-  extends Pick<TableContextProps<T>, "testid" | "onRow"> {
+  extends Pick<TableContextProps<T>, "testid" | "onRow" | "expandedRows"> {
   data?: T[];
   rowKey?: keyof T;
   headerStyle?: React.CSSProperties;
@@ -100,6 +100,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     isLoadingMore,
     selectedRows: selectedRowsProps,
     isSearchBarOpen: isSearchBarOpenProps,
+    expandedRows,
   } = props;
 
   const { table: { header } = {} } = useTheme();
@@ -342,6 +343,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                 mode,
                 onDeselectCheckedRows,
                 onLoadNextPage,
+                expandedRows,
               }}
             >
               <div className={classes["wrapper"]}>
