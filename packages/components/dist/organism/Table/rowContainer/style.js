@@ -6,6 +6,12 @@ var theme_1 = require("../../../theme");
 exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
     var _a;
     return {
+        cell: {
+            display: "flex",
+            justifyContent: "center",
+            height: 32,
+            alignItems: "center",
+        },
         selected: {
             position: "relative",
             height: "100%",
@@ -17,6 +23,22 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             alignItems: "center",
             width: "50%",
             justifyContent: "center",
+        },
+        start: {
+            justifyContent: "flex-start",
+        },
+        end: {
+            justifyContent: "flex-end",
+        },
+        center: {
+            justifyContent: "center",
+        },
+        ellipsis: {
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            wordBreak: "keep-all",
+            overflowWrap: "break-word",
         },
     };
 }, { name: "row-container", theming: theme_1.theming });

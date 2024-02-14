@@ -50,9 +50,9 @@ var TableBody = function (_a, ref) {
                             })] }, void 0, true, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 13 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("tbody", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.body }, { children: [paddingTop > 0 && (0, jsx_dev_runtime_1.jsxDEV)("tr", { style: { height: "".concat(paddingTop, "px") } }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 33 }, _this), virtualRows.map(function (virtualRow, index) {
                                 var row = dataList[virtualRow.index];
                                 if (virtualRows.length === index + 1) {
-                                    return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { lastItem: lastItemRef, rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 89, columnNumber: 27 }, _this));
+                                    return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.RowContainer, { lastItem: lastItemRef, rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 89, columnNumber: 27 }, _this));
                                 }
-                                return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.Rows, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 100, columnNumber: 25 }, _this));
+                                return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.RowContainer, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 100, columnNumber: 25 }, _this));
                             }), loadingMore ? ((0, jsx_dev_runtime_1.jsxDEV)("tr", { children: (0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ colSpan: 6 }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: {
                                             display: "flex",
                                             justifyContent: "center",

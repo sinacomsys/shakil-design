@@ -21,10 +21,12 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            "&--full-width": {
+                width: "100%",
+            },
             "&--wrapper": {
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "flex-end",
                 "& .shakil-custom-square-wrapper": {
                     border: "1px solid #ffffff",
                 },

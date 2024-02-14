@@ -6,7 +6,7 @@ export declare const ROW_SELECTION = 62;
 export declare const SCROLL_BAR = 11;
 export declare const DEFAULT_ALIGN = "center";
 export interface TableCommonType<T>
-  extends Pick<TableContextProps<T>, "testid" | "onRow"> {
+  extends Pick<TableContextProps<T>, "testid" | "onRow" | "expandedRows"> {
   data?: T[];
   rowKey?: keyof T;
   headerStyle?: React.CSSProperties;

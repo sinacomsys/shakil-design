@@ -19,6 +19,9 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             cursor: "pointer",
             height: 24,
             width: "50%",
+            "&--full-width": {
+                width: "100%",
+            },
         },
         selectAll: {
             borderRight: "1px solid ".concat((_b = theme.table) === null || _b === void 0 ? void 0 : _b.divider),
