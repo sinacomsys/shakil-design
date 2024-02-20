@@ -34,7 +34,16 @@ export interface BaseTextProps
 const BaseText = memo(
   forwardRef<HTMLDivElement, BaseTextProps>(
     (
-      { dir, numberOfLines, selectable, className, style, ellipsis, ...rest },
+      {
+        dir,
+        numberOfLines,
+        selectable,
+        className,
+        style,
+        ellipsis,
+        lineHeight,
+        ...rest
+      },
       forwardedRef,
     ) => {
       const classes = useStyles();
@@ -53,6 +62,7 @@ const BaseText = memo(
           style={{
             ...style,
             ...(numberOfLines && { WebkitLineClamp: numberOfLines }),
+            ...(lineHeight && { lineHeight }),
           }}
           {...rest}
         />
@@ -67,12 +77,13 @@ const useStyles = createUseStyles(
       border: "0 solid black",
       boxSizing: "border-box",
       color: "black",
-      display: "inline",
+      // display: "inline",
       fontSize: 14,
       margin: 0,
       padding: 0,
       whiteSpace: "pre-wrap",
       wordWrap: "break-word",
+      lineHeight: 1,
     },
     // See #13
     textMultiLine: {

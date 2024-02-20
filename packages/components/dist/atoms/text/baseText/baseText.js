@@ -34,9 +34,9 @@ var react_1 = require("react");
 var react_jss_1 = require("react-jss");
 /** Inspired of React-native Text */
 var BaseText = (0, react_1.memo)((0, react_1.forwardRef)(function (_a, forwardedRef) {
-    var dir = _a.dir, numberOfLines = _a.numberOfLines, selectable = _a.selectable, className = _a.className, style = _a.style, ellipsis = _a.ellipsis, rest = __rest(_a, ["dir", "numberOfLines", "selectable", "className", "style", "ellipsis"]);
+    var dir = _a.dir, numberOfLines = _a.numberOfLines, selectable = _a.selectable, className = _a.className, style = _a.style, ellipsis = _a.ellipsis, lineHeight = _a.lineHeight, rest = __rest(_a, ["dir", "numberOfLines", "selectable", "className", "style", "ellipsis", "lineHeight"]);
     var classes = useStyles();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: (0, classnames_1.default)(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 41, columnNumber: 15 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: (0, classnames_1.default)(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })), (lineHeight && { lineHeight: lineHeight })) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 15 }, _this));
 }));
 exports.BaseText = BaseText;
 var useStyles = (0, react_jss_1.createUseStyles)({
@@ -44,12 +44,13 @@ var useStyles = (0, react_jss_1.createUseStyles)({
         border: "0 solid black",
         boxSizing: "border-box",
         color: "black",
-        display: "inline",
+        // display: "inline",
         fontSize: 14,
         margin: 0,
         padding: 0,
         whiteSpace: "pre-wrap",
         wordWrap: "break-word",
+        lineHeight: 1,
     },
     // See #13
     textMultiLine: {
