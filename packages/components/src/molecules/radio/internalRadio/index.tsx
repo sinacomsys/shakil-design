@@ -105,11 +105,9 @@ const InternalRadio = React.forwardRef<HTMLDivElement, RadioProps>(
         </div>
 
         {typeof children === "string" ? (
-          <span>
-            <Text color={isDisabled ? disableText : primary}>{children}</Text>
-          </span>
+          <Text color={isDisabled ? disableText : primary}>{children}</Text>
         ) : (
-          <span>{children}</span>
+          children
         )}
       </label>
     );
