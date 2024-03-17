@@ -28,7 +28,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CheckBox = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/checkbox/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/molecules/checkbox/index.tsx";
 var text_1 = require("../../atoms/text");
 var indeterminate_1 = require("./indeterminate");
 var customSquare_1 = require("./customSquare");

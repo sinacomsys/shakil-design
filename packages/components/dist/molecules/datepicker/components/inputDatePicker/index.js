@@ -25,7 +25,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputDatePicker = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/molecules/datepicker/components/inputDatePicker/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/molecules/datepicker/components/inputDatePicker/index.tsx";
 var atoms_1 = require("../../../../atoms");
 var textInput_1 = require("../../../../molecules/textInput");
 var datePickerProvider_1 = require("../datePickerProvider");
@@ -37,7 +37,7 @@ var datePickerPanel_1 = require("../datePickerPanel");
 var useTheme = theme_1.theming.useTheme;
 var InputDatePicker = function (_a) {
     var onChange = _a.onChange, testid = _a.testid, props = __rest(_a, ["onChange", "testid"]);
-    var _b = (0, react_1.useState)(undefined), value = _b[0], setValue = _b[1];
+    var _b = (0, react_1.useState)(null), value = _b[0], setValue = _b[1];
     var Colors = useTheme();
     var handleOnConfirmDate = function (_a) {
         var value = _a.value;

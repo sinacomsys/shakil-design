@@ -25,12 +25,12 @@ const InputDatePicker = ({
   testid,
   ...props
 }: InputDatePickerProps) => {
-  const [value, setValue] = useState<Moment | null | undefined>(undefined);
+  const [value, setValue] = useState<InputDatePickerProps["value"]>(null);
   const Colors = useTheme();
   const handleOnConfirmDate = ({
     value,
   }: {
-    value: Moment | null | undefined;
+    value: InputDatePickerProps["value"];
   }) => {
     setValue(value);
     onChange?.({ value });
