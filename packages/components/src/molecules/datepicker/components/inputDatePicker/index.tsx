@@ -1,5 +1,5 @@
-import { BaseIcon, Tooltip } from "../../../../atoms";
-import { TextInput } from "../../../../molecules/textInput";
+import { BaseIcon, Tooltip, TooltipProps } from "../../../../atoms";
+import { TextInput, TextInputProps } from "../../../../molecules/textInput";
 import { DatePickerProvider } from "../datePickerProvider";
 import { DatePickerProviderProps } from "../types";
 import { theming } from "../../../../theme";
@@ -12,17 +12,29 @@ const { useTheme } = theming;
 
 interface InputDatePickerProps
   extends Omit<
-    DatePickerProviderProps,
-    "children" | "onOkDate" | "isDisable" | "onEditAgain" | "disableDateFrom"
-  > {
+      DatePickerProviderProps,
+      "children" | "onOkDate" | "isDisable" | "onEditAgain" | "disableDateFrom"
+    >,
+    Pick<
+      TextInputProps,
+      | "onClear"
+      | "disabled"
+      | "AddonAfter"
+      | "addonAfterClassName"
+      | "addonAfterStyle"
+    >,
+    Pick<TooltipProps, "placement"> {
   onChange?: (arg: { value: Moment | undefined | null }) => void;
   allowClear?: boolean;
-  onClear?: () => void;
 }
 
 const InputDatePicker = ({
   onChange,
   testid,
+  AddonAfter,
+  addonAfterClassName,
+  addonAfterStyle,
+  placement,
   ...props
 }: InputDatePickerProps) => {
   const [value, setValue] = useState<InputDatePickerProps["value"]>(null);
@@ -48,6 +60,7 @@ const InputDatePicker = ({
   return (
     <Tooltip
       trigger="click"
+      placement={placement}
       content={
         <DatePickerProvider {...props}>
           {({ value, disable, onGoToday }) => {
@@ -69,15 +82,21 @@ const InputDatePicker = ({
     >
       <TextInput
         AddonAfter={
-          <BaseIcon
-            color={Colors.disableText}
-            name="Table-_-Clock"
-            size={{ height: 18, width: 18 }}
-          />
+          AddonAfter ? (
+            AddonAfter
+          ) : (
+            <BaseIcon
+              color={Colors.disableText}
+              name="Table-_-Clock"
+              size={{ height: 18, width: 18 }}
+            />
+          )
         }
+        {...{ addonAfterStyle, addonAfterClassName }}
         onClear={handleOnClearValue}
         allowClear={props.allowClear}
         value={inputValue}
+        disabled={props.disabled}
       />
     </Tooltip>
   );
