@@ -24,7 +24,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IconTemplate = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/baseIcon/createIconSet.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/atoms/baseIcon/createIconSet.tsx";
 var react_1 = require("react");
 var usehooks_ts_1 = require("usehooks-ts");
 var src_1 = require("@shakil-design/utils/src");

@@ -38,6 +38,8 @@ const Template: Story<any> = () => {
               }
             }}
             calendarMode={isPersian ? "persian" : "gregorian"}
+            disabled={false}
+            placement="bottom"
           />
         </div>
         <Button
