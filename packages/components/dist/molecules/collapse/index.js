@@ -23,7 +23,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Collapse = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design/packages/components/src/molecules/collapse/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/shakil-design/packages/components/src/molecules/collapse/index.tsx";
 var react_1 = require("react");
 var context_1 = require("./context");
 var panel_1 = require("./panel");

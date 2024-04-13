@@ -17,7 +17,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileInput = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design/packages/components/src/molecules/file-input/index.tsx";
+var _jsxFileName = "/home/amir/project/TML/shakil-design/packages/components/src/molecules/file-input/index.tsx";
 var classnames_1 = __importDefault(require("classnames"));
 var baseIcon_1 = require("../../atoms/baseIcon");
 var theme_1 = require("../../theme");
