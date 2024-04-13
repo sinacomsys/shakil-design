@@ -20,7 +20,7 @@ const Template: Story<BaseIconProps> = () => (
     >
       <BaseIcon
         size={{ height: 60, width: 60 }}
-        name={"triple_location"}
+        name={"expand_chart"}
         color={["red", "blue"]}
       />
     </div>
