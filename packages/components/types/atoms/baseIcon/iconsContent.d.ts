@@ -97,9 +97,11 @@ export declare const iconsContent: {
     "Performance-_-Table-Setting-_-Move": string;
     "Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item": string;
     "Performance-_-Table-Setting-_-Bullet": string;
+    Performance_table: string;
     "Performance-_-Print-of-Chart": string;
     "Performance-_-No-Chart-Yet": string;
     "Performance-_-Edit-Setting-of-Chart": string;
+    Performance_Chart: string;
     "Menu-Icon-_-User-Management": string;
     "Menu-Icon-_-Topology": string;
     "Menu-Icon-_-Sina-Logo": string;

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?bjoiwx');
-  src:  url('fonts/icomoon.eot?bjoiwx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?bjoiwx') format('truetype'),
-    url('fonts/icomoon.woff?bjoiwx') format('woff'),
-    url('fonts/icomoon.svg?bjoiwx#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?8n40dl');
+  src:  url('fonts/icomoon.eot?8n40dl#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8n40dl') format('truetype'),
+    url('fonts/icomoon.woff?8n40dl') format('woff'),
+    url('fonts/icomoon.svg?8n40dl#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -779,1355 +779,1448 @@
   content: "\e9aa";
   color: #58cc87;
 }
-.icon-Performance-_-Print-of-Chart:before {
+.icon-Performance_table .path1:before {
   content: "\e9ab";
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path2:before {
+  content: "\e9ac";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path3:before {
+  content: "\e9ad";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path4:before {
+  content: "\e9ae";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path5:before {
+  content: "\e9af";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path6:before {
+  content: "\e9b0";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path7:before {
+  content: "\e9b1";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path8:before {
+  content: "\e9b2";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path9:before {
+  content: "\e9b3";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path10:before {
+  content: "\e9b4";
+  margin-left: -0.9150390625em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_table .path11:before {
+  content: "\e9b5";
+  margin-left: -0.9150390625em;
+  color: rgb(171, 171, 171);
+}
+.icon-Performance-_-Print-of-Chart:before {
+  content: "\e9b6";
   color: #fff;
 }
 .icon-Performance-_-No-Chart-Yet .path1:before {
-  content: "\e9ac";
+  content: "\e9b7";
   color: rgb(255, 201, 23);
 }
 .icon-Performance-_-No-Chart-Yet .path2:before {
-  content: "\e9ad";
+  content: "\e9b8";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-No-Chart-Yet .path3:before {
-  content: "\e9ae";
+  content: "\e9b9";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-No-Chart-Yet .path4:before {
-  content: "\e9af";
+  content: "\e9ba";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-No-Chart-Yet .path5:before {
-  content: "\e9b0";
+  content: "\e9bb";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-No-Chart-Yet .path6:before {
-  content: "\e9b1";
+  content: "\e9bc";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-No-Chart-Yet .path7:before {
-  content: "\e9b2";
+  content: "\e9bd";
   margin-left: -1.0419921875em;
   color: rgb(149, 157, 184);
 }
 .icon-Performance-_-Edit-Setting-of-Chart:before {
-  content: "\e9b3";
+  content: "\e9be";
   color: #fff;
 }
+.icon-Performance_Chart .path1:before {
+  content: "\e9bf";
+  color: rgb(171, 171, 171);
+}
+.icon-Performance_Chart .path2:before {
+  content: "\e9c0";
+  margin-left: -0.955078125em;
+  color: rgb(171, 171, 171);
+}
+.icon-Performance_Chart .path3:before {
+  content: "\e9c1";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_Chart .path4:before {
+  content: "\e9c2";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_Chart .path5:before {
+  content: "\e9c3";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_Chart .path6:before {
+  content: "\e9c4";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_Chart .path7:before {
+  content: "\e9c5";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
+.icon-Performance_Chart .path8:before {
+  content: "\e9c6";
+  margin-left: -0.955078125em;
+  color: rgb(87, 87, 87);
+}
 .icon-Menu-Icon-_-User-Management:before {
-  content: "\e9b4";
+  content: "\e9c7";
   color: #fff;
 }
 .icon-Menu-Icon-_-Topology:before {
-  content: "\e9b5";
+  content: "\e9c8";
   color: #fff;
 }
 .icon-Menu-Icon-_-Sina-Logo .path1:before {
-  content: "\e9b6";
+  content: "\e9c9";
   color: rgb(227, 171, 14);
 }
 .icon-Menu-Icon-_-Sina-Logo .path2:before {
-  content: "\e9b7";
+  content: "\e9ca";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path3:before {
-  content: "\e9b8";
+  content: "\e9cb";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path4:before {
-  content: "\e9b9";
+  content: "\e9cc";
   margin-left: -1.736328125em;
   color: rgb(12, 18, 65);
 }
 .icon-Menu-Icon-_-Sina-Logo .path5:before {
-  content: "\e9ba";
+  content: "\e9cd";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path6:before {
-  content: "\e9bb";
+  content: "\e9ce";
   margin-left: -1.736328125em;
   color: rgb(255, 213, 0);
 }
 .icon-Menu-Icon-_-Sina-Logo .path7:before {
-  content: "\e9bc";
+  content: "\e9cf";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path8:before {
-  content: "\e9bd";
+  content: "\e9d0";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path9:before {
-  content: "\e9be";
+  content: "\e9d1";
   margin-left: -1.736328125em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Services:before {
-  content: "\e9bf";
+  content: "\e9d2";
   color: #fff;
 }
 .icon-Menu-Icon-_-Save:before {
-  content: "\e9c0";
+  content: "\e9d3";
   color: #fff;
 }
 .icon-Menu-Icon-_-Performance:before {
-  content: "\e9c1";
+  content: "\e9d4";
   color: #fff;
 }
 .icon-Menu-Icon-_-Load:before {
-  content: "\e9c2";
+  content: "\e9d5";
   color: #fff;
 }
 .icon-Menu-Icon-_-Inventory:before {
-  content: "\e9c3";
+  content: "\e9d6";
   color: #fff;
 }
 .icon-Menu-Icon-_-Import:before {
-  content: "\e9c4";
+  content: "\e9d7";
   color: #fff;
 }
 .icon-Menu-Icon-_-Faults:before {
-  content: "\e9c5";
+  content: "\e9d8";
   color: #fff;
 }
 .icon-Menu-Icon-_-Export:before {
-  content: "\e9c6";
+  content: "\e9d9";
   color: #fff;
 }
 .icon-Menu-Icon-_-Discovery:before {
-  content: "\e9c7";
+  content: "\e9da";
   color: #fff;
 }
 .icon-Menu-Icon-_-Dashboard:before {
-  content: "\e9c8";
+  content: "\e9db";
   color: #fff;
 }
 .icon-Menu-Icon-_-Cross:before {
-  content: "\e9c9";
+  content: "\e9dc";
 }
 .icon-Menu-Icon-_-Create:before {
-  content: "\e9ca";
+  content: "\e9dd";
   color: #fff;
 }
 .icon-Map-Box-_-View-Links:before {
-  content: "\e9cb";
+  content: "\e9de";
   color: #c1c0c0;
 }
 .icon-Map-Box-_-Nodes-Info:before {
-  content: "\e9cc";
+  content: "\e9df";
   color: #c1c0c0;
 }
 .icon-Map-Box_Node-Icon_Hover .path1:before {
-  content: "\e9cd";
+  content: "\e9e0";
   color: rgb(104, 74, 128);
 }
 .icon-Map-Box_Node-Icon_Hover .path2:before {
-  content: "\e9ce";
+  content: "\e9e1";
   margin-left: -0.8056640625em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box_Node-Icon_Hover .path3:before {
-  content: "\e9cf";
+  content: "\e9e2";
   margin-left: -0.8056640625em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box-_-Node-Icon_Hover .path1:before {
-  content: "\e9d0";
+  content: "\e9e3";
   color: rgb(55, 71, 117);
 }
 .icon-Map-Box-_-Node-Icon_Hover .path2:before {
-  content: "\e9d1";
+  content: "\e9e4";
   margin-left: -0.8056640625em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box-_-Node-Icon_Hover .path3:before {
-  content: "\e9d2";
+  content: "\e9e5";
   margin-left: -0.8056640625em;
   color: rgb(88, 204, 135);
 }
 .icon-Map-Box_Node-Icon .path1:before {
-  content: "\e9d3";
+  content: "\e9e6";
   color: rgb(104, 74, 128);
 }
 .icon-Map-Box_Node-Icon .path2:before {
-  content: "\e9d4";
+  content: "\e9e7";
   margin-left: -0.806640625em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box_Node-Icon .path3:before {
-  content: "\e9d5";
+  content: "\e9e8";
   margin-left: -0.806640625em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box-_-Node-Icon .path1:before {
-  content: "\e9d6";
+  content: "\e9e9";
   color: rgb(55, 71, 117);
 }
 .icon-Map-Box-_-Node-Icon .path2:before {
-  content: "\e9d7";
+  content: "\e9ea";
   margin-left: -0.806640625em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box-_-Node-Icon .path3:before {
-  content: "\e9d8";
+  content: "\e9eb";
   margin-left: -0.806640625em;
   color: rgb(88, 204, 135);
 }
 .icon-Map-Box-_-Move-Node:before {
-  content: "\e9d9";
+  content: "\e9ec";
   color: #c1c0c0;
 }
 .icon-Map-Box-_-Move-Alert-on-Map:before {
-  content: "\e9da";
+  content: "\e9ed";
   color: #374775;
 }
 .icon-Map-Box-_-Full-Screen:before {
-  content: "\e9db";
+  content: "\e9ee";
   color: #c1c0c0;
 }
 .icon-Map-Box_Flag-Icon_Hover .path1:before {
-  content: "\e9dc";
+  content: "\e9ef";
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path2:before {
-  content: "\e9dd";
+  content: "\e9f0";
   margin-left: -1.0859375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path3:before {
-  content: "\e9de";
+  content: "\e9f1";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path4:before {
-  content: "\e9df";
+  content: "\e9f2";
   margin-left: -1.0859375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path5:before {
-  content: "\e9e0";
+  content: "\e9f3";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path6:before {
-  content: "\e9e1";
+  content: "\e9f4";
   margin-left: -1.0859375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path7:before {
-  content: "\e9e2";
+  content: "\e9f5";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path8:before {
-  content: "\e9e3";
+  content: "\e9f6";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path9:before {
-  content: "\e9e4";
+  content: "\e9f7";
   margin-left: -1.0859375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path10:before {
-  content: "\e9e5";
+  content: "\e9f8";
   margin-left: -1.0859375em;
   color: rgb(127, 94, 152);
 }
 .icon-Map-Box_Flag-Icon .path1:before {
-  content: "\e9e6";
+  content: "\e9f9";
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path2:before {
-  content: "\e9e7";
+  content: "\e9fa";
   margin-left: -1.0859375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path3:before {
-  content: "\e9e8";
+  content: "\e9fb";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path4:before {
-  content: "\e9e9";
+  content: "\e9fc";
   margin-left: -1.0859375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path5:before {
-  content: "\e9ea";
+  content: "\e9fd";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path6:before {
-  content: "\e9eb";
+  content: "\e9fe";
   margin-left: -1.0859375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path7:before {
-  content: "\e9ec";
+  content: "\e9ff";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path8:before {
-  content: "\e9ed";
+  content: "\ea00";
   margin-left: -1.0859375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path9:before {
-  content: "\e9ee";
+  content: "\ea01";
   margin-left: -1.0859375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path10:before {
-  content: "\e9ef";
+  content: "\ea02";
   margin-left: -1.0859375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box-_-Fit-to-Screen:before {
-  content: "\e9f0";
+  content: "\ea03";
   color: #c1c0c0;
 }
 .icon-Lock-icon:before {
-  content: "\e9f1";
+  content: "\ea04";
   color: #abb6d6;
 }
 .icon-Inventory-_-Table-_-Users-Icon:before {
-  content: "\e9f2";
+  content: "\ea05";
   color: #374775;
 }
 .icon-Inventory-_-Table-_-Edit-Icon:before {
-  content: "\e9f3";
+  content: "\ea06";
   color: #374775;
 }
 .icon-Inventory-_-Table-_-Delete-Icon:before {
-  content: "\e9f4";
+  content: "\ea07";
   color: #c65161;
 }
 .icon-Inventory-_-Table-_-Copy-Icon:before {
-  content: "\e9f5";
+  content: "\ea08";
   color: #374775;
 }
 .icon-Inventory-_-Shelf:before {
-  content: "\e9f6";
+  content: "\ea09";
   color: #849aaf;
 }
 .icon-Inventory-_-Rack:before {
-  content: "\e9f7";
+  content: "\ea0a";
   color: #7287a0;
 }
 .icon-Inventory-_-Module .path1:before {
-  content: "\e9f8";
+  content: "\ea0b";
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path2:before {
-  content: "\e9f9";
+  content: "\ea0c";
   margin-left: -0.3125em;
   color: rgb(145, 165, 168);
 }
 .icon-Inventory-_-Module .path3:before {
-  content: "\e9fa";
+  content: "\ea0d";
   margin-left: -0.3125em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Module .path4:before {
-  content: "\e9fb";
-  margin-left: -0.3125em;
-  color: rgb(190, 200, 206);
-}
-.icon-Inventory-_-Module .path5:before {
-  content: "\e9fc";
-  margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
-}
-.icon-Inventory-_-Module .path6:before {
-  content: "\e9fd";
-  margin-left: -0.3125em;
-  color: rgb(30, 216, 75);
-}
-.icon-Inventory-_-Module .path7:before {
-  content: "\e9fe";
-  margin-left: -0.3125em;
-  color: rgb(30, 216, 75);
-}
-.icon-Inventory-_-Module .path8:before {
-  content: "\e9ff";
-  margin-left: -0.3125em;
-  color: rgb(30, 216, 75);
-}
-.icon-Inventory-_-Module .path9:before {
-  content: "\ea00";
-  margin-left: -0.3125em;
-  color: rgb(30, 216, 75);
-}
-.icon-Inventory-_-Module .path10:before {
-  content: "\ea01";
-  margin-left: -0.3125em;
-  color: rgb(30, 216, 75);
-}
-.icon-Inventory-_-Module .path11:before {
-  content: "\ea02";
-  margin-left: -0.3125em;
-  color: rgb(190, 200, 206);
-}
-.icon-Inventory-_-Module .path12:before {
-  content: "\ea03";
-  margin-left: -0.3125em;
-  color: rgb(145, 165, 168);
-}
-.icon-Inventory-_-Module .path13:before {
-  content: "\ea04";
-  margin-left: -0.3125em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Module .path14:before {
-  content: "\ea05";
-  margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
-}
-.icon-Inventory-_-Module .path15:before {
-  content: "\ea06";
-  margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
-}
-.icon-Inventory-_-Module .path16:before {
-  content: "\ea07";
-  margin-left: -0.3125em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Module .path17:before {
-  content: "\ea08";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path18:before {
-  content: "\ea09";
-  margin-left: -0.3125em;
-  color: rgb(190, 200, 206);
-}
-.icon-Inventory-_-Module .path19:before {
-  content: "\ea0a";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path20:before {
-  content: "\ea0b";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path21:before {
-  content: "\ea0c";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path22:before {
-  content: "\ea0d";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path23:before {
   content: "\ea0e";
   margin-left: -0.3125em;
   color: rgb(190, 200, 206);
 }
-.icon-Inventory-_-Module .path24:before {
+.icon-Inventory-_-Module .path5:before {
   content: "\ea0f";
   margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
+  color: rgb(172, 184, 188);
 }
-.icon-Inventory-_-Module .path25:before {
+.icon-Inventory-_-Module .path6:before {
   content: "\ea10";
   margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
+  color: rgb(30, 216, 75);
 }
-.icon-Inventory-_-Module .path26:before {
+.icon-Inventory-_-Module .path7:before {
   content: "\ea11";
   margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
+  color: rgb(30, 216, 75);
 }
-.icon-Inventory-_-Module .path27:before {
+.icon-Inventory-_-Module .path8:before {
   content: "\ea12";
   margin-left: -0.3125em;
-  color: rgb(158, 174, 178);
+  color: rgb(30, 216, 75);
 }
-.icon-Inventory-_-Module .path28:before {
+.icon-Inventory-_-Module .path9:before {
   content: "\ea13";
   margin-left: -0.3125em;
-  color: rgb(114, 135, 160);
+  color: rgb(30, 216, 75);
 }
-.icon-Inventory-_-Module .path29:before {
+.icon-Inventory-_-Module .path10:before {
   content: "\ea14";
   margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
+  color: rgb(30, 216, 75);
 }
-.icon-Inventory-_-Module .path30:before {
+.icon-Inventory-_-Module .path11:before {
   content: "\ea15";
-  margin-left: -0.3125em;
-  color: rgb(172, 184, 188);
-}
-.icon-Inventory-_-Module .path31:before {
-  content: "\ea16";
   margin-left: -0.3125em;
   color: rgb(190, 200, 206);
 }
-.icon-Inventory-_-Module .path32:before {
+.icon-Inventory-_-Module .path12:before {
+  content: "\ea16";
+  margin-left: -0.3125em;
+  color: rgb(145, 165, 168);
+}
+.icon-Inventory-_-Module .path13:before {
   content: "\ea17";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path33:before {
-  content: "\ea18";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path34:before {
-  content: "\ea19";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path35:before {
-  content: "\ea1a";
-  margin-left: -0.3125em;
-  color: rgb(215, 219, 221);
-}
-.icon-Inventory-_-Module .path36:before {
-  content: "\ea1b";
-  margin-left: -0.3125em;
-  color: rgb(158, 174, 178);
-}
-.icon-Inventory-_-Module .path37:before {
-  content: "\ea1c";
-  margin-left: -0.3125em;
-  color: rgb(158, 174, 178);
-}
-.icon-Inventory-_-Module .path38:before {
-  content: "\ea1d";
-  margin-left: -0.3125em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Module .path39:before {
-  content: "\ea1e";
-  margin-left: -0.3125em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Module .path40:before {
-  content: "\ea1f";
   margin-left: -0.3125em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Module .path41:before {
+.icon-Inventory-_-Module .path14:before {
+  content: "\ea18";
+  margin-left: -0.3125em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Module .path15:before {
+  content: "\ea19";
+  margin-left: -0.3125em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Module .path16:before {
+  content: "\ea1a";
+  margin-left: -0.3125em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Module .path17:before {
+  content: "\ea1b";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path18:before {
+  content: "\ea1c";
+  margin-left: -0.3125em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Module .path19:before {
+  content: "\ea1d";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path20:before {
+  content: "\ea1e";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path21:before {
+  content: "\ea1f";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path22:before {
   content: "\ea20";
   margin-left: -0.3125em;
-  color: rgb(132, 154, 175);
+  color: rgb(215, 219, 221);
 }
-.icon-Inventory-_-Module .path42:before {
+.icon-Inventory-_-Module .path23:before {
   content: "\ea21";
   margin-left: -0.3125em;
   color: rgb(190, 200, 206);
 }
-.icon-Inventory-_-Module .path43:before {
+.icon-Inventory-_-Module .path24:before {
   content: "\ea22";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path25:before {
+  content: "\ea23";
+  margin-left: -0.3125em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Module .path26:before {
+  content: "\ea24";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path27:before {
+  content: "\ea25";
+  margin-left: -0.3125em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Module .path28:before {
+  content: "\ea26";
+  margin-left: -0.3125em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Module .path29:before {
+  content: "\ea27";
+  margin-left: -0.3125em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Module .path30:before {
+  content: "\ea28";
+  margin-left: -0.3125em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Module .path31:before {
+  content: "\ea29";
+  margin-left: -0.3125em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Module .path32:before {
+  content: "\ea2a";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path33:before {
+  content: "\ea2b";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path34:before {
+  content: "\ea2c";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path35:before {
+  content: "\ea2d";
+  margin-left: -0.3125em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Module .path36:before {
+  content: "\ea2e";
+  margin-left: -0.3125em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Module .path37:before {
+  content: "\ea2f";
+  margin-left: -0.3125em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Module .path38:before {
+  content: "\ea30";
+  margin-left: -0.3125em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Module .path39:before {
+  content: "\ea31";
+  margin-left: -0.3125em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Module .path40:before {
+  content: "\ea32";
+  margin-left: -0.3125em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Module .path41:before {
+  content: "\ea33";
+  margin-left: -0.3125em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Module .path42:before {
+  content: "\ea34";
+  margin-left: -0.3125em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Module .path43:before {
+  content: "\ea35";
   margin-left: -0.3125em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path44:before {
-  content: "\ea23";
+  content: "\ea36";
   margin-left: -0.3125em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path45:before {
-  content: "\ea24";
+  content: "\ea37";
   margin-left: -0.3125em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Module .path46:before {
-  content: "\ea25";
+  content: "\ea38";
   margin-left: -0.3125em;
   color: rgb(227, 229, 229);
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path1:before {
-  content: "\ea26";
+  content: "\ea39";
   color: rgb(255, 255, 255);
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path2:before {
-  content: "\ea27";
+  content: "\ea3a";
   margin-left: -1em;
   color: rgb(255, 255, 255);
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path3:before {
-  content: "\ea28";
+  content: "\ea3b";
   margin-left: -1em;
   color: rgb(55, 71, 117);
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path4:before {
-  content: "\ea29";
+  content: "\ea3c";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Inventory-_-Card .path1:before {
-  content: "\ea2a";
+  content: "\ea3d";
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path2:before {
-  content: "\ea2b";
+  content: "\ea3e";
   margin-left: -0.1806640625em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path3:before {
-  content: "\ea2c";
+  content: "\ea3f";
   margin-left: -0.1806640625em;
   color: rgb(227, 229, 229);
 }
 .icon-Inventory-_-Card .path4:before {
-  content: "\ea2d";
+  content: "\ea40";
   margin-left: -0.1806640625em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path5:before {
-  content: "\ea2e";
+  content: "\ea41";
   margin-left: -0.1806640625em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path6:before {
-  content: "\ea2f";
+  content: "\ea42";
   margin-left: -0.1806640625em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Card .path7:before {
-  content: "\ea30";
+  content: "\ea43";
   margin-left: -0.1806640625em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path8:before {
-  content: "\ea31";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path9:before {
-  content: "\ea32";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path10:before {
-  content: "\ea33";
-  margin-left: -0.1806640625em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Card .path11:before {
-  content: "\ea34";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path12:before {
-  content: "\ea35";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path13:before {
-  content: "\ea36";
-  margin-left: -0.1806640625em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Card .path14:before {
-  content: "\ea37";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path15:before {
-  content: "\ea38";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path16:before {
-  content: "\ea39";
-  margin-left: -0.1806640625em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Card .path17:before {
-  content: "\ea3a";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path18:before {
-  content: "\ea3b";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path19:before {
-  content: "\ea3c";
-  margin-left: -0.1806640625em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Card .path20:before {
-  content: "\ea3d";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path21:before {
-  content: "\ea3e";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path22:before {
-  content: "\ea3f";
-  margin-left: -0.1806640625em;
-  color: rgb(186, 196, 198);
-}
-.icon-Inventory-_-Card .path23:before {
-  content: "\ea40";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path24:before {
-  content: "\ea41";
-  margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
-}
-.icon-Inventory-_-Card .path25:before {
-  content: "\ea42";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path26:before {
-  content: "\ea43";
-  margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path27:before {
   content: "\ea44";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path28:before {
+.icon-Inventory-_-Card .path9:before {
   content: "\ea45";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path29:before {
+.icon-Inventory-_-Card .path10:before {
   content: "\ea46";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(186, 196, 198);
 }
-.icon-Inventory-_-Card .path30:before {
+.icon-Inventory-_-Card .path11:before {
   content: "\ea47";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path31:before {
+.icon-Inventory-_-Card .path12:before {
   content: "\ea48";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path32:before {
+.icon-Inventory-_-Card .path13:before {
   content: "\ea49";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(186, 196, 198);
 }
-.icon-Inventory-_-Card .path33:before {
+.icon-Inventory-_-Card .path14:before {
   content: "\ea4a";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path34:before {
+.icon-Inventory-_-Card .path15:before {
   content: "\ea4b";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path35:before {
+.icon-Inventory-_-Card .path16:before {
   content: "\ea4c";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(186, 196, 198);
 }
-.icon-Inventory-_-Card .path36:before {
+.icon-Inventory-_-Card .path17:before {
   content: "\ea4d";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path37:before {
+.icon-Inventory-_-Card .path18:before {
   content: "\ea4e";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path38:before {
+.icon-Inventory-_-Card .path19:before {
   content: "\ea4f";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(186, 196, 198);
 }
-.icon-Inventory-_-Card .path39:before {
+.icon-Inventory-_-Card .path20:before {
   content: "\ea50";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path40:before {
+.icon-Inventory-_-Card .path21:before {
   content: "\ea51";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path41:before {
+.icon-Inventory-_-Card .path22:before {
   content: "\ea52";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(186, 196, 198);
 }
-.icon-Inventory-_-Card .path42:before {
+.icon-Inventory-_-Card .path23:before {
   content: "\ea53";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path43:before {
+.icon-Inventory-_-Card .path24:before {
   content: "\ea54";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(132, 154, 175);
 }
-.icon-Inventory-_-Card .path44:before {
+.icon-Inventory-_-Card .path25:before {
   content: "\ea55";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path45:before {
+.icon-Inventory-_-Card .path26:before {
   content: "\ea56";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path46:before {
+.icon-Inventory-_-Card .path27:before {
   content: "\ea57";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path47:before {
+.icon-Inventory-_-Card .path28:before {
   content: "\ea58";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path48:before {
+.icon-Inventory-_-Card .path29:before {
   content: "\ea59";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path49:before {
+.icon-Inventory-_-Card .path30:before {
   content: "\ea5a";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path50:before {
+.icon-Inventory-_-Card .path31:before {
   content: "\ea5b";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path51:before {
+.icon-Inventory-_-Card .path32:before {
   content: "\ea5c";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path52:before {
+.icon-Inventory-_-Card .path33:before {
   content: "\ea5d";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path53:before {
+.icon-Inventory-_-Card .path34:before {
   content: "\ea5e";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path54:before {
+.icon-Inventory-_-Card .path35:before {
   content: "\ea5f";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path55:before {
+.icon-Inventory-_-Card .path36:before {
   content: "\ea60";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path56:before {
+.icon-Inventory-_-Card .path37:before {
   content: "\ea61";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path57:before {
+.icon-Inventory-_-Card .path38:before {
   content: "\ea62";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path58:before {
+.icon-Inventory-_-Card .path39:before {
   content: "\ea63";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path59:before {
+.icon-Inventory-_-Card .path40:before {
   content: "\ea64";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path60:before {
+.icon-Inventory-_-Card .path41:before {
   content: "\ea65";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path61:before {
+.icon-Inventory-_-Card .path42:before {
   content: "\ea66";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path62:before {
+.icon-Inventory-_-Card .path43:before {
   content: "\ea67";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path63:before {
+.icon-Inventory-_-Card .path44:before {
   content: "\ea68";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path64:before {
+.icon-Inventory-_-Card .path45:before {
   content: "\ea69";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path65:before {
+.icon-Inventory-_-Card .path46:before {
   content: "\ea6a";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path66:before {
+.icon-Inventory-_-Card .path47:before {
   content: "\ea6b";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path67:before {
+.icon-Inventory-_-Card .path48:before {
   content: "\ea6c";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path68:before {
+.icon-Inventory-_-Card .path49:before {
   content: "\ea6d";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path69:before {
+.icon-Inventory-_-Card .path50:before {
   content: "\ea6e";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path70:before {
+.icon-Inventory-_-Card .path51:before {
   content: "\ea6f";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path71:before {
+.icon-Inventory-_-Card .path52:before {
   content: "\ea70";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path72:before {
+.icon-Inventory-_-Card .path53:before {
   content: "\ea71";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path73:before {
+.icon-Inventory-_-Card .path54:before {
   content: "\ea72";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path74:before {
+.icon-Inventory-_-Card .path55:before {
   content: "\ea73";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path75:before {
+.icon-Inventory-_-Card .path56:before {
   content: "\ea74";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path76:before {
+.icon-Inventory-_-Card .path57:before {
   content: "\ea75";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path77:before {
+.icon-Inventory-_-Card .path58:before {
   content: "\ea76";
   margin-left: -0.1806640625em;
-  color: rgb(0, 0, 0);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path78:before {
+.icon-Inventory-_-Card .path59:before {
   content: "\ea77";
   margin-left: -0.1806640625em;
-  color: rgb(132, 154, 175);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path79:before {
+.icon-Inventory-_-Card .path60:before {
   content: "\ea78";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path80:before {
+.icon-Inventory-_-Card .path61:before {
   content: "\ea79";
   margin-left: -0.1806640625em;
-  color: rgb(140, 163, 181);
+  color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path81:before {
+.icon-Inventory-_-Card .path62:before {
   content: "\ea7a";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path82:before {
+.icon-Inventory-_-Card .path63:before {
   content: "\ea7b";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path83:before {
+.icon-Inventory-_-Card .path64:before {
   content: "\ea7c";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path84:before {
+.icon-Inventory-_-Card .path65:before {
   content: "\ea7d";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path85:before {
+.icon-Inventory-_-Card .path66:before {
   content: "\ea7e";
   margin-left: -0.1806640625em;
-  color: rgb(140, 163, 181);
+  color: rgb(0, 0, 0);
 }
-.icon-Inventory-_-Card .path86:before {
+.icon-Inventory-_-Card .path67:before {
   content: "\ea7f";
   margin-left: -0.1806640625em;
-  color: rgb(114, 135, 160);
+  color: rgb(0, 0, 0);
 }
-.icon-Inventory-_-Card .path87:before {
+.icon-Inventory-_-Card .path68:before {
   content: "\ea80";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path88:before {
+.icon-Inventory-_-Card .path69:before {
   content: "\ea81";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path89:before {
+.icon-Inventory-_-Card .path70:before {
   content: "\ea82";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
-.icon-Inventory-_-Card .path90:before {
+.icon-Inventory-_-Card .path71:before {
   content: "\ea83";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path72:before {
+  content: "\ea84";
+  margin-left: -0.1806640625em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Card .path73:before {
+  content: "\ea85";
+  margin-left: -0.1806640625em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Card .path74:before {
+  content: "\ea86";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path75:before {
+  content: "\ea87";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path76:before {
+  content: "\ea88";
+  margin-left: -0.1806640625em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Card .path77:before {
+  content: "\ea89";
+  margin-left: -0.1806640625em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Card .path78:before {
+  content: "\ea8a";
+  margin-left: -0.1806640625em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Card .path79:before {
+  content: "\ea8b";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path80:before {
+  content: "\ea8c";
+  margin-left: -0.1806640625em;
+  color: rgb(140, 163, 181);
+}
+.icon-Inventory-_-Card .path81:before {
+  content: "\ea8d";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path82:before {
+  content: "\ea8e";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path83:before {
+  content: "\ea8f";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path84:before {
+  content: "\ea90";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path85:before {
+  content: "\ea91";
+  margin-left: -0.1806640625em;
+  color: rgb(140, 163, 181);
+}
+.icon-Inventory-_-Card .path86:before {
+  content: "\ea92";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path87:before {
+  content: "\ea93";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path88:before {
+  content: "\ea94";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path89:before {
+  content: "\ea95";
+  margin-left: -0.1806640625em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Card .path90:before {
+  content: "\ea96";
   margin-left: -0.1806640625em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path91:before {
-  content: "\ea84";
+  content: "\ea97";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path92:before {
-  content: "\ea85";
+  content: "\ea98";
   margin-left: -0.1806640625em;
   color: rgb(114, 135, 160);
 }
 .icon-Faults-_-Table-_-Message-selected:before {
-  content: "\ea86";
+  content: "\ea99";
   color: #374775;
 }
 .icon-Faults-_-Table-_-Message-not-selected:before {
-  content: "\ea87";
+  content: "\ea9a";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Go-to:before {
-  content: "\ea88";
+  content: "\ea9b";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Clear-selected:before {
-  content: "\ea89";
+  content: "\ea9c";
   color: #374775;
 }
 .icon-Faults-_-Table-_-Clear-not-selected:before {
-  content: "\ea8a";
+  content: "\ea9d";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Acknowledge-selected:before {
-  content: "\ea8b";
+  content: "\ea9e";
   color: #374775;
 }
 .icon-Faults-_-Table-_-Acknowledge-not-selected:before {
-  content: "\ea8c";
+  content: "\ea9f";
   color: #959db8;
 }
 .icon-Faults-_-Sound--Color-_-Info:before {
-  content: "\ea8d";
+  content: "\eaa0";
   color: #58cc87;
 }
 .icon-Faults-_-Send-Message:before {
-  content: "\ea8e";
+  content: "\eaa1";
   color: #58cc87;
 }
 .icon-Faults-_-Node-Status-_-Alerts-Status:before {
-  content: "\ea8f";
+  content: "\eaa2";
   color: #c65161;
 }
 .icon-expand_chart:before {
-  content: "\ea90";
+  content: "\eaa3";
   color: #575757;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path1:before {
-  content: "\ea91";
+  content: "\eaa4";
   color: rgb(255, 255, 255);
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path2:before {
-  content: "\ea92";
+  content: "\eaa5";
   margin-left: -1em;
   color: rgb(88, 204, 135);
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-B:before {
-  content: "\ea93";
+  content: "\eaa6";
   color: #58cc87;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path1:before {
-  content: "\ea94";
+  content: "\eaa7";
   color: rgb(255, 255, 255);
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path2:before {
-  content: "\ea95";
+  content: "\eaa8";
   margin-left: -1em;
   color: rgb(149, 157, 184);
 }
 .icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path1:before {
-  content: "\ea96";
+  content: "\eaa9";
   color: rgb(55, 71, 117);
 }
 .icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path2:before {
-  content: "\ea97";
+  content: "\eaaa";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Every-Boxes-_-Toggle-ON .path1:before {
-  content: "\ea98";
+  content: "\eaab";
   color: rgb(88, 204, 135);
 }
 .icon-Every-Boxes-_-Toggle-ON .path2:before {
-  content: "\ea99";
+  content: "\eaac";
   margin-left: -1.857421875em;
   color: rgb(255, 255, 255);
 }
 .icon-Every-Boxes-_-Toggle-OFF .path1:before {
-  content: "\ea9a";
+  content: "\eaad";
   color: rgb(255, 137, 70);
 }
 .icon-Every-Boxes-_-Toggle-OFF .path2:before {
-  content: "\ea9b";
+  content: "\eaae";
   margin-left: -1.857421875em;
   color: rgb(255, 255, 255);
 }
 .icon-Every-Boxes-_-Radio-Box .path1:before {
-  content: "\ea9c";
+  content: "\eaaf";
   color: rgb(255, 255, 255);
 }
 .icon-Every-Boxes-_-Radio-Box .path2:before {
-  content: "\ea9d";
+  content: "\eab0";
   margin-left: -1em;
   color: none;
 }
 .icon-Every-Boxes-_-Radio-Box .path3:before {
-  content: "\ea9e";
+  content: "\eab1";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Every-Boxes-_-Full-Screen-Box:before {
-  content: "\ea9f";
+  content: "\eab2";
   color: #abb6d6;
 }
 .icon-Every-Boxes-_-Full-Screen:before {
-  content: "\eaa0";
+  content: "\eab3";
   color: #abb6d6;
 }
 .icon-Every-Boxes_Flesh-Icon-for-more-choices:before {
-  content: "\eaa1";
+  content: "\eab4";
   color: #684a80;
 }
 .icon-Every-Boxes-_-Flesh-Icon-for-more-choices:before {
-  content: "\eaa2";
+  content: "\eab5";
   color: #374775;
 }
 .icon-Every-Boxes_Cross-Icon:before {
-  content: "\eaa3";
+  content: "\eab6";
   color: #684a80;
 }
 .icon-Every-Boxes-_-Cross-Icon:before {
-  content: "\eaa4";
+  content: "\eab7";
   color: #684a80;
 }
 .icon-Every-Boxes-_-Back:before {
-  content: "\eaa5";
+  content: "\eab8";
   color: #abb6d6;
 }
 .icon-Every-Boxes-_-About-Icon:before {
-  content: "\eaa6";
+  content: "\eab9";
   color: #374775;
 }
 .icon-Edit-Icon:before {
-  content: "\eaa7";
+  content: "\eaba";
   color: #684a80;
 }
 .icon-Discovery-_-Table-_-Service-Icon:before {
-  content: "\eaa8";
+  content: "\eabb";
   color: #374775;
 }
 .icon-Discovery-_-Table-_-Lambda-Icon:before {
-  content: "\eaa9";
+  content: "\eabc";
   color: #374775;
 }
 .icon-Discovery-_-Table-_-Edit-Icon:before {
-  content: "\eaaa";
+  content: "\eabd";
   color: #374775;
 }
 .icon-Discovery-_-Table-_-Delete-Icon:before {
-  content: "\eaab";
+  content: "\eabe";
   color: #c65161;
 }
 .icon-Discovery-_-Map-_-Node-Icon .path1:before {
-  content: "\eaac";
+  content: "\eabf";
   color: rgb(55, 71, 117);
 }
 .icon-Discovery-_-Map-_-Node-Icon .path2:before {
-  content: "\eaad";
+  content: "\eac0";
   margin-left: -0.79296875em;
   color: rgb(227, 230, 241);
 }
 .icon-Delete-Icon:before {
-  content: "\eaae";
+  content: "\eac1";
   color: #f88;
 }
 .icon-Create-Project_Download-Icon:before {
-  content: "\eaaf";
-  color: #684a80;
-}
-.icon-Create-Project_Checked-Icon:before {
-  content: "\eab0";
-  color: #49d1e1;
-}
-.icon-Create-Project_Alert-Icon:before {
-  content: "\eab1";
-  color: #f88;
-}
-.icon-Calendar-_-Year-_-Previous-Year:before {
-  content: "\eab2";
-  color: #fff;
-}
-.icon-Calendar-_-Year-_-Next-Year:before {
-  content: "\eab3";
-  color: #fff;
-}
-.icon-Calendar-_-Month-_-Previous-Month:before {
-  content: "\eab4";
-  color: #fff;
-}
-.icon-Calendar-_-Month-_-Next-Month:before {
-  content: "\eab5";
-  color: #fff;
-}
-.icon-Calendar-_-Combo-Calendar:before {
-  content: "\eab6";
-  color: #48e580;
-}
-.icon-Calendar-_-Close:before {
-  content: "\eab7";
-  color: #fff;
-}
-.icon-Calendar-_-Calendar-Icon:before {
-  content: "\eab8";
-  color: #dbdbdb;
-}
-.icon-Calendar-_-Apply-Changes:before {
-  content: "\eab9";
-  color: #45de82;
-}
-.icon-BPM_Purple-Link:before {
-  content: "\eaba";
-  color: #684a80;
-}
-.icon-BPM_Import:before {
-  content: "\eabb";
-  color: #684a80;
-}
-.icon-BPM_Export:before {
-  content: "\eabc";
-  color: #684a80;
-}
-.icon-BPM_Blue-Link:before {
-  content: "\eabd";
-  color: #49d1e1;
-}
-.icon-BPM_Alert-Icon:before {
-  content: "\eabe";
-  color: #49d1e1;
-}
-.icon-Avatar-icon:before {
-  content: "\eabf";
-  color: #abb6d6;
-}
-.icon-Amount-Boxes_Increase:before {
-  content: "\eac0";
-  color: #fff;
-}
-.icon-Amount-Boxes_Decrease:before {
-  content: "\eac1";
-  color: #fff;
-}
-.icon-Add-Box_Add-Icon:before {
   content: "\eac2";
   color: #684a80;
 }
-.icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
+.icon-Create-Project_Checked-Icon:before {
   content: "\eac3";
+  color: #49d1e1;
+}
+.icon-Create-Project_Alert-Icon:before {
+  content: "\eac4";
+  color: #f88;
+}
+.icon-Calendar-_-Year-_-Previous-Year:before {
+  content: "\eac5";
+  color: #fff;
+}
+.icon-Calendar-_-Year-_-Next-Year:before {
+  content: "\eac6";
+  color: #fff;
+}
+.icon-Calendar-_-Month-_-Previous-Month:before {
+  content: "\eac7";
+  color: #fff;
+}
+.icon-Calendar-_-Month-_-Next-Month:before {
+  content: "\eac8";
+  color: #fff;
+}
+.icon-Calendar-_-Combo-Calendar:before {
+  content: "\eac9";
+  color: #48e580;
+}
+.icon-Calendar-_-Close:before {
+  content: "\eaca";
+  color: #fff;
+}
+.icon-Calendar-_-Calendar-Icon:before {
+  content: "\eacb";
+  color: #dbdbdb;
+}
+.icon-Calendar-_-Apply-Changes:before {
+  content: "\eacc";
+  color: #45de82;
+}
+.icon-BPM_Purple-Link:before {
+  content: "\eacd";
+  color: #684a80;
+}
+.icon-BPM_Import:before {
+  content: "\eace";
+  color: #684a80;
+}
+.icon-BPM_Export:before {
+  content: "\eacf";
+  color: #684a80;
+}
+.icon-BPM_Blue-Link:before {
+  content: "\ead0";
+  color: #49d1e1;
+}
+.icon-BPM_Alert-Icon:before {
+  content: "\ead1";
+  color: #49d1e1;
+}
+.icon-Avatar-icon:before {
+  content: "\ead2";
+  color: #abb6d6;
+}
+.icon-Amount-Boxes_Increase:before {
+  content: "\ead3";
+  color: #fff;
+}
+.icon-Amount-Boxes_Decrease:before {
+  content: "\ead4";
+  color: #fff;
+}
+.icon-Add-Box_Add-Icon:before {
+  content: "\ead5";
+  color: #684a80;
+}
+.icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
+  content: "\ead6";
   color: #dbd1e2;
 }
 .icon-Abstract-Service-Graph_Triangle-Icon:before {
-  content: "\eac4";
+  content: "\ead7";
   color: #dbd1e2;
 }
 .icon-Abstract-Service-Graph_Trapezius-Icon:before {
-  content: "\eac5";
+  content: "\ead8";
   color: #dbd1e2;
 }
 .icon-Abstract-Service-Graph_Plus-Icon-for-next-level:before {
-  content: "\eac6";
+  content: "\ead9";
   color: #684a80;
 }
 .icon-Abstract-Service-Graph_Narrow-Rectangle-Icon:before {
-  content: "\eac7";
+  content: "\eada";
   color: #dbd1e2;
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path1:before {
-  content: "\eac8";
+  content: "\eadb";
   color: rgb(73, 209, 225);
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path2:before {
-  content: "\eac9";
+  content: "\eadc";
   margin-left: -1.888671875em;
   color: rgb(255, 255, 255);
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-OFF .path1:before {
-  content: "\eaca";
+  content: "\eadd";
   color: rgb(255, 136, 136);
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-OFF .path2:before {
-  content: "\eacb";
+  content: "\eade";
   margin-left: -1.888671875em;
   color: rgb(255, 255, 255);
 }
 .icon-Abstract-Service-Graph_Menu_Reverse-Icon:before {
-  content: "\eacc";
+  content: "\eadf";
   color: #684a80;
 }
 .icon-Abstract-Service-Graph_Hamburger-Menu:before {
-  content: "\eacd";
+  content: "\eae0";
   color: #684a80;
 }
