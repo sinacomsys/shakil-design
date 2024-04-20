@@ -19,9 +19,8 @@ const Template: Story<BaseIconProps> = () => (
       }}
     >
       <BaseIcon
-        size={{ height: 60, width: 60 }}
-        name={"Performance_Chart"}
-        color={["red", "blue"]}
+        size={{ height: 6, width: 11 }}
+        name={"Amount-Boxes_Decrease"}
       />
     </div>
   </ShakilDesignThemeProvider>
