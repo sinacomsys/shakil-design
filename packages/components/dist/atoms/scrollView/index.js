@@ -28,7 +28,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScrollView = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "/home/amir/project/TML/shakil-design/packages/components/src/atoms/scrollView/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/atoms/scrollView/index.tsx";
 var react_1 = __importDefault(require("react"));
 var style_1 = require("./style");
 var classnames_1 = __importDefault(require("classnames"));
