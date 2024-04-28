@@ -90,39 +90,10 @@ function isEventComposing(nativeEvent) {
 }
 var TextInput = React.forwardRef(function (_a, forwardedRef) {
     var _b;
-    var _c = _a.autoCapitalize, autoCapitalize = _c === void 0 ? "sentences" : _c, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _d = _a.autoCorrect, autoCorrect = _d === void 0 ? true : _d, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _f = _a.editable, editable = _f === void 0 ? true : _f, _g = _a.keyboardType, keyboardType = _g === void 0 ? "default" : _g, _h = _a.multiline, multiline = _h === void 0 ? false : _h, _j = _a.numberOfLines, numberOfLines = _j === void 0 ? 1 : _j, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, returnKeyType = _a.returnKeyType, _k = _a.secureTextEntry, secureTextEntry = _k === void 0 ? false : _k, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, testID = _a.testID, disabled = _a.disabled, theme = _a.theme, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, wrapperClassName = _a.wrapperClassName, errorMessage = _a.errorMessage, errorMessageClassName = _a.errorMessageClassName, hasError = _a.hasError, clearIconColor = _a.clearIconColor, isLoading = _a.isLoading, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "editable", "keyboardType", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "returnKeyType", "secureTextEntry", "selection", "selectTextOnFocus", "spellCheck", "className", "testID", "disabled", "theme", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear", "wrapperClassName", "errorMessage", "errorMessageClassName", "hasError", "clearIconColor", "isLoading"]);
+    var _c = _a.autoCapitalize, autoCapitalize = _c === void 0 ? "sentences" : _c, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _d = _a.autoCorrect, autoCorrect = _d === void 0 ? true : _d, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _f = _a.multiline, multiline = _f === void 0 ? false : _f, _g = _a.numberOfLines, numberOfLines = _g === void 0 ? 1 : _g, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, disabled = _a.disabled, theme = _a.theme, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, wrapperClassName = _a.wrapperClassName, errorMessage = _a.errorMessage, errorMessageClassName = _a.errorMessageClassName, hasError = _a.hasError, clearIconColor = _a.clearIconColor, isLoading = _a.isLoading, type = _a.type, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "selection", "selectTextOnFocus", "spellCheck", "className", "disabled", "theme", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear", "wrapperClassName", "errorMessage", "errorMessageClassName", "hasError", "clearIconColor", "isLoading", "type"]);
     var classes = (0, style_1.useStyles)();
+    var _h = React.useState(false), isPasswordVisible = _h[0], setPasswordVisible = _h[1];
     var Colors = useTheme();
-    var type;
-    var inputMode;
-    switch (keyboardType) {
-        case "email-address":
-            type = "email";
-            break;
-        case "number-pad":
-        case "numeric":
-            inputMode = "numeric";
-            type = "number";
-            break;
-        case "decimal-pad":
-            inputMode = "decimal";
-            break;
-        case "phone-pad":
-            type = "tel";
-            break;
-        case "search":
-        case "web-search":
-            type = "search";
-            break;
-        case "url":
-            type = "url";
-            break;
-        default:
-            type = "text";
-    }
-    if (secureTextEntry) {
-        type = "password";
-    }
     var dimensions = React.useRef({ height: 0, width: 0 });
     var hostRef = React.useRef(null);
     var handleContentSizeChange = React.useCallback(function (hostNode) {
@@ -262,24 +233,24 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
     supportedProps.autoCorrect = autoCorrect ? "on" : "off";
-    supportedProps.enterKeyHint = returnKeyType;
     supportedProps.onBlur = handleBlur;
     supportedProps.onChange = handleChange;
     supportedProps.onFocus = handleFocus;
     supportedProps.onKeyDown = handleKeyDown;
     supportedProps.onSelect = handleSelectionChange;
-    supportedProps.readOnly = !editable;
     // @ts-ignore
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
-    supportedProps.type = (multiline ? undefined : type);
-    supportedProps.inputMode = inputMode;
     var setRef = (0, reactjs_view_core_1.composeRef)(hostRef, imperativeRef, forwardedRef);
     var themes = (0, style_2.useFonts)();
     var _value = value === null || value === undefined ? "" : value;
-    var clearIcon = allowClear ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: classes["clear-icon"], onClick: onClear, name: "Every-Boxes-_-Cross-Icon", size: { height: 12, width: 12 }, color: clearIconColor }, void 0, false, { fileName: _jsxFileName, lineNumber: 352, columnNumber: 37 }, _this)) : null;
-    var addOnAfterIcon = isLoading ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { size: "small" }, void 0, false, { fileName: _jsxFileName, lineNumber: 362, columnNumber: 41 }, _this)) : _value && allowClear && !disabled ? (clearIcon) : AddonAfter ? (AddonAfter) : null;
-    return multiline ? ((0, jsx_dev_runtime_1.jsxDEV)("textarea", __assign({ className: (0, classnames_1.default)(classes["text-area"], disabled && classes.disabled, (hasError || errorMessage) && classes["input-with-error"], themes[theme || "Regular"], className), ref: setRef, value: _value }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 370, columnNumber: 25 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["inputWrapper"], wrapperClassName && wrapperClassName), style: wrapperStyle }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, supportedProps, { value: _value, className: (0, classnames_1.default)(classes["textInput"], (hasError || errorMessage) && classes["input-with-error"], addOnAfterIcon && "".concat(classes["textInput"], "--input-with-addon-after"), addonBefore && "".concat(classes["textInput"], "--input-with-addon-before"), (disabled || isLoading) && classes.disabled, themes[theme || "Regular"], className), ref: setRef, type: rest.type, disabled: disabled || isLoading, "data-testid": supportedProps["data-testid"] || testID, style: __assign({}, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 391, columnNumber: 9 }, _this), errorMessage ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ className: (0, classnames_1.default)(classes["error-message"], errorMessageClassName), color: (_b = Colors.textInput) === null || _b === void 0 ? void 0 : _b.errorMessage, size: 13 }, { children: errorMessage }), void 0, false, { fileName: _jsxFileName, lineNumber: 412, columnNumber: 26 }, _this)) : null, addonBefore ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 424, columnNumber: 25 }, _this)) : null, addOnAfterIcon ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 436, columnNumber: 28 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 383, columnNumber: 10 }, _this));
+    var clearIcon = allowClear ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: classes["clear-icon"], onClick: onClear, name: "Every-Boxes-_-Cross-Icon", size: { height: 12, width: 12 }, color: clearIconColor }, void 0, false, { fileName: _jsxFileName, lineNumber: 307, columnNumber: 37 }, _this)) : null;
+    var togglePasswordVisibility = function () {
+        setPasswordVisible(function (prev) { return !prev; });
+    };
+    var passwordToggleVisibilityIcon = isPasswordVisible ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: classes["password-visible-icon"], onClick: togglePasswordVisibility, name: "Faults-_-Table-_-Acknowledge-selected", size: { height: 12, width: 19 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 321, columnNumber: 63 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { wrapperClassName: classes["password-visible-icon"], onClick: togglePasswordVisibility, name: "Faults-_-Table-_-Acknowledge-not-selected", size: { height: 12, width: 19 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 328, columnNumber: 10 }, _this));
+    var addOnAfterIcon = isLoading ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { size: "small" }, void 0, false, { fileName: _jsxFileName, lineNumber: 337, columnNumber: 41 }, _this)) : type === "password" ? (passwordToggleVisibilityIcon) : _value && allowClear && !disabled ? (clearIcon) : AddonAfter ? (AddonAfter) : null;
+    return multiline ? ((0, jsx_dev_runtime_1.jsxDEV)("textarea", __assign({ className: (0, classnames_1.default)(classes["text-area"], disabled && classes.disabled, (hasError || errorMessage) && classes["input-with-error"], themes[theme || "Regular"], className), ref: setRef, value: _value }, supportedProps), void 0, false, { fileName: _jsxFileName, lineNumber: 347, columnNumber: 25 }, _this)) : ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["inputWrapper"], wrapperClassName && wrapperClassName), style: wrapperStyle }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, supportedProps, { type: isPasswordVisible ? "text" : "password", value: _value, className: (0, classnames_1.default)(classes["textInput"], (hasError || errorMessage) && classes["input-with-error"], addOnAfterIcon && "".concat(classes["textInput"], "--input-with-addon-after"), addonBefore && "".concat(classes["textInput"], "--input-with-addon-before"), (disabled || isLoading) && classes.disabled, themes[theme || "Regular"], className), ref: setRef, disabled: disabled || isLoading, style: __assign({}, supportedProps.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 368, columnNumber: 9 }, _this), errorMessage ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ className: (0, classnames_1.default)(classes["error-message"], errorMessageClassName), color: (_b = Colors.textInput) === null || _b === void 0 ? void 0 : _b.errorMessage, size: 13 }, { children: errorMessage }), void 0, false, { fileName: _jsxFileName, lineNumber: 387, columnNumber: 26 }, _this)) : null, addonBefore ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonBefore"], addonBeforeClassName && addonBeforeClassName), style: addonBeforeStyle }, { children: addonBefore }), void 0, false, { fileName: _jsxFileName, lineNumber: 399, columnNumber: 25 }, _this)) : null, addOnAfterIcon ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["addonAfter"], addonAfterClassName && addonAfterClassName) }, { children: addOnAfterIcon }), void 0, false, { fileName: _jsxFileName, lineNumber: 411, columnNumber: 28 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 360, columnNumber: 10 }, _this));
 });
 exports.TextInput = TextInput;
 TextInput.displayName = "TextInput";
