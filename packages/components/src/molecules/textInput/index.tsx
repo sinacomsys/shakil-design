@@ -6,7 +6,6 @@ import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
 import { useFonts } from "../../atoms/text/style";
 import { BaseIcon, Spinner, Text } from "../../atoms";
-import { useState } from "react";
 import { theming } from "../../theme";
 const { useTheme } = theming;
 
@@ -59,8 +58,6 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       autoCorrect = true,
       blurOnSubmit,
       clearTextOnFocus,
-      editable = true,
-      keyboardType = "default",
       multiline = false,
       numberOfLines = 1,
       onBlur,
@@ -71,13 +68,10 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       onKeyPress,
       onSelectionChange,
       onSubmitEditing,
-      returnKeyType,
-      secureTextEntry = false,
       selection,
       selectTextOnFocus,
       spellCheck,
       className,
-      testID,
       disabled,
       theme,
       AddonAfter,
@@ -96,45 +90,14 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       hasError,
       clearIconColor,
       isLoading,
+      type,
       ...rest
     },
     forwardedRef,
   ) => {
     const classes = useStyles();
+    const [isPasswordVisible, setPasswordVisible] = React.useState(false);
     const Colors = useTheme();
-    let type: React.InputHTMLAttributes<HTMLInputElement>["type"];
-    let inputMode: React.HTMLAttributes<HTMLInputElement>["inputMode"];
-
-    switch (keyboardType) {
-      case "email-address":
-        type = "email";
-        break;
-      case "number-pad":
-      case "numeric":
-        inputMode = "numeric";
-        type = "number";
-        break;
-      case "decimal-pad":
-        inputMode = "decimal";
-        break;
-      case "phone-pad":
-        type = "tel";
-        break;
-      case "search":
-      case "web-search":
-        type = "search";
-        break;
-      case "url":
-        type = "url";
-        break;
-      default:
-        type = "text";
-    }
-
-    if (secureTextEntry) {
-      type = "password";
-    }
-
     const dimensions = React.useRef({ height: 0, width: 0 });
     const hostRef = React.useRef(null);
 
@@ -329,22 +292,14 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
     supportedProps.autoCapitalize = autoCapitalize;
     supportedProps.autoComplete = autoComplete || autoCompleteType || "on";
     supportedProps.autoCorrect = autoCorrect ? "on" : "off";
-
-    (supportedProps as any).enterKeyHint = returnKeyType;
     supportedProps.onBlur = handleBlur;
     supportedProps.onChange = handleChange;
     supportedProps.onFocus = handleFocus;
     supportedProps.onKeyDown = handleKeyDown;
     supportedProps.onSelect = handleSelectionChange;
-    supportedProps.readOnly = !editable;
     // @ts-ignore
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
-    (supportedProps as React.InputHTMLAttributes<HTMLInputElement>).type = (
-      multiline ? undefined : type
-    ) as string;
-    supportedProps.inputMode = inputMode;
-
     const setRef = composeRef(hostRef, imperativeRef, forwardedRef);
 
     const themes = useFonts();
@@ -359,8 +314,30 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       />
     ) : null;
 
+    const togglePasswordVisibility = () => {
+      setPasswordVisible((prev) => !prev);
+    };
+
+    const passwordToggleVisibilityIcon = isPasswordVisible ? (
+      <BaseIcon
+        wrapperClassName={classes["password-visible-icon"]}
+        onClick={togglePasswordVisibility}
+        name="Faults-_-Table-_-Acknowledge-selected"
+        size={{ height: 12, width: 19 }}
+      />
+    ) : (
+      <BaseIcon
+        wrapperClassName={classes["password-visible-icon"]}
+        onClick={togglePasswordVisibility}
+        name="Faults-_-Table-_-Acknowledge-not-selected"
+        size={{ height: 12, width: 19 }}
+      />
+    );
+
     const addOnAfterIcon = isLoading ? (
       <Spinner size="small" />
+    ) : type === "password" ? (
+      passwordToggleVisibilityIcon
     ) : _value && allowClear && !disabled ? (
       clearIcon
     ) : AddonAfter ? (
@@ -390,6 +367,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       >
         <input
           {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
+          type={isPasswordVisible ? "text" : "password"}
           value={_value}
           className={classNames(
             classes["textInput"],
@@ -401,10 +379,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
             className,
           )}
           ref={setRef}
-          type={rest.type}
           disabled={disabled || isLoading}
-          //@ts-ignore
-          data-testid={supportedProps["data-testid"] || testID}
           style={{
             ...supportedProps.style,
           }}

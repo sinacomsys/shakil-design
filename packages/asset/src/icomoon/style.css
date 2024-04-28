@@ -41,7 +41,7 @@
 .icon-Abstract-Service-Graph_Menu_Toggle-OFF .path2:before {
   content: "\e903";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path1:before {
   content: "\e904";
@@ -50,11 +50,11 @@
 .icon-Abstract-Service-Graph_Menu_Toggle-ON .path2:before {
   content: "\e905";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Abstract-Service-Graph_Narrow-Rectangle-Icon:before {
   content: "\e906";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Plus-Icon-for-next-level:before {
   content: "\e907";
@@ -62,15 +62,15 @@
 }
 .icon-Abstract-Service-Graph_Trapezius-Icon:before {
   content: "\e908";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Triangle-Icon:before {
   content: "\e909";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
   content: "\e90a";
-  color: #dbd1e2;
+  color: red;
 }
 .icon-Add-Box_Add-Icon:before {
   content: "\e90b";
@@ -78,11 +78,11 @@
 }
 .icon-Amount-Boxes_Decrease:before {
   content: "\e90c";
-  color: #fff;
+  color: red;
 }
 .icon-Amount-Boxes_Increase:before {
   content: "\e90d";
-  color: #fff;
+  color: red;
 }
 .icon-Avatar-icon:before {
   content: "\e90e";
@@ -118,7 +118,7 @@
 }
 .icon-Calendar-_-Close:before {
   content: "\e916";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Combo-Calendar:before {
   content: "\e917";
@@ -126,19 +126,19 @@
 }
 .icon-Calendar-_-Month-_-Next-Month:before {
   content: "\e918";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Month-_-Previous-Month:before {
   content: "\e919";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Next-Year:before {
   content: "\e91a";
-  color: #fff;
+  color: red;
 }
 .icon-Calendar-_-Year-_-Previous-Year:before {
   content: "\e91b";
-  color: #fff;
+  color: red;
 }
 .icon-Create-Project_Alert-Icon:before {
   content: "\e91c";
@@ -211,7 +211,7 @@
 }
 .icon-Every-Boxes-_-Radio-Box .path1:before {
   content: "\e92d";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Boxes-_-Radio-Box .path2:before {
   content: "\e92e";
@@ -230,7 +230,7 @@
 .icon-Every-Boxes-_-Toggle-OFF .path2:before {
   content: "\e931";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Boxes-_-Toggle-ON .path1:before {
   content: "\e932";
@@ -239,7 +239,7 @@
 .icon-Every-Boxes-_-Toggle-ON .path2:before {
   content: "\e933";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Boxes_Cross-Icon:before {
   content: "\e934";
@@ -260,7 +260,7 @@
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path1:before {
   content: "\e938";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path2:before {
   content: "\e939";
@@ -273,7 +273,7 @@
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path1:before {
   content: "\e93b";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path2:before {
   content: "\e93c";
@@ -785,12 +785,12 @@
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path1:before {
   content: "\e9a4";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path2:before {
   content: "\e9a5";
   margin-left: -1em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path3:before {
   content: "\e9a6";
@@ -1123,7 +1123,7 @@
 .icon-Map-Box_Flag-Icon .path3:before {
   content: "\e9eb";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path4:before {
   content: "\e9ec";
@@ -1133,7 +1133,7 @@
 .icon-Map-Box_Flag-Icon .path5:before {
   content: "\e9ed";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path6:before {
   content: "\e9ee";
@@ -1143,12 +1143,12 @@
 .icon-Map-Box_Flag-Icon .path7:before {
   content: "\e9ef";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path8:before {
   content: "\e9f0";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon .path9:before {
   content: "\e9f1";
@@ -1172,7 +1172,7 @@
 .icon-Map-Box_Flag-Icon_Hover .path3:before {
   content: "\e9f5";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path4:before {
   content: "\e9f6";
@@ -1182,7 +1182,7 @@
 .icon-Map-Box_Flag-Icon_Hover .path5:before {
   content: "\e9f7";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path6:before {
   content: "\e9f8";
@@ -1192,12 +1192,12 @@
 .icon-Map-Box_Flag-Icon_Hover .path7:before {
   content: "\e9f9";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path8:before {
   content: "\e9fa";
   margin-left: -1.0859375em;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Map-Box_Flag-Icon_Hover .path9:before {
   content: "\e9fb";
@@ -1239,50 +1239,50 @@
 }
 .icon-Menu-Icon-_-Create:before {
   content: "\ea03";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Cross:before {
   content: "\ea04";
 }
 .icon-Menu-Icon-_-Dashboard:before {
   content: "\ea05";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Discovery:before {
   content: "\ea06";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Export:before {
   content: "\ea07";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Faults:before {
   content: "\ea08";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Import:before {
   content: "\ea09";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Inventory:before {
   content: "\ea0a";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Load:before {
   content: "\ea0b";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Performance:before {
   content: "\ea0c";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Save:before {
   content: "\ea0d";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Services:before {
   content: "\ea0e";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-Sina-Logo .path1:before {
   content: "\ea0f";
@@ -1330,15 +1330,15 @@
 }
 .icon-Menu-Icon-_-Topology:before {
   content: "\ea18";
-  color: #fff;
+  color: red;
 }
 .icon-Menu-Icon-_-User-Management:before {
   content: "\ea19";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-Edit-Setting-of-Chart:before {
   content: "\ea1a";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-No-Chart-Yet .path1:before {
   content: "\ea1b";
@@ -1376,7 +1376,7 @@
 }
 .icon-Performance-_-Print-of-Chart:before {
   content: "\ea22";
-  color: #fff;
+  color: red;
 }
 .icon-Performance-_-Table-Setting-_-Bullet:before {
   content: "\ea23";
@@ -1716,7 +1716,7 @@
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path1:before {
   content: "\ea69";
-  color: rgb(255, 255, 255);
+  color: red;
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path2:before {
   content: "\ea6a";
@@ -1957,11 +1957,11 @@
 }
 .icon-Shelf-View-_-Loopback:before {
   content: "\ea9d";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-PRBS:before {
   content: "\ea9e";
-  color: #fff;
+  color: red;
 }
 .icon-Shelf-View-_-Refresh:before {
   content: "\ea9f";
@@ -2025,7 +2025,7 @@
 }
 .icon-Table-_-Info:before {
   content: "\eaae";
-  color: #fff;
+  color: red;
 }
 .icon-Table-_-Search-Icon:before {
   content: "\eaaf";
@@ -2160,11 +2160,11 @@
 }
 .icon-Tree-View_Flesh-Icon-for-next-level:before {
   content: "\ead0";
-  color: #fff;
+  color: red;
 }
 .icon-Tree-View_Flesh-Icon-for-previous-level:before {
   content: "\ead1";
-  color: #fff;
+  color: red;
 }
 .icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
   content: "\ead2";
