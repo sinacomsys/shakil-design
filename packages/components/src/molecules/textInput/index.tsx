@@ -367,7 +367,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       >
         <input
           {...(supportedProps as React.InputHTMLAttributes<HTMLInputElement>)}
-          type={isPasswordVisible ? "text" : "password"}
+          type={type}
           value={_value}
           className={classNames(
             classes["textInput"],
