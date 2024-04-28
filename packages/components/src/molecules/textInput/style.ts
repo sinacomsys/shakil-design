@@ -67,7 +67,10 @@ const useStyles = createUseStyles(
         position: "absolute",
         top: "100%",
         insetInlineStart: 0,
-        insetBlockStart: "100%",
+        insetBlockStart: "104%",
+      },
+      "password-visible-icon": {
+        cursor: "pointer",
       },
     };
   },

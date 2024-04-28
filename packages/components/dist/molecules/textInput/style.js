@@ -67,7 +67,10 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             position: "absolute",
             top: "100%",
             insetInlineStart: 0,
-            insetBlockStart: "100%",
+            insetBlockStart: "104%",
+        },
+        "password-visible-icon": {
+            cursor: "pointer",
         },
     };
 }, { theming: theme_1.theming, name: "text-input" });

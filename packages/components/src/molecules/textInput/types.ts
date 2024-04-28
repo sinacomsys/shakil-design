@@ -10,17 +10,20 @@
 import React from "react";
 import { TextProps } from "../../atoms";
 
-interface InputElement
-  extends Omit<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    "className" | "style" | "children"
-  > {
-  testID?: string;
-  href?: string;
-}
+type InputType = "password" | "text";
 
 export interface TextInputProps
-  extends Omit<InputElement, "autoCorrect" | "value"> {
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    | "autoCorrect"
+    | "value"
+    | "type"
+    | "inputMode"
+    | "className"
+    | "style"
+    | "children"
+  > {
+  href?: string;
   isLoading?: boolean;
   allowClear?: boolean;
   clearIconColor?: string;
@@ -36,7 +39,6 @@ export interface TextInputProps
   className?: string;
   autoCapitalize?: "characters" | "none" | "sentences" | "words";
   theme?: TextProps["theme"];
-  // lang?: TextProps["lang"];
   autoComplete?: string;
   autoCompleteType?: string; // Compat with React Native (Bug react-native#26003)
   autoCorrect?: boolean;
@@ -46,19 +48,7 @@ export interface TextInputProps
   defaultValue?: string;
   dir?: "auto" | "ltr" | "rtl";
   disabled?: boolean;
-  editable?: boolean;
   inputAccessoryViewID?: string;
-  keyboardType?:
-    | "default"
-    | "email-address"
-    | "number-pad"
-    | "numbers-and-punctuation"
-    | "numeric"
-    | "phone-pad"
-    | "search"
-    | "url"
-    | "decimal-pad"
-    | "web-search";
   maxLength?: number;
   multiline?: boolean;
   numberOfLines?: number;
@@ -86,15 +76,6 @@ export interface TextInputProps
   onSubmitEditing?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string;
   placeholderTextColor?: string;
-  returnKeyType?:
-    | "enter"
-    | "done"
-    | "go"
-    | "next"
-    | "previous"
-    | "search"
-    | "send";
-  secureTextEntry?: boolean;
   selectTextOnFocus?: boolean;
   selection?: {
     start: number;
@@ -108,4 +89,6 @@ export interface TextInputProps
   errorMessage?: string;
   errorMessageClassName?: string;
   hasError?: boolean;
+  password?: boolean;
+  type?: InputType;
 }
