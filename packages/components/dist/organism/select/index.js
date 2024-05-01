@@ -13,7 +13,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Select = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/organism/select/index.tsx";
 var multiSelect_1 = require("./components/multiSelect");
 var singleSelect_1 = require("./components/singleSelect");
 function Select(props) {
