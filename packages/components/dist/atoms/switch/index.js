@@ -48,21 +48,25 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Switch = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/atoms/switch/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/atoms/switch/index.tsx";
 var framer_motion_1 = require("framer-motion");
 var react_1 = __importStar(require("react"));
 var theme_1 = require("../../theme");
 var style_1 = require("./style");
 var src_1 = require("@shakil-design/utils/src");
+var context_1 = require("../../theme/context");
 var CIRCLE_WIDTH = 12;
 var SWITCH_WIDTH = 30;
 var SWITCH_HEIGHT = 16;
+var SWITCH_RIPPLE_WIDTH = 36;
+var SWITCH_RIPPLE_HEIGHT = 22;
 var Switch = react_1.default.forwardRef(function (_a, ref) {
-    var testId = _a.testId, onChange = _a.onChange, checked = _a.checked, name = _a.name, onFocus = _a.onFocus, onBlur = _a.onBlur, _b = _a.unit, unit = _b === void 0 ? "viewport" : _b, rest = __rest(_a, ["testId", "onChange", "checked", "name", "onFocus", "onBlur", "unit"]);
+    var testId = _a.testId, onChange = _a.onChange, checked = _a.checked, name = _a.name, onFocus = _a.onFocus, onBlur = _a.onBlur, rest = __rest(_a, ["testId", "onChange", "checked", "name", "onFocus", "onBlur"]);
+    var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
     var classes = (0, style_1.useStyles)();
-    var _c = (0, theme_1.useTheme)().switch, _d = _c === void 0 ? {} : _c, checkedColor = _d.checked, unchecked = _d.unchecked;
+    var _b = (0, theme_1.useTheme)().switch, _c = _b === void 0 ? {} : _b, checkedColor = _c.checked, unchecked = _c.unchecked;
     // const [isCheck, setIsCheck] = useState<boolean>(false);
-    var _e = (0, react_1.useState)(false), isFocused = _e[0], setFocus = _e[1];
+    var _d = (0, react_1.useState)(false), isFocused = _d[0], setFocus = _d[1];
     var handleOnChange = function (e) {
         onChange === null || onChange === void 0 ? void 0 : onChange(e);
     };
@@ -77,19 +81,25 @@ var Switch = react_1.default.forwardRef(function (_a, ref) {
     var _width = unit === "viewport" ? (0, src_1.pxToVhString)(SWITCH_WIDTH) : SWITCH_WIDTH;
     var _height = unit === "viewport" ? (0, src_1.pxToVhString)(SWITCH_HEIGHT) : SWITCH_HEIGHT;
     var _circle = unit === "viewport" ? (0, src_1.pxToVhString)(CIRCLE_WIDTH) : "".concat(CIRCLE_WIDTH, "px");
+    var _rippleWidth = unit === "viewport"
+        ? (0, src_1.pxToVhString)(SWITCH_RIPPLE_WIDTH)
+        : SWITCH_RIPPLE_WIDTH;
+    var _rippleHeight = unit === "viewport"
+        ? (0, src_1.pxToVhString)(SWITCH_RIPPLE_HEIGHT)
+        : SWITCH_RIPPLE_HEIGHT;
     return ((0, jsx_dev_runtime_1.jsxDEV)("label", __assign({ style: { display: "inline-block", position: "relative" } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": testId, role: "switch", className: classes["wrapper"], style: {
                     backgroundColor: checked ? checkedColor : unchecked,
                     width: _width,
                     height: _height,
-                } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, rest, { className: classes["hiddenCheckbox"], ref: ref, onChange: handleOnChange, onFocus: focusHandler, onBlur: blurHandler, "aria-checked": checked, checked: checked, type: "checkbox", name: name }), void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 11 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { position: "relative", height: "100%" } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { animate: { left: checked ? "calc(100% - ".concat(_circle, ")") : 0 }, style: {
+                } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, rest, { className: classes["hiddenCheckbox"], ref: ref, onChange: handleOnChange, onFocus: focusHandler, onBlur: blurHandler, "aria-checked": checked, checked: checked, type: "checkbox", name: name }), void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 11 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { position: "relative", height: "100%" } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { animate: { left: checked ? "calc(100% - ".concat(_circle, ")") : 0 }, style: {
                                 width: _circle,
                                 height: _circle,
-                            }, className: classes["circle"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 63, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { className: classes["ripple"], style: {
+                            }, className: classes["circle"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { className: classes["ripple"], style: {
                     backgroundColor: checked ? checkedColor : unchecked,
                 }, animate: {
-                    width: isFocused ? 30 : 0,
-                    height: isFocused ? 20 : 0,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 96, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 61, columnNumber: 13 }, _this));
+                    width: isFocused ? _rippleWidth : 0,
+                    height: isFocused ? _rippleHeight : 0,
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 95, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 13 }, _this));
 });
 exports.Switch = Switch;
 Switch.displayName = "Switch";

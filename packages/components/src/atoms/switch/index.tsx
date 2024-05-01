@@ -1,37 +1,27 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useTheme } from "../../theme";
 import { useStyles } from "./style";
-import { Unit } from "../../types";
 import { pxToVhString } from "@shakil-design/utils/src";
+import { UnitContext } from "../../theme/context";
 
 interface SwitchProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   checked?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   name?: string;
-  unit?: Unit;
   testId?: string;
 }
 
 const CIRCLE_WIDTH = 12;
 const SWITCH_WIDTH = 30;
 const SWITCH_HEIGHT = 16;
+const SWITCH_RIPPLE_WIDTH = 36;
+const SWITCH_RIPPLE_HEIGHT = 22;
 
 const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
-  (
-    {
-      testId,
-      onChange,
-      checked,
-      name,
-      onFocus,
-      onBlur,
-      unit = "viewport",
-      ...rest
-    },
-    ref,
-  ) => {
+  ({ testId, onChange, checked, name, onFocus, onBlur, ...rest }, ref) => {
+    const { unit } = useContext(UnitContext);
     const classes = useStyles();
     const { switch: { checked: checkedColor, unchecked } = {} } = useTheme();
     // const [isCheck, setIsCheck] = useState<boolean>(false);
@@ -57,6 +47,15 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
       unit === "viewport" ? pxToVhString(SWITCH_HEIGHT) : SWITCH_HEIGHT;
     const _circle =
       unit === "viewport" ? pxToVhString(CIRCLE_WIDTH) : `${CIRCLE_WIDTH}px`;
+    const _rippleWidth =
+      unit === "viewport"
+        ? pxToVhString(SWITCH_RIPPLE_WIDTH)
+        : SWITCH_RIPPLE_WIDTH;
+
+    const _rippleHeight =
+      unit === "viewport"
+        ? pxToVhString(SWITCH_RIPPLE_HEIGHT)
+        : SWITCH_RIPPLE_HEIGHT;
 
     return (
       <label style={{ display: "inline-block", position: "relative" }}>
@@ -99,8 +98,8 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             backgroundColor: checked ? checkedColor : unchecked,
           }}
           animate={{
-            width: isFocused ? 30 : 0,
-            height: isFocused ? 20 : 0,
+            width: isFocused ? _rippleWidth : 0,
+            height: isFocused ? _rippleHeight : 0,
           }}
         />
       </label>

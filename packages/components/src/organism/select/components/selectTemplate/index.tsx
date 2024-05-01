@@ -124,6 +124,7 @@ const Template = <T extends Record<string, any>>({
     <>
       <div ref={handleRefOfRefrenceElement}>
         <TextInput
+          data-testid={testid?.input}
           {...{
             AddonAfter,
             addonAfterClassName,
@@ -141,7 +142,6 @@ const Template = <T extends Record<string, any>>({
             errorMessage,
             errorMessageClassName,
             hasError,
-            testID: testid?.input,
             clearIconColor,
             isLoading,
           }}

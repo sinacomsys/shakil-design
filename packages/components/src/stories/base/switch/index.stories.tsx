@@ -2,6 +2,8 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import { useRef, useState } from "react";
 import { Switch, SwitchProps } from "../../../atoms";
 import { StoryContainer } from "../../container";
+import { Text } from "../../../atoms";
+
 import React from "react";
 export default {
   title: "switch",
@@ -20,7 +22,10 @@ const Template: Story<SwitchProps> = () => {
 
   return (
     <StoryContainer>
-      <Switch ref={ref} onChange={handleOnClick} checked={isCheck} />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Text>sdfsdf</Text>
+        <Switch ref={ref} onChange={handleOnClick} checked={isCheck} />
+      </div>
       <div style={{ marginTop: 50 }}>
         <button onClick={clickToFocus}>click to focus!</button>
       </div>
