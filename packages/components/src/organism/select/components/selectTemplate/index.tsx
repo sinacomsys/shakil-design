@@ -132,7 +132,6 @@ const Template = <T extends Record<string, any>>({
             addonBefore,
             addonBeforeClassName,
             addonBeforeStyle,
-            className,
             onBlur,
             onFocus,
             wrapperClassName,
@@ -154,6 +153,7 @@ const Template = <T extends Record<string, any>>({
           className={classNames(
             classes["text-input"],
             isLoading && `${classes["text-input"]}--loading`,
+            className,
           )}
           placeholder={placeholder}
           allowClear={allowClear}

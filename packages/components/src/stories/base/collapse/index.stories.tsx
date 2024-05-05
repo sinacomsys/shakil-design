@@ -19,13 +19,13 @@ const Template: Story<CollapseProps> = () => {
         }}
       >
         <Panel id="1" title={"General info1"}>
-          <div style={{ height: 300, backgroundColor: "yellow" }}>sag</div>
+          <div style={{ height: 300, backgroundColor: "yellow" }}>panel1</div>
         </Panel>
         <Panel id="2" title={"General info2"}>
-          <div style={{ height: 200, backgroundColor: "red" }}>sag2</div>
+          <div style={{ height: 200, backgroundColor: "red" }}>panel2</div>
         </Panel>
         <Panel id="3" title={"General info3"}>
-          <div style={{ height: 100, backgroundColor: "purple" }}>sag3</div>
+          <div style={{ height: 100, backgroundColor: "purple" }}>panel3</div>
         </Panel>
       </Collapse>
     </StoryContainer>

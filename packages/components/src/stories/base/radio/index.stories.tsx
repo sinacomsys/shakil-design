@@ -17,7 +17,7 @@ const Template: Story<RadioProps> = () => {
   return (
     <StoryContainer>
       <Radio.Group
-        name="sag"
+        name="test-name"
         onBlur={(e) => {
           // eslint-disable-next-line no-console
           console.log(e, "blur");
@@ -30,7 +30,7 @@ const Template: Story<RadioProps> = () => {
         value="1"
       >
         <div style={{ display: "flex", flexDirection: "row", columnGap: 10 }}>
-          <Radio data-testid={"sag"} size={14} value={"1"}>
+          <Radio data-testid={"test-id"} size={14} value={"1"}>
             <Text size={14}>Radio 1</Text>
           </Radio>
           <Radio size={14} value={"2"}>

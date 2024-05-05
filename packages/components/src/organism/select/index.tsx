@@ -1,7 +1,7 @@
 import { MultiSelect, MultiSelectProps } from "./components/multiSelect";
 import { SingleSelect, SingleSelectProps } from "./components/singleSelect";
 
-type Sag<T extends Record<string, any>> =
+type SelectProps<T extends Record<string, any>> =
   | MultiSelectProps<T>
   | SingleSelectProps<T>;
 
@@ -11,7 +11,7 @@ function Select<T extends Record<string, any>>(
 function Select<T extends Record<string, any>>(
   props: MultiSelectProps<T>,
 ): JSX.Element;
-function Select<T extends Record<string, any>>(props: Sag<T>) {
+function Select<T extends Record<string, any>>(props: SelectProps<T>) {
   return (
     <>
       {props.mode === "multi" ? (

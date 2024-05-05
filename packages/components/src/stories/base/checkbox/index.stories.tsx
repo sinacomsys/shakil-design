@@ -30,12 +30,7 @@ const Template: Story<CheckBoxProps> = (args) => {
           padding: 20,
         }}
       >
-        <CheckBox
-          {...args}
-          checked={isCheck}
-          onChange={hangleOnChange}
-          data-testid={"sag"}
-        >
+        <CheckBox {...args} checked={isCheck} onChange={hangleOnChange}>
           Pixel Unit
         </CheckBox>
         <CheckBox {...args} checked={isChecked2} onChange={hangleOnChange2}>

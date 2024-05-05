@@ -31,7 +31,7 @@ const Template: Story<TextInputProps> = (args) => {
       <TextInput
         {...args}
         // type="password"
-        errorMessage="sag"
+        errorMessage="error-message"
         isLoading={isLoading}
         onClear={onClear}
         value={value}
@@ -39,7 +39,8 @@ const Template: Story<TextInputProps> = (args) => {
         wrapperStyle={{ marginBottom: 30, width: "200px" }}
         theme="Regular"
         allowClear
-        data-testid={"sag"}
+        data-testid={"test-id"}
+        className="test-class-name"
         // disabled
       />
       <Button
