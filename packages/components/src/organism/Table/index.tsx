@@ -316,13 +316,6 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
 
         return (
           <div ref={measureRef} className={classNames(classes["container"])}>
-            {isLoading && (
-              <div className={`${classes["spinner"]}--overlay`}>
-                <div className={classes["spinner"]}>
-                  <Spinner size={"large"} />
-                </div>
-              </div>
-            )}
             <TableContext.Provider
               value={{
                 isAllRowsChecked,
@@ -383,6 +376,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                         }
                         columns={coloums}
                         isIndeterminate={isIndeterminate}
+                        isSearchAvailable={Boolean(isSearchAvailable)}
                       />
 
                       {Boolean(isSearchAvailable) ? (
@@ -423,6 +417,13 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                 </ScrollView>
               </div>
             </TableContext.Provider>
+            {isLoading && (
+              <div className={`${classes["spinner"]}--overlay`}>
+                <div className={classes["spinner"]}>
+                  <Spinner size={"large"} />
+                </div>
+              </div>
+            )}
           </div>
         );
       }}
