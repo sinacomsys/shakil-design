@@ -5,13 +5,13 @@ import { useHorizontalScroll } from "@shakil-design/utils/src";
 import { InternalTabPane } from "./internalTabPane";
 import { useStyles } from "./style";
 import { useTheme } from "../../theme";
-interface TabItem {
+export interface TabItem {
   id: string;
   content: React.ReactNode;
-  renderTitle:
+  renderTitle?:
     | React.ReactNode
     | (({ id, isActive }: { id: string; isActive: boolean }) => ReactNode);
-  closeable: boolean;
+  closeable?: boolean;
 }
 export interface TabsProps {
   activeTab?: string;
@@ -34,14 +34,14 @@ const Tabs = ({
 }: TabsProps) => {
   const classes = useStyles();
   const { tab: { textColor } = {} } = useTheme();
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [activeTabState, setActiveTabState] = useState<string | null>(null);
   const [openedTabs, setOpenedTabs] = useState<string[]>([]);
   const tabListRef = useHorizontalScroll();
 
   const handleOnChange = (id: string) => {
     onChange?.(id);
     if (activeTabProp) return;
-    setActiveTab(id);
+    setActiveTabState(id);
   };
 
   const handleOnClose = (id: string) => {
@@ -52,18 +52,18 @@ const Tabs = ({
   if (activeTabProp) {
     _activeTab = activeTabProp;
   } else {
-    _activeTab = activeTab;
+    _activeTab = activeTabState;
   }
 
   useEffect(() => {
+    if (activeTabProp) return;
     if (items?.length > 0) {
-      setActiveTab(items[0].id);
+      setActiveTabState(items[0].id);
       setOpenedTabs(() => {
         return [items[0].id];
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [activeTabProp, items]);
 
   useEffect(() => {
     if (activeTabProp) {
@@ -103,7 +103,7 @@ const Tabs = ({
                 key={id}
                 id={id}
                 onClose={handleOnClose}
-                closable={Boolean(closeable)}
+                closeable={Boolean(closeable)}
               />
             );
           })}

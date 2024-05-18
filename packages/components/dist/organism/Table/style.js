@@ -21,6 +21,8 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            top: 0,
+            left: 0,
         },
     },
     wrapper: {

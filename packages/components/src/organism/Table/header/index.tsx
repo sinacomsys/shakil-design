@@ -12,6 +12,7 @@ interface HeaderProps<T extends object> {
   filterIcon?: React.ReactNode;
   columns: ColumnType<T>[];
   isIndeterminate: boolean;
+  isSearchAvailable: boolean;
 }
 
 const Header = <T extends object>({
@@ -19,6 +20,7 @@ const Header = <T extends object>({
   filterIcon,
   columns,
   isIndeterminate,
+  isSearchAvailable,
 }: HeaderProps<T>) => {
   const { table: { filterIcon: filterIconColor } = {} } = useTheme();
   const classes = useStyles();
@@ -51,7 +53,7 @@ const Header = <T extends object>({
             ) : (
               <BaseIcon
                 data-testid={testid?.filterBarIcon}
-                color={filterIconColor}
+                color={isSearchAvailable ? filterIconColor : "gray"}
                 name="Table-_-Filter"
                 size={{ width: 16, height: 16 }}
               />

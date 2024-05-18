@@ -104,9 +104,6 @@ const Template: Story<any> = () => {
             </Text>
           );
         },
-        renderFilter() {
-          return <Switch />;
-        },
       },
     ];
   }, []);
@@ -114,6 +111,7 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
+        isLoading={true}
         expandedRows={["1"]}
         mode="multiple"
         // selectedRows={selectedRow}
