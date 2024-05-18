@@ -1,15 +1,10 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
 import { BaseIcon, Text } from "../../atoms";
 import { useTheme } from "../../theme";
 import { useStyles } from "./style";
+import { TabItem } from ".";
 
-export interface InternalTabPaneProps {
-  id: string;
-  renderTitle:
-    | React.ReactNode
-    | (({ id, isActive }: { id: string; isActive: boolean }) => ReactNode);
-  closable: boolean;
+export interface InternalTabPaneProps extends Omit<TabItem, "content"> {
   onClick: (id: string) => void;
   isActive: boolean;
   onClose?: (id: string) => void;
@@ -18,10 +13,10 @@ export interface InternalTabPaneProps {
 function InternalTabPane({
   id,
   renderTitle,
-  closable,
   onClick,
   isActive,
   onClose,
+  closeable,
 }: InternalTabPaneProps) {
   const classes = useStyles();
   const { tab: { textColor } = {} } = useTheme();
@@ -50,7 +45,7 @@ function InternalTabPane({
           </div>
         ) : null}
       </>
-      {!!closable && (
+      {!!closeable && (
         <div className={classes["tab-pane-close"]}>
           <BaseIcon
             color={"#575757"}

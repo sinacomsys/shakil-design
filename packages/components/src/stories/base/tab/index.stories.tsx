@@ -10,7 +10,7 @@ export default {
 } as Meta<TabsProps>;
 
 const Template: Story<TabsProps> = () => {
-  const [activeTab, setActiveTab] = useState<string | undefined>(undefined);
+  const [activeTab, setActiveTab] = useState<string | undefined>("2");
   const items: TabsProps["items"] = [
     {
       closeable: true,
@@ -24,7 +24,7 @@ const Template: Story<TabsProps> = () => {
       },
       content: (
         <div style={{ backgroundColor: "lightblue", height: "100%" }}>
-          TEST CONTENT
+          <TestContent />
         </div>
       ),
     },
@@ -56,3 +56,8 @@ const Template: Story<TabsProps> = () => {
 };
 
 export const Primary = Template.bind({});
+
+const TestContent = () => {
+  console.log("sag");
+  return <div>test content</div>;
+};
