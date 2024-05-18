@@ -38,14 +38,14 @@ var Tabs = function (_a) {
     var activeTabProp = _a.activeTab, onChange = _a.onChange, onClose = _a.onClose, className = _a.className, TabsTitle = _a.TabsTitle, noContent = _a.noContent, items = _a.items;
     var classes = (0, style_1.useStyles)();
     var _b = (0, theme_1.useTheme)().tab, _c = _b === void 0 ? {} : _b, textColor = _c.textColor;
-    var _d = (0, react_1.useState)(null), activeTab = _d[0], setActiveTab = _d[1];
+    var _d = (0, react_1.useState)(null), activeTabState = _d[0], setActiveTabState = _d[1];
     var _e = (0, react_1.useState)([]), openedTabs = _e[0], setOpenedTabs = _e[1];
     var tabListRef = (0, src_1.useHorizontalScroll)();
     var handleOnChange = function (id) {
         onChange === null || onChange === void 0 ? void 0 : onChange(id);
         if (activeTabProp)
             return;
-        setActiveTab(id);
+        setActiveTabState(id);
     };
     var handleOnClose = function (id) {
         onClose === null || onClose === void 0 ? void 0 : onClose(id);
@@ -55,17 +55,18 @@ var Tabs = function (_a) {
         _activeTab = activeTabProp;
     }
     else {
-        _activeTab = activeTab;
+        _activeTab = activeTabState;
     }
     (0, react_1.useEffect)(function () {
+        if (activeTabProp)
+            return;
         if ((items === null || items === void 0 ? void 0 : items.length) > 0) {
-            setActiveTab(items[0].id);
+            setActiveTabState(items[0].id);
             setOpenedTabs(function () {
                 return [items[0].id];
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [activeTabProp, items]);
     (0, react_1.useEffect)(function () {
         if (activeTabProp) {
             setOpenedTabs(function (prev) {
@@ -79,7 +80,7 @@ var Tabs = function (_a) {
     return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes["tabs"], className) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["tabs-nav-wrap"] }, { children: [TabsTitle ? ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: typeof TabsTitle === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["tabsTitle"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ theme: "Regular", size: 20, color: textColor }, { children: TabsTitle }), void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 83, columnNumber: 47 }, _this)) : typeof TabsTitle === "object" ? (TabsTitle) : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 81, columnNumber: 23 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: tabListRef, className: classes["tabs-nav-list"] }, { children: items === null || items === void 0 ? void 0 : items.map(function (_a) {
                             var id = _a.id, renderTitle = _a.renderTitle, closeable = _a.closeable;
                             var isActive = id === _activeTab;
-                            return ((0, jsx_dev_runtime_1.jsxDEV)(internalTabPane_1.InternalTabPane, { renderTitle: renderTitle, isActive: isActive, onClick: handleOnChange, id: id, onClose: handleOnClose, closable: Boolean(closeable) }, id, false, { fileName: _jsxFileName, lineNumber: 98, columnNumber: 21 }, _this));
+                            return ((0, jsx_dev_runtime_1.jsxDEV)(internalTabPane_1.InternalTabPane, { renderTitle: renderTitle, isActive: isActive, onClick: handleOnChange, id: id, onClose: handleOnClose, closeable: Boolean(closeable) }, id, false, { fileName: _jsxFileName, lineNumber: 98, columnNumber: 21 }, _this));
                         }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 95, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 80, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["tabs-content-holder"] }, { children: noContent ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["no-content"] }, { children: noContent }), void 0, false, { fileName: _jsxFileName, lineNumber: 114, columnNumber: 23 }, _this)) : (openedTabs.map(function (_id) {
                     var tab = items === null || items === void 0 ? void 0 : items.find(function (_a) {
                         var id = _a.id;
