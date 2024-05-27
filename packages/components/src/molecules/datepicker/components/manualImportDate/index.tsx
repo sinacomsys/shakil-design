@@ -4,15 +4,16 @@ import { Button } from "../../..";
 import { checkIsDateValid } from "../../utils/checkDateIsValid";
 import { useStyles } from "./style";
 import classNames from "classnames";
-import { ManualImportDateContext } from "./context";
 import { useContext } from "react";
 import { DatePickerContext } from "../../context";
 import moment from "moment-jalaali";
+import { Controller, useFormContext, useFormState } from "react-hook-form";
+import { ManualImportDateContextProps } from "./context";
 
 const ManualImportDate = () => {
   const { getValues, handleSubmit, setError } =
-    ManualImportDateContext.useFormContext();
-  const { errors } = ManualImportDateContext.useFormState();
+    useFormContext<ManualImportDateContextProps>();
+  const { errors } = useFormState<ManualImportDateContextProps>();
 
   const {
     selectedDate,
@@ -61,7 +62,7 @@ const ManualImportDate = () => {
         </Text>
         <div style={{ display: "flex" }}>
           <div className={classes["input"]}>
-            <ManualImportDateContext.Controller
+            <Controller<ManualImportDateContextProps, "year">
               rules={{ required: true }}
               name="year"
               render={({ field: { value, onChange } }) => {
@@ -83,7 +84,7 @@ const ManualImportDate = () => {
             />
           </div>
           <div className={classNames(classes["minute"], classes["input"])}>
-            <ManualImportDateContext.Controller
+            <Controller<ManualImportDateContextProps, "month">
               rules={{ required: true, min: 1, max: 12 }}
               name="month"
               render={({ field: { onChange, value } }) => {
@@ -105,7 +106,7 @@ const ManualImportDate = () => {
             />
           </div>
           <div className={classes["input"]}>
-            <ManualImportDateContext.Controller
+            <Controller<ManualImportDateContextProps, "day">
               rules={{ required: true, min: 1, max: 31 }}
               name="day"
               render={({ field: { onChange, value } }) => {
@@ -134,7 +135,7 @@ const ManualImportDate = () => {
         </Text>
         <div style={{ display: "flex" }}>
           <div className={classes["input"]}>
-            <ManualImportDateContext.Controller
+            <Controller<ManualImportDateContextProps, "hour">
               rules={{
                 min: 0,
                 max: 23,
@@ -158,7 +159,7 @@ const ManualImportDate = () => {
             />
           </div>
           <div className={classNames(classes["input"], classes["minute"])}>
-            <ManualImportDateContext.Controller
+            <Controller<ManualImportDateContextProps, "minute">
               name="minute"
               rules={{
                 min: 0,

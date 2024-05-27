@@ -3,8 +3,12 @@ import { useState, useEffect, useCallback } from "react";
 import { DatePickerContext } from "../../context";
 import { DatePickerProviderProps } from "../types";
 import { chunkDaysOfMonth } from "../../utils/chuckDaysOfMonth";
-import { ManualImportDateContext } from "../manualImportDate/context";
+import {
+  DatePickerFormProvider,
+  ManualImportDateContextProps,
+} from "../manualImportDate/context";
 import { generateMods } from "../../utils/generateMods";
+import { useFormContext } from "react-hook-form";
 
 const DatePickerProvider = ({
   handleExtendCalendar,
@@ -19,7 +23,7 @@ const DatePickerProvider = ({
   testid,
 }: DatePickerProviderProps) => {
   const isPersian = calendarMode === "persian";
-  const { setValue } = ManualImportDateContext.useFormContext();
+  const { setValue } = useFormContext<ManualImportDateContextProps>();
   const [isConfirmed, setConfirm] = useState(false);
   const [monthMatrix, setMonthMatrix] = useState<Moment[][]>(
     chunkDaysOfMonth(moment(), isPersian),
@@ -223,9 +227,9 @@ const DatePickerProvider = ({
 
 const DatePickerProviderWrapper = (props: DatePickerProviderProps) => {
   return (
-    <ManualImportDateContext.Provider mode="onChange">
+    <DatePickerFormProvider>
       <DatePickerProvider {...props} />
-    </ManualImportDateContext.Provider>
+    </DatePickerFormProvider>
   );
 };
 

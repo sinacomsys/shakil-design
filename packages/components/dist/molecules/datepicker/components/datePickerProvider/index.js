@@ -24,10 +24,11 @@ var context_1 = require("../../context");
 var chuckDaysOfMonth_1 = require("../../utils/chuckDaysOfMonth");
 var context_2 = require("../manualImportDate/context");
 var generateMods_1 = require("../../utils/generateMods");
+var react_hook_form_1 = require("react-hook-form");
 var DatePickerProvider = function (_a) {
     var handleExtendCalendar = _a.handleExtendCalendar, isMatrixOpenPorps = _a.isCalendarExtended, valueProps = _a.value, _b = _a.calendarMode, calendarMode = _b === void 0 ? "persian" : _b, onOkDate = _a.onOkDate, disableDateFrom = _a.disableDateFrom, children = _a.children, isDisableProps = _a.isDisable, onEditAgainProps = _a.onEditAgain, testid = _a.testid;
     var isPersian = calendarMode === "persian";
-    var setValue = context_2.ManualImportDateContext.useFormContext().setValue;
+    var setValue = (0, react_hook_form_1.useFormContext)().setValue;
     var _c = (0, react_1.useState)(false), isConfirmed = _c[0], setConfirm = _c[1];
     var _d = (0, react_1.useState)((0, chuckDaysOfMonth_1.chunkDaysOfMonth)((0, moment_jalaali_1.default)(), isPersian)), monthMatrix = _d[0], setMonthMatrix = _d[1];
     var _e = (0, react_1.useState)(false), isMatrixOpen = _e[0], setMatrixOpen = _e[1];
@@ -194,10 +195,10 @@ var DatePickerProvider = function (_a) {
             value: selectedDate,
             disable: !_isConfirm,
             onGoToday: handleOnGoToday,
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 180, columnNumber: 11 }, _this));
+        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 184, columnNumber: 11 }, _this));
 };
 var DatePickerProviderWrapper = function (props) {
-    return ((0, jsx_dev_runtime_1.jsxDEV)(context_2.ManualImportDateContext.Provider, __assign({ mode: "onChange" }, { children: (0, jsx_dev_runtime_1.jsxDEV)(DatePickerProvider, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 227, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 225, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)(context_2.DatePickerFormProvider, { children: (0, jsx_dev_runtime_1.jsxDEV)(DatePickerProvider, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 231, columnNumber: 7 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 229, columnNumber: 11 }, _this));
 };
 exports.DatePickerProvider = DatePickerProviderWrapper;
 //# sourceMappingURL=index.js.map
