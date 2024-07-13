@@ -21,7 +21,8 @@
     "lerna-watch": "lerna run watch --stream",
     "lerna-build": "lerna run compile --stream",
     "lerna-clean": "lerna run clean --parallel",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "icons": "yarn workspace @shakil-design/component icons"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^14.1.0",

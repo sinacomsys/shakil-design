@@ -8,6 +8,7 @@ export declare const iconsContent: {
   "Abstract-Service-Graph_Trapezius-Icon": string;
   "Abstract-Service-Graph_Triangle-Icon": string;
   "Abstract-Service-Graph_Wide-Rectangle-Icon": string;
+  "activated-service": string;
   "Add-Box_Add-Icon": string;
   "Amount-Boxes_Decrease": string;
   "Amount-Boxes_Increase": string;
@@ -28,6 +29,8 @@ export declare const iconsContent: {
   "Create-Project_Alert-Icon": string;
   "Create-Project_Checked-Icon": string;
   "Create-Project_Download-Icon": string;
+  "deactivated-service": string;
+  deactivated_service: string;
   "Delete-Icon": string;
   "Discovery-_-Map-_-Node-Icon": string;
   "Discovery-_-Table-_-Delete-Icon": string;
@@ -113,8 +116,14 @@ export declare const iconsContent: {
   Performance_table: string;
   "Port-Mapping-_-Delete-Item": string;
   "Port-Mapping-_-Next": string;
+  "refresh-check": string;
+  reserved_service: string;
+  "restored-service": string;
+  restored_service: string;
+  "sad-magnifier": string;
   "Search-Box_Search-Icon": string;
   "Service-_-Table-_-Edit-Icon": string;
+  "service-current-path": string;
   "Services-_-Port-Mapping-_-Show-More": string;
   "Services-_-Table-_-Active": string;
   "Services-_-Table-_-Delete-Icon": string;
@@ -164,6 +173,7 @@ export declare const iconsContent: {
   "Table_Sort-Icon_A-to-Z": string;
   "Table_Sort-Icon_OFF": string;
   "Table_Sort-Icon_Z-to-A": string;
+  temporary_installed_service: string;
   "Title-Bar-Icon-_-About": string;
   "Title-Bar-Icon-_-Cross": string;
   "Title-Bar-Icon-_-Exit": string;
@@ -200,5 +210,6 @@ export declare const iconsContent: {
   "User-Management-_-Table-_-Users-Icon-_-Only-One-User": string;
   "User-Management-_-Table-_-Users-Icon-_-Selected": string;
   "User-Management-_-Table-_-Users-Icon": string;
+  "waiting-service": string;
   window_mode: string;
 };

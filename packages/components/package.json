@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "icons": "node ./src/atoms/baseIcon/autoGenerator.js"
   },
   "description": "sina base component",
   "keywords": [],
