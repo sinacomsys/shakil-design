@@ -15,12 +15,8 @@
     "prettierAll": "prettier --write .",
     "storybook": "yarn workspace @shakil-design/component storybook",
     "build-storybook": "yarn compile && build-storybook",
-    "zeplin": "zeplin connect",
-    "release": "yarn lint-commit  && yarn compile  && npx lerna publish",
+    "release": "npx lerna publish",
     "streight-release": "yarn lint-commit  && yarn compile  && npx lerna publish",
-    "lerna-watch": "lerna run watch --stream",
-    "lerna-build": "lerna run compile --stream",
-    "lerna-clean": "lerna run clean --parallel",
     "prepare": "husky install",
     "icons": "yarn workspace @shakil-design/component icons"
   },

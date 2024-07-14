@@ -5,7 +5,7 @@ import { Table } from "../../../organism/Table";
 import { StoryContainer } from "../../container";
 import React from "react";
 import { ColumnType } from "../../../organism/Table/column";
-import { Switch, Text } from "../../../atoms";
+import { Text } from "../../../atoms";
 export default {
   title: "table/Regular",
   component: Table,
@@ -22,10 +22,6 @@ interface DataType {
 }
 
 const Template: Story<any> = () => {
-  const [selectedRow, setSelectedRow] = useState<DataType[] | undefined>(
-    undefined,
-  );
-
   const mockData = useMemo(() => {
     return [...new Array(50)].map((_, index) => {
       return {

@@ -55,7 +55,6 @@ const Template: Story<any> = () => {
               calendarMode="gregorian"
               value={{ from: range.from, to: range.to }}
               onChange={({ from, to }) => {
-                console.log(from?.format("jYYYY/jMM/jDD HH:mm"));
                 setRange({ from, to });
               }}
             />

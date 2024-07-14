@@ -24,7 +24,6 @@ import FiraGOTwo from "@shakil-design/asset/src/fonts/FiraGO-Two.ttf";
 import FiraGOTwoItalic from "@shakil-design/asset/src/fonts/FiraGO-TwoItalic.ttf";
 import FiraGOUltraLight from "@shakil-design/asset/src/fonts/FiraGO-UltraLight.ttf";
 import { theming } from "../../theme";
-import { TextProps } from ".";
 
 export const fontWeights = {
   light: 100,

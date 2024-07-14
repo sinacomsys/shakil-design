@@ -1,9 +1,8 @@
-import { ScrollView, Text } from "../../../../../atoms";
+import { ScrollView } from "../../../../../atoms";
 import { Option } from "../../option";
 import { theming } from "../../../../../theme";
 import { MultiSelectProps } from "../../multiSelect";
 import { isNullish } from "@shakil-design/utils/src";
-import { useStyles } from "../noData/style";
 import { NoData } from "../noData";
 
 const { useTheme } = theming;
@@ -24,9 +23,7 @@ const MultiSelectList = <T extends Record<string, any>>({
   value,
   filteredData,
 }: MultiSelectList<T>) => {
-  const classes = useStyles();
-
-  const { disableText, primary } = useTheme();
+  const { disableText } = useTheme();
   const isNotSelectedItems = filteredData.filter((item) => {
     const isSelected = value?.find((_item) => {
       return valueExtractor?.(item) === _item;

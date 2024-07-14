@@ -1,8 +1,7 @@
 import classNames from "classnames";
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import { useStyles } from "./style";
-import { UnitContext } from "../../theme/context";
 import { pxToVw, useWindowSize } from "@shakil-design/utils";
 
 export interface ModalProps {

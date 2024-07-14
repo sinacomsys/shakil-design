@@ -39,7 +39,6 @@ const TableBody = <T extends Record<string, any>>(
     colWidth,
     paddingBottom,
     paddingTop,
-    width,
     loadingMore,
   }: TableBodyProps<T>,
   ref: Ref<ElementRef<"table">>,
