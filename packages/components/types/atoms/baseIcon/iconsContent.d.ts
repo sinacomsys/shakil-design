@@ -10,6 +10,7 @@ export declare const iconsContent: {
   "Abstract-Service-Graph_Wide-Rectangle-Icon": string;
   "activated-service": string;
   "Add-Box_Add-Icon": string;
+  alert: string;
   "Amount-Boxes_Decrease": string;
   "Amount-Boxes_Increase": string;
   "Avatar-icon": string;
@@ -117,6 +118,7 @@ export declare const iconsContent: {
   "Port-Mapping-_-Delete-Item": string;
   "Port-Mapping-_-Next": string;
   "refresh-check": string;
+  "reserved-service": string;
   reserved_service: string;
   "restored-service": string;
   restored_service: string;
@@ -173,6 +175,7 @@ export declare const iconsContent: {
   "Table_Sort-Icon_A-to-Z": string;
   "Table_Sort-Icon_OFF": string;
   "Table_Sort-Icon_Z-to-A": string;
+  "temporary-installed-service": string;
   temporary_installed_service: string;
   "Title-Bar-Icon-_-About": string;
   "Title-Bar-Icon-_-Cross": string;
@@ -193,6 +196,7 @@ export declare const iconsContent: {
   title_bar_sound_off: string;
   title_bar_sound_on: string;
   title_bar_unlock: string;
+  "transient-service": string;
   "Tree-View-_-Search-Icon": string;
   "Tree-View_Flesh-Icon-for-next-level": string;
   "Tree-View_Flesh-Icon-for-previous-level": string;
