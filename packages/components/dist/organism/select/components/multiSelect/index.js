@@ -34,7 +34,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MultiSelect = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/components/multiSelect/index.tsx";
+var _jsxFileName = "D:/project/shakil-design/packages/components/src/organism/select/components/multiSelect/index.tsx";
 var multiSelectList_1 = require("../list/multiSelectList");
 var selectTemplate_1 = require("../selectTemplate");
 var src_1 = require("@shakil-design/utils/src");
