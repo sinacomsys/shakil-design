@@ -19,12 +19,7 @@ const Template: Story<ButtonProps> = (args) => {
 
   return (
     <StoryContainer>
-      <Button
-        {...args}
-        onClick={enterLoading}
-        isLoading={isLoading}
-        unit="viewport"
-      />
+      <Button {...args} onClick={enterLoading} isLoading={isLoading} />
     </StoryContainer>
   );
 };

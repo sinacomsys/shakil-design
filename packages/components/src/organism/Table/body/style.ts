@@ -11,6 +11,11 @@ export const useStyles = createUseStyles(
         padding: 0,
       },
     },
+    "end-of-list": {
+      display: "flex",
+      justifyContent: "center",
+      width: "100%",
+    },
   },
   { theming, name: "body" },
 );
