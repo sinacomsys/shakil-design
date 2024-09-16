@@ -107,17 +107,13 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        isLoading={true}
         expandedRows={["1"]}
         mode="multiple"
-        // selectedRows={selectedRow}
         rowKey="id"
         height={350}
         coloums={columns}
         data={data}
-        // onSelectRow={(value) => {
-        //   setSelectedRow(value);
-        // }}
+        endOfList={<div style={{ backgroundColor: "red" }}>end of list</div>}
       />
     </StoryContainer>
   );

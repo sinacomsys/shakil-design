@@ -15,9 +15,11 @@ import {
 import { useMyTableContext } from "../context";
 import React from "react";
 import { Text } from "../../../atoms";
+import { FreeSpace } from "./topFreeSpace";
+import { EndOfList } from "./endOfList";
 
 interface TableBodyProps<T extends Record<string, any>>
-  extends Pick<TableCommonType<T>, "coloums"> {
+  extends Pick<TableCommonType<T>, "coloums" | "endOfList" | "isLoadingMore"> {
   virtualRows: VirtualItem[];
   noContent: React.ReactNode;
   searchIconWidth: number | string;
@@ -26,7 +28,6 @@ interface TableBodyProps<T extends Record<string, any>>
   paddingTop: number;
   paddingBottom: number;
   width: number;
-  loadingMore: boolean;
 }
 
 const TableBody = <T extends Record<string, any>>(
@@ -39,7 +40,8 @@ const TableBody = <T extends Record<string, any>>(
     colWidth,
     paddingBottom,
     paddingTop,
-    loadingMore,
+    isLoadingMore,
+    endOfList,
   }: TableBodyProps<T>,
   ref: Ref<ElementRef<"table">>,
 ) => {
@@ -65,7 +67,7 @@ const TableBody = <T extends Record<string, any>>(
   return (
     <>
       {virtualRows.length > 0 ? (
-        <div style={{ height: `${virtualizer?.getTotalSize()}px` }}>
+        <div style={{ height: `${virtualizer?.getTotalSize() ?? 0}px` }}>
           <table ref={ref} className={classes["wrapper"]} role={"table"}>
             <colgroup>
               <col style={{ width: searchIconWidth }} />
@@ -81,7 +83,7 @@ const TableBody = <T extends Record<string, any>>(
               })}
             </colgroup>
             <tbody data-testid={testid?.body}>
-              {paddingTop > 0 && <tr style={{ height: `${paddingTop}px` }} />}
+              {paddingTop > 0 && <FreeSpace amount={paddingTop} />}
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
                 if (virtualRows.length === index + 1) {
@@ -106,25 +108,26 @@ const TableBody = <T extends Record<string, any>>(
                   />
                 );
               })}
-              {loadingMore ? (
-                <tr>
-                  <td colSpan={6}>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        width: "100%",
-                      }}
-                    >
-                      <Text size={20}>loading...</Text>
-                    </div>
-                  </td>
-                </tr>
+              {isLoadingMore ? (
+                <EndOfList>
+                  {typeof isLoadingMore === "boolean" ? (
+                    <Text size={18}>Loading...</Text>
+                  ) : (
+                    isLoadingMore
+                  )}
+                </EndOfList>
+              ) : null}
+              {endOfList ? (
+                <EndOfList>
+                  {typeof endOfList === "string" ? (
+                    <Text size={20}>{endOfList}</Text>
+                  ) : (
+                    endOfList
+                  )}
+                </EndOfList>
               ) : null}
 
-              {paddingBottom > 0 && (
-                <tr style={{ height: `${paddingBottom}px` }}></tr>
-              )}
+              {paddingBottom > 0 && <FreeSpace amount={paddingBottom} />}
             </tbody>
           </table>
         </div>

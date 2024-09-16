@@ -12,5 +12,10 @@ exports.useStyles = (0, react_jss_1.createUseStyles)({
             padding: 0,
         },
     },
+    "end-of-list": {
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+    },
 }, { theming: theme_1.theming, name: "body" });
 //# sourceMappingURL=style.js.map

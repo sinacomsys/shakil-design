@@ -48,8 +48,9 @@ export interface TableCommonType<T>
   overScan?: number;
   onResetFilters?: () => void;
   onLoadNextPage?: () => void;
-  isLoadingMore?: boolean;
+  isLoadingMore?: boolean | React.ReactNode;
   isSearchBarOpen?: boolean;
+  endOfList?: String | React.ReactNode;
 }
 
 export interface TablePropsWithMultipleSelectRows<T>
@@ -101,6 +102,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     selectedRows: selectedRowsProps,
     isSearchBarOpen: isSearchBarOpenProps,
     expandedRows,
+    endOfList,
   } = props;
 
   const { table: { header } = {} } = useTheme();
@@ -411,7 +413,8 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                       coloums={coloums}
                       dataList={list}
                       width={boundsWidth || 0}
-                      loadingMore={isLoadingMore || false}
+                      isLoadingMore={isLoadingMore}
+                      endOfList={endOfList}
                     />
                   ) : null}
                 </ScrollView>
