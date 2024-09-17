@@ -14,12 +14,12 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EndOfList = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design/packages/components/src/organism/Table/body/endOfList/index.tsx";
+var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/body/endOfList/index.tsx";
 var style_1 = require("./style");
 var EndOfList = function (_a) {
-    var children = _a.children;
+    var children = _a.children, numberOfColumns = _a.numberOfColumns;
     var classes = (0, style_1.useStyles)();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", { children: (0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ colSpan: 6 }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 9, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 8, columnNumber: 7 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 6, columnNumber: 11 }, _this));
+    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", { children: (0, jsx_dev_runtime_1.jsxDEV)("td", __assign({ colSpan: numberOfColumns + 1 }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["wrapper"] }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 15, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 14, columnNumber: 7 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 12, columnNumber: 11 }, _this));
 };
 exports.EndOfList = EndOfList;
 //# sourceMappingURL=index.js.map

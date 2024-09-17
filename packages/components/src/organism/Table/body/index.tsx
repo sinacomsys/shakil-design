@@ -64,6 +64,8 @@ const TableBody = <T extends Record<string, any>>(
     [onLoadNextPage],
   );
 
+  const numberOfColumns = coloums.length;
+
   return (
     <>
       {virtualRows.length > 0 ? (
@@ -109,7 +111,7 @@ const TableBody = <T extends Record<string, any>>(
                 );
               })}
               {isLoadingMore ? (
-                <EndOfList>
+                <EndOfList numberOfColumns={numberOfColumns}>
                   {typeof isLoadingMore === "boolean" ? (
                     <Text size={18}>Loading...</Text>
                   ) : (
@@ -118,7 +120,7 @@ const TableBody = <T extends Record<string, any>>(
                 </EndOfList>
               ) : null}
               {endOfList ? (
-                <EndOfList>
+                <EndOfList numberOfColumns={numberOfColumns}>
                   {typeof endOfList === "string" ? (
                     <Text size={20}>{endOfList}</Text>
                   ) : (

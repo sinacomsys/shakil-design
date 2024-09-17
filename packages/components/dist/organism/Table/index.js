@@ -25,7 +25,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Table = exports.DEFAULT_ALIGN = exports.SCROLL_BAR = exports.ROW_SELECTION = exports.SEARCH_ICON = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design/packages/components/src/organism/Table/index.tsx";
+var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/index.tsx";
 var react_1 = require("react");
 var react_measure_1 = __importDefault(require("react-measure"));
 var react_virtual_1 = require("@tanstack/react-virtual");
@@ -45,7 +45,7 @@ exports.SEARCH_ICON = 32;
 exports.ROW_SELECTION = 62;
 exports.SCROLL_BAR = 11;
 exports.DEFAULT_ALIGN = "center";
-var ROW_HEIGHT = 32;
+var ROW_HEIGHT = 40;
 var HEADER_HEIGHT = 45;
 function Table(props) {
     var _this = this;

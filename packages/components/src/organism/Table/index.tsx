@@ -27,7 +27,7 @@ export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
 export const SCROLL_BAR = 11;
 export const DEFAULT_ALIGN = "center";
-const ROW_HEIGHT = 32;
+const ROW_HEIGHT = 40;
 const HEADER_HEIGHT = 45;
 
 export interface TableCommonType<T>

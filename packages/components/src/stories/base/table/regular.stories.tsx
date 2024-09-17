@@ -107,7 +107,7 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        expandedRows={["1"]}
+        expandedRows={["1", "2", "3", "4", "5", "6", "7"]}
         mode="multiple"
         rowKey="id"
         height={350}
