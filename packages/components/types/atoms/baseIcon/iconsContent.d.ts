@@ -196,6 +196,7 @@ export declare const iconsContent: {
   title_bar_sound_off: string;
   title_bar_sound_on: string;
   title_bar_unlock: string;
+  "tool-kit": string;
   "transient-service": string;
   "Tree-View-_-Search-Icon": string;
   "Tree-View_Flesh-Icon-for-next-level": string;

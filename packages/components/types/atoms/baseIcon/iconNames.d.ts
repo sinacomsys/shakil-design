@@ -196,6 +196,7 @@ export type IconsNames =
   | "title_bar_sound_off"
   | "title_bar_sound_on"
   | "title_bar_unlock"
+  | "tool-kit"
   | "transient-service"
   | "Tree-View-_-Search-Icon"
   | "Tree-View_Flesh-Icon-for-next-level"

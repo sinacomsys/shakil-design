@@ -25,7 +25,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cell = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/Table/cell/index.tsx";
+var _jsxFileName = "F:/shakil-design/packages/components/src/organism/Table/cell/index.tsx";
 var text_1 = require("../../../atoms/text");
 var Cell = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);

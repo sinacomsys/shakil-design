@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?9csk3c");
-  src: url("fonts/icomoon.eot?9csk3c#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?9csk3c") format("truetype"),
-    url("fonts/icomoon.woff?9csk3c") format("woff"),
-    url("fonts/icomoon.svg?9csk3c#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?46jlwx");
+  src: url("fonts/icomoon.eot?46jlwx#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?46jlwx") format("truetype"),
+    url("fonts/icomoon.woff?46jlwx") format("woff"),
+    url("fonts/icomoon.svg?46jlwx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -2247,107 +2247,110 @@
   content: "\eae4";
   color: #575757;
 }
-.icon-transient-service:before {
+.icon-tool-kit:before {
   content: "\eae5";
+}
+.icon-transient-service:before {
+  content: "\eae6";
   color: #f50c0c;
 }
 .icon-Tree-View-_-Search-Icon:before {
-  content: "\eae6";
+  content: "\eae7";
   color: #abb6d6;
 }
 .icon-Tree-View_Flesh-Icon-for-next-level:before {
-  content: "\eae7";
-  color: #fff;
-}
-.icon-Tree-View_Flesh-Icon-for-previous-level:before {
   content: "\eae8";
   color: #fff;
 }
-.icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
+.icon-Tree-View_Flesh-Icon-for-previous-level:before {
   content: "\eae9";
+  color: #fff;
+}
+.icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
+  content: "\eaea";
   color: #c65161;
 }
 .icon-User-Management-_-NMS-Tree-Structure-_-Discovery-Icon:before {
-  content: "\eaea";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Faults-Icon:before {
   content: "\eaeb";
   color: #58cc87;
 }
-.icon-User-Management-_-NMS-Tree-Structure-_-Inventory-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-Faults-Icon:before {
   content: "\eaec";
   color: #58cc87;
 }
-.icon-User-Management-_-NMS-Tree-Structure-_-Performance-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-Inventory-Icon:before {
   content: "\eaed";
   color: #58cc87;
 }
-.icon-User-Management-_-NMS-Tree-Structure-_-Service-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-Performance-Icon:before {
   content: "\eaee";
   color: #58cc87;
 }
-.icon-User-Management-_-NMS-Tree-Structure-_-Topology-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-Service-Icon:before {
   content: "\eaef";
   color: #58cc87;
 }
-.icon-User-Management-_-NMS-Tree-Structure-_-User-Management-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-Topology-Icon:before {
   content: "\eaf0";
   color: #58cc87;
 }
-.icon-User-Management-_-Table-_-Copy-Icon:before {
+.icon-User-Management-_-NMS-Tree-Structure-_-User-Management-Icon:before {
   content: "\eaf1";
+  color: #58cc87;
+}
+.icon-User-Management-_-Table-_-Copy-Icon:before {
+  content: "\eaf2";
   color: #374775;
 }
 .icon-User-Management-_-Table-_-Delete-Icon:before {
-  content: "\eaf2";
+  content: "\eaf3";
   color: #c65161;
 }
 .icon-User-Management-_-Table-_-Edit-Icon:before {
-  content: "\eaf3";
-  color: #374775;
-}
-.icon-User-Management-_-Table-_-Users-Icon-_-Only-One-User:before {
   content: "\eaf4";
   color: #374775;
 }
-.icon-User-Management-_-Table-_-Users-Icon-_-Selected:before {
+.icon-User-Management-_-Table-_-Users-Icon-_-Only-One-User:before {
   content: "\eaf5";
   color: #374775;
 }
-.icon-User-Management-_-Table-_-Users-Icon:before {
+.icon-User-Management-_-Table-_-Users-Icon-_-Selected:before {
   content: "\eaf6";
   color: #374775;
 }
-.icon-waiting-service .path1:before {
+.icon-User-Management-_-Table-_-Users-Icon:before {
   content: "\eaf7";
+  color: #374775;
+}
+.icon-waiting-service .path1:before {
+  content: "\eaf8";
   color: rgb(27, 101, 189);
 }
 .icon-waiting-service .path2:before {
-  content: "\eaf8";
-  margin-left: -1em;
-  color: rgb(133, 194, 255);
-}
-.icon-waiting-service .path3:before {
   content: "\eaf9";
   margin-left: -1em;
   color: rgb(133, 194, 255);
 }
-.icon-waiting-service .path4:before {
+.icon-waiting-service .path3:before {
   content: "\eafa";
+  margin-left: -1em;
+  color: rgb(133, 194, 255);
+}
+.icon-waiting-service .path4:before {
+  content: "\eafb";
   margin-left: -1em;
   color: rgb(27, 101, 189);
 }
 .icon-waiting-service .path5:before {
-  content: "\eafb";
+  content: "\eafc";
   margin-left: -1em;
   color: rgb(133, 194, 255);
 }
 .icon-waiting-service .path6:before {
-  content: "\eafc";
+  content: "\eafd";
   margin-left: -1em;
   color: none;
 }
 .icon-window_mode:before {
-  content: "\eafd";
+  content: "\eafe";
 }
