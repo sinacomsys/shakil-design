@@ -25,7 +25,7 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SingleSelect = void 0;
 var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "D:/project/shakil-design-release/packages/components/src/organism/select/components/singleSelect/index.tsx";
+var _jsxFileName = "F:/shakil-design/packages/components/src/organism/select/components/singleSelect/index.tsx";
 var react_1 = require("react");
 var singleSelectList_1 = require("../list/singleSelectList");
 var selectTemplate_1 = require("../selectTemplate");
