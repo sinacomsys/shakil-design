@@ -24,11 +24,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseText = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/text/baseText/baseText.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = require("react");
 var react_jss_1 = require("react-jss");
@@ -36,7 +34,7 @@ var react_jss_1 = require("react-jss");
 var BaseText = (0, react_1.memo)((0, react_1.forwardRef)(function (_a, forwardedRef) {
     var dir = _a.dir, numberOfLines = _a.numberOfLines, selectable = _a.selectable, className = _a.className, style = _a.style, ellipsis = _a.ellipsis, lineHeight = _a.lineHeight, rest = __rest(_a, ["dir", "numberOfLines", "selectable", "className", "style", "ellipsis", "lineHeight"]);
     var classes = useStyles();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: (0, classnames_1.default)(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })), (lineHeight && { lineHeight: lineHeight })) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 50, columnNumber: 15 }, _this));
+    return ((0, jsx_runtime_1.jsx)("div", __assign({ ref: forwardedRef, dir: dir != null ? dir : "auto", className: (0, classnames_1.default)(classes.text, selectable === true && classes.selectable, selectable === false && classes.notSelectable, numberOfLines != null && classes.textMultiLine, ellipsis === true && classes.ellipsis, className), style: __assign(__assign(__assign({}, style), (numberOfLines && { WebkitLineClamp: numberOfLines })), (lineHeight && { lineHeight: lineHeight })) }, rest)));
 }));
 exports.BaseText = BaseText;
 var useStyles = (0, react_jss_1.createUseStyles)({

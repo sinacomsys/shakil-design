@@ -21,11 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SingleSelect = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/select/components/singleSelect/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var singleSelectList_1 = require("../list/singleSelectList");
 var selectTemplate_1 = require("../selectTemplate");
@@ -43,15 +41,14 @@ var SingleSelect = function (_a) {
     var displayValue = _value ? labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_value) : "";
     var handleOnClear = function () {
         onClear === null || onClear === void 0 ? void 0 : onClear();
-        onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, labelExtractor: labelExtractor, renderOverlay: function (_a) {
             var onClose = _a.onClose, filteredData = _a.filteredData;
-            return ((0, jsx_dev_runtime_1.jsxDEV)(singleSelectList_1.SingleSelectList, { data: data, filteredData: filteredData, labelExtractor: labelExtractor, valueExtractor: valueExtractor, selectedItem: selectedItem, onClick: function (value) {
+            return ((0, jsx_runtime_1.jsx)(singleSelectList_1.SingleSelectList, { data: data, filteredData: filteredData, labelExtractor: labelExtractor, valueExtractor: valueExtractor, selectedItem: selectedItem, onClick: function (value) {
                     handleOnChange(value);
                     onClose();
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, _this));
+                } }));
+        } })));
 };
 exports.SingleSelect = SingleSelect;
 //# sourceMappingURL=index.js.map

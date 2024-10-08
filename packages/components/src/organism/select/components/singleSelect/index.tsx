@@ -6,8 +6,8 @@ import { Template } from "../selectTemplate";
 export interface SingleSelectProps<T extends Record<string, any>>
   extends SelectProps<T> {
   value?: T[keyof T];
-  onChange?: (item: T | null) => void;
-  mode?: "single";
+  onChange?: (item: T[keyof T]) => void;
+  mode: "single";
 }
 
 const SingleSelect = <T extends Record<string, any>>({
@@ -38,7 +38,6 @@ const SingleSelect = <T extends Record<string, any>>({
 
   const handleOnClear = () => {
     onClear?.();
-    onChange?.(null);
   };
 
   return (

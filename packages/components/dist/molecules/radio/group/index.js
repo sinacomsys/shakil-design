@@ -33,11 +33,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Group = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/radio/group/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = __importStar(require("react"));
 var context_1 = require("../context");
 var Group = react_1.default.forwardRef(function (_a, ref) {
@@ -50,11 +48,11 @@ var Group = react_1.default.forwardRef(function (_a, ref) {
         setInternalValue(e.target.value);
         onChange === null || onChange === void 0 ? void 0 : onChange(e);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: __assign({}, wrapperStyle), onBlur: onBlur, onFocus: onFocus, ref: ref }, { children: (0, jsx_dev_runtime_1.jsxDEV)(context_1.RadioContext.Provider, __assign({ value: {
+    return ((0, jsx_runtime_1.jsx)("div", __assign({ style: __assign({}, wrapperStyle), onBlur: onBlur, onFocus: onFocus, ref: ref }, { children: (0, jsx_runtime_1.jsx)(context_1.RadioContext.Provider, __assign({ value: {
                 value: internalValue,
                 onChange: hangleOnChange,
                 name: name,
-            } }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 27, columnNumber: 13 }, _this));
+            } }, { children: children })) })));
 });
 exports.Group = Group;
 Group.displayName = "Group";

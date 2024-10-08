@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Drawer = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/drawer/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var framer_motion_1 = require("framer-motion");
 var react_1 = require("react");
@@ -41,9 +39,9 @@ var Drawer = function (_a) {
     }, [getContainer, bodyRef]);
     var drawerPositionStrategy = (portalContainerElement === null || portalContainerElement === void 0 ? void 0 : portalContainerElement.localName) === "body" ? "fixed" : "absolute";
     var classes = (0, style_1.useStyle)(drawerPositionStrategy);
-    var mask = ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: function () {
+    var mask = ((0, jsx_runtime_1.jsx)("div", { onClick: function () {
             isVisible && maskCloseable && onClose();
-        }, className: (0, classnames_1.default)(classes["mask"], maskClassName) }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 17 }, _this));
+        }, className: (0, classnames_1.default)(classes["mask"], maskClassName) }));
     var dimentions = (0, react_1.useMemo)(function () {
         var portalContainerElementRect = portalContainerElement === null || portalContainerElement === void 0 ? void 0 : portalContainerElement.getBoundingClientRect();
         var containerHeight = portalContainerElementRect === null || portalContainerElementRect === void 0 ? void 0 : portalContainerElementRect.height;
@@ -83,10 +81,10 @@ var Drawer = function (_a) {
             };
         }
     }, [height, placement, portalContainerElement, width]);
-    var content = ((0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ initial: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), animate: __assign(__assign({}, (isVisible && (dimentions === null || dimentions === void 0 ? void 0 : dimentions.animateTo))), { opacity: isVisible ? 1 : 0 }), exit: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), style: __assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.rect), className: (0, classnames_1.default)(contentClassName, classes["content"]) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 123, columnNumber: 20 }, _this));
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: portalContainerElement
-            ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.AnimatePresence, { children: !isVisible && destroyOnClose ? null : content }, void 0, false, { fileName: _jsxFileName, lineNumber: 146, columnNumber: 15 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 143, columnNumber: 33 }, _this), portalContainerElement)
-            : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 11 }, _this));
+    var content = ((0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ initial: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), animate: __assign(__assign({}, (isVisible && (dimentions === null || dimentions === void 0 ? void 0 : dimentions.animateTo))), { opacity: isVisible ? 1 : 0 }), exit: __assign(__assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.initial), { opacity: 0 }), style: __assign({}, dimentions === null || dimentions === void 0 ? void 0 : dimentions.rect), className: (0, classnames_1.default)(contentClassName, classes["content"]) }, { children: children })));
+    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: portalContainerElement
+            ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [isVisible ? mask : null, (0, jsx_runtime_1.jsx)(framer_motion_1.AnimatePresence, { children: !isVisible && destroyOnClose ? null : content })] }), portalContainerElement)
+            : null }));
 };
 exports.Drawer = Drawer;
 //# sourceMappingURL=index.js.map

@@ -36,11 +36,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DropDown = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/dropDown/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = __importStar(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
@@ -89,7 +87,7 @@ var DropDown = function (_a) {
         newChildProps.onMouseLeave = handleOnMouseLeave;
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
-    var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_dev_runtime_1.jsxDEV)("span", __assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 90, columnNumber: 8 }, _this));
+    var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_runtime_1.jsx)("span", __assign({}, newChildProps, { children: children })));
     (0, src_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
@@ -123,12 +121,12 @@ var DropDown = function (_a) {
         onChange === null || onChange === void 0 ? void 0 : onChange(value);
     };
     var _value = propValue || internalValue;
-    var list = ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["overlay"] }, { children: items.map(function (item) {
-            return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": item.value, onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label }), void 0, false, { fileName: _jsxFileName, lineNumber: 150, columnNumber: 13 }, _this) }), item.value, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 17 }, _this));
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 137, columnNumber: 17 }, _this));
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
-                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list }), void 0, false, { fileName: _jsxFileName, lineNumber: 165, columnNumber: 15 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 163, columnNumber: 33 }, _this), body.current)
-                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 159, columnNumber: 11 }, _this));
+    var list = ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["overlay"] }, { children: items.map(function (item) {
+            return ((0, jsx_runtime_1.jsx)("div", __assign({ "data-testid": item.value, onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_runtime_1.jsx)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label })) }), item.value));
+        }) })));
+    return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
+                ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsx)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: list })) }), body.current)
+                : null] }));
 };
 exports.DropDown = DropDown;
 //# sourceMappingURL=index.js.map

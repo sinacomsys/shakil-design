@@ -21,22 +21,20 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DatePicker = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/datepicker/components/datePicker/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var datePickerPanel_1 = require("../datePickerPanel");
 var datePickerProvider_1 = require("../datePickerProvider");
 var wrapperTemplate_1 = require("../wrapperTemplate");
 var DatePicker = function (_a) {
     var onChange = _a.onChange, testid = _a.testid, rest = __rest(_a, ["onChange", "testid"]);
-    return ((0, jsx_dev_runtime_1.jsxDEV)(datePickerProvider_1.DatePickerProvider, __assign({}, rest, { children: function (_a) {
+    return ((0, jsx_runtime_1.jsx)(datePickerProvider_1.DatePickerProvider, __assign({}, rest, { children: function (_a) {
             var value = _a.value, disable = _a.disable, onGoToday = _a.onGoToday;
-            return ((0, jsx_dev_runtime_1.jsxDEV)(wrapperTemplate_1.WrapperTemplate, __assign({ testid: testid, disable: disable, onFinalConfirm: function () {
+            return ((0, jsx_runtime_1.jsx)(wrapperTemplate_1.WrapperTemplate, __assign({ testid: testid, disable: disable, onFinalConfirm: function () {
                     onChange === null || onChange === void 0 ? void 0 : onChange({ value: value });
-                }, onGoToday: onGoToday }, { children: (0, jsx_dev_runtime_1.jsxDEV)(datePickerPanel_1.DatePickerPanel, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 19, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 16, columnNumber: 11 }, _this));
+                }, onGoToday: onGoToday }, { children: (0, jsx_runtime_1.jsx)(datePickerPanel_1.DatePickerPanel, {}) })));
+        } })));
 };
 exports.DatePicker = DatePicker;
 //# sourceMappingURL=index.js.map

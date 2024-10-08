@@ -21,17 +21,15 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cell = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/Table/cell/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var text_1 = require("../../../atoms/text");
 var Cell = function (_a) {
     var children = _a.children, rest = __rest(_a, ["children"]);
-    return ((0, jsx_dev_runtime_1.jsxDEV)("td", __assign({}, rest, { style: {
+    return ((0, jsx_runtime_1.jsx)("td", __assign({}, rest, { style: {
             height: "inherit",
-        } }, { children: typeof children !== "object" ? ((0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ theme: "Regular", size: 14 }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 19, columnNumber: 40 }, _this)) : (children) }), void 0, false, { fileName: _jsxFileName, lineNumber: 12, columnNumber: 11 }, _this));
+        } }, { children: typeof children !== "object" ? ((0, jsx_runtime_1.jsx)(text_1.Text, __assign({ theme: "Regular", size: 14 }, { children: children }))) : (children) })));
 };
 exports.Cell = Cell;
 //# sourceMappingURL=index.js.map

@@ -21,11 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Row = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/Table/row/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var style_1 = require("./style");
 var context_1 = require("../context");
@@ -39,7 +37,7 @@ var Row = function (_a) {
         isOnCheckedRowsAvailable: mode === "multiple",
         isSelected: isSelected,
     });
-    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({}, rest, onRow === null || onRow === void 0 ? void 0 : onRow(rowData, rowIndex), { ref: lastItem, "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function (e) {
+    return ((0, jsx_runtime_1.jsx)("tr", __assign({}, rest, onRow === null || onRow === void 0 ? void 0 : onRow(rowData, rowIndex), { ref: lastItem, "data-testid": rowKey ? "row-".concat(String(rowData[rowKey])) : rowIndex, onMouseEnter: function (e) {
             var _a, _b;
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onMouseEnter) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             setIsHovered(true);
@@ -52,7 +50,7 @@ var Row = function (_a) {
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
             mode === "single" && (onSelectRow === null || onSelectRow === void 0 ? void 0 : onSelectRow(rowData));
             mode === "multiple" && onDeselectCheckedRows(rowData);
-        }, className: classes["row"] }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 }, _this));
+        }, className: classes["row"] })));
 };
 exports.Row = Row;
 //# sourceMappingURL=index.js.map

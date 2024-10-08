@@ -4,5 +4,5 @@ declare const EndOfList: ({
 }: {
   children: React.ReactNode;
   numberOfColumns: number;
-}) => import("react/jsx-dev-runtime").JSX.Element;
+}) => import("react/jsx-runtime").JSX.Element;
 export { EndOfList };

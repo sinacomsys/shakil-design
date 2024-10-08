@@ -10,21 +10,19 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomCircle = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/radio/internalRadio/customCircle.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var style_1 = require("./style");
 var src_1 = require("@shakil-design/utils/src");
 var CustomCircle = function (_a) {
     var borderColor = _a.borderColor, backgroundColor = _a.backgroundColor;
     var classes = (0, style_1.useStyles)({ backgroundColor: backgroundColor, borderColor: borderColor });
     var roundToNearestEven = (0, src_1.useRoundToNearestEven)().roundToNearestEven;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { width: roundToNearestEven(16), height: roundToNearestEven(16) }, className: classes["outter-circle"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+    return ((0, jsx_runtime_1.jsx)("div", __assign({ style: { width: roundToNearestEven(16), height: roundToNearestEven(16) }, className: classes["outter-circle"] }, { children: (0, jsx_runtime_1.jsx)("div", { style: {
                 width: roundToNearestEven(10),
                 height: roundToNearestEven(10),
-            }, className: classes["inner-circle"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 16, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 11, columnNumber: 11 }, _this));
+            }, className: classes["inner-circle"] }) })));
 };
 exports.CustomCircle = CustomCircle;
 //# sourceMappingURL=customCircle.js.map

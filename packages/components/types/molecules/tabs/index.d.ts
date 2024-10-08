@@ -24,5 +24,5 @@ declare const Tabs: ({
   TabsTitle,
   noContent,
   items,
-}: TabsProps) => import("react/jsx-dev-runtime").JSX.Element;
+}: TabsProps) => import("react/jsx-runtime").JSX.Element;
 export { Tabs };

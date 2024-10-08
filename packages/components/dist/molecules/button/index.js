@@ -56,11 +56,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/button/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var lodash_1 = __importDefault(require("lodash"));
 var react_1 = __importStar(require("react"));
@@ -99,7 +97,7 @@ var Button = react_1.default.forwardRef(function (_a, ref) {
         if (ripples.length > 0) {
             return ripples.map(function (_a) {
                 var id = _a.id, rest = __rest(_a, ["id"]);
-                return ((0, jsx_dev_runtime_1.jsxDEV)("span", { style: __assign({}, rest), className: classes["ripple"] }, id, false, { fileName: _jsxFileName, lineNumber: 87, columnNumber: 19 }, _this));
+                return ((0, jsx_runtime_1.jsx)("span", { style: __assign({}, rest), className: classes["ripple"] }, id));
             });
         }
     };
@@ -118,9 +116,9 @@ var Button = react_1.default.forwardRef(function (_a, ref) {
             : isDangerGhost
                 ? dangerColor
                 : "black";
-    return ((0, jsx_dev_runtime_1.jsxDEV)("button", __assign({}, rest, { style: __assign(__assign({}, rest.style), { cursor: disabled || isLoading ? "not-allowed" : "pointer" }), ref: ref, form: form, type: htmlType, onMouseDown: showRipple, onMouseUp: onDebounce, onClick: handleOnClick, disabled: disabled || isLoading, className: (0, classnames_1.default)(classes["button"], mode === "main" && classes["buttonMain"], mode === "success" && classes["buttonSuccess"], mode === "danger" && classes["buttonDanger"], size === "small" && "".concat(classes["button"], "--small"), size === "middle" && "".concat(classes["button"], "--middle"), isMainGhost && classes["ghostMain"], isSuccessGhost && classes["ghostSuccess"], isDangerGhost && classes["ghostDanger"], className) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["textContainer"], style: {
+    return ((0, jsx_runtime_1.jsxs)("button", __assign({}, rest, { style: __assign(__assign({}, rest.style), { cursor: disabled || isLoading ? "not-allowed" : "pointer" }), ref: ref, form: form, type: htmlType, onMouseDown: showRipple, onMouseUp: onDebounce, onClick: handleOnClick, disabled: disabled || isLoading, className: (0, classnames_1.default)(classes["button"], mode === "main" && classes["buttonMain"], mode === "success" && classes["buttonSuccess"], mode === "danger" && classes["buttonDanger"], size === "small" && "".concat(classes["button"], "--small"), size === "middle" && "".concat(classes["button"], "--middle"), isMainGhost && classes["ghostMain"], isSuccessGhost && classes["ghostSuccess"], isDangerGhost && classes["ghostDanger"], className) }, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ className: classes["textContainer"], style: {
                     visibility: isLoading ? "hidden" : "visible",
-                } }, { children: typeof children !== "object" ? ((0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ style: { color: "inherit" }, size: 16 }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 147, columnNumber: 44 }, _this)) : (children) }), void 0, false, { fileName: _jsxFileName, lineNumber: 141, columnNumber: 9 }, _this), isLoading ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["loadingContainer"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Spinner, { spinerColor: spinnerColor, size: "medium" }, void 0, false, { fileName: _jsxFileName, lineNumber: 157, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 155, columnNumber: 23 }, _this)) : null, (isLoading || disabled) && (0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["cover"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 160, columnNumber: 36 }, _this), renderRipple()] }), void 0, true, { fileName: _jsxFileName, lineNumber: 114, columnNumber: 13 }, _this));
+                } }, { children: typeof children !== "object" ? ((0, jsx_runtime_1.jsx)(text_1.Text, __assign({ style: { color: "inherit" }, size: 16 }, { children: children }))) : (children) })), isLoading ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["loadingContainer"] }, { children: (0, jsx_runtime_1.jsx)(atoms_1.Spinner, { spinerColor: spinnerColor, size: "medium" }) }))) : null, (isLoading || disabled) && (0, jsx_runtime_1.jsx)("div", { className: classes["cover"] }), renderRipple()] })));
 });
 exports.Button = Button;
 Button.displayName = "Button";

@@ -1,5 +1,7 @@
 export interface NoContentProps {
-    text: string;
+  text: string;
 }
-declare const NoContent: ({ text }: NoContentProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const NoContent: ({
+  text,
+}: NoContentProps) => import("react/jsx-runtime").JSX.Element;
 export { NoContent };

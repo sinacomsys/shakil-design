@@ -10,11 +10,9 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SingleSelectList = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/select/components/list/singleSelectList/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var option_1 = require("../../option");
 var atoms_1 = require("../../../../../atoms");
 var molecules_1 = require("../../../../../molecules");
@@ -29,14 +27,14 @@ var SingleSelectList = function (_a) {
         return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) === selectedItem;
     });
     var classes = useStyles();
-    return ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.ScrollView, __assign({ style: { flex: 1 } }, { children: [selectedItem ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["radio"] }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(molecules_1.Radio, { value: "selected", checked: true }, void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 11 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ ellipsis: true, size: 16, theme: "Regular", color: "#575757" }, { children: _selectedItem && (labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_selectedItem)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 24 }, _this)) : null, selectedItem ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { style: { height: 1, backgroundColor: disableText } }, void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 24 }, _this)) : null, !filteredData || filteredData.length === 0 ? ((0, jsx_dev_runtime_1.jsxDEV)(noData_1.NoData, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 47, columnNumber: 54 }, _this)) : (filteredData
+    return ((0, jsx_runtime_1.jsxs)(atoms_1.ScrollView, __assign({ style: { flex: 1 } }, { children: [selectedItem ? ((0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["radio"] }, { children: [(0, jsx_runtime_1.jsx)(molecules_1.Radio, { value: "selected", checked: true }), (0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ ellipsis: true, size: 16, theme: "Regular", color: "#575757" }, { children: _selectedItem && (labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_selectedItem)) }))] }))) : null, selectedItem ? ((0, jsx_runtime_1.jsx)("div", { style: { height: 1, backgroundColor: disableText } })) : null, !filteredData || filteredData.length === 0 ? ((0, jsx_runtime_1.jsx)(noData_1.NoData, {})) : (filteredData
                 .filter(function (item) { return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) !== selectedItem; })
                 .map(function (item, index) {
                 var isSelected = selectedItem === (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item));
-                return ((0, jsx_dev_runtime_1.jsxDEV)(option_1.Option, __assign({ multiple: false, isSelected: isSelected, onClick: function () {
+                return ((0, jsx_runtime_1.jsx)(option_1.Option, __assign({ multiple: false, isSelected: isSelected, onClick: function () {
                         valueExtractor && onClick(valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item));
-                    } }, { children: labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(item) }), index, false, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 21 }, _this));
-            }))] }), void 0, true, { fileName: _jsxFileName, lineNumber: 34, columnNumber: 11 }, _this));
+                    } }, { children: labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(item) }), index));
+            }))] })));
 };
 exports.SingleSelectList = SingleSelectList;
 var useStyles = (0, react_jss_1.createUseStyles)({

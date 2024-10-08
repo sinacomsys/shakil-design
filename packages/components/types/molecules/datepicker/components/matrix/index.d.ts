@@ -1,1 +1,1 @@
-export declare const Matrix: () => import("react/jsx-dev-runtime").JSX.Element;
+export declare const Matrix: () => import("react/jsx-runtime").JSX.Element;

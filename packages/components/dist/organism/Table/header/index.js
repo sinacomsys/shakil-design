@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Header = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/Table/header/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var atoms_1 = require("../../../atoms");
 var checkbox_1 = require("../../../molecules/checkbox");
 var theme_1 = require("../../../theme");
@@ -30,10 +28,10 @@ var Header = function (_a) {
     var _b = (0, theme_1.useTheme)().table, _c = _b === void 0 ? {} : _b, filterIconColor = _c.filterIcon;
     var classes = (0, style_1.useStyles)();
     var _d = (0, context_1.useMyTableContext)(), onCheckAllRows = _d.onCheckAllRows, isAllRowsChecked = _d.isAllRowsChecked, mode = _d.mode, isOverflowed = _d.isOverflowed, testid = _d.testid;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("tr", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.header }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("th", { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["filter-icon-wrapper"] }, { children: [mode === "multiple" ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["selectAll"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(checkbox_1.CheckBox, { "data-testid": testid === null || testid === void 0 ? void 0 : testid.selectAll, checked: isAllRowsChecked, onChange: onCheckAllRows, indeterminate: isIndeterminate }, void 0, false, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 15 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 33, columnNumber: 35 }, _this)) : null, (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onClick: onToggleSearchBar, className: (0, classnames_1.default)(mode === "single" && "".concat(classes["search"], "--full-width"), classes["search"]) }, { children: filterIcon ? (filterIcon) : ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { "data-testid": testid === null || testid === void 0 ? void 0 : testid.filterBarIcon, color: isSearchAvailable ? filterIconColor : "gray", name: "Table-_-Filter", size: { width: 16, height: 16 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 18 }, _this)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 32, columnNumber: 9 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 31, columnNumber: 7 }, _this), columns.map(function (_a) {
+    return ((0, jsx_runtime_1.jsxs)("tr", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.header }, { children: [(0, jsx_runtime_1.jsx)("th", { children: (0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["filter-icon-wrapper"] }, { children: [mode === "multiple" ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["selectAll"] }, { children: (0, jsx_runtime_1.jsx)(checkbox_1.CheckBox, { "data-testid": testid === null || testid === void 0 ? void 0 : testid.selectAll, checked: isAllRowsChecked, onChange: onCheckAllRows, indeterminate: isIndeterminate }) }))) : null, (0, jsx_runtime_1.jsx)("div", __assign({ onClick: onToggleSearchBar, className: (0, classnames_1.default)(mode === "single" && "".concat(classes["search"], "--full-width"), classes["search"]) }, { children: filterIcon ? (filterIcon) : ((0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { "data-testid": testid === null || testid === void 0 ? void 0 : testid.filterBarIcon, color: isSearchAvailable ? filterIconColor : "gray", name: "Table-_-Filter", size: { width: 16, height: 16 } })) }))] })) }), columns.map(function (_a) {
                 var dataIndex = _a.dataIndex, title = _a.title, sorter = _a.sorter, style = _a.style;
-                return ((0, jsx_dev_runtime_1.jsxDEV)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 17 }, _this));
-            }), isOverflowed ? (0, jsx_dev_runtime_1.jsxDEV)("th", {}, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 22 }, _this) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 11 }, _this));
+                return ((0, jsx_runtime_1.jsx)(column_1.Column, { dataIndex: dataIndex, title: title, sorter: sorter, style: style }, dataIndex));
+            }), isOverflowed ? (0, jsx_runtime_1.jsx)("th", {}) : null] })));
 };
 exports.Header = Header;
 //# sourceMappingURL=index.js.map

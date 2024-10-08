@@ -36,11 +36,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tooltip = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/tooltip/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = __importStar(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
@@ -108,7 +106,7 @@ var Tooltip = function (_a) {
         newChildProps.onMouseLeave = handleOnMouseLeave;
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
-    var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_dev_runtime_1.jsxDEV)("span", __assign({}, newChildProps, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 111, columnNumber: 8 }, _this));
+    var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_runtime_1.jsx)("span", __assign({}, newChildProps, { children: children })));
     (0, src_1.useOnClickOutSide)({
         element: popperElement,
         extraElement: referenceElement,
@@ -134,13 +132,13 @@ var Tooltip = function (_a) {
             childCallback(e);
         }
     };
-    var arrow = ((0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["arrow"], ref: setArrowElement, style: __assign(__assign(__assign(__assign(__assign(__assign({}, styles.arrow), { transform: "".concat((_b = styles === null || styles === void 0 ? void 0 : styles.arrow) === null || _b === void 0 ? void 0 : _b.transform, " rotate(45deg)"), backgroundColor: arrowColor }), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("top")) && { bottom: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("bottom")) && { top: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("left")) && { right: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("right")) && { left: -4 })) }, void 0, false, { fileName: _jsxFileName, lineNumber: 146, columnNumber: 18 }, _this));
-    var mask = trigger === "click" ? ((0, jsx_dev_runtime_1.jsxDEV)("div", { className: (0, classnames_1.default)(classes["mask"], classes["maskVisible"]), style: __assign({}, maskStyle) }, void 0, false, { fileName: _jsxFileName, lineNumber: 163, columnNumber: 28 }, _this)) : null;
+    var arrow = ((0, jsx_runtime_1.jsx)("div", { className: classes["arrow"], ref: setArrowElement, style: __assign(__assign(__assign(__assign(__assign(__assign({}, styles.arrow), { transform: "".concat((_b = styles === null || styles === void 0 ? void 0 : styles.arrow) === null || _b === void 0 ? void 0 : _b.transform, " rotate(45deg)"), backgroundColor: arrowColor }), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("top")) && { bottom: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("bottom")) && { top: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("left")) && { right: -4 })), ((currentPlacement === null || currentPlacement === void 0 ? void 0 : currentPlacement.includes("right")) && { left: -4 })) }));
+    var mask = trigger === "click" ? ((0, jsx_runtime_1.jsx)("div", { className: (0, classnames_1.default)(classes["mask"], classes["maskVisible"]), style: __assign({}, maskStyle) })) : null;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     var _isVisible = isVisibleProp !== undefined ? isVisibleProp : isVisible;
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [anchor, body.current && _isVisible && content
-                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [hasMask ? mask : null, (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: [content, arrowColor ? arrow : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 180, columnNumber: 15 }, _this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 177, columnNumber: 33 }, _this), body.current)
-                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 173, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [anchor, body.current && _isVisible && content
+                ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [hasMask ? mask : null, (0, jsx_runtime_1.jsxs)("div", __assign({ onMouseEnter: handlePopupMouseEnter, onMouseLeave: handlePopupMouseLeave, ref: setPopperElement, style: styles.popper }, attributes.popper, { children: [content, arrowColor ? arrow : null] }))] }), body.current)
+                : null] }));
 };
 exports.Tooltip = Tooltip;
 //# sourceMappingURL=index.js.map

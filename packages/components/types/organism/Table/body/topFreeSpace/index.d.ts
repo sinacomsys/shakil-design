@@ -2,5 +2,5 @@ declare const FreeSpace: ({
   amount,
 }: {
   amount: number;
-}) => import("react/jsx-dev-runtime").JSX.Element;
+}) => import("react/jsx-runtime").JSX.Element;
 export { FreeSpace };

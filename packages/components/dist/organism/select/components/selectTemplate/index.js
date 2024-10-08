@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Template = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/select/components/selectTemplate/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var molecules_1 = require("../../../../molecules");
 var react_dom_1 = __importDefault(require("react-dom"));
@@ -80,7 +78,7 @@ var Template = function (_a) {
     var onClearSearchInput = function () {
         setSearchValue("");
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: handleRefOfRefrenceElement }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.TextInput, __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.input }, {
+    return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ ref: handleRefOfRefrenceElement }, { children: (0, jsx_runtime_1.jsx)(molecules_1.TextInput, __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.input }, {
                     AddonAfter: AddonAfter,
                     addonAfterClassName: addonAfterClassName,
                     addonAfterStyle: addonAfterStyle,
@@ -98,9 +96,9 @@ var Template = function (_a) {
                     hasError: hasError,
                     clearIconColor: clearIconColor,
                     isLoading: isLoading,
-                }, { onClear: onClear, onClick: handleOnClick, value: displayValue, style: __assign({}, style), className: (0, classnames_1.default)(classes["text-input"], isLoading && "".concat(classes["text-input"], "--loading"), className), placeholder: placeholder, allowClear: allowClear, AddonAfter: (0, jsx_dev_runtime_1.jsxDEV)(fleshIcon_1.FleshIcon, { isVisible: isVisible }, void 0, false, { fileName: _jsxFileName, lineNumber: 160, columnNumber: 23 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 126, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 125, columnNumber: 7 }, _this), body.current && isVisible
-                ? react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: setPopperElement, style: poperStyles.popper }, attributes.popper, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.overlay, style: __assign({ width: width }, popupStyles), className: (0, classnames_1.default)(popupClassName, classes["overlay"]) }, { children: [hasSearch ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["inputWrapper"] }, { children: (0, jsx_dev_runtime_1.jsxDEV)(molecules_1.TextInput, { allowClear: true, value: searchValue, placeholder: "Search", AddonAfter: (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { color: "#d1d1d1", name: "Search-Box_Search-Icon", size: { height: 15, width: 15 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 183, columnNumber: 37 }, _this), onClear: onClearSearchInput, onChangeText: handleOnSearch }, void 0, false, { fileName: _jsxFileName, lineNumber: 179, columnNumber: 23 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 177, columnNumber: 33 }, _this)) : null, renderOverlay({ onClose: onCloseOverlay, filteredData: filteredData })] }), void 0, true, { fileName: _jsxFileName, lineNumber: 172, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 167, columnNumber: 15 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 165, columnNumber: 33 }, _this), body.current)
-                : null] }, void 0, true, { fileName: _jsxFileName, lineNumber: 123, columnNumber: 11 }, _this));
+                }, { onClear: onClear, onClick: handleOnClick, value: displayValue, style: __assign({}, style), className: (0, classnames_1.default)(classes["text-input"], isLoading && "".concat(classes["text-input"], "--loading"), className), placeholder: placeholder, allowClear: allowClear, AddonAfter: (0, jsx_runtime_1.jsx)(fleshIcon_1.FleshIcon, { isVisible: isVisible }) })) })), body.current && isVisible
+                ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsx)("div", __assign({ ref: setPopperElement, style: poperStyles.popper }, attributes.popper, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.overlay, style: __assign({ width: width }, popupStyles), className: (0, classnames_1.default)(popupClassName, classes["overlay"]) }, { children: [hasSearch ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["inputWrapper"] }, { children: (0, jsx_runtime_1.jsx)(molecules_1.TextInput, { allowClear: true, value: searchValue, placeholder: "Search", AddonAfter: (0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { color: "#d1d1d1", name: "Search-Box_Search-Icon", size: { height: 15, width: 15 } }), onClear: onClearSearchInput, onChangeText: handleOnSearch }) }))) : null, renderOverlay({ onClose: onCloseOverlay, filteredData: filteredData })] })) })) }), body.current)
+                : null] }));
 };
 exports.Template = Template;
 //# sourceMappingURL=index.js.map
