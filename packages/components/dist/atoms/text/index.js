@@ -47,11 +47,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fonts = exports.Text = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/text/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var React = __importStar(require("react"));
 var baseText_1 = require("./baseText/baseText");
@@ -74,7 +72,7 @@ var Text = React.memo(React.forwardRef(function (_a, ref) {
         }
         return "p";
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className, classes.text), style: __assign({ color: color, fontWeight: fontWeight, lineHeight: lineHeight, fontSize: fontSize }, style) }, rest), void 0, false, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 15 }, _this));
+    return ((0, jsx_runtime_1.jsx)(baseText_1.BaseText, __assign({ ref: ref, variant: variant || setVariant(), className: (0, classnames_1.default)(fonts[theme], className, classes.text), style: __assign({ color: color, fontWeight: fontWeight, lineHeight: lineHeight, fontSize: fontSize }, style) }, rest)));
 }));
 exports.Text = Text;
 //# sourceMappingURL=index.js.map

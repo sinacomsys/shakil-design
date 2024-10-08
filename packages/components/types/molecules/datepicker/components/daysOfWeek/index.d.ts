@@ -1,1 +1,1 @@
-export declare const DaysOfWeekTitle: () => import("react/jsx-dev-runtime").JSX.Element;
+export declare const DaysOfWeekTitle: () => import("react/jsx-runtime").JSX.Element;

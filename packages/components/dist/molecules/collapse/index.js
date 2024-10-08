@@ -19,11 +19,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Collapse = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/collapse/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var context_1 = require("./context");
 var panel_1 = require("./panel");
@@ -63,12 +61,12 @@ var Collapse = function (_a) {
         }
         onChange === null || onChange === void 0 ? void 0 : onChange({ activePanelsKey: _openedPanels, clickedPanelKey: id });
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(context_1.CollapseContext.Provider, __assign({ value: {
+    return ((0, jsx_runtime_1.jsx)(context_1.CollapseContext.Provider, __assign({ value: {
             onClickPanel: handleOnClickPanel,
             openedPanels: _openedPanels,
             defaultOpen: defaultOpen || false,
             handleDefaultOpen: handleDefaultOpen,
-        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", { children: children }, void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 11 }, _this));
+        } }, { children: (0, jsx_runtime_1.jsx)("div", { children: children }) })));
 };
 exports.Collapse = Collapse;
 Collapse.Panel = panel_1.Panel;

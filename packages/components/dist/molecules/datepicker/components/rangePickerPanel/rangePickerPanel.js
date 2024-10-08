@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RangePickerPanel = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/datepicker/components/rangePickerPanel/rangePickerPanel.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var datePickerProvider_1 = require("../datePickerProvider");
 var wrapperTemplate_1 = require("../wrapperTemplate");
@@ -96,11 +94,11 @@ var RangePickerPanel = function (_a) {
             setEndDate((0, moment_jalaali_1.default)());
         }
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(wrapperTemplate_1.WrapperTemplate, __assign({ disable: isConfirmDisable, onFinalConfirm: handleFinalConfirm, onGoToday: handleOnGoToday, testid: testid }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(datePickerProvider_1.DatePickerProvider, __assign({ testid: testid, isDisable: isStartDateDisable, onOkDate: handleSetFromDate, onEditAgain: onEditAgainFromDate, value: startDate, isCalendarExtended: isStartDateExtended, handleExtendCalendar: handleExtendStartDate, calendarMode: calendarMode }, { children: function () {
-                    return (0, jsx_dev_runtime_1.jsxDEV)(datePickerPanel_1.DatePickerPanel, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 126, columnNumber: 17 }, _this);
-                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 115, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(datePickerProvider_1.DatePickerProvider, __assign({ testid: testid, disableDateFrom: startDate, isDisable: isEndDateDisable, onOkDate: handleSetEndDate, onEditAgain: onEditAgainEndDate, value: endDate, isCalendarExtended: isEndDateExtended, handleExtendCalendar: handleExtendEndDate, calendarMode: calendarMode }, { children: function () {
-                    return (0, jsx_dev_runtime_1.jsxDEV)(datePickerPanel_1.DatePickerPanel, {}, void 0, false, { fileName: _jsxFileName, lineNumber: 141, columnNumber: 17 }, _this);
-                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 129, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 108, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsxs)(wrapperTemplate_1.WrapperTemplate, __assign({ disable: isConfirmDisable, onFinalConfirm: handleFinalConfirm, onGoToday: handleOnGoToday, testid: testid }, { children: [(0, jsx_runtime_1.jsx)(datePickerProvider_1.DatePickerProvider, __assign({ testid: testid, isDisable: isStartDateDisable, onOkDate: handleSetFromDate, onEditAgain: onEditAgainFromDate, value: startDate, isCalendarExtended: isStartDateExtended, handleExtendCalendar: handleExtendStartDate, calendarMode: calendarMode }, { children: function () {
+                    return (0, jsx_runtime_1.jsx)(datePickerPanel_1.DatePickerPanel, {});
+                } })), (0, jsx_runtime_1.jsx)(datePickerProvider_1.DatePickerProvider, __assign({ testid: testid, disableDateFrom: startDate, isDisable: isEndDateDisable, onOkDate: handleSetEndDate, onEditAgain: onEditAgainEndDate, value: endDate, isCalendarExtended: isEndDateExtended, handleExtendCalendar: handleExtendEndDate, calendarMode: calendarMode }, { children: function () {
+                    return (0, jsx_runtime_1.jsx)(datePickerPanel_1.DatePickerPanel, {});
+                } }))] })));
 };
 exports.RangePickerPanel = RangePickerPanel;
 //# sourceMappingURL=rangePickerPanel.js.map

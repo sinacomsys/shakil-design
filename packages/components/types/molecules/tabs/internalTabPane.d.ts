@@ -11,5 +11,5 @@ declare function InternalTabPane({
   isActive,
   onClose,
   closeable,
-}: InternalTabPaneProps): import("react/jsx-dev-runtime").JSX.Element;
+}: InternalTabPaneProps): import("react/jsx-runtime").JSX.Element;
 export { InternalTabPane };

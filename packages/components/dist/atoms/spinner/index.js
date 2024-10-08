@@ -10,11 +10,9 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Spinner = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/spinner/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var src_1 = require("@shakil-design/utils/src");
 var theme_1 = require("../../theme");
 var style_1 = require("./style");
@@ -49,27 +47,27 @@ var Spinner = function (_a) {
                 ? LARGE
                 : MEDIUM;
     var _width = unit === "viewport" ? "".concat((0, src_1.pxToVh)(width), "vh") : width;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { width: _width, height: _width }, className: classes.ldsRing }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ style: { width: _width, height: _width }, className: classes.ldsRing }, { children: [(0, jsx_runtime_1.jsx)("div", { style: {
                     borderColor: borderStyle,
                     borderWidth: borderWidth,
                     width: _width,
                     height: _width,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 51, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+                } }), (0, jsx_runtime_1.jsx)("div", { style: {
                     borderColor: borderStyle,
                     borderWidth: borderWidth,
                     width: _width,
                     height: _width,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 59, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+                } }), (0, jsx_runtime_1.jsx)("div", { style: {
                     borderColor: borderStyle,
                     borderWidth: borderWidth,
                     width: _width,
                     height: _width,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 67, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", { style: {
+                } }), (0, jsx_runtime_1.jsx)("div", { style: {
                     borderColor: borderStyle,
                     borderWidth: borderWidth,
                     width: _width,
                     height: _width,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 49, columnNumber: 11 }, _this));
+                } })] })));
 };
 exports.Spinner = Spinner;
 //# sourceMappingURL=index.js.map

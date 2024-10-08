@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DatePickerProvider = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/datepicker/components/datePickerProvider/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var moment_jalaali_1 = __importDefault(require("moment-jalaali"));
 var react_1 = require("react");
 var context_1 = require("../../context");
@@ -160,7 +158,7 @@ var DatePickerProvider = function (_a) {
         setValue("hour", hour === "00" ? "" : hour);
         setValue("minute", minute === "00" ? "" : minute);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(context_1.DatePickerContext.Provider, __assign({ value: {
+    return ((0, jsx_runtime_1.jsx)(context_1.DatePickerContext.Provider, __assign({ value: {
             testid: testid,
             onEditAgain: onEditAgain,
             onConfirmDate: onConfirmDate,
@@ -195,10 +193,10 @@ var DatePickerProvider = function (_a) {
             value: selectedDate,
             disable: !_isConfirm,
             onGoToday: handleOnGoToday,
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 184, columnNumber: 11 }, _this));
+        }) })));
 };
 var DatePickerProviderWrapper = function (props) {
-    return ((0, jsx_dev_runtime_1.jsxDEV)(context_2.DatePickerFormProvider, { children: (0, jsx_dev_runtime_1.jsxDEV)(DatePickerProvider, __assign({}, props), void 0, false, { fileName: _jsxFileName, lineNumber: 231, columnNumber: 7 }, _this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 229, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsx)(context_2.DatePickerFormProvider, { children: (0, jsx_runtime_1.jsx)(DatePickerProvider, __assign({}, props)) }));
 };
 exports.DatePickerProvider = DatePickerProviderWrapper;
 //# sourceMappingURL=index.js.map

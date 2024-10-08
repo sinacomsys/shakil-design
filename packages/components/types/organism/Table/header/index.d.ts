@@ -14,5 +14,5 @@ declare const Header: <T extends object>({
   columns,
   isIndeterminate,
   isSearchAvailable,
-}: HeaderProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+}: HeaderProps<T>) => import("react/jsx-runtime").JSX.Element;
 export { Header };

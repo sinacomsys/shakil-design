@@ -1,2 +1,2 @@
-declare const ManualImportDate: () => import("react/jsx-dev-runtime").JSX.Element;
+declare const ManualImportDate: () => import("react/jsx-runtime").JSX.Element;
 export { ManualImportDate };

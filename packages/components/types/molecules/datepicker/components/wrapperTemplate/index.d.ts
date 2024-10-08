@@ -1,10 +1,16 @@
 /// <reference types="react" />
 import { DatePickerProviderProps } from "../types";
 interface WrapperTemplateProps extends Pick<DatePickerProviderProps, "testid"> {
-    children: React.ReactNode;
-    onFinalConfirm?: () => void;
-    disable: boolean;
-    onGoToday: () => void;
+  children: React.ReactNode;
+  onFinalConfirm?: () => void;
+  disable: boolean;
+  onGoToday: () => void;
 }
-declare const WrapperTemplate: ({ children, onFinalConfirm, disable, onGoToday, testid, }: WrapperTemplateProps) => import("react/jsx-dev-runtime").JSX.Element;
+declare const WrapperTemplate: ({
+  children,
+  onFinalConfirm,
+  disable,
+  onGoToday,
+  testid,
+}: WrapperTemplateProps) => import("react/jsx-runtime").JSX.Element;
 export { WrapperTemplate };

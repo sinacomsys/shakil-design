@@ -10,7 +10,7 @@ export default {
 
 const fakeData = [...new Array(35)].map((_, index) => {
   return {
-    test: `TestValue${index}`,
+    test: 1,
     test1: `Test Label${index}`,
   };
 });
@@ -20,6 +20,7 @@ const Template: Story<any> = () => {
     <StoryContainer>
       <div style={{ width: 300 }}>
         <Select
+          onChange={(value) => {}}
           valueExtractor={({ test }) => test}
           labelExtractor={({ test1 }) => test1}
           data={fakeData}

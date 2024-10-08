@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Modal = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/modal/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = require("react");
 var react_dom_1 = __importDefault(require("react-dom"));
@@ -43,11 +41,11 @@ var Modal = function (_a) {
             return bodyRef;
     }, [getContainer, bodyRef]);
     var drawerPositionStrategy = (modalContainerElement === null || modalContainerElement === void 0 ? void 0 : modalContainerElement.localName) === "body" ? "fixed" : "absolute";
-    var mask = ((0, jsx_dev_runtime_1.jsxDEV)("div", { onClick: function () {
+    var mask = ((0, jsx_runtime_1.jsx)("div", { onClick: function () {
             isVisible && maskCloseable && (onClose === null || onClose === void 0 ? void 0 : onClose());
-        }, className: (0, classnames_1.default)(maskClassName, classes.mask) }, void 0, false, { fileName: _jsxFileName, lineNumber: 57, columnNumber: 17 }, _this));
-    var content = ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: (0, classnames_1.default)(classes.modalContainer, centered && classes.centerd, className), style: __assign({ position: drawerPositionStrategy, display: isVisible ? "block" : "none", maxWidth: "calc(100% - ".concat(widthGutter, "px)"), maxHeight: "calc(100% - ".concat(widthGutter, "px)") }, style) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 20 }, _this));
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: modalContainerElement ? ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: react_dom_1.default.createPortal((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: [isVisible ? mask : null, !isVisible && destroyOnClose ? null : content] }, void 0, true, { fileName: _jsxFileName, lineNumber: 88, columnNumber: 34 }, _this), modalContainerElement) }, void 0, false, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 33 }, _this)) : null }, void 0, false, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 11 }, _this));
+        }, className: (0, classnames_1.default)(maskClassName, classes.mask) }));
+    var content = ((0, jsx_runtime_1.jsx)("div", __assign({ className: (0, classnames_1.default)(classes.modalContainer, centered && classes.centerd, className), style: __assign({ position: drawerPositionStrategy, display: isVisible ? "block" : "none", maxWidth: "calc(100% - ".concat(widthGutter, "px)"), maxHeight: "calc(100% - ".concat(widthGutter, "px)") }, style) }, { children: children })));
+    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: modalContainerElement ? ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: react_dom_1.default.createPortal((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [isVisible ? mask : null, !isVisible && destroyOnClose ? null : content] }), modalContainerElement) })) : null }));
 };
 exports.Modal = Modal;
 //# sourceMappingURL=index.js.map

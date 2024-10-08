@@ -1,1 +1,1 @@
-export declare const ExpandIcon: () => import("react/jsx-dev-runtime").JSX.Element;
+export declare const ExpandIcon: () => import("react/jsx-runtime").JSX.Element;

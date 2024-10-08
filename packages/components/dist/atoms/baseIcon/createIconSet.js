@@ -23,8 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IconTemplate = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/baseIcon/createIconSet.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
 var usehooks_ts_1 = require("usehooks-ts");
 var src_1 = require("@shakil-design/utils/src");
@@ -47,7 +46,6 @@ var context_1 = require("../../theme/context");
 //   );
 // }
 function IconTemplate(_a) {
-    var _this = this;
     var iconsJson = _a.iconsJson, color = _a.color, props = __rest(_a, ["iconsJson", "color"]);
     var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
     var _b = props.size, height = _b.height, width = _b.width;
@@ -86,13 +84,13 @@ function IconTemplate(_a) {
             return properties.name === props.name;
         })
         : null;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("svg", __assign({ viewBox: viewBox, fill: "none", width: realWidth || 0, height: realHeight || 0 }, { children: (glyph === null || glyph === void 0 ? void 0 : glyph.icon.paths).map(function (d, index) {
-            return ((0, jsx_dev_runtime_1.jsxDEV)("path", __assign({ d: d }, glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index], { 
+    return ((0, jsx_runtime_1.jsx)("svg", __assign({ viewBox: viewBox, fill: "none", width: realWidth || 0, height: realHeight || 0 }, { children: (glyph === null || glyph === void 0 ? void 0 : glyph.icon.paths).map(function (d, index) {
+            return ((0, jsx_runtime_1.jsx)("path", __assign({ d: d }, glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index], { 
                 //@ts-ignore
                 fill: Array.isArray(color)
                     ? color[index]
-                    : color || (glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index].fill) }), index, false, { fileName: _jsxFileName, lineNumber: 152, columnNumber: 17 }, _this));
-        }) }), void 0, false, { fileName: _jsxFileName, lineNumber: 144, columnNumber: 11 }, this));
+                    : color || (glyph === null || glyph === void 0 ? void 0 : glyph.attrs[index].fill) }), index));
+        }) })));
 }
 exports.IconTemplate = IconTemplate;
 //# sourceMappingURL=createIconSet.js.map

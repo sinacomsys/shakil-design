@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Collapse = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/tree/collapse/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var framer_motion_1 = require("framer-motion");
 var react_1 = require("react");
 var react_measure_1 = __importDefault(require("react-measure"));
@@ -59,20 +57,20 @@ var Collapse = function (_a) {
         }
     }, [defaultOpen]);
     var isFirstItem = index === 0 && level === 1;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: isFirstItem
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ className: isFirstItem
             ? (0, classnames_1.default)(classes.wrapper, "".concat(classes.wrapper, "--first-item"))
             : unit === "viewport"
                 ? (0, classnames_1.default)(classes.wrapper, "".concat(classes.wrapper).concat(types_1.VIEW_PORT_UNIT))
-                : classes.wrapper }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(item_1.Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }, void 0, false, { fileName: _jsxFileName, lineNumber: 63, columnNumber: 7 }, _this), children ? ((0, jsx_dev_runtime_1.jsxDEV)(react_measure_1.default, __assign({ bounds: true }, { children: function (_a) {
+                : classes.wrapper }, { children: [(0, jsx_runtime_1.jsx)(item_1.Item, { data: data, isActive: id === activeItemId, isLoading: isLoading, level: level, title: title, onClick: handleOnClick, arrowDirection: children ? (isOpen ? "up" : "down") : undefined, ref: ref }), children ? ((0, jsx_runtime_1.jsx)(react_measure_1.default, __assign({ bounds: true }, { children: function (_a) {
                     var _b, _c;
                     var contentRect = _a.contentRect, measureRef = _a.measureRef;
                     var height = (_c = (_b = contentRect.bounds) === null || _b === void 0 ? void 0 : _b.height) !== null && _c !== void 0 ? _c : 0;
-                    return ((0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ className: classes["animation-wrapper"], animate: {
+                    return ((0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ className: classes["animation-wrapper"], animate: {
                             height: isOpen ? "auto" : 0,
-                        } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: measureRef }, { children: [children, (0, jsx_dev_runtime_1.jsxDEV)("div", { className: classes["dots"], style: {
+                        } }, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ ref: measureRef }, { children: [children, (0, jsx_runtime_1.jsx)("div", { className: classes["dots"], style: {
                                         height: height - 15,
-                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 19 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 17 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 77, columnNumber: 21 }, _this));
-                } }), void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 20 }, _this)) : null] }), void 0, true, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 11 }, _this));
+                                    } })] })) })));
+                } }))) : null] })));
 };
 exports.Collapse = Collapse;
 //# sourceMappingURL=index.js.map

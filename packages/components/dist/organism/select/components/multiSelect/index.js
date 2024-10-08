@@ -30,11 +30,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MultiSelect = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/select/components/multiSelect/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var multiSelectList_1 = require("../list/multiSelectList");
 var selectTemplate_1 = require("../selectTemplate");
 var src_1 = require("@shakil-design/utils/src");
@@ -59,10 +57,10 @@ var MultiSelect = function (_a) {
         onClear === null || onClear === void 0 ? void 0 : onClear();
         onChange === null || onChange === void 0 ? void 0 : onChange(null);
     };
-    return ((0, jsx_dev_runtime_1.jsxDEV)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, labelExtractor: labelExtractor, renderOverlay: function (_a) {
             var filteredData = _a.filteredData;
-            return ((0, jsx_dev_runtime_1.jsxDEV)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, rawData: data, filteredData: filteredData }, void 0, false, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 17 }, _this));
-        } }), void 0, false, { fileName: _jsxFileName, lineNumber: 46, columnNumber: 11 }, _this));
+            return ((0, jsx_runtime_1.jsx)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, rawData: data, filteredData: filteredData }));
+        } })));
 };
 exports.MultiSelect = MultiSelect;
 //# sourceMappingURL=index.js.map

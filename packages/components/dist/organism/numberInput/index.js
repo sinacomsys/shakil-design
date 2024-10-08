@@ -21,11 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NumberInput = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/numberInput/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var atoms_1 = require("../../atoms");
 var molecules_1 = require("../../molecules");
 var theme_1 = require("../../theme");
@@ -35,7 +33,7 @@ var NumberInput = function (_a) {
     var wrapperStyle = _a.wrapperStyle, onDecrease = _a.onDecrease, onIncrease = _a.onIncrease, wrapperClassName = _a.wrapperClassName, rest = __rest(_a, ["wrapperStyle", "onDecrease", "onIncrease", "wrapperClassName"]);
     var classes = (0, style_1.useStyles)();
     var disableField = useTheme().disableField;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: wrapperClassName && wrapperClassName, style: __assign({ position: "relative" }, wrapperStyle) }, { children: [(0, jsx_dev_runtime_1.jsxDEV)(molecules_1.TextInput, __assign({}, rest, { className: classes["input"], style: __assign({}, rest.style) }), void 0, false, { fileName: _jsxFileName, lineNumber: 29, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { name: "Amount-Boxes_Decrease", size: { height: 7, width: 12.5 }, wrapperClassName: classes["arrowDown"], color: rest.disabled ? disableField : "#575757", onClick: onDecrease }, void 0, false, { fileName: _jsxFileName, lineNumber: 36, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(atoms_1.BaseIcon, { onClick: onIncrease, color: rest.disabled ? disableField : "#575757", name: "Amount-Boxes_Increase", size: { height: 7, width: 12.5 }, wrapperClassName: classes["arrowUp"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 43, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 24, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ className: wrapperClassName && wrapperClassName, style: __assign({ position: "relative" }, wrapperStyle) }, { children: [(0, jsx_runtime_1.jsx)(molecules_1.TextInput, __assign({}, rest, { className: classes["input"], style: __assign({}, rest.style) })), (0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { name: "Amount-Boxes_Decrease", size: { height: 7, width: 12.5 }, wrapperClassName: classes["arrowDown"], color: rest.disabled ? disableField : "#575757", onClick: onDecrease }), (0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { onClick: onIncrease, color: rest.disabled ? disableField : "#575757", name: "Amount-Boxes_Increase", size: { height: 7, width: 12.5 }, wrapperClassName: classes["arrowUp"] })] })));
 };
 exports.NumberInput = NumberInput;
 //# sourceMappingURL=index.js.map

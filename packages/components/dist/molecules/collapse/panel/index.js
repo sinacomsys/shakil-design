@@ -10,11 +10,9 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Panel = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/collapse/panel/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var framer_motion_1 = require("framer-motion");
 var react_1 = require("react");
 var baseIcon_1 = require("../../../atoms/baseIcon");
@@ -38,7 +36,7 @@ var Panel = function (_a) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     var isOpen = Boolean(openedPanels.find(function (item) { return item === id; }));
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { marginBottom: 16 } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["titleWrapper"], onClick: handleOnClick }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ className: classes["title"] }, { children: typeof title === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)(text_1.Text, __assign({ theme: "Regular", size: 16, color: isOpen ? openPanel : closePanel, ellipsis: true }, { children: title }), void 0, false, { fileName: _jsxFileName, lineNumber: 39, columnNumber: 41 }, _this)) : (title({ isOpen: isOpen })) }), void 0, false, { fileName: _jsxFileName, lineNumber: 38, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ style: { marginRight: 10 }, animate: { rotate: isOpen ? 180 : 0 } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(baseIcon_1.BaseIcon, { color: isOpen ? openPanel : closePanel, name: "Every-Boxes-_-Flesh-Icon-for-more-choices", size: { height: 6, width: 12 } }, void 0, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 52, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 37, columnNumber: 7 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, __assign({ style: { overflow: "hidden", height: 0 }, animate: { height: isOpen ? "auto" : 0 } }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 64, columnNumber: 7 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 35, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ style: { marginBottom: 16 } }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["titleWrapper"], onClick: handleOnClick }, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ className: classes["title"] }, { children: typeof title === "string" ? ((0, jsx_runtime_1.jsx)(text_1.Text, __assign({ theme: "Regular", size: 16, color: isOpen ? openPanel : closePanel, ellipsis: true }, { children: title }))) : (title({ isOpen: isOpen })) })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { marginRight: 10 }, animate: { rotate: isOpen ? 180 : 0 } }, { children: (0, jsx_runtime_1.jsx)(baseIcon_1.BaseIcon, { color: isOpen ? openPanel : closePanel, name: "Every-Boxes-_-Flesh-Icon-for-more-choices", size: { height: 6, width: 12 } }) }))] })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { overflow: "hidden", height: 0 }, animate: { height: isOpen ? "auto" : 0 } }, { children: children }))] })));
 };
 exports.Panel = Panel;
 //# sourceMappingURL=index.js.map

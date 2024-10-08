@@ -1,2 +1,2 @@
-declare const Calendar: () => import("react/jsx-dev-runtime").JSX.Element;
+declare const Calendar: () => import("react/jsx-runtime").JSX.Element;
 export { Calendar };

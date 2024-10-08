@@ -24,18 +24,16 @@ var __rest = (this && this.__rest) || function (s, e) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScrollView = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/scrollView/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = __importDefault(require("react"));
 var style_1 = require("./style");
 var classnames_1 = __importDefault(require("classnames"));
 var ScrollView = react_1.default.forwardRef(function (_a, ref) {
     var children = _a.children, className = _a.className, style = _a.style, rest = __rest(_a, ["children", "className", "style"]);
     var classes = (0, style_1.useStyles)();
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({}, rest, { ref: ref, style: __assign({}, style), className: (0, classnames_1.default)(className, classes.container) }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 10, columnNumber: 13 }, _this));
+    return ((0, jsx_runtime_1.jsx)("div", __assign({}, rest, { ref: ref, style: __assign({}, style), className: (0, classnames_1.default)(className, classes.container) }, { children: children })));
 });
 exports.ScrollView = ScrollView;
 ScrollView.displayName = "ScrollView";

@@ -13,11 +13,9 @@ var __assign = (this && this.__assign) || function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TableBody = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/organism/Table/body/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var style_1 = require("./style");
 var src_1 = require("@shakil-design/utils/src");
 var rowContainer_1 = require("../rowContainer");
@@ -47,17 +45,17 @@ var TableBody = function (_a, ref) {
             observer.current.observe(node);
     }, [onLoadNextPage]);
     var numberOfColumns = coloums.length;
-    return ((0, jsx_dev_runtime_1.jsxDEV)(jsx_dev_runtime_1.Fragment, { children: virtualRows.length > 0 ? ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { height: "".concat((_b = virtualizer === null || virtualizer === void 0 ? void 0 : virtualizer.getTotalSize()) !== null && _b !== void 0 ? _b : 0, "px") } }, { children: (0, jsx_dev_runtime_1.jsxDEV)("table", __assign({ ref: ref, className: classes["wrapper"], role: "table" }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("colgroup", { children: [(0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: searchIconWidth } }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 15 }, _this), coloums.map(function (_a) {
+    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: virtualRows.length > 0 ? ((0, jsx_runtime_1.jsx)("div", __assign({ style: { height: "".concat((_b = virtualizer === null || virtualizer === void 0 ? void 0 : virtualizer.getTotalSize()) !== null && _b !== void 0 ? _b : 0, "px") } }, { children: (0, jsx_runtime_1.jsxs)("table", __assign({ ref: ref, className: classes["wrapper"], role: "table" }, { children: [(0, jsx_runtime_1.jsxs)("colgroup", { children: [(0, jsx_runtime_1.jsx)("col", { style: { width: searchIconWidth } }), coloums.map(function (_a) {
                                 var width = _a.width, dataIndex = _a.dataIndex;
                                 var _width = unit === "viewport" && width ? (0, src_1.pxToVwString)(width) : width;
-                                return ((0, jsx_dev_runtime_1.jsxDEV)("col", { style: { width: _width ? _width : colWidth } }, dataIndex, false, { fileName: _jsxFileName, lineNumber: 79, columnNumber: 25 }, _this));
-                            })] }, void 0, true, { fileName: _jsxFileName, lineNumber: 74, columnNumber: 13 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("tbody", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.body }, { children: [paddingTop > 0 && (0, jsx_dev_runtime_1.jsxDEV)(topFreeSpace_1.FreeSpace, { amount: paddingTop }, void 0, false, { fileName: _jsxFileName, lineNumber: 88, columnNumber: 33 }, _this), virtualRows.map(function (virtualRow, index) {
+                                return ((0, jsx_runtime_1.jsx)("col", { style: { width: _width ? _width : colWidth } }, dataIndex));
+                            })] }), (0, jsx_runtime_1.jsxs)("tbody", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.body }, { children: [paddingTop > 0 && (0, jsx_runtime_1.jsx)(topFreeSpace_1.FreeSpace, { amount: paddingTop }), virtualRows.map(function (virtualRow, index) {
                                 var row = dataList[virtualRow.index];
                                 if (virtualRows.length === index + 1) {
-                                    return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.RowContainer, { lastItem: lastItemRef, rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 92, columnNumber: 27 }, _this));
+                                    return ((0, jsx_runtime_1.jsx)(rowContainer_1.RowContainer, { lastItem: lastItemRef, rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index));
                                 }
-                                return ((0, jsx_dev_runtime_1.jsxDEV)(rowContainer_1.RowContainer, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index, false, { fileName: _jsxFileName, lineNumber: 103, columnNumber: 25 }, _this));
-                            }), isLoadingMore ? ((0, jsx_dev_runtime_1.jsxDEV)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof isLoadingMore === "boolean" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 18 }, { children: "Loading..." }), void 0, false, { fileName: _jsxFileName, lineNumber: 115, columnNumber: 58 }, _this)) : (isLoadingMore) }), void 0, false, { fileName: _jsxFileName, lineNumber: 113, columnNumber: 33 }, _this)) : null, endOfList ? ((0, jsx_dev_runtime_1.jsxDEV)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof endOfList === "string" ? ((0, jsx_dev_runtime_1.jsxDEV)(atoms_1.Text, __assign({ size: 20 }, { children: endOfList }), void 0, false, { fileName: _jsxFileName, lineNumber: 124, columnNumber: 53 }, _this)) : (endOfList) }), void 0, false, { fileName: _jsxFileName, lineNumber: 122, columnNumber: 29 }, _this)) : null, paddingBottom > 0 && (0, jsx_dev_runtime_1.jsxDEV)(topFreeSpace_1.FreeSpace, { amount: paddingBottom }, void 0, false, { fileName: _jsxFileName, lineNumber: 132, columnNumber: 36 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 87, columnNumber: 13 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 11 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 34 }, _this)) : (noContent) }, void 0, false, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 11 }, _this));
+                                return ((0, jsx_runtime_1.jsx)(rowContainer_1.RowContainer, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index));
+                            }), isLoadingMore ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof isLoadingMore === "boolean" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 18 }, { children: "Loading..." }))) : (isLoadingMore) }))) : null, endOfList ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof endOfList === "string" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 20 }, { children: endOfList }))) : (endOfList) }))) : null, paddingBottom > 0 && (0, jsx_runtime_1.jsx)(topFreeSpace_1.FreeSpace, { amount: paddingBottom })] }))] })) }))) : (noContent) }));
 };
 var TableBodyWrapper = react_2.default.forwardRef(TableBody);
 exports.TableBody = TableBodyWrapper;

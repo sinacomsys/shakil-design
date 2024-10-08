@@ -1,2 +1,2 @@
-declare const Indeterminate: () => import("react/jsx-dev-runtime").JSX.Element;
+declare const Indeterminate: () => import("react/jsx-runtime").JSX.Element;
 export { Indeterminate };

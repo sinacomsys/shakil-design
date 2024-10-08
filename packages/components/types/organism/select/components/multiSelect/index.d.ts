@@ -15,5 +15,5 @@ declare const MultiSelect: <T extends Record<string, any>>({
   labelExtractor,
   onClear,
   ...props
-}: MultiSelectProps<T>) => import("react/jsx-dev-runtime").JSX.Element;
+}: MultiSelectProps<T>) => import("react/jsx-runtime").JSX.Element;
 export { MultiSelect };

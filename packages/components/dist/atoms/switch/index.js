@@ -44,11 +44,9 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Switch = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/atoms/switch/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var framer_motion_1 = require("framer-motion");
 var react_1 = __importStar(require("react"));
 var theme_1 = require("../../theme");
@@ -87,19 +85,19 @@ var Switch = react_1.default.forwardRef(function (_a, ref) {
     var _rippleHeight = unit === "viewport"
         ? (0, src_1.pxToVhString)(SWITCH_RIPPLE_HEIGHT)
         : SWITCH_RIPPLE_HEIGHT;
-    return ((0, jsx_dev_runtime_1.jsxDEV)("label", __assign({ style: { display: "inline-block", position: "relative" } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ "data-testid": testId, role: "switch", className: classes["wrapper"], style: {
+    return ((0, jsx_runtime_1.jsxs)("label", __assign({ style: { display: "inline-block", position: "relative" } }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ "data-testid": testId, role: "switch", className: classes["wrapper"], style: {
                     backgroundColor: checked ? checkedColor : unchecked,
                     width: _width,
                     height: _height,
-                } }, { children: [(0, jsx_dev_runtime_1.jsxDEV)("input", __assign({}, rest, { className: classes["hiddenCheckbox"], ref: ref, onChange: handleOnChange, onFocus: focusHandler, onBlur: blurHandler, "aria-checked": checked, checked: checked, type: "checkbox", name: name }), void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 11 }, _this), (0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ style: { position: "relative", height: "100%" } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { animate: { left: checked ? "calc(100% - ".concat(_circle, ")") : 0 }, style: {
+                } }, { children: [(0, jsx_runtime_1.jsx)("input", __assign({}, rest, { className: classes["hiddenCheckbox"], ref: ref, onChange: handleOnChange, onFocus: focusHandler, onBlur: blurHandler, "aria-checked": checked, checked: checked, type: "checkbox", name: name })), (0, jsx_runtime_1.jsx)("div", __assign({ style: { position: "relative", height: "100%" } }, { children: (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, { animate: { left: checked ? "calc(100% - ".concat(_circle, ")") : 0 }, style: {
                                 width: _circle,
                                 height: _circle,
-                            }, className: classes["circle"] }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 13 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 11 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 62, columnNumber: 9 }, _this), (0, jsx_dev_runtime_1.jsxDEV)(framer_motion_1.motion.div, { className: classes["ripple"], style: {
+                            }, className: classes["circle"] }) }))] })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, { className: classes["ripple"], style: {
                     backgroundColor: checked ? checkedColor : unchecked,
                 }, animate: {
                     width: isFocused ? _rippleWidth : 0,
                     height: isFocused ? _rippleHeight : 0,
-                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 95, columnNumber: 9 }, _this)] }), void 0, true, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 13 }, _this));
+                } })] })));
 });
 exports.Switch = Switch;
 Switch.displayName = "Switch";

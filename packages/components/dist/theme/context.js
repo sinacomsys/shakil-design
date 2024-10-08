@@ -24,11 +24,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.theming = exports.ThemeProvider = exports.rest = exports.ShakilDesignThemeProvider = exports.UnitContext = exports.Colors = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/theme/context.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = __importDefault(require("react"));
 var react_jss_1 = require("react-jss");
 var converPxToVp_1 = require("./converPxToVp");
@@ -120,7 +118,7 @@ var ShakilDesignThemeProvider = function (_a) {
             onProcessStyle: converPxToVp_1.convertPxToVp,
         });
     }
-    return ((0, jsx_dev_runtime_1.jsxDEV)(react_jss_1.JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(exports.UnitContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_dev_runtime_1.jsxDEV)(ThemeProvider, __assign({ theme: colors }, { children: children }), void 0, false, { fileName: _jsxFileName, lineNumber: 183, columnNumber: 9 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 182, columnNumber: 7 }, _this) }), void 0, false, { fileName: _jsxFileName, lineNumber: 176, columnNumber: 11 }, _this));
+    return ((0, jsx_runtime_1.jsx)(react_jss_1.JssProvider, __assign({ generateId: function (rule, sheet) { var _a; return "shakil-".concat((_a = sheet === null || sheet === void 0 ? void 0 : sheet.options) === null || _a === void 0 ? void 0 : _a.classNamePrefix).concat(rule.key); } }, { children: (0, jsx_runtime_1.jsx)(exports.UnitContext.Provider, __assign({ value: { unit: unit } }, { children: (0, jsx_runtime_1.jsx)(ThemeProvider, __assign({ theme: colors }, { children: children })) })) })));
 };
 exports.ShakilDesignThemeProvider = ShakilDesignThemeProvider;
 //# sourceMappingURL=context.js.map

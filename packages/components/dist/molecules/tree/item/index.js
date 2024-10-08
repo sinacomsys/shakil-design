@@ -36,11 +36,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Item = void 0;
-var jsx_dev_runtime_1 = require("react/jsx-dev-runtime");
-var _jsxFileName = "F:/shakil-design/packages/components/src/molecules/tree/item/index.tsx";
+var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = __importStar(require("react"));
 var style_1 = require("./style");
@@ -54,9 +52,9 @@ var Item = function (_a, ref) {
     var isLevelUpperOne = level && level > 1;
     var isPXunit = unit === "pixel";
     var isViewPortUnit = unit === "viewport";
-    return ((0, jsx_dev_runtime_1.jsxDEV)("div", __assign({ ref: ref, onClick: function () { return onClick === null || onClick === void 0 ? void 0 : onClick(); }, className: (0, classnames_1.default)(classes["wrapper"], isViewPortUnit && "".concat(classes["wrapper"]).concat(types_1.VIEW_PORT_UNIT), isPXunit && "".concat(classes["wrapper"]).concat(types_1.PX_UNIT), isLevelUpperOne && classes["dot-line"], isLevelUpperOne && isPXunit && "".concat(classes["dot-line"]).concat(types_1.PX_UNIT), isLevelUpperOne &&
+    return ((0, jsx_runtime_1.jsx)("div", __assign({ ref: ref, onClick: function () { return onClick === null || onClick === void 0 ? void 0 : onClick(); }, className: (0, classnames_1.default)(classes["wrapper"], isViewPortUnit && "".concat(classes["wrapper"]).concat(types_1.VIEW_PORT_UNIT), isPXunit && "".concat(classes["wrapper"]).concat(types_1.PX_UNIT), isLevelUpperOne && classes["dot-line"], isLevelUpperOne && isPXunit && "".concat(classes["dot-line"]).concat(types_1.PX_UNIT), isLevelUpperOne &&
             isViewPortUnit &&
-            "".concat(classes["dot-line"]).concat(types_1.VIEW_PORT_UNIT)) }, { children: typeof data.renderItemContent === "function" ? (data.renderItemContent({ data: data, level: level })) : ((0, jsx_dev_runtime_1.jsxDEV)(defaultNode_1.DefaultNode, __assign({}, {
+            "".concat(classes["dot-line"]).concat(types_1.VIEW_PORT_UNIT)) }, { children: typeof data.renderItemContent === "function" ? (data.renderItemContent({ data: data, level: level })) : ((0, jsx_runtime_1.jsx)(defaultNode_1.DefaultNode, __assign({}, {
             fontSize: fontSize,
             isActive: isActive,
             arrowDirection: arrowDirection,
@@ -64,7 +62,7 @@ var Item = function (_a, ref) {
             data: data,
             level: level,
             isLoading: isLoading,
-        }), void 0, false, { fileName: _jsxFileName, lineNumber: 45, columnNumber: 12 }, _this)) }), void 0, false, { fileName: _jsxFileName, lineNumber: 28, columnNumber: 11 }, _this));
+        }))) })));
 };
 var RefWrapper = react_1.default.forwardRef(Item);
 exports.Item = RefWrapper;

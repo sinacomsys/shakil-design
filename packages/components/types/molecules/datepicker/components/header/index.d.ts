@@ -1,1 +1,1 @@
-export declare const Header: () => import("react/jsx-dev-runtime").JSX.Element;
+export declare const Header: () => import("react/jsx-runtime").JSX.Element;
