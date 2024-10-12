@@ -19,8 +19,9 @@ const Template: Story<BaseIconProps> = () => (
       }}
     >
       <BaseIcon
-        size={{ height: 6, width: 11 }}
-        name={"Amount-Boxes_Decrease"}
+        size={{ height: 20, width: 20 }}
+        name={"tool-kit"}
+        color={"red"}
       />
     </div>
   </ShakilDesignThemeProvider>

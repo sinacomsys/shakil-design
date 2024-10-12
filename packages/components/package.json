@@ -43,7 +43,7 @@
     ]
   },
   "dependencies": {
-    "@shakil-design/asset": "^0.0.88",
+    "@shakil-design/asset": "^1.0.2",
     "@shakil-design/utils": "^0.0.78"
   },
   "publishConfig": {
