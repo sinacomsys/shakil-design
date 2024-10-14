@@ -48,8 +48,8 @@ var Row = function (_a) {
         }, onClick: function (e) {
             var _a, _b;
             (_b = onRow === null || onRow === void 0 ? void 0 : (_a = onRow(rowData, rowIndex)).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
-            mode === "single" && (onSelectRow === null || onSelectRow === void 0 ? void 0 : onSelectRow(rowData));
-            mode === "multiple" && onDeselectCheckedRows(rowData);
+            mode === "single" && rowKey && (onSelectRow === null || onSelectRow === void 0 ? void 0 : onSelectRow(rowData[rowKey]));
+            mode === "multiple" && rowKey && onDeselectCheckedRows(rowData[rowKey]);
         }, className: classes["row"] })));
 };
 exports.Row = Row;

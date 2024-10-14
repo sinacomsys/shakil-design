@@ -29,12 +29,12 @@ export interface TableCommonType<T>
 }
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {
-  selectedRows?: T[];
+  selectedRows?: T[keyof T][];
   onSelectRow?: (value: T[]) => void;
   mode: "multiple";
 }
 export interface TablePropsWithSingleSelectRow<T> extends TableCommonType<T> {
-  selectedRows?: T;
+  selectedRow?: T[keyof T];
   onSelectRow?: (value: T) => void;
   mode: "single";
 }

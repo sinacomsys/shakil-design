@@ -48,7 +48,7 @@ var ROW_HEIGHT = 40;
 var HEADER_HEIGHT = 45;
 function Table(props) {
     var _a, _b, _c;
-    var data = props.data, rowKey = props.rowKey, headerStyle = props.headerStyle, headerClassName = props.headerClassName, searchBarClassName = props.searchBarClassName, searchBarToggle = props.searchBarToggle, searchBarStyle = props.searchBarStyle, filterIcon = props.filterIcon, clearFilterIcon = props.clearFilterIcon, isLoading = props.isLoading, onSelectRowProps = props.onSelectRow, height = props.height, coloums = props.coloums, noContent = props.noContent, overScan = props.overScan, testid = props.testid, onRow = props.onRow, mode = props.mode, onResetFilters = props.onResetFilters, onLoadNextPage = props.onLoadNextPage, isLoadingMore = props.isLoadingMore, selectedRowsProps = props.selectedRows, isSearchBarOpenProps = props.isSearchBarOpen, expandedRows = props.expandedRows, endOfList = props.endOfList;
+    var data = props.data, rowKey = props.rowKey, headerStyle = props.headerStyle, headerClassName = props.headerClassName, searchBarClassName = props.searchBarClassName, searchBarToggle = props.searchBarToggle, searchBarStyle = props.searchBarStyle, filterIcon = props.filterIcon, clearFilterIcon = props.clearFilterIcon, isLoading = props.isLoading, onSelectRowProps = props.onSelectRow, height = props.height, coloums = props.coloums, noContent = props.noContent, overScan = props.overScan, testid = props.testid, onRow = props.onRow, mode = props.mode, onResetFilters = props.onResetFilters, onLoadNextPage = props.onLoadNextPage, isLoadingMore = props.isLoadingMore, isSearchBarOpenProps = props.isSearchBarOpen, expandedRows = props.expandedRows, endOfList = props.endOfList;
     var _d = (0, theme_1.useTheme)().table, _e = _d === void 0 ? {} : _d, header = _e.header;
     var classes = (0, style_1.useStyles)({ height: height });
     var _f = (0, react_1.useState)(undefined), order = _f[0], setOrder = _f[1];
@@ -130,32 +130,25 @@ function Table(props) {
     };
     var handleCheckRow = function (_a) {
         var rowId = _a.rowId;
-        var isCurrentRowAlreadySelected = checkedRows.find(function (item) {
-            return rowKey && item[rowKey] === rowId;
+        setCheckRows(function (prev) {
+            var indexOfItem = prev.findIndex(function (item) {
+                return item === rowId;
+            });
+            if (indexOfItem > -1) {
+                var newState = __spreadArray([], prev, true);
+                newState.splice(indexOfItem, 1);
+                if (mode === "multiple") {
+                    onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(newState);
+                }
+                return newState;
+            }
+            else {
+                if (mode === "multiple") {
+                    onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(__spreadArray(__spreadArray([], prev, true), [rowId], false));
+                }
+                return __spreadArray(__spreadArray([], prev, true), [rowId], false);
+            }
         });
-        if (isCurrentRowAlreadySelected) {
-            var filtered = checkedRows.filter(function (item) {
-                return rowKey && item[rowKey] !== rowId;
-            });
-            setCheckRows(filtered);
-            if (mode === "multiple") {
-                onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(filtered);
-            }
-            return;
-        }
-        else {
-            var selectedRow_1 = (data || []).find(function (item) {
-                return rowKey && item[rowKey] === rowId;
-            });
-            if (selectedRow_1) {
-                setCheckRows(function (prev) {
-                    if (mode === "multiple") {
-                        onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(__spreadArray(__spreadArray([], prev, true), [selectedRow_1], false));
-                    }
-                    return __spreadArray(__spreadArray([], prev, true), [selectedRow_1], false);
-                });
-            }
-        }
     };
     var handleOnSelectRow = function (value) {
         if (mode === "single") {
@@ -166,7 +159,13 @@ function Table(props) {
     var onCheckAllRows = function () {
         setAllRowsChecked(function (prev) { return !prev; });
         if (data && mode === "multiple") {
-            setCheckRows(data);
+            setCheckRows(data
+                .map(function (item) {
+                if (!rowKey)
+                    return;
+                return item[rowKey];
+            })
+                .filter(src_2.isDefined));
             onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(data);
         }
         if (isAllRowsChecked && mode === "multiple") {
@@ -184,14 +183,15 @@ function Table(props) {
     }, [data, checkedRows, mode]);
     (0, react_1.useEffect)(function () {
         if (mode === "single") {
-            setSelectedRow(selectedRowsProps);
+            setSelectedRow(props.selectedRow);
             setCheckRows([]);
         }
         else if (mode === "multiple") {
-            setCheckRows(selectedRowsProps || []);
+            setCheckRows(props.selectedRows || []);
             setSelectedRow(undefined);
         }
-    }, [selectedRowsProps, mode]);
+        //@ts-ignore
+    }, [onSelectRowProps, mode, props.selectedRow, props.selectedRows]);
     var estimateSize = (0, react_1.useMemo)(function () {
         return (ROW_HEIGHT / 10.8) * vh;
     }, [vh]);

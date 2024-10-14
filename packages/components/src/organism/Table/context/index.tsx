@@ -10,8 +10,8 @@ export interface TableContextProps<T> {
   onOrderChange: (data: { dataIndex: OrderBy }) => void;
   isAllRowsChecked: boolean;
   onCheckAllRows: () => void;
-  onSelectRow: (value: T) => void;
-  selectedRow: T;
+  onSelectRow: (value: T[keyof T]) => void;
+  selectedRow: T[keyof T];
   isOverflowed: boolean;
   testid?: {
     filterBarIcon?: string;
@@ -27,11 +27,11 @@ export interface TableContextProps<T> {
   ) => React.HTMLAttributes<any> | React.TdHTMLAttributes<any>;
   virtualizer: Virtualizer<HTMLDivElement, Element> | undefined;
   handleCheckRow: (arg: { rowId: T[keyof T] }) => void;
-  checkedRows: T[];
+  checkedRows: T[keyof T][];
   rowKey: keyof T | undefined;
   data: T[];
   mode?: TableRowSelectionMode;
-  onDeselectCheckedRows: (arg: T) => void;
+  onDeselectCheckedRows: (arg: T[keyof T]) => void;
   onLoadNextPage?: () => void;
   expandedRows?: T[keyof T][];
 }

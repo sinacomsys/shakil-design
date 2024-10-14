@@ -52,8 +52,8 @@ const Row = <T extends Record<string, unknown>>({
       }}
       onClick={(e) => {
         onRow?.(rowData, rowIndex).onClick?.(e);
-        mode === "single" && onSelectRow?.(rowData);
-        mode === "multiple" && onDeselectCheckedRows(rowData);
+        mode === "single" && rowKey && onSelectRow?.(rowData[rowKey]);
+        mode === "multiple" && rowKey && onDeselectCheckedRows(rowData[rowKey]);
       }}
       className={classes["row"]}
     />

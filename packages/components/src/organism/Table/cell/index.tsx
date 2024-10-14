@@ -1,7 +1,4 @@
-/* eslint-disable react/jsx-key */
-import classNames from "classnames";
 import { ReactNode } from "react";
-import { DEFAULT_ALIGN } from "..";
 import { Text } from "../../../atoms/text";
 export interface CellProps
   extends Omit<React.TdHTMLAttributes<HTMLTableCellElement>, "align"> {

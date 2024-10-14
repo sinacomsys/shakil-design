@@ -21,7 +21,7 @@ import { pxToVw, useWindowSize } from "@shakil-design/utils/src";
 import { TableBody } from "./body";
 import React from "react";
 import { UnitContext } from "../../theme/context";
-import { pxToVh } from "@shakil-design/utils/src";
+import { pxToVh, isDefined } from "@shakil-design/utils/src";
 
 export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
@@ -55,13 +55,13 @@ export interface TableCommonType<T>
 
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {
-  selectedRows?: T[];
+  selectedRows?: T[keyof T][];
   onSelectRow?: (value: T[]) => void;
   mode: "multiple";
 }
 
 export interface TablePropsWithSingleSelectRow<T> extends TableCommonType<T> {
-  selectedRows?: T;
+  selectedRow?: T[keyof T];
   onSelectRow?: (value: T) => void;
   mode: "single";
 }
@@ -99,7 +99,6 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     onResetFilters,
     onLoadNextPage,
     isLoadingMore,
-    selectedRows: selectedRowsProps,
     isSearchBarOpen: isSearchBarOpenProps,
     expandedRows,
     endOfList,
@@ -111,8 +110,10 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const { unit } = useContext(UnitContext);
   const [isSearchVisible, setShowSearchBar] = useState(false);
   const [orderBy, setOrderBy] = useState<OrderBy>(undefined);
-  const [selectedRow, setSelectedRow] = useState<T | undefined>(undefined);
-  const [checkedRows, setCheckRows] = useState<T[]>([]);
+  const [selectedRow, setSelectedRow] = useState<T[keyof T] | undefined>(
+    undefined,
+  );
+  const [checkedRows, setCheckRows] = useState<T[keyof T][]>([]);
   const [isAllRowsChecked, setAllRowsChecked] = useState(false);
   const tableContainerRef = useRef<HTMLDivElement | null>(null);
   const [bodyHeight, setBodyHeight] = useState(0);
@@ -196,35 +197,27 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   };
 
   const handleCheckRow = ({ rowId }: { rowId: T[keyof T] }) => {
-    const isCurrentRowAlreadySelected = checkedRows.find((item) => {
-      return rowKey && item[rowKey] === rowId;
+    setCheckRows((prev) => {
+      const indexOfItem = prev.findIndex((item) => {
+        return item === rowId;
+      });
+      if (indexOfItem > -1) {
+        const newState = [...prev];
+        newState.splice(indexOfItem, 1);
+        if (mode === "multiple") {
+          onSelectRowProps?.(newState);
+        }
+        return newState;
+      } else {
+        if (mode === "multiple") {
+          onSelectRowProps?.([...prev, rowId]);
+        }
+        return [...prev, rowId];
+      }
     });
-
-    if (isCurrentRowAlreadySelected) {
-      const filtered = checkedRows.filter((item) => {
-        return rowKey && item[rowKey] !== rowId;
-      });
-      setCheckRows(filtered);
-      if (mode === "multiple") {
-        onSelectRowProps?.(filtered);
-      }
-      return;
-    } else {
-      const selectedRow = (data || []).find((item) => {
-        return rowKey && item[rowKey] === rowId;
-      });
-      if (selectedRow) {
-        setCheckRows((prev) => {
-          if (mode === "multiple") {
-            onSelectRowProps?.([...prev, selectedRow]);
-          }
-          return [...prev, selectedRow];
-        });
-      }
-    }
   };
 
-  const handleOnSelectRow = (value: T) => {
+  const handleOnSelectRow = (value: T[keyof T]) => {
     if (mode === "single") {
       setSelectedRow(value);
       onSelectRowProps?.(value);
@@ -234,7 +227,14 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
   const onCheckAllRows = () => {
     setAllRowsChecked((prev) => !prev);
     if (data && mode === "multiple") {
-      setCheckRows(data);
+      setCheckRows(
+        data
+          .map((item) => {
+            if (!rowKey) return;
+            return item[rowKey];
+          })
+          .filter(isDefined),
+      );
       onSelectRowProps?.(data);
     }
     if (isAllRowsChecked && mode === "multiple") {
@@ -253,13 +253,14 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
 
   useEffect(() => {
     if (mode === "single") {
-      setSelectedRow(selectedRowsProps);
+      setSelectedRow(props.selectedRow);
       setCheckRows([]);
     } else if (mode === "multiple") {
-      setCheckRows(selectedRowsProps || []);
+      setCheckRows(props.selectedRows || []);
       setSelectedRow(undefined);
     }
-  }, [selectedRowsProps, mode]);
+    //@ts-ignore
+  }, [onSelectRowProps, mode, props.selectedRow, props.selectedRows]);
 
   const estimateSize = useMemo(() => {
     return (ROW_HEIGHT / 10.8) * vh;
@@ -293,7 +294,7 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     setBodyHeight(body?.clientHeight || 0);
   }, []);
 
-  const onDeselectCheckedRows = (row: T) => {
+  const onDeselectCheckedRows = (row: T[keyof T]) => {
     if (mode === "multiple") {
       setCheckRows([row]);
       onSelectRowProps?.([row]);
