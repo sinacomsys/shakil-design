@@ -25,7 +25,7 @@ const Template: Story<any> = () => (
     </div>
 
     <div style={{ padding: 30 }}>
-      <DropDown trigger="click" items={mockData}>
+      <DropDown trigger="click" dropDownTestId={"drop-down"} items={mockData}>
         <Text>DropDown</Text>
       </DropDown>
     </div>
