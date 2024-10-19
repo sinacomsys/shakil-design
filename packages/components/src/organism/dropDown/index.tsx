@@ -23,6 +23,7 @@ interface DropDownProps<T extends Default> {
   value?: Value;
   onChange?: (value: T) => void;
   dropdownStyle?: React.CSSProperties;
+  dropDownTestId?: string;
 }
 
 const DropDown = <T extends Default>({
@@ -34,6 +35,7 @@ const DropDown = <T extends Default>({
   onChange,
   value: propValue,
   dropdownStyle,
+  dropDownTestId,
 }: DropDownProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<Value | null>(null);
@@ -141,7 +143,9 @@ const DropDown = <T extends Default>({
       {items.map((item) => {
         return (
           <div
-            data-testid={item.value}
+            data-testid={
+              dropDownTestId ? dropDownTestId + "-" + item.value : item.value
+            }
             onClick={() => onSelectItem(item)}
             className={classNames(
               classes["item"],
