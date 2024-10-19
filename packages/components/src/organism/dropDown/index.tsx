@@ -22,6 +22,7 @@ interface DropDownProps<T extends Default> {
   items: T[];
   value?: Value;
   onChange?: (value: T) => void;
+  dropdownStyle?: React.CSSProperties;
 }
 
 const DropDown = <T extends Default>({
@@ -32,6 +33,7 @@ const DropDown = <T extends Default>({
   items,
   onChange,
   value: propValue,
+  dropdownStyle,
 }: DropDownProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<Value | null>(null);
@@ -135,7 +137,7 @@ const DropDown = <T extends Default>({
   const _value = propValue || internalValue;
 
   const list = (
-    <div className={classes["overlay"]}>
+    <div style={dropdownStyle} className={classes["overlay"]}>
       {items.map((item) => {
         return (
           <div

@@ -19,6 +19,12 @@ const mockData = [...new Array(3)].map((_, index) => {
 const Template: Story<any> = () => (
   <StoryContainer>
     <div style={{ padding: 30 }}>
+      <DropDown dropdownStyle={{ width: 700 }} trigger="click" items={mockData}>
+        <Text>DropDown</Text>
+      </DropDown>
+    </div>
+
+    <div style={{ padding: 30 }}>
       <DropDown trigger="click" items={mockData}>
         <Text>DropDown</Text>
       </DropDown>
