@@ -47,7 +47,7 @@ var text_1 = require("../../atoms/text");
 var src_1 = require("@shakil-design/utils/src");
 var style_1 = require("./style");
 var DropDown = function (_a) {
-    var children = _a.children, _b = _a.trigger, trigger = _b === void 0 ? "hover" : _b, _c = _a.placement, placement = _c === void 0 ? "bottom" : _c, isVisibleProp = _a.isVisible, items = _a.items, onChange = _a.onChange, propValue = _a.value;
+    var children = _a.children, _b = _a.trigger, trigger = _b === void 0 ? "hover" : _b, _c = _a.placement, placement = _c === void 0 ? "bottom" : _c, isVisibleProp = _a.isVisible, items = _a.items, onChange = _a.onChange, propValue = _a.value, dropdownStyle = _a.dropdownStyle;
     var classes = (0, style_1.useStyles)();
     var _d = (0, react_1.useState)(null), internalValue = _d[0], setInternalValue = _d[1];
     var body = (0, react_1.useRef)(null);
@@ -121,7 +121,7 @@ var DropDown = function (_a) {
         onChange === null || onChange === void 0 ? void 0 : onChange(value);
     };
     var _value = propValue || internalValue;
-    var list = ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["overlay"] }, { children: items.map(function (item) {
+    var list = ((0, jsx_runtime_1.jsx)("div", __assign({ style: dropdownStyle, className: classes["overlay"] }, { children: items.map(function (item) {
             return ((0, jsx_runtime_1.jsx)("div", __assign({ "data-testid": item.value, onClick: function () { return onSelectItem(item); }, className: (0, classnames_1.default)(classes["item"], _value === item.value && classes["itemSelected"]) }, { children: (0, jsx_runtime_1.jsx)(text_1.Text, __assign({ size: 14, color: "#575757" }, { children: item.label })) }), item.value));
         }) })));
     return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [anchor, body.current && _isVisible
