@@ -16,6 +16,7 @@ interface DropDownProps<T extends Default> {
   value?: Value;
   onChange?: (value: T) => void;
   dropdownStyle?: React.CSSProperties;
+  dropDownTestId?: string;
 }
 declare const DropDown: <T extends Default>({
   children,
@@ -26,5 +27,6 @@ declare const DropDown: <T extends Default>({
   onChange,
   value: propValue,
   dropdownStyle,
+  dropDownTestId,
 }: DropDownProps<T>) => import("react/jsx-runtime").JSX.Element;
 export { DropDown };
