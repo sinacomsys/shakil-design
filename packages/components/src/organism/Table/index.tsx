@@ -27,7 +27,7 @@ export const SEARCH_ICON = 32;
 export const ROW_SELECTION = 62;
 export const SCROLL_BAR = 11;
 export const DEFAULT_ALIGN = "center";
-const ROW_HEIGHT = 40;
+const ROW_HEIGHT = 33;
 const HEADER_HEIGHT = 45;
 
 export interface TableCommonType<T>
@@ -262,17 +262,13 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     //@ts-ignore
   }, [onSelectRowProps, mode, props.selectedRow, props.selectedRows]);
 
-  const estimateSize = useMemo(() => {
-    return (ROW_HEIGHT / 10.8) * vh;
-  }, [vh]);
-
   const rowVirtualizer = useVirtualizer({
     getScrollElement() {
       return tableContainerRef.current;
     },
     count: list.length,
     overscan: overScan || 20,
-    estimateSize: () => estimateSize,
+    estimateSize: () => ROW_HEIGHT,
   });
 
   const { getVirtualItems, getTotalSize } = rowVirtualizer;

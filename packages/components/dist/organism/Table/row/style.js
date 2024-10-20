@@ -7,7 +7,6 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
     var table = _a.table;
     return {
         row: {
-            height: 32,
             backgroundColor: function (_a) {
                 var isChecked = _a.isChecked, isSelected = _a.isSelected, isHoverd = _a.isHoverd;
                 return isChecked || isSelected

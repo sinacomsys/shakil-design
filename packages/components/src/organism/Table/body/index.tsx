@@ -15,7 +15,6 @@ import {
 import { useMyTableContext } from "../context";
 import React from "react";
 import { Text } from "../../../atoms";
-import { FreeSpace } from "./topFreeSpace";
 import { EndOfList } from "./endOfList";
 
 interface TableBodyProps<T extends Record<string, any>>
@@ -38,8 +37,6 @@ const TableBody = <T extends Record<string, any>>(
     dataList,
     coloums,
     colWidth,
-    paddingBottom,
-    paddingTop,
     isLoadingMore,
     endOfList,
   }: TableBodyProps<T>,
@@ -85,7 +82,6 @@ const TableBody = <T extends Record<string, any>>(
               })}
             </colgroup>
             <tbody data-testid={testid?.body}>
-              {paddingTop > 0 && <FreeSpace amount={paddingTop} />}
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
                 if (virtualRows.length === index + 1) {
@@ -128,8 +124,6 @@ const TableBody = <T extends Record<string, any>>(
                   )}
                 </EndOfList>
               ) : null}
-
-              {paddingBottom > 0 && <FreeSpace amount={paddingBottom} />}
             </tbody>
           </table>
         </div>

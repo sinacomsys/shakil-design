@@ -44,7 +44,7 @@ exports.SEARCH_ICON = 32;
 exports.ROW_SELECTION = 62;
 exports.SCROLL_BAR = 11;
 exports.DEFAULT_ALIGN = "center";
-var ROW_HEIGHT = 40;
+var ROW_HEIGHT = 33;
 var HEADER_HEIGHT = 45;
 function Table(props) {
     var _a, _b, _c;
@@ -192,16 +192,13 @@ function Table(props) {
         }
         //@ts-ignore
     }, [onSelectRowProps, mode, props.selectedRow, props.selectedRows]);
-    var estimateSize = (0, react_1.useMemo)(function () {
-        return (ROW_HEIGHT / 10.8) * vh;
-    }, [vh]);
     var rowVirtualizer = (0, react_virtual_1.useVirtualizer)({
         getScrollElement: function () {
             return tableContainerRef.current;
         },
         count: list.length,
         overscan: overScan || 20,
-        estimateSize: function () { return estimateSize; },
+        estimateSize: function () { return ROW_HEIGHT; },
     });
     var getVirtualItems = rowVirtualizer.getVirtualItems, getTotalSize = rowVirtualizer.getTotalSize;
     var paddingTop = getVirtualItems().length > 0 ? ((_b = (_a = getVirtualItems()) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.start) || 0 : 0;

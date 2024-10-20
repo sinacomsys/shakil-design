@@ -12,7 +12,6 @@ export const useStyles = createUseStyles(
   ({ table }) => {
     return {
       row: {
-        height: 32,
         backgroundColor: ({ isChecked, isSelected, isHoverd }: StyleProps) => {
           return isChecked || isSelected
             ? table?.selectedRow

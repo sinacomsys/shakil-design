@@ -24,11 +24,10 @@ var react_1 = require("react");
 var context_2 = require("../context");
 var react_2 = __importDefault(require("react"));
 var atoms_1 = require("../../../atoms");
-var topFreeSpace_1 = require("./topFreeSpace");
 var endOfList_1 = require("./endOfList");
 var TableBody = function (_a, ref) {
     var _b;
-    var virtualRows = _a.virtualRows, noContent = _a.noContent, searchIconWidth = _a.searchIconWidth, dataList = _a.dataList, coloums = _a.coloums, colWidth = _a.colWidth, paddingBottom = _a.paddingBottom, paddingTop = _a.paddingTop, isLoadingMore = _a.isLoadingMore, endOfList = _a.endOfList;
+    var virtualRows = _a.virtualRows, noContent = _a.noContent, searchIconWidth = _a.searchIconWidth, dataList = _a.dataList, coloums = _a.coloums, colWidth = _a.colWidth, isLoadingMore = _a.isLoadingMore, endOfList = _a.endOfList;
     var classes = (0, style_1.useStyles)();
     var observer = (0, react_1.useRef)(null);
     var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
@@ -49,13 +48,13 @@ var TableBody = function (_a, ref) {
                                 var width = _a.width, dataIndex = _a.dataIndex;
                                 var _width = unit === "viewport" && width ? (0, src_1.pxToVwString)(width) : width;
                                 return ((0, jsx_runtime_1.jsx)("col", { style: { width: _width ? _width : colWidth } }, dataIndex));
-                            })] }), (0, jsx_runtime_1.jsxs)("tbody", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.body }, { children: [paddingTop > 0 && (0, jsx_runtime_1.jsx)(topFreeSpace_1.FreeSpace, { amount: paddingTop }), virtualRows.map(function (virtualRow, index) {
+                            })] }), (0, jsx_runtime_1.jsxs)("tbody", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.body }, { children: [virtualRows.map(function (virtualRow, index) {
                                 var row = dataList[virtualRow.index];
                                 if (virtualRows.length === index + 1) {
                                     return ((0, jsx_runtime_1.jsx)(rowContainer_1.RowContainer, { lastItem: lastItemRef, rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index));
                                 }
                                 return ((0, jsx_runtime_1.jsx)(rowContainer_1.RowContainer, { rowData: row, index: index, columns: coloums, virtualItem: virtualRow }, rowKey ? row[rowKey] : index));
-                            }), isLoadingMore ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof isLoadingMore === "boolean" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 18 }, { children: "Loading..." }))) : (isLoadingMore) }))) : null, endOfList ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof endOfList === "string" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 20 }, { children: endOfList }))) : (endOfList) }))) : null, paddingBottom > 0 && (0, jsx_runtime_1.jsx)(topFreeSpace_1.FreeSpace, { amount: paddingBottom })] }))] })) }))) : (noContent) }));
+                            }), isLoadingMore ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof isLoadingMore === "boolean" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 18 }, { children: "Loading..." }))) : (isLoadingMore) }))) : null, endOfList ? ((0, jsx_runtime_1.jsx)(endOfList_1.EndOfList, __assign({ numberOfColumns: numberOfColumns }, { children: typeof endOfList === "string" ? ((0, jsx_runtime_1.jsx)(atoms_1.Text, __assign({ size: 20 }, { children: endOfList }))) : (endOfList) }))) : null] }))] })) }))) : (noContent) }));
 };
 var TableBodyWrapper = react_2.default.forwardRef(TableBody);
 exports.TableBody = TableBodyWrapper;

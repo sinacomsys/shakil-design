@@ -55,6 +55,12 @@ const Row = <T extends Record<string, unknown>>({
         mode === "single" && rowKey && onSelectRow?.(rowData[rowKey]);
         mode === "multiple" && rowKey && onDeselectCheckedRows(rowData[rowKey]);
       }}
+      style={{
+        height: `${virtualItem.size}px`,
+        transform: `translateY(${
+          virtualItem.start - rowIndex * virtualItem.size
+        }px)`,
+      }}
       className={classes["row"]}
     />
   );
