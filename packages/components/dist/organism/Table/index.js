@@ -47,21 +47,20 @@ exports.DEFAULT_ALIGN = "center";
 var ROW_HEIGHT = 33;
 var HEADER_HEIGHT = 45;
 function Table(props) {
-    var _a, _b, _c;
     var data = props.data, rowKey = props.rowKey, headerStyle = props.headerStyle, headerClassName = props.headerClassName, searchBarClassName = props.searchBarClassName, searchBarToggle = props.searchBarToggle, searchBarStyle = props.searchBarStyle, filterIcon = props.filterIcon, clearFilterIcon = props.clearFilterIcon, isLoading = props.isLoading, onSelectRowProps = props.onSelectRow, height = props.height, coloums = props.coloums, noContent = props.noContent, overScan = props.overScan, testid = props.testid, onRow = props.onRow, mode = props.mode, onResetFilters = props.onResetFilters, onLoadNextPage = props.onLoadNextPage, isLoadingMore = props.isLoadingMore, isSearchBarOpenProps = props.isSearchBarOpen, expandedRows = props.expandedRows, endOfList = props.endOfList;
-    var _d = (0, theme_1.useTheme)().table, _e = _d === void 0 ? {} : _d, header = _e.header;
+    var _a = (0, theme_1.useTheme)().table, _b = _a === void 0 ? {} : _a, header = _b.header;
     var classes = (0, style_1.useStyles)({ height: height });
-    var _f = (0, react_1.useState)(undefined), order = _f[0], setOrder = _f[1];
+    var _c = (0, react_1.useState)(undefined), order = _c[0], setOrder = _c[1];
     var unit = (0, react_1.useContext)(context_2.UnitContext).unit;
-    var _g = (0, react_1.useState)(false), isSearchVisible = _g[0], setShowSearchBar = _g[1];
-    var _h = (0, react_1.useState)(undefined), orderBy = _h[0], setOrderBy = _h[1];
-    var _j = (0, react_1.useState)(undefined), selectedRow = _j[0], setSelectedRow = _j[1];
-    var _k = (0, react_1.useState)([]), checkedRows = _k[0], setCheckRows = _k[1];
-    var _l = (0, react_1.useState)(false), isAllRowsChecked = _l[0], setAllRowsChecked = _l[1];
+    var _d = (0, react_1.useState)(false), isSearchVisible = _d[0], setShowSearchBar = _d[1];
+    var _e = (0, react_1.useState)(undefined), orderBy = _e[0], setOrderBy = _e[1];
+    var _f = (0, react_1.useState)(undefined), selectedRow = _f[0], setSelectedRow = _f[1];
+    var _g = (0, react_1.useState)([]), checkedRows = _g[0], setCheckRows = _g[1];
+    var _h = (0, react_1.useState)(false), isAllRowsChecked = _h[0], setAllRowsChecked = _h[1];
     var tableContainerRef = (0, react_1.useRef)(null);
-    var _m = (0, react_1.useState)(0), bodyHeight = _m[0], setBodyHeight = _m[1];
-    var _o = (0, react_1.useState)(false), isOverFlowed = _o[0], setIsOverflowed = _o[1];
-    var _p = (0, src_1.useWindowSize)(), windowHeight = _p.height, windowWidth = _p.width;
+    var _j = (0, react_1.useState)(0), bodyHeight = _j[0], setBodyHeight = _j[1];
+    var _k = (0, react_1.useState)(false), isOverFlowed = _k[0], setIsOverflowed = _k[1];
+    var _l = (0, src_1.useWindowSize)(), windowHeight = _l.height, windowWidth = _l.width;
     var vw = windowWidth / 100;
     var vh = windowHeight / 100;
     var rowSelectionWidth = (0, src_1.pxToVw)(exports.ROW_SELECTION) * vw;
@@ -87,6 +86,8 @@ function Table(props) {
         }
         return result;
     }, [orderBy, data, order, coloums]);
+    var dataWithEndOfList = endOfList
+        ? __spreadArray(__spreadArray([], (list || []), true), ["endOfList"], false) : list;
     var onToggleSearchBar = function () {
         setShowSearchBar(function (prev) {
             return !prev;
@@ -196,16 +197,10 @@ function Table(props) {
         getScrollElement: function () {
             return tableContainerRef.current;
         },
-        count: list.length,
+        count: dataWithEndOfList.length,
         overscan: overScan || 20,
         estimateSize: function () { return ROW_HEIGHT; },
     });
-    var getVirtualItems = rowVirtualizer.getVirtualItems, getTotalSize = rowVirtualizer.getTotalSize;
-    var paddingTop = getVirtualItems().length > 0 ? ((_b = (_a = getVirtualItems()) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.start) || 0 : 0;
-    var paddingBottom = getVirtualItems().length > 0
-        ? getTotalSize() -
-            (((_c = getVirtualItems()[getVirtualItems().length - 1]) === null || _c === void 0 ? void 0 : _c.end) || 0)
-        : 0;
     var isIndeterminate = checkedRows.length > 0 && checkedRows.length !== (data || []).length;
     var _noContent = noContent ? noContent : (0, jsx_runtime_1.jsx)(noContent_1.NoContent, { text: "No Data!" });
     var getBodyHeight = (0, react_1.useCallback)(function (body) {
@@ -256,7 +251,7 @@ function Table(props) {
                                                     var width = _a.width, dataIndex = _a.dataIndex;
                                                     var _width = width && (0, src_1.pxToVw)(width) * vw;
                                                     return ((0, jsx_runtime_1.jsx)("col", { style: { width: _width ? _width : colWidth } }, dataIndex));
-                                                }), isOverFlowed ? ((0, jsx_runtime_1.jsx)("col", { style: { width: exports.SCROLL_BAR } })) : null] }), (0, jsx_runtime_1.jsxs)("thead", __assign({ className: headerClassName, style: __assign({ backgroundColor: header }, headerStyle) }, { children: [(0, jsx_runtime_1.jsx)(header_1.Header, { filterIcon: filterIcon, isSearchVisible: _isSearchVisible, onToggleSearchBar: isSearchAvailable && onToggleSearchBar, columns: coloums, isIndeterminate: isIndeterminate, isSearchAvailable: Boolean(isSearchAvailable) }), Boolean(isSearchAvailable) ? ((0, jsx_runtime_1.jsx)(searchBar_1.SearchBar, { isIndeterminate: isIndeterminate, clearFilterIcon: clearFilterIcon, searchBarStyle: searchBarStyle, searchBarClassName: searchBarClassName, columns: coloums, data: data || [], isSearchVisible: _isSearchVisible, onResetFilters: onResetFilters })) : null] }))] }))) : null, (0, jsx_runtime_1.jsx)(atoms_1.ScrollView, __assign({ ref: tableContainerRef, className: classes["table-body"] }, { children: boundsWidth > 0 ? ((0, jsx_runtime_1.jsx)(body_1.TableBody, { ref: getBodyHeight, paddingTop: paddingTop, paddingBottom: paddingBottom, noContent: _noContent, searchIconWidth: searchIconWidthAccordingToMode, virtualRows: getVirtualItems(), colWidth: colWidth, coloums: coloums, dataList: list, width: boundsWidth || 0, isLoadingMore: isLoadingMore, endOfList: endOfList })) : null }))] })) })), isLoading && ((0, jsx_runtime_1.jsx)("div", __assign({ className: "".concat(classes["spinner"], "--overlay") }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["spinner"] }, { children: (0, jsx_runtime_1.jsx)(atoms_1.Spinner, { size: "large" }) })) })))] })));
+                                                }), isOverFlowed ? ((0, jsx_runtime_1.jsx)("col", { style: { width: exports.SCROLL_BAR } })) : null] }), (0, jsx_runtime_1.jsxs)("thead", __assign({ className: headerClassName, style: __assign({ backgroundColor: header }, headerStyle) }, { children: [(0, jsx_runtime_1.jsx)(header_1.Header, { filterIcon: filterIcon, isSearchVisible: _isSearchVisible, onToggleSearchBar: isSearchAvailable && onToggleSearchBar, columns: coloums, isIndeterminate: isIndeterminate, isSearchAvailable: Boolean(isSearchAvailable) }), Boolean(isSearchAvailable) ? ((0, jsx_runtime_1.jsx)(searchBar_1.SearchBar, { isIndeterminate: isIndeterminate, clearFilterIcon: clearFilterIcon, searchBarStyle: searchBarStyle, searchBarClassName: searchBarClassName, columns: coloums, data: data || [], isSearchVisible: _isSearchVisible, onResetFilters: onResetFilters })) : null] }))] }))) : null, (0, jsx_runtime_1.jsx)(atoms_1.ScrollView, __assign({ ref: tableContainerRef, className: classes["table-body"] }, { children: boundsWidth > 0 ? ((0, jsx_runtime_1.jsx)(body_1.TableBody, { ref: getBodyHeight, noContent: _noContent, searchIconWidth: searchIconWidthAccordingToMode, colWidth: colWidth, coloums: coloums, dataList: dataWithEndOfList, width: boundsWidth || 0, isLoadingMore: isLoadingMore, endOfList: endOfList })) : null }))] })) })), isLoading && ((0, jsx_runtime_1.jsx)("div", __assign({ className: "".concat(classes["spinner"], "--overlay") }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["spinner"] }, { children: (0, jsx_runtime_1.jsx)(atoms_1.Spinner, { size: "large" }) })) })))] })));
         } })));
 }
 exports.Table = Table;

@@ -15,9 +15,11 @@ exports.EndOfList = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
 var style_1 = require("./style");
 var EndOfList = function (_a) {
-    var children = _a.children, numberOfColumns = _a.numberOfColumns;
+    var children = _a.children, numberOfColumns = _a.numberOfColumns, transformY = _a.transformY;
     var classes = (0, style_1.useStyles)();
-    return ((0, jsx_runtime_1.jsx)("tr", { children: (0, jsx_runtime_1.jsx)("td", __assign({ colSpan: numberOfColumns + 1 }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["wrapper"] }, { children: children })) })) }));
+    return ((0, jsx_runtime_1.jsx)("tr", __assign({ style: {
+            transform: "translateY(".concat(transformY, "px)"),
+        } }, { children: (0, jsx_runtime_1.jsx)("td", __assign({ colSpan: numberOfColumns + 1 }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["wrapper"] }, { children: children })) })) })));
 };
 exports.EndOfList = EndOfList;
 //# sourceMappingURL=index.js.map

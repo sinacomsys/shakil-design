@@ -1,4 +1,3 @@
-import { VirtualItem } from "@tanstack/react-virtual";
 import { useStyles } from "./style";
 import { pxToVwString } from "@shakil-design/utils/src";
 import { RowContainer } from "../rowContainer";
@@ -19,25 +18,21 @@ import { EndOfList } from "./endOfList";
 
 interface TableBodyProps<T extends Record<string, any>>
   extends Pick<TableCommonType<T>, "coloums" | "endOfList" | "isLoadingMore"> {
-  virtualRows: VirtualItem[];
   noContent: React.ReactNode;
   searchIconWidth: number | string;
-  dataList: T[];
+  dataList: (T | "endOfList")[];
   colWidth: number | string | undefined;
-  paddingTop: number;
-  paddingBottom: number;
   width: number;
 }
 
 const TableBody = <T extends Record<string, any>>(
   {
-    virtualRows,
     noContent,
     searchIconWidth,
     dataList,
     coloums,
     colWidth,
-    isLoadingMore,
+    // isLoadingMore,
     endOfList,
   }: TableBodyProps<T>,
   ref: Ref<ElementRef<"table">>,
@@ -47,6 +42,8 @@ const TableBody = <T extends Record<string, any>>(
   const { unit } = useContext(UnitContext);
   const { testid, virtualizer, rowKey, onLoadNextPage } =
     useMyTableContext<T>();
+
+  const virtualRows = virtualizer?.getVirtualItems() || [];
 
   const lastItemRef = useCallback(
     (node: any) => {
@@ -60,7 +57,6 @@ const TableBody = <T extends Record<string, any>>(
     },
     [onLoadNextPage],
   );
-
   const numberOfColumns = coloums.length;
 
   return (
@@ -84,7 +80,22 @@ const TableBody = <T extends Record<string, any>>(
             <tbody data-testid={testid?.body}>
               {virtualRows.map((virtualRow, index) => {
                 const row = dataList[virtualRow.index];
-                if (virtualRows.length === index + 1) {
+                if (row === "endOfList") {
+                  const transformY = virtualRow.start - index * virtualRow.size;
+                  return (
+                    <EndOfList
+                      transformY={transformY}
+                      key={row}
+                      numberOfColumns={numberOfColumns}
+                    >
+                      {typeof endOfList === "string" ? (
+                        <Text size={20}>{endOfList}</Text>
+                      ) : (
+                        endOfList
+                      )}
+                    </EndOfList>
+                  );
+                } else if (virtualRows.length === index + 1) {
                   return (
                     <RowContainer
                       lastItem={lastItemRef}
@@ -106,7 +117,7 @@ const TableBody = <T extends Record<string, any>>(
                   />
                 );
               })}
-              {isLoadingMore ? (
+              {/* {isLoadingMore ? (
                 <EndOfList numberOfColumns={numberOfColumns}>
                   {typeof isLoadingMore === "boolean" ? (
                     <Text size={18}>Loading...</Text>
@@ -114,16 +125,7 @@ const TableBody = <T extends Record<string, any>>(
                     isLoadingMore
                   )}
                 </EndOfList>
-              ) : null}
-              {endOfList ? (
-                <EndOfList numberOfColumns={numberOfColumns}>
-                  {typeof endOfList === "string" ? (
-                    <Text size={20}>{endOfList}</Text>
-                  ) : (
-                    endOfList
-                  )}
-                </EndOfList>
-              ) : null}
+              ) : null} */}
             </tbody>
           </table>
         </div>

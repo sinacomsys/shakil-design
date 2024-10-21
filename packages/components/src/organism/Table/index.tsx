@@ -149,6 +149,10 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     return result;
   }, [orderBy, data, order, coloums]);
 
+  const dataWithEndOfList = endOfList
+    ? [...(list || []), "endOfList" as const]
+    : list;
+
   const onToggleSearchBar = () => {
     setShowSearchBar((prev) => {
       return !prev;
@@ -266,20 +270,10 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
     getScrollElement() {
       return tableContainerRef.current;
     },
-    count: list.length,
+    count: dataWithEndOfList.length,
     overscan: overScan || 20,
     estimateSize: () => ROW_HEIGHT,
   });
-
-  const { getVirtualItems, getTotalSize } = rowVirtualizer;
-
-  const paddingTop =
-    getVirtualItems().length > 0 ? getVirtualItems()?.[0]?.start || 0 : 0;
-  const paddingBottom =
-    getVirtualItems().length > 0
-      ? getTotalSize() -
-        (getVirtualItems()[getVirtualItems().length - 1]?.end || 0)
-      : 0;
 
   const isIndeterminate =
     checkedRows.length > 0 && checkedRows.length !== (data || []).length;
@@ -401,14 +395,11 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
                   {boundsWidth > 0 ? (
                     <TableBody
                       ref={getBodyHeight}
-                      paddingTop={paddingTop}
-                      paddingBottom={paddingBottom}
                       noContent={_noContent}
                       searchIconWidth={searchIconWidthAccordingToMode}
-                      virtualRows={getVirtualItems()}
                       colWidth={colWidth}
                       coloums={coloums}
-                      dataList={list}
+                      dataList={dataWithEndOfList}
                       width={boundsWidth || 0}
                       isLoadingMore={isLoadingMore}
                       endOfList={endOfList}
