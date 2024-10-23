@@ -167,7 +167,13 @@ function Table(props) {
                 return item[rowKey];
             })
                 .filter(src_2.isDefined));
-            onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(data);
+            onSelectRowProps === null || onSelectRowProps === void 0 ? void 0 : onSelectRowProps(data
+                .map(function (item) {
+                if (!rowKey)
+                    return;
+                return item[rowKey];
+            })
+                .filter(src_2.isDefined));
         }
         if (isAllRowsChecked && mode === "multiple") {
             setCheckRows([]);

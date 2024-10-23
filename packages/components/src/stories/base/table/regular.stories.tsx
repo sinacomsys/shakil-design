@@ -22,7 +22,6 @@ interface DataType {
 }
 
 const Template: Story<any> = () => {
-  const [test, setTest] = useState<string | undefined>(undefined);
   const mockData = useMemo(() => {
     return [...new Array(50)].map((_, index) => {
       return {
@@ -108,15 +107,14 @@ const Template: Story<any> = () => {
   return (
     <StoryContainer>
       <Table
-        selectedRow={test}
-        mode="single"
+        mode="multiple"
         rowKey="id"
         height={350}
         coloums={columns}
         data={data}
         // endOfList={<div style={{ backgroundColor: "red" }}>end of list</div>}
         onSelectRow={(id) => {
-          setTest(id.id);
+          console.log(id);
         }}
       />
     </StoryContainer>

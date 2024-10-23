@@ -56,13 +56,13 @@ export interface TableCommonType<T>
 export interface TablePropsWithMultipleSelectRows<T>
   extends TableCommonType<T> {
   selectedRows?: T[keyof T][];
-  onSelectRow?: (value: T[]) => void;
+  onSelectRow?: (value: T[keyof T][]) => void;
   mode: "multiple";
 }
 
 export interface TablePropsWithSingleSelectRow<T> extends TableCommonType<T> {
   selectedRow?: T[keyof T];
-  onSelectRow?: (value: T) => void;
+  onSelectRow?: (value: T[keyof T]) => void;
   mode: "single";
 }
 
@@ -239,7 +239,14 @@ function Table<T extends Record<string, any>>(props: TableProps<T>) {
           })
           .filter(isDefined),
       );
-      onSelectRowProps?.(data);
+      onSelectRowProps?.(
+        data
+          .map((item) => {
+            if (!rowKey) return;
+            return item[rowKey];
+          })
+          .filter(isDefined),
+      );
     }
     if (isAllRowsChecked && mode === "multiple") {
       setCheckRows([]);
