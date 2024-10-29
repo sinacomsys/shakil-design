@@ -41,7 +41,7 @@ const Template: Story<TextInputProps> = (args) => {
         allowClear
         data-testid={"test-id"}
         className="test-class-name"
-        // disabled
+        disabled
       />
       <Button
         style={{ marginTop: 30 }}

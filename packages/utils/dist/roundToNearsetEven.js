@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useRoundToNearestEven = void 0;
 var convertUnit_1 = require("./convertUnit");
 var useWindowSize_1 = require("./useWindowSize");
-function useRoundToNearestEven() {
+function useRoundToNearestEven(unit) {
     var height = (0, useWindowSize_1.useWindowSize)().height;
     var round = function (number) {
         var rounded = Math.ceil(number);
@@ -16,7 +16,8 @@ function useRoundToNearestEven() {
     };
     function roundToNearestEven(value) {
         var vh = height / 100;
-        return round(vh * (0, convertUnit_1.pxToVh)(value));
+        var _value = unit === "viewport" ? vh * (0, convertUnit_1.pxToVh)(value) : value;
+        return round(_value);
     }
     return {
         roundToNearestEven: roundToNearestEven,

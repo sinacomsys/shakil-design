@@ -143,6 +143,7 @@ const Template = <T extends Record<string, any>>({
             hasError,
             clearIconColor,
             isLoading,
+            disabled,
           }}
           onClear={onClear}
           onClick={handleOnClick}

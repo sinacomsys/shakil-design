@@ -53,11 +53,7 @@ var MultiSelect = function (_a) {
     var displayValue = (value || []).length
         ? "".concat(value === null || value === void 0 ? void 0 : value.length, " Items Selected")
         : "";
-    var handleOnClear = function () {
-        onClear === null || onClear === void 0 ? void 0 : onClear();
-        onChange === null || onChange === void 0 ? void 0 : onChange(null);
-    };
-    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { onClear: handleOnClear, displayValue: displayValue, data: data, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { onClear: onClear, displayValue: displayValue, data: data, labelExtractor: labelExtractor, renderOverlay: function (_a) {
             var filteredData = _a.filteredData;
             return ((0, jsx_runtime_1.jsx)(multiSelectList_1.MultiSelectList, { labelExtractor: labelExtractor, valueExtractor: valueExtractor, value: value || [], onClick: handleOnChange, rawData: data, filteredData: filteredData }));
         } })));

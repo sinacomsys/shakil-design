@@ -38,15 +38,10 @@ const MultiSelect = <T extends Record<string, any>>({
     ? `${value?.length} Items Selected`
     : "";
 
-  const handleOnClear = () => {
-    onClear?.();
-    onChange?.(null);
-  };
-
   return (
     <Template
       {...props}
-      onClear={handleOnClear}
+      onClear={onClear}
       displayValue={displayValue}
       data={data}
       labelExtractor={labelExtractor}

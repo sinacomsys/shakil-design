@@ -13,11 +13,14 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Indeterminate = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = require("react");
+var context_1 = require("../../../theme/context");
 var style_1 = require("./style");
 var src_1 = require("@shakil-design/utils/src");
 var Indeterminate = function () {
     var classes = (0, style_1.useStyles)();
-    var roundToNearestEven = (0, src_1.useRoundToNearestEven)().roundToNearestEven;
+    var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
+    var roundToNearestEven = (0, src_1.useRoundToNearestEven)(unit).roundToNearestEven;
     return ((0, jsx_runtime_1.jsx)("div", __assign({ style: { height: roundToNearestEven(16), width: roundToNearestEven(16) }, className: classes["wrapper"] }, { children: (0, jsx_runtime_1.jsx)("div", { style: {
                 height: roundToNearestEven(6),
                 width: roundToNearestEven(6),

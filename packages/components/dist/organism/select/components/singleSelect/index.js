@@ -39,10 +39,7 @@ var SingleSelect = function (_a) {
     };
     var _value = data.find(function (item) { return (valueExtractor === null || valueExtractor === void 0 ? void 0 : valueExtractor(item)) === selectedItem; });
     var displayValue = _value ? labelExtractor === null || labelExtractor === void 0 ? void 0 : labelExtractor(_value) : "";
-    var handleOnClear = function () {
-        onClear === null || onClear === void 0 ? void 0 : onClear();
-    };
-    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: handleOnClear, labelExtractor: labelExtractor, renderOverlay: function (_a) {
+    return ((0, jsx_runtime_1.jsx)(selectTemplate_1.Template, __assign({}, props, { displayValue: displayValue || "", data: data, onClear: onClear, labelExtractor: labelExtractor, renderOverlay: function (_a) {
             var onClose = _a.onClose, filteredData = _a.filteredData;
             return ((0, jsx_runtime_1.jsx)(singleSelectList_1.SingleSelectList, { data: data, filteredData: filteredData, labelExtractor: labelExtractor, valueExtractor: valueExtractor, selectedItem: selectedItem, onClick: function (value) {
                     handleOnChange(value);

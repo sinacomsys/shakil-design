@@ -36,16 +36,12 @@ const SingleSelect = <T extends Record<string, any>>({
   const _value = data.find((item) => valueExtractor?.(item) === selectedItem);
   const displayValue = _value ? labelExtractor?.(_value) : "";
 
-  const handleOnClear = () => {
-    onClear?.();
-  };
-
   return (
     <Template
       {...props}
       displayValue={displayValue || ""}
       data={data}
-      onClear={handleOnClear}
+      onClear={onClear}
       labelExtractor={labelExtractor}
       renderOverlay={({ onClose, filteredData }) => {
         return (

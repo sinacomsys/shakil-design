@@ -19,10 +19,13 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var style_1 = require("./style");
 var src_1 = require("@shakil-design/utils/src");
+var react_1 = require("react");
+var context_1 = require("../../../theme/context");
 var CustomSquare = function (_a) {
     var checked = _a.checked;
     var classes = (0, style_1.useStyles)({ checked: checked });
-    var roundToNearestEven = (0, src_1.useRoundToNearestEven)().roundToNearestEven;
+    var unit = (0, react_1.useContext)(context_1.UnitContext).unit;
+    var roundToNearestEven = (0, src_1.useRoundToNearestEven)(unit).roundToNearestEven;
     return ((0, jsx_runtime_1.jsx)("div", __assign({ style: {
             height: roundToNearestEven(16),
             width: roundToNearestEven(16),
