@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { UnitContext } from "../../../theme/context";
 import { useStyles } from "./style";
 import { useRoundToNearestEven } from "@shakil-design/utils/src";
 export interface CustomCircleProps {
@@ -7,7 +9,8 @@ export interface CustomCircleProps {
 
 const CustomCircle = ({ borderColor, backgroundColor }: CustomCircleProps) => {
   const classes = useStyles({ backgroundColor, borderColor });
-  const { roundToNearestEven } = useRoundToNearestEven();
+  const { unit } = useContext(UnitContext);
+  const { roundToNearestEven } = useRoundToNearestEven(unit);
   return (
     <div
       style={{ width: roundToNearestEven(16), height: roundToNearestEven(16) }}

@@ -1,7 +1,8 @@
 import { pxToVh } from "./convertUnit";
 import { useWindowSize } from "./useWindowSize";
+type Unit = "pixel" | "viewport";
 
-export function useRoundToNearestEven() {
+export function useRoundToNearestEven(unit: Unit | undefined) {
   const { height } = useWindowSize();
   const round = (number: number) => {
     const rounded = Math.ceil(number);
@@ -12,8 +13,8 @@ export function useRoundToNearestEven() {
   };
   function roundToNearestEven(value: number) {
     const vh = height / 100;
-
-    return round(vh * pxToVh(value));
+    const _value = unit === "viewport" ? vh * pxToVh(value) : value;
+    return round(_value);
   }
 
   return {

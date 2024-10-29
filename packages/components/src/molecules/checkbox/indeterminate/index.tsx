@@ -1,10 +1,12 @@
+import { useContext } from "react";
+import { UnitContext } from "../../../theme/context";
 import { useStyles } from "./style";
 import { useRoundToNearestEven } from "@shakil-design/utils/src";
 
 const Indeterminate = () => {
   const classes = useStyles();
-
-  const { roundToNearestEven } = useRoundToNearestEven();
+  const { unit } = useContext(UnitContext);
+  const { roundToNearestEven } = useRoundToNearestEven(unit);
 
   return (
     <div

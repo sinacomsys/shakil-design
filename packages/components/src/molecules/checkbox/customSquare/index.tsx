@@ -1,14 +1,16 @@
 import classNames from "classnames";
 import { useStyles } from "./style";
 import { useRoundToNearestEven } from "@shakil-design/utils/src";
+import { useContext } from "react";
+import { UnitContext } from "../../../theme/context";
 interface CustomRectangleProps {
   checked?: boolean;
 }
 
 const CustomSquare = ({ checked }: CustomRectangleProps) => {
   const classes = useStyles({ checked });
-
-  const { roundToNearestEven } = useRoundToNearestEven();
+  const { unit } = useContext(UnitContext);
+  const { roundToNearestEven } = useRoundToNearestEven(unit);
 
   return (
     <div
