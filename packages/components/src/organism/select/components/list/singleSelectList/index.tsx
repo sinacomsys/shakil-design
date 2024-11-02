@@ -75,6 +75,7 @@ const useStyles = createUseStyles(
       marginInline: 20,
       display: "flex",
       paddingBlock: 10,
+      columnGap: 10,
     },
   },
   { theming, name: "singe-select" },

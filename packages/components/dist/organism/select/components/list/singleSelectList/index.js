@@ -42,6 +42,7 @@ var useStyles = (0, react_jss_1.createUseStyles)({
         marginInline: 20,
         display: "flex",
         paddingBlock: 10,
+        columnGap: 10,
     },
 }, { theming: theme_1.theming, name: "singe-select" });
 //# sourceMappingURL=index.js.map

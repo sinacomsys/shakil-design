@@ -6,7 +6,7 @@ import { isNullish } from "@shakil-design/utils/src";
 export interface MultiSelectProps<T extends Record<string, any>>
   extends Omit<SelectProps<T>, "data"> {
   value?: T[keyof T][];
-  onChange?: (item: T[keyof T][] | null) => void;
+  onChange?: (item: T[keyof T][]) => void;
   mode: "multi";
   data: T[];
 }

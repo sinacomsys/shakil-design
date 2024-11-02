@@ -10,7 +10,7 @@ export default {
 
 const fakeData = [...new Array(35)].map((_, index) => {
   return {
-    test: 1,
+    test: index + 1,
     test1: `Test Label${index}`,
   };
 });
@@ -20,14 +20,12 @@ const Template: Story<any> = () => {
     <StoryContainer>
       <div style={{ width: 300 }}>
         <Select
-          onChange={(value) => {}}
           valueExtractor={({ test }) => test}
           labelExtractor={({ test1 }) => test1}
           data={fakeData}
           allowClear
           placeholder="Select Item..."
-          errorMessage="Error Message!"
-          mode="single"
+          mode="multi"
         />
       </div>
     </StoryContainer>

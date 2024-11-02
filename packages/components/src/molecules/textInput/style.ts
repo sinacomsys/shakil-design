@@ -47,7 +47,7 @@ const useStyles = createUseStyles(
       },
       disabled: {
         backgroundColor: theme.disableField,
-        cursor: "not-allowed",
+        cursor: "not-allowed !important",
         color: theme.disableText,
       },
       inputWrapper: {

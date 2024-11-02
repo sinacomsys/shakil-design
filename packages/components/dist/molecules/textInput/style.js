@@ -53,7 +53,7 @@ var useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
         },
         disabled: {
             backgroundColor: theme.disableField,
-            cursor: "not-allowed",
+            cursor: "not-allowed !important",
             color: theme.disableText,
         },
         inputWrapper: {

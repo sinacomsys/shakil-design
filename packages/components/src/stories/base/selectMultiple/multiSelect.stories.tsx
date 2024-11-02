@@ -23,9 +23,7 @@ const Template: Story<any> = () => {
     <StoryContainer>
       <div style={{ width: 300 }}>
         <Select
-          disabled={true}
           className="test-classname"
-          testid={{ input: "sdfsd", overlay: "sdfsdfdddd12" }}
           value={value}
           data={fakeData}
           allowClear
