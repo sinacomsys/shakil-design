@@ -24,6 +24,7 @@ interface DropDownProps<T extends Default> {
   onChange?: (value: T) => void;
   dropdownStyle?: React.CSSProperties;
   dropDownTestId?: string;
+  disabled?: boolean;
 }
 
 const DropDown = <T extends Default>({
@@ -36,6 +37,7 @@ const DropDown = <T extends Default>({
   value: propValue,
   dropdownStyle,
   dropDownTestId,
+  disabled,
 }: DropDownProps<T>) => {
   const classes = useStyles();
   const [internalValue, setInternalValue] = useState<Value | null>(null);
@@ -82,7 +84,9 @@ const DropDown = <T extends Default>({
   };
 
   if (trigger === "click") {
-    newChildProps.onClick = handleOnClick;
+    if (!disabled) {
+      newChildProps.onClick = handleOnClick;
+    }
   }
   if (trigger === "hover") {
     newChildProps.onMouseLeave = handleOnMouseLeave;
@@ -164,7 +168,9 @@ const DropDown = <T extends Default>({
 
   return (
     <>
-      {anchor}
+      <span style={{ cursor: disabled ? "not-allowed" : "pointer" }}>
+        {anchor}
+      </span>
       {body.current && _isVisible
         ? ReactDOM.createPortal(
             <>
