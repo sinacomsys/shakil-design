@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 import { theming } from "../../theme";
 
 export const useStyles = createUseStyles(
-  (theme) => {
+  ({ primary }) => {
     return {
       "no-content": {
         height: "100%",
@@ -11,25 +11,12 @@ export const useStyles = createUseStyles(
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        borderRadius: 20,
         overflow: "hidden",
+        backgroundColor: "#FFFFFF",
       },
-      tabsTitle: {
-        width: 130,
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#ffffff",
-      },
-      "tabs-nav-list": {
-        display: "flex",
-        justifyContent: "space-between",
-        columnGap: 4,
-        backgroundColor: "white",
+      "nav-list": {
         overflowX: "auto",
         overflowY: "hidden",
-        flex: 1,
         "&::-webkit-scrollbar": {
           height: 2,
         },
@@ -46,52 +33,13 @@ export const useStyles = createUseStyles(
           background: "#555",
         },
       },
-      tab: {
-        flexBasis: 200,
-        flexGrow: 1,
-        flexShrink: 0,
-        height: "100%",
-        color: theme.tab?.textColor,
-        backgroundColor: theme.tab?.unSelectedTab,
-        cursor: "pointer",
-        borderRadius: 0,
-        border: "none",
-        position: "relative",
-        textTransform: "uppercase",
-        fontSize: 14,
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        "*": {
-          cursor: "pointer",
-        },
-      },
-      "tab-pane-close": {
-        width: 15,
-        display: "flex",
-        alignItems: "flex-start",
-        height: "100%",
-        paddingTop: 8,
-      },
-      "active-tab-pane": {
-        backgroundColor: theme.tab?.selectedTab,
-      },
-      "tab-pane-title": {
-        padding: "0px 8px",
-        flex: 1,
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-      },
-      "tabs-content-holder": {
+      "content-holder": {
         overflow: "auto",
         backgroundColor: "white",
         width: "100%",
         position: "relative",
         flex: 1,
+        paddingInlineStart: 20,
       },
       "tab-content": {
         height: "100%",
@@ -102,13 +50,27 @@ export const useStyles = createUseStyles(
           display: "none",
         },
       },
-      "tabs-nav-wrap": {
+      "nav-wrap": {
         display: "flex",
-        overflow: "hidden",
-        height: 64,
+        // overflow: "hidden",
+        height: 33,
       },
-      "rendered-title-wrap": {
-        flex: 1,
+      "tooltip-content": {
+        padding: 6,
+        borderRadius: 4,
+        backgroundColor: primary,
+      },
+      "dummy-anchor": {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0,
+      },
+      "nav-list-wrapper": {
+        borderBottom: "1px solid #EFF1F4",
+        display: "flex",
+        paddingInline: 20,
       },
     };
   },

@@ -1,54 +1,38 @@
 import classNames from "classnames";
-import { ReactNode, useEffect, useState } from "react";
-import { Text } from "../../atoms/text";
+import { useCallback, useEffect, useState } from "react";
 import { useHorizontalScroll } from "@shakil-design/utils/src";
-import { InternalTabPane } from "./internalTabPane";
 import { useStyles } from "./style";
-import { useTheme } from "../../theme";
-export interface TabItem {
-  id: string;
-  content: React.ReactNode;
-  renderTitle?:
-    | React.ReactNode
-    | (({ id, isActive }: { id: string; isActive: boolean }) => ReactNode);
-  closeable?: boolean;
-}
-export interface TabsProps {
-  activeTab?: string;
-  onChange?: (id: string) => void;
-  onClose?: (id: string) => void;
-  className?: string;
-  TabsTitle?: string | React.ReactNode;
-  noContent?: React.ReactNode;
-  items: TabItem[];
-}
+import { TabsProps } from "./tabs.type";
+import { CardNavList } from "./tabPane/cardNavList";
+import { LineNavList } from "./tabPane/lineNavList";
 
 const Tabs = ({
   activeTab: activeTabProp,
   onChange,
   onClose,
   className,
-  TabsTitle,
   noContent,
   items,
+  type,
+  tabBarExtraContent,
 }: TabsProps) => {
   const classes = useStyles();
-  const { tab: { textColor } = {} } = useTheme();
-  const [activeTabState, setActiveTabState] = useState<string | null>(null);
+  const [extraActionWidth, setExtraActionWidth] = useState<number>(0);
+  const [navBarWidth, setNavBarWidth] = useState<number>(0);
+  const [activeTabState, setActiveTabState] = useState<string | undefined>(
+    undefined,
+  );
   const [openedTabs, setOpenedTabs] = useState<string[]>([]);
   const tabListRef = useHorizontalScroll();
-
   const handleOnChange = (id: string) => {
     onChange?.(id);
     if (activeTabProp) return;
     setActiveTabState(id);
   };
-
   const handleOnClose = (id: string) => {
     onClose?.(id);
   };
-
-  let _activeTab: string | null = null;
+  let _activeTab: string | undefined = undefined;
   if (activeTabProp) {
     _activeTab = activeTabProp;
   } else {
@@ -75,42 +59,43 @@ const Tabs = ({
     }
   }, [activeTabProp]);
 
+  const getExtraActionWidth = useCallback((body: HTMLDivElement) => {
+    setExtraActionWidth(body?.clientWidth || 0);
+  }, []);
+
+  const getNavListWidth = (body: HTMLDivElement) => {
+    setNavBarWidth(body?.clientWidth);
+  };
+
   return (
     <div className={classNames(classes["tabs"], className)}>
-      <div className={classes["tabs-nav-wrap"]}>
-        {TabsTitle ? (
-          <>
-            {typeof TabsTitle === "string" ? (
-              <div className={classes["tabsTitle"]}>
-                <Text theme="Regular" size={20} color={textColor}>
-                  {TabsTitle}
-                </Text>
-              </div>
-            ) : typeof TabsTitle === "object" ? (
-              TabsTitle
-            ) : null}
-          </>
-        ) : null}
-
-        <div ref={tabListRef} className={classes["tabs-nav-list"]}>
-          {items?.map(({ id, renderTitle, closeable }) => {
-            const isActive = id === _activeTab;
-            return (
-              <InternalTabPane
-                renderTitle={renderTitle}
-                isActive={isActive}
-                onClick={handleOnChange}
-                key={id}
-                id={id}
-                onClose={handleOnClose}
-                closeable={Boolean(closeable)}
-              />
-            );
-          })}
+      <div className={classes["nav-list-wrapper"]} ref={getNavListWidth}>
+        <div
+          className={classes["nav-list"]}
+          ref={tabListRef}
+          style={{ width: navBarWidth - extraActionWidth }}
+        >
+          {type === "card" ? (
+            <CardNavList
+              items={items}
+              activeTab={_activeTab}
+              onChange={handleOnChange}
+              onClose={handleOnClose}
+            />
+          ) : (
+            <LineNavList
+              items={items}
+              activeTab={_activeTab}
+              onChange={handleOnChange}
+              onClose={handleOnClose}
+            />
+          )}
+        </div>
+        <div ref={getExtraActionWidth} style={{ height: "100%" }}>
+          {tabBarExtraContent}
         </div>
       </div>
-
-      <div className={classes["tabs-content-holder"]}>
+      <div className={classes["content-holder"]}>
         {noContent ? (
           <div className={classes["no-content"]}>{noContent}</div>
         ) : (

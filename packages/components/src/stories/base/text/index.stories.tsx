@@ -1,5 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { Text, TextProps } from "../../../atoms/text";
+import React from "react";
 export default {
   title: "BaseText",
   component: Text,
@@ -12,7 +13,7 @@ export const Book = Template.bind({});
 export const BookItalic = Template.bind({});
 export const Eight = Template.bind({});
 BoldItalic.args = {
-  theme: "BoldItalic",
+  theme: "light",
   color: "blue",
   size: 20,
 };

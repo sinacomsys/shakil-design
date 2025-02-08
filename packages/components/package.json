@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@shakil-design/asset": "*",
-    "@shakil-design/utils": "^1.0.4"
+    "@shakil-design/utils": "*"
   },
   "publishConfig": {
     "access": "public",

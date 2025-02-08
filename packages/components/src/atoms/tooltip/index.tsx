@@ -16,6 +16,7 @@ export interface TooltipProps {
   isVisible?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
+  disable?: boolean;
 }
 
 const Tooltip = ({
@@ -29,19 +30,18 @@ const Tooltip = ({
   isVisible: isVisibleProp,
   onClose,
   onOpen,
+  disable,
 }: TooltipProps) => {
   const classes = useStyles();
   const body = useRef<HTMLElement | null>(null);
+  const anchorElement = useRef(null);
   const [isVisible, setVisible] = useState<boolean>(false);
-  const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
-    null,
-  );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
   const timerDelay = useRef<null | NodeJS.Timeout>(null);
 
   const { styles, attributes, state } = usePopper(
-    referenceElement,
+    anchorElement.current,
     popperElement,
     {
       placement: placement,
@@ -92,16 +92,16 @@ const Tooltip = ({
 
   const newChildProps: HTMLAttributes<HTMLElement> & {
     key: string;
-    ref: React.LegacyRef<HTMLDivElement>;
+    ref: React.LegacyRef<HTMLDivElement> | null;
   } = {
     key: "trigger",
-    ref: setReferenceElement,
+    ref: anchorElement,
   };
 
-  if (trigger === "click") {
+  if (trigger === "click" && !disable) {
     newChildProps.onClick = handleOnClick;
   }
-  if (trigger === "hover") {
+  if (trigger === "hover" && !disable) {
     newChildProps.onMouseLeave = handleOnMouseLeave;
     newChildProps.onMouseEnter = handleOnMouseEnter;
   }
@@ -114,7 +114,7 @@ const Tooltip = ({
 
   useOnClickOutSide({
     element: popperElement,
-    extraElement: referenceElement,
+    extraElement: anchorElement.current,
     handler() {
       if (trigger === "click") {
         triggerOnClose();
