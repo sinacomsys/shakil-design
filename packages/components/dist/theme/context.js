@@ -57,9 +57,15 @@ exports.Colors = {
         success: "#58cc87",
     },
     tab: {
-        selectedTab: "#FFFFFF",
-        textColor: "#6C7797",
-        unSelectedTab: "#E3E6F1",
+        line: { tabColor: "#374775", lineColor: "#58CC87" },
+        card: {
+            activeColor: "#FFFFFF",
+            activeCross: "#BBC2D3",
+            color: "#374775",
+            cross: "#374775",
+            activeBG: "#374775",
+            BG: "#BBC2D3",
+        },
     },
     fileInput: "red",
     table: {

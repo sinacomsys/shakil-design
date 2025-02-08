@@ -27,16 +27,16 @@ exports.Tabs = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
 var classnames_1 = __importDefault(require("classnames"));
 var react_1 = require("react");
-var text_1 = require("../../atoms/text");
 var src_1 = require("@shakil-design/utils/src");
-var internalTabPane_1 = require("./internalTabPane");
 var style_1 = require("./style");
-var theme_1 = require("../../theme");
+var cardNavList_1 = require("./tabPane/cardNavList");
+var lineNavList_1 = require("./tabPane/lineNavList");
 var Tabs = function (_a) {
-    var activeTabProp = _a.activeTab, onChange = _a.onChange, onClose = _a.onClose, className = _a.className, TabsTitle = _a.TabsTitle, noContent = _a.noContent, items = _a.items;
+    var activeTabProp = _a.activeTab, onChange = _a.onChange, onClose = _a.onClose, className = _a.className, noContent = _a.noContent, items = _a.items, type = _a.type, tabBarExtraContent = _a.tabBarExtraContent;
     var classes = (0, style_1.useStyles)();
-    var _b = (0, theme_1.useTheme)().tab, _c = _b === void 0 ? {} : _b, textColor = _c.textColor;
-    var _d = (0, react_1.useState)(null), activeTabState = _d[0], setActiveTabState = _d[1];
+    var _b = (0, react_1.useState)(0), extraActionWidth = _b[0], setExtraActionWidth = _b[1];
+    var _c = (0, react_1.useState)(0), navBarWidth = _c[0], setNavBarWidth = _c[1];
+    var _d = (0, react_1.useState)(undefined), activeTabState = _d[0], setActiveTabState = _d[1];
     var _e = (0, react_1.useState)([]), openedTabs = _e[0], setOpenedTabs = _e[1];
     var tabListRef = (0, src_1.useHorizontalScroll)();
     var handleOnChange = function (id) {
@@ -48,7 +48,7 @@ var Tabs = function (_a) {
     var handleOnClose = function (id) {
         onClose === null || onClose === void 0 ? void 0 : onClose(id);
     };
-    var _activeTab = null;
+    var _activeTab = undefined;
     if (activeTabProp) {
         _activeTab = activeTabProp;
     }
@@ -75,11 +75,13 @@ var Tabs = function (_a) {
             });
         }
     }, [activeTabProp]);
-    return ((0, jsx_runtime_1.jsxs)("div", __assign({ className: (0, classnames_1.default)(classes["tabs"], className) }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["tabs-nav-wrap"] }, { children: [TabsTitle ? ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: typeof TabsTitle === "string" ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["tabsTitle"] }, { children: (0, jsx_runtime_1.jsx)(text_1.Text, __assign({ theme: "Regular", size: 20, color: textColor }, { children: TabsTitle })) }))) : typeof TabsTitle === "object" ? (TabsTitle) : null })) : null, (0, jsx_runtime_1.jsx)("div", __assign({ ref: tabListRef, className: classes["tabs-nav-list"] }, { children: items === null || items === void 0 ? void 0 : items.map(function (_a) {
-                            var id = _a.id, renderTitle = _a.renderTitle, closeable = _a.closeable;
-                            var isActive = id === _activeTab;
-                            return ((0, jsx_runtime_1.jsx)(internalTabPane_1.InternalTabPane, { renderTitle: renderTitle, isActive: isActive, onClick: handleOnChange, id: id, onClose: handleOnClose, closeable: Boolean(closeable) }, id));
-                        }) }))] })), (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["tabs-content-holder"] }, { children: noContent ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["no-content"] }, { children: noContent }))) : (openedTabs.map(function (_id) {
+    var getExtraActionWidth = (0, react_1.useCallback)(function (body) {
+        setExtraActionWidth((body === null || body === void 0 ? void 0 : body.clientWidth) || 0);
+    }, []);
+    var getNavListWidth = function (body) {
+        setNavBarWidth(body === null || body === void 0 ? void 0 : body.clientWidth);
+    };
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ className: (0, classnames_1.default)(classes["tabs"], className) }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["nav-list-wrapper"], ref: getNavListWidth }, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ className: classes["nav-list"], ref: tabListRef, style: { width: navBarWidth - extraActionWidth } }, { children: type === "card" ? ((0, jsx_runtime_1.jsx)(cardNavList_1.CardNavList, { items: items, activeTab: _activeTab, onChange: handleOnChange, onClose: handleOnClose })) : ((0, jsx_runtime_1.jsx)(lineNavList_1.LineNavList, { items: items, activeTab: _activeTab, onChange: handleOnChange, onClose: handleOnClose })) })), (0, jsx_runtime_1.jsx)("div", __assign({ ref: getExtraActionWidth, style: { height: "100%" } }, { children: tabBarExtraContent }))] })), (0, jsx_runtime_1.jsx)("div", __assign({ className: classes["content-holder"] }, { children: noContent ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["no-content"] }, { children: noContent }))) : (openedTabs.map(function (_id) {
                     var tab = items === null || items === void 0 ? void 0 : items.find(function (_a) {
                         var id = _a.id;
                         return id === _id;

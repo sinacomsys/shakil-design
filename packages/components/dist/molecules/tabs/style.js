@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStyles = void 0;
 var react_jss_1 = require("react-jss");
 var theme_1 = require("../../theme");
-exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
-    var _a, _b, _c;
+exports.useStyles = (0, react_jss_1.createUseStyles)(function (_a) {
+    var primary = _a.primary;
     return {
         "no-content": {
             height: "100%",
@@ -13,25 +13,12 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
             display: "flex",
             flexDirection: "column",
             height: "100%",
-            borderRadius: 20,
             overflow: "hidden",
+            backgroundColor: "#FFFFFF",
         },
-        tabsTitle: {
-            width: 130,
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#ffffff",
-        },
-        "tabs-nav-list": {
-            display: "flex",
-            justifyContent: "space-between",
-            columnGap: 4,
-            backgroundColor: "white",
+        "nav-list": {
             overflowX: "auto",
             overflowY: "hidden",
-            flex: 1,
             "&::-webkit-scrollbar": {
                 height: 2,
             },
@@ -48,52 +35,13 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
                 background: "#555",
             },
         },
-        tab: {
-            flexBasis: 200,
-            flexGrow: 1,
-            flexShrink: 0,
-            height: "100%",
-            color: (_a = theme.tab) === null || _a === void 0 ? void 0 : _a.textColor,
-            backgroundColor: (_b = theme.tab) === null || _b === void 0 ? void 0 : _b.unSelectedTab,
-            cursor: "pointer",
-            borderRadius: 0,
-            border: "none",
-            position: "relative",
-            textTransform: "uppercase",
-            fontSize: 14,
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            textOverflow: "ellipsis",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            "*": {
-                cursor: "pointer",
-            },
-        },
-        "tab-pane-close": {
-            width: 15,
-            display: "flex",
-            alignItems: "flex-start",
-            height: "100%",
-            paddingTop: 8,
-        },
-        "active-tab-pane": {
-            backgroundColor: (_c = theme.tab) === null || _c === void 0 ? void 0 : _c.selectedTab,
-        },
-        "tab-pane-title": {
-            padding: "0px 8px",
-            flex: 1,
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-        },
-        "tabs-content-holder": {
+        "content-holder": {
             overflow: "auto",
             backgroundColor: "white",
             width: "100%",
             position: "relative",
             flex: 1,
+            paddingInlineStart: 20,
         },
         "tab-content": {
             height: "100%",
@@ -104,13 +52,27 @@ exports.useStyles = (0, react_jss_1.createUseStyles)(function (theme) {
                 display: "none",
             },
         },
-        "tabs-nav-wrap": {
+        "nav-wrap": {
             display: "flex",
-            overflow: "hidden",
-            height: 64,
+            // overflow: "hidden",
+            height: 33,
         },
-        "rendered-title-wrap": {
-            flex: 1,
+        "tooltip-content": {
+            padding: 6,
+            borderRadius: 4,
+            backgroundColor: primary,
+        },
+        "dummy-anchor": {
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+        },
+        "nav-list-wrapper": {
+            borderBottom: "1px solid #EFF1F4",
+            display: "flex",
+            paddingInline: 20,
         },
     };
 }, { theming: theme_1.theming, name: "tabs" });
