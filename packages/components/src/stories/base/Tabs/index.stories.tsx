@@ -1,11 +1,12 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { useState } from "react";
-import { Tabs, TabsProps } from "../../../molecules";
+import { Tabs } from "../../../molecules";
 import { StoryContainer } from "../../container";
 import { Text } from "../../../atoms";
 import React from "react";
+import { TabsProps } from "../../../molecules/tabs/tabs.type";
 export default {
-  title: "tab",
+  title: "Tabs",
   component: Tabs,
 } as Meta<TabsProps>;
 
@@ -15,7 +16,7 @@ const Template: Story<TabsProps> = () => {
     {
       closeable: true,
       id: "1",
-      renderTitle: () => {
+      title: () => {
         return (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Text>Title</Text>
@@ -24,17 +25,27 @@ const Template: Story<TabsProps> = () => {
       },
       content: (
         <div style={{ backgroundColor: "lightblue", height: "100%" }}>
-          <TestContent />
+          <div>test content</div>
         </div>
       ),
     },
     {
       closeable: true,
       id: "2",
-      renderTitle: "Title",
+      title: "Titleeeeeeeeeeeeeeeeeeeeeeee",
       content: (
         <div style={{ backgroundColor: "lightblue", height: "100%" }}>
           TEST CONTENT2
+        </div>
+      ),
+    },
+    {
+      closeable: true,
+      id: "3",
+      title: "test",
+      content: (
+        <div style={{ backgroundColor: "lightblue", height: "100%" }}>
+          TEST CONTENT3
         </div>
       ),
     },
@@ -43,7 +54,7 @@ const Template: Story<TabsProps> = () => {
     <StoryContainer>
       <div style={{ backgroundColor: "gray", padding: 20, height: "100%" }}>
         <Tabs
-          TabsTitle={"test title"}
+          type={"card"}
           activeTab={activeTab}
           onChange={(id: string) => {
             setActiveTab(id);
@@ -55,9 +66,4 @@ const Template: Story<TabsProps> = () => {
   );
 };
 
-export const Primary = Template.bind({});
-
-const TestContent = () => {
-  console.log("sag");
-  return <div>test content</div>;
-};
+export const Card = Template.bind({});

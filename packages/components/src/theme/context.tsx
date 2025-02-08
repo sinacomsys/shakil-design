@@ -30,9 +30,15 @@ export const Colors: ColorsType = {
     success: "#58cc87",
   },
   tab: {
-    selectedTab: "#FFFFFF",
-    textColor: "#6C7797",
-    unSelectedTab: "#E3E6F1",
+    line: { tabColor: "#374775", lineColor: "#58CC87" },
+    card: {
+      activeColor: "#FFFFFF",
+      activeCross: "#BBC2D3",
+      color: "#374775",
+      cross: "#374775",
+      activeBG: "#374775",
+      BG: "#BBC2D3",
+    },
   },
   fileInput: "red",
   table: {
@@ -105,9 +111,15 @@ type ColorsType = {
     success: string;
   };
   tab?: {
-    selectedTab: string;
-    unSelectedTab: string;
-    textColor: string;
+    line: { tabColor: string; lineColor: string };
+    card: {
+      activeColor: string;
+      activeCross: string;
+      color: string;
+      cross: string;
+      activeBG: string;
+      BG: string;
+    };
   };
   fileInput?: string;
   table?: {

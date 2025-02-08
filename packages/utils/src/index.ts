@@ -9,4 +9,4 @@ export * from "./useWindowSize";
 export * from "./isNullish";
 export * from "./roundToNearsetEven";
 export * from "./isInclude";
-export * from "./isDefined";
+export * from "./composeRef";
