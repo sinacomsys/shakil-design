@@ -10,3 +10,4 @@ export * from "./isNullish";
 export * from "./roundToNearsetEven";
 export * from "./isInclude";
 export * from "./composeRef";
+export * from "./isDefined";

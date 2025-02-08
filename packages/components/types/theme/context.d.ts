@@ -28,9 +28,18 @@ type ColorsType = {
     success: string;
   };
   tab?: {
-    selectedTab: string;
-    unSelectedTab: string;
-    textColor: string;
+    line: {
+      tabColor: string;
+      lineColor: string;
+    };
+    card: {
+      activeColor: string;
+      activeCross: string;
+      color: string;
+      cross: string;
+      activeBG: string;
+      BG: string;
+    };
   };
   fileInput?: string;
   table?: {

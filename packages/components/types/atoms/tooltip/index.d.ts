@@ -11,6 +11,7 @@ export interface TooltipProps {
   isVisible?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
+  disable?: boolean;
 }
 declare const Tooltip: ({
   children,
@@ -23,5 +24,6 @@ declare const Tooltip: ({
   isVisible: isVisibleProp,
   onClose,
   onOpen,
+  disable,
 }: TooltipProps) => import("react/jsx-runtime").JSX.Element;
 export { Tooltip };

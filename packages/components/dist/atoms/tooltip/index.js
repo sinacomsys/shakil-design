@@ -47,22 +47,22 @@ var src_1 = require("@shakil-design/utils/src");
 var style_1 = require("./style");
 var Tooltip = function (_a) {
     var _b;
-    var children = _a.children, content = _a.content, _c = _a.trigger, trigger = _c === void 0 ? "hover" : _c, arrowColor = _a.arrowColor, _d = _a.placement, placement = _d === void 0 ? "top" : _d, hasMask = _a.hasMask, maskStyle = _a.maskStyle, isVisibleProp = _a.isVisible, onClose = _a.onClose, onOpen = _a.onOpen;
+    var children = _a.children, content = _a.content, _c = _a.trigger, trigger = _c === void 0 ? "hover" : _c, arrowColor = _a.arrowColor, _d = _a.placement, placement = _d === void 0 ? "top" : _d, hasMask = _a.hasMask, maskStyle = _a.maskStyle, isVisibleProp = _a.isVisible, onClose = _a.onClose, onOpen = _a.onOpen, disable = _a.disable;
     var classes = (0, style_1.useStyles)();
     var body = (0, react_1.useRef)(null);
+    var anchorElement = (0, react_1.useRef)(null);
     var _e = (0, react_1.useState)(false), isVisible = _e[0], setVisible = _e[1];
-    var _f = (0, react_1.useState)(null), referenceElement = _f[0], setReferenceElement = _f[1];
-    var _g = (0, react_1.useState)(null), popperElement = _g[0], setPopperElement = _g[1];
-    var _h = (0, react_1.useState)(null), arrowElement = _h[0], setArrowElement = _h[1];
+    var _f = (0, react_1.useState)(null), popperElement = _f[0], setPopperElement = _f[1];
+    var _g = (0, react_1.useState)(null), arrowElement = _g[0], setArrowElement = _g[1];
     var timerDelay = (0, react_1.useRef)(null);
-    var _j = (0, react_popper_1.usePopper)(referenceElement, popperElement, {
+    var _h = (0, react_popper_1.usePopper)(anchorElement.current, popperElement, {
         placement: placement,
         strategy: "fixed",
         modifiers: [
             { name: "arrow", options: { element: arrowElement } },
             { name: "offset", options: { offset: [0, 10] } },
         ],
-    }), styles = _j.styles, attributes = _j.attributes, state = _j.state;
+    }), styles = _h.styles, attributes = _h.attributes, state = _h.state;
     var currentPlacement = state === null || state === void 0 ? void 0 : state.placement;
     var triggerOnClose = function () {
         onClose === null || onClose === void 0 ? void 0 : onClose();
@@ -97,19 +97,19 @@ var Tooltip = function (_a) {
     };
     var newChildProps = {
         key: "trigger",
-        ref: setReferenceElement,
+        ref: anchorElement,
     };
-    if (trigger === "click") {
+    if (trigger === "click" && !disable) {
         newChildProps.onClick = handleOnClick;
     }
-    if (trigger === "hover") {
+    if (trigger === "hover" && !disable) {
         newChildProps.onMouseLeave = handleOnMouseLeave;
         newChildProps.onMouseEnter = handleOnMouseEnter;
     }
     var anchor = react_1.default.isValidElement(children) ? (react_1.default.cloneElement(children, newChildProps)) : ((0, jsx_runtime_1.jsx)("span", __assign({}, newChildProps, { children: children })));
     (0, src_1.useOnClickOutSide)({
         element: popperElement,
-        extraElement: referenceElement,
+        extraElement: anchorElement.current,
         handler: function () {
             if (trigger === "click") {
                 triggerOnClose();

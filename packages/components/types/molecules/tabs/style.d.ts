@@ -1,3 +1,17 @@
-export declare const useStyles: (data?: {
-    theme?: import("../../theme/context").ColorsType | undefined;
-} | undefined) => import("jss").Classes<"tab" | "tabs" | "no-content" | "tabsTitle" | "tabs-nav-list" | "tab-pane-close" | "active-tab-pane" | "tab-pane-title" | "tabs-content-holder" | "tab-content" | "tabs-nav-wrap" | "rendered-title-wrap">;
+export declare const useStyles: (
+  data?:
+    | {
+        theme?: import("../../theme/context").ColorsType | undefined;
+      }
+    | undefined,
+) => import("jss").Classes<
+  | "tabs"
+  | "no-content"
+  | "nav-list"
+  | "content-holder"
+  | "tab-content"
+  | "nav-wrap"
+  | "tooltip-content"
+  | "dummy-anchor"
+  | "nav-list-wrapper"
+>;
