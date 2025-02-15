@@ -1,8 +1,9 @@
+import moment from "moment-jalaali";
+import { useContext } from "react";
+
 import { BaseIcon, Text } from "../../../../atoms";
 import { DatePickerContext } from "../../context";
-import { useContext } from "react";
 import { useStyle } from "./style";
-import moment from "moment-jalaali";
 
 export const Header = () => {
   const {
@@ -66,7 +67,7 @@ export const Header = () => {
         <div style={{ display: "flex", alignItems: "center" }}>
           <div className={classes["change-year"]}>
             <BaseIcon
-              name="Calendar-_-Year-_-Previous-Year"
+              name="Amount-Boxes_Decrease"
               size={{ width: 13, height: 8 }}
               color={["white"]}
               onClick={onSubtractYear}
@@ -79,7 +80,7 @@ export const Header = () => {
           </Text>
           <div className={classes["change-year"]}>
             <BaseIcon
-              name="Calendar-_-Year-_-Next-Year"
+              name="Amount-Boxes_Increase"
               size={{ width: 13, height: 8 }}
               color={["white"]}
               onClick={onAddYear}

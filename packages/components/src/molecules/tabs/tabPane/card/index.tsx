@@ -1,8 +1,8 @@
-import { BaseIcon } from "../../../../atoms";
-import { useTheme } from "../../../../theme";
-import { useStyles } from "./style";
-import { InternalTabPaneProps } from "../../tabs.type";
 import { TitleMutualDefaultContent } from "../titleMutualDefaultContent";
+import { InternalTabPaneProps } from "../../tabs.type";
+import { useTheme } from "../../../../theme";
+import { BaseIcon } from "../../../../atoms";
+import { useStyles } from "./style";
 
 const Card = ({
   id,
@@ -36,7 +36,7 @@ const Card = ({
       {closeable ? (
         <BaseIcon
           color={isActive ? card?.activeCross : card?.cross}
-          name="Table-_-Cross-Icon-for-erasing-all-of-filters"
+          name="Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item"
           size={{ height: 10, width: 10 }}
           onClick={(event: React.MouseEvent) => {
             event.stopPropagation();

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 export function useHorizontalScroll() {
   const elRef = useRef<HTMLDivElement | null>(null);
@@ -10,11 +10,11 @@ export function useHorizontalScroll() {
       e.preventDefault();
       el.scrollTo({
         left: el.scrollLeft + e.deltaY,
-        behavior: 'auto',
+        behavior: "auto",
       });
     };
-    el.addEventListener('wheel', onWheel);
-    return () => el.removeEventListener('wheel', onWheel);
+    el.addEventListener("wheel", onWheel);
+    return () => el.removeEventListener("wheel", onWheel);
   }, []);
   return elRef;
 }

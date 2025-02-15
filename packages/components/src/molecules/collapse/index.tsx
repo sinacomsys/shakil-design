@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { CollapseContext } from './context';
-import { Panel } from './panel';
+import React, { useState } from "react";
+import { CollapseContext } from "./context";
+import { Panel } from "./panel";
 
 export interface CollapseProps {
   children: React.ReactNode;

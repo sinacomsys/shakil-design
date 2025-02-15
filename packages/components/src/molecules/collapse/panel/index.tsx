@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
 import React, { useContext, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
+
 import { BaseIcon } from "../../../atoms/baseIcon";
+import { CollapseContext } from "../context";
 import { Text } from "../../../atoms/text";
 import { useTheme } from "../../../theme";
-import { CollapseContext } from "../context";
 import { useStyles } from "./style";
 
 export interface PanelProps {
@@ -55,7 +56,7 @@ const Panel = ({ children, title, id }: PanelProps) => {
         >
           <BaseIcon
             color={isOpen ? openPanel : closePanel}
-            name={"Every-Boxes-_-Flesh-Icon-for-more-choices"}
+            name={"Amount-Boxes_Decrease"}
             size={{ height: 6, width: 12 }}
           />
         </motion.div>

@@ -1,14 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { TextInput } from "../../../../molecules";
-import { SelectProps } from "../../types";
-import ReactDOM from "react-dom";
-import { usePopper } from "react-popper";
-import { FleshIcon } from "../fleshIcon";
-import { BaseIcon } from "../../../../atoms";
-import classNames from "classnames";
-import { useStyles } from "../../style";
 import { useOnClickOutSide } from "@shakil-design/utils/src";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { isInclude } from "@shakil-design/utils";
+import { usePopper } from "react-popper";
+import classNames from "classnames";
+import ReactDOM from "react-dom";
+
+import { TextInput } from "../../../../molecules";
+import { BaseIcon } from "../../../../atoms";
+import { SelectProps } from "../../types";
+import { FleshIcon } from "../fleshIcon";
+import { useStyles } from "../../style";
 
 interface TemplateProps<T extends Record<string, any>> extends SelectProps<T> {
   displayValue: string;
@@ -184,7 +185,7 @@ const Template = <T extends Record<string, any>>({
                         AddonAfter={
                           <BaseIcon
                             color={"#d1d1d1"}
-                            name="Search-Box_Search-Icon"
+                            name="Table_Search-Icon"
                             size={{ height: 15, width: 15 }}
                           />
                         }

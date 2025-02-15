@@ -13,9 +13,9 @@ function useOnClickOutSide(_a) {
                 handler();
             }
         }
-        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
         return function () {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [element, extraElement, handler]);
 }

@@ -1,10 +1,10 @@
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?46jlwx");
-  src: url("fonts/icomoon.eot?46jlwx#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?46jlwx") format("truetype"),
-    url("fonts/icomoon.woff?46jlwx") format("woff"),
-    url("fonts/icomoon.svg?46jlwx#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?j0zd2s");
+  src: url("fonts/icomoon.eot?j0zd2s#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?j0zd2s") format("truetype"),
+    url("fonts/icomoon.woff?j0zd2s") format("woff"),
+    url("fonts/icomoon.svg?j0zd2s#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,2331 +26,6274 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-User-Management-_-NMS-Tree-Structure-_-Service-Icon:before {
+  content: "\e91e";
+  color: #58cc87;
+}
 .icon-Abstract-Service-Graph_Hamburger-Menu:before {
   content: "\e900";
-  color: #684a80;
 }
 .icon-Abstract-Service-Graph_Menu_Reverse-Icon:before {
   content: "\e901";
-  color: #684a80;
-}
-.icon-Abstract-Service-Graph_Menu_Toggle-OFF .path1:before {
-  content: "\e902";
-  color: rgb(255, 136, 136);
-}
-.icon-Abstract-Service-Graph_Menu_Toggle-OFF .path2:before {
-  content: "\e903";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Abstract-Service-Graph_Menu_Toggle-ON .path1:before {
-  content: "\e904";
-  color: rgb(73, 209, 225);
-}
-.icon-Abstract-Service-Graph_Menu_Toggle-ON .path2:before {
-  content: "\e905";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
 }
 .icon-Abstract-Service-Graph_Narrow-Rectangle-Icon:before {
-  content: "\e906";
-  color: #dbd1e2;
+  content: "\e902";
 }
 .icon-Abstract-Service-Graph_Plus-Icon-for-next-level:before {
-  content: "\e907";
-  color: #684a80;
+  content: "\e903";
 }
 .icon-Abstract-Service-Graph_Trapezius-Icon:before {
-  content: "\e908";
-  color: #dbd1e2;
+  content: "\e904";
 }
 .icon-Abstract-Service-Graph_Triangle-Icon:before {
-  content: "\e909";
-  color: #dbd1e2;
+  content: "\e905";
 }
 .icon-Abstract-Service-Graph_Wide-Rectangle-Icon:before {
-  content: "\e90a";
-  color: #dbd1e2;
+  content: "\e906";
 }
 .icon-activated-service:before {
-  content: "\e90b";
+  content: "\e907";
   color: #76ca6a;
 }
 .icon-Add-Box_Add-Icon:before {
-  content: "\e90c";
-  color: #684a80;
+  content: "\e908";
 }
 .icon-alert:before {
-  content: "\e90d";
+  content: "\e909";
   color: #f50c0c;
 }
 .icon-Amount-Boxes_Decrease:before {
-  content: "\e90e";
-  color: #fff;
+  content: "\e90a";
 }
 .icon-Amount-Boxes_Increase:before {
-  content: "\e90f";
-  color: #fff;
+  content: "\e90b";
 }
 .icon-Avatar-icon:before {
-  content: "\e910";
-  color: #abb6d6;
+  content: "\e90c";
 }
 .icon-BPM_Alert-Icon:before {
-  content: "\e911";
-  color: #49d1e1;
+  content: "\e90d";
 }
 .icon-BPM_Blue-Link:before {
-  content: "\e912";
-  color: #49d1e1;
+  content: "\e90e";
 }
 .icon-BPM_Export:before {
-  content: "\e913";
-  color: #684a80;
+  content: "\e90f";
 }
 .icon-BPM_Import:before {
-  content: "\e914";
-  color: #684a80;
+  content: "\e910";
 }
 .icon-BPM_Purple-Link:before {
-  content: "\e915";
-  color: #684a80;
+  content: "\e911";
 }
 .icon-Calendar-_-Apply-Changes:before {
-  content: "\e916";
+  content: "\e912";
   color: #45de82;
 }
-.icon-Calendar-_-Calendar-Icon:before {
-  content: "\e917";
-  color: #dbdbdb;
-}
 .icon-Calendar-_-Close:before {
-  content: "\e918";
-  color: #fff;
-}
-.icon-Calendar-_-Combo-Calendar:before {
-  content: "\e919";
-  color: #48e580;
+  content: "\e913";
 }
 .icon-Calendar-_-Month-_-Next-Month:before {
-  content: "\e91a";
-  color: #fff;
+  content: "\e914";
 }
 .icon-Calendar-_-Month-_-Previous-Month:before {
-  content: "\e91b";
-  color: #fff;
-}
-.icon-Calendar-_-Year-_-Next-Year:before {
-  content: "\e91c";
-  color: #fff;
-}
-.icon-Calendar-_-Year-_-Previous-Year:before {
-  content: "\e91d";
-  color: #fff;
+  content: "\e915";
 }
 .icon-Create-Project_Alert-Icon:before {
-  content: "\e91e";
+  content: "\e916";
   color: #f88;
 }
 .icon-Create-Project_Checked-Icon:before {
-  content: "\e91f";
+  content: "\e917";
   color: #49d1e1;
 }
 .icon-Create-Project_Download-Icon:before {
-  content: "\e920";
-  color: #684a80;
+  content: "\e918";
 }
 .icon-deactivated-service:before {
-  content: "\e921";
+  content: "\e919";
   color: #f00;
 }
-.icon-deactivated_service:before {
-  content: "\e922";
-  color: #f50c0c;
-}
-.icon-Delete-Icon:before {
-  content: "\e923";
-  color: #f88;
-}
 .icon-Discovery-_-Map-_-Node-Icon .path1:before {
-  content: "\e924";
+  content: "\e91a";
   color: rgb(55, 71, 117);
 }
 .icon-Discovery-_-Map-_-Node-Icon .path2:before {
-  content: "\e925";
+  content: "\e91b";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Discovery-_-Table-_-Delete-Icon:before {
-  content: "\e926";
+  content: "\e91c";
   color: #c65161;
 }
-.icon-Discovery-_-Table-_-Edit-Icon:before {
-  content: "\e927";
-  color: #374775;
-}
 .icon-Discovery-_-Table-_-Lambda-Icon:before {
-  content: "\e928";
+  content: "\e91d";
   color: #374775;
-}
-.icon-Discovery-_-Table-_-Service-Icon:before {
-  content: "\e929";
-  color: #374775;
-}
-.icon-Edit-Icon:before {
-  content: "\e92a";
-  color: #684a80;
 }
 .icon-Every-Boxes-_-About-Icon:before {
-  content: "\e92b";
+  content: "\e91f";
   color: #374775;
 }
 .icon-Every-Boxes-_-Back:before {
-  content: "\e92c";
-  color: #abb6d6;
-}
-.icon-Every-Boxes-_-Cross-Icon:before {
-  content: "\e92d";
-  color: #684a80;
-}
-.icon-Every-Boxes-_-Flesh-Icon-for-more-choices:before {
-  content: "\e92e";
-  color: #374775;
+  content: "\e920";
 }
 .icon-Every-Boxes-_-Full-Screen-Box:before {
-  content: "\e92f";
-  color: #abb6d6;
-}
-.icon-Every-Boxes-_-Full-Screen:before {
-  content: "\e930";
-  color: #abb6d6;
+  content: "\e921";
 }
 .icon-Every-Boxes-_-Radio-Box .path1:before {
-  content: "\e931";
+  content: "\e922";
   color: rgb(255, 255, 255);
 }
 .icon-Every-Boxes-_-Radio-Box .path2:before {
-  content: "\e932";
+  content: "\e923";
   margin-left: -1em;
   color: none;
 }
 .icon-Every-Boxes-_-Radio-Box .path3:before {
-  content: "\e933";
+  content: "\e924";
   margin-left: -1em;
   color: rgb(227, 230, 241);
-}
-.icon-Every-Boxes-_-Toggle-OFF .path1:before {
-  content: "\e934";
-  color: rgb(255, 137, 70);
-}
-.icon-Every-Boxes-_-Toggle-OFF .path2:before {
-  content: "\e935";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Every-Boxes-_-Toggle-ON .path1:before {
-  content: "\e936";
-  color: rgb(88, 204, 135);
-}
-.icon-Every-Boxes-_-Toggle-ON .path2:before {
-  content: "\e937";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Every-Boxes_Cross-Icon:before {
-  content: "\e938";
-  color: #684a80;
-}
-.icon-Every-Boxes_Flesh-Icon-for-more-choices:before {
-  content: "\e939";
-  color: #684a80;
-}
-.icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path1:before {
-  content: "\e93a";
-  color: rgb(55, 71, 117);
-}
-.icon-Every-Tables-_-Table-_-Check-Box-in-Rows .path2:before {
-  content: "\e93b";
-  margin-left: -1em;
-  color: rgb(227, 230, 241);
-}
-.icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path1:before {
-  content: "\e93c";
-  color: rgb(255, 255, 255);
-}
-.icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-A .path2:before {
-  content: "\e93d";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-B:before {
-  content: "\e93e";
-  color: #58cc87;
-}
-.icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path1:before {
-  content: "\e93f";
-  color: rgb(255, 255, 255);
-}
-.icon-Every-Tables-_-Table-_-Check-Box-on-Title-Bar-C .path2:before {
-  content: "\e940";
-  margin-left: -1em;
-  color: rgb(88, 204, 135);
 }
 .icon-expand_chart:before {
-  content: "\e941";
+  content: "\e925";
   color: #575757;
 }
-.icon-Faults-_-Node-Status-_-Alerts-Status:before {
-  content: "\e942";
-  color: #c65161;
-}
 .icon-Faults-_-Send-Message:before {
-  content: "\e943";
+  content: "\e926";
   color: #58cc87;
 }
 .icon-Faults-_-Sound--Color-_-Info:before {
-  content: "\e944";
+  content: "\e927";
   color: #58cc87;
 }
 .icon-Faults-_-Table-_-Acknowledge-not-selected:before {
-  content: "\e945";
+  content: "\e928";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Acknowledge-selected:before {
-  content: "\e946";
+  content: "\e929";
   color: #374775;
 }
 .icon-Faults-_-Table-_-Clear-not-selected:before {
-  content: "\e947";
+  content: "\e92a";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Clear-selected:before {
-  content: "\e948";
+  content: "\e92b";
   color: #374775;
 }
 .icon-Faults-_-Table-_-Go-to:before {
-  content: "\e949";
+  content: "\e92c";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Message-not-selected:before {
-  content: "\e94a";
+  content: "\e92d";
   color: #959db8;
 }
 .icon-Faults-_-Table-_-Message-selected:before {
-  content: "\e94b";
+  content: "\e92e";
   color: #374775;
 }
+.icon-icon-backup:before {
+  content: "\e92f";
+}
+.icon-icon-Financial-Loss:before {
+  content: "\e930";
+}
+.icon-icon-home:before {
+  content: "\e931";
+}
+.icon-icon-refresh-table:before {
+  content: "\e932";
+}
+.icon-icon-upload:before {
+  content: "\e933";
+}
 .icon-Inventory-_-Card .path1:before {
-  content: "\e94c";
+  content: "\e934";
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path2:before {
-  content: "\e94d";
+  content: "\e935";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path3:before {
-  content: "\e94e";
+  content: "\e936";
   margin-left: -1em;
   color: rgb(227, 229, 229);
 }
 .icon-Inventory-_-Card .path4:before {
-  content: "\e94f";
+  content: "\e937";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path5:before {
-  content: "\e950";
+  content: "\e938";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Card .path6:before {
-  content: "\e951";
+  content: "\e939";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Card .path7:before {
-  content: "\e952";
+  content: "\e93a";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path8:before {
-  content: "\e953";
+  content: "\e93b";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path9:before {
-  content: "\e954";
+  content: "\e93c";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path10:before {
-  content: "\e955";
+  content: "\e93d";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path11:before {
-  content: "\e956";
+  content: "\e93e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path12:before {
-  content: "\e957";
+  content: "\e93f";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path13:before {
-  content: "\e958";
+  content: "\e940";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path14:before {
-  content: "\e959";
+  content: "\e941";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path15:before {
-  content: "\e95a";
+  content: "\e942";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path16:before {
-  content: "\e95b";
+  content: "\e943";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path17:before {
-  content: "\e95c";
+  content: "\e944";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path18:before {
-  content: "\e95d";
+  content: "\e945";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path19:before {
-  content: "\e95e";
+  content: "\e946";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path20:before {
-  content: "\e95f";
+  content: "\e947";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path21:before {
-  content: "\e960";
+  content: "\e948";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path22:before {
-  content: "\e961";
+  content: "\e949";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Card .path23:before {
-  content: "\e962";
+  content: "\e94a";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path24:before {
-  content: "\e963";
+  content: "\e94b";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path25:before {
-  content: "\e964";
+  content: "\e94c";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path26:before {
-  content: "\e965";
+  content: "\e94d";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path27:before {
-  content: "\e966";
+  content: "\e94e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path28:before {
-  content: "\e967";
+  content: "\e94f";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path29:before {
-  content: "\e968";
+  content: "\e950";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path30:before {
-  content: "\e969";
+  content: "\e951";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path31:before {
-  content: "\e96a";
+  content: "\e952";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path32:before {
-  content: "\e96b";
+  content: "\e953";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path33:before {
-  content: "\e96c";
+  content: "\e954";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path34:before {
-  content: "\e96d";
+  content: "\e955";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path35:before {
-  content: "\e96e";
+  content: "\e956";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path36:before {
-  content: "\e96f";
+  content: "\e957";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path37:before {
-  content: "\e970";
+  content: "\e958";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path38:before {
-  content: "\e971";
+  content: "\e959";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path39:before {
-  content: "\e972";
+  content: "\e95a";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path40:before {
-  content: "\e973";
+  content: "\e95b";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path41:before {
-  content: "\e974";
+  content: "\e95c";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path42:before {
-  content: "\e975";
+  content: "\e95d";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path43:before {
-  content: "\e976";
+  content: "\e95e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path44:before {
-  content: "\e977";
+  content: "\e95f";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path45:before {
-  content: "\e978";
+  content: "\e960";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path46:before {
-  content: "\e979";
+  content: "\e961";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path47:before {
-  content: "\e97a";
+  content: "\e962";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path48:before {
-  content: "\e97b";
+  content: "\e963";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path49:before {
-  content: "\e97c";
+  content: "\e964";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path50:before {
-  content: "\e97d";
+  content: "\e965";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path51:before {
-  content: "\e97e";
+  content: "\e966";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path52:before {
-  content: "\e97f";
+  content: "\e967";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path53:before {
-  content: "\e980";
+  content: "\e968";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path54:before {
-  content: "\e981";
+  content: "\e969";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path55:before {
-  content: "\e982";
+  content: "\e96a";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path56:before {
-  content: "\e983";
+  content: "\e96b";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path57:before {
-  content: "\e984";
+  content: "\e96c";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path58:before {
-  content: "\e985";
+  content: "\e96d";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path59:before {
-  content: "\e986";
+  content: "\e96e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path60:before {
-  content: "\e987";
+  content: "\e96f";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path61:before {
-  content: "\e988";
+  content: "\e970";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path62:before {
-  content: "\e989";
+  content: "\e971";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path63:before {
-  content: "\e98a";
+  content: "\e972";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path64:before {
-  content: "\e98b";
+  content: "\e973";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path65:before {
-  content: "\e98c";
+  content: "\e974";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path66:before {
-  content: "\e98d";
+  content: "\e975";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path67:before {
-  content: "\e98e";
+  content: "\e976";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path68:before {
-  content: "\e98f";
+  content: "\e977";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path69:before {
-  content: "\e990";
+  content: "\e978";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path70:before {
-  content: "\e991";
+  content: "\e979";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path71:before {
-  content: "\e992";
+  content: "\e97a";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path72:before {
-  content: "\e993";
+  content: "\e97b";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path73:before {
-  content: "\e994";
+  content: "\e97c";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path74:before {
-  content: "\e995";
+  content: "\e97d";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path75:before {
-  content: "\e996";
+  content: "\e97e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path76:before {
-  content: "\e997";
+  content: "\e97f";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path77:before {
-  content: "\e998";
+  content: "\e980";
   margin-left: -1em;
   color: rgb(0, 0, 0);
 }
 .icon-Inventory-_-Card .path78:before {
-  content: "\e999";
+  content: "\e981";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Card .path79:before {
-  content: "\e99a";
+  content: "\e982";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path80:before {
-  content: "\e99b";
+  content: "\e983";
   margin-left: -1em;
   color: rgb(140, 163, 181);
 }
 .icon-Inventory-_-Card .path81:before {
-  content: "\e99c";
+  content: "\e984";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path82:before {
-  content: "\e99d";
+  content: "\e985";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path83:before {
-  content: "\e99e";
+  content: "\e986";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path84:before {
-  content: "\e99f";
-  margin-left: -1em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path85:before {
-  content: "\e9a0";
+  content: "\e987";
   margin-left: -1em;
   color: rgb(140, 163, 181);
 }
+.icon-Inventory-_-Card .path85:before {
+  content: "\e988";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
 .icon-Inventory-_-Card .path86:before {
-  content: "\e9a1";
+  content: "\e989";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path87:before {
-  content: "\e9a2";
+  content: "\e98a";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path88:before {
-  content: "\e9a3";
+  content: "\e98b";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Card .path89:before {
-  content: "\e9a4";
-  margin-left: -1em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path90:before {
-  content: "\e9a5";
+  content: "\e98c";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
+.icon-Inventory-_-Card .path90:before {
+  content: "\e98d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
 .icon-Inventory-_-Card .path91:before {
-  content: "\e9a6";
+  content: "\e98e";
   margin-left: -1em;
   color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Card .path92:before {
-  content: "\e9a7";
-  margin-left: -1em;
-  color: rgb(114, 135, 160);
-}
-.icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path1:before {
-  content: "\e9a8";
-  color: rgb(255, 255, 255);
-}
-.icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path2:before {
-  content: "\e9a9";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path3:before {
-  content: "\e9aa";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Inventory-_-Device-Images-_-Check-Box-for-Selection .path4:before {
-  content: "\e9ab";
-  margin-left: -1em;
-  color: rgb(227, 230, 241);
 }
 .icon-Inventory-_-Module .path1:before {
-  content: "\e9ac";
+  content: "\e98f";
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path2:before {
-  content: "\e9ad";
+  content: "\e990";
   margin-left: -1em;
   color: rgb(145, 165, 168);
 }
 .icon-Inventory-_-Module .path3:before {
-  content: "\e9ae";
+  content: "\e991";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Module .path4:before {
-  content: "\e9af";
+  content: "\e992";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path5:before {
-  content: "\e9b0";
+  content: "\e993";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path6:before {
-  content: "\e9b1";
+  content: "\e994";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Module .path7:before {
-  content: "\e9b2";
+  content: "\e995";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Module .path8:before {
-  content: "\e9b3";
+  content: "\e996";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Module .path9:before {
-  content: "\e9b4";
+  content: "\e997";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Module .path10:before {
-  content: "\e9b5";
+  content: "\e998";
   margin-left: -1em;
   color: rgb(30, 216, 75);
 }
 .icon-Inventory-_-Module .path11:before {
-  content: "\e9b6";
+  content: "\e999";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path12:before {
-  content: "\e9b7";
+  content: "\e99a";
   margin-left: -1em;
   color: rgb(145, 165, 168);
 }
 .icon-Inventory-_-Module .path13:before {
-  content: "\e9b8";
+  content: "\e99b";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Module .path14:before {
-  content: "\e9b9";
+  content: "\e99c";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path15:before {
-  content: "\e9ba";
+  content: "\e99d";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path16:before {
-  content: "\e9bb";
+  content: "\e99e";
   margin-left: -1em;
   color: rgb(186, 196, 198);
 }
 .icon-Inventory-_-Module .path17:before {
-  content: "\e9bc";
+  content: "\e99f";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path18:before {
-  content: "\e9bd";
+  content: "\e9a0";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path19:before {
-  content: "\e9be";
+  content: "\e9a1";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path20:before {
-  content: "\e9bf";
+  content: "\e9a2";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path21:before {
-  content: "\e9c0";
+  content: "\e9a3";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path22:before {
-  content: "\e9c1";
+  content: "\e9a4";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path23:before {
-  content: "\e9c2";
+  content: "\e9a5";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path24:before {
-  content: "\e9c3";
+  content: "\e9a6";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path25:before {
-  content: "\e9c4";
+  content: "\e9a7";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path26:before {
-  content: "\e9c5";
+  content: "\e9a8";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path27:before {
-  content: "\e9c6";
+  content: "\e9a9";
   margin-left: -1em;
   color: rgb(158, 174, 178);
 }
 .icon-Inventory-_-Module .path28:before {
-  content: "\e9c7";
+  content: "\e9aa";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Module .path29:before {
-  content: "\e9c8";
+  content: "\e9ab";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path30:before {
-  content: "\e9c9";
+  content: "\e9ac";
   margin-left: -1em;
   color: rgb(172, 184, 188);
 }
 .icon-Inventory-_-Module .path31:before {
-  content: "\e9ca";
+  content: "\e9ad";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path32:before {
-  content: "\e9cb";
+  content: "\e9ae";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path33:before {
-  content: "\e9cc";
+  content: "\e9af";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path34:before {
-  content: "\e9cd";
+  content: "\e9b0";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path35:before {
-  content: "\e9ce";
+  content: "\e9b1";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path36:before {
-  content: "\e9cf";
+  content: "\e9b2";
   margin-left: -1em;
   color: rgb(158, 174, 178);
 }
 .icon-Inventory-_-Module .path37:before {
-  content: "\e9d0";
+  content: "\e9b3";
   margin-left: -1em;
   color: rgb(158, 174, 178);
 }
 .icon-Inventory-_-Module .path38:before {
-  content: "\e9d1";
+  content: "\e9b4";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Module .path39:before {
-  content: "\e9d2";
+  content: "\e9b5";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Module .path40:before {
-  content: "\e9d3";
+  content: "\e9b6";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Module .path41:before {
-  content: "\e9d4";
+  content: "\e9b7";
   margin-left: -1em;
   color: rgb(132, 154, 175);
 }
 .icon-Inventory-_-Module .path42:before {
-  content: "\e9d5";
+  content: "\e9b8";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path43:before {
-  content: "\e9d6";
+  content: "\e9b9";
   margin-left: -1em;
   color: rgb(190, 200, 206);
 }
 .icon-Inventory-_-Module .path44:before {
-  content: "\e9d7";
+  content: "\e9ba";
   margin-left: -1em;
   color: rgb(215, 219, 221);
 }
 .icon-Inventory-_-Module .path45:before {
-  content: "\e9d8";
+  content: "\e9bb";
   margin-left: -1em;
   color: rgb(114, 135, 160);
 }
 .icon-Inventory-_-Module .path46:before {
-  content: "\e9d9";
+  content: "\e9bc";
   margin-left: -1em;
   color: rgb(227, 229, 229);
 }
 .icon-Inventory-_-Rack:before {
-  content: "\e9da";
-  color: #7287a0;
+  content: "\e9bd";
+  color: #e3e5e5;
 }
-.icon-Inventory-_-Shelf:before {
+.icon-Inventory-_-Shelf .path1:before {
+  content: "\e9be";
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path2:before {
+  content: "\e9bf";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path3:before {
+  content: "\e9c0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path4:before {
+  content: "\e9c1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path5:before {
+  content: "\e9c2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path6:before {
+  content: "\e9c3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path7:before {
+  content: "\e9c4";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path8:before {
+  content: "\e9c5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path9:before {
+  content: "\e9c6";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path10:before {
+  content: "\e9c7";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path11:before {
+  content: "\e9c8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path12:before {
+  content: "\e9c9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path13:before {
+  content: "\e9ca";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path14:before {
+  content: "\e9cb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path15:before {
+  content: "\e9cc";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path16:before {
+  content: "\e9cd";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path17:before {
+  content: "\e9ce";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path18:before {
+  content: "\e9cf";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path19:before {
+  content: "\e9d0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path20:before {
+  content: "\e9d1";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path21:before {
+  content: "\e9d2";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path22:before {
+  content: "\e9d3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path23:before {
+  content: "\e9d4";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path24:before {
+  content: "\e9d5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path25:before {
+  content: "\e9d6";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path26:before {
+  content: "\e9d7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path27:before {
+  content: "\e9d8";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path28:before {
+  content: "\e9d9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path29:before {
+  content: "\e9da";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path30:before {
   content: "\e9db";
-  color: #849aaf;
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path31:before {
+  content: "\e9dc";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path32:before {
+  content: "\e9dd";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path33:before {
+  content: "\e9de";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path34:before {
+  content: "\e9df";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path35:before {
+  content: "\e9e0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path36:before {
+  content: "\e9e1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path37:before {
+  content: "\e9e2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path38:before {
+  content: "\e9e3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path39:before {
+  content: "\e9e4";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path40:before {
+  content: "\e9e5";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path41:before {
+  content: "\e9e6";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path42:before {
+  content: "\e9e7";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path43:before {
+  content: "\e9e8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path44:before {
+  content: "\e9e9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path45:before {
+  content: "\e9ea";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path46:before {
+  content: "\e9eb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path47:before {
+  content: "\e9ec";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path48:before {
+  content: "\e9ed";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path49:before {
+  content: "\e9ee";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path50:before {
+  content: "\e9ef";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path51:before {
+  content: "\e9f0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path52:before {
+  content: "\e9f1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path53:before {
+  content: "\e9f2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path54:before {
+  content: "\e9f3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path55:before {
+  content: "\e9f4";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path56:before {
+  content: "\e9f5";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path57:before {
+  content: "\e9f6";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path58:before {
+  content: "\e9f7";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path59:before {
+  content: "\e9f8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path60:before {
+  content: "\e9f9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path61:before {
+  content: "\e9fa";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path62:before {
+  content: "\e9fb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path63:before {
+  content: "\e9fc";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path64:before {
+  content: "\e9fd";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path65:before {
+  content: "\e9fe";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path66:before {
+  content: "\e9ff";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path67:before {
+  content: "\ea00";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path68:before {
+  content: "\ea01";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path69:before {
+  content: "\ea02";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path70:before {
+  content: "\ea03";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path71:before {
+  content: "\ea04";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path72:before {
+  content: "\ea05";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path73:before {
+  content: "\ea06";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path74:before {
+  content: "\ea07";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path75:before {
+  content: "\ea08";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path76:before {
+  content: "\ea09";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path77:before {
+  content: "\ea0a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path78:before {
+  content: "\ea0b";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path79:before {
+  content: "\ea0c";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path80:before {
+  content: "\ea0d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path81:before {
+  content: "\ea0e";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path82:before {
+  content: "\ea0f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path83:before {
+  content: "\ea10";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path84:before {
+  content: "\ea11";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path85:before {
+  content: "\ea12";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path86:before {
+  content: "\ea13";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path87:before {
+  content: "\ea14";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path88:before {
+  content: "\ea15";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path89:before {
+  content: "\ea16";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path90:before {
+  content: "\ea17";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path91:before {
+  content: "\ea18";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path92:before {
+  content: "\ea19";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path93:before {
+  content: "\ea1a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path94:before {
+  content: "\ea1b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path95:before {
+  content: "\ea1c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path96:before {
+  content: "\ea1d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path97:before {
+  content: "\ea1e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path98:before {
+  content: "\ea1f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path99:before {
+  content: "\ea20";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path100:before {
+  content: "\ea21";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path101:before {
+  content: "\ea22";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path102:before {
+  content: "\ea23";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path103:before {
+  content: "\ea24";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path104:before {
+  content: "\ea25";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path105:before {
+  content: "\ea26";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path106:before {
+  content: "\ea27";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path107:before {
+  content: "\ea28";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path108:before {
+  content: "\ea29";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path109:before {
+  content: "\ea2a";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path110:before {
+  content: "\ea2b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path111:before {
+  content: "\ea2c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path112:before {
+  content: "\ea2d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path113:before {
+  content: "\ea2e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path114:before {
+  content: "\ea2f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path115:before {
+  content: "\ea30";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path116:before {
+  content: "\ea31";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path117:before {
+  content: "\ea32";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path118:before {
+  content: "\ea33";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path119:before {
+  content: "\ea34";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path120:before {
+  content: "\ea35";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path121:before {
+  content: "\ea36";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path122:before {
+  content: "\ea37";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path123:before {
+  content: "\ea38";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path124:before {
+  content: "\ea39";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path125:before {
+  content: "\ea3a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path126:before {
+  content: "\ea3b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path127:before {
+  content: "\ea3c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path128:before {
+  content: "\ea3d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path129:before {
+  content: "\ea3e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path130:before {
+  content: "\ea3f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path131:before {
+  content: "\ea40";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path132:before {
+  content: "\ea41";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path133:before {
+  content: "\ea42";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path134:before {
+  content: "\ea43";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path135:before {
+  content: "\ea44";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path136:before {
+  content: "\ea45";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path137:before {
+  content: "\ea46";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path138:before {
+  content: "\ea47";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path139:before {
+  content: "\ea48";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path140:before {
+  content: "\ea49";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path141:before {
+  content: "\ea4a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path142:before {
+  content: "\ea4b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path143:before {
+  content: "\ea4c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path144:before {
+  content: "\ea4d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path145:before {
+  content: "\ea4e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path146:before {
+  content: "\ea4f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path147:before {
+  content: "\ea50";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path148:before {
+  content: "\ea51";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path149:before {
+  content: "\ea52";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path150:before {
+  content: "\ea53";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path151:before {
+  content: "\ea54";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path152:before {
+  content: "\ea55";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path153:before {
+  content: "\ea56";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path154:before {
+  content: "\ea57";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path155:before {
+  content: "\ea58";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path156:before {
+  content: "\ea59";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path157:before {
+  content: "\ea5a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path158:before {
+  content: "\ea5b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path159:before {
+  content: "\ea5c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path160:before {
+  content: "\ea5d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path161:before {
+  content: "\ea5e";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path162:before {
+  content: "\ea5f";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path163:before {
+  content: "\ea60";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path164:before {
+  content: "\ea61";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path165:before {
+  content: "\ea62";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path166:before {
+  content: "\ea63";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path167:before {
+  content: "\ea64";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path168:before {
+  content: "\ea65";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path169:before {
+  content: "\ea66";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path170:before {
+  content: "\ea67";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path171:before {
+  content: "\ea68";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path172:before {
+  content: "\ea69";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path173:before {
+  content: "\ea6a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path174:before {
+  content: "\ea6b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path175:before {
+  content: "\ea6c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path176:before {
+  content: "\ea6d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path177:before {
+  content: "\ea6e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path178:before {
+  content: "\ea6f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path179:before {
+  content: "\ea70";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path180:before {
+  content: "\ea71";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path181:before {
+  content: "\ea72";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path182:before {
+  content: "\ea73";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path183:before {
+  content: "\ea74";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path184:before {
+  content: "\ea75";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path185:before {
+  content: "\ea76";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path186:before {
+  content: "\ea77";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path187:before {
+  content: "\ea78";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path188:before {
+  content: "\ea79";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path189:before {
+  content: "\ea7a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path190:before {
+  content: "\ea7b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path191:before {
+  content: "\ea7c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path192:before {
+  content: "\ea7d";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path193:before {
+  content: "\ea7e";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path194:before {
+  content: "\ea7f";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path195:before {
+  content: "\ea80";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path196:before {
+  content: "\ea81";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path197:before {
+  content: "\ea82";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path198:before {
+  content: "\ea83";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path199:before {
+  content: "\ea84";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path200:before {
+  content: "\ea85";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path201:before {
+  content: "\ea86";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path202:before {
+  content: "\ea87";
+  margin-left: -1em;
+  color: rgb(193, 192, 192);
+}
+.icon-Inventory-_-Shelf .path203:before {
+  content: "\ea88";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path204:before {
+  content: "\ea89";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path205:before {
+  content: "\ea8a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path206:before {
+  content: "\ea8b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path207:before {
+  content: "\ea8c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path208:before {
+  content: "\ea8d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path209:before {
+  content: "\ea8e";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path210:before {
+  content: "\ea8f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path211:before {
+  content: "\ea90";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path212:before {
+  content: "\ea91";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path213:before {
+  content: "\ea92";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path214:before {
+  content: "\ea93";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path215:before {
+  content: "\ea94";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path216:before {
+  content: "\ea95";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path217:before {
+  content: "\ea96";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path218:before {
+  content: "\ea97";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path219:before {
+  content: "\ea98";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path220:before {
+  content: "\ea99";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path221:before {
+  content: "\ea9a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path222:before {
+  content: "\ea9b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path223:before {
+  content: "\ea9c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path224:before {
+  content: "\ea9d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path225:before {
+  content: "\ea9e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path226:before {
+  content: "\ea9f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path227:before {
+  content: "\eaa0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path228:before {
+  content: "\eaa1";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path229:before {
+  content: "\eaa2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path230:before {
+  content: "\eaa3";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path231:before {
+  content: "\eaa4";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path232:before {
+  content: "\eaa5";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path233:before {
+  content: "\eaa6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path234:before {
+  content: "\eaa7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path235:before {
+  content: "\eaa8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path236:before {
+  content: "\eaa9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path237:before {
+  content: "\eaaa";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path238:before {
+  content: "\eaab";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path239:before {
+  content: "\eaac";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path240:before {
+  content: "\eaad";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path241:before {
+  content: "\eaae";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path242:before {
+  content: "\eaaf";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path243:before {
+  content: "\eab0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path244:before {
+  content: "\eab1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path245:before {
+  content: "\eab2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path246:before {
+  content: "\eab3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path247:before {
+  content: "\eab4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path248:before {
+  content: "\eab5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path249:before {
+  content: "\eab6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path250:before {
+  content: "\eab7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path251:before {
+  content: "\eab8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path252:before {
+  content: "\eab9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path253:before {
+  content: "\eaba";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path254:before {
+  content: "\eabb";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path255:before {
+  content: "\eabc";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path256:before {
+  content: "\eabd";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path257:before {
+  content: "\eabe";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path258:before {
+  content: "\eabf";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path259:before {
+  content: "\eac0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path260:before {
+  content: "\eac1";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path261:before {
+  content: "\eac2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path262:before {
+  content: "\eac3";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path263:before {
+  content: "\eac4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path264:before {
+  content: "\eac5";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path265:before {
+  content: "\eac6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path266:before {
+  content: "\eac7";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path267:before {
+  content: "\eac8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path268:before {
+  content: "\eac9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path269:before {
+  content: "\eaca";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path270:before {
+  content: "\eacb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path271:before {
+  content: "\eacc";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path272:before {
+  content: "\eacd";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path273:before {
+  content: "\eace";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path274:before {
+  content: "\eacf";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path275:before {
+  content: "\ead0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path276:before {
+  content: "\ead1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path277:before {
+  content: "\ead2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path278:before {
+  content: "\ead3";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path279:before {
+  content: "\ead4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path280:before {
+  content: "\ead5";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path281:before {
+  content: "\ead6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path282:before {
+  content: "\ead7";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path283:before {
+  content: "\ead8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path284:before {
+  content: "\ead9";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path285:before {
+  content: "\eada";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path286:before {
+  content: "\eadb";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path287:before {
+  content: "\eadc";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path288:before {
+  content: "\eadd";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path289:before {
+  content: "\eade";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path290:before {
+  content: "\eadf";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path291:before {
+  content: "\eae0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path292:before {
+  content: "\eae1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path293:before {
+  content: "\eae2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path294:before {
+  content: "\eae3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path295:before {
+  content: "\eae4";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path296:before {
+  content: "\eae5";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path297:before {
+  content: "\eae6";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path298:before {
+  content: "\eae7";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path299:before {
+  content: "\eae8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path300:before {
+  content: "\eae9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path301:before {
+  content: "\eaea";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path302:before {
+  content: "\eaeb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path303:before {
+  content: "\eaec";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path304:before {
+  content: "\eaed";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path305:before {
+  content: "\eaee";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path306:before {
+  content: "\eaef";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path307:before {
+  content: "\eaf0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path308:before {
+  content: "\eaf1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path309:before {
+  content: "\eaf2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path310:before {
+  content: "\eaf3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path311:before {
+  content: "\eaf4";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path312:before {
+  content: "\eaf5";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path313:before {
+  content: "\eaf6";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path314:before {
+  content: "\eaf7";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path315:before {
+  content: "\eaf8";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path316:before {
+  content: "\eaf9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path317:before {
+  content: "\eafa";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path318:before {
+  content: "\eafb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path319:before {
+  content: "\eafc";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path320:before {
+  content: "\eafd";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path321:before {
+  content: "\eafe";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path322:before {
+  content: "\eaff";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path323:before {
+  content: "\eb00";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path324:before {
+  content: "\eb01";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path325:before {
+  content: "\eb02";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path326:before {
+  content: "\eb03";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path327:before {
+  content: "\eb04";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path328:before {
+  content: "\eb05";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path329:before {
+  content: "\eb06";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path330:before {
+  content: "\eb07";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path331:before {
+  content: "\eb08";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path332:before {
+  content: "\eb09";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path333:before {
+  content: "\eb0a";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path334:before {
+  content: "\eb0b";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path335:before {
+  content: "\eb0c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path336:before {
+  content: "\eb0d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path337:before {
+  content: "\eb0e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path338:before {
+  content: "\eb0f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path339:before {
+  content: "\eb10";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path340:before {
+  content: "\eb11";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path341:before {
+  content: "\eb12";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path342:before {
+  content: "\eb13";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path343:before {
+  content: "\eb14";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path344:before {
+  content: "\eb15";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path345:before {
+  content: "\eb16";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path346:before {
+  content: "\eb17";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path347:before {
+  content: "\eb18";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path348:before {
+  content: "\eb19";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path349:before {
+  content: "\eb1a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path350:before {
+  content: "\eb1b";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path351:before {
+  content: "\eb1c";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path352:before {
+  content: "\eb1d";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path353:before {
+  content: "\eb1e";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path354:before {
+  content: "\eb1f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path355:before {
+  content: "\eb20";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path356:before {
+  content: "\eb21";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path357:before {
+  content: "\eb22";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path358:before {
+  content: "\eb23";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path359:before {
+  content: "\eb24";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path360:before {
+  content: "\eb25";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path361:before {
+  content: "\eb26";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path362:before {
+  content: "\eb27";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path363:before {
+  content: "\eb28";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path364:before {
+  content: "\eb29";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path365:before {
+  content: "\eb2a";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path366:before {
+  content: "\eb2b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path367:before {
+  content: "\eb2c";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path368:before {
+  content: "\eb2d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path369:before {
+  content: "\eb2e";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path370:before {
+  content: "\eb2f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path371:before {
+  content: "\eb30";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path372:before {
+  content: "\eb31";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path373:before {
+  content: "\eb32";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path374:before {
+  content: "\eb33";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path375:before {
+  content: "\eb34";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path376:before {
+  content: "\eb35";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path377:before {
+  content: "\eb36";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path378:before {
+  content: "\eb37";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path379:before {
+  content: "\eb38";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path380:before {
+  content: "\eb39";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path381:before {
+  content: "\eb3a";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path382:before {
+  content: "\eb3b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path383:before {
+  content: "\eb3c";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path384:before {
+  content: "\eb3d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path385:before {
+  content: "\eb3e";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path386:before {
+  content: "\eb3f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path387:before {
+  content: "\eb40";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path388:before {
+  content: "\eb41";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path389:before {
+  content: "\eb42";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path390:before {
+  content: "\eb43";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path391:before {
+  content: "\eb44";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path392:before {
+  content: "\eb45";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path393:before {
+  content: "\eb46";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path394:before {
+  content: "\eb47";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path395:before {
+  content: "\eb48";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path396:before {
+  content: "\eb49";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path397:before {
+  content: "\eb4a";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path398:before {
+  content: "\eb4b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path399:before {
+  content: "\eb4c";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path400:before {
+  content: "\eb4d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path401:before {
+  content: "\eb4e";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path402:before {
+  content: "\eb4f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path403:before {
+  content: "\eb50";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path404:before {
+  content: "\eb51";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path405:before {
+  content: "\eb52";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path406:before {
+  content: "\eb53";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path407:before {
+  content: "\eb54";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path408:before {
+  content: "\eb55";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path409:before {
+  content: "\eb56";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path410:before {
+  content: "\eb57";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path411:before {
+  content: "\eb58";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path412:before {
+  content: "\eb59";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path413:before {
+  content: "\eb5a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path414:before {
+  content: "\eb5b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path415:before {
+  content: "\eb5c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path416:before {
+  content: "\eb5d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path417:before {
+  content: "\eb5e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path418:before {
+  content: "\eb5f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path419:before {
+  content: "\eb60";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path420:before {
+  content: "\eb61";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path421:before {
+  content: "\eb62";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path422:before {
+  content: "\eb63";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path423:before {
+  content: "\eb64";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path424:before {
+  content: "\eb65";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path425:before {
+  content: "\eb66";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path426:before {
+  content: "\eb67";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path427:before {
+  content: "\eb68";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path428:before {
+  content: "\eb69";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path429:before {
+  content: "\eb6a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path430:before {
+  content: "\eb6b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path431:before {
+  content: "\eb6c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path432:before {
+  content: "\eb6d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path433:before {
+  content: "\eb6e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path434:before {
+  content: "\eb6f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path435:before {
+  content: "\eb70";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path436:before {
+  content: "\eb71";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path437:before {
+  content: "\eb72";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path438:before {
+  content: "\eb73";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path439:before {
+  content: "\eb74";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path440:before {
+  content: "\eb75";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path441:before {
+  content: "\eb76";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path442:before {
+  content: "\eb77";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path443:before {
+  content: "\eb78";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path444:before {
+  content: "\eb79";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path445:before {
+  content: "\eb7a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path446:before {
+  content: "\eb7b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path447:before {
+  content: "\eb7c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path448:before {
+  content: "\eb7d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path449:before {
+  content: "\eb7e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path450:before {
+  content: "\eb7f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path451:before {
+  content: "\eb80";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path452:before {
+  content: "\eb81";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path453:before {
+  content: "\eb82";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path454:before {
+  content: "\eb83";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path455:before {
+  content: "\eb84";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path456:before {
+  content: "\eb85";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path457:before {
+  content: "\eb86";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path458:before {
+  content: "\eb87";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path459:before {
+  content: "\eb88";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path460:before {
+  content: "\eb89";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path461:before {
+  content: "\eb8a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path462:before {
+  content: "\eb8b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path463:before {
+  content: "\eb8c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path464:before {
+  content: "\eb8d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path465:before {
+  content: "\eb8e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path466:before {
+  content: "\eb8f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path467:before {
+  content: "\eb90";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path468:before {
+  content: "\eb91";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path469:before {
+  content: "\eb92";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path470:before {
+  content: "\eb93";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path471:before {
+  content: "\eb94";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path472:before {
+  content: "\eb95";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path473:before {
+  content: "\eb96";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path474:before {
+  content: "\eb97";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path475:before {
+  content: "\eb98";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path476:before {
+  content: "\eb99";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path477:before {
+  content: "\eb9a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path478:before {
+  content: "\eb9b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path479:before {
+  content: "\eb9c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path480:before {
+  content: "\eb9d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path481:before {
+  content: "\eb9e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path482:before {
+  content: "\eb9f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path483:before {
+  content: "\eba0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path484:before {
+  content: "\eba1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path485:before {
+  content: "\eba2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path486:before {
+  content: "\eba3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path487:before {
+  content: "\eba4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path488:before {
+  content: "\eba5";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path489:before {
+  content: "\eba6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path490:before {
+  content: "\eba7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path491:before {
+  content: "\eba8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path492:before {
+  content: "\eba9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path493:before {
+  content: "\ebaa";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path494:before {
+  content: "\ebab";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path495:before {
+  content: "\ebac";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path496:before {
+  content: "\ebad";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path497:before {
+  content: "\ebae";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path498:before {
+  content: "\ebaf";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path499:before {
+  content: "\ebb0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path500:before {
+  content: "\ebb1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path501:before {
+  content: "\ebb2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path502:before {
+  content: "\ebb3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path503:before {
+  content: "\ebb4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path504:before {
+  content: "\ebb5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path505:before {
+  content: "\ebb6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path506:before {
+  content: "\ebb7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path507:before {
+  content: "\ebb8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path508:before {
+  content: "\ebb9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path509:before {
+  content: "\ebba";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path510:before {
+  content: "\ebbb";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path511:before {
+  content: "\ebbc";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path512:before {
+  content: "\ebbd";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path513:before {
+  content: "\ebbe";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path514:before {
+  content: "\ebbf";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path515:before {
+  content: "\ebc0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path516:before {
+  content: "\ebc1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path517:before {
+  content: "\ebc2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path518:before {
+  content: "\ebc3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path519:before {
+  content: "\ebc4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path520:before {
+  content: "\ebc5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path521:before {
+  content: "\ebc6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path522:before {
+  content: "\ebc7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path523:before {
+  content: "\ebc8";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path524:before {
+  content: "\ebc9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path525:before {
+  content: "\ebca";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path526:before {
+  content: "\ebcb";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path527:before {
+  content: "\ebcc";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path528:before {
+  content: "\ebcd";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path529:before {
+  content: "\ebce";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path530:before {
+  content: "\ebcf";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path531:before {
+  content: "\ebd0";
+  margin-left: -1em;
+  color: rgb(229, 229, 228);
+}
+.icon-Inventory-_-Shelf .path532:before {
+  content: "\ebd1";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path533:before {
+  content: "\ebd2";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path534:before {
+  content: "\ebd3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path535:before {
+  content: "\ebd4";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path536:before {
+  content: "\ebd5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path537:before {
+  content: "\ebd6";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path538:before {
+  content: "\ebd7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path539:before {
+  content: "\ebd8";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path540:before {
+  content: "\ebd9";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path541:before {
+  content: "\ebda";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path542:before {
+  content: "\ebdb";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path543:before {
+  content: "\ebdc";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path544:before {
+  content: "\ebdd";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path545:before {
+  content: "\ebde";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path546:before {
+  content: "\ebdf";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path547:before {
+  content: "\ebe0";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path548:before {
+  content: "\ebe1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path549:before {
+  content: "\ebe2";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path550:before {
+  content: "\ebe3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path551:before {
+  content: "\ebe4";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path552:before {
+  content: "\ebe5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path553:before {
+  content: "\ebe6";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path554:before {
+  content: "\ebe7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path555:before {
+  content: "\ebe8";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path556:before {
+  content: "\ebe9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path557:before {
+  content: "\ebea";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path558:before {
+  content: "\ebeb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path559:before {
+  content: "\ebec";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path560:before {
+  content: "\ebed";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path561:before {
+  content: "\ebee";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path562:before {
+  content: "\ebef";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path563:before {
+  content: "\ebf0";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path564:before {
+  content: "\ebf1";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path565:before {
+  content: "\ebf2";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path566:before {
+  content: "\ebf3";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path567:before {
+  content: "\ebf4";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path568:before {
+  content: "\ebf5";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path569:before {
+  content: "\ebf6";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path570:before {
+  content: "\ebf7";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path571:before {
+  content: "\ebf8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path572:before {
+  content: "\ebf9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path573:before {
+  content: "\ebfa";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path574:before {
+  content: "\ebfb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path575:before {
+  content: "\ebfc";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path576:before {
+  content: "\ebfd";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path577:before {
+  content: "\ebfe";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path578:before {
+  content: "\ebff";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path579:before {
+  content: "\ec00";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path580:before {
+  content: "\ec01";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path581:before {
+  content: "\ec02";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path582:before {
+  content: "\ec03";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path583:before {
+  content: "\ec04";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path584:before {
+  content: "\ec05";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path585:before {
+  content: "\ec06";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path586:before {
+  content: "\ec07";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path587:before {
+  content: "\ec08";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path588:before {
+  content: "\ec09";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path589:before {
+  content: "\ec0a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path590:before {
+  content: "\ec0b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path591:before {
+  content: "\ec0c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path592:before {
+  content: "\ec0d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path593:before {
+  content: "\ec0e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path594:before {
+  content: "\ec0f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path595:before {
+  content: "\ec10";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path596:before {
+  content: "\ec11";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path597:before {
+  content: "\ec12";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path598:before {
+  content: "\ec13";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path599:before {
+  content: "\ec14";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path600:before {
+  content: "\ec15";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path601:before {
+  content: "\ec16";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path602:before {
+  content: "\ec17";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path603:before {
+  content: "\ec18";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path604:before {
+  content: "\ec19";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path605:before {
+  content: "\ec1a";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path606:before {
+  content: "\ec1b";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path607:before {
+  content: "\ec1c";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path608:before {
+  content: "\ec1d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path609:before {
+  content: "\ec1e";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path610:before {
+  content: "\ec1f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path611:before {
+  content: "\ec20";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path612:before {
+  content: "\ec21";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path613:before {
+  content: "\ec22";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path614:before {
+  content: "\ec23";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path615:before {
+  content: "\ec24";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path616:before {
+  content: "\ec25";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path617:before {
+  content: "\ec26";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path618:before {
+  content: "\ec27";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path619:before {
+  content: "\ec28";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path620:before {
+  content: "\ec29";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path621:before {
+  content: "\ec2a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path622:before {
+  content: "\ec2b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path623:before {
+  content: "\ec2c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path624:before {
+  content: "\ec2d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path625:before {
+  content: "\ec2e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path626:before {
+  content: "\ec2f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path627:before {
+  content: "\ec30";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path628:before {
+  content: "\ec31";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path629:before {
+  content: "\ec32";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path630:before {
+  content: "\ec33";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path631:before {
+  content: "\ec34";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path632:before {
+  content: "\ec35";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path633:before {
+  content: "\ec36";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path634:before {
+  content: "\ec37";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path635:before {
+  content: "\ec38";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path636:before {
+  content: "\ec39";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path637:before {
+  content: "\ec3a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path638:before {
+  content: "\ec3b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path639:before {
+  content: "\ec3c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path640:before {
+  content: "\ec3d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path641:before {
+  content: "\ec3e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path642:before {
+  content: "\ec3f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path643:before {
+  content: "\ec40";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path644:before {
+  content: "\ec41";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path645:before {
+  content: "\ec42";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path646:before {
+  content: "\ec43";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path647:before {
+  content: "\ec44";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path648:before {
+  content: "\ec45";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path649:before {
+  content: "\ec46";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path650:before {
+  content: "\ec47";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path651:before {
+  content: "\ec48";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path652:before {
+  content: "\ec49";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path653:before {
+  content: "\ec4a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path654:before {
+  content: "\ec4b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path655:before {
+  content: "\ec4c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path656:before {
+  content: "\ec4d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path657:before {
+  content: "\ec4e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path658:before {
+  content: "\ec4f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path659:before {
+  content: "\ec50";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path660:before {
+  content: "\ec51";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path661:before {
+  content: "\ec52";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path662:before {
+  content: "\ec53";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path663:before {
+  content: "\ec54";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path664:before {
+  content: "\ec55";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path665:before {
+  content: "\ec56";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path666:before {
+  content: "\ec57";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path667:before {
+  content: "\ec58";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path668:before {
+  content: "\ec59";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path669:before {
+  content: "\ec5a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path670:before {
+  content: "\ec5b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path671:before {
+  content: "\ec5c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path672:before {
+  content: "\ec5d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path673:before {
+  content: "\ec5e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path674:before {
+  content: "\ec5f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path675:before {
+  content: "\ec60";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path676:before {
+  content: "\ec61";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path677:before {
+  content: "\ec62";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path678:before {
+  content: "\ec63";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path679:before {
+  content: "\ec64";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path680:before {
+  content: "\ec65";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path681:before {
+  content: "\ec66";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path682:before {
+  content: "\ec67";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path683:before {
+  content: "\ec68";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path684:before {
+  content: "\ec69";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path685:before {
+  content: "\ec6a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path686:before {
+  content: "\ec6b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path687:before {
+  content: "\ec6c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path688:before {
+  content: "\ec6d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path689:before {
+  content: "\ec6e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path690:before {
+  content: "\ec6f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path691:before {
+  content: "\ec70";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path692:before {
+  content: "\ec71";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path693:before {
+  content: "\ec72";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path694:before {
+  content: "\ec73";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path695:before {
+  content: "\ec74";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path696:before {
+  content: "\ec75";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path697:before {
+  content: "\ec76";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path698:before {
+  content: "\ec77";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path699:before {
+  content: "\ec78";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path700:before {
+  content: "\ec79";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path701:before {
+  content: "\ec7a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path702:before {
+  content: "\ec7b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path703:before {
+  content: "\ec7c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path704:before {
+  content: "\ec7d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path705:before {
+  content: "\ec7e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path706:before {
+  content: "\ec7f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path707:before {
+  content: "\ec80";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path708:before {
+  content: "\ec81";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path709:before {
+  content: "\ec82";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path710:before {
+  content: "\ec83";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path711:before {
+  content: "\ec84";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path712:before {
+  content: "\ec85";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path713:before {
+  content: "\ec86";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path714:before {
+  content: "\ec87";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path715:before {
+  content: "\ec88";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path716:before {
+  content: "\ec89";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path717:before {
+  content: "\ec8a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path718:before {
+  content: "\ec8b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path719:before {
+  content: "\ec8c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path720:before {
+  content: "\ec8d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path721:before {
+  content: "\ec8e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path722:before {
+  content: "\ec8f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path723:before {
+  content: "\ec90";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path724:before {
+  content: "\ec91";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path725:before {
+  content: "\ec92";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path726:before {
+  content: "\ec93";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path727:before {
+  content: "\ec94";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path728:before {
+  content: "\ec95";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path729:before {
+  content: "\ec96";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path730:before {
+  content: "\ec97";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path731:before {
+  content: "\ec98";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path732:before {
+  content: "\ec99";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path733:before {
+  content: "\ec9a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path734:before {
+  content: "\ec9b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path735:before {
+  content: "\ec9c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path736:before {
+  content: "\ec9d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path737:before {
+  content: "\ec9e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path738:before {
+  content: "\ec9f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path739:before {
+  content: "\eca0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path740:before {
+  content: "\eca1";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path741:before {
+  content: "\eca2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path742:before {
+  content: "\eca3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path743:before {
+  content: "\eca4";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path744:before {
+  content: "\eca5";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path745:before {
+  content: "\eca6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path746:before {
+  content: "\eca7";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path747:before {
+  content: "\eca8";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path748:before {
+  content: "\eca9";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path749:before {
+  content: "\ecaa";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path750:before {
+  content: "\ecab";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path751:before {
+  content: "\ecac";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path752:before {
+  content: "\ecad";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path753:before {
+  content: "\ecae";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path754:before {
+  content: "\ecaf";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path755:before {
+  content: "\ecb0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path756:before {
+  content: "\ecb1";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path757:before {
+  content: "\ecb2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path758:before {
+  content: "\ecb3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path759:before {
+  content: "\ecb4";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path760:before {
+  content: "\ecb5";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path761:before {
+  content: "\ecb6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path762:before {
+  content: "\ecb7";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path763:before {
+  content: "\ecb8";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path764:before {
+  content: "\ecb9";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path765:before {
+  content: "\ecba";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path766:before {
+  content: "\ecbb";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path767:before {
+  content: "\ecbc";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path768:before {
+  content: "\ecbd";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path769:before {
+  content: "\ecbe";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path770:before {
+  content: "\ecbf";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path771:before {
+  content: "\ecc0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path772:before {
+  content: "\ecc1";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path773:before {
+  content: "\ecc2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path774:before {
+  content: "\ecc3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path775:before {
+  content: "\ecc4";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path776:before {
+  content: "\ecc5";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path777:before {
+  content: "\ecc6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path778:before {
+  content: "\ecc7";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path779:before {
+  content: "\ecc8";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path780:before {
+  content: "\ecc9";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path781:before {
+  content: "\ecca";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path782:before {
+  content: "\eccb";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path783:before {
+  content: "\eccc";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path784:before {
+  content: "\eccd";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path785:before {
+  content: "\ecce";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path786:before {
+  content: "\eccf";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path787:before {
+  content: "\ecd0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path788:before {
+  content: "\ecd1";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path789:before {
+  content: "\ecd2";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path790:before {
+  content: "\ecd3";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path791:before {
+  content: "\ecd4";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path792:before {
+  content: "\ecd5";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path793:before {
+  content: "\ecd6";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path794:before {
+  content: "\ecd7";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path795:before {
+  content: "\ecd8";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path796:before {
+  content: "\ecd9";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path797:before {
+  content: "\ecda";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path798:before {
+  content: "\ecdb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path799:before {
+  content: "\ecdc";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path800:before {
+  content: "\ecdd";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path801:before {
+  content: "\ecde";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path802:before {
+  content: "\ecdf";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path803:before {
+  content: "\ece0";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path804:before {
+  content: "\ece1";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path805:before {
+  content: "\ece2";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path806:before {
+  content: "\ece3";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path807:before {
+  content: "\ece4";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path808:before {
+  content: "\ece5";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path809:before {
+  content: "\ece6";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path810:before {
+  content: "\ece7";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path811:before {
+  content: "\ece8";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path812:before {
+  content: "\ece9";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path813:before {
+  content: "\ecea";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-Inventory-_-Shelf .path814:before {
+  content: "\eceb";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path815:before {
+  content: "\ecec";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path816:before {
+  content: "\eced";
+  margin-left: -1em;
+  color: rgb(172, 184, 188);
+}
+.icon-Inventory-_-Shelf .path817:before {
+  content: "\ecee";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path818:before {
+  content: "\ecef";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path819:before {
+  content: "\ecf0";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path820:before {
+  content: "\ecf1";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path821:before {
+  content: "\ecf2";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path822:before {
+  content: "\ecf3";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path823:before {
+  content: "\ecf4";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path824:before {
+  content: "\ecf5";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path825:before {
+  content: "\ecf6";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path826:before {
+  content: "\ecf7";
+  margin-left: -1em;
+  color: rgb(186, 196, 198);
+}
+.icon-Inventory-_-Shelf .path827:before {
+  content: "\ecf8";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path828:before {
+  content: "\ecf9";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path829:before {
+  content: "\ecfa";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path830:before {
+  content: "\ecfb";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path831:before {
+  content: "\ecfc";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path832:before {
+  content: "\ecfd";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path833:before {
+  content: "\ecfe";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path834:before {
+  content: "\ecff";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path835:before {
+  content: "\ed00";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path836:before {
+  content: "\ed01";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path837:before {
+  content: "\ed02";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path838:before {
+  content: "\ed03";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path839:before {
+  content: "\ed04";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path840:before {
+  content: "\ed05";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path841:before {
+  content: "\ed06";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path842:before {
+  content: "\ed07";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path843:before {
+  content: "\ed08";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path844:before {
+  content: "\ed09";
+  margin-left: -1em;
+  color: rgb(190, 200, 206);
+}
+.icon-Inventory-_-Shelf .path845:before {
+  content: "\ed0a";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path846:before {
+  content: "\ed0b";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path847:before {
+  content: "\ed0c";
+  margin-left: -1em;
+  color: rgb(227, 229, 229);
+}
+.icon-Inventory-_-Shelf .path848:before {
+  content: "\ed0d";
+  margin-left: -1em;
+  color: rgb(215, 219, 221);
+}
+.icon-Inventory-_-Shelf .path849:before {
+  content: "\ed0e";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path850:before {
+  content: "\ed0f";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path851:before {
+  content: "\ed10";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path852:before {
+  content: "\ed11";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path853:before {
+  content: "\ed12";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path854:before {
+  content: "\ed13";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path855:before {
+  content: "\ed14";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path856:before {
+  content: "\ed15";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path857:before {
+  content: "\ed16";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path858:before {
+  content: "\ed17";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path859:before {
+  content: "\ed18";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path860:before {
+  content: "\ed19";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path861:before {
+  content: "\ed1a";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path862:before {
+  content: "\ed1b";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path863:before {
+  content: "\ed1c";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path864:before {
+  content: "\ed1d";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path865:before {
+  content: "\ed1e";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path866:before {
+  content: "\ed1f";
+  margin-left: -1em;
+  color: rgb(132, 154, 175);
+}
+.icon-Inventory-_-Shelf .path867:before {
+  content: "\ed20";
+  margin-left: -1em;
+  color: rgb(102, 126, 145);
+}
+.icon-Inventory-_-Shelf .path868:before {
+  content: "\ed21";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path869:before {
+  content: "\ed22";
+  margin-left: -1em;
+  color: rgb(114, 135, 160);
+}
+.icon-Inventory-_-Shelf .path870:before {
+  content: "\ed23";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
+}
+.icon-Inventory-_-Shelf .path871:before {
+  content: "\ed24";
+  margin-left: -1em;
+  color: rgb(158, 174, 178);
 }
 .icon-Inventory-_-Table-_-Copy-Icon:before {
-  content: "\e9dc";
+  content: "\ed25";
   color: #374775;
 }
-.icon-Inventory-_-Table-_-Delete-Icon:before {
-  content: "\e9dd";
-  color: #c65161;
-}
 .icon-Inventory-_-Table-_-Edit-Icon:before {
-  content: "\e9de";
+  content: "\ed26";
   color: #374775;
 }
 .icon-Inventory-_-Table-_-Users-Icon:before {
-  content: "\e9df";
+  content: "\ed27";
   color: #374775;
 }
 .icon-Lock-icon:before {
-  content: "\e9e0";
+  content: "\ed28";
   color: #abb6d6;
 }
 .icon-Map-Box-_-Fit-to-Screen:before {
-  content: "\e9e1";
-  color: #c1c0c0;
-}
-.icon-Map-Box-_-Full-Screen:before {
-  content: "\e9e2";
-  color: #c1c0c0;
-}
-.icon-Map-Box-_-Move-Alert-on-Map:before {
-  content: "\e9e3";
-  color: #374775;
-}
-.icon-Map-Box-_-Move-Node:before {
-  content: "\e9e4";
-  color: #c1c0c0;
-}
-.icon-Map-Box-_-Node-Icon .path1:before {
-  content: "\e9e5";
-  color: rgb(55, 71, 117);
-}
-.icon-Map-Box-_-Node-Icon .path2:before {
-  content: "\e9e6";
-  margin-left: -1em;
-  color: rgb(227, 230, 241);
-}
-.icon-Map-Box-_-Node-Icon .path3:before {
-  content: "\e9e7";
-  margin-left: -1em;
-  color: rgb(88, 204, 135);
-}
-.icon-Map-Box-_-Node-Icon_Hover .path1:before {
-  content: "\e9e8";
-  color: rgb(55, 71, 117);
-}
-.icon-Map-Box-_-Node-Icon_Hover .path2:before {
-  content: "\e9e9";
-  margin-left: -1em;
-  color: rgb(227, 230, 241);
-}
-.icon-Map-Box-_-Node-Icon_Hover .path3:before {
-  content: "\e9ea";
-  margin-left: -1em;
-  color: rgb(88, 204, 135);
-}
-.icon-Map-Box-_-Nodes-Info:before {
-  content: "\e9eb";
-  color: #c1c0c0;
-}
-.icon-Map-Box-_-View-Links:before {
-  content: "\e9ec";
-  color: #c1c0c0;
+  content: "\ed29";
 }
 .icon-Map-Box_Flag-Icon .path1:before {
-  content: "\e9ed";
+  content: "\ed2a";
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path2:before {
-  content: "\e9ee";
-  margin-left: -1.0859375em;
+  content: "\ed2b";
+  margin-left: -1.09375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path3:before {
-  content: "\e9ef";
-  margin-left: -1.0859375em;
+  content: "\ed2c";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path4:before {
-  content: "\e9f0";
-  margin-left: -1.0859375em;
+  content: "\ed2d";
+  margin-left: -1.09375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path5:before {
-  content: "\e9f1";
-  margin-left: -1.0859375em;
+  content: "\ed2e";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path6:before {
-  content: "\e9f2";
-  margin-left: -1.0859375em;
+  content: "\ed2f";
+  margin-left: -1.09375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path7:before {
-  content: "\e9f3";
-  margin-left: -1.0859375em;
+  content: "\ed30";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path8:before {
-  content: "\e9f4";
-  margin-left: -1.0859375em;
+  content: "\ed31";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon .path9:before {
-  content: "\e9f5";
-  margin-left: -1.0859375em;
+  content: "\ed32";
+  margin-left: -1.09375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon .path10:before {
-  content: "\e9f6";
-  margin-left: -1.0859375em;
+  content: "\ed33";
+  margin-left: -1.09375em;
   color: rgb(255, 136, 136);
 }
 .icon-Map-Box_Flag-Icon_Hover .path1:before {
-  content: "\e9f7";
+  content: "\ed34";
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path2:before {
-  content: "\e9f8";
-  margin-left: -1.0859375em;
+  content: "\ed35";
+  margin-left: -1.09375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path3:before {
-  content: "\e9f9";
-  margin-left: -1.0859375em;
+  content: "\ed36";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path4:before {
-  content: "\e9fa";
-  margin-left: -1.0859375em;
+  content: "\ed37";
+  margin-left: -1.09375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path5:before {
-  content: "\e9fb";
-  margin-left: -1.0859375em;
+  content: "\ed38";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path6:before {
-  content: "\e9fc";
-  margin-left: -1.0859375em;
+  content: "\ed39";
+  margin-left: -1.09375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path7:before {
-  content: "\e9fd";
-  margin-left: -1.0859375em;
+  content: "\ed3a";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path8:before {
-  content: "\e9fe";
-  margin-left: -1.0859375em;
+  content: "\ed3b";
+  margin-left: -1.09375em;
   color: rgb(255, 255, 255);
 }
 .icon-Map-Box_Flag-Icon_Hover .path9:before {
-  content: "\e9ff";
-  margin-left: -1.0859375em;
+  content: "\ed3c";
+  margin-left: -1.09375em;
   color: rgb(73, 209, 225);
 }
 .icon-Map-Box_Flag-Icon_Hover .path10:before {
-  content: "\ea00";
-  margin-left: -1.0859375em;
+  content: "\ed3d";
+  margin-left: -1.09375em;
   color: rgb(127, 94, 152);
 }
+.icon-Map-Box-_-Full-Screen:before {
+  content: "\ed3e";
+  color: #c1c0c0;
+}
+.icon-Map-Box-_-Move-Alert-on-Map:before {
+  content: "\ed3f";
+  color: #374775;
+}
+.icon-Map-Box-_-Move-Node:before {
+  content: "\ed40";
+  color: #c1c0c0;
+}
 .icon-Map-Box_Node-Icon .path1:before {
-  content: "\ea01";
+  content: "\ed41";
   color: rgb(104, 74, 128);
 }
 .icon-Map-Box_Node-Icon .path2:before {
-  content: "\ea02";
+  content: "\ed42";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box_Node-Icon .path3:before {
-  content: "\ea03";
+  content: "\ed43";
   margin-left: -1em;
   color: rgb(73, 209, 225);
 }
+.icon-Map-Box-_-Node-Icon .path1:before {
+  content: "\ed44";
+  color: rgb(55, 71, 117);
+}
+.icon-Map-Box-_-Node-Icon .path2:before {
+  content: "\ed45";
+  margin-left: -1em;
+  color: rgb(227, 230, 241);
+}
+.icon-Map-Box-_-Node-Icon .path3:before {
+  content: "\ed46";
+  margin-left: -1em;
+  color: rgb(88, 204, 135);
+}
 .icon-Map-Box_Node-Icon_Hover .path1:before {
-  content: "\ea04";
+  content: "\ed47";
   color: rgb(104, 74, 128);
 }
 .icon-Map-Box_Node-Icon_Hover .path2:before {
-  content: "\ea05";
+  content: "\ed48";
   margin-left: -1em;
   color: rgb(227, 230, 241);
 }
 .icon-Map-Box_Node-Icon_Hover .path3:before {
-  content: "\ea06";
+  content: "\ed49";
   margin-left: -1em;
   color: rgb(73, 209, 225);
 }
+.icon-Map-Box-_-Node-Icon_Hover .path1:before {
+  content: "\ed4a";
+  color: rgb(55, 71, 117);
+}
+.icon-Map-Box-_-Node-Icon_Hover .path2:before {
+  content: "\ed4b";
+  margin-left: -1em;
+  color: rgb(227, 230, 241);
+}
+.icon-Map-Box-_-Node-Icon_Hover .path3:before {
+  content: "\ed4c";
+  margin-left: -1em;
+  color: rgb(88, 204, 135);
+}
+.icon-Map-Box-_-Nodes-Info:before {
+  content: "\ed4d";
+  color: #c1c0c0;
+}
+.icon-Map-Box-_-View-Links:before {
+  content: "\ed4e";
+  color: #c1c0c0;
+}
+.icon-map-search:before {
+  content: "\ed4f";
+}
 .icon-Menu-Icon-_-Create:before {
-  content: "\ea07";
-  color: #fff;
+  content: "\ed50";
 }
 .icon-Menu-Icon-_-Cross:before {
-  content: "\ea08";
+  content: "\ed51";
 }
 .icon-Menu-Icon-_-Dashboard:before {
-  content: "\ea09";
-  color: #fff;
+  content: "\ed52";
 }
 .icon-Menu-Icon-_-Discovery:before {
-  content: "\ea0a";
-  color: #fff;
+  content: "\ed53";
 }
 .icon-Menu-Icon-_-Export:before {
-  content: "\ea0b";
-  color: #fff;
+  content: "\ed54";
 }
 .icon-Menu-Icon-_-Faults:before {
-  content: "\ea0c";
-  color: #fff;
+  content: "\ed55";
 }
 .icon-Menu-Icon-_-Import:before {
-  content: "\ea0d";
-  color: #fff;
+  content: "\ed56";
 }
 .icon-Menu-Icon-_-Inventory:before {
-  content: "\ea0e";
-  color: #fff;
+  content: "\ed57";
 }
 .icon-Menu-Icon-_-Load:before {
-  content: "\ea0f";
-  color: #fff;
+  content: "\ed58";
 }
 .icon-Menu-Icon-_-Performance:before {
-  content: "\ea10";
-  color: #fff;
+  content: "\ed59";
 }
 .icon-Menu-Icon-_-Save:before {
-  content: "\ea11";
-  color: #fff;
-}
-.icon-Menu-Icon-_-Services:before {
-  content: "\ea12";
-  color: #fff;
+  content: "\ed5a";
 }
 .icon-Menu-Icon-_-Sina-Logo .path1:before {
-  content: "\ea13";
+  content: "\ed5b";
   color: rgb(227, 171, 14);
 }
 .icon-Menu-Icon-_-Sina-Logo .path2:before {
-  content: "\ea14";
+  content: "\ed5c";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path3:before {
-  content: "\ea15";
+  content: "\ed5d";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path4:before {
-  content: "\ea16";
+  content: "\ed5e";
   margin-left: -1em;
   color: rgb(12, 18, 65);
 }
 .icon-Menu-Icon-_-Sina-Logo .path5:before {
-  content: "\ea17";
+  content: "\ed5f";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path6:before {
-  content: "\ea18";
+  content: "\ed60";
   margin-left: -1em;
   color: rgb(255, 213, 0);
 }
 .icon-Menu-Icon-_-Sina-Logo .path7:before {
-  content: "\ea19";
+  content: "\ed61";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path8:before {
-  content: "\ea1a";
+  content: "\ed62";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
 .icon-Menu-Icon-_-Sina-Logo .path9:before {
-  content: "\ea1b";
+  content: "\ed63";
   margin-left: -1em;
   color: rgb(178, 170, 184);
 }
-.icon-Menu-Icon-_-Topology:before {
-  content: "\ea1c";
-  color: #fff;
-}
-.icon-Menu-Icon-_-User-Management:before {
-  content: "\ea1d";
-  color: #fff;
-}
-.icon-Performance-_-Edit-Setting-of-Chart:before {
-  content: "\ea1e";
-  color: #fff;
-}
-.icon-Performance-_-No-Chart-Yet .path1:before {
-  content: "\ea1f";
-  color: rgb(255, 201, 23);
-}
-.icon-Performance-_-No-Chart-Yet .path2:before {
-  content: "\ea20";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-No-Chart-Yet .path3:before {
-  content: "\ea21";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-No-Chart-Yet .path4:before {
-  content: "\ea22";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-No-Chart-Yet .path5:before {
-  content: "\ea23";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-No-Chart-Yet .path6:before {
-  content: "\ea24";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-No-Chart-Yet .path7:before {
-  content: "\ea25";
-  margin-left: -1em;
-  color: rgb(149, 157, 184);
-}
-.icon-Performance-_-Print-of-Chart:before {
-  content: "\ea26";
-  color: #fff;
-}
-.icon-Performance-_-Table-Setting-_-Bullet:before {
-  content: "\ea27";
-  color: #58cc87;
-}
-.icon-Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item:before {
-  content: "\ea28";
-  color: #abb6d6;
-}
-.icon-Performance-_-Table-Setting-_-Move:before {
-  content: "\ea29";
-  color: #abb6d6;
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path1:before {
-  content: "\ea2a";
-  color: rgb(227, 230, 241);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path2:before {
-  content: "\ea2b";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path3:before {
-  content: "\ea2c";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path4:before {
-  content: "\ea2d";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path5:before {
-  content: "\ea2e";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path6:before {
-  content: "\ea2f";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path7:before {
-  content: "\ea30";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path8:before {
-  content: "\ea31";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path9:before {
-  content: "\ea32";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path10:before {
-  content: "\ea33";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path11:before {
-  content: "\ea34";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path12:before {
-  content: "\ea35";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path13:before {
-  content: "\ea36";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path14:before {
-  content: "\ea37";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path15:before {
-  content: "\ea38";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-day .path16:before {
-  content: "\ea39";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path1:before {
-  content: "\ea3a";
-  color: rgb(194, 201, 219);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path2:before {
-  content: "\ea3b";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path3:before {
-  content: "\ea3c";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path4:before {
-  content: "\ea3d";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path5:before {
-  content: "\ea3e";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path6:before {
-  content: "\ea3f";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path7:before {
-  content: "\ea40";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path1:before {
-  content: "\ea41";
-  color: rgb(227, 230, 241);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path2:before {
-  content: "\ea42";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path3:before {
-  content: "\ea43";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path4:before {
-  content: "\ea44";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path1:before {
-  content: "\ea45";
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path2:before {
-  content: "\ea46";
-  margin-left: -1em;
-  color: rgb(227, 230, 241);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path3:before {
-  content: "\ea47";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path4:before {
-  content: "\ea48";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path5:before {
-  content: "\ea49";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path6:before {
-  content: "\ea4a";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path7:before {
-  content: "\ea4b";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path8:before {
-  content: "\ea4c";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path9:before {
-  content: "\ea4d";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path10:before {
-  content: "\ea4e";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path11:before {
-  content: "\ea4f";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path12:before {
-  content: "\ea50";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path13:before {
-  content: "\ea51";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path14:before {
-  content: "\ea52";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path15:before {
-  content: "\ea53";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Time-_-7-days .path16:before {
-  content: "\ea54";
-  margin-left: -1em;
-  color: rgb(55, 71, 117);
-}
-.icon-Performance-_-Table-Setting-_-Tree-view-icon:before {
-  content: "\ea55";
-  color: #58cc87;
-}
 .icon-Performance_Chart .path1:before {
-  content: "\ea56";
+  content: "\ed64";
   color: rgb(171, 171, 171);
 }
 .icon-Performance_Chart .path2:before {
-  content: "\ea57";
+  content: "\ed65";
   margin-left: -1em;
   color: rgb(171, 171, 171);
 }
 .icon-Performance_Chart .path3:before {
-  content: "\ea58";
+  content: "\ed66";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_Chart .path4:before {
-  content: "\ea59";
+  content: "\ed67";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_Chart .path5:before {
-  content: "\ea5a";
+  content: "\ed68";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_Chart .path6:before {
-  content: "\ea5b";
+  content: "\ed69";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_Chart .path7:before {
-  content: "\ea5c";
+  content: "\ed6a";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_Chart .path8:before {
-  content: "\ea5d";
+  content: "\ed6b";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
+.icon-Performance-_-Print-of-Chart:before {
+  content: "\ed6c";
+}
 .icon-Performance_table .path1:before {
-  content: "\ea5e";
+  content: "\ed6d";
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path2:before {
-  content: "\ea5f";
+  content: "\ed6e";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path3:before {
-  content: "\ea60";
+  content: "\ed6f";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path4:before {
-  content: "\ea61";
+  content: "\ed70";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path5:before {
-  content: "\ea62";
+  content: "\ed71";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path6:before {
-  content: "\ea63";
+  content: "\ed72";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path7:before {
-  content: "\ea64";
+  content: "\ed73";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path8:before {
-  content: "\ea65";
+  content: "\ed74";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path9:before {
-  content: "\ea66";
+  content: "\ed75";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path10:before {
-  content: "\ea67";
+  content: "\ed76";
   margin-left: -1em;
   color: rgb(87, 87, 87);
 }
 .icon-Performance_table .path11:before {
-  content: "\ea68";
+  content: "\ed77";
   margin-left: -1em;
   color: rgb(171, 171, 171);
 }
+.icon-Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item:before {
+  content: "\ed78";
+}
+.icon-Performance-_-Table-Setting-_-Move:before {
+  content: "\ed79";
+  color: #abb6d6;
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path1:before {
+  content: "\ed7a";
+  color: rgb(227, 230, 241);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path2:before {
+  content: "\ed7b";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path3:before {
+  content: "\ed7c";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path4:before {
+  content: "\ed7d";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path5:before {
+  content: "\ed7e";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path6:before {
+  content: "\ed7f";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path7:before {
+  content: "\ed80";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path8:before {
+  content: "\ed81";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path9:before {
+  content: "\ed82";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path10:before {
+  content: "\ed83";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path11:before {
+  content: "\ed84";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path12:before {
+  content: "\ed85";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path13:before {
+  content: "\ed86";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path14:before {
+  content: "\ed87";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path15:before {
+  content: "\ed88";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-day .path16:before {
+  content: "\ed89";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path1:before {
+  content: "\ed8a";
+  color: rgb(194, 201, 219);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path2:before {
+  content: "\ed8b";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path3:before {
+  content: "\ed8c";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path4:before {
+  content: "\ed8d";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path5:before {
+  content: "\ed8e";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path6:before {
+  content: "\ed8f";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-1-hour .path7:before {
+  content: "\ed90";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path1:before {
+  content: "\ed91";
+  color: rgb(227, 230, 241);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path2:before {
+  content: "\ed92";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path3:before {
+  content: "\ed93";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-6-hours .path4:before {
+  content: "\ed94";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path1:before {
+  content: "\ed95";
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path2:before {
+  content: "\ed96";
+  margin-left: -1em;
+  color: rgb(227, 230, 241);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path3:before {
+  content: "\ed97";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path4:before {
+  content: "\ed98";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path5:before {
+  content: "\ed99";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path6:before {
+  content: "\ed9a";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path7:before {
+  content: "\ed9b";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path8:before {
+  content: "\ed9c";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path9:before {
+  content: "\ed9d";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path10:before {
+  content: "\ed9e";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path11:before {
+  content: "\ed9f";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path12:before {
+  content: "\eda0";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path13:before {
+  content: "\eda1";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path14:before {
+  content: "\eda2";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path15:before {
+  content: "\eda3";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Time-_-7-days .path16:before {
+  content: "\eda4";
+  margin-left: -1em;
+  color: rgb(55, 71, 117);
+}
+.icon-Performance-_-Table-Setting-_-Tree-view-icon:before {
+  content: "\eda5";
+  color: #58cc87;
+}
 .icon-Port-Mapping-_-Delete-Item:before {
-  content: "\ea69";
+  content: "\eda6";
   color: #959db8;
 }
 .icon-Port-Mapping-_-Next:before {
-  content: "\ea6a";
+  content: "\eda7";
   color: #959db8;
 }
-.icon-refresh-check .path1:before {
-  content: "\ea6b";
-  color: rgb(118, 202, 106);
-}
-.icon-refresh-check .path2:before {
-  content: "\ea6c";
-  margin-left: -1em;
-  color: none;
-}
-.icon-refresh-check .path3:before {
-  content: "\ea6d";
-  margin-left: -1em;
-  color: none;
-}
-.icon-refresh-check .path4:before {
-  content: "\ea6e";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
 .icon-reserved-service:before {
-  content: "\ea6f";
-  color: #0094ff;
-}
-.icon-reserved_service:before {
-  content: "\ea70";
-  color: #0094ff;
+  content: "\eda8";
 }
 .icon-restored-service:before {
-  content: "\ea71";
-}
-.icon-restored_service:before {
-  content: "\ea72";
+  content: "\eda9";
 }
 .icon-sad-magnifier:before {
-  content: "\ea73";
-}
-.icon-Search-Box_Search-Icon:before {
-  content: "\ea74";
-  color: #cab9d6;
-}
-.icon-Service-_-Table-_-Edit-Icon:before {
-  content: "\ea75";
-  color: #374775;
-}
-.icon-service-current-path:before {
-  content: "\ea76";
+  content: "\edaa";
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path1:before {
-  content: "\ea77";
+  content: "\edab";
   color: rgb(255, 255, 255);
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path2:before {
-  content: "\ea78";
+  content: "\edac";
   margin-left: -1em;
   color: rgb(235, 237, 242);
 }
 .icon-Services-_-Port-Mapping-_-Show-More .path3:before {
-  content: "\ea79";
+  content: "\edad";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Services-_-Table-_-Active:before {
-  content: "\ea7a";
+  content: "\edae";
   color: #58cc87;
 }
-.icon-Services-_-Table-_-Delete-Icon:before {
-  content: "\ea7b";
-  color: #c65161;
-}
 .icon-Services-_-Table-_-Settings-Icon:before {
-  content: "\ea7c";
+  content: "\edaf";
   color: #374775;
 }
 .icon-Shelf-View-_-Components-_-CFP2 .path1:before {
-  content: "\ea7d";
+  content: "\edb0";
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-CFP2 .path2:before {
-  content: "\ea7e";
+  content: "\edb1";
   margin-left: -1em;
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Components-_-Ethernet .path1:before {
-  content: "\ea7f";
+  content: "\edb2";
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Components-_-Ethernet .path2:before {
-  content: "\ea80";
+  content: "\edb3";
   margin-left: -1em;
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-HKP .path1:before {
-  content: "\ea81";
+  content: "\edb4";
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Components-_-HKP .path2:before {
-  content: "\ea82";
+  content: "\edb5";
   margin-left: -1em;
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-LC-Connector .path1:before {
-  content: "\ea83";
+  content: "\edb6";
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Components-_-LC-Connector .path2:before {
-  content: "\ea84";
+  content: "\edb7";
   margin-left: -1em;
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-PWR .path1:before {
-  content: "\ea85";
+  content: "\edb8";
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-PWR .path2:before {
-  content: "\ea86";
+  content: "\edb9";
   margin-left: -1em;
   color: rgb(255, 201, 23);
 }
 .icon-Shelf-View-_-Components-_-PWR .path3:before {
-  content: "\ea87";
+  content: "\edba";
   margin-left: -1em;
   color: rgb(159, 159, 159);
 }
 .icon-Shelf-View-_-Components-_-PWR .path4:before {
-  content: "\ea88";
+  content: "\edbb";
   margin-left: -1em;
   color: rgb(159, 159, 159);
 }
 .icon-Shelf-View-_-Components-_-PWR .path5:before {
-  content: "\ea89";
+  content: "\edbc";
   margin-left: -1em;
   color: rgb(159, 159, 159);
 }
 .icon-Shelf-View-_-Components-_-QSFP-or-XFP .path1:before {
-  content: "\ea8a";
+  content: "\edbd";
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-QSFP-or-XFP .path2:before {
-  content: "\ea8b";
+  content: "\edbe";
   margin-left: -1em;
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Components-_-SC-_-ACO-Icon:before {
-  content: "\ea8c";
+  content: "\edbf";
   color: #9f9f9f;
 }
 .icon-Shelf-View-_-Components-_-SC-_-LEDT-Icon:before {
-  content: "\ea8d";
+  content: "\edc0";
   color: #9f9f9f;
 }
 .icon-Shelf-View-_-Components-_-SC-_-Power-Icon:before {
-  content: "\ea8e";
+  content: "\edc1";
   color: #58cc87;
 }
 .icon-Shelf-View-_-Components-_-SC-_-RST-Icon:before {
-  content: "\ea8f";
+  content: "\edc2";
   color: #9f9f9f;
 }
 .icon-Shelf-View-_-Components-_-Seven-Segments:before {
-  content: "\ea90";
+  content: "\edc3";
 }
 .icon-Shelf-View-_-Components-_-SFP-plus .path1:before {
-  content: "\ea91";
+  content: "\edc4";
   color: rgb(51, 51, 51);
 }
 .icon-Shelf-View-_-Components-_-SFP-plus .path2:before {
-  content: "\ea92";
+  content: "\edc5";
   margin-left: -1em;
   color: rgb(133, 196, 85);
 }
 .icon-Shelf-View-_-Fan-NO .path1:before {
-  content: "\ea93";
+  content: "\edc6";
   color: rgb(193, 192, 192);
 }
 .icon-Shelf-View-_-Fan-NO .path2:before {
-  content: "\ea94";
+  content: "\edc7";
   margin-left: -1em;
   color: rgb(193, 192, 192);
 }
 .icon-Shelf-View-_-Fan-NO .path3:before {
-  content: "\ea95";
+  content: "\edc8";
   margin-left: -1em;
   color: rgb(193, 192, 192);
 }
 .icon-Shelf-View-_-Fan-NO .path4:before {
-  content: "\ea96";
+  content: "\edc9";
   margin-left: -1em;
   color: rgb(193, 192, 192);
 }
 .icon-Shelf-View-_-Fan-NO .path5:before {
-  content: "\ea97";
+  content: "\edca";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path6:before {
-  content: "\ea98";
+  content: "\edcb";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path7:before {
-  content: "\ea99";
+  content: "\edcc";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path8:before {
-  content: "\ea9a";
+  content: "\edcd";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path9:before {
-  content: "\ea9b";
+  content: "\edce";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path10:before {
-  content: "\ea9c";
+  content: "\edcf";
   margin-left: -1em;
   color: rgb(233, 233, 233);
 }
 .icon-Shelf-View-_-Fan-NO .path11:before {
-  content: "\ea9d";
+  content: "\edd0";
   margin-left: -1em;
   color: rgb(198, 81, 97);
 }
 .icon-Shelf-View-_-Fan-NO .path12:before {
-  content: "\ea9e";
+  content: "\edd1";
   margin-left: -1em;
   color: rgb(159, 159, 159);
 }
 .icon-Shelf-View-_-Fans .path1:before {
-  content: "\ea9f";
+  content: "\edd2";
   color: rgb(171, 182, 214);
 }
 .icon-Shelf-View-_-Fans .path2:before {
-  content: "\eaa0";
+  content: "\edd3";
   margin-left: -1em;
   color: rgb(171, 182, 214);
 }
 .icon-Shelf-View-_-Fans .path3:before {
-  content: "\eaa1";
+  content: "\edd4";
   margin-left: -1em;
   color: rgb(171, 182, 214);
 }
 .icon-Shelf-View-_-Fans .path4:before {
-  content: "\eaa2";
+  content: "\edd5";
   margin-left: -1em;
   color: rgb(171, 182, 214);
 }
 .icon-Shelf-View-_-Fans .path5:before {
-  content: "\eaa3";
+  content: "\edd6";
   margin-left: -1em;
   color: rgb(149, 157, 184);
 }
 .icon-Shelf-View-_-Fans .path6:before {
-  content: "\eaa4";
+  content: "\edd7";
   margin-left: -1em;
   color: rgb(149, 157, 184);
 }
 .icon-Shelf-View-_-Fans .path7:before {
-  content: "\eaa5";
+  content: "\edd8";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Shelf-View-_-Fans .path8:before {
-  content: "\eaa6";
+  content: "\edd9";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Shelf-View-_-Fans .path9:before {
-  content: "\eaa7";
+  content: "\edda";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Shelf-View-_-Fans .path10:before {
-  content: "\eaa8";
+  content: "\eddb";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Shelf-View-_-Fans .path11:before {
-  content: "\eaa9";
+  content: "\eddc";
   margin-left: -1em;
   color: rgb(194, 201, 219);
 }
 .icon-Shelf-View-_-Fans .path12:before {
-  content: "\eaaa";
+  content: "\eddd";
   margin-left: -1em;
   color: rgb(88, 204, 135);
 }
 .icon-Shelf-View-_-Loopback:before {
-  content: "\eaab";
-  color: #fff;
+  content: "\edde";
 }
 .icon-Shelf-View-_-PRBS:before {
-  content: "\eaac";
-  color: #fff;
+  content: "\eddf";
 }
 .icon-Shelf-View-_-Refresh:before {
-  content: "\eaad";
+  content: "\ede0";
   color: #959db8;
 }
 .icon-Shelf-View-_-Tabs-_-Alarm-Summary:before {
-  content: "\eaae";
+  content: "\ede1";
   color: #abb6d6;
 }
 .icon-Shelf-View-_-Tabs-_-Cross:before {
-  content: "\eaaf";
+  content: "\ede2";
+  color: #abb6d6;
+}
+.icon-Shelf-View-_-Tabs-_-Fan:before {
+  content: "\ede3";
   color: #abb6d6;
 }
 .icon-Shelf-View-_-Tabs-_-Fan-Alarm:before {
-  content: "\eab0";
+  content: "\ede4";
   color: #ff8946;
 }
-.icon-Shelf-View-_-Tabs-_-Fan:before {
-  content: "\eab1";
-  color: #abb6d6;
-}
 .icon-Shelf-View-_-Traffic-Cone:before {
-  content: "\eab2";
+  content: "\ede5";
   color: #ff8946;
 }
 .icon-shirink_chart:before {
-  content: "\eab3";
+  content: "\ede6";
   color: #575757;
 }
 .icon-Table-_-Calendar:before {
-  content: "\eab4";
+  content: "\ede7";
   color: #48e580;
 }
 .icon-Table-_-Clear-Filters:before {
-  content: "\eab5";
+  content: "\ede8";
   color: #c2c9db;
 }
 .icon-Table-_-Clock:before {
-  content: "\eab6";
+  content: "\ede9";
   color: #48e580;
 }
-.icon-Table-_-Cross-Icon-for-erasing-all-of-filters:before {
-  content: "\eab7";
-  color: #ad92c2;
-}
-.icon-Table-_-Cross-Icon-for-erasing-each-filters:before {
-  content: "\eab8";
-  color: #f88;
-}
 .icon-Table-_-Filter:before {
-  content: "\eab9";
+  content: "\edea";
   color: #48e580;
 }
 .icon-Table-_-Flesh-Icon-for-combo-boxes-Show-More:before {
-  content: "\eaba";
+  content: "\edeb";
   color: #ad92c2;
 }
-.icon-Table-_-Go-to:before {
-  content: "\eabb";
-  color: #374775;
-}
 .icon-Table-_-Info:before {
-  content: "\eabc";
-  color: #fff;
+  content: "\edec";
 }
-.icon-Table-_-Search-Icon:before {
-  content: "\eabd";
+.icon-Table_Search-Icon:before {
+  content: "\eded";
   color: #ad92c2;
 }
 .icon-Table-_-Separate-Line:before {
-  content: "\eabe";
+  content: "\edee";
   color: #ad92c2;
 }
 .icon-Table-_-Sort-Icon_A-to-Z:before {
-  content: "\eabf";
+  content: "\edef";
   color: #40ebff;
 }
 .icon-Table-_-Sort-Icon_OFF:before {
-  content: "\eac0";
+  content: "\edf0";
   color: #ad92c2;
 }
 .icon-Table-_-Sort-Icon_Z-to-A:before {
-  content: "\eac1";
+  content: "\edf1";
   color: #40ebff;
-}
-.icon-Table_Cross-Icon-for-erasing-all-of-filters:before {
-  content: "\eac2";
-  color: #ad92c2;
-}
-.icon-Table_Cross-Icon-for-erasing-each-filters:before {
-  content: "\eac3";
-  color: #f88;
-}
-.icon-Table_Flesh-Icon-for-combo-boxes:before {
-  content: "\eac4";
-  color: #ad92c2;
-}
-.icon-Table_Search-Icon:before {
-  content: "\eac5";
-  color: #ad92c2;
-}
-.icon-Table_Separate-Line:before {
-  content: "\eac6";
-  color: #ad92c2;
-}
-.icon-Table_Sort-Icon_A-to-Z:before {
-  content: "\eac7";
-  color: #40ebff;
-}
-.icon-Table_Sort-Icon_OFF:before {
-  content: "\eac8";
-  color: #ad92c2;
-}
-.icon-Table_Sort-Icon_Z-to-A:before {
-  content: "\eac9";
-  color: #40ebff;
-}
-.icon-temporary-installed-service .path1:before {
-  content: "\eaca";
-  color: rgb(118, 202, 106);
-}
-.icon-temporary-installed-service .path2:before {
-  content: "\eacb";
-  margin-left: -1em;
-  color: none;
-}
-.icon-temporary-installed-service .path3:before {
-  content: "\eacc";
-  margin-left: -1em;
-  color: none;
-}
-.icon-temporary-installed-service .path4:before {
-  content: "\eacd";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.icon-temporary_installed_service .path1:before {
-  content: "\eace";
-  color: rgb(118, 202, 106);
-}
-.icon-temporary_installed_service .path2:before {
-  content: "\eacf";
-  margin-left: -1em;
-  color: none;
-}
-.icon-temporary_installed_service .path3:before {
-  content: "\ead0";
-  margin-left: -1em;
-  color: none;
-}
-.icon-temporary_installed_service .path4:before {
-  content: "\ead1";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-}
-.icon-Title-Bar-Icon-_-About:before {
-  content: "\ead2";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Cross:before {
-  content: "\ead3";
-  color: #684a80;
-}
-.icon-Title-Bar-Icon-_-Exit:before {
-  content: "\ead4";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Help:before {
-  content: "\ead5";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Lock:before {
-  content: "\ead6";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Log-Out:before {
-  content: "\ead7";
-  color: #684a80;
-}
-.icon-Title-Bar-Icon-_-Message:before {
-  content: "\ead8";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Profile:before {
-  content: "\ead9";
-  color: #684a80;
-}
-.icon-Title-Bar-Icon-_-Sound-OFF:before {
-  content: "\eada";
-  color: #abb6d6;
-}
-.icon-Title-Bar-Icon-_-Sound-ON:before {
-  content: "\eadb";
-  color: #abb6d6;
 }
 .icon-title_bar_alert:before {
-  content: "\eadc";
-  color: #575757;
-}
-.icon-title_bar_exit:before {
-  content: "\eadd";
+  content: "\edf2";
   color: #575757;
 }
 .icon-title_bar_info:before {
-  content: "\eade";
+  content: "\edf3";
   color: #575757;
 }
 .icon-title_bar_lock:before {
-  content: "\eadf";
+  content: "\edf4";
   color: #575757;
 }
 .icon-title_bar_logout:before {
-  content: "\eae0";
+  content: "\edf5";
   color: #575757;
 }
 .icon-title_bar_profile:before {
-  content: "\eae1";
+  content: "\edf6";
 }
 .icon-title_bar_sound_off:before {
-  content: "\eae2";
+  content: "\edf7";
   color: #575757;
 }
 .icon-title_bar_sound_on:before {
-  content: "\eae3";
+  content: "\edf8";
   color: #575757;
 }
 .icon-title_bar_unlock:before {
-  content: "\eae4";
+  content: "\edf9";
   color: #575757;
 }
-.icon-tool-kit:before {
-  content: "\eae5";
+.icon-Title-Bar-Icon-_-Cross:before {
+  content: "\edfa";
+  color: #684a80;
 }
-.icon-transient-service:before {
-  content: "\eae6";
-  color: #f50c0c;
-}
-.icon-Tree-View-_-Search-Icon:before {
-  content: "\eae7";
+.icon-Title-Bar-Icon-_-Exit:before {
+  content: "\edfb";
   color: #abb6d6;
 }
+.icon-Title-Bar-Icon-_-Help:before {
+  content: "\edfc";
+  color: #abb6d6;
+}
+.icon-Title-Bar-Icon-_-Lock:before {
+  content: "\edfd";
+  color: #abb6d6;
+}
+.icon-Title-Bar-Icon-_-Log-Out:before {
+  content: "\edfe";
+  color: #684a80;
+}
+.icon-Title-Bar-Icon-_-Message:before {
+  content: "\edff";
+  color: #abb6d6;
+}
+.icon-Title-Bar-Icon-_-Profile:before {
+  content: "\ee00";
+  color: #684a80;
+}
+.icon-Title-Bar-Icon-_-Sound-OFF:before {
+  content: "\ee01";
+  color: #abb6d6;
+}
+.icon-Title-Bar-Icon-_-Sound-ON:before {
+  content: "\ee02";
+  color: #abb6d6;
+}
+.icon-tool-kit:before {
+  content: "\ee03";
+}
 .icon-Tree-View_Flesh-Icon-for-next-level:before {
-  content: "\eae8";
-  color: #fff;
+  content: "\ee04";
 }
 .icon-Tree-View_Flesh-Icon-for-previous-level:before {
-  content: "\eae9";
-  color: #fff;
-}
-.icon-User-Management-_-Groups-and-User-Tre-View-_-Delete-Icon:before {
-  content: "\eaea";
-  color: #c65161;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Discovery-Icon:before {
-  content: "\eaeb";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Faults-Icon:before {
-  content: "\eaec";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Inventory-Icon:before {
-  content: "\eaed";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Performance-Icon:before {
-  content: "\eaee";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-Service-Icon:before {
-  content: "\eaef";
-  color: #58cc87;
+  content: "\ee05";
 }
 .icon-User-Management-_-NMS-Tree-Structure-_-Topology-Icon:before {
-  content: "\eaf0";
-  color: #58cc87;
-}
-.icon-User-Management-_-NMS-Tree-Structure-_-User-Management-Icon:before {
-  content: "\eaf1";
+  content: "\ee06";
   color: #58cc87;
 }
 .icon-User-Management-_-Table-_-Copy-Icon:before {
-  content: "\eaf2";
-  color: #374775;
-}
-.icon-User-Management-_-Table-_-Delete-Icon:before {
-  content: "\eaf3";
-  color: #c65161;
-}
-.icon-User-Management-_-Table-_-Edit-Icon:before {
-  content: "\eaf4";
+  content: "\ee07";
   color: #374775;
 }
 .icon-User-Management-_-Table-_-Users-Icon-_-Only-One-User:before {
-  content: "\eaf5";
+  content: "\ee08";
   color: #374775;
 }
 .icon-User-Management-_-Table-_-Users-Icon-_-Selected:before {
-  content: "\eaf6";
-  color: #374775;
-}
-.icon-User-Management-_-Table-_-Users-Icon:before {
-  content: "\eaf7";
+  content: "\ee09";
   color: #374775;
 }
 .icon-waiting-service .path1:before {
-  content: "\eaf8";
+  content: "\ee0a";
   color: rgb(27, 101, 189);
 }
 .icon-waiting-service .path2:before {
-  content: "\eaf9";
+  content: "\ee0b";
   margin-left: -1em;
   color: rgb(133, 194, 255);
 }
 .icon-waiting-service .path3:before {
-  content: "\eafa";
+  content: "\ee0c";
   margin-left: -1em;
   color: rgb(133, 194, 255);
 }
 .icon-waiting-service .path4:before {
-  content: "\eafb";
+  content: "\ee0d";
   margin-left: -1em;
   color: rgb(27, 101, 189);
 }
 .icon-waiting-service .path5:before {
-  content: "\eafc";
+  content: "\ee0e";
   margin-left: -1em;
   color: rgb(133, 194, 255);
 }
 .icon-waiting-service .path6:before {
-  content: "\eafd";
+  content: "\ee0f";
   margin-left: -1em;
   color: none;
 }
 .icon-window_mode:before {
-  content: "\eafe";
+  content: "\ee10";
 }
