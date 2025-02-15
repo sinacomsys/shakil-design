@@ -1,12 +1,14 @@
+import { composeRef } from "reactjs-view-core";
 import classNames from "classnames";
 import * as React from "react";
-import { composeRef } from "reactjs-view-core";
-import { useStyles } from "./style";
+
+import { BaseIcon, Spinner, Text } from "../../atoms";
+import { useFonts } from "../../atoms/text/style";
 import TextInputState from "./TextInputState";
 import { TextInputProps } from "./types";
-import { useFonts } from "../../atoms/text/style";
-import { BaseIcon, Spinner, Text } from "../../atoms";
 import { theming } from "../../theme";
+import { useStyles } from "./style";
+
 const { useTheme } = theming;
 
 /**
@@ -308,7 +310,7 @@ const TextInput = React.forwardRef<HTMLElement, TextInputProps>(
       <BaseIcon
         wrapperClassName={classes["clear-icon"]}
         onClick={onClear}
-        name="Every-Boxes-_-Cross-Icon"
+        name="Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item"
         size={{ height: 12, width: 12 }}
         color={clearIconColor}
       />

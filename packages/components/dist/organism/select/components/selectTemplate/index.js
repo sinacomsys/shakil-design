@@ -16,16 +16,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Template = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
-var react_1 = require("react");
-var molecules_1 = require("../../../../molecules");
-var react_dom_1 = __importDefault(require("react-dom"));
-var react_popper_1 = require("react-popper");
-var fleshIcon_1 = require("../fleshIcon");
-var atoms_1 = require("../../../../atoms");
-var classnames_1 = __importDefault(require("classnames"));
-var style_1 = require("../../style");
 var src_1 = require("@shakil-design/utils/src");
+var react_1 = require("react");
 var utils_1 = require("@shakil-design/utils");
+var react_popper_1 = require("react-popper");
+var classnames_1 = __importDefault(require("classnames"));
+var react_dom_1 = __importDefault(require("react-dom"));
+var molecules_1 = require("../../../../molecules");
+var atoms_1 = require("../../../../atoms");
+var fleshIcon_1 = require("../fleshIcon");
+var style_1 = require("../../style");
 var Template = function (_a) {
     var onClear = _a.onClear, disabled = _a.disabled, allowClear = _a.allowClear, AddonAfter = _a.AddonAfter, addonAfterClassName = _a.addonAfterClassName, addonAfterStyle = _a.addonAfterStyle, addonBefore = _a.addonBefore, addonBeforeClassName = _a.addonBeforeClassName, addonBeforeStyle = _a.addonBeforeStyle, className = _a.className, onBlur = _a.onBlur, onFocus = _a.onFocus, placeholder = _a.placeholder, style = _a.style, wrapperClassName = _a.wrapperClassName, wrapperStyle = _a.wrapperStyle, popupClassName = _a.popupClassName, popupStyles = _a.popupStyles, _b = _a.hasSearch, hasSearch = _b === void 0 ? true : _b, onMouseEnter = _a.onMouseEnter, onMouseLeave = _a.onMouseLeave, testid = _a.testid, errorMessage = _a.errorMessage, errorMessageClassName = _a.errorMessageClassName, hasError = _a.hasError, clearIconColor = _a.clearIconColor, isLoading = _a.isLoading, displayValue = _a.displayValue, renderOverlay = _a.renderOverlay, data = _a.data, labelExtractor = _a.labelExtractor, onFilter = _a.onFilter;
     var classes = (0, style_1.useStyles)();
@@ -98,7 +98,7 @@ var Template = function (_a) {
                     isLoading: isLoading,
                     disabled: disabled,
                 }, { onClear: onClear, onClick: handleOnClick, value: displayValue, style: __assign({}, style), className: (0, classnames_1.default)(classes["text-input"], isLoading && "".concat(classes["text-input"], "--loading"), className), placeholder: placeholder, allowClear: allowClear, AddonAfter: (0, jsx_runtime_1.jsx)(fleshIcon_1.FleshIcon, { isVisible: isVisible }) })) })), body.current && isVisible
-                ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsx)("div", __assign({ ref: setPopperElement, style: poperStyles.popper }, attributes.popper, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.overlay, style: __assign({ width: width }, popupStyles), className: (0, classnames_1.default)(popupClassName, classes["overlay"]) }, { children: [hasSearch ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["inputWrapper"] }, { children: (0, jsx_runtime_1.jsx)(molecules_1.TextInput, { allowClear: true, value: searchValue, placeholder: "Search", AddonAfter: (0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { color: "#d1d1d1", name: "Search-Box_Search-Icon", size: { height: 15, width: 15 } }), onClear: onClearSearchInput, onChangeText: handleOnSearch }) }))) : null, renderOverlay({ onClose: onCloseOverlay, filteredData: filteredData })] })) })) }), body.current)
+                ? react_dom_1.default.createPortal((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsx)("div", __assign({ ref: setPopperElement, style: poperStyles.popper }, attributes.popper, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ "data-testid": testid === null || testid === void 0 ? void 0 : testid.overlay, style: __assign({ width: width }, popupStyles), className: (0, classnames_1.default)(popupClassName, classes["overlay"]) }, { children: [hasSearch ? ((0, jsx_runtime_1.jsx)("div", __assign({ className: classes["inputWrapper"] }, { children: (0, jsx_runtime_1.jsx)(molecules_1.TextInput, { allowClear: true, value: searchValue, placeholder: "Search", AddonAfter: (0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { color: "#d1d1d1", name: "Table_Search-Icon", size: { height: 15, width: 15 } }), onClear: onClearSearchInput, onChangeText: handleOnSearch }) }))) : null, renderOverlay({ onClose: onCloseOverlay, filteredData: filteredData })] })) })) }), body.current)
                 : null] }));
 };
 exports.Template = Template;

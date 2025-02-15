@@ -50,14 +50,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextInput = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
+var reactjs_view_core_1 = require("reactjs-view-core");
 var classnames_1 = __importDefault(require("classnames"));
 var React = __importStar(require("react"));
-var reactjs_view_core_1 = require("reactjs-view-core");
-var style_1 = require("./style");
-var TextInputState_1 = __importDefault(require("./TextInputState"));
-var style_2 = require("../../atoms/text/style");
 var atoms_1 = require("../../atoms");
+var style_1 = require("../../atoms/text/style");
+var TextInputState_1 = __importDefault(require("./TextInputState"));
 var theme_1 = require("../../theme");
+var style_2 = require("./style");
 var useTheme = theme_1.theming.useTheme;
 /**
  * Determines whether a 'selection' prop differs from a node's existing
@@ -89,7 +89,7 @@ function isEventComposing(nativeEvent) {
 var TextInput = React.forwardRef(function (_a, forwardedRef) {
     var _b;
     var _c = _a.autoCapitalize, autoCapitalize = _c === void 0 ? "sentences" : _c, autoComplete = _a.autoComplete, autoCompleteType = _a.autoCompleteType, _d = _a.autoCorrect, autoCorrect = _d === void 0 ? true : _d, blurOnSubmit = _a.blurOnSubmit, clearTextOnFocus = _a.clearTextOnFocus, _f = _a.multiline, multiline = _f === void 0 ? false : _f, _g = _a.numberOfLines, numberOfLines = _g === void 0 ? 1 : _g, onBlur = _a.onBlur, onChange = _a.onChange, onChangeText = _a.onChangeText, onContentSizeChange = _a.onContentSizeChange, onFocus = _a.onFocus, onKeyPress = _a.onKeyPress, onSelectionChange = _a.onSelectionChange, onSubmitEditing = _a.onSubmitEditing, selection = _a.selection, selectTextOnFocus = _a.selectTextOnFocus, spellCheck = _a.spellCheck, className = _a.className, disabled = _a.disabled, theme = _a.theme, AddonAfter = _a.AddonAfter, addonBefore = _a.addonBefore, addonAfterClassName = _a.addonAfterClassName, addonBeforeClassName = _a.addonBeforeClassName, addonAfterStyle = _a.addonAfterStyle, addonBeforeStyle = _a.addonBeforeStyle, value = _a.value, onClear = _a.onClear, wrapperStyle = _a.wrapperStyle, allowClear = _a.allowClear, wrapperClassName = _a.wrapperClassName, errorMessage = _a.errorMessage, errorMessageClassName = _a.errorMessageClassName, hasError = _a.hasError, clearIconColor = _a.clearIconColor, isLoading = _a.isLoading, type = _a.type, rest = __rest(_a, ["autoCapitalize", "autoComplete", "autoCompleteType", "autoCorrect", "blurOnSubmit", "clearTextOnFocus", "multiline", "numberOfLines", "onBlur", "onChange", "onChangeText", "onContentSizeChange", "onFocus", "onKeyPress", "onSelectionChange", "onSubmitEditing", "selection", "selectTextOnFocus", "spellCheck", "className", "disabled", "theme", "AddonAfter", "addonBefore", "addonAfterClassName", "addonBeforeClassName", "addonAfterStyle", "addonBeforeStyle", "value", "onClear", "wrapperStyle", "allowClear", "wrapperClassName", "errorMessage", "errorMessageClassName", "hasError", "clearIconColor", "isLoading", "type"]);
-    var classes = (0, style_1.useStyles)();
+    var classes = (0, style_2.useStyles)();
     var _h = React.useState(false), isPasswordVisible = _h[0], setPasswordVisible = _h[1];
     var Colors = useTheme();
     var dimensions = React.useRef({ height: 0, width: 0 });
@@ -240,9 +240,9 @@ var TextInput = React.forwardRef(function (_a, forwardedRef) {
     supportedProps.rows = multiline ? numberOfLines : undefined;
     supportedProps.spellCheck = spellCheck != null ? spellCheck : autoCorrect;
     var setRef = (0, reactjs_view_core_1.composeRef)(hostRef, imperativeRef, forwardedRef);
-    var themes = (0, style_2.useFonts)();
+    var themes = (0, style_1.useFonts)();
     var _value = value === null || value === undefined ? "" : value;
-    var clearIcon = allowClear ? ((0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { wrapperClassName: classes["clear-icon"], onClick: onClear, name: "Every-Boxes-_-Cross-Icon", size: { height: 12, width: 12 }, color: clearIconColor })) : null;
+    var clearIcon = allowClear ? ((0, jsx_runtime_1.jsx)(atoms_1.BaseIcon, { wrapperClassName: classes["clear-icon"], onClick: onClear, name: "Performance-_-Table-Setting-_-Cross-icon-for-Delete-Item", size: { height: 12, width: 12 }, color: clearIconColor })) : null;
     var togglePasswordVisibility = function () {
         setPasswordVisible(function (prev) { return !prev; });
     };

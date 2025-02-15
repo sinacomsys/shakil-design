@@ -1,7 +1,8 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
+import React, { useEffect, useState } from "react";
+
 import { Button, TextInput, TextInputProps } from "../../../molecules";
 import { StoryContainer } from "../../container";
-import React, { useEffect, useState } from "react";
 import { BaseIcon } from "../../../atoms";
 
 export default {
@@ -61,7 +62,7 @@ export const LoginTextInput = Template.bind({});
 Active.args = {
   value: "text input value",
   AddonAfter: (
-    <BaseIcon name="Search-Box_Search-Icon" size={{ height: 15, width: 15 }} />
+    <BaseIcon name="Table_Search-Icon" size={{ height: 15, width: 15 }} />
   ),
 };
 

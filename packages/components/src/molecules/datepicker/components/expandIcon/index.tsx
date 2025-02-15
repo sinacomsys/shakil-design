@@ -1,7 +1,8 @@
 import { useContext } from "react";
+
+import { DatePickerContext } from "../../context";
 import { BaseIcon } from "../../../../atoms";
 import { useStyles } from "./style";
-import { DatePickerContext } from "../../context";
 
 export const ExpandIcon = () => {
   const classes = useStyles();
@@ -21,14 +22,14 @@ export const ExpandIcon = () => {
       <BaseIcon
         wrapperClassName={`${classes["wrapper"]}--more-choices`}
         color={"#eeeeee"}
-        name="Every-Boxes-_-Flesh-Icon-for-more-choices"
+        name="Amount-Boxes_Decrease"
         size={{ height: 5, width: 9 }}
       />
       <BaseIcon
         wrapperStyle={{ cursor: "pointer" }}
         onClick={handleOnClick}
         color="#eeeeee"
-        name="Calendar-_-Calendar-Icon"
+        name="Table-_-Calendar"
         size={{
           width: 18,
           height: 18,

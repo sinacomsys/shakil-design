@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { BaseIcon } from "../../../../atoms";
+
 import { useTheme } from "../../../../theme";
+import { BaseIcon } from "../../../../atoms";
 import { useStyles } from "./style";
 
 const FleshIcon = ({ isVisible }: { isVisible: boolean }) => {
@@ -10,7 +11,7 @@ const FleshIcon = ({ isVisible }: { isVisible: boolean }) => {
   return (
     <BaseIcon
       color={fleshIcon}
-      name={"Every-Boxes-_-Flesh-Icon-for-more-choices"}
+      name={"Amount-Boxes_Decrease"}
       size={{
         height: 7,
         width: 12,

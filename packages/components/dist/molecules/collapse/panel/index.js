@@ -13,12 +13,12 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Panel = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
-var framer_motion_1 = require("framer-motion");
 var react_1 = require("react");
+var framer_motion_1 = require("framer-motion");
 var baseIcon_1 = require("../../../atoms/baseIcon");
+var context_1 = require("../context");
 var text_1 = require("../../../atoms/text");
 var theme_1 = require("../../../theme");
-var context_1 = require("../context");
 var style_1 = require("./style");
 var Panel = function (_a) {
     var children = _a.children, title = _a.title, id = _a.id;
@@ -36,7 +36,7 @@ var Panel = function (_a) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     var isOpen = Boolean(openedPanels.find(function (item) { return item === id; }));
-    return ((0, jsx_runtime_1.jsxs)("div", __assign({ style: { marginBottom: 16 } }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["titleWrapper"], onClick: handleOnClick }, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ className: classes["title"] }, { children: typeof title === "string" ? ((0, jsx_runtime_1.jsx)(text_1.Text, __assign({ theme: "Regular", size: 16, color: isOpen ? openPanel : closePanel, ellipsis: true }, { children: title }))) : (title({ isOpen: isOpen })) })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { marginRight: 10 }, animate: { rotate: isOpen ? 180 : 0 } }, { children: (0, jsx_runtime_1.jsx)(baseIcon_1.BaseIcon, { color: isOpen ? openPanel : closePanel, name: "Every-Boxes-_-Flesh-Icon-for-more-choices", size: { height: 6, width: 12 } }) }))] })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { overflow: "hidden", height: 0 }, animate: { height: isOpen ? "auto" : 0 } }, { children: children }))] })));
+    return ((0, jsx_runtime_1.jsxs)("div", __assign({ style: { marginBottom: 16 } }, { children: [(0, jsx_runtime_1.jsxs)("div", __assign({ className: classes["titleWrapper"], onClick: handleOnClick }, { children: [(0, jsx_runtime_1.jsx)("div", __assign({ className: classes["title"] }, { children: typeof title === "string" ? ((0, jsx_runtime_1.jsx)(text_1.Text, __assign({ theme: "Regular", size: 16, color: isOpen ? openPanel : closePanel, ellipsis: true }, { children: title }))) : (title({ isOpen: isOpen })) })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { marginRight: 10 }, animate: { rotate: isOpen ? 180 : 0 } }, { children: (0, jsx_runtime_1.jsx)(baseIcon_1.BaseIcon, { color: isOpen ? openPanel : closePanel, name: "Amount-Boxes_Decrease", size: { height: 6, width: 12 } }) }))] })), (0, jsx_runtime_1.jsx)(framer_motion_1.motion.div, __assign({ style: { overflow: "hidden", height: 0 }, animate: { height: isOpen ? "auto" : 0 } }, { children: children }))] })));
 };
 exports.Panel = Panel;
 //# sourceMappingURL=index.js.map
